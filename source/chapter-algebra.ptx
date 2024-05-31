@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-algebra" label="chapter-algebra">
+  <title>Matrix Algebra</title>
+  <introduction>
+    <p>
+      In the last chapter we learned how to solve systems of equations, 
+      and along the way, we saw that a key tool for solving systems efficiently was the use of <term>matrices</term>. 
+      In this chapter, we will finally give a proper definition of what, exactly, a matrix is, 
+      after which we will proceed to develop the algebraic properties of matrices, just as we did for vectors in <xref ref="chapter-vectors"/>.
+    </p>
+
+    <p>
+      A fundamental topic of mathematics is arithmetic; adding, subtracting, multiplying and dividing numbers. 
+      After learning how to do this, most of us went on to learn how to add, subtract, multiply and divide <q><m>x</m></q>.
+      We are comfortable with expressions such as 
+      <me>
+        x+3x-x\cdot x^2+x^5\cdot x^{-1}
+      </me>
+      and know that we can <q>simplify</q> this to 
+      <me>
+        4x-x^3+x^4
+      </me>.
+    </p>
+
+    <p>
+      This chapter deals with the idea of doing similar operations, but instead of an unknown number <m>x</m>, 
+      we will be using a matrix <m>\tta</m>. So what exactly does the expression 
+      <me>
+        \tta+3\tta-\tta\cdot \tta^2+\tta^5\cdot \tta^{-1}
+      </me>
+      mean? Before we can do anything, we need to actually define what a matrix is! 
+      Once we've taken care of that, we are going to need to learn to define what matrix addition, scalar multiplication, 
+      matrix multiplication and matrix inversion are. We will learn just that, plus some more good stuff, in this chapter.
+    </p>
+</introduction>
+
+  <xi:include href="./section-matrix-arithmetic.ptx"/>
+  <xi:include href="./section-matrix-multiplication.ptx"/>
+  <xi:include href="./section-solving-Axb.ptx"/>
+  <xi:include href="./section-matrix-inverse.ptx"/>
+  <xi:include href="./section-inverse-properties.ptx"/>
+  <xi:include href="./section-elementary-matrices.ptx"/>
+</chapter>

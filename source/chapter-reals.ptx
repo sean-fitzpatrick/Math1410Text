@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-reals" label="chapter-reals">
+  <title>The Real and Complex Numbers</title>
+  <introduction>
+    <p>
+      We begin with some basic set theory terminology that may pop up from time to time, 
+      followed by a reminder on the rules for arithmetic with real numbers, 
+      and a tour of the Cartesian coordinate plane. 
+      Students who are already comfortable with these topics can feel free to jump ahead to <xref ref="CmpNums"/>,
+      where we introduce the complex numbers.
+    </p>
+
+  </introduction>
+
+  <xi:include href="./section-sets.ptx"/>
+  <xi:include href="./section-arithmetic.ptx"/>
+  <xi:include href="./section-cartesian.ptx"/>
+  <xi:include href="./section-complex.ptx"/>
+</chapter>

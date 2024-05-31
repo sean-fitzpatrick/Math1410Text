@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-null_column" label="sec-null_column">
+  <title>Null Space and Column Space</title>
+  
+  <p>
+    We close this chapter with some discussion of a theoretical nature. 
+    First, we will attempt to gain some additional insight into the (initially mysterious) 
+    definition of matrix multiplication by revisiting it from the point of view of linear transformations. 
+    We'll then introduce two fundamental subspaces associated with a matrix transformation.
+  </p>
+
+  <paragraphs>
+    <title>Matrix multiplication as function composition</title>
+    
+    <p>
+      Recall that one of the ways we can obtain new functions from old ones is via <term>function composition</term>. 
+      Given two functions <m>f(x)</m> and <m>g(x)</m> (where <m>x\in\R</m>), we can form the compositions
+      <md>
+        <mrow>(f\circ g)(x) \amp = f(g(x)) \text{ and}</mrow>
+        <mrow>(g\circ f)(x) \amp  = g(f(x))</mrow>
+      </md>,
+      as long as we meet certain conditions on the compatibility of the domains and ranges of the two functions.
+    </p>
+
+    <p>
+      If you paid attention in high school, you probably also remember that the order of composition matters: in general,
+      <me>
+        (f\circ g)(x) \neq (g\circ f)(x)
+      </me>.
+      For example, if <m>f(x) = 2x+1</m> and <m>g(x) = x^2</m>, then
+      <me>
+        (f\circ g)(x) = f(g(x)) = 2g(x)+1 = 2x^2+1,
+      </me>
+      while
+      <me>
+        (g\circ f)(x) = g(f(x)) = (f(x))^2 = (2x+1)^2 = 4x^2+4x+1
+      </me>.
+    </p>
+
+    <p>
+      In this example, both functions are defined from <m>\R</m> to <m>\R</m>, 
+      and neither is a linear transformation in the sense of this section. 
+      In fact, if <m>f:\R\to\R</m> satisfies <xref ref="def-lin_trans"/>, 
+      then we must have <m>f(x) = ax</m> for some real number <m>a</m>. 
+      If <m>g(x) = bx</m> is another linear transformation from <m>\R</m> to <m>\R</m>, notice that we have
+      <me>
+        (f\circ g)(x) = f(g(x))=a(g(x)) = a(bx) = (ab)x
+      </me>.
+      Thus, to compose two linear transformations from <m>\R</m> to <m>\R</m>, 
+      we simply multiply the constants used to define the transformations.
+    </p>
+
+    <p>
+      Now, what about a general linear transformation <m>S:\R^n\to \R^m</m>? 
+      We know that any such transformation is a matrix transformation: we must have
+      <me>
+        S(\vec x) = A\vec x
+      </me>
+      for any <m>\vec x\in\R^n</m>, where <m>A</m> is an <m>m\times n</m> matrix. 
+      Since we're multiplying an <m>m\times n</m> matrix by an <m>n\times 1</m> matrix, 
+      the rules of matrix multiplication ensure that the output <m>\vec y = A\vec x</m> is an element of <m>\R^m</m>.
+    </p>
+
+    <p>
+      Suppose now that we want to define the composition <m>(S\circ T)(\vec x)</m> for some other linear transformation <m>T</m>. 
+      Recall the following rule of function composition:
+    </p>
+
+    <blockquote>
+      <p>
+        In order for the composition <m>S\circ T</m> to be defined, <em>the range of <m>T</m> must be contained in the domain of <m>S</m></em>.
+      </p>
+    </blockquote>
+
+    <p>
+      That is, since <m>S\circ T</m> is defined by <m>(S\circ T)(\vec x) = S(T(\vec x))</m>, 
+      the vector <m>T(\vec x)</m> (which by definition is in the range of <m>T</m>) must belong to the domain of <m>S</m>. 
+      This means that we must have <m>T(\vec x)\in \R^n</m>, so we have
+      <me>
+        T:\R^k\to \R^n
+      </me>
+      for some natural number <m>k</m>. On the other hand, we know that if <m>T</m> is a linear transformation, 
+      then <m>T</m> is defined by matrix multiplication: <m>T(\vec x) = B\vec x</m> for some <m>n\times k</m> matrix <m>B</m>.
+    </p>
+
+    <p>
+      Let us now recall one of the rules of matrix multiplication:
+    </p>
+
+    <blockquote>
+      <p>
+        For the matrix product <m>AB</m> to be defined, <em>the number of columns of <m>A</m> must equal the number of rows of <m>B</m></em>.
+      </p>
+    </blockquote>
+
+    <p>
+      That is, if <m>A</m> is an <m>m\times n</m> matrix, 
+      then <m>B</m> must be an <m>n\times k</m> matrix for some <m>k</m>. 
+      But this is the same conclusion as above! What is the connection? 
+      Well, if we follow the rules for function composition, if <m>T(\vec x) = B\vec x</m> and <m>S(\vec y) = A\vec y</m>, 
+      we must have
+      <me>
+        (S\circ T)(\vec x) = S(T(\vec x)) = A(T(\vec x)) = A(B\vec x) = (AB)\vec x
+      </me>,
+      where the last equality is due to the associative property of matrix multiplication from <xref ref="thm-matrix_multiplication"/>. 
+      Thus, we see that:
+    </p>
+
+    <blockquote>
+      <p>
+        <em>Composition of linear transformations is the same as multiplication of the corresponding matrices!</em>
+      </p>
+    </blockquote>
+
+    <p>
+      Looking at things from the point of view of matrix transformations gives us two insights on the nature of matrix multiplication:
+      <ol>
+        <li>
+          <p>
+            When <m>A</m> and <m>B</m> are both <m>n\times n</m> matrices, 
+            the transformations <m>S(\vec x) = A\vec x</m> and <m>T(\vec x) = B\vec x</m> 
+            are both maps from <m>\mathbb{R}^n</m> to <m>\mathbb{R}^n</m>, and we can define both
+            <me>
+              (S\circ T)(\vec x) = (AB)\vec x
+            </me>
+            and
+            <me>
+              (T\circ S)(\vec x) = (BA)\vec x
+            </me>.
+            Our experience with functions teaches us that most of the time, 
+            <m>S\circ T \neq T\circ S</m>, so of course it makes sense that <m>AB\neq BA</m> in general!            
+          </p>
+        </li>
+
+        <li>
+          <p>
+            The fact that <m>AB</m> is defined only when the number of columns of <m>A</m> 
+            matches the number of rows of <m>B</m> is simply a consequence of the fact that 
+            <m>S\circ T</m> is only defined if the range of <m>T</m> is a subset of the domain of <m>A</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+
+    <p>
+      What about the <q>row times column</q> rule for determining the entries of <m>AB</m>? Let's look at how things work in 2D. Suppose we've defined linear transformations
+      <md>
+        <mrow>S\left(\bbm x\\y\ebm\right) \amp  = A\bbm x\\y\ebm = \bbm a_{11} \amp  a_{12}\\ a_{21} \amp  a_{22}\ebm \bbm x\\y\ebm \text{ and}</mrow>
+        <mrow>T\left(\bbm x\\y\ebm\right) \amp  = B\bbm x\\y\ebm = \bbm b_{11} \amp  b_{12}\\ b_{21} \amp  b_{22}\ebm \bbm x\\y\ebm</mrow>
+      </md>.
+    </p>
+
+    <p>
+      If we write <m>T\left(\bbm x\\y\ebm\right) = \bbm u\\v\ebm</m>, where <m>u = b_{11}x+b_{12}y</m> and <m>v = b_{21}x+b_{22}y</m>, 
+      then we have
+      <md>
+        <mrow>(S\circ T)\left(\bbm x\\y\ebm\right) = S\left(T\left(\bbm x\\y\ebm\right)\right) \amp  = S\left(\bbm u\\v\ebm\right)</mrow>
+        <mrow> \amp  = \bbm a_{11}  \amp  a_{12}\\a_{21} \amp  a_{22}\ebm \bbm u\\v\ebm</mrow>
+        <mrow> \amp  = \bbm a_{11}u + a_{12}v\\a_{21}u+a_{22}v\ebm</mrow>
+        <mrow> \amp  = \bbm a_{11}(b_{11}x+b_{12}y) + a_{12}(b_{21}x+b_{22}y)
+                a_{21}(b_{11}x+b_{12}y) + a_{22}(b_{21}x+b_{22}y)\ebm</mrow>
+        <mrow> \amp  = \bbm (a_{11}b_{11}+a_{12}b_{21})x + (a_{11}b_{12}+a_{12}b_{22})y\\ (a_{21}b_{11}+a_{22}b_{21})x + (a_{21}b_{12}+a_{22}b_{22})y\ebm</mrow>
+        <mrow> \amp  = \bbm a_{11}b_{11}+a_{12}b_{21}  \amp  a_{11}b_{12}+a_{12}b_{22}\\
+                            a_{21}b_{11}+a_{22}b_{21}  \amp  a_{21}b_{12}+a_{22}b_{22}\ebm \bbm x\\y\ebm</mrow>
+      </md>.
+    </p>
+
+    <p>
+      But we also argued above that we should have 
+      <me>
+        (S\circ T)\left(\bbm x\\y\ebm\right) = (AB)\bbm x\\y\ebm
+      </me>,
+      from which we're forced to conclude that
+      <me>
+        AB = \bbm a_{11}b_{11}+a_{12}b_{21} \amp  a_{11}b_{12}+a_{12}b_{22}\\
+                  a_{21}b_{11}+a_{22}b_{21}  \amp  a_{21}b_{12}+a_{22}b_{22}\ebm
+      </me>,
+      and this is exactly the rule for multiplying two <m>2\times 2</m> matrices! 
+      Of course, we can repeat the above argument for the general case where <m>A</m> 
+      is <m>m\times n</m> and <m>B</m> is <m>n\times k</m>, 
+      but you can probably guess that the algebra gets a bit messy on that one, so we'll spare you the details.
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Column space</title>
+    
+    <p>
+      When we discussed the composition of linear transformations above, 
+      we briefly mentioned that this involves the consideration of the <term>range</term>. 
+      Recall that the range of a function is the set of all possible outputs when every input in the domain is considered. 
+      For example, with the function <m>f(x)=x^2</m>, where <m>x</m> can be any real number, 
+      the range is the set of all real numbers <m>y\geq 0</m>. (If <m>y=x^2</m> and <m>x</m> is real, then <m>y</m> can't be negative.)
+
+      <idx><h>range </h><h> of a linear transformation</h></idx>
+    </p>
+
+    <p>
+      If we're given a linear transformation <m>T:\R^n\to \R^m</m>, 
+      we might want to know what sort of vectors <m>\vec y \in \R^m</m> can be obtained from <m>T</m>. 
+      Consider Examples <xref ref="ex_mv_2"/> and <xref ref="ex_mv_23"/> from way back at the beginning of the section. 
+      In <xref ref="ex_mv_2"/>, the vectors <m>A\vec x</m> and <m>A\vec y</m> were non-parallel, and therefore independent. 
+      It follows that for any other vector <m>\vec z\in\R^2</m>, we can find scalars <m>a</m> and <m>b</m> such that
+      <me>
+        \vec z = a(A\vec x) + b(A\vec y) = A(a\vec x) + A(b\vec y) = A(a\vec x+b\vec y)
+      </me>,
+      so every vector in <m>\R^2</m> can be written as the output of the transformation <m>T(\vec x) = A\vec x</m>. 
+      On the other hand, using the matrix <m>A = \bbm 1\amp -1\\1\amp -1\ebm</m> in <xref ref="ex_mv_23"/>, 
+      for any vector <m>\bbm a\\b\ebm\in\R^2</m>, we have
+      <me>
+        A\bbm a\\b\ebm = \bbm 1 \amp  -1\\1 \amp -1\ebm \bbm a\\b\ebm = \bbm a-b\\a-b\ebm = (a-b)\bbm 1\\1\ebm
+      </me>,
+      so the only vectors in the range of <m>T(\vec x) = A\vec x</m> are those parallel to the vector <m>\bbm 1\\1\ebm</m>.
+    </p>
+
+    <p>
+      Next, we're going to consider a general matrix transformation <m>T:\R^n\to \R^m</m> 
+      given by <m>T(\vec x) = A\vec x</m>, but we'll play around with the multiplication a little bit. 
+      By definition (and a bit of manipulation), we have
+      <md>
+        <mrow>T(\vec x) = A\vec x \amp  = 
+                          \bbm a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n}\\
+                            a_{21} \amp  a_{22} \amp  \cdots \amp  a_{2n}\\
+                            \vdots \amp  \vdots \amp  \ddots \amp  \vdots\\
+                            a_{m1} \amp  a_{m2} \amp  \cdots \amp  a_{mn}\ebm 
+                          \bbm x_1\\x_2\\ \vdots \\ x_n\ebm</mrow>
+        <mrow> \amp  = \bbm a_{11}x_1+a_{12}x_2 + \cdots + a_{1n}x_n
+                      a_{21}x_1+a_{22}x_2 + \cdots + a_{2n}x_n\\
+                      \vdots\\
+                      a_{m1}x_1+a_{m2}x_2 + \cdots + a_{mn}x_n\ebm</mrow>
+        <mrow> \amp  = \bbm a_{11}x_1\\a_{21}x_1\\ \vdots \\ a_{m1}x_1\ebm + 
+                    \bbm a_{12}x_2\\a_{22}x_2\\ \vdots \\ a_{m2}x_2\ebm + \cdots +
+                    \bbm a_{1n}x_n\\a_{2n}x_n\\ \vdots \\ a_{mn}x_n\ebm</mrow>
+        <mrow> \amp  = x_1 \bbm a_{11}\\a_{21}\\ \vdots \\ a_{m1}\ebm + 
+                      x_2 \bbm a_{12}\\a_{22}\\ \vdots \\ a_{m2}\ebm + \cdots + 
+                      x_n \bbm a_{1n}\\a_{2n}\\ \vdots \\ a_{mn}\ebm</mrow>
+      </md>.
+      Thus, whenever we multiply a vector by a matrix, <em>the result is a linear combination of the columns of <m>A</m>!</em> 
+      If we think of each column of <m>A</m> as a column vector in <m>\R^m</m>, we can make the following definition:
+    </p>
+
+    <aside>
+      <p>
+        <alert>Note:</alert> Although we didn't say so at the time, 
+        we already encountered this rule for multiplying a vector by a matrix in the argument we gave in support of 
+        <xref ref="thm-standard_matrix"/>.
+        Some textbooks actually use this observation to give an alternative definition of matrix multiplication. 
+        Once we know how the product <m>A\vec x</m> is defined for an <m>m\times n</m> matrix <m>A</m> and <m>n\times 1</m> vector <m>\vec x</m>, 
+        we can define <m>AB</m> for an <m>n\times p</m> matrix <m>B</m> as follows: first, we write
+        <me>
+          B = \bbm \vec{b}_1  \amp \vec{b}_2 \amp  \cdots \amp  \vec{b}_p\ebm
+        </me>,
+        where the <m>n\times 1</m> vectors <m>\vec{b}_1,\ldots, \vec{b}_p</m> are the columns of <m>B</m>. We then define
+        <md>
+          <mrow>AB \amp  = A\bbm \vec{b}_1 \amp \vec{b}_2 \amp  \cdots \amp  \vec{b}_p\ebm</mrow>
+          <mrow> \amp  = \bbm A\vec{b}_1 \amp  A\vec{b}_2 \amp  \cdots \amp  A\vec{b}_p\ebm</mrow>
+        </md>.
+        It's a good exercise to verify (with a few examples) that this definition of the product <m>AB</m> 
+        is the same as the <q>row times column</q> definition we gave earlier.    
+      </p>
+    </aside>
+    
+    <definition xml:id="def-colspace">
+      <title>The column space of a matrix</title>
+      <statement>
+        <p>
+          The <term>column space</term> of an <m>m\times n</m> matrix <m>A</m> 
+          is the subspace of <m>\R^m</m> spanned by the columns of <m>A</m>:
+          <me>
+            \operatorname{col}(A) = \operatorname{span}\left\{\bbm a_{11}\\a_{21}\\\vdots \\ a_{m1}\ebm, \bbm a_{12}\\a_{22}\\ \vdots \\ a_{m2}\ebm, \ldots , \bbm a_{1n}\\a_{2n}\\ \vdots \\ a_{mn}\ebm\right\}
+          </me>.
+    
+          <idx><h>column space</h></idx>
+        </p>
+      </statement>
+    </definition>
+    
+    <p>
+      From the discussion above, we can make two conclusions. 
+      First, if <m>T(\vec x) = A\vec x</m> is a linear transformation, we have
+      <me>
+        \operatorname{range}(T) = \operatorname{col}(A)
+      </me>.
+      Second, as mentioned in <xref ref="def-colspace"/>, 
+      since the range of <m>T</m> can be written as a span, 
+      it is automatically a subspace of <m>\R^m</m> according to <xref ref="thm-subspan"/>. 
+      The range of a linear transformation is one of the more important examples of a subspace.
+    </p>
+
+    <p>
+      To give a more useful description of the column space, we rely <xref ref="thm-colspace_basis"/> below, 
+      whose proof is too technical for this text. To help with the statement of this theorem, 
+      we first introduce one more bit of terminology. 
+      We will call a column of a matrix <m>A</m> a <term>pivot column</term> 
+      if the corresponding column in the reduced row echelon form of <m>A</m> contains a leading 1.
+
+      <idx><h>column </h><h> pivot</h></idx>
+      <idx><h>pivot column</h></idx>
+    </p>
+
+    <theorem xml:id="thm-colspace_basis">
+      <title>Basis for the column space of a matrix</title>
+      <statement>
+        <p>
+          A basis for the column space of an <m>m\times n</m> matrix <m>A</m> is given by the set of pivot columns of <m>A</m>.
+        </p>
+      </statement>
+    </theorem>
+    
+    <p>
+      We will illustrate <xref ref="thm-colspace_basis"/> with an example. 
+      It's important to note that while we need to find the reduced row echelon form of <m>A</m> in order to find the pivot columns, 
+      the columns we want are those of the <em>original</em> matrix <m>A</m>, not its <init>RREF</init>.
+    </p>
+
+    <example xml:id="ex_colspace">
+      <title>Finding a basis for the column space</title>
+      <statement>
+        <p>
+          Determine a basis for the column space of the matrix
+          <me>
+            A = \bbm 1 \amp 0 \amp 2\amp -3\\2\amp -1\amp 0\amp 4\\-1\amp 1\amp 3\amp 0\ebm
+          </me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We begin by computing the reduced row echelon form <m>R</m> of <m>A</m>. We find
+          <me>
+            R = \bbm 1  \amp  0  \amp  0 \amp  -17\\ 0 \amp  1 \amp  0 \amp  -38\\ 0 \amp  0 \amp  1 \amp  7\ebm
+          </me>,
+          and note that <m>R</m> has leading 1s in columns 1, 2, and 3. It follows that 
+          <me>
+            B = \left\{\bbm 1\\2\\-1\ebm, \bbm 0\\-1\\1\ebm, \bbm 2\\0\\3\ebm\right\}
+          </me>
+          is a basis for <m>\operatorname{col}(A)</m>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      Let's make a few observations about the previous example. 
+      Notice that we have three leading 1s, so <m>\operatorname{rank}(A) = 3</m>. 
+      In particular, there is a leading 1 in each row, so we're guaranteed that the system <m>\ttaxb</m> is consistent, 
+      no matter what the vector <m>\vec{b}</m> is. 
+      Since the number of pivot columns of <m>A</m> is equal to the number of leading 1s, we obtain the following result.
+    </p>
+
+    <theorem xml:id="thm-coldimrank">
+      <title>Dimension of the column space</title>
+      <statement>
+        <p>
+          The dimension of the column space of a matrix <m>A</m> 
+          (or equivalently, the dimension of range of the matrix transformation defined by <m>A</m>) is equal to the rank of <m>A</m>.
+        </p>
+      </statement>
+    </theorem>
+  
+    <p>
+      To see why this result can be useful, notice that in our previous example, 
+      the matrix transformation <m>T(\vx) = A\vx</m> determines a linear transformation <m>T:\R^4\to \R^3</m>. 
+      Notice that there are three vectors in the basis for <m>\operatorname{col}(A)</m>; 
+      this means that the column space of <m>A</m> (and thus, the range of <m>T</m>) is three-dimensional, 
+      and therefore the range of <m>T</m> is <em>all</em> of <m>\R^3</m>, and thus, 
+      no matter what vector <m>\vec b\in\R^3</m> we choose, we're guaranteed to be able to find a vector 
+      <m>\vx \in \R^4</m> such that <m>A\vx = \vec b</m>.
+    </p>
+
+    <p>
+      The key observation here is that the question <q>Does <m>\ttaxb</m> have a solution?</q> 
+      is equivalent to the question <q>Does the vector <m>\vec{b}</m> belong to <m>\operatorname{col}(A)</m>?</q> 
+      Unfortunately, while we may gain some insight from noticing that these questions are the same, 
+      we are no further ahead when it comes to answering them. Whatever version we prefer, 
+      the only way to get an answer is to compute the reduced row echelon form of <m>\bbm A\amp \vec{b}\ebm</m>.
+    </p>
+
+    <p>
+      Suppose we repeated <xref ref="ex_colspace"/> using the matrix <m>A</m> from <xref ref="ex_basic_sols"/>. 
+      Both cases involved a matrix of size <m>3\times 4</m>, but the matrix from <xref ref="ex_basic_sols"/> had rank 2, 
+      so the column space of <m>A</m> is only two-dimensional. In this case, 
+      the system <m>\ttaxb</m> will be consistent if <m>\vec{b}</m> belongs to the span of the first two columns of <m>A</m>, 
+      and inconsistent otherwise.
+    </p>
+
+    <p>
+      Reading off the first two columns of <m>A</m>, we find that
+      <me>
+        \operatorname{col}(A) = \operatorname{span}\left\{\bbm 1\\3\\-2\ebm, \bbm -2\\-1\\-6\ebm\right\}
+      </me>.
+      We know that this is a plane through the origin in <m>\mathbb{R}^3</m>, but how do we quickly determine what vectors belong to this plane? There's an easy way and a hard way. The easy way is to compute the cross product, as we did in many of the problems from <xref ref="sec-planes"/>. We find
+      <me>
+        \bbm 1\\3\\-2\ebm\times\bbm -2\\-1\\-6\ebm = \bbm -20\\10\\5\ebm = 5\bbm -4\\2\\1\ebm = 5\vec n
+      </me>,
+      where we've chosen to factor out the scalar multiple of 5 to simplify our normal vector.
+    </p>
+
+    <p>
+      From this we know that a vector
+      <me>
+        \vb = \bbm a\\b\\c\ebm
+      </me>
+      belongs to the column space of <m>A</m> if and only if
+      <me>
+        -4a+2b+c=0,
+      </me>
+      using the scalar form for the equation of a plane in <m>\mathbb{R}^3</m>. 
+      Having done it the easy way, let us do things once more the hard way. 
+      (Why do it the hard way if the easy way works? 
+      Because if we're in any other case than a two-dimensional subspace of <m>\R^3</m>, 
+      the hard way is the only option we have!) 
+      The hard way is to solve the equation <m>\ttaxb</m> for an <em>arbitrary</em> 
+      vector <m>\vb = \bbm a\\b\\c\ebm</m>. As with the previous examples, 
+      we set up the augmented matrix and reduce:
+      <me>
+        \bam{4}1 \amp -2 \amp 0\amp 4\amp a\\3\amp -1\amp 5\amp 2\amp b\\-2\amp -6\amp -10\amp 12\amp c\eam \quad \longrightarrow \quad \bam{4}1\amp -2\amp 0\amp 4\amp a\\0\amp 1\amp 1\amp -2\amp (b-3a)/5\\0\amp 0\amp 0\amp 0\amp (c-4a+2b)/10\eam
+      </me>.
+    </p>
+
+    <p>
+      We stopped before getting all the way to the reduced row echelon form, 
+      but we're far enough along to realize that the only way our system can be consistent 
+      is if the last entry in the third row is equal to zero. This gives us the condition
+      <me>
+        \frac{c-4a+2b}{10}=0
+      </me>,
+      which (after multiplying both sides by 10) is exactly the same as what we found using the cross product.
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Null space</title>
+    
+    <p>
+      The other important example is the <term>null space</term> of a matrix. 
+      The null space of an <m>m\times n</m> matrix <m>A</m> is simply the set of all those vectors <m>\vec{x}\in\R^n</m> 
+      such that <m>A\vec x = \vec 0</m>.
+    </p>
+
+    <definition xml:id="def-nullspace">
+      <title>The null space of a matrix</title>
+      <statement>
+        <p>
+          <idx><h>null space</h></idx>
+
+          The <term>null space</term> of an <m>m\times n</m> matrix <m>A</m> is denoted by <m>\operatorname{null}(A)</m>, and defined by
+          <me>
+            \operatorname{null}(A) = \{\vec x\in\R^n \, | \, A\vec x = \vec 0\}
+          </me>.
+        </p>
+      </statement>
+    </definition>
+  
+    <p>
+      For example, we saw in <xref ref="ex_mv_23"/> that the vector <m>\vec x = \bbm 1\\1\ebm</m> belongs to the null space of the matrix <m>A = \bbm 1\amp -1\\1\amp -1\ebm</m>, since
+      <me>
+        A\vec x = \bbm 1  \amp  -1\\1  \amp  -1\ebm \bbm 1\\1\ebm = \bbm 1-1\\1-1\ebm  = \bbm 0\\0\ebm
+      </me>.
+    </p>
+
+    <p>
+      Given a general <m>m\times n</m> matrix <m>A</m>, we know from <xref ref="sec-vector_solutions"/> 
+      that determining the null space amounts to simply solving a homogeneous system of linear equations. 
+      Let us see how this works in an example.
+    </p>
+
+    <example xml:id="ex_null_sol_102">
+      <title>Determining the null space of a matrix</title>
+      <statement>
+        <p>
+          Determine the null space of the matrix
+          <me>
+            \tta = \bbm 2  \amp  -3 \\ -2  \amp  3\ebm
+          </me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since the null space of <m>A</m> is equal to the set of all solutions <m>\vx</m> to 
+          the matrix equation <m>A\vec x = \vec 0</m>, we proceed by forming the proper augmented matrix 
+          and putting it into reduced row echelon form, which we do below. 
+          <me>
+            \bam{2} 2 \amp -3 \amp 0\\-2 \amp  3\amp 0\eam \quad \arref \quad \bam{2} 1 \amp  -3/2 \amp  0 \\0\amp 0\amp 0\eam
+          </me>
+        </p>
+
+        <p>
+          We interpret the reduced row echelon form of this matrix to find that 
+          <md>
+            <mrow>x_1  \amp = 3/2 t </mrow>
+            <mrow>x_2  \amp  = t \text{ is free}</mrow>
+          </md>.
+        </p>
+
+        <p>
+          We can say that <m>\vx\in\operatorname{null}(A)</m> provided that
+          <me>
+            \vx = \bbm x_1\\x_2\ebm = \bbm \frac{3}{2}t\\ t\ebm = t\bbm \frac{3}{2}\\1\ebm
+          </me>.
+          If we set 
+          <me>
+            \vv = \bbm 3/2\\1\ebm
+          </me>,
+          then we can write our solution as 
+          <me>
+            \operatorname{null}(A) = \left\{t\vv \,|\, t\in\R \text{ and } \vv = \bbm 3/2\\1\ebm\right\}
+          </me>.
+        </p>
+
+        <p>
+          We see that the null space of <m>A</m> contains infinitely many solutions to the equation <m>A\vx  = \vec 0</m>; 
+          any choice of <m>x_2</m> gives us one of these solutions. For instance, picking <m>x_2=2</m> gives the solution 
+          <me>
+            \vx = \bbm 3\\2\ebm
+          </me>.
+        </p>
+
+        <p>
+          This is a particularly nice solution, since there are no fractions! 
+          In fact, since the parameter <m>t</m> can take on any <em>real</em> value, 
+          there is nothing preventing us from defining a new parameter <m>s = t/2</m>, and then
+          <me>
+            \vx = t\bbm 3/2 \\1\ebm = t\left(\frac{1}{2}\bbm 3\\2\ebm \right) = \frac{t}{2}\bbm 3\\2\ebm = s\bbm 3\\2\ebm = s\vec w,
+          </me>
+          where <m>\vec w = 2\vv</m>.
+        </p>
+
+        <p>
+          Our solutions are multiples of a vector, and hence we can graph this, as done in <xref ref="fig-null_sol_102"/>.
+        </p>
+
+        <figure xml:id="fig-null_sol_102">
+          <caption>The solution, as a line, to <m>\protect\tta\protect\vx=\protect\zero</m> in <xref ref="ex_null_sol_102"/></caption>
+
+          <image>
+            <shortdescription>A line through the origin with slope 1, and its direction vector v.</shortdescription>
+            <latex-image label="img-null-sol-102">
+              \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
+
+              \drawxlines{-3.5}{6}{-3,...,6};
+              \drawylines{-2.5}{4.5}{-2,...,4};
+              \draw [&lt;-&gt;](-3,-2)--(6,4);
+              \draw [-&gt;,thick] (0,0)--(1.5,1) node [above] {$\vv$};
+                
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+      </solution>
+    </example>
+
+    <p>
+      In <xref ref="ex_null_sol_102"/>, we saw that the solution is a line through the origin, 
+      and thus, we can conclude that <m>\operatorname{null}(A)</m> is a subspace! 
+      In fact, this is no coincidence: it is guaranteed by our next theorem.
+    </p>
+
+    <theorem xml:id="thm-nullsub">
+      <title>The null space of a matrix is a subspace</title>
+      <statement>
+        <p>
+          For any <m>m\times n</m> matrix <m>A</m>, <m>\operatorname{null}(A)</m> is a subspace of <m>\R^n</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      The proof of this theorem is simple. Suppose <m>\vec x, \vec y\in \operatorname{null}(A)</m>. 
+      By definition, this means <m>A\vec x = \vec 0</m> and <m>A\vec y = \vec 0</m>. 
+      Using the properties of matrix multiplication, we have
+      <me>
+        A(\vec x + \vec y) = A\vec x + A\vec y = \vec 0 + \vec 0 = \vec 0
+      </me>,
+      so <m>\vec x + \vec y\in \operatorname{null}(A)</m>, and
+      <me>
+        A(c\vec x) = c(A\vec x) = c\vec 0 = \vec 0
+      </me>,
+      so <m>c\vec x\in \operatorname{null}(A)</m>. 
+      It follows from the definition of a subspace that <m>\operatorname{null}(A)</m> is a subspace of <m>\R^n</m>.
+    </p>
+
+    <p>
+      In <xref ref="sec-Rn"/> we discussed the fact that whenever we have a subspace of <m>\R^n</m>, 
+      it can be useful to determine a basis for our subspace. 
+      Recall from <xref ref="def-basic_sol"/> that the general solution to a homogeneous system of linear 
+      equations can be written in terms of certain <term>basic solutions</term>. 
+      In the context of null spaces, these basic solutions are  just such a basis.
+    </p>
+
+    <p>
+      Although we will not prove it here, the basic solutions to a homogeneous system are always linearly independent. 
+      Moreover, it follows from the definition of <m>\operatorname{null}(A)</m> 
+      that any <m>\vx \in\operatorname{null}(A)</m> can be written as a linear combination of the basic solutions. 
+      In the language of <xref ref="sec-Rn"/>, 
+      the basic solutions to a homogeneous system <m>A\vx = \vec 0</m> form a <term>basis</term> for the null space of <m>A</m>. 
+      This is an important point to remember, so we emphasize it in the following Key Idea.
+    </p>
+
+    <insight xml:id="idea-nullbasis">
+      <title>Basis for the null space of a matrix</title>
+      <p>
+        The basic solutions to the homogeneous system <m>A\vec{x}=\vec{0}</m> form a basis for the null space of <m>A</m>.
+        That is, if <m>\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k</m> are the basic solutions to <m>A\vec{x}=\vec{0}</m>, then
+        <me>
+          \operatorname{null}(A)=\operatorname{span}\{\vec{v}_1,\vec{v}_2,\ldots, \vec{v}_k\}
+        </me>.
+
+        <idx><h>basis </h><h> of a null space</h></idx> 
+      </p>
+    </insight>
+    
+    <p>
+      To illustrate <xref ref="idea-nullbasis"/>, 
+      let's revisit an example from <xref ref="sec-vector_solutions"/> using the language of null space and basis.
+    </p>
+
+    <example xml:id="ex_null_basis">
+      <title>A two-dimensional null space</title>
+      <statement>
+        <p>
+          Find a basis for the null space of <m>A</m>, where 
+          <me>
+            A = \bbm 1 \amp -2 \amp 0\amp 4\\3\amp -1\amp 5\amp 2\\-2\amp -6\amp -10\amp 12\ebm
+          </me>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Again, determining <m>\operatorname{null}(A)</m> is the same as solving the homogeneous system <m>A\vx = \vec 0</m>, 
+          and by <xref ref="idea-nullbasis"/>, a basis for <m>\operatorname{null}(A)</m> is given by the basic solutions to this system. 
+          As usual, to find the basic solutions, we set up the augmented matrix of the system and reduce:
+          <me>
+            \bam{4}1\amp -2\amp 0\amp 4\amp 0\\3\amp -1\amp 5\amp 2\amp 0\\-2\amp -6\amp -10\amp 12\amp 0\eam \quad \arref \quad
+            \bam{4}1\amp 0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp -2\amp 0\\0\amp 0\amp 0\amp 0\amp 0\eam
+          </me>.
+        </p>
+
+        <p>
+          From the reduced row echelon form of the augmented matrix, we can read off the following general solution:
+          <md>
+            <mrow>x_1 \amp = -2s</mrow>
+            <mrow>x_2 \amp = -s+2t</mrow>
+            <mrow>x_3 \amp = s \text{ is free}</mrow>
+            <mrow>x_4 \amp = t \text{ is free}</mrow>
+          </md>.
+        </p>
+
+        <p>
+          In this case, we have two parameters, so we expect two basic solutions. To find these, we write our solution in vector form:
+          <me>
+            \vx = \bbm x_1\\x_2\\x_3\\x_4\ebm = \bbm -2s\\-s+2t\\s\\t\ebm = s\bbm -2\\-1\\1\\0\ebm + t\bbm 0\\2\\0\\1\ebm
+          </me>.
+          From the above, we see that the general solution can be written as <m>\vx = s\vv +t\vec{w}</m>, where 
+          <me>
+            \vv = \bbm -2\\-1\\1\\0\ebm \quad \text{ and } \quad \vec{w} = \bbm 0\\2\\0\\1\ebm
+          </me>
+          are the basic solutions to <m>A\vx = \vec 0</m>. 
+          Since the null space of <m>A</m> is equal to the set of solutions to <m>A\vx  = \vec 0</m>, 
+          and since every solution to <m>A\vx = \vec 0</m> can be written in terms of <m>\vv</m> and <m>\vec{w}</m>, it follows that
+          <me>
+            \operatorname{null}(A) = \operatorname{span}\{\vv, \vec{w}\},
+          </me>
+          and that <m>\{\vv, \vec{w}\}</m> is a basis for <m>\operatorname{null}(A)</m>.
+        </p>
+      </solution>
+    </example>
+    
+    <p>
+      Another reason the null space is interesting is that it lets us determine whether 
+      or not a linear transformation is <term>one-to-one</term>. 
+      Suppose <m>T:\realnm</m> is a linear transformation defined by <m>T(\vec x) = A\vec x</m>. 
+      We know that <m>T(\vec 0) = \vec 0</m>, so <m>\vec 0\in \operatorname{null}(A)</m> 
+      (as it must be, since <m>\operatorname{null}(A)</m> is a subspace). 
+      If we have any non-zero vector <m>\vec v\in\operatorname{null}(A)</m>, 
+      then <m>T</m> cannot be one-to-one, since we'd have
+      <me>
+        T(\vec v) = A\vec v = \vec 0 = T(\vec 0)
+      </me>.
+      Thus, if <m>\operatorname{null}(A)\neq \{\vec 0\}</m>, then <m>T</m> is not one-to-one. 
+      On the other hand, suppose <m>\operatorname{null}(A)=\{\vec 0\}</m>, 
+      and that <m>T(\vec x) = T(\vec y)</m> for vectors <m>\vec x, \vec y\in R^n</m>. Then we have
+      <me>
+        \vec 0 = T(\vec x) - T(\vec y) = T(\vec x - \vec y) = A(\vec x - \vec y)
+      </me>,
+      so that <m>\vec x - \vec y\in \operatorname{null}(A) = \{0\}</m>, 
+      which means that <m>\vec x - \vec y = \vec{0}</m>, and thus <m>\vec x = \vec y</m>. We have proved the following:
+    </p>
+
+    <aside>
+      <p>
+        Recall that a function <m>f</m> is one-to-one if no two inputs give the same output. 
+        In other words, if <m>f</m> is one-to-one, then whenever <m>f(a)=f(b)</m>, we can conclude that <m>a=b</m>.
+      </p>
+    </aside>
+
+    <theorem xml:id="thm-onetoonenull">
+      <title>Null space and one-to-one transformations</title>
+      <statement>
+        <p>
+          Let <m>T:\R^n\to\R^m</m> be defined by <m>T(\vec x) = A\vec x</m> for some <m>m\times n</m> matrix <m>A</m>. 
+          Then <m>T</m> is one-to-one if and only if <m>\operatorname{null}(A) = \{\vec 0\}</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      The final result we'll state provides an interesting (and powerful) relationship between the null and column spaces. 
+    </p>
+
+    <theorem xml:id="thm-fund_thm_lin_maps">
+      <title>The Fundamental Theorem of Linear Transformations</title>
+      <statement>
+        <p>
+          Let <m>T:\realnm</m> be a linear transformation defined by <m>T(\vec x) = A\vec x</m> for some <m>m\times n</m> matrix <m>A</m>. 
+          Then
+          <me>
+            \dim \operatorname{null}(A) + \dim \operatorname{col}(A) = n
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+    
+    <p>
+      This result is sometimes known as the <q>rank-nullity theorem</q>; 
+      it gives the relationship between the <term>rank</term> of a matrix <m>A</m>, 
+      which is equal to the dimension of its column space, and the <term>nullity</term> of <m>A</m>, 
+      which is defined to be the dimension of its null space.
+
+      <idx><h>rank </h><h> in terms of column space</h></idx>
+    </p>
+
+    <p>
+      A formal proof of this result is beyond the scope of this course, 
+      but the intuition we've gained from solving systems should make it plausible. 
+      Recall that Item 3 in <xref ref="thm-rank_and_sols"/> on the relationship 
+      between the rank of a matrix and types of solutions gives us the equation
+      <me>
+        k + \operatorname{rank}(A) = n
+      </me>,
+      where <m>k</m> is the number of parameters in the general solution of <m>A\vx = \vec b</m>. 
+      Now, we know from <xref ref="def-basic_sol"/> that the number of parameters in the general solution to <m>\ttaxb</m> 
+      is equal to the number of basic solutions to the system <m>A\vx = \vec 0</m>, 
+      and that the basic solutions to <m>\ttaxo</m> form a basis for <m>\operatorname{null}(A)</m>. From this, we can conclude that
+      <me>
+        k = \dim \operatorname{null}(A)
+      </me>.
+      We also claimed in <xref ref="thm-coldimrank"/> above that the rank of <m>A</m> 
+      is equal to the dimension of its column space. Putting these facts together, 
+      we can see why the rank-nullity theorem must hold. Let's confirm that the result holds in one more example.
+    </p>
+
+    <example xml:id="ex_vector_solution_4">
+      <title>Null space and column space</title>
+      <statement>
+        <p>
+          Let 
+          <me>
+            \tta = \bbm 1 \amp -1 \amp 1\amp 3\\4\amp 2\amp 4\amp 6\ebm \quad \text{and} \quad \vb = \bbm 1\\10\ebm
+          </me>.
+          Determine:
+          <ol>
+            <li>
+              <p>
+                The null space of <m>A</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                Whether or not the vector <m>\vec{b}</m> belongs to the column space of <m>A</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We'll tackle the null space first. 
+          We form the augmented matrix for the system <m>\ttaxo</m>, put it into reduced row echelon form, and interpret the result. 
+          <me>
+            \bam{4}1 \amp -1 \amp 1\amp 3\amp 0\\4\amp 2\amp 4\amp 6\amp 0\eam \quad \arref \quad \bam{4}1\amp 0\amp 1\amp 2\amp 0\\0\amp 1\amp 0\amp -1\amp 0\eam
+          </me>
+          <md>
+            <mrow>x_1 \amp =-x_3-2x_4</mrow>
+            <mrow>x_2  \amp = x_4</mrow> 
+            <mrow>x_3 \amp  = s \text{ is free}</mrow>
+            <mrow>x_4 \amp  = t \text{ is free} </mrow>
+          </md>. 
+        </p>
+
+        <p>
+          We now obtain our vector solution
+          <me>
+            \vx = \bbm x_1\\x_2\\x_3\\x_4\ebm = \bbm-s-2t\\t\\s\\t\ebm
+          </me>.
+        </p>
+
+        <p>
+          Finally, we <q>pull apart</q> this vector into two vectors, one with the <q><m>s</m> stuff</q> 
+          and one with the <q><m>t</m> stuff.</q>
+          <md>
+              <mrow>\vx \amp = \bbm-x_3-2x_4\\x_4\\x_3\\x_4\ebm</mrow>
+              <mrow> \amp = \bbm-x_3\\0\\x_3\\0\ebm + \bbm-2x_4\\x_4\\0\\x_4\ebm</mrow>
+              <mrow> \amp =x_3\bbm-10\\1\\0\ebm + x_4\bbm-2\\1\\0\\1\ebm</mrow>
+              <mrow> \amp =x_3\vu + x_4\vv </mrow>
+          </md>.
+        </p>
+
+        <p>
+          We use <m>\vu</m> and <m>\vv</m> simply to give these vectors names (and save some space). In terms of these names, we can write
+          <me>
+            \operatorname{null}(A) = \operatorname{span}\{\vu, \vv\}
+          </me>.
+          It is easy to confirm that both <m>\vu</m> and <m>\vv</m> are solutions to the linear system <m>\tta\vx=\zero</m>. 
+          (Just multiply <m>\tta\vu</m> and <m>\tta\vv</m> and see that both are \zero.) 
+          Since both are solutions to a homogeneous system of linear equations, 
+          any linear combination of <m>\vu</m> and <m>\vv</m> will be a solution, too, 
+          so the vectors <m>\vu</m> and <m>\vv</m> form a basis for the null space of <m>A</m>.
+        </p>
+
+        <p>
+          Now let's tackle the column space. 
+          Determining whether or not <m>\vec b</m> belongs to the column space is the same as solving the system <m>\tta\vx = \vb</m>. 
+          Once again we put the associated augmented matrix into reduced row echelon form and interpret the results.
+          <me>
+            \bam{4}1 \amp -1 \amp 1\amp 3\amp 1\\4\amp 2\amp 4\amp 6\amp 10\eam \quad \arref \quad \bam{4}1\amp 0\amp 1\amp 2\amp 2\\0\amp 1\amp 0\amp -1\amp 1\eam
+          </me>
+          <md>
+           <mrow>x_1 \amp =2-s-2t</mrow>
+           <mrow>x_2  \amp = 1+t</mrow> 
+           <mrow>x_3 \amp  = s \text{ is free}</mrow>
+           <mrow>x_4 \amp  = t\text{ is free} </mrow>
+          </md>. 
+          Since our system is consistent, we can conclude that <m>\vec{b}\in\operatorname{col}(A)</m>. Let us expand on this result a bit.          
+        </p>
+
+        <p>
+          Writing this solution in vector form gives 
+          <me>
+            \vx = \bbm x_1\\x_2\\x_3\\x_4\ebm = \bbm 2-s-2t\\1+t\\s\\t\ebm
+          </me>.
+          Again, we pull apart this vector, but this time we break it into three vectors: 
+          one with <q><m>s</m></q> stuff, one with <q><m>t</m></q> stuff, and one with just constants. 
+          <md>
+          <mrow>\vx  \amp = \bbm 2-s-2t\\1+t\\s\\t\ebm</mrow>
+              <mrow> \amp = \bbm 2\\1\\0\\0\ebm + \bbm-s\\0\\s\\0\ebm + \bbm-2t\\t\\0\\t\ebm</mrow>
+              <mrow> \amp =\bbm 2\\1\\0\\0\ebm+s\bbm-1\\0\\1\\0\ebm + t\bbm-2\\1\\0\\1\ebm</mrow>
+              <mrow> \amp =\underbrace{\vec{x}_p}_{\text{particular solution}}+\underbrace{s\vu + t\vv}_{\text{solution to homogeneous system}}</mrow>
+          </md>.
+          Note that <m>\tta\vec{x}_p = \vb</m>; by itself, <m>\vec{x}_p</m> is a solution. 
+          The fact that we have at least one vector <m>\vec{x}_p</m> such that <m>A\vec{x}_p=\vec{b}</m> 
+          tells us that <m>\vb</m> belongs to the range of the transformation <m>T(\vx) = A\vx</m>. 
+          The fact that there is more than one solution corresponds to the fact that the null space of <m>A</m> is non-trivial.
+        </p>
+
+        <p>
+          Why don't we graph this solution as we did in the past? Before we had only two variables, 
+          meaning the solution could be graphed in 2D. Here we have four variables, 
+          meaning that our solution <q>lives</q> in 4D. You <em>can</em> draw this on paper, but it is <em>very</em> confusing.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      For further verification of <xref ref="thm-fund_thm_lin_maps"/>, 
+      the reader is encouraged to revisit the examples of <xref ref="sec-vector_solutions"/> 
+      and re-interpret them in the context of null space and column space.
+    </p>
+  </paragraphs>
+
+  <exercises>
+    <exercisegroup>
+    
+      <introduction>
+        <p>
+          Determine a basis for the null space and column space of the given matrix, and verify <xref ref="thm-fund_thm_lin_maps"/>.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>A = \bbm 1 \amp 2 \amp 0\amp 3\2\amp 4\amp -1\amp 6\\-3\amp -6\amp 2\amp -4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\operatorname{null}(A) = \operatorname{span}\left\{\bbm -2\\1\\0\\0\ebm\right\}</m> has dimension 1; 
+            <m>\operatorname{col}(A) = \operatorname{span}\left\{\bbm 1\\2\\-3\ebm, \bbm 0\\-1\\2\ebm, \bbm 3\\6\\-4\ebm\right\}</m> 
+            has dimension 3; <m>4 = 1+3</m>.
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>A = \bbm 3 \amp 2 \amp 0\amp -5\-1\amp 6\amp -4\amp 3\\2\amp 8\amp -4\amp -2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\operatorname{null}(A) = \operatorname{span}\left\{\bbm -2\\3\\5\\0\ebm,\bbm 9\\-1\\0\\1\ebm\right\}</m> 
+            has dimension 2; <m>\operatorname{col}(A) = \operatorname{span}\left\{\bbm 3\\-1\\2\ebm, \bbm 2\\6\\8\ebm\right\}</m> 
+            has dimension 2; <m>4 = 2+2</m>.
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>A = \bbm 1 \amp -2 \amp 1\-2\amp -4\amp 6\\0\amp -8\amp 8\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\operatorname{null}(A) = \operatorname{span}\left\{\bbm 1\\1\\1\ebm\right\}</m> 
+            has dimension 1; <m>\operatorname{col}(A) = \operatorname{span}\left\{\bbm 1\\-2\\0\ebm, \bbm -2\\-4\\-8\ebm\right\}</m> 
+            has dimension 2; <m>3 = 1+2</m>.
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>A = \bbm 2 \amp -1 \amp 4\1\amp 2\amp 5\\3\amp -4\amp 2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\operatorname{null}(A) = \{\vec 0\}</m> has dimension 0; 
+            <m>\operatorname{col}(A) = \operatorname{span}\left\{\bbm 2\\1\\3\ebm, \bbm -1\\2\\-4\ebm, \bbm 4\\5\\2\ebm\right\}</m> 
+            has dimension 3; <m>3 = 0+3</m>.
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>A = \bbm 2 \amp 0 \amp 3\amp 5\1\amp -1\amp 4\amp 2\\0\amp 3\amp -6\amp 2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\operatorname{null}(A) = \operatorname{span}\left\{\bbm -6\\-4\\-1\\3\ebm\right\}</m> has dimension 1; 
+            <m>\operatorname{col}(A) = \operatorname{span}\left\{\bbm 2\\1\\0\ebm, \bbm 0\\-1\\3\ebm, \bbm 3\\4\\-6\ebm\right\}</m> 
+            has dimension 3; <m>4 = 1+3</m>.
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>A = \bbm 2 \amp 3 \amp -1\-1\amp 5\amp 2\\1\amp 8\amp 1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\operatorname{null}(A) = \operatorname{span}\left\{\bbm 11\\-3\\13\ebm\right\}</m> has dimension 1; 
+            <m>\operatorname{col}(A) = \operatorname{span}\left\{\bbm 2\\-1\\1\ebm, \bbm 3\\5\\8\ebm\right\}</m> 
+            has dimension 2; <m>3 = 1+2</m>.
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>A = \bbm 1 \amp -2 \amp 4\amp 7\2\amp -4\amp 3\amp 6\\-1\amp 2\amp 1\amp 1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\operatorname{null}(A) = \operatorname{span}\left\{\bbm 2\\1\\0\\0\ebm,\bbm -3\\0\\-8\\5\ebm\right\}</m> 
+            has dimension 2; <m>\operatorname{col}(A) = \operatorname{span}\left\{\bbm 1\\2\\-1\ebm, \bbm 4\\3\\1\ebm\right\}</m> 
+            has dimension 2; <m>4 = 2+2</m>.
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>A = \bbm 1 \amp -3 \amp 5\2\amp -1\amp 2\\-3\amp 0\amp 2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\operatorname{null}(A) = \{\vec 0\}</m> has dimension 0; 
+            <m>\operatorname{col}(A) = \operatorname{span}\left\{\bbm 1\\2\\-3\ebm, \bbm -3\\-1\\0\ebm, \bbm 5\\2\\2\ebm\right\}</m> 
+            has dimension 3; <m>3 = 0+3</m>.
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+  </exercises>
+</section>

@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<docinfo>
+  <brandlogo url="http://www.apexcalculus.com" source="images/APEX.png"/>
+  <initialism>Math1410</initialism>
+
+  <document-id edition="5">1410text</document-id>
+
+  <blurb shelf="Mathematics">
+    A traditional calculus textbook with many exercises and few proofs,
+    covering calculus from limits to vector calculus.
+  </blurb>
+
+  <macros>
+    \newcommand{\colorlinecolor}{blue!95!black!30}
+    \newcommand{\bwlinecolor}{black!30}
+    \newcommand{\thelinecolor}{\colorlinecolor}
+    \newcommand{\colornamesuffix}{}
+    \newcommand{\linestyle}{[thick, \thelinecolor]}
+    \newcommand{\bbm}{\begin{bmatrix}}
+    \newcommand{\ebm}{\end{bmatrix}}
+    \newcommand{\ds}{\displaystyle}
+    \newcommand{\thet}{\theta}
+    \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+    \newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
+    \newcommand{\la}{\left\langle}
+    \newcommand{\ra}{\right\rangle}
+    \newcommand{\dotp}[2]{\vec #1 \,\boldsymbol{\cdot}\, \vec #2}
+    \newcommand{\proj}[2]{\operatorname{proj}_{\,\vec #2}{\,\vec #1}}
+    \newcommand{\crossp}[2]{\vec #1 \times \vec #2}
+    \newcommand{\veci}{\vec i}
+    \newcommand{\vecj}{\vec j}
+    \newcommand{\veck}{\vec k}
+    \newcommand{\vecu}{\vec u}
+    \newcommand{\vecv}{\vec v}
+    \newcommand{\vecw}{\vec w}
+    \newcommand{\vecx}{\vec x}
+    \newcommand{\vecy}{\vec y}
+    \newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+    \newcommand{\noin}{\noindent}
+    \newcommand{\vx}[1][]{\vec{x_{#1}}}
+    \newcommand{\vxp}{\\vec{x_p}}
+    \newcommand{\vu}{\vec{u}}
+    \renewcommand{\vv}{\vec{v}}
+    \newcommand{\vy}{\vec{y}}
+    \newcommand{\vz}{\vec{z}}
+    \newcommand{\vb}{\vec{b}}
+    \newcommand{\vw}{\vec{w}}
+    \newcommand{\veone}{\vec{e_1}}
+    \newcommand{\vetwo}{\vec{e_2}}
+    \newcommand{\vethree}{\vec{e_3}}
+    \newcommand{\vei}{\vec{e_i}}
+    \newcommand{\ven}[1]{\vec{e_{#1}}}
+    \newcommand{\zero}{\vec{\text{\it 0}}}
+    \newcommand{\arref}{\overrightarrow{\text{rref}}}
+    \newcommand{\tta}{A}
+    \newcommand{\ttb}{B}
+    \newcommand{\ttc}{C}
+    \newcommand{\ttd}{D}
+    \newcommand{\ttm}{M}
+    \newcommand{\ttx}{X}
+    \newcommand{\tti}{I}
+    \newcommand{\tty}{Y}
+    \newcommand{\ttp}{P}
+    \newcommand{\ttat}{A^T}
+    \newcommand{\ttbt}{B^T}
+    \newcommand{\ttct}{C^T}
+    \newcommand{\ttdt}{D^T}
+    \newcommand{\ttmt}{M^T}
+    \newcommand{\ttxt}{X^T}
+    \newcommand{\ttit}{I^T}
+    \newcommand{\ttyt}{Y^T}
+    \newcommand{\ttai}{A^{-1}}
+    \newcommand{\ttbi}{B^{-1}}
+    \newcommand{\ttxi}{X^{-1}}
+    \newcommand{\ttpi}{P^{-1}}
+    \newcommand{\ttaxb}{\tta\vx=\vb}
+    \newcommand{\ttaxo}{\tta\vx=\zero}
+    \newcommand{\eyetwo}{\bmx{cc}1\amp 0\\0\amp 1\emx}
+    \newcommand{\eyethree}{\bmx{ccc}1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\emx}
+    \newcommand{\eyefour}{\bmx{cccc}1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 0\\0\amp 0\amp 0\amp 1\emx}
+    \newcommand{\tto}{\textbf{0}}
+    \newcommand{\lda}{\lambda}
+    \newcommand{\real}[1]{\mathbb{R}^{#1}}
+    \newcommand{\TT}{[\, T\, ]}
+    \newcommand{\R}{\mathbb{R}}
+    \newenvironment{amatrix}[1]{%
+      \left[\begin{array}{@{}*{#1}{c}|c@{}}
+    }{%
+      \end{array}\right]
+    }
+    \newenvironment{aamatrix}[1]{%
+      \left[\begin{array}{@{}*{#1}{c}|*{#1}{c}@{}}
+    }{%
+      \end{array}\right]
+    }
+    \newcommand{\bam}{\begin{amatrix}}
+    \newcommand{\eam}{\end{amatrix}}
+    \newcommand{\baam}{\begin{aamatrix}}
+    \newcommand{\eaam}{\end{aamatrix}}
+    \newcommand{\bvm}{\begin{vmatrix}}
+    \newcommand{\evm}{\end{vmatrix}}
+    \newcommand{\drawxticks}[1]
+    
+  </macros>
+
+  <latex-image-preamble component="color">
+    \usepackage{pgfplots}
+    \usepackage{tikz-cd}
+    \usetikzlibrary{positioning,matrix,arrows,arrows.meta}
+
+    \usetikzlibrary{shapes,decorations,shadows,fadings,plotmarks}
+    \usepgfplotslibrary{fillbetween,decorations.softclip,polar}
+
+    \usepackage{tkz-euclide}
+    %\usetkzobj{all}
+    %%% uncomment above line if on TeXLive 2017 or earlier %%%
+
+    \colorlet{firstcolor}{blue}
+    \colorlet{secondcolor}{red}
+    \colorlet{thirdcolor}{magenta}
+    \colorlet{treestump}{brown}
+    \colorlet{treetop}{green!50!black}
+    \colorlet{yellowcolfill}{yellow}
+    \pgfplotsset{firstcurvestyle/.style={color=firstcolor,mark=none,thick,{Kite}-{Kite},solid,fill=firstcolor!50,fill=none}}
+    \pgfplotsset{secondcurvestyle/.style={color=secondcolor,mark=none,thick,{Kite}-{Kite},dashdotted,fill=secondcolor!50,fill=none}}
+    \pgfplotsset{thirdcurvestyle/.style={color=thirdcolor,mark=none,thick,{Kite}-{Kite},dashdotdotted,fill=thirdcolor!50,fill=none}}
+    \pgfplotsset{areastyle/.style={fill,opacity=0.5,draw=none}}\pgfplotsset{tangentline/.style={color=black,mark=none,thick,{Kite}-{Kite},solid}}
+    \pgfplotsset{tangentline/.style={color=black,mark=none,thick,{Kite}-{Kite},solid}}
+    \pgfplotsset{tangentlineseg/.style={color=black,mark=none,thick,-,solid}}
+    \pgfplotsset{lineseg/.style={color=black,mark=none,solid}}
+    \pgfplotsset{normalline/.style={color=black,mark=none,thick,{Kite}-{Kite},dashed}}
+    \pgfplotsset{normallineseg/.style={color=black,mark=none,thick,-,dashed}}
+    \pgfplotsset{secantline/.style={color=black,mark=none,thin,{Kite}-{Kite},dashed}}
+    \pgfplotsset{secantlineseg/.style={color=black,mark=none,thin,-,dashed}}
+    \pgfplotsset{asymptote/.style={color=black,mark=none,thick,{Kite}-{Kite},dashed}}
+    \pgfplotsset{guideline/.style={color=black,mark=none,-}}
+    \pgfplotsset{symmetryline/.style={color=black,mark=none,-,dashed}}
+    \pgfplotsset{openinterval/.style={color=black,mark=none,ultra thick,{Circle[open]}-{Circle[open]}}}
+    \pgfplotsset{closedinterval/.style={color=black,mark=none,ultra thick,{Circle}-{Circle}}}
+
+    \pgfplotscreateplotcyclelist{curvestylelist}{%
+      firstcurvestyle\\%
+      secondcurvestyle\\%
+      thirdcurvestyle\\%
+    }
+
+    %To disable arrows, edit these and the above lines accordingly
+    \pgfplotsset{leftarrow/.style={{Kite}-}}
+    \pgfplotsset{rightarrow/.style={-{Kite}}}
+
+    % Redefine these to be empty to turn off axis discontinuities
+    \pgfplotsset{xdiscontinuity/.style={axis x discontinuity=parallel}}
+    \pgfplotsset{ydiscontinuity/.style={axis y discontinuity=crunch}}
+
+    \pgfplotsset{hollowdot/.style={color=firstcolor,fill=white,only marks,mark=*}}
+    \pgfplotsset{soliddot/.style={color=firstcolor,fill=firstcolor,only marks,mark=*}}
+
+    \pgfplotsset{open/.style={firstcurvestyle,shorten &lt;=-2.4pt,shorten =&gt;-2.4pt,{Circle[open]}-{Circle[open]}}}
+    \pgfplotsset{openclosed/.style={firstcurvestyle,shorten &lt;=-2.4pt,shorten =&gt;-2.4pt,{Circle[open]}-{Circle}}}
+    \pgfplotsset{closed/.style={firstcurvestyle,shorten &lt;=-2.4pt,shorten =&gt;-2.4pt,{Circle}-{Circle}}}
+    \pgfplotsset{closedopen/.style={firstcurvestyle,shorten &lt;=-2.4pt,shorten =&gt;-2.4pt,{Circle}-{Circle[open]}}}
+    \pgfplotsset{infiniteopen/.style={firstcurvestyle,shorten =&gt;-2.4pt,{Kite}-{Circle[open]}}}
+    \pgfplotsset{openinfinite/.style={firstcurvestyle,shorten &lt;=-2.4pt,{Circle[open]}-{Kite}}}
+    \pgfplotsset{infiniteclosed/.style={firstcurvestyle,shorten =&gt;-2.4pt,{Kite}-{Circle}}}
+    \pgfplotsset{closedinfinite/.style={firstcurvestyle,shorten &lt;=-2.4pt,{Circle}-{Kite}}}
+    \pgfplotsset{infinite/.style={firstcurvestyle,{Kite}-{Kite}}}
+    \pgfplotsset{infiniteleft/.style={firstcurvestyle,{Kite}-}}
+    \pgfplotsset{infiniteright/.style={firstcurvestyle,-{Kite}}}
+    \pgfplotsset{openleft/.style={firstcurvestyle,shorten &lt;=-2.4pt,{Circle[open]}-}}
+    \pgfplotsset{openright/.style={firstcurvestyle,shorten =&gt;-2.4pt,-{Circle[open]}}}
+    \pgfplotsset{closedleft/.style={firstcurvestyle,shorten &lt;=-2.4pt,{Circle}-}}
+    \pgfplotsset{closedright/.style={firstcurvestyle,shorten =&gt;-2.4pt,-{Circle}}}
+
+    \pgfplotsset{every axis/.append style = {
+      cycle list name = curvestylelist,
+      %tick label style = {font = \scriptsize},
+      axis x line = middle,
+      axis y line = middle,
+      xlabel = {$x$},
+      ylabel = {$y$},
+      %x label style = {font = \scriptsize},
+      %y label style = {font = \scriptsize},
+      minor x tick num = 1,
+      minor y tick num = 1,
+      name=myplot,
+    }}
+
+    \pgfplotsset{numberline/.style = {
+      xmin=-10,xmax=10,
+      minor xtick={-11,-10,...,11},
+      xtick={-10,-5,...,10},
+      axis y line=none,
+      every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+      y=15pt,
+      axis lines=middle,
+      enlarge x limits,
+      xlabel={},
+      grid=none,
+      clip=false,
+      axis background/.style={},
+    }}
+    %%temporary fix to get circles working right in TexLive 2019
+
+    \makeatletter
+    \def\pgfplots@install@path@replacements{%
+        \ifpgfplots@path@replace@ellipse
+            \let\tikz@do@circle=\pgfplots@path@@tikz@do@circle
+            \let\tikz@do@ellipse=\pgfplots@path@@tikz@do@circle
+            \expandafter\def\expandafter\pgfinterruptpicture\expandafter{\pgfinterruptpicture
+                \let\tikz@do@circle=\pgfplots@path@@tikz@do@circle@orig
+                \let\tikz@do@ellipse=\pgfplots@path@@tikz@do@ellipse@orig
+            }%
+        \fi
+    }%
+    \let\pgfplots@path@@tikz@do@circle@orig=\tikz@do@circle
+    \let\pgfplots@path@@tikz@do@ellipse@orig=\tikz@do@ellipse
+
+    \let\pgfplots@path@@tikz@do@circle@oldandbroken=\pgfplots@path@@tikz@do@circle
+    \def\pgfplots@path@@tikz@do@circle#1{\pgfplots@path@@tikz@do@circle@oldandbroken{#1}{#1}}
+    \def\pgfplots@path@@tikz@do@ellipse#1#2{\pgfplots@path@@tikz@do@circle@oldandbroken{#1}{#2}}
+    \makeatother
+    \newcommand{\drawxticks}[1]
+    {\foreach \x in {#1}
+        {\draw  (\x,-.1)--(\x,.1);
+          };
+    }
+    \newcommand{\drawyticks}[1]
+    {\foreach \x in {#1}
+        {\draw  (-.1,\x)--(.1,\x);
+          };
+    }
+
+    \newcommand{\drawxlines}[3]
+    {\draw[&lt;-&gt;] (#1,0) -- (#2,0) node [right] {$x$};
+    \foreach \x in {#3}
+        {\draw  (\x,-.1)--(\x,.1);
+          };
+    }
+
+    \newcommand{\drawylines}[3]
+    {\draw[&lt;-&gt;] (0,#1) -- (0,#2) node [above] {$y$};
+    \foreach \x in {#3}
+        {\draw  (-.1,\x)--(.1,\x);
+          };
+    }
+
+    \newcommand{\drawxlabels}[1]
+    {\foreach \x in {#1}
+        {\draw  (\x,-.1) node [below] {\scriptsize $\x$};
+        };
+    }
+
+    \newcommand{\drawylabels}[1]
+    {\foreach \x in {#1}
+        {\draw  (-.1,\x) node [left] {\scriptsize $\x$};
+        };
+    }
+    \newcommand{\unitsquare}[1][]
+    {\begin{scope}
+      \draw [#1] (0,0) node (A) {} -- (1,0) node (B) {} -- (1,1) node (C) {} -- (0,1) node (D) {} -- cycle;
+      \draw [-&gt;,&gt;=latex,#1,ultra thin] (0,.25)--(1,.25);
+      \draw [-&gt;,&gt;=latex,#1,ultra thin] (0,.5)--(1,.5);
+      \draw [-&gt;,&gt;=latex,#1,ultra thin] (0,.75)--(1,.75);
+      \filldraw [black]  (A) circle (2pt);%black
+      \filldraw [fill=white,thick]  (B) ++(-2pt,-2pt) rectangle ++(4pt,4pt);%red
+      \filldraw [fill=white,thick]  (C) circle (2pt);%blue
+      \filldraw [fill=white,thick]  (D) ++(-2.5pt,-2.5pt) -- ++(5pt,0pt) -- ++(-2.5pt,5pt) -- cycle;%green
+      \end{scope}
+    }
+    {\begin{scope}[#1]
+    \draw  (-2,2) -- (0,-1) -- (2,2);
+    \draw  (-1,-1) -- (-1,2) -- (0,1) -- (1,2) -- (1,-1);
+    \draw  (-1,2.5) -- (1,2.5);
+    \draw  (-1,-1.5) -- (1,-1.5);
+    \draw  (0,-1.5) -- (0,2.5);
+    \end{scope}
+    }
+  </latex-image-preamble>
+
+  <latex-image-preamble component="print">
+    \usepackage{pgfplots}
+    \usepackage{tikz-cd}
+    \usetikzlibrary{positioning,matrix,arrows,arrows.meta}
+
+    \usetikzlibrary{shapes,decorations,shadows,fadings,plotmarks}
+    \usepgfplotslibrary{fillbetween,decorations.softclip,polar}
+
+    \usepackage{tkz-euclide}
+    %\usetkzobj{all}
+    %%% uncomment above line if on TeXLive 2017 or earlier %%%
+
+    \colorlet{firstcolor}{black}
+    \colorlet{secondcolor}{black!50!white}
+    \colorlet{thirdcolor}{black!30!white}
+    \colorlet{treestump}{black!25!white}
+    \colorlet{treetop}{black!50!white}
+    \colorlet{yellowcolfill}{black!10!white}
+    \pgfplotsset{firstcurvestyle/.style={color=firstcolor,mark=none,thick,{Kite}-{Kite},solid,fill=firstcolor!50,fill=none}}
+    \pgfplotsset{secondcurvestyle/.style={color=secondcolor,mark=none,thick,{Kite}-{Kite},dashdotted,fill=secondcolor!50,fill=none}}
+    \pgfplotsset{thirdcurvestyle/.style={color=thirdcolor,mark=none,thick,{Kite}-{Kite},dashdotdotted,fill=thirdcolor!50,fill=none}}
+    \pgfplotsset{areastyle/.style={fill,opacity=0.5,draw=none}}\pgfplotsset{tangentline/.style={color=black,mark=none,thick,{Kite}-{Kite},solid}}
+    \pgfplotsset{tangentline/.style={color=black,mark=none,thick,{Kite}-{Kite},solid}}
+    \pgfplotsset{tangentlineseg/.style={color=black,mark=none,thick,-,solid}}
+    \pgfplotsset{lineseg/.style={color=black,mark=none,solid}}
+    \pgfplotsset{normalline/.style={color=black,mark=none,thick,{Kite}-{Kite},dashed}}
+    \pgfplotsset{normallineseg/.style={color=black,mark=none,thick,-,dashed}}
+    \pgfplotsset{secantline/.style={color=black,mark=none,thin,{Kite}-{Kite},dashed}}
+    \pgfplotsset{secantlineseg/.style={color=black,mark=none,thin,-,dashed}}
+    \pgfplotsset{asymptote/.style={color=black,mark=none,thick,{Kite}-{Kite},dashed}}
+    \pgfplotsset{guideline/.style={color=black,mark=none,-}}
+    \pgfplotsset{symmetryline/.style={color=black,mark=none,-,dashed}}
+    \pgfplotsset{openinterval/.style={color=black,mark=none,ultra thick,{Parenthesis}-{Parenthesis}}}
+    \pgfplotsset{closedinterval/.style={color=black,mark=none,ultra thick,{Bracket}-{Bracket}}}
+
+    \pgfplotscreateplotcyclelist{curvestylelist}{%
+      firstcurvestyle\\%
+      secondcurvestyle\\%
+      thirdcurvestyle\\%
+    }
+
+    %To disable arrows, edit these and the above lines accordingly
+    \pgfplotsset{leftarrow/.style={{Kite}-}}
+    \pgfplotsset{rightarrow/.style={-{Kite}}}
+
+    % Redefine these to be empty to turn off axis discontinuities
+    \pgfplotsset{xdiscontinuity/.style={axis x discontinuity=parallel}}
+    \pgfplotsset{ydiscontinuity/.style={axis y discontinuity=crunch}}
+
+    \pgfplotsset{hollowdot/.style={color=firstcolor,fill=white,only marks,mark=*}}
+    \pgfplotsset{soliddot/.style={color=firstcolor,fill=firstcolor,only marks,mark=*}}
+
+    \pgfplotsset{open/.style={firstcurvestyle,shorten &lt;=-2.4pt,shorten =&gt;-2.4pt,{Circle[open]}-{Circle[open]}}}
+    \pgfplotsset{openclosed/.style={firstcurvestyle,shorten &lt;=-2.4pt,shorten =&gt;-2.4pt,{Circle[open]}-{Circle}}}
+    \pgfplotsset{closed/.style={firstcurvestyle,shorten &lt;=-2.4pt,shorten =&gt;-2.4pt,{Circle}-{Circle}}}
+    \pgfplotsset{closedopen/.style={firstcurvestyle,shorten &lt;=-2.4pt,shorten =&gt;-2.4pt,{Circle}-{Circle[open]}}}
+    \pgfplotsset{infiniteopen/.style={firstcurvestyle,shorten =&gt;-2.4pt,{Kite}-{Circle[open]}}}
+    \pgfplotsset{openinfinite/.style={firstcurvestyle,shorten &lt;=-2.4pt,{Circle[open]}-{Kite}}}
+    \pgfplotsset{infiniteclosed/.style={firstcurvestyle,shorten =&gt;-2.4pt,{Kite}-{Circle}}}
+    \pgfplotsset{closedinfinite/.style={firstcurvestyle,shorten &lt;=-2.4pt,{Circle}-{Kite}}}
+    \pgfplotsset{infinite/.style={firstcurvestyle,{Kite}-{Kite}}}
+    \pgfplotsset{infiniteleft/.style={firstcurvestyle,{Kite}-}}
+    \pgfplotsset{infiniteright/.style={firstcurvestyle,-{Kite}}}
+    \pgfplotsset{openleft/.style={firstcurvestyle,shorten &lt;=-2.4pt,{Circle[open]}-}}
+    \pgfplotsset{openright/.style={firstcurvestyle,shorten =&gt;-2.4pt,-{Circle[open]}}}
+    \pgfplotsset{closedleft/.style={firstcurvestyle,shorten &lt;=-2.4pt,{Circle}-}}
+    \pgfplotsset{closedright/.style={firstcurvestyle,shorten =&gt;-2.4pt,-{Circle}}}
+
+    \pgfplotsset{every axis/.append style = {
+      cycle list name = curvestylelist,
+      %tick label style = {font = \scriptsize},
+      axis x line = middle,
+      axis y line = middle,
+      xlabel = {$x$},
+      ylabel = {$y$},
+      %x label style = {font = \scriptsize},
+      %y label style = {font = \scriptsize},
+      minor x tick num = 1,
+      minor y tick num = 1,
+      name=myplot,
+    }}
+
+    \pgfplotsset{numberline/.style = {
+      xmin=-10,xmax=10,
+      minor xtick={-11,-10,...,11},
+      xtick={-10,-5,...,10},
+      axis y line=none,
+      every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+      y=15pt,
+      axis lines=middle,
+      enlarge x limits,
+      xlabel={},
+      grid=none,
+      clip=false,
+      axis background/.style={},
+    }}
+    %%temporary fix to get circles working right in TexLive 2019
+
+    \makeatletter
+    \def\pgfplots@install@path@replacements{%
+        \ifpgfplots@path@replace@ellipse
+            \let\tikz@do@circle=\pgfplots@path@@tikz@do@circle
+            \let\tikz@do@ellipse=\pgfplots@path@@tikz@do@circle
+            \expandafter\def\expandafter\pgfinterruptpicture\expandafter{\pgfinterruptpicture
+                \let\tikz@do@circle=\pgfplots@path@@tikz@do@circle@orig
+                \let\tikz@do@ellipse=\pgfplots@path@@tikz@do@ellipse@orig
+            }%
+        \fi
+    }%
+    \let\pgfplots@path@@tikz@do@circle@orig=\tikz@do@circle
+    \let\pgfplots@path@@tikz@do@ellipse@orig=\tikz@do@ellipse
+
+    \let\pgfplots@path@@tikz@do@circle@oldandbroken=\pgfplots@path@@tikz@do@circle
+    \def\pgfplots@path@@tikz@do@circle#1{\pgfplots@path@@tikz@do@circle@oldandbroken{#1}{#1}}
+    \def\pgfplots@path@@tikz@do@ellipse#1#2{\pgfplots@path@@tikz@do@circle@oldandbroken{#1}{#2}}
+    \makeatother
+    \newcommand{\drawxticks}[1]
+    {\foreach \x in {#1}
+        {\draw  (\x,-.1)--(\x,.1);
+          };
+    }
+    \newcommand{\drawyticks}[1]
+    {\foreach \x in {#1}
+        {\draw  (-.1,\x)--(.1,\x);
+          };
+    }
+
+    \newcommand{\drawxlines}[3]
+    {\draw[&lt;-&gt;] (#1,0) -- (#2,0) node [right] {$x$};
+    \foreach \x in {#3}
+        {\draw  (\x,-.1)--(\x,.1);
+          };
+    }
+
+    \newcommand{\drawylines}[3]
+    {\draw[&lt;-&gt;] (0,#1) -- (0,#2) node [above] {$y$};
+    \foreach \x in {#3}
+        {\draw  (-.1,\x)--(.1,\x);
+          };
+    }
+
+    \newcommand{\drawxlabels}[1]
+    {\foreach \x in {#1}
+        {\draw  (\x,-.1) node [below] {\scriptsize $\x$};
+        };
+    }
+
+    \newcommand{\drawylabels}[1]
+    {\foreach \x in {#1}
+        {\draw  (-.1,\x) node [left] {\scriptsize $\x$};
+        };
+    }
+    \newcommand{\unitsquare}[1][]
+    {\begin{scope}
+      \draw [#1] (0,0) node (A) {} -- (1,0) node (B) {} -- (1,1) node (C) {} -- (0,1) node (D) {} -- cycle;
+      \draw [-&gt;,&gt;=latex,#1,ultra thin] (0,.25)--(1,.25);
+      \draw [-&gt;,&gt;=latex,#1,ultra thin] (0,.5)--(1,.5);
+      \draw [-&gt;,&gt;=latex,#1,ultra thin] (0,.75)--(1,.75);
+      \filldraw [black]  (A) circle (2pt);%black
+      \filldraw [fill=white,thick]  (B) ++(-2pt,-2pt) rectangle ++(4pt,4pt);%red
+      \filldraw [fill=white,thick]  (C) circle (2pt);%blue
+      \filldraw [fill=white,thick]  (D) ++(-2.5pt,-2.5pt) -- ++(5pt,0pt) -- ++(-2.5pt,5pt) -- cycle;%green
+      \end{scope}
+    }
+    \newcommand{\vmispider}[1][]
+    {\begin{scope}[#1]
+      \draw  (-2,2) -- (0,-1) -- (2,2);
+      \draw  (-1,-1) -- (-1,2) -- (0,1) -- (1,2) -- (1,-1);
+      \draw  (-1,2.5) -- (1,2.5);
+      \draw  (-1,-1.5) -- (1,-1.5);
+      \draw  (0,-1.5) -- (0,2.5);
+    \end{scope}
+    }
+  </latex-image-preamble>
+
+
+  <asymptote-preamble component="color">
+    import graph3;
+    bool incolor;
+    incolor = true;
+    pen apexmeshpen=rgb(0,0,.7);
+    pen blackmeshpen=rgb(0,0,0);
+    pen surfacepen=rgb(.6,.6,1)+opacity(.7);
+    pen surfacepen2=rgb(1,.6,.6)+opacity(1);
+    material simplesurfacepen=emissive(rgb(.6,.6,1)+opacity(0.7));
+    material simplesurfacepen2=emissive(rgb(1,.6,.6)+opacity(0.7));
+    material simplesurfacepen3=emissive(rgb(.5,.9,.5)+opacity(0.7));
+    pen bluepen=blue;
+    pen bluemeshpen=rgb(0,0,.5);
+    pen bluecurvepen=rgb(.1,.1,.7);
+    pen dotblue=rgb(.6,.6,1);
+    pen redpen=red;
+    pen redmeshpen=rgb(.7,0,0);
+    pen redmeshpen2=rgb(.5,0,0);
+    pen redcurvepen=rgb(.9,0,0);
+    pen greenmeshpen=rgb(0,.5,0);
+    pen greencurvepen=rgb(0,.7,0);
+    pen curvepen=.4mm+bluepen;
+    pen curvepen2=.4mm+redpen;
+    pen darksurfacepen=rgb(.2,.2,1)+opacity(.7);
+  </asymptote-preamble>
+
+  <asymptote-preamble component="print">
+    import graph3;
+    bool incolor;
+    incolor = false;
+    pen apexmeshpen=rgb(0,0,0)+.2mm;
+    pen blackmeshpen=rgb(0,0,0);
+    material surfacepen=emissive(white+opacity(.6));
+    material surfacepen2=emissive(gray+opacity(1));
+    material simplesurfacepen=emissive(gray+opacity(.8));
+    material simplesurfacepen2=emissive(gray+opacity(.6));
+    material simplesurfacepen3=emissive(gray+opacity(.4));
+    pen bluepen=rgb(.1,.1,.1);
+    pen bluemeshpen=bluepen+.2mm;
+    pen bluecurvepen=bluepen+.4mm;
+    pen dotblue=rgb(.6,.6,.6);
+    pen redpen=rgb(.3,.3,.3);
+    pen redmeshpen=redpen+.2mm;
+    pen redmeshpen2=redpen+.2mm;
+    pen redcurvepen=redpen+.4mm;
+    pen greenmeshpen=rgb(.5,.5,.5)+.2mm;
+    pen greencurvepen=rgb(.5,.5,.5)+.4mm;
+    pen curvepen=.4mm+bluepen;
+    pen curvepen2=.4mm+redpen;
+    pen darksurfacepen=rgb(.1,.1,.1)+opacity(.7);
+  </asymptote-preamble>
+
+  <rename element="insight" xml:lang="en-US">Key Idea</rename>
+</docinfo>

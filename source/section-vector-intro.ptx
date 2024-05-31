@@ -1,0 +1,2680 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_vector_intro" label="sec_vector_intro">
+  <title>An Introduction to Vectors</title>
+  <p>
+    Many quantities we think about daily can be described by a single number:
+    temperature, speed, cost, weight and height.
+    There are also many other concepts we encounter daily that cannot be described with just one number.
+    For instance,
+    a weather forecaster often describes wind with its speed and its direction
+    (<q><m>\ldots</m> with winds from the southeast gusting up to 30 mph <m>\ldots</m></q>).
+    When applying a force,
+    we are concerned with both the magnitude and direction of that force.
+    In both of these examples, <em>direction</em> is important.
+    Because of this, we study <em>vectors</em>,
+    mathematical objects that convey both magnitude and direction information.
+  </p>
+
+  <figure xml:id="vid-vectors-intro-intro" component="video">
+    <caption>Video introduction to <xref ref="sec_vector_intro"/></caption>
+    <video youtube="_1mYILsTF2U" label="vid-vectors-intro-intro"/>
+  </figure>
+
+  <p>
+    One <q>bare-bones</q> definition of a vector is based on what we wrote above:
+    <q>a vector is a mathematical object with magnitude and direction parameters.</q>
+    This definition leaves much to be desired,
+    as it gives no indication as to how such an object is to be used.
+    Several other definitions exist;
+    we choose here a definition rooted in a geometric visualization of vectors.
+    It is very simplistic but readily permits further investigation.
+  </p>
+
+  <definition xml:id="def_vector">
+    <title>Vector</title>
+    <statement>
+      <p>
+        A <term>vector</term> is a directed line segment.
+      </p>
+
+      <p>
+        Given points <m>P</m> and <m>Q</m>
+        (either in the plane or in space),
+        we denote with <m>\overrightarrow{PQ}</m> the vector
+        <term>from</term> <m>P</m> <term>to</term> <m>Q</m>.
+        The point <m>P</m> is said to be the
+        <term>initial point</term> of the vector,
+        and the point <m>Q</m> is the <term>terminal point</term>.
+      </p>
+
+      <p>
+        The <term>magnitude</term>,
+        <term>length</term> or <term>norm</term>
+        of <m>\overrightarrow{PQ}</m> is the length of the line segment <m>\overline{PQ}</m>:
+        <m>\norm{\overrightarrow{PQ}} = \norm{\overline{PQ}}</m>.
+      </p>
+
+      <p>
+        Two vectors are <term>equal</term>
+        if they have the same magnitude and direction.
+            <idx><h>vectors</h></idx>
+            <idx><h>vectors</h><h>definition</h></idx>
+            <idx><h>vectors</h><h>norm</h></idx>
+            <idx><h>vectors</h><h>magnitude</h></idx>
+            <idx><h>norm</h></idx>
+            <idx><h>magnitude of vector</h></idx>
+            <idx><h>terminal point</h></idx>
+            <idx><h>initial point</h></idx>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    <xref ref="fig_vectintro1"/>
+    shows multiple instances of the same vector.
+    Each directed line segment has the same direction and length (magnitude),
+    hence each is the same vector.
+  </p>
+
+  <figure xml:id="fig_vectintro1">
+    <caption>Drawing the same vector with different initial points</caption>
+    <!-- START figures/fig_vectintro1.tex -->
+    <image width="47%">
+      <shortdescription>
+        Graph shows the same vectors drawn at different initial points.
+      </shortdescription>
+      <description>
+        <p>
+          The <m>x</m> and <m>y</m> axes are drawn from <m>-4</m> to <m>4</m>. There are four vectors drawn.
+          In the first quadrant is the first vector drawn from point <m>(0,0)</m> to <m>(3,1)</m>. The second
+          vector is drawn in the second quadrant from point <m>(-4,1)</m> to point <m>(-1,2)</m>. In the fourth
+          quadrant the vector is drawn from <m>(2, -4)</m> to <m>(5, -3)</m>. The last vector is drawn from
+          <m>(-2, -3)</m> to <m>(1, -2)</m> and it crosses the third .
+        </p>
+      </description>
+      <latex-image label="img_vectintro1">
+
+      \begin{tikzpicture}[&gt;=stealth]
+
+      \begin{axis}[
+      axis on top,
+      ymin=-5.5,ymax=5.5,
+      xmin=-5.5,xmax=5.5
+      ]
+
+      \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:3,1);
+      \draw [very thick,-&gt;] (axis cs:-2,-3) -- (axis cs:1,-2);
+      \draw [very thick,-&gt;] (axis cs:-4,1) -- (axis cs:-1,2);
+      \draw [very thick,-&gt;] (axis cs:2,-4) -- (axis cs:5,-3);
+
+      \end{axis}
+
+      \end{tikzpicture}
+
+      </latex-image>
+    </image>
+    <!-- figures/fig_vectintro1.tex END -->
+  </figure>
+
+  <p>
+    We use <m>\mathbb{R}^2</m>
+    (pronounced <q>r two</q>)
+    to represent all the vectors in the plane,
+    and use <m>\mathbb{R}^3</m>
+    (pronounced <q>r three</q>)
+    to represent all the vectors in space.
+        <idx><h>r@<m>\mathbb{R}</m></h></idx>
+  </p>
+
+  <figure xml:id="fig_vectintro2">
+    <caption>Illustrating how equal vectors have the same displacement</caption>
+    <!-- START figures/fig_vectintro2.tex -->
+    <image width="47%">
+      <shortdescription>
+        Graphs showing equal vectors have the same displacement.
+      </shortdescription>
+      <description>
+        <p>
+          The <m>x</m> and <m>y</m> axes are drawn from <m>-4</m> to <m>4</m>. There are two vectors
+          <m>PQ</m> and <m>RS</m>. The vector <m>PQ</m> is drawn in the first quadrant from point
+          <m>P=(1,0)</m> and <m>Q=(3,1)</m>. The second vector is in the second quadrant from point
+          <m>R=(-3, 1)</m> to <m>S=(-1,2)</m>.
+        </p>
+      </description>
+      <latex-image label="img_vectintro2">
+
+      \begin{tikzpicture}[&gt;=stealth]
+
+      \begin{axis}[
+      axis on top,
+      ymin=-4.5,ymax=4.5,
+      xmin=-4.5,xmax=4.5
+      ]
+
+      \draw [very thick,-&gt;] (axis cs:1,0) node [above] { $P$} -- (axis cs:3,1) node [above] { $Q$};
+      \draw [very thick,-&gt;] (axis cs:-3,1) node [above] { $R$} -- (axis cs:-1,2) node [above] { $S$};
+
+      \end{axis}
+
+      \end{tikzpicture}
+
+      </latex-image>
+    </image>
+    <!-- figures/fig_vectintro2.tex END -->
+  </figure>
+
+  <p>
+    Consider the vectors <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{RS}</m> as shown in <xref ref="fig_vectintro2"/>.
+    The vectors look to be equal;
+    that is, they seem to have the same length and direction.
+    Indeed, they are.
+    Both vectors move 2 units to the right and 1 unit up from the initial point to reach the terminal point.
+    One can analyze this movement to measure the magnitude of the vector,
+    and the movement itself gives direction information
+    (one could also measure the slope of the line passing through <m>P</m> and <m>Q</m> or <m>R</m> and <m>S</m>).
+    Since they have the same length and direction,
+    these two vectors are equal.
+  </p>
+
+  <p>
+    This demonstrates that inherently all we care about is <em>displacement</em>;
+    that is, how far in the <m>x</m>,
+    <m>y</m> and possibly <m>z</m> directions the terminal point is from the initial point.
+    Both the vectors <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{RS}</m> in <xref ref="fig_vectintro2"/>
+    have an <m>x</m>-displacement of 2 and a <m>y</m>-displacement of 1.
+    This suggests a standard way of describing vectors in the plane.
+    A vector whose <m>x</m>-displacement is <m>a</m> and whose <m>y</m>-displacement is <m>b</m> will have terminal point <m>(a,b)</m> when the initial point is the origin,
+    <m>(0,0)</m>.
+    This leads us to a definition of a standard and concise way of referring to vectors.
+  </p>
+
+  <definition xml:id="def_vector_component">
+    <title>Component Form of a Vector</title>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              The <em>component form</em> of a vector <m>\vec{v}</m> in <m>\mathbb{R}^2</m>,
+              whose terminal point is <m>(a,b)</m> when its initial point is <m>(0,0)</m>,
+              is <m>\bbm  a\\b\ebm</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The <em>component form</em> of a vector <m>\vec{v}</m> in <m>\mathbb{R}^3</m>,
+              whose terminal point is <m>(a,b,c)</m> when its initial point is <m>(0,0,0)</m>,
+              is <m>\bbm  a\\b\\c\ebm</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+
+      <p>
+        The numbers <m>a</m>, <m>b</m>
+        (and <m>c</m>, respectively)
+        are the <term>components</term> of <m>\vec v</m>.
+            <idx><h>vectors</h><h>component form</h></idx>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    It follows from the definition that the component form of the vector <m>\overrightarrow{PQ}</m>,
+    where <m>P=(x_1,y_1)</m> and <m>Q=(x_2,y_2)</m> is
+    <me>
+      \overrightarrow{PQ} = \bbm  x_2-x_1\\ y_2-y_1\ebm;
+    </me>
+    in space, where <m>P=(x_1,y_1,z_1)</m> and <m>Q=(x_2,y_2,z_2)</m>,
+    the component form of <m>\overrightarrow{PQ}</m> is
+    <me>
+      \overrightarrow{PQ} = \bbm  x_2-x_1\\ y_2-y_1\\z_2-z_1\ebm
+    </me>.
+  </p>
+
+  <aside>
+    <p>
+      The component form of a vector allows us to identify a point <m>(a, b)</m> (or
+      <m>(a, b, c)</m>) with the corresponding vec-
+      tor <m>\bbm a\\b\ebm</m> (or <m>\bbm a\\b\\c\ebm</m>), so that vectors and points contain essentially the
+      same information, presented in different contexts. This is why mathematicians don't mind using the notation
+      <m>\R^n</m> to refer to both a set of vectors
+      and the set of points containing those
+      vectors.
+    </p>
+  </aside>
+
+  <p>
+    We practice using this notation in the following example.
+  </p>
+
+  <example xml:id="ex_vect1">
+    <title>Using component form notation for vectors</title>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Sketch the vector <m>\vec v=\bbm  2\\-1\ebm</m> starting at <m>P=(3,2)</m> and find its magnitude.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Find the component form of the vector <m>\vec w</m> whose initial point is
+              <m>R=(-3,-2)</m> and whose terminal point is <m>S=(-1,2)</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Sketch the vector <m>\vec u = \bbm  2\\-1\\3\ebm</m> starting at the point <m>Q = (1,1,1)</m> and find its
+              magnitude.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Using <m>P</m> as the initial point,
+              we move 2 units in the positive <m>x</m>-direction and <m>-1</m> units in the positive <m>y</m>-direction to arrive at the terminal point <m>P\,'=(5,1)</m>,
+              as drawn in <xref ref="fig_vect1a"/>.
+
+              The magnitude of <m>\vec v</m> is determined directly from the component form:
+              <me>
+                \norm{\vec v} =\sqrt{2^2+(-1)^2} = \sqrt{5}
+              </me>.
+            </p>
+            <figure xml:id="fig_vect1">
+              <caption>Graphing vectors in <xref ref="ex_vect1"/></caption>
+              <sidebyside widths="47% 47%" margins="0%">
+                <figure xml:id="fig_vect1a">
+                  <caption/>
+                <!-- START figures/fig_vectintro3.tex -->
+                  <image>
+                    <shortdescription>
+                      Graph showing two vectors RS and PP';.
+                    </shortdescription>
+                    <description>
+                      <p>
+                        The <m>x</m> and <m>y</m> axes are drawn from <m>-4</m> to <m>4</m>. Two vectors are drawn.
+                        The vector <m>PP’</m> is in the first quadrant it is downward facing, it starts from
+                        <m>P=(3, 2)</m> and ends at <m>P'=(5, 1)</m> . The second vector <m>RS</m> from <m>(-3, -2)</m>
+                        to <m>(-1, 2)</m>. This vector lies midway between the second and the third quadrant.
+                      </p>
+                    </description>
+                    <latex-image label="img_vect1a">
+
+                    \begin{tikzpicture}[&gt;=stealth]
+
+                    \begin{axis}[
+                    axis on top,
+                    minor x tick num=4,
+                    minor y tick num=4,
+                    ymin=-5.5,ymax=5.5,
+                    xmin=-5.5,xmax=5.9
+                    ]
+
+                    \draw [very thick,-&gt;] (axis cs:3,2) node [left] { $P$} -- (axis cs:5,1) node [shift={(5pt,0pt)}] { $P\,'$};
+                    \draw [very thick,-&gt;] (axis cs:-3,-2) node [below left] { $R$} -- (axis cs:-1,2) node [above] { $S$};
+
+                    \end{axis}
+
+                    \end{tikzpicture}
+
+                    </latex-image>
+                  </image>
+              <!-- figures/fig_vectintro3.tex END -->
+                </figure>
+
+                <figure xml:id="fig_vect1b_3D">
+                  <caption/>
+                <!-- START figures/figvectintro3b_3D.asy -->
+                  <image>
+                    <shortdescription>
+                      Graph showing vector QQ'.
+                    </shortdescription>
+                    <description>
+                      <p>
+                        The <m>x</m> and <m>y</m> axes are drawn from <m>0</m> to <m>2</m>. The <m>z</m> axis is drawn
+                        from <m>0</m> to <m>4</m>. The points <m>Q = (1, 1, 1)</m> and <m>Q'= (3, 0, 4)</m> along with
+                        the vector are drawn in space.
+                        A dashed cube is drawn with <m>Q</m> at the vertex furthest away from the origin.
+                      </p>
+                    </description>
+                    <asymptote label="img_vect1b_3D">
+
+
+
+                      //ASY file for figvectintro3b.pdf in Chapter 10.1
+
+                      size(200,200,IgnoreAspect);
+                      //currentprojection=perspective(7,2,1);
+                      currentprojection=orthographic(5,9,2);
+                      defaultrender.merge=true;
+
+                      // setup and draw the axes
+                      real[] myxchoice={2};
+                      real[] myychoice={2};
+                      real[] myzchoice={-2,4};
+                      defaultpen(0.5mm);
+
+                      pair xbounds=(-1,3.5);
+                      pair ybounds=(-1,2.5);
+                      pair zbounds=(-1,5);
+
+                      xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+                      yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+                      zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+                      label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+                      label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+                      label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+                      // Draw the lines for Q=(1,1,1)
+                      draw((0,0,1)--(0,1,1)--(1,1,1)--(1,0,1)--(0,0,1), redpen+dashed+linewidth(.5));//top Q
+                      draw((0,0,0)--(0,1,0)--(1,1,0)--(1,0,0)--(0,0,0), redpen+dashed+linewidth(.5));//bottom Q
+                      draw((1,0,0)--(1,0,1), redpen+dashed+linewidth(.5));//up1 Q
+                      draw((0,1,0)--(0,1,1), redpen+dashed+linewidth(.5));//up2 Q
+                      draw((1,1,0)--(1,1,1), redpen+dashed+linewidth(.5));//up3 Q
+                      label("$Q$",(1,1,1),N);
+                      //dotfactor=3;  dot((2,1,1),bluepen);
+
+                      // Draw the lines for Q'=(3,0,4)
+                      draw((0,0,4)--(0,0,4)--(3,0,4)--(3,0,4)--(3,0,4), redpen+dashed+linewidth(.5));//top P
+                      draw((0,0,0)--(3,0,0)--(3,0,0)--(3,0,0)--(0,0,0), redpen+dashed+linewidth(.5));//bottom P
+                      draw((3,0,0)--(3,0,4), redpen+dashed+linewidth(.5));//up1 P
+                      draw((0,0,0)--(0,0,3), redpen+dashed+linewidth(.5));//up2 P
+                      draw((3,0,0)--(3,0,3), redpen+dashed+linewidth(.5));//up3 P
+                      label("$Q'$",(3,0,4),N);
+                      //dotfactor=3;  dot((1,4,-1),bluepen);
+
+                      //line from P to Q
+                      draw((1,1,1)--(3,0,4), black,Arrow3(size=2mm));
+
+                    </asymptote>
+                  </image>
+                <!-- figures/figvectintro3b_3D.asy END -->
+                </figure>
+              </sidebyside>
+            </figure>
+          </li>
+
+          <li>
+            <p>
+              Using the note following <xref ref="def_vector_component"/>, we have
+              <me>
+                \overrightarrow{RS} = \bbm  -1-(-3)\\ 2-(-2)\ebm = \bbm 2\\4\ebm
+              </me>.
+              One can readily see from <xref ref="fig_vect1a"/> that the <m>x</m>- and <m>y</m>-displacement of <m>\overrightarrow{RS}</m> is 2 and 4, respectively,
+              as the component form suggests.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Using <m>Q</m> as the initial point,
+              we move 2 units in the positive <m>x</m>-direction,
+              <m>-1</m> unit in the positive <m>y</m>-direction,
+              and 3 units in the positive <m>z</m>-direction to arrive at the terminal point <m>Q' = (3,0,4)</m>,
+              illustrated in <xref ref="fig_vect1b_3D"/>.
+
+              The magnitude of <m>\vec u</m> is:
+              <me>
+                \norm{\vec u} = \sqrt{2^2+(-1)^2+3^2} = \sqrt{14}
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+    <solution component="video">
+      <title>Video solution</title>
+      <video width="98%" youtube="w1MzWJzoyGg" xml:id="vid-vectors-intro-sketch" label="vid-vectors-intro-sketch" component="video"/>
+    </solution>
+  </example>
+
+  <p>
+    Now that we have defined vectors,
+    and have created a nice notation by which to describe them,
+    we start considering how vectors interact with each other.
+    That is, we define an <em>algebra</em> on vectors.
+  </p>
+
+  <aside>
+    <p>
+      In this section we restrict ourselves to
+      vectors in two and three dimensions,
+      since our ability to visualize is limited to these dimensions. However,
+      our ability to work with vectors algebraically extends to any number of
+      dimensions. For a general treatment
+      of vectors in <m>\R^n</m> , see <xref ref="sec-Rn"/>.
+    </p>
+  </aside>
+
+  <definition xml:id="def_vector_algebra">
+    <title>Vector Algebra</title>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Let <m>\vec u = \bbm  u_1\\u_2\ebm</m> and
+              <m>\vec v = \bbm  v_1\\v_2\ebm</m> be vectors in <m>\mathbb{R}^2</m>,
+              and let <m>c</m> be a scalar.
+              <idx><h>vectors</h><h>algebra of</h></idx>
+            </p>
+
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    The addition, or sum,
+                    of the vectors <m>\vec u</m> and <m>\vec v</m> is the vector
+                    <me>
+                      \vec u+\vec v = \bbm  u_1+v_1\\ u_2+v_2\ebm
+                    </me>.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    The multiplication of a scalar <m>c</m> and a vector <m>\vec v</m> is the vector
+                    <me>
+                      c\vec v = c\bbm  v_1\\v_2\ebm = \bbm cv_1\\cv_2\ebm
+                    </me>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Let <m>\vec u = \bbm  u_1\\u_2\\u_3\ebm</m> and
+              <m>\vec v = \bbm  v_1\\v_2\\v_3\ebm</m> be vectors in <m>\mathbb{R}^3</m>,
+              and let <m>c</m> be a scalar.
+            </p>
+
+            <p>
+              <ol>
+                <li>
+                  <p>
+                    The addition, or sum,
+                    of the vectors <m>\vec u</m> and <m>\vec v</m> is the vector
+                    <me>
+                      \vec u+\vec v = \bbm  u_1+v_1\\ u_2+v_2\\ u_3+v_3\ebm
+                    </me>.
+                  </p>
+                </li>
+
+                <li>
+                  <p>
+                    The multiplication of a scalar <m>c</m> and a vector <m>\vec v</m> is the vector
+                    <me>
+                      c\vec v = c\bbm  v_1\\v_2\\v_3\ebm = \bbm  cv_1\\cv_2\\cv_3\ebm
+                    </me>.
+                  </p>
+                </li>
+              </ol>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    In short, we say addition and scalar multiplication are computed
+    <q>component-wise.</q>
+  </p>
+
+  <figure xml:id="vid-vectors-intro-algebra" component="video">
+    <caption>Video presentation of <xref ref="def_vector_algebra"/> (2 videos)</caption>
+    <video youtube="tOpeq-_K0ME" label="vid-vectors-intro-algebra"/>
+  </figure>
+
+  <example xml:id="ex_vect2">
+    <title>Adding vectors</title>
+    <statement>
+      <p>
+        Sketch the vectors <m>\vec u = \bbm 1\\3\ebm</m>,
+        <m>\vec v = \bbm  2\\1\ebm</m> and
+        <m>\vec u+\vec v</m> all with initial point at the origin.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        We first compute <m>\vec u +\vec v</m>.
+        <md>
+          <mrow>\vec u+\vec v \amp = \bbm  1\\3\ebm + \bbm 2\\1\ebm</mrow>
+          <mrow>\amp = \bbm  3\\4\ebm</mrow>
+        </md>.
+      </p>
+
+      <figure xml:id="fig_vect2">
+        <caption>Graphing the sum of vectors in <xref ref="ex_vect2"/></caption>
+        <!-- START figures/fig_vect2.tex -->
+        <image width="47%">
+          <shortdescription>
+            Graph showing sum of two vectors u and v.
+          </shortdescription>
+          <description>
+            <p>
+              The <m>x</m> and y axes are drawn from <m>0</m> to <m>4</m>. Two vectors <m>\vec u</m> and <m>\vec v</m>
+              are shown along with the vector addition of the two. The <m>\vec u</m> vector is drawn from point
+              <m>(0,0)</m> to <m>(1,3)</m>. The <m>\vec v</m> vector is drawn from origin to <m>(2,1)</m>. The vector
+              <m>\vec u</m> is longer than the <m>\vec v</m> vector. The <m>\vec u + \vec v</m> vector is drawn from
+              the origin to <m>(3, 4)</m>.
+              The <m>\vec u + \vec v</m> vector is the longest and is in between the two vectors.
+            </p>
+          </description>
+          <latex-image label="img_vect2">
+
+          \begin{tikzpicture}[&gt;=stealth]
+
+          \begin{axis}[
+          axis on top,
+          ymin=-.5,ymax=4.1,
+          xmin=-.5,xmax=4.1
+          ]
+
+          \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:1,3) node [pos=.5,above,rotate=70] { $\vec u$};
+          \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:2,1) node [pos=.5,above,rotate=40] { $\vec v$};
+          \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:3,4) node [pos=.5,above,rotate=50] { $\vec u+\vec v$};
+
+          \end{axis}
+
+          \end{tikzpicture}
+
+          </latex-image>
+        </image>
+        <!-- figures/fig_vect2.tex END -->
+      </figure>
+
+      <p>
+        These are all sketched in <xref ref="fig_vect2"/>.
+      </p>
+    </solution>
+    <solution component="video">
+      <title>Video solution</title>
+      <video width="98%" youtube="3MSwQJq_3s0" xml:id="vid-vectors-intro-addition" label="vid-vectors-intro-addition" component="video"/>
+    </solution>
+  </example>
+
+  <p>
+    As vectors convey magnitude and direction information,
+    the sum of vectors also convey length and magnitude information.
+    Adding <m>\vec u+\vec v</m> suggests the following idea-
+  </p>
+
+  <blockquote>
+    <p>
+      <q>Starting at an initial point, go out <m>\vec u</m>, then go out <m>\vec v</m>.</q>
+    </p>
+  </blockquote>
+
+  <p>
+    This idea is sketched in <xref ref="fig_vect2b"/>,
+    where the initial point of <m>\vec v</m> is the terminal point of <m>\vec u</m>.
+    This is known as the <q>Head to Tail Rule</q> of adding vectors.
+    Vector addition is very important.
+    For instance,
+    if the vectors <m>\vec u</m> and <m>\vec v</m> represent forces acting on a body,
+    the sum <m>\vec u+\vec v</m> gives the resulting force.
+    Because of various physical applications of vector addition,
+    the sum <m>\vec u+\vec v</m> is often referred to as the
+    <em>resultant vector</em>,
+    or just the <q>resultant.</q>
+        <idx><h>vectors</h><h>resultant</h></idx>
+        <idx><h>Parallelogram Law</h></idx>
+        <idx><h>vectors</h><h>Parallelogram Law</h></idx>
+        <idx><h>Head To Tail Rule</h></idx>
+        <idx><h>vectors</h><h>Head To Tail Rule</h></idx>
+        <idx><h>vectors</h><h>zero vector</h></idx>
+  </p>
+
+  <figure xml:id="fig_vect2b">
+    <caption>Illustrating how to add vectors using the Head to Tail Rule and Parallelogram Law</caption>
+    <!-- START figures/fig_vect2b.tex -->
+    <image width="47%">
+      <shortdescription>
+        Graph showing sum of two vectors u and v.
+      </shortdescription>
+      <description>
+        <p>
+          The <m>x</m> and <m>y</m> axes are drawn from <m>0</m> to <m>4</m>. Two vectors <m>\vec u</m> and
+          <m>\vec v</m> are shown along with the vector addition of the two. The <m>\vec u</m> vector is drawn
+          from point <m>(0,0)</m> to <m>(1,3)</m>.  The <m>\vec v</m> vector is drawn from origin to <m>(2,1)</m>.
+        </p>
+        <p>
+          The <m>\vec v</m> vector is translated to start from the point <m>(1, 3)</m> to <m>(3, 4)</m> and it
+          forms a triangle with <m>\vec u</m> and <m>u+v</m>. The <m>\vec u</m> vector is translated to start
+          from point <m>(2, 1)</m> to point <m>(3, 4)</m>. The vector <m>\vec u</m> is longer than the <m>\vec v</m>
+          vector and it forms a triangle with <m>\vec u</m> and <m>u+v</m>. The <m>\vec u + \vec v</m> vector is drawn
+          from the origin to <m>(3, 4)</m>.
+          The <m>\vec u + \vec v</m> vector is the longest and is in between the two vectors.
+        </p>
+      </description>
+      <latex-image label="img_vect2b">
+
+      \begin{tikzpicture}[&gt;=stealth]
+
+      \begin{axis}[
+      axis on top,
+      ymin=-.5,ymax=4.1,
+      xmin=-.5,xmax=4.1
+      ]
+
+      \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:1,3) node [pos=.5,above,rotate=70] { $\vec u$};
+      \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:2,1) node [pos=.5,above,rotate=30] { $\vec v$};
+
+      \draw [very thick,-&gt;,gray] (axis cs:1,3) -- (axis cs:3,4) node [pos=.5,above,rotate=30] { $\vec v$};
+      \draw [very thick,-&gt;,gray] (axis cs:2,1) -- (axis cs:3,4) node [pos=.4,above,rotate=70] { $\vec u$};
+
+      \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:3,4) node [pos=.5,above,rotate=50] { $\vec u+\vec v$};
+
+      \end{axis}
+
+      \end{tikzpicture}
+
+      </latex-image>
+    </image>
+    <!-- figures/fig_vect2b.tex END -->
+  </figure>
+
+  <p>
+    Analytically,
+    it is easy to see that <m>\vec u+\vec v = \vec v+\vec u</m>.
+    <xref ref="fig_vect2b"/>
+    also gives a graphical representation of this, using gray vectors.
+    Note that the vectors <m>\vec u</m> and <m>\vec v</m>,
+    when arranged as in the figure, form a parallelogram.
+    Because of this,
+    the Head to Tail Rule is also known as the Parallelogram Law:
+    the vector <m>\vec u+\vec v</m> is defined by forming the parallelogram defined by the vectors <m>\vec u</m> and <m>\vec v</m>;
+    the initial point of <m>\vec u+\vec v</m> is the common initial point of parallelogram,
+    and the terminal point of the sum is the common terminal point of the parallelogram.
+  </p>
+
+  <p>
+    While not illustrated here,
+    the Head to Tail Rule and Parallelogram Law hold for vectors in <m>\mathbb{R}^3</m> as well.
+  </p>
+
+  <p>
+    It follows from the properties of the real numbers and <xref ref="def_vector_algebra"/> that
+    <me>
+      \vec u-\vec v = \vec u + (-1)\vec v
+    </me>.
+  </p>
+
+  <p>
+    The Parallelogram Law gives us a good way to visualize this subtraction.
+    We demonstrate this in the following example.
+  </p>
+
+  <example xml:id="ex_vect4">
+    <title>Vector Subtraction</title>
+    <statement>
+      <p>
+        Let <m>\vec u = \bbm  3\\1\ebm</m> and <m>\vec v=\bbm 1\\2\ebm</m>.
+        Compute and sketch <m>\vec u-\vec v</m>.
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        The computation of <m>\vec u-\vec v</m> is straightforward,
+        and we show all steps below.
+        Usually the formal step of multiplying by <m>(-1)</m> is omitted and we <q>just subtract.</q>
+        <md>
+          <mrow>\vec u-\vec v \amp = \vec u + (-1)\vec v</mrow>
+          <mrow>\amp = \bbm  3\\1\ebm + \bbm -1\\-2\ebm</mrow>
+          <mrow>\amp = \bbm  2\\-1\ebm</mrow>
+        </md>.
+      </p>
+
+      <figure xml:id="fig_vect4">
+        <caption>Illustrating how to subtract vectors graphically</caption>
+        <!-- START figures/fig_vect4.tex -->
+        <image width="47%">
+          <shortdescription>
+            Graph showing subtraction of two vectors u from v.
+          </shortdescription>
+          <description>
+            <p>
+            The <m>x</m> axis is drawn from <m>0</m> to <m>4</m> and the <m>y</m> axis is drawn from <m>-1</m> to
+            <m>3</m>. The <m>\vec u</m> vector is drawn from origin to point <m>(1, 2)</m>. The <m>\vec v</m> vector
+            is drawn from the origin to <m>(2,1)</m>. The vector <m>\vec u - \vec v</m> is drawn from origin to
+            <m>(2, -1)</m> and it lies in the fourth quadrant.
+            </p>
+            <p>
+              The <m>\vec u - \vec v</m> vector is translated to start from point <m>(1, 2)</m> and ends at point
+              <m>(3, 1)</m>. The <m>\vec v</m> vector is also translated but in the opposite direction and it starts
+              from <m>(3, 1)</m> and ends at point <m>(2, -1)</m>.
+            </p>
+          </description>
+          <latex-image label="img_vect4">
+
+          \begin{tikzpicture}[&gt;=stealth]
+
+          \begin{axis}[
+          axis on top,
+          ymin=-1.5,ymax=3.1,
+          xmin=-.5,xmax=4.1
+          ]
+
+          \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:3,1) node [pos=.5,above,rotate=20] { $\vec u$};
+          \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:1,2) node [pos=.5,above,rotate=60] { $\vec v$};
+          \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:2,-1) node [pos=.5,below,rotate=-20] { $\vec u-\vec v$};
+
+          \draw [very thick,-&gt;,gray] (axis cs:3,1) -- (axis cs:2,-1) node [black,pos=.7,below,rotate=60] { $-\vec v$};
+          \draw [very thick,-&gt;,gray] (axis cs:1,2) -- (axis cs:3,1) node [black,pos=.5,above,rotate=-20] { $\vec u-\vec v$};
+
+          \end{axis}
+
+          \end{tikzpicture}
+
+          </latex-image>
+        </image>
+        <!-- figures/fig_vect4.tex END -->
+      </figure>
+
+      <p>
+        <xref ref="fig_vect4"/> illustrates,
+        using the Head to Tail Rule,
+        how the subtraction can be viewed as the sum <m>\vec u + (-\vec v)</m>.
+        The figure also illustrates how
+        <m>\vec u-\vec v</m> can be obtained by looking only at the terminal points of <m>\vec u</m> and <m>\vec v</m>
+        (when their initial points are the same).
+      </p>
+    </solution>
+    <solution component="video">
+      <title>Video solution</title>
+      <video width="98%" youtube="a_qRwTkQXYQ" xml:id="vid-vectors-intro-subtraction" label="vid-vectors-intro-subtraction" component="video"/>
+    </solution>
+  </example>
+
+  <example xml:id="ex_vect3">
+    <title>Scaling vectors</title>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Sketch the vectors <m>\vec v = \bbm  2\\1\ebm</m> and <m>2\vec v</m> with initial point at the origin.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Compute the magnitudes of <m>\vec v</m> and <m>2\vec v</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We compute <m>2\vec v</m>:
+              <md>
+                <mrow>2\vec v \amp = 2\bbm  2\\1\ebm</mrow>
+                <mrow>\amp = \bbm  4\\2\ebm</mrow>
+              </md>.
+            </p>
+
+            <figure xml:id="fig_vect3">
+              <caption>Graphing vectors <m>\vec v</m> and <m>2\vec v</m> in <xref ref="ex_vect3"/></caption>
+            <!-- START figures/fig_vect3.tex -->
+              <image width="47%">
+                <shortdescription>
+                  Graph showing two similar vectors of different magnitudes.
+                </shortdescription>
+                <description>
+                  <p>
+                    The <m>x</m> axis is drawn from <m>0</m> to <m>4</m> and the <m>y</m> axis is drawn from <m>-1</m>
+                    to <m>3</m>. The <m>\vec v</m> vector is drawn from origin to point <m>(2,1)</m>, another vector
+                    <m>2\vec v</m> is also drawn from origin to point <m>(4, 2)</m>. The two vectors have the same
+                    direction.
+                  </p>
+                </description>
+                <latex-image label="img_vect3">
+
+                \begin{tikzpicture}[&gt;=stealth]
+
+                \begin{axis}[
+                axis on top,
+                ymin=-.5,ymax=3.1,
+                xmin=-.5,xmax=4.1
+                ]
+
+                \draw [gray,very thick,-&gt;] (axis cs:0,0) -- (axis cs:4,2) node [pos=.7,above,rotate=30,black] { $2\vec v$};
+
+                \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:2,1) node [pos=.5,above,rotate=30] { $\vec v$};
+
+                \end{axis}
+
+                \end{tikzpicture}
+
+                </latex-image>
+              </image>
+            <!-- figures/fig_vect3.tex END -->
+            </figure>
+
+            <p>
+              Both <m>\vec v</m> and <m>2\vec v</m> are sketched in <xref ref="fig_vect3"/>.
+              Make note that <m>2\vec v</m> does not start at the terminal point of <m>\vec v</m>;
+              rather, its initial point is also the origin.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              The figure suggests that <m>2\vec v</m> is twice as long as <m>\vec v</m>.
+              We compute their magnitudes to confirm this.
+              <md>
+                <mrow>\norm{\vec v} \amp = \sqrt{2^2+1^2}</mrow>
+                <mrow>\amp = \sqrt{5}.</mrow>
+                <mrow>\norm{2\vec v}\amp =\sqrt{4^2+2^2}</mrow>
+                <mrow>\amp = \sqrt{20}</mrow>
+                <mrow>\amp = \sqrt{4\cdot 5} = 2\sqrt{5}</mrow>
+              </md>.
+              As we suspected, <m>2\vec v</m> is twice as long as <m>\vec v</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+    <solution component="video">
+      <title>Video solution</title>
+      <video width="98%" youtube="-zvqs7hveXc" xml:id="vid-vectors-intro-scalarmult" label="vid-vectors-intro-scalarmult" component="video"/>
+    </solution>
+  </example>
+
+  <p>
+    Scalar multiplication of a vector <m>\vec v</m> produces a new vector that is in the same (or opposite)
+    direction, but of a possibly different length. This leads us to the following definition.
+  </p>
+
+  <definition xml:id="def_parallel_vectors">
+    <title>Parallel Vectors</title>
+    <statement>
+      <p>
+        We say that a vector <m>\vec w</m> is <term>parallel</term>
+        to a vector <m>\vec v</m> if there exists a scalar <m>c</m>
+        such that <m>\vec w = c\vec v</m>.
+        <idx><h>vectors</h><h>parallel</h></idx>
+              <idx><h>parallel vectors</h></idx>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The <em>zero vector</em> is the vector whose initial point is also its terminal point.
+    It is denoted by <m>\vec 0</m>.
+    Its component form, in <m>\mathbb{R}^2</m>, is <m>\bbm  0\\0\ebm</m>;
+    in <m>\mathbb{R}^3</m>, it is <m>\bbm  0\\0\\0\ebm</m>.
+    Usually the context makes is clear whether <m>\vec 0</m> is referring to a vector in the plane or in space.
+  </p>
+
+  <p>
+    Our examples have illustrated key principles in vector algebra:
+    how to add and subtract vectors and how to multiply vectors by a scalar.
+    The following theorem states formally the properties of these operations.
+  </p>
+
+  <theorem xml:id="thm_vector_properties">
+    <title>Properties of Vector Operations</title>
+    <statement>
+      <p>
+        The following are true for all scalars <m>c</m> and <m>d</m>,
+        and for all vectors <m>\vec u</m>,
+        <m>\vec v</m> and <m>\vec w</m>, where <m>\vec u</m>,
+        <m>\vec v</m> and <m>\vec w</m> are all in
+        <m>\mathbb{R}^2</m> or where <m>\vec u</m>,
+        <m>\vec v</m> and <m>\vec w</m> are all in
+        <m>\mathbb{R}^3</m>:
+        <idx><h>vectors</h><h>algebraic properties</h></idx>
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>\vec u+\vec v = \vec v+\vec u</m> Commutative Property
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>(\vec u+\vec v)+\vec w = \vec u+(\vec v+\vec w)</m> Associative Property
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>\vec v+\vec 0 = \vec v</m> Additive Identity
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>(cd)\vec v= c(d\vec v)</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>c(\vec u+\vec v) = c\vec u+c\vec v</m> Distributive Property
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>(c+d)\vec v = c\vec v+d\vec v</m> Distributive Property
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>0\vec v = \vec 0</m>
+            </p>
+          </li>
+
+          <li xml:id="thm_norm_prop">
+
+            <p>
+              <m>\norm{c\vec v} = \abs{c}\cdot\norm{\vec v}</m>
+            </p>
+          </li>
+
+          <li xml:id="thm_zero_norm">
+
+            <p>
+              <m>\vnorm u = 0</m> if, and only if, <m>\vecu = \vec 0</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <figure xml:id="vid-vectors-intro-normprop" component="video">
+    <caption>Video presentation of <xref ref="thm_zero_norm" text="local">Part</xref> of <xref ref="thm_vector_properties"/></caption>
+    <video youtube="oixzQ2EGYPM" label="vid-vectors-intro-normprop"/>
+  </figure>
+
+  <p>
+    As stated before,
+    each nonzero vector <m>\vec v</m> conveys magnitude and direction information.
+    We have a method of extracting the magnitude,
+    which we write as <m>\norm{\vec v}</m>.
+    <em>Unit vectors</em> are a way of extracting just the direction information from a vector.
+  </p>
+
+  <definition xml:id="def_unit_vector">
+    <title>Unit Vector</title>
+    <statement>
+      <p>
+        A <term>unit vector</term> is a vector <m>\vec v</m> with a magnitude of 1;
+        that is,
+            <idx><h>vectors</h><h>unit vector</h></idx>
+            <idx><h>unit vector</h></idx>
+        <me>
+          \norm{\vec v}=1
+        </me>.
+      </p>
+    </statement>
+  </definition>
+
+  <figure xml:id="vid-vectors-intro-unitvec" component="video">
+    <caption>Video presentation of <xref ref="def_unit_vector"/></caption>
+    <video youtube="6kKUB3OSurs" label="vid-vectors-intro-unitvec"/>
+  </figure>
+
+  <p>
+    Consider this scenario:
+    you are given a vector <m>\vec v</m> and are told to create a vector of length 10 in the direction of <m>\vec v</m>.
+    How does one do that?
+    If we knew that <m>\vec u</m> was the unit vector in the direction of <m>\vec v</m>,
+    the answer would be easy: <m>10\vec u</m>.
+    So how do we find <m>\vec u</m> ?
+  </p>
+
+  <p>
+    <xref ref="thm_norm_prop" text="local">Property</xref>
+    of <xref ref="thm_vector_properties"/> holds the key.
+    If we divide <m>\vec v</m> by its magnitude,
+    it becomes a vector of length 1.
+    Consider:
+    <md>
+      <mrow>\norm{\frac{1}{\norm{\vec v}}\vec v} \amp = \frac{1}{\norm{\vec v}}\norm{\vec v} \amp  \text{ (we can pull out \(\ds \frac{1}{\norm{\vec v}}\) as it is a positive scalar)}</mrow>
+      <mrow>\amp = 1</mrow>
+    </md>.
+  </p>
+
+  <p>
+    So the vector of length 10 in the direction of <m>\vec v</m> is <m>\ds 10\frac{1}{\norm{\vec v}}\vec v</m>.
+    An example will make this more clear.
+  </p>
+
+  <example xml:id="ex_vect5">
+    <title>Using Unit Vectors</title>
+    <statement>
+      <p>
+        Let <m>\vec v= \bbm  3\\1\ebm</m> and let <m>\vec w = \bbm 1\\2,2\ebm</m>.
+      </p>
+
+      <p>
+        <ol>
+          <li>
+            <p>
+              Find the unit vector in the direction of <m>\vec v</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Find the unit vector in the direction of <m>\vec w</m>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Find the vector in the direction of <m>\vec v</m> with magnitude 5.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              We find <m>\norm{\vec v} = \sqrt{10}</m>.
+              So the unit vector <m>\vec u</m> in the direction of <m>\vec v</m> is
+              <me>
+                \vec u = \frac{1}{\sqrt{10}}\vec v = \bbm  \frac{3}{\sqrt{10}}\\\frac{1}{\sqrt{10}}\ebm
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              We find <m>\norm{\vec w} = 3</m>,
+              so the unit vector <m>\vec z</m> in the direction of <m>\vec w</m> is
+              <me>
+                \vec u = \frac13\vec w = \bbm  \frac13\\\frac23\\\frac23\ebm
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              To create a vector with magnitude 5 in the direction of <m>\vec v</m>,
+              we multiply the unit vector <m>\vec u</m> by 5.
+              Thus <m>5\vec u = \bbm  15/\sqrt{10}\\5/\sqrt{10}\ebm</m> is the vector we seek.
+              This is sketched in <xref ref="fig_vect5"/>.
+            </p>
+
+            <figure xml:id="fig_vect5">
+              <caption>Graphing vectors in <xref ref="ex_vect5"/>. All vectors shown have their initial point at the origin</caption>
+            <!-- START figures/fig_vect5.tex -->
+              <image width="47%">
+                <shortdescription>
+                  Graph showing three similar vectors of different magnitudes.
+                </shortdescription>
+                <description>
+                  <p>
+                    The <m>x</m> axis is drawn from <m>0</m> to <m>5</m> and the <m>y</m> axis is drawn from <m>0</m>
+                    to <m>3</m>. The <m>\vec u</m> vector is drawn from origin to point <m>(1, 0.4)</m>, another vector
+                    <m>\vec v</m> is also drawn from origin to point <m>(3, 1)</m>. The third vector <m>5\vec u</m> is
+                    also drawn from the origin to point <m>(5, 1.5)</m>. The three vectors have the same direction.
+                  </p>
+                </description>
+                <latex-image label="img_vect5">
+
+                \begin{tikzpicture}[&gt;=stealth]
+
+                \begin{axis}[
+                axis on top,
+                ymin=-.5,ymax=3.1,
+                xmin=-.5,xmax=5.1
+                ]
+
+                \draw [gray,very thick,-&gt;] (axis cs:0,0) -- (axis cs:4.74,1.58) node [pos=.8,above,rotate=30,black] { $5\vec u$};
+
+                \draw [very thick,-&gt;] (axis cs:0,0) -- (axis cs:3,1) node [pos=.6,above,rotate=30] { $\vec v$};
+
+                \draw [very thick,-&gt;,gray] (axis cs:0,0) -- (axis cs:.949,.316) node [pos=.5,above,rotate=30,black] { $\vec u$};
+
+                \end{axis}
+
+                \end{tikzpicture}
+
+                </latex-image>
+              </image>
+            <!-- figures/fig_vect5.tex END -->
+            </figure>
+          </li>
+        </ol>
+      </p>
+    </solution>
+    <solution component="video">
+      <title>Video solution</title>
+      <video width="98%" youtube="B9OV0Dja6IY" xml:id="vid-vectors-intro-unitvec-eg" label="vid-vectors-intro-unitvec-eg" component="video"/>
+    </solution>
+  </example>
+
+  <p>
+    The basic formation of the unit vector <m>\vec u</m> in the direction of a vector <m>\vec v</m> leads to a interesting equation.
+    It is:
+    <me>
+      \vec v = \norm{\vec v}\frac{1}{\norm{\vec v}}\vec v
+    </me>.
+  </p>
+
+  <p>
+    We rewrite the equation with parentheses to make a point:
+    <me>
+      \vec v = \underbrace{\norm{\vec v}}_{\text{magnitude } }\cdot\underbrace{\left(\frac{1}{\norm{\vec v}}\vec v\right)}_{\text{direction } }
+    </me>.
+  </p>
+
+  <p>
+    This equation illustrates the fact that a nonzero vector has both magnitude and direction,
+    where we view a unit vector as supplying
+    <em>only</em> direction information.
+  </p>
+
+  <figure xml:id="vid-vectors-intro-parallel" component="video">
+    <caption>Video presentation of <xref ref="def_parallel_vectors"/></caption>
+    <video youtube="TZxf7vV1iuk" label="vid-vectors-intro-parallel"/>
+  </figure>
+
+  <aside xml:id="aside-def-orthogonal">
+    <title>Direction and the zero vector</title>
+
+    <p>
+      <m>\vec 0</m> is directionless;
+      because <m>\vnorm{0}=0</m>,
+      there is no unit vector in the <q>direction</q> of <m>\vec 0</m>.
+    </p>
+
+    <p>
+      Some texts define two vectors as being parallel if one is a scalar multiple of the other.
+      By this definition, <m>\vec 0</m> is parallel to all vectors as
+      <m>\vec 0 = 0\vec v</m> for all <m>\vec v</m>.
+    </p>
+
+    <p>
+      We define what it means for two vectors to be perpendicular in <xref ref="def_orthogonal"/>,
+      which is written to exclude <m>\vec 0</m>.
+      It could be written to include <m>\vec 0</m>;
+      by such a definition, <m>\vec 0</m> is perpendicular to all vectors.
+      While counter-intuitive,
+      it is mathematically sound to allow <m>\vec 0</m> to be both parallel and perpendicular to all vectors.
+    </p>
+
+    <p>
+      We prefer the given definition of parallel as it is grounded in the fact that unit vectors provide direction information.
+      One may adopt the convention that <m>\vec 0</m> is parallel to all vectors if they desire.
+      (See also the <xref ref="aside-cross-orthogonal" text="custom">aside</xref> in <xref ref="sec_cross_product"/>.)
+    </p>
+  </aside>
+
+  <p>
+    If one graphed all unit vectors in
+    <m>\mathbb{R}^2</m> with the initial point at the origin,
+    then the terminal points would all lie on the unit circle.
+    Based on what we know from trigonometry,
+    we can then say that the component form of all unit vectors in <m>\mathbb{R}^2</m> is
+    <m>\bbm  \cos(\theta) \\\sin(\theta) \ebm</m> for some angle <m>\theta</m>.
+  </p>
+
+  <p>
+    A similar construction in <m>\mathbb{R}^3</m> shows that the terminal points all lie on the unit sphere.
+    These vectors also have a particular component form,
+    but its derivation is not as straightforward as the one for unit vectors in <m>\mathbb{R}^2</m>.
+    Important concepts about unit vectors are given in the following Key Idea.
+  </p>
+
+  <insight xml:id="idea_unit_vectors">
+    <title>Unit Vectors</title>
+    <p>
+      <ol>
+        <li>
+          <p>
+            The unit vector in the direction of a nonzero vector <m>\vec v</m> is
+            <me>
+              \vec u = \frac1{\norm{\vec v}} \vec v
+            </me>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            A vector <m>\vec u</m> in <m>\mathbb{R}^2</m> is a unit vector if,
+            and only if,
+            its component form is <m>\bbm  \cos\theta\\\sin\theta\ebm</m> for some angle <m>\theta</m>.
+            <idx><h>unit vector</h><h>properties</h></idx>
+            <idx><h>vectors</h><h>unit vector</h></idx>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            A vector <m>\vec u</m> in <m>\mathbb{R}^3</m> is a unit vector if,
+            and only if,
+            its component form is <m>\bbm  \sin(\theta) \cos(\varphi) \\\sin(\theta) \sin(\varphi) \\\cos(\theta) \ebm</m> for some angles <m>\theta</m> and <m>\varphi</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </insight>
+
+  <p>
+    These formulas can come in handy in a variety of situations,
+    especially the formula for unit vectors in the plane.
+  </p>
+
+  <example xml:id="ex_vect6">
+    <title>Finding Component Forces</title>
+    <statement>
+      <p>
+        Consider a weight of 50lb hanging from two chains,
+        as shown in <xref ref="fig_vect6"/>.
+        One chain makes an angle of <m>30^\circ</m> with the vertical,
+        and the other an angle of <m>45^\circ</m>.
+        Find the force applied to each chain.
+      </p>
+
+      <figure xml:id="fig_vect6">
+        <caption>A diagram of a weight hanging from 2 chains in <xref ref="ex_vect6"/></caption>
+        <!-- START figures/fig_vect6.tex -->
+        <image width="40%">
+          <shortdescription>
+            Image shows weight suspended with two chains.
+          </shortdescription>
+          <description>
+            <p>
+              Image is of a weight of <m>50</m> pounds suspended by two chains. The chain on the left forms an angle
+              of <m>30</m> degrees with the vertical and the chain on the left forms a degree of <m>45</m> with the
+              vertical.
+            </p>
+          </description>
+          <latex-image label="img_vect6">
+
+          \begin{tikzpicture}[&gt;=stealth]
+
+          \filldraw[thick,black,fill=gray!30] (-.5,0) -- (.5,0) -- (1,-1) -- (-1,-1) -- cycle;
+          \draw (0,-.5) node {50lb};
+
+          \draw [thick] (-1.5,1.5) -- (2,1.5);
+          \clip (-1.5,1.5) rectangle (2,-1.25);
+
+          \draw [thick,rotate=120] (0,0) -- (3,0);
+          \draw [thick,rotate=45] (0,0) -- (3,0);
+          \draw [dashed] (0,0) -- (0,2);
+          \draw [rotate=45,-&gt;] (.8,0) arc (0:45:.8);
+          \draw [rotate=67] (1,0) node { $45^\circ$};
+          \draw [rotate=90,-&gt;] (1,0) arc (0:30:1);
+          \draw [rotate=105] (1.2,0) node { $30^\circ$};
+
+          \end{tikzpicture}
+
+          </latex-image>
+        </image>
+        <!-- figures/fig_vect6.tex END -->
+      </figure>
+    </statement>
+
+    <solution>
+      <p>
+        Knowing that gravity is pulling the 50lb weight straight down,
+        we can create a vector <m>\vec F</m> to represent this force.
+        <me>
+          \vec F = 50\bbm  0\\-1\ebm = \bbm 0\\-50\ebm
+        </me>.
+      </p>
+
+      <p>
+        We can view each chain as <q>pulling</q> the weight up,
+        preventing it from falling.
+        We can represent the force from each chain with a vector.
+        Let <m>\vec F_1</m> represent the force from the chain making an angle of <m>30^\circ</m> with the vertical,
+        and let <m>\vec F_2</m> represent the force form the other chain.
+        Convert all angles to be measured from the horizontal
+        (as shown in <xref ref="fig_vect6b"/>),
+        and apply <xref ref="idea_unit_vectors"/>.
+        As we do not yet know the magnitudes of these vectors,
+        (that is the problem at hand),
+        we use <m>m_1</m> and <m>m_2</m> to represent them.
+        <me>
+          \vec F_1 = m_1\bbm  \cos(120^\circ) \\\sin(120^\circ) \ebm
+        </me>
+        <me>
+          \vec F_2 = m_2\bbm  \cos(45^\circ) \\\sin(45^\circ) \ebm
+        </me>
+      </p>
+
+      <p>
+        As the weight is not moving, we know the sum of the forces is <m>\vec 0</m>.
+        This gives:
+        <md>
+          <mrow>\vec F + \vec F_1 + \vec F_2 \amp  = \vec 0</mrow>
+          <mrow>\bbm  0\\-50\ebm + m_1\bbm  \cos(120^\circ) \\\sin(120^\circ) \ebm + m_2\bbm \cos(45^\circ) \\\sin(45^\circ) \ebm \amp =\vec 0</mrow>
+        </md>
+      </p>
+
+      <figure xml:id="fig_vect6b">
+        <caption>A diagram of the force vectors from <xref ref="ex_vect6"/></caption>
+        <!-- START figures/fig_vect6b.tex -->
+        <image width="47%">
+          <shortdescription>
+            Image showing force vectors for this example.
+          </shortdescription>
+          <description>
+            <p>
+              Image shows the force vectors from the exercise. The vector <m>\vec F_2</m> is at an angle <m>45</m>
+              from the horizontal and the vector <m>\vec F_1</m> forms an angle of <m>120</m> from the horizontal.
+              A third vector representing the downward pull by gravity marked as <m>\vec F</m>.
+            </p>
+          </description>
+          <latex-image label="img_vect6b">
+
+          \begin{tikzpicture}[&gt;=stealth]
+
+          \draw [thick,rotate=120,-&gt;] (0,0) -- (1.5,0) node [left] { $\vec F_1$};
+          \draw [thick,rotate=45,-&gt;] (0,0) -- (1.75,0) node [right] { $\vec F_2$};
+          \draw [thick,rotate=-90,-&gt;] (0,0) -- (1,0) node [right] { $\vec F$};
+
+          \draw [dashed] (0,0) -- (0,1.5);
+          \draw [dashed] (-1.25,0) -- (1.25,0);
+
+          \filldraw [black] (0,0) circle (1.5pt);
+
+          \draw [dashed,-&gt;] (.6,0) arc (0:120:.6);
+          \draw [rotate=20] (.9,0) node { $120^\circ$};
+          \draw [dashed,-&gt;] (1.5,0) arc (0:45:1.5);
+          \draw [rotate=15] (1.8,0) node { $45^\circ$};
+
+          \end{tikzpicture}
+
+          </latex-image>
+        </image>
+        <!-- figures/fig_vect6b.tex END -->
+      </figure>
+
+      <p>
+        The sum of the entries in the first component is 0, and the sum of the entries in the second component is also 0.
+        This leads us to the following two equations:
+        <md>
+          <mrow>m_1\cos(120^\circ) + m_2\cos(45^\circ) \amp =0</mrow>
+          <mrow>m_1\sin(120^\circ) + m_2\sin(45^\circ) \amp =50</mrow>
+        </md>
+      </p>
+
+      <p>
+        This is a simple 2-equation, 2-unknown system of linear equations.
+        We leave it to the reader to verify that the solution is
+        <me>
+          m_1=50(\sqrt{3}-1) \approx 36.6;\qquad m_2=\frac{50\sqrt{2}}{1+\sqrt{3}} \approx 25.88
+        </me>.
+      </p>
+
+      <p>
+        It might seem odd that the sum of the forces applied to the chains is more than 50lb.
+        We leave it to a physics class to discuss the full details,
+        but offer this short explanation.
+        Our equations were established so that the <em>vertical</em>
+        components of each force sums to 50lb,
+        thus supporting the weight.
+        Since the chains are at an angle,
+        they also pull against each other,
+        creating an <q>additional</q> horizontal force while holding the weight in place.
+      </p>
+    </solution>
+    <solution component="video">
+      <title>Video solution</title>
+      <video width="98%" youtube="XxSQSU4Nvig" xml:id="vid-vectors-intro-weightchain" label="vid-vectors-intro-weightchain" component="video"/>
+    </solution>
+  </example>
+
+  <p>
+    Unit vectors were very important in the previous calculation;
+    they allowed us to define a vector in the proper direction but with an unknown magnitude.
+    Our computations were then computed component-wise.
+    Because such calculations are often necessary,
+    the <em>standard unit vectors</em> can be useful.
+  </p>
+
+  <definition xml:id="def_standard_unit">
+    <title>Standard Unit Vectors</title>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              In <m>\mathbb{R}^2</m>,
+              the standard unit vectors are
+              <idx><h>vectors</h><h>standard unit vector</h></idx><idx><h>unit vector</h><h>standard unit vector</h></idx>
+              <me>
+                \vec i = \bbm  1\\0\ebm  \text{ and }  \vec j = \bbm 0\\1\ebm
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              In <m>\mathbb{R}^3</m>, the standard unit vectors are
+              <me>
+                \vec i = \bbm  1\\0\\0\ebm  \text{ and }  \vec j = \bbm  0\\1\\0\ebm  \text{ and }  \vec k = \bbm  0\\0\\1\ebm
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </definition>
+
+  <example xml:id="ex_vect7">
+    <title>Using standard unit vectors</title>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Rewrite <m>\vec v = \bbm  2\\-3\ebm</m> using the standard unit vectors.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Rewrite <m>\vec w = 4\vec i - 5\vec j +2\vec k</m> in component form.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              <m>\displaystyle \begin{aligned}\vec v \amp = \bbm  2\\-3\ebm \\
+                \amp = \bbm  2\\0\ebm + \bbm 0\\-3\ebm \\
+                \amp = 2\bbm  1\\0\ebm -3\bbm 0\\1\ebm\\
+                \amp = 2\vec i - 3\vec j
+              \end{aligned}</m>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>\displaystyle \begin{aligned}\vec w \amp = 4\vec i - 5\vec j +2\vec k\\
+              \amp = \bbm  4\\0\\0\ebm +\bbm  0\\-5\\0\ebm + \bbm  0\\0\\2\ebm \\
+              \amp = \bbm  4\\-5\\2\ebm
+              \end{aligned}</m>
+            </p>
+          </li>
+        </ol>
+      </p>
+
+      <p>
+        These two examples demonstrate that converting between component form and the standard unit vectors is rather straightforward.
+        Many mathematicians prefer component form,
+        and it is the preferred notation in this text.
+        Many engineers prefer using the standard unit vectors,
+        and many engineering text use that notation.
+      </p>
+    </solution>
+  </example>
+
+  
+  <p>
+    The algebra we have applied to vectors is already demonstrating itself to be very useful.
+    There are two more fundamental operations we can perform with vectors,
+    the <em>dot product</em> and the <em>cross product</em>.
+    The next two sections explore each in turn.
+  </p>
+
+  <exercises>
+    <subexercises xml:id="TaC-vector-intro">
+      <title>Terms and Concepts</title>
+
+      <exercise label="TaC-vector-intro-1">
+        <!-- <webwork xml:id="webwork-TaC-vector-intro-1">
+            <pg-code>
+            </pg-code>
+             -->
+            <statement>
+              <p>
+                Name two different things that cannot be described with just one number,
+                but rather need 2 or more numbers to fully describe them.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                Answers will vary.
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-vector-intro-2">
+        <!-- <webwork xml:id="webwork-TaC-vector-intro-2">
+            <pg-code>
+            </pg-code>
+             -->
+            <statement>
+              <p>
+                What is the difference between <m>(1,2)</m> and <m>\bbm  1\\2\ebm</m>?
+              </p>
+            </statement>
+            <solution>
+              <p>
+                <m>(1,2)</m> is a point;
+                <m>\bbm  1\\2\ebm</m> is a vector that describes a displacement of 1 unit in the <m>x</m>-direction and 2 units in the <m>y</m>-direction.
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-vector-intro-3">
+        <!-- <webwork xml:id="webwork-TaC-vector-intro-3">
+            <pg-code>
+            </pg-code>
+             -->
+            <statement>
+              <p>
+                What is a unit vector?
+              </p>
+            </statement>
+            <answer>
+              <p>
+                A vector with magnitude 1.
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+    <exercise label="TaC-vector-intro-4">
+      <statement>
+        <p>
+          Unit vectors can be thought of as conveying what type of information?
+        </p>
+      </statement>
+      <answer>
+        <p>
+          Direction
+        </p>
+      </answer>
+    </exercise>
+
+
+      <exercise label="TaC-vector-intro-5">
+        <!-- <webwork xml:id="webwork-TaC-vector-intro-5">
+            <pg-code>
+            </pg-code>
+             -->
+            <statement>
+              <p>
+                What does it mean for two vectors to be parallel?
+              </p>
+            </statement>
+            <solution>
+              <p>
+                One vector is a scalar multiple of the other.
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-vector-intro-6">
+        <!-- <webwork xml:id="webwork-TaC-vector-intro-6">
+            <pg-code>
+            </pg-code>
+             -->
+            <statement>
+              <p>
+                What effect does multiplying a vector by <m>-2</m> have?
+              </p>
+            </statement>
+            <answer>
+              <p>
+                It stretches the vector by a factor of 2, and points it in the opposite direction.
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+    </subexercises>
+    <subexercises>
+      <title>Problems</title>
+      <exercisegroup cols="2" xml:id="exset-vector-between-points">
+
+        <introduction>
+          <p>
+            In the following exercises, points <m>P</m> and <m>Q</m> are given.
+            Write the vector <m>\overrightarrow{PQ}</m> in component form and using the standard unit vectors.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vector-between-points-1">
+          <webwork xml:id="webwork-ex-vector-between-points-1">
+
+              <pg-code>
+                Context("Vector2D");
+                Context()-&gt;constants-&gt;undefine(i,j);
+                $comp=Vector("&lt;1,6&gt;");
+                Context("Vector2D");
+                Context()-&gt;flags-&gt;set(ijk=&gt;1);
+                Context()-&gt;parens-&gt;undefine('&lt;','(','{');
+                $stan=Vector("i+6j");
+              </pg-code>
+
+              <introduction>
+                <p>
+                  If <m>P=(2,-1)</m> and <m>Q = (3,5)</m>,
+                  write the vector <m>\overrightarrow{PQ}</m>:
+                </p>
+              </introduction>
+
+              <task label="ex-vector-between-points-1a">
+                <statement>
+                  <p>
+                    in component form.
+                  </p>
+
+                  <p>
+                    <var name="$comp" width="10"/>
+                  </p>
+                </statement>
+              </task>
+
+              <task label="ex-vector-between-points-1b">
+                <statement>
+                  <p>
+                    using the standard unit vectors.
+                  </p>
+
+                  <p>
+                    <var name="$stan" width="10"/>
+                  </p>
+                </statement>
+              </task>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-between-points-2">
+          <webwork xml:id="webwork-ex-vector-between-points-2">
+
+              <pg-code>
+                Context("Vector2D");
+                Context()-&gt;constants-&gt;undefine(i,j);
+                $comp=Vector("&lt;4,-4&gt;");
+                Context("Vector2D");
+                Context()-&gt;flags-&gt;set(ijk=&gt;1);
+                Context()-&gt;parens-&gt;undefine('&lt;','(','{');
+                $stan=Vector("4i-4j");
+              </pg-code>
+
+              <introduction>
+                <p>
+                  If <m>P=(3,2)</m> and <m>Q = (7,-2)</m>,
+                  write the vector <m>\overrightarrow{PQ}</m>:
+                </p>
+              </introduction>
+
+              <task label="ex-vector-between-points-2a">
+                <statement>
+                  <p>
+                    in component form.
+                  </p>
+
+                  <p>
+                    <var name="$comp" width="10"/>
+                  </p>
+                </statement>
+              </task>
+
+              <task label="ex-vector-between-points-2b">
+                <statement>
+                  <p>
+                    using the standard unit vectors.
+                  </p>
+
+                  <p>
+                    <var name="$stan" width="10"/>
+                  </p>
+                </statement>
+               
+              </task>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-between-points-3">
+          <webwork xml:id="webwork-ex-vector-between-points-3">
+
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;constants-&gt;undefine(i,j,k);
+                $comp=Vector("&lt;6,-1,6&gt;");
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(ijk=&gt;1);
+                Context()-&gt;parens-&gt;undefine('&lt;','(','{');
+                $stan=Vector("6i-j+6k");
+              </pg-code>
+
+              <introduction>
+                <p>
+                  If <m>P=(0,3,-1)</m> and <m>Q = (6,2,5)</m>,
+                  write the vector <m>\overrightarrow{PQ}</m>:
+                </p>
+              </introduction>
+
+              <task label="ex-vector-between-points-3a">
+                <statement>
+                  <p>
+                    in component form.
+                  </p>
+
+                  <p>
+                    <var name="$comp" width="10"/>
+                  </p>
+                </statement>
+              </task>
+
+              <task label="ex-vector-between-points-3b">
+                <statement>
+                  <p>
+                    using the standard unit vectors.
+                  </p>
+
+                  <p>
+                    <var name="$stan" width="10"/>
+                  </p>
+                </statement>
+              </task>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-between-points-4">
+          <webwork xml:id="webwork-ex-vector-between-points-4">
+
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;constants-&gt;undefine(i,j,k);
+                $comp=Vector("&lt;2,2,0&gt;");
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(ijk=&gt;1);
+                Context()-&gt;parens-&gt;undefine('&lt;','(','{');
+                $stan=Vector("2i+2j");
+              </pg-code>
+
+              <introduction>
+                <p>
+                  If <m>P=(2,1,2)</m> and <m>Q = (4,3,2)</m>,
+                  write the vector <m>\overrightarrow{PQ}</m>:
+                </p>
+              </introduction>
+
+              <task label="ex-vector-between-points-4a">
+                <statement>
+                  <p>
+                    in component form.
+                  </p>
+
+                  <p>
+                    <var name="$comp" width="10"/>
+                  </p>
+                </statement>
+              </task>
+
+              <task label="ex-vector-between-points-4b">
+                <statement>
+                  <p>
+                    using the standard unit vectors.
+                  </p>
+
+                  <p>
+                    <var name="$stan" width="10"/>
+                  </p>
+                </statement>
+              </task>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+
+      <exercise label="ex-vector-arithmetic-1">
+        <!-- <webwork xml:id="webwork-ex-vector-arithmetic-1">
+            <pg-code>
+            </pg-code>
+             -->
+            <introduction>
+              <p>
+                Let <m>\vec u = \bbm  1\\-2\ebm</m> and <m>\vec v= \bbm 1\\1\ebm</m>.
+              </p>
+            </introduction>
+
+            <task label="ex-vector-arithmetic-1a">
+              <statement>
+                <p>
+                  Find <m>\vec u+\vec v</m>,
+                  <m>\vec u-\vec v</m>, <m>2\vec u-3\vec v</m>.
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  <m>\vec u+\vec v = \bbm  2\\-1\ebm</m>;
+                  <m>\vec u -\vec v = \bbm 0\\-3\ebm</m>;
+                  <m>2\vec u-3\vec v = \bbm  -1\\-7\ebm</m>.
+                </p>
+              </answer>
+            </task>
+
+            <task label="ex-vector-arithmetic-1b">
+              <statement>
+                <p>
+                  Sketch the above vectors on the same axes,
+                  along with <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+            </task>
+
+            <task label="ex-vector-arithmetic-1c">
+              <statement>
+                <p>
+                  Find <m>\vec x</m> where <m>\vec u+\vec x = 2\vec v-\vec x</m>.
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  <m>\vec x = \bbm  1/2\\2\ebm</m>.
+                </p>
+              </answer>
+            </task>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vector-arithmetic-2">
+        <!-- <webwork xml:id="webwork-ex-vector-arithmetic-2">
+            <pg-code>
+            </pg-code>
+             -->
+            <introduction>
+              <p>
+                Let <m>\vec u = \bbm  1\\1\\-1\ebm</m> and <m>\vec v= \bbm  2\\1\\2\ebm</m>.
+              </p>
+            </introduction>
+
+            <task label="ex-vector-arithmetic-2a">
+              <statement>
+                <p>
+                  Find <m>\vec u+\vec v</m>,
+                  <m>\vec u-\vec v</m>, <m>\pi\vec u-\sqrt{2}\vec v</m>.
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  <m>\vec u+\vec v = \bbm  3\\2\\1\ebm</m>;
+                  <m>\vec u -\vec v = \bbm -1\\0\\-3\ebm</m>;
+                  <m>\pi\vec u-\sqrt{2}\vec v = \bbm  \pi-2\sqrt{2}\\\pi-\sqrt{2}\\-\pi-2\sqrt{2}\ebm</m>.
+                </p>
+              </answer>
+            </task>
+
+            <task label="ex-vector-arithmetic-2b">
+              <statement>
+                <p>
+                  Sketch the above vectors on the same axes,
+                  along with <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+            </task>
+
+            <task label="ex-vector-arithmetic-2c">
+              <statement>
+                <p>
+                  Find <m>\vec x</m> where <m>\vec u+\vec x = \vec v+2\vec x</m>.
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  <m>\vec x = \bbm -1\\0\\-3\ebm</m>.
+                </p>
+              </answer>
+            </task>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercisegroup cols="2" xml:id="exset-vector-sum-sketch">
+
+        <introduction>
+          <p>
+            In the following exercises, sketch <m>\vec u</m>, <m>\vec v</m>,
+            <m>\vec u+\vec v</m> and <m>\vec u-\vec v</m> on the same axes.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vector-sum-sketch-1">
+          <!-- <webwork xml:id="webwork-ex-vector-sum-sketch-1">
+              <pg-code>
+              </pg-code>
+               -->
+              <statement>
+              <!-- START figures/fig_10_02_ex_11.tex -->
+                  <image>
+                    <shortdescription>
+                      Graph shows two vectors in the plane.
+                    </shortdescription>
+                    <description>
+                      <p>
+                        The <m>x</m> and <m>y</m> axes are uncalibrated. Two vectors <m>\vec u</m> and <m>\vec v</m>
+                        are shown, both starting at the origin and facing away. The vector <m>\vec u</m> is in the
+                        first quadrant, and is bent close to the positive <m>x</m> axis, the <m>\vec v</m> vector is
+                        in the third quadrant and is bent close to the negative <m>y</m> axis. The vector <m>\vec v</m>
+                        appears to be slightly longer than <m>\vec u</m> .
+                      </p>
+                    </description>
+                    <latex-image label="img_10_02_ex_11">
+
+                    \begin{tikzpicture}[&gt;=stealth]
+
+                    \begin{axis}[
+                    axis on top,
+                    xtick=\empty,
+                    ytick=\empty,
+                    ymin=-4.5,ymax=4.5,
+                    xmin=-4.5,xmax=4.5
+                    ]
+
+                    \draw [-&gt;,thick,firstcolor] (axis cs:0,0) -- (axis cs: 3,1) node [above,black] { $\vec u$};
+                    \draw [-&gt;,thick,firstcolor] (axis cs:0,0) -- (axis cs: -1,-4) node [black, left] { $\vec v$};
+
+                    \end{axis}
+
+                    \end{tikzpicture}
+
+                    </latex-image>
+                  </image>
+              <!-- figures/fig_10_02_ex_11.tex END -->
+              </statement>
+              <solution>
+              <!-- START figures/fig_10_02_ex_11ans.tex -->
+                  <image>
+                    <shortdescription>Solution image for this exercise</shortdescription>
+                    <description>
+                      <p>
+                        The solution image shows the same two vectors as in the statement of the problem.
+                        The vector <m>\vec{u}-\vec{v}</m> points from the tip of <m>\vec{v}</m> to the tip of <m>\vec{u}</m>.
+                        The vector <m>\vec{u}+\vec{v}</m> points between the two original vectors;
+                        the tail is at the origin, and in this case the tip is in the 4th quadrant.
+                      </p>
+                    </description>
+                    <latex-image label="img_10_02_ex_11ansX">
+
+                    \begin{tikzpicture}[&gt;=stealth]
+
+                    \begin{axis}[
+                    axis on top,
+                    xtick=\empty,
+                    ytick=\empty,
+                    ymin=-4.5,ymax=4.5,
+                    xmin=-4.5,xmax=4.5
+                    ]
+
+                    \draw [-&gt;,thick,firstcolor] (axis cs:0,0) -- (axis cs: 3,1) node [above,black] { $\vec u$};
+                    \draw [-&gt;,thick,firstcolor] (axis cs:0,0) -- (axis cs: -1,-4)node [black, left] { $\vec v$};
+
+                    \draw [-&gt;,thick,gray] (axis cs:0,0) -- (axis cs: 2,-3) node [black,below right] { $\vec u+\vec v$};
+                    \draw [-&gt;,thick,gray] (axis cs:-1,-4) -- (axis cs: 3,1) node [black,below,pos=.3,sloped] { $\vec u-\vec v$};
+
+                    \end{axis}
+
+                    \end{tikzpicture}
+
+                    </latex-image>
+                  </image>
+              <!-- figures/fig_10_02_ex_11ans.tex END -->
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-sum-sketch-2">
+          <!-- <webwork xml:id="webwork-ex-vector-sum-sketch-2">
+              <pg-code>
+              </pg-code>
+               -->
+              <statement>
+              <!-- START figures/fig_10_02_ex_13.tex -->
+                  <image>
+                    <shortdescription>
+                      Graph shows two vectors in the plane.
+                    </shortdescription>
+                    <description>
+                      <p>
+                        The <m>x</m> and <m>y</m> axes are uncalibrated. Two vectors <m>\vec u</m> and <m>\vec v</m> are shown,
+                        both start at the origin and are facing away from each other. The <m>\vec u</m> vector is in the first
+                        quadrant while the <m>\vec v</m> is in the third quadrant, the <m>\vec v</m> vector appears to be <m>1 / 4</m>
+                        th <m>\vec u</m> .
+                      </p>
+                    </description>
+                    <latex-image label="img_10_02_ex_13">
+
+                    \begin{tikzpicture}[&gt;=stealth]
+
+                    \begin{axis}[
+                    axis on top,
+                    xtick=\empty,
+                    ytick=\empty,
+                    ymin=-4.5,ymax=4.5,
+                    xmin=-4.5,xmax=4.5
+                    ]
+
+                    \draw [-&gt;,thick,firstcolor] (axis cs:0,0) -- (axis cs: 3,3) node [above,black] { $\vec u$};
+                    \draw [-&gt;,thick,firstcolor] (axis cs:0,0) -- (axis cs: -1,-1) node [black, below] { $\vec v$};
+
+                    \end{axis}
+
+                    \end{tikzpicture}
+
+                    </latex-image>
+                  </image>
+              <!-- figures/fig_10_02_ex_13.tex END -->
+              </statement>
+              <solution>
+              <!-- START figures/fig_10_02_ex_13ans.tex -->
+                  <image>
+                    <shortdescription>Solution image for this exercise</shortdescription>
+                    <description>
+                      <p>
+                        The solution image shows the same two vectors as in the statement of the problem.
+                        The vector <m>\vec{u}+\vec{v}</m> points in the same direction as <m>\vec{u}</m>, but is not as long.
+                        The vector <m>\vec{u}-\vec{v}</m> is drawn below the two original vectors.
+                        It points in the same direction as <m>\vec{u}</m>, but its length is the sum of the lengths of <m>\vec{u}</m> and <m>\vec{v}</m>.
+                      </p>
+                    </description>
+                    <latex-image label="img_10_02_ex_13ansX">
+
+                    \begin{tikzpicture}[&gt;=stealth]
+
+                    \begin{axis}[
+                    axis on top,
+                    xtick=\empty,
+                    ytick=\empty,
+                    ymin=-4.5,ymax=4.5,
+                    xmin=-4.5,xmax=4.5
+                    ]
+
+                    \draw [-&gt;,thick,firstcolor] (axis cs:0,0) -- (axis cs: 3,3) node [above,black] { $\vec u$};
+                    \draw [-&gt;,thick,firstcolor] (axis cs:0,0) -- (axis cs: -1,-1) node [black, left] { $\vec v$};
+
+                    \draw [-&gt;,thick,gray] (axis cs:0,0) -- (axis cs: 2,2) node [black,above left] { $\vec u+\vec v$};
+                    \draw [-&gt;,thick,gray] (axis cs:-1,-2) -- (axis cs: 3,2) node [black,below,pos=.3,sloped] { $\vec u-\vec v$};
+
+                    \end{axis}
+
+                    \end{tikzpicture}
+
+                    </latex-image>
+                  </image>
+              <!-- figures/fig_10_02_ex_13ans.tex END -->
+                <p>
+                  Sketch of <m>\vec u-\vec v</m> shifted for clarity.
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-sum-sketch-3">
+          <!-- <webwork xml:id="webwork-ex-vector-sum-sketch-3">
+              <pg-code>
+              </pg-code>
+               -->
+              <statement>
+              <!-- START figures/fig_10_02_ex_14.tex -->
+                  <image>
+                    <shortdescription>
+                      Graph shows two vectors in space.
+                    </shortdescription>
+                    <description>
+                      <p>
+                        The <m>x</m>, <m>y</m> and <m>z</m> axes are uncalibrated. Two vectors <m>\vec u</m> and
+                        <m>\vec v</m> are shown, both start at the origin and face away from each other. The vector
+                        <m>\vec u</m> is longer and appears to be in the <m>zy</m> plane, and the vector <m>\vec v</m>
+                        is shorter and appears to be in the <m>xz</m> plane.
+                      </p>
+                    </description>
+                    <latex-image label="img_10_02_ex_14">
+
+                    \begin{tikzpicture}[&gt;=stealth]
+
+                    \begin{axis}[
+                    axis on top,
+                    axis lines=center,
+                    view={135}{35},
+                    xtick=\empty,
+                    ytick=\empty,
+                    ztick=\empty,
+                    ymin=-1.5,ymax=1.5,
+                    xmin=-1.5,xmax=1.5,
+                    zmin=-0.5, zmax=1.5,
+                    every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+                      xlabel={ $x$},
+                    every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+                      ylabel={ $y$},
+                      every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+                      zlabel={ $z$}
+                    ]
+
+                    \draw [thick,-&gt;,firstcolor] (axis cs:0,0,0) -- (axis cs:-1,1,0) node [black,right] { $\vec u$};
+                    \draw [thick,-&gt;,firstcolor] (axis cs:0,0,0) -- (axis cs:1,0,1) node [black,left] { $\vec v$};
+
+                    \end{axis}
+
+                    \end{tikzpicture}
+
+                    </latex-image>
+                  </image>
+                <!-- figures/fig_10_02_ex_14.tex END -->
+              </statement>
+              <solution>
+              <!-- START figures/fig_10_02_ex_14ans.tex -->
+                  <image>
+                    <shortdescription>Solution image for this exercise</shortdescription>
+                    <description>
+                      <p>
+                        The solution image shows the same two vectors as in the statement of the problem.
+                        The vector <m>\vec{u}-\vec{v}</m> points from the tip of <m>\vec{v}</m> to the tip of <m>\vec{u}</m>.
+                        The vector <m>\vec{u}+\vec{v}</m> points between the two original vectors, in the plane containing them.
+                      </p>
+                    </description>
+                    <latex-image label="img_10_02_ex_14ansX">
+
+                    \begin{tikzpicture}[&gt;=stealth]
+
+                    \begin{axis}[
+                    axis on top,
+                    axis lines=center,
+                    view={135}{35},
+                    xtick=\empty,
+                    ytick=\empty,
+                    ztick=\empty,
+                    ymin=-1.5,ymax=1.5,
+                    xmin=-1.5,xmax=1.5,
+                    zmin=-0.5, zmax=1.5,
+                    every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+                      xlabel={ $x$},
+                    every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+                      ylabel={ $y$},
+                      every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+                      zlabel={ $z$}
+                    ]
+
+                    \draw [thick,-&gt;,firstcolor] (axis cs:0,0,0) -- (axis cs:-1,1,0) node [black,right] { $\vec u$};
+                    \draw [thick,-&gt;,firstcolor] (axis cs:0,0,0) -- (axis cs:1,0,1) node [black,left] { $\vec v$};
+
+                    \draw [thick,-&gt;,gray] (axis cs:0,0,0) -- (axis cs:0,1,1) node [black,above] { $\vec u+\vec v$};
+                    \draw [thick,-&gt;,gray] (axis cs:1,0,1) -- (axis cs:-1,1,0) node [black,above,pos=.9] { $\vec u-\vec v$};
+
+                    \end{axis}
+
+                    \end{tikzpicture}
+
+                    </latex-image>
+                  </image>
+              <!-- figures/fig_10_02_ex_14ans.tex END -->
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-sum-sketch-4">
+          <!-- <webwork xml:id="webwork-ex-vector-sum-sketch-4">
+              <pg-code>
+              </pg-code>
+               -->
+              <statement>
+              <!-- START figures/fig_10_02_ex_15.tex -->
+                  <image>
+
+                    <shortdescription>
+                      Graph shows two vectors in space.
+                    </shortdescription>
+                    <description>
+                      <p>
+                        The <m>x</m>, <m>y</m> and <m>z</m> axes are uncalibrated. Two vectors <m>\vec u</m> and
+                        <m>\vec v</m> are shown, both start at the origin. The <m>\vec u</m> vector is along the
+                        positive <m>z</m> axis and the <m>\vec v</m> vector is along the positive <m>y</m> axis.
+                      </p>
+                    </description>
+                    <latex-image label="img_10_02_ex_15">
+
+                    \begin{tikzpicture}[&gt;=stealth]
+
+                    \begin{axis}[
+                    axis lines=center,
+                    view={135}{35},
+                    xtick=\empty,
+                    ytick=\empty,
+                    ztick=\empty,
+                    ymin=-1.5,ymax=1.5,
+                    xmin=-1.5,xmax=1.5,
+                    zmin=-0.5, zmax=1.5,
+                    every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+                      xlabel={ $x$},
+                    every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+                      ylabel={ $y$},
+                      every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+                      zlabel={ $z$}
+                    ]
+
+                    \draw [thick,-&gt;,firstcolor] (axis cs:0,0,0) -- (axis cs:0,0,1) node [black,left] { $\vec u$};
+                    \draw [thick,-&gt;,firstcolor] (axis cs:0,0,0) -- (axis cs:0,1,0) node [black,below] { $\vec v$};
+
+                    \end{axis}
+
+                    \end{tikzpicture}
+
+                    </latex-image>
+                  </image>
+                <!-- figures/fig_10_02_ex_15.tex END -->
+              </statement>
+              <solution>
+              <!-- START figures/fig_10_02_ex_15ans.tex -->
+                  <image>
+                    <shortdescription>Solution image for this exercise</shortdescription>
+                    <description>
+                      <p>
+                        The solution image shows the same two vectors as in the statement of the problem.
+                        The vector <m>\vec{u}-\vec{v}</m> points from the tip of <m>\vec{v}</m> to the tip of <m>\vec{u}</m>.
+                        The vector <m>\vec{u}+\vec{v}</m> points between the two original vectors, in the plane containing them.
+                      </p>
+                    </description>
+                    <latex-image label="img_10_02_ex_15ansX">
+
+                    \begin{tikzpicture}[&gt;=stealth]
+
+                    \begin{axis}[
+                    width=175pt,
+                    axis lines=center,
+                    view={135}{35},
+                    xtick=\empty,
+                    ytick=\empty,
+                    ztick=\empty,
+                    ymin=-1.5,ymax=1.5,
+                    xmin=-1.5,xmax=1.5,
+                    zmin=-0.5, zmax=1.5,
+                    every axis x label/.style={at={(axis cs:\pgfkeysvalueof{/pgfplots/xmax},0,0)},xshift=-3pt,yshift=-3pt},
+                      xlabel={ $x$},
+                    every axis y label/.style={at={(axis cs:0,\pgfkeysvalueof{/pgfplots/ymax},0)},xshift=5pt,yshift=-2pt},
+                      ylabel={ $y$},
+                      every axis z label/.style={at={(axis cs:0,0,\pgfkeysvalueof{/pgfplots/zmax})},xshift=0pt,yshift=4pt},
+                      zlabel={ $z$}
+                    ]
+
+                    \draw [thick,-&gt;,firstcolor] (axis cs:0,0,0) -- (axis cs:0,0,1) node [black,left] { $\vec u$};
+                    \draw [thick,-&gt;,firstcolor] (axis cs:0,0,0) -- (axis cs:0,1,0) node [black,below] { $\vec v$};
+
+                    \draw [thick,-&gt;,gray] (axis cs:0,0,0) -- (axis cs:0,1,1) node [black,above] { $\vec u+\vec v$};
+                    \draw [thick,-&gt;,gray] (axis cs:0,1,0) -- (axis cs:0,0,1) node [black,right,pos=.2] { $\vec u-\vec v$};
+
+                    \end{axis}
+
+                    \end{tikzpicture}
+
+                    </latex-image>
+                  </image>
+              <!-- figures/fig_10_02_ex_15ans.tex END -->
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-vector-magnitude">
+
+        <introduction>
+          <p>
+            In the following exercises, find
+            <m>\norm{\vec u}</m>, <m>\norm{\vec v}</m>,
+            <m>\norm{\vec u+\vec v}</m> and <m>\norm{\vec u-\vec v}</m>.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vector-magnitude-1">
+          <webwork xml:id="webwork-ex-vector-magnitude-1">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0);
+                $normu=Formula("sqrt(5)");
+                $normv=Formula("sqrt(13)");
+                $normupv=Formula("sqrt(26)");
+                $normumv=Formula("sqrt(10)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Given <m>\vec u=\bbm  2\\1\ebm</m> and <m>\vec v = \bbm 3\\-2\ebm</m>, find:
+                </p>
+
+                <p>
+                  <m>\norm{\vec u}=</m><var name="$normu" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec v}=</m><var name="$normv" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec u+\vec v}=</m><var name="$normupv" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec u-\vec v}=</m><var name="$normumv" width="5"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-magnitude-2">
+          <webwork xml:id="webwork-ex-vector-magnitude-2">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0);
+                $normu=Formula("sqrt(17)");
+                $normv=Formula("sqrt(3)");
+                $normupv=Formula("sqrt(14)");
+                $normumv=Formula("sqrt(26)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Given <m>\vec u=\bbm  -3\\2\\2\ebm</m> and <m>\vec v = \bbm  1\\-1\\1\ebm</m>, find:
+                </p>
+
+                <p>
+                  <m>\norm{\vec u}=</m><var name="$normu" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec v}=</m><var name="$normv" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec u+\vec v}=</m><var name="$normupv" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec u-\vec v}=</m><var name="$normumv" width="5"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-magnitude-3">
+          <webwork xml:id="webwork-ex-vector-magnitude-3">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0);
+                $normu=Formula("sqrt(5)");
+                $normv=Formula("3sqrt(5)");
+                $normupv=Formula("2sqrt(5)");
+                $normumv=Formula("4sqrt(5)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Given <m>\vec u=\bbm  1\\2\ebm</m> and <m>\vec v = \bbm -3\\-6\ebm</m>, find:
+                </p>
+
+                <p>
+                  <m>\norm{\vec u}=</m><var name="$normu" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec v}=</m><var name="$normv" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec u+\vec v}=</m><var name="$normupv" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec u-\vec v}=</m><var name="$normumv" width="5"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-magnitude-4">
+          <webwork xml:id="webwork-ex-vector-magnitude-4">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0);
+                $normu=Formula("7");
+                $normv=Formula("35");
+                $normupv=Formula("42");
+                $normumv=Formula("28");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Given <m>\vec u=\bbm  2\\-3\\6\ebm</m> and <m>\vec v = \bbm  10\\-15\\30\ebm</m>, find:
+                </p>
+
+                <p>
+                  <m>\norm{\vec u}=</m><var name="$normu" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec v}=</m><var name="$normv" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec u+\vec v}=</m><var name="$normupv" width="5"/>
+                </p>
+
+                <p>
+                  <m>\norm{\vec u-\vec v}=</m><var name="$normumv" width="5"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+
+      <exercise label="ex-vector-norm-sum-equal">
+        <!-- <webwork xml:id="webwork-ex-vector-norm-sum-equal">
+            <pg-code>
+            </pg-code>
+             -->
+            <statement>
+              <p>
+                Under what conditions is <m>\norm{\vec u}+\norm{\vec v} = \norm{\vec u+\vec v}</m>?
+              </p>
+            </statement>
+            <solution>
+              <p>
+                When <m>\vec u</m> and <m>\vec v</m> have the same direction.
+                (Note: parallel is not enough.)
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercisegroup cols="2" xml:id="exset-find-unit-vector">
+
+        <introduction>
+          <p>
+            In the following exercises,
+            find the unit vector <m>\vec u</m> in the direction of <m>\vec v</m>.
+          </p>
+        </introduction>
+
+        <exercise label="ex-find-unit-vector-1">
+          <webwork xml:id="webwork-ex-find-unit-vector-1">
+              <pg-code>
+                Context("Vector2D");
+                Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0);
+                $u=Compute("&lt;3/sqrt(58), 7/sqrt(58)&gt;");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the unit vector <m>\vec u</m> in the direction of <m>\vec v = \bbm  3\\7\ebm</m>.
+                </p>
+
+                <p>
+                  <m>\vec u=</m><var name="$u" width="20"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-find-unit-vector-2">
+          <webwork xml:id="webwork-ex-find-unit-vector-2">
+              <pg-code>
+                Context("Vector2D");
+                Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0);
+                $u=Compute("&lt;0.6, 0.8&gt;");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the unit vector <m>\vec u</m> in the direction of <m>\vec v = \bbm  6\\8\ebm</m>.
+                </p>
+
+                <p>
+                  <m>\vec u=</m><var name="$u" width="20"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-find-unit-vector-3">
+          <webwork xml:id="webwork-ex-find-unit-vector-3">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0,reduceConstants=&gt;0);
+                $u=Compute("&lt;1/3,-2/3,2/3&gt;");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the unit vector <m>\vec u</m> in the direction of <m>\vec v = \bbm  1\\-2\\2\ebm</m>.
+                </p>
+
+                <p>
+                  <m>\vec u=</m><var name="$u" width="20"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-find-unit-vector-4">
+          <webwork xml:id="webwork-ex-find-unit-vector-4">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0,reduceConstants=&gt;0);
+                $u=Compute("&lt;1/sqrt(3),-1/sqrt(3),1/sqrt(3)&gt;");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the unit vector <m>\vec u</m> in the direction of <m>\vec v = \bbm  2\\-2\\2\ebm</m>.
+                </p>
+
+                <p>
+                  <m>\vec u=</m><var name="$u" width="20"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+
+      <exercise label="ex-unit-vector-angle-1">
+        <webwork xml:id="webwork-ex-unit-vector-angle-1">
+            <pg-code>
+                Context("Vector2D");
+                Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0,reduceConstants=&gt;0);
+                $u=Compute("&lt;cos(50*pi/180),sin(50*pi/180)&gt;");
+            </pg-code>
+
+            <statement>
+              <p>
+                Find the unit vector in the first quadrant of <m>\mathbb{R}^2</m> that makes a
+                <m>50^{\circ}</m> angle with the <m>x</m>-axis.
+              </p>
+
+              <p>
+                <var name="$u" width="20"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-unit-vector-angle-2">
+        <webwork xml:id="webwork-ex-unit-vector-angle-2">
+            <pg-code>
+                Context("Vector2D");
+                Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0,reduceConstants=&gt;0);
+                $u=Compute("&lt;-1/2,sqrt(3)/2&gt;");
+            </pg-code>
+
+            <statement>
+              <p>
+                Find the unit vector in the second quadrant of <m>\mathbb{R}^2</m> that makes a
+                <m>30^{\circ}</m> angle with the <m>y</m>-axis.
+              </p>
+
+              <p>
+                <var name="$u" width="20"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-verify-unit-trig">
+        <!-- <webwork xml:id="webwork-ex-vectors-verify-unit-trig">
+            <pg-code>
+            </pg-code>
+             -->
+            <statement>
+              <p>
+                Verify, from <xref ref="idea_unit_vectors"/>,
+                that
+                <me>
+                  \vec u=\bbm  \sin(\theta) \cos(\varphi) \\\sin(\theta) \sin(\varphi) \\\cos(\theta) \ebm
+                </me>
+                is a unit vector for all angles <m>\theta</m> and <m>\varphi</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                <md>
+                  <mrow>\norm{\vec u} \amp = \sqrt{\sin^2(\theta) \cos^2(\varphi) +\sin^2(\theta) \sin^2(\varphi) +\cos^2(\theta) }</mrow>
+                  <mrow>\amp = \sqrt{\sin^2(\theta) (\cos^2(\varphi) +\sin^2(\varphi) )+\cos^2(\theta) }</mrow>
+                  <mrow>\amp = \sqrt{\sin^2(\theta) +\cos^2(\theta) }</mrow>
+                  <mrow>\amp =1</mrow>
+                </md>.
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+    </subexercises>
+  </exercises>
+</section>

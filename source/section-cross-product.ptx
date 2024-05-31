@@ -1,0 +1,2437 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_cross_product" label="sec_cross_product">
+  <title>The Cross Product</title>
+  <introduction>
+    <p>
+      <q>Orthogonality</q> is immensely important.
+      A quick scan of your current environment will undoubtedly reveal numerous surfaces and edges that are perpendicular to each other
+      (including the edges of this page).
+      The dot product provides a quick test for orthogonality:
+      vectors <m>\vec u</m> and <m>\vec v</m> are perpendicular if,
+      and only if, <m>\dotp uv=0</m>.
+    </p>
+
+    <figure xml:id="vid-vectors-crossprod-intro" component="video">
+      <caption>Video introduction to <xref ref="sec_cross_product"/></caption>
+      <video youtube="63syRlBjyh0" label="vid-vectors-crossprod-intro"/>
+    </figure>
+
+    <p>
+      Given two non-parallel,
+      nonzero vectors <m>\vec u</m> and <m>\vec v</m> in space,
+      it is very useful to find a vector <m>\vec w</m> that is perpendicular to both <m>\vec u</m> and <m>\vec v</m>.
+      There is an operation, called the <em>cross product</em>,
+      that creates such a vector.
+      This section defines the cross product,
+      then explores its properties and applications.
+    </p>
+
+    <aside>
+      <p>
+        The definition of te cross product may look strange (and complicated) at first,
+        but it's more or less forced by the requirement that it be orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+        To begin to see why, suppose <m>\vec w = a \vec{i}+b\vec{j}+c\vec{k}</m> is an arbitrary vector
+        such that <m>\dotp uv =0</m> and <m>\dotp uw =0</m>.
+        This gives us the pair of equations
+        <md>
+          <mrow>u_1 a+ u_2b+ u_3 c \amp =0</mrow>
+          <mrow>v_1 a+ v_2b+ v_3c  \amp =0</mrow>
+        </md>.
+      </p>
+
+      <p>
+        This is a <em>system of linear equations</em> in the variables <m>a</m>, <m>b</m>, and <m>c</m>.
+        We'll learn the techniques for solving such a system in <xref ref="chapter-linear"/>,
+        at which point we'll be able to see that (up to a scalar multiple),
+        the common solution to this pair of equations is given by <xref ref="def_cross_product"/>.
+      </p>
+    </aside>
+
+    <definition xml:id="def_cross_product">
+      <title>Cross Product</title>
+      <statement>
+        <p>
+          Let <m>\vec u =\bbm  u_1\\u_2\\u_3\ebm</m> and
+          <m>\vec v = \bbm  v_1\\v_2\\v_3\ebm</m> be vectors in <m>\mathbb{R}^3</m>.
+          The <term>cross product</term> of <m>\vec u</m> and <m>\vec v</m>,
+          denoted <m>\crossp uv</m>,
+          is the vector <idx><h>vectors</h><h>cross product</h></idx><idx><h>cross product</h><h>definition</h></idx>
+          <me>
+            \crossp uv = \bbm  u_2v_3-u_3v_2\\-(u_1v_3-u_3v_1)\\u_1v_2-u_2v_1\ebm
+          </me>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      This definition can be a bit cumbersome to remember.
+      After an example we will give a convenient method for computing the cross product.
+      For now, careful examination of the products and differences given in the definition should reveal a pattern that is not too difficult to remember.
+      (For instance,
+      in the first component only 2 and 3 appear as subscripts;
+      in the second component, only 1 and 3 appear as subscripts.
+      Further study reveals the order in which they appear.)
+    </p>
+
+    <p>
+      Let's practice using this definition by computing a cross product.
+    </p>
+
+    <example xml:id="ex_crossp1">
+      <title>Computing a cross product</title>
+      <statement>
+        <p>
+          Let <m>\vec u = \bbm  2\\-1\\4\ebm</m> and <m>\vec v = \bbm  3\\2\\5\ebm</m>.
+          Find <m>\crossp uv</m>,
+          and verify that it is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Using <xref ref="def_cross_product"/>, we have
+          <me>
+            \crossp uv = \bbm  (-1)5-(4)2\\-\big((2)5-(4)3\big)\\ (2)2-(-1)3\ebm = \bbm  -13\\2\\7\ebm
+          </me>.
+        </p>
+
+        <p>
+          (We encourage the reader to compute this product on their own,
+          then verify their result.)
+        </p>
+
+        <p>
+          We test whether or not <m>\crossp uv</m> is orthogonal to <m>\vec u</m> and <m>\vec v</m> using the dot product:
+          <me>
+            \big(\crossp uv\big) \cdot \vec u = \bbm  -13\\2\\7\ebm \cdot \bbm  2\\-1\\4\ebm = 0
+          </me>,
+          <me>
+            \big(\crossp uv\big) \cdot \vec v = \bbm  -13\\2\\7\ebm \cdot \bbm  3\\2\\5 \ebm = 0
+          </me>.
+        </p>
+
+        <p>
+          Since both dot products are zero,
+          <m>\crossp uv</m> is indeed orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+        </p>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="kFpmnYBVQt4" xml:id="vid-vectors-crossprod-example" label="vid-vectors-crossprod-example" component="video"/>
+      </solution>
+    </example>
+
+    <p>
+      We now introduce a method for computing the cross-product that is easier to remember, 
+      and has the added benefit of allowing us to preview <term>determinants</term>, 
+      which we will return to in earnest in <xref ref="sec-determinant_1"/>. 
+    </p>
+
+    <p>
+      Consider a rectangular array <m>\bbm a \amp b\\c \amp d\ebm</m> of four real numbers <m>a,b,c</m>, and <m>d</m>.
+      A <m>2\times 2</m> determinant takes any such array and assigns the number <m>ad-bc</m>. This is commonly denoted as follows:
+      <me>
+        \bvm a \amp b\\c \amp d\evm = ad-bc
+      </me>.
+    </p>
+
+    <p>
+      Most people find it easiest to remember this in terms of the two <em>diagonals</em> of the array: 
+      we take the product of the two numbers on the <em>main diagonal</em> (top-left to bottom-right), 
+      and subtract the product of the two numbers on the other diagonal.
+    </p>
+
+    <image width="20%">
+      <shortdescription>A 2 by 2 determinant.Arrows indicate the two products in the determinant.</shortdescription>
+      <latex-image label="img-determinant22">
+        \begin{tikzpicture}[baseline=-3pt,&gt;=stealth]
+          \node at (0,0) {$\bvm a  \amp  b\\ c \amp  d\evm$};
+          \draw[-&gt;,  thin] (-.5,.4) -- (.6,-.6) node[below right] {$ad\vphantom{bc}$};
+          \draw[-&gt;, thin] (0.4,.4) -- (-.6,-.6) node[below left ] {$bc$};
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+    <p>
+      For example, we have <m>\bvm 4 \amp -2\\6 \amp 3\evm = 4(3)-(-2)(6)=24</m>.
+      Once we get comfortable with <m>2\times 2</m> determinants, we can write the cross product in terms of them, as follows:
+      <mdn>
+        <mrow xml:id="eq-crossdet"> \crossp uv \amp = \bvm u_2 \amp u_3\\v_2 \amp v_3\evm \veci - \bvm u_1 \amp u_3\\v_1 \amp v_3\evm\vecj + \bvm u_1 \amp u_2\\v_1 \amp v_2\evm\veck</mrow>
+        <mrow> \amp = (u_2v_3-u_3v_2)\veci-(u_3v_1-u_1v_3)\vecj + (u_1v_2-u_2v_1)\veck</mrow>
+      </mdn>,
+      as before. Now, this might not seem like much of an improvement over the previous formula, 
+      so we take things one step further. First, we form a <m>3\times 3</m> array as shown below. 
+      <me>
+        \bvm \veci \amp \vecj \amp \veck\\u_1 &amp; u_2 &amp;u_3\\v_1&amp;v_2&amp;v_3\evm
+      </me>.
+      The first row comprises the standard unit vectors <m>\vec i</m>, <m>\vec j</m>, and <m>\vec k</m>. 
+      The second and third rows are the vectors <m>\vec u</m> and <m>\vec v</m>, respectively. 
+      Next, we <em>expand</em> our <m>3\times 3</m> array as a vector, 
+      where the coefficient of each standard unit vector is given by the <m>2\times 2</m> 
+      determinant that's left over when we delete the row and column containing that unit vector. 
+    </p>
+
+    <p>
+      For example, if we use <m>\vec u</m> and <m>\vec v</m> from <xref ref="ex_crossp1"/>, we obtain the array
+      <me>
+        \bvm \veci \amp \vecj \amp \veck\\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm
+      </me>.
+      The expansion process used to obtain the coefficients of <m>\veci, \vecj, \veck</m> looks like the following:
+    </p>
+
+    <image width="47%">
+      <shortdescription>Crossing out the row and column containing the unit vector i, and writing the resulting 2x2 determinant.</shortdescription>
+      <latex-image label="img-crossp-det33a">
+        \begin{tikzpicture}[baseline=-3pt,&gt;=stealth]
+          \node at (0,0) {$\bvm \fbox{\veci} \amp \vecj \amp \veck \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm -1&amp;4\\2&amp;5\evm\veci = -13\veci$};
+          \draw[thin] (-2.3,.6) -- (-2.3, -.6);
+          \draw[thin] (-2.5,.4) -- (-.8,.4);
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+    <image width="47%">
+      <shortdescription>Crossing out the row and column containing the unit vector j, and writing the resulting 2x2 determinant.</shortdescription>
+      <latex-image label="img-=crossp-det33b">
+        \begin{tikzpicture}[baseline=-3pt,&gt;=stealth]
+          \node at (0,0) {$\bvm \veci \amp \fbox{\vecj} \amp \veck \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm 2&amp;4\\3&amp;5\evm\vecj = -2\vecj$};
+          \draw[thin] (-1.45,.6) -- (-1.45, -.6);
+          \draw[thin] (-2.3,.4) -- (-.6,.4);
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+    <image width="47%">
+      <shortdescription>Crossing out the row and column containing the unit vector k, and writing the resulting 2x2 determinant.</shortdescription>
+      <latex-image label="img-=crossp-det33c">
+        \begin{tikzpicture}[baseline=-3pt,&gt;=stealth]
+          \node at (0,0) {$\bvm \veci \amp \vecj \amp \fbox{\veck} \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm 2&amp;-1\\3&amp;2\evm\veck = 7\veck$};
+          \draw[thin] (-0.85,.6) -- (-0.85, -.6);
+          \draw[thin] (-2.3,.4) -- (-.6,.4);
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+
+    <p>
+      There is one more important detail to note: notice in <xref ref="eq-crossdet" text="local">Equation</xref>
+      that there is a <alert>minus sign</alert> in front of the coefficient of the unit vector <m>\vecj</m>. 
+      We need to make sure that the signs in front of each <m>2\times 2</m> determinant follow this <m>+,\,-,\,+</m> 
+      pattern when we expand our array as a vector. For the vectors <m>\vec u</m> and <m>\vec v</m> in <xref ref="ex_crossp1"/>, 
+      we end up with the following:
+      <md>
+        <mrow> \crossp uv \amp = \bvm \veci \amp \vecj \amp \veck \\ 2&amp;-1&amp;4\\3&amp;2&amp;5\evm  = \bvm -1&amp;4\\2&amp;5\evm\veci - \bvm 2&amp;4\\3&amp;5\evm\vecj + \bvm 2&amp;-1\\3&amp;2\evm\veck</mrow>
+        <mrow> \amp = -13\veci - (-2)\vecj + 7\veck = \bbm  -13\\ 2\\ 7\ebm</mrow>
+      </md>,
+      as before. The method will become more clear with a bit of practice.
+    </p>
+
+    <aside>
+      <p>
+        <alert>Note:</alert> If the minus sign in front of the <m>\vecj</m> coefficient seems out of place to you, 
+        it might help to imagine wrapping our <m>3\times 3</m> array around a cylinder (like the label on a tin can). 
+        If we read from left to right, <em>beginning in the <m>\vecj</m> column</em>, 
+        then we should place the <m>\veck</m> column first, followed by the <m>\veci</m> column. 
+        For the vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <xref ref="ex_crossp1"/>, 
+        this would result in the coefficient <m>\bvm 4 \amp 2\\5 \amp 2\evm = 2</m> for the <m>\vecj</m> component,
+        which has the correct sign. 
+        However, since our habit is to read starting from the far left, 
+        we tend to write the <m>\veci</m> column first, and then introduce the minus sign to compensate.
+      </p>
+    </aside> 
+
+    <example xml:id="ex_crossp2">
+      <title>Computing a cross product</title>
+      <statement>
+        <p>
+          Let <m>\vecu=\bbm  1\\3\\6\ebm</m> and <m>\vec v = \bbm  -1\\2\\1\ebm</m>.
+          Compute both <m>\crossp uv</m> and <m>\crossp vu</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To compute <m>\crossp uv</m>,
+          we form the <m>3\times 3</m> array as prescribed above, and expand it into a vector.
+          <md>
+            <mrow>\crossp uv  \amp = \bvm \veci  \amp  \vecj &amp; \veck 1&amp; 3&amp; 6\\ -1&amp; 2&amp; 1\evm = \bvm 3&amp; 6\\2 &amp;1\evm \veci - \bvm 1 &amp; 6\\ -1&amp; 1\evm\vecj +\bvm 1&amp; 3\\ -1 &amp; 2\evm\veck</mrow>
+		        <mrow> \amp = (3(1)-6(2))\veci -(1(1)-6(-1))\vecj + (1(2)-3(-1))\veck</mrow>
+            <mrow> \amp  = -9\veci-7\vecj+5\veck = \bbm  -9\\ -7\\ 5\ebm</mrow>
+          </md>.
+        </p>
+
+        <p>
+          To compute <m>\crossp vu</m>,
+          we switch the second and third rows of the above matrix,
+          then expand as before:
+          <md>
+            <mrow>\crossp vu  \amp  = \bvm \veci  \amp  \vecj&amp; \veck\\ -1 &amp; 2&amp; 1\\ 1&amp; 3&amp; 6\evm = \bvm 2 &amp;1\\3 &amp;6\evm\veci - \bvm -1&amp; 1\\ 1&amp; 6\evm\vecj + \bvm -1&amp; 2\\ 1 &amp;3\evm\veck</mrow>
+		        <mrow> &amp; = (2(6)-1(3))\veci-((-1)(6)-1(1))\vecj + ((-1)(3)-2(1))\veck</mrow>
+		        <mrow> &amp; = 9\veci+7\vecj -5\veck = \bbm  9\\ 7\\ -5\ebm = -\crossp uv</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Note how with the rows being switched,
+          the products that once appeared on the right now appear on the left,
+          and vice-versa, so that the result is the opposite of <m>\crossp uv</m>
+        </p>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="6-PGDOhhYbg" xml:id="vid-vectors-crossprod-det-eg" label="vid-vectors-crossprod-det-eg" component="video"/>
+      </solution>
+    </example>
+  </introduction>
+
+  <subsection>
+    <title>Properties of the Cross Product</title>
+    <p>
+      It is not coincidence that
+      <m>\crossp vu = -(\crossp uv)</m> in the preceding example;
+      one can show using <xref ref="def_cross_product"/>
+      that this will always be the case.
+      The following theorem states several useful properties of the cross product,
+      each of which can be verified by referring to the definition.
+    </p>
+
+    <theorem xml:id="thm_cross_prod_prop">
+      <title>Properties of the Cross Product</title>
+      <statement>
+        <p>
+          Let <m>\vecu</m>, <m>\vecv</m> and <m>\vecw</m> be vectors in
+          <m>\mathbb{R}^3</m> and let <m>c</m> be a scalar.
+          The following identities hold:
+          <idx><h>vectors</h><h>cross product</h></idx>
+          <idx><h>cross product</h><h>properties</h></idx>
+        </p>
+
+        <p>
+          <ol>
+            <li>
+              <p>
+                <m>\crossp uv = -(\crossp vu)</m> Anticommutative Property
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      <m>(\vec u+\vec v)\times \vecw = \crossp uw+\crossp vw</m> Distributive Properties
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>\vec u \times (\vec v+\vec w) = \crossp uv+\crossp uw</m>
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>c(\crossp uv) = (c\vecu) \times \vec v = \vecu \times (c\vecv)</m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <ol>
+                  <li>
+                    <p>
+                      <m>(\crossp uv)\cdot \vecu = 0</m> Orthogonality Properties
+                    </p>
+                  </li>
+
+                  <li>
+                    <p>
+                      <m>(\crossp uv)\cdot \vecv = 0</m>
+                    </p>
+                  </li>
+                </ol>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\crossp uu = \vec 0</m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\crossp u0 = \vec 0</m>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\vecu \cdot (\vecv\times\vecw) = (\crossp uv)\cdot \vecw</m> Triple Scalar Product
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <figure xml:id="vid-vectors-crossprod-properties" component="video">
+      <caption>Video presentation of <xref ref="thm_cross_prod_prop"/></caption>
+      <video youtube="QOCSD4qA_Wg" label="vid-vectors-crossprod-properties"/>
+    </figure>
+
+    <p>
+      We introduced the cross product as a way to find a vector orthogonal to two given vectors,
+      but we did not give a proof that the construction given in <xref ref="def_cross_product"/> satisfies this property.
+      <xref ref="thm_cross_prod_prop"/> asserts this property holds;
+      we leave it as a problem in the Exercise section to verify this.
+    </p>
+
+    <p>
+      Property 5 from the theorem is also left to the reader to prove in the Exercise section,
+      but it reveals something more interesting than
+      <q>the cross product of a vector with itself is <m>\vec 0</m>.</q>
+      Let <m>\vec u</m> and <m>\vec v</m> be parallel vectors;
+      that is, let there be a scalar <m>c</m> such that <m>\vecv = c\vecu</m>.
+      Consider their cross product:
+      <md>
+        <mrow>\crossp uv \amp = \vecu \times (c\vec u)</mrow>
+        <mrow>\amp =  c(\crossp uu) \text{ (by Property 3 of } <xref ref="thm_cross_prod_prop"/>\text{)}</mrow>
+        <mrow>\amp = \vec 0 \text{ (by Property 5 of } <xref ref="thm_cross_prod_prop"/>\text{)}</mrow>
+      </md>.
+    </p>
+
+    <p>
+      We have just shown that the cross product of parallel vectors is <m>\vec 0</m>.
+      This hints at something deeper.
+      <xref ref="thm_dot_product"/>
+      related the angle between two vectors and their dot product;
+      there is a similar relationship relating the cross product of two vectors and the angle between them,
+      given by the following theorem.
+    </p>
+
+    <theorem xml:id="thm_cross_product">
+      <title>The Cross Product and Angles</title>
+      <statement>
+        <p>
+          Let <m>\vec u</m> and <m>\vec v</m> be nonzero vectors in <m>\mathbb{R}^3</m>.
+          Then
+          <me>
+            \norm{\crossp uv} = \vnorm u\, \vnorm v \sin(\theta)
+          </me>,
+          where <m>\theta</m>, <m>0\leq \theta \leq \pi</m>,
+          is the angle between <m>\vecu</m> and <m>\vecv</m>.
+              <idx><h>vectors</h><h>cross product</h></idx>
+              <idx><h>cross product</h><h>properties</h></idx>
+        </p>
+      </statement>
+    </theorem>
+
+    <aside xml:id="aside-cross-orthogonal">
+      <title>Parallel vectors and the cross product</title>
+
+      <p>
+        We could rewrite <xref ref="def_orthogonal"/>
+        and <xref ref="thm_cross_product"/> to include <m>\vec 0</m>,
+        then define that <m>\vec u</m> and <m>\vec v</m> are parallel if <m>\vec u\times\vec v=\vec 0</m>.
+        Since <m>\vec 0\cdot \vec v =0</m> and <m>\vec 0\times \vec v = \vec 0</m>,
+        this would mean that <m>\vec 0</m> is both parallel <em>and</em>
+        orthogonal to all vectors.
+        Apparent paradoxes such as this are not uncommon in mathematics and can be very useful.
+        (See also the <xref ref="aside-def-orthogonal" text="custom">aside</xref> in <xref ref="sec_vector_intro"/>.)
+      </p>
+    </aside>
+    <p>
+      Note that this theorem makes a statement about the
+      <em>magnitude</em> of the cross product.
+      When the angle between <m>\vecu</m> and <m>\vecv</m> is 0 or <m>\pi</m> (<ie/>, the vectors are parallel),
+      the magnitude of the cross product is 0.
+      The only vector with a magnitude of 0 is <m>\vec 0</m>
+      (see <xref ref="thm_zero_norm" text="local">Property</xref>
+      of <xref ref="thm_vector_properties"/>),
+      hence the cross product of parallel vectors is <m>\vec 0</m>.
+    </p>
+
+    <figure xml:id="vid-vetors-crossprod-angles" component="video">
+      <caption>Video presentation of <xref ref="thm_cross_product"/> and <xref ref="ex_crossp3"/></caption>
+      <video youtube="_DjAuiDG2kA" label="vid-vetors-crossprod-angles"/>
+    </figure>
+
+    <p>
+      We demonstrate the truth of this theorem in the following example.
+    </p>
+
+    <example xml:id="ex_crossp3">
+      <title>The cross product and angles</title>
+      <statement>
+        <p>
+          Let <m>\vec u = \bbm  1\\3\\6\ebm</m> and
+          <m>\vec v = \bbm  -1\\2\\1\ebm</m> as in <xref ref="ex_crossp2"/>.
+          Verify <xref ref="thm_cross_product"/> by finding <m>\theta</m>,
+          the angle between <m>\vecu</m> and <m>\vecv</m>,
+          and the magnitude of <m>\crossp uv</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We use <xref ref="thm_dot_product"/>
+          to find the angle between <m>\vecu</m> and <m>\vecv</m>.
+          <md>
+            <mrow>\theta \amp = \cos^{-1}\left(\frac{\dotp uv}{\vnorm u\, \vnorm v}\right)</mrow>
+            <mrow>\amp = \cos^{-1}\left(\frac{11}{\sqrt{46}\sqrt{6}}\right)</mrow>
+            <mrow>\amp \approx 0.8471 = 48.54^\circ</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Our work in <xref ref="ex_crossp2"/>
+          showed that <m>\crossp uv = \bbm  -9\\-7\\5\ebm</m>,
+          hence <m>\norm{\crossp uv} = \sqrt{155}</m>.
+          Is <m>\norm{\crossp uv} = \vnorm u\, \vnorm v\sin(\theta)</m>?
+          Using numerical approximations, we find:
+          <md>
+            <mrow>\norm{\crossp uv} \amp =\sqrt{155}  \amp  \vnorm u\,\vnorm v \sin(\theta) \amp  = \sqrt{46}\sqrt{6}\sin(0.8471)</mrow>
+            <mrow>\amp \approx 12.45. \amp  \amp \approx 12.45</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Numerically, they seem equal.
+          Using a right triangle, one can show that
+          <me>
+            \sin\left(\cos^{-1}\left(\frac{11}{\sqrt{46}\sqrt{6}}\right)\right) = \frac{\sqrt{155}}{\sqrt{46}\sqrt{6}}
+          </me>,
+          which allows us to verify the theorem exactly.
+        </p>
+      </solution>
+    </example>
+
+    <paragraphs>
+      <title>Right Hand Rule</title>
+      <p>
+        The anticommutative property of the cross product demonstrates that <m>\crossp uv</m> and
+        <m>\crossp vu</m> differ only by a sign <mdash/> these vectors have the same magnitude but point in the opposite direction.
+        When seeking a vector perpendicular to <m>\vec u</m> and <m>\vec v</m>,
+        we essentially have two directions to choose from,
+        one in the direction of <m>\crossp uv</m> and one in the direction of <m>\crossp vu</m>.
+        Does it matter which we choose?
+        How can we tell which one we will get without graphing, etc.?
+      </p>
+
+      <p>
+        Another wonderful property of the cross product, as defined,
+        is that it follows the <em>right hand rule.</em>
+        Given <m>\vec u</m> and <m>\vec v</m> in
+        <m>\mathbb{R}^3</m> with the same initial point,
+        point the index finger of your right hand in the direction of <m>\vecu</m> and let your middle finger point in the direction of <m>\vecv</m>
+        (much as we did when establishing the right hand rule for the 3-dimensional coordinate system).
+        Your thumb will naturally extend in the direction of <m>\crossp uv</m>.
+        One can <q>practice</q> this using <xref ref="fig_crossp_rhr"/>.
+        If you switch,
+        and point the index finder in the direction of <m>\vecv</m> and the middle finger in the direction of <m>\vecu</m>,
+        your thumb will now point in the opposite direction,
+        allowing you to <q>visualize</q>
+        the anticommutative property of the cross product.
+            <idx><h>right hand rule</h><h>of the cross product</h></idx>
+      </p>
+
+      <figure xml:id="fig_crossp_rhr">
+        <caption>Illustrating the Right Hand Rule of the cross product</caption>
+
+        <!-- START figures/figcrossp_rhr_3D.asy -->
+        <image width="47%">
+          <shortdescription>Three-dimensional image illustrating the right-hand rule for the direction of the cross product.</shortdescription>
+          <description>
+            <p>
+              On a three-dimensional coordinate system, with <m>x</m>, <m>y</m>, and <m>z</m> axes,
+              vectors <m>\vec u</m> and <m>\vec v</m> are plotted with their tails at the origin.
+              The plane passing through the origin that contains these two vectors is also plotted,
+              along with a normal vector to the plane.
+            </p>
+
+            <p>
+              The normal vector is upward-pointing, and is equal to the cross product <m>\vec{u}\times\vec{v}</m>.
+              When the plane is viewed from the side on which the normal vector is placed,
+              the position of the vector <m>\vec v</m> corresponds to a counter-clockwise rotation from the position of <m>\vec u</m>.
+            </p>
+          </description>
+          <asymptote label="img_crossp_rhr">
+
+
+
+            //ASY file for figcrossp_rhr.asy in Chapter 10
+
+            size(200,200,IgnoreAspect);
+            //currentprojection=perspective(7,2,1);
+            currentprojection=orthographic(4,4,2);
+            defaultrender.merge=true;
+
+            // setup and draw the axes
+            real[] myxchoice={};
+            real[] myychoice={};
+            real[] myzchoice={};
+            defaultpen(0.5mm);
+            pair xbounds=(-1.5,1.5);
+            pair ybounds=(-1.5,1.5);
+            pair zbounds=(-0.5,1.5);
+
+            xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+            yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+            zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+            label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+            label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+            label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+            //Draw theplane z=(-2*x+5*y)/27;
+            triple f(pair t) {
+              return (t.x,t.y,(-2*t.x+5*t.y)/27);
+            }
+            surface s=surface(f,(-1.5,-1.5),(1.5,1.5),8,8,Spline);
+            pen p=apexmeshpen;
+            draw(s,surfacepen,meshpen=p,nolight,render(merge=true));
+
+            // Draw vec{u}=&lt;-1/5,1,1/5&gt;
+            draw((0,0,0)--(-1/5,1,1/5), bluepen,Arrow3(size=3mm));
+            label("$\vec{u}$",(-1/5,1,1/5),N);
+
+            // Draw  \vec{v}=&lt;-6/5,3/5,1/5&gt;
+            draw((0,0,0)--(-6/5,3/5,1/5), bluepen,Arrow3(size=3mm));
+            label("$\vec{v}$",(-6/5,3/5,1/5),N);
+
+            // Draw the cross product of u and v &lt;2,-5,27&gt; but scale it as &lt;2,-5,27&gt;/25
+            draw((0,0,0)--(2/25,-5/25,27/25), redpen,Arrow3(size=3mm));
+            label("$\vec{u} \times \vec{v}$",(2/25,-5/25,27/25),NW);
+
+          </asymptote>
+        </image>
+        <!-- figures/figcrossp_rhr_3D.asy END -->
+      </figure>
+    </paragraphs>
+  </subsection>
+
+  <subsection>
+    <title>Applications of the Cross Product</title>
+    <p>
+      There are a number of ways in which the cross product is useful in mathematics,
+      physics and other areas of science beyond <q>just</q>
+      finding a vector perpendicular to two others.
+      We highlight a few here.
+          <idx><h>cross product</h><h>applications</h></idx>
+    </p>
+
+    <paragraphs>
+      <title>Area of a Parallelogram</title>
+      <p>
+        It is a standard geometry fact that the area of a parallelogram is <m>A = bh</m>,
+        where <m>b</m> is the length of the base and <m>h</m> is the height of the parallelogram,
+        as illustrated in <xref ref="fig_crossp_parallelograma"/>.
+        As shown when defining the Parallelogram Law of vector addition,
+        two vectors <m>\vecu</m> and <m>\vecv</m> define a parallelogram when drawn from the same initial point,
+        as illustrated in <xref ref="fig_crossp_parallelogramb"/>.
+        Trigonometry tells us that <m>h = \vnorm u \sin(\theta)</m>,
+        hence the area of the parallelogram is
+        <men xml:id="eq_crossp1">
+          A = \vnorm u\,\vnorm v\sin(\theta) = \norm{\crossp uv}
+        </men>,
+        where the second equality comes from <xref ref="thm_cross_product"/>.
+      </p>
+
+      <figure xml:id="fig_crossp_parallelogram">
+        <caption>Using the cross product to find the area of a parallelogram</caption>
+        <sidebyside widths="33% 33%" margins="10%" valign="bottom">
+          <figure xml:id="fig_crossp_parallelograma">
+            <caption/>
+            <!-- START figures/fig_crossp_parallelogram1.tex -->
+            <image>
+              <shortdescription>A parallelogram with base b and height h labeled.</shortdescription>
+              <description>
+                <p>
+                  A parallelogram with a horizontal base is shown.
+                  The base is labeled with the quantity <m>b</m>.
+                  A dashed line is drawn from the top-left vertex of the parallelogram to the base;
+                  this line is perpendicular to the base, 
+                  and its length is equal to the height of the parallelogram,
+                  which is labeled <m>h</m>.
+                </p>
+              </description>
+              <latex-image label="img_crossp_parallelograma">
+
+              \begin{tikzpicture}
+
+              \draw (0,0) -- node [below,pos=.5] { $b$} (2,0) -- (3,1.5) -- (1,1.5) -- (0,0);
+              \draw [dashed] (1,1.5) -- (1,0) node [pos=.5,right] {$h$};
+              \draw (.8,0) -- (.8,.2) -- (1,.2);
+
+              \end{tikzpicture}
+
+              </latex-image>
+            </image>
+            <!-- figures/fig_crossp_parallelogram1.tex END -->
+          </figure>
+
+          <figure xml:id="fig_crossp_parallelogramb">
+            <caption/>
+            <!-- START figures/fig_crossp_parallelogram2.tex -->
+            <image>
+              <shortdescription>Another parallelogram, with two adjacent sides labeled as vectors.</shortdescription>
+              <description>
+                <p>
+                  The parallelogram is the same one as <xref ref="fig_crossp_parallelograma"/>,
+                  but with different labeling.
+                  This time, the two sides adjacent to the bottom-right vertex are labeled with vectors.
+                  The bottom of the parallelogram is labeled with a vector <m>\vec v</m>,
+                  and the left side is labeled with a vector <m>\vec u</m>.
+                  The angle between these vectors is labeled <m>\theta</m>.
+                  The same altitude of the parellelogram is drawn as a dashed line with height <m>h</m>.
+                </p>
+              </description>
+              <latex-image label="img_crossp_parallelogramb">
+
+              \begin{tikzpicture}[&gt;=stealth]
+
+              \draw [-&gt;](0,0) -- node [below,pos=1]  { $\vec v$} (2,0);
+              \draw (2,0) -- (3,1.5) -- (1,1.5);
+              \draw (.3,.175) node { $\theta$};
+              \draw [-&gt;](0,0) -- (1,1.5) node [above] { $\vec u$};
+              \draw [dashed] (1,1.5) -- (1,0) node [pos=.5,right] {$h$};
+              \draw (.8,0) -- (.8,.2) -- (1,.2);
+
+              \end{tikzpicture}
+
+              </latex-image>
+            </image>
+            <!-- figures/fig_crossp_parallelogram2.tex END -->
+          </figure>
+        </sidebyside>
+      </figure>
+
+      <p>
+        We illustrate using <xref ref="eq_crossp1">Equation</xref> in the following example.
+            <idx><h>cross product</h><h>applications!area of parallelogram</h></idx>
+      </p>
+
+      <example xml:id="ex_crossp4">
+        <title>Finding the area of a parallelogram</title>
+        <statement>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  Find the area of the parallelogram defined by the vectors
+                  <m>\vecu = \bbm  2\\1\ra</m> and <m>\vecv = \la 1\\3\ebm</m>.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Verify that the points <m>A = (1,1,1)</m>, <m>B = (2,3,2)</m>,
+                  <m>C = (4,5,3)</m> and <m>D = (3,3,2)</m> are the vertices of a parallelogram.
+                  Find the area of the parallelogram.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  <xref ref="fig_crossp4a"/> sketches the parallelogram defined by the vectors <m>\vec u</m> and <m>\vec v</m>.
+                  We have a slight problem in that our vectors exist in
+                  <m>\mathbb{R}^2</m>, not <m>\mathbb{R}^3</m>,
+                  and the cross product is only defined on vectors in <m>\mathbb{R}^3</m>.
+                  We skirt this issue by viewing <m>\vec u</m> and <m>\vecv</m> as vectors in the <m>x-y</m> plane of <m>\mathbb{R}^3</m>,
+                  and rewrite them as <m>\vec u = \bbm  2\\1\\0\ebm</m> and <m>\vecv =\bbm  1\\3\\0\ebm</m>.
+                  We can now compute the cross product.
+                  It is easy to show that <m>\crossp uv = \bbm  0\\0\\5\ebm</m>; therefore the area of the parallelogram is <m>A = \norm{\crossp uv} = 5</m>.
+                </p>
+
+                <figure xml:id="fig_crossp4">
+                  <caption>Sketching the parallelograms in <xref ref="ex_crossp4"/></caption>
+                  <sidebyside widths="47% 47%" valign="bottom" margins="0%">
+                    <figure xml:id="fig_crossp4a">
+                      <caption/>
+                    <!-- START figures/fig_crossp4b.tex -->
+                    <image>
+                      <shortdescription>A parallelogram in the plane, spanned by vectors u and v.</shortdescription>
+                      <description>
+                        <p>
+                          The first quadrant in <m>\R^2</m> is shown.
+                          Two vectors a drawn with their tails at the origin.
+                          The vector <m>\vec u</m> ends at the point <m>(2,1)</m>,
+                          while the vector <m>\vec v</m> ends at the point <m>(1,3)</m>.
+                        </p>
+
+                        <p>
+                          These vectors make up two of the four sides of the parallelogram.
+                          The side from <m>(1,3)</m> to <m>(3,4)</m> is parallel to <m>\vec u</m>,
+                          and the side from <m>(2,1)</m> to <m>(3,4)</m> is parallel to <m>\vec v</m>.
+                        </p>
+                      </description>
+                      <latex-image label="img_crossp4a">
+
+                        \begin{tikzpicture}[&gt;=stealth]
+
+                        \begin{axis}[
+                        axis on top,
+                        xtick={1,2,3,4},
+                        ytick={1,2,3,4,5},
+                        ymin=-.5,ymax=5.5,
+                        xmin=-.5,xmax=4.5
+                        ]
+
+                        \draw [thick,-&gt;] (axis cs:0,0) -- (axis cs:2,1) node [right,] { $\vec u$};
+                        \draw [thick,-&gt;] (axis cs:0,0) -- (axis cs:1,3) node [above] { $\vec v$};
+
+                        \draw [thick] (axis cs:2,1) -- (axis cs:3,4) -- (axis cs: 1,3);
+
+                        \end{axis}
+
+                        \end{tikzpicture}
+
+                        </latex-image>
+                      </image>
+                    <!-- figures/fig_crossp4b.tex END -->
+                  </figure>
+
+                  <figure xml:id="fig_crossp4b_3D">
+                    <caption/>
+
+                    <!-- START figures/figcrossp4a_3D.asy -->
+                      <image>
+                        <shortdescription>A three-dimensional image of a parallelogram in space, with vertices A, B, C, and D.</shortdescription>
+                        <description>
+                          <p>
+                            A three-dimensional coordinate system is shown, with <m>x</m>, <m>y</m>, and <m>z</m> axes.
+                            A parallelogram is shown in space relative to these axes,
+                            with vertices labeled <m>A</m>, <m>B</m>, <m>C</m>, and <m>D</m>.
+                          </p>
+                        </description>
+                        <asymptote label="img_crossp4b_3D">
+
+
+
+                          //ASY file for figcrossp4a.asy in Chapter 10
+                          // CAN'T FILL IT IN WITH ''fill'' (only in 2d)
+
+                          size(200,200,IgnoreAspect);
+                          //currentprojection=perspective(7,2,1);
+                          //currentprojection=orthographic(4,4,2);
+                          currentprojection=orthographic(7.5,14,4);
+                          defaultrender.merge=true;
+
+                          // setup and draw the axes
+                          real[] myxchoice={2,4};
+                          real[] myychoice={2,4};
+                          real[] myzchoice={2};
+                          defaultpen(0.5mm);
+                          pair xbounds=(-0.5,4.5);
+                          pair ybounds=(-0.5,4.5);
+                          pair zbounds=(-0.5,3.5);
+
+                          xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+                          yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+                          zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+                          label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+                          label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+                          label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+                          //Draw the edges of the parallelogram with corners at (1,1,1),(2,3,2),(4,5,3),(3,3,2)
+                          draw((1,1,1)--(2,3,2)--(4,5,3)--(3,3,2)--cycle);
+                          label("A",(1,1,1),S);
+                          label("B",(2,3,2),N);
+                          label("C",(4,5,3),N);
+                          label("D",(3,3,2),W);
+
+                          // Fill in the parallelogram
+                          //I changed the viewpoint to (1,4,1), then added://Hartman comment
+                          triple f(pair t) {return (1+t.x+2t.y,1+2t.x+2t.y,1+t.x+t.y);}
+                          surface s=surface(f,(0,0),(1,1),1,1);
+                          pen p=apexmeshpen;
+                          draw(s,surfacepen,meshpen=p);
+
+                        </asymptote>
+                      </image>
+                  <!-- figures/figcrossp4a_3D.asy END -->
+                    </figure>
+                  </sidebyside>
+                </figure>
+              </li>
+
+              <li>
+                <p>
+                  To show that the quadrilateral <m>ABCD</m> is a parallelogram (shown in <xref ref="fig_crossp4b_3D"/>),
+                  we need to show that the opposite sides are parallel.
+                  We can quickly show that <m>\overrightarrow{AB} =\overrightarrow{DC} = \bbm  1\\2\\1\ebm</m> and <m>\overrightarrow{BC} = \overrightarrow{AD} = \bbm  2\\2\\1\ebm</m>.
+                  We find the area by computing the magnitude of the cross product of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m>:
+                  <me>
+                    \overrightarrow{AB} \times \overrightarrow{BC} = \bbm  0\\1\\-2\ebm  \Rightarrow  \norm{\overrightarrow{AB}\times\overrightarrow{BC}} = \sqrt{5} \approx 2.236
+                  </me>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+        <solution component="video">
+          <title>Video solution</title>
+          <video width="98%" youtube="CYboFA8zYBs" xml:id="vid-vectors-crossprod-paralleogram" label="vid-vectors-crossprod-paralleogram" component="video"/>
+        </solution>
+      </example>
+
+      <p>
+        This application is perhaps more useful in finding the area of a triangle
+        (in short, triangles are used more often than parallelograms).
+        We illustrate this in the following example.
+      </p>
+
+      <example xml:id="ex_crossp5">
+        <title>Area of a triangle</title>
+        <statement>
+          <p>
+            Find the area of the triangle with vertices <m>A=(1,2)</m>,
+            <m>B=(2,3)</m> and <m>C=(3,1)</m>,
+            as pictured in <xref ref="fig_crossp5"/>.
+          </p>
+          <figure xml:id="fig_crossp5">
+            <caption>Finding the area of a triangle in <xref ref="ex_crossp5"/></caption>
+            <!-- START figures/fig_crossp5.tex -->
+            <image width="47%">
+              <shortdescription>A triangle in the plane, with vertices A(1,2), B(2,3), and C(3,1).</shortdescription>
+              <description>
+                <p>
+                  The triangle for this problem is sketched in the first quadrant of the plane.
+                  The vertices are labeled, with <m>A</m> at <m>(1,2)</m>, 
+                  <m>B</m> at <m>(2,3)</m>, and <m>C</m> at <m>(3,1)</m>.
+                </p>
+              </description>
+              <latex-image label="img_crossp5">
+
+              \begin{tikzpicture}
+
+              \begin{axis}[
+              axis on top,
+              xtick={1,2,3},
+              ymin=-.1,ymax=3.5,
+              xmin=-.1,xmax=3.9
+              ]
+
+              \addplot [firstcurvestyle,areastyle] coordinates {(1,2) (2,3) (3,1) (1,2)};
+              \addplot [firstcurvestyle,-] coordinates {(1,2) (2,3) (3,1) (1,2)};
+
+              \draw (axis cs:1,2) node [left] { $A$} (axis cs:2,3) node [above] { $B$} (axis cs:3,1) node [below] { $C$};
+
+              \end{axis}
+
+              \end{tikzpicture}
+
+              </latex-image>
+            </image>
+            <!-- figures/fig_crossp5.tex END -->
+          </figure>
+        </statement>
+        <solution>
+          <p>
+            We found the area of this triangle in <xref ref="ex_abc4"/>
+            to be <m>1.5</m> using integration.
+            There we discussed the fact that finding the area of a triangle can be inconvenient using the
+            <q><m>\frac12bh</m></q>
+            formula as one has to compute the height,
+            which generally involves finding angles, etc.
+            Using a cross product is much more direct.
+          </p>
+
+          <p>
+            We can choose any two sides of the triangle to use to form vectors;
+            we choose <m>\overrightarrow{AB} = \bbm  1\\1\ra</m> and <m>\overrightarrow{AC}=\la 2\\-1\ebm</m>.
+            As in the previous example,
+            we will rewrite these vectors with a third component of 0 so that we can apply the cross product.
+            The area of the triangle is
+            <me>
+              \frac12\norm{\overrightarrow{AB}\times\overrightarrow{AC}} = \frac12\norm{\bbm  1\\1\\0\ebm \times \bbm  2\\-1\\0\ebm} = \frac12\norm{\bbm  0\\0\\-3\ebm} = \frac32
+            </me>.
+          </p>
+
+          <p>
+            We arrive at the same answer as before with less work.
+          </p>
+        </solution>
+        <solution component="video">
+          <title>Video solution</title>
+          <video width="98%" youtube="GuEn2qOey2U" xml:id="vid-vectors-crossprod-triangle" label="vid-vectors-crossprod-triangle" component="video"/>
+        </solution>
+      </example>
+    </paragraphs>
+
+    <paragraphs>
+      <title>Volume of a Parallelepiped</title>
+      <p>
+        The three dimensional analogue to the parallelogram is the
+        <em>parallelepiped</em>.
+        Each face is parallel to the opposite face,
+        as illustrated in <xref ref="fig_crossp_parallelepiped"/>.
+        By crossing <m>\vec v</m> and <m>\vec w</m>,
+        one gets a vector whose magnitude is the area of the base.
+        Dotting this vector with <m>\vecu</m> computes the volume
+				of the parallelepiped! (Up to a sign;
+        take the absolute value.)
+      </p>
+      <aside>
+        <p>
+          The word <q>parallelepiped</q>
+          is pronounced <q>parallel-eh-pipe-ed.</q>
+        </p>
+      </aside>
+      <figure xml:id="fig_crossp_parallelepiped">
+        <caption>A parallelepiped is the three dimensional analogue to the parallelogram</caption>
+
+        <!-- START figures/figcrosspparallelpiped_3D.asy -->
+        <image width="47%">
+          <shortdescription>A parellelepiped in three dimensions. It is the box-like object spanned by three vectors.</shortdescription>
+          <description>
+            <p>
+              Three vectors <m>\vec u</m>, <m>\vec v</m>, and <m>\vec w</m> are plotted in three dimensions.
+              These vectors make up three edges of a three-dimensional solid known as a parallelepiped.
+              Each side of the parallelepiped is a parallelogram, and opposite sides are equal parallelograms lying in parallel planes.
+              One pair of opposite sides comes from the parallelogram spanned by <m>\vec u</m> and <m>\vec v</m>,
+              another from the parallelogram spanned by <m>\vec v</m> and <m>\vec w</m>,
+              and the last pair from the parallelogram spanned by <m>\vec u</m> and <m>\vec w</m>.
+            </p>
+          </description>
+          <asymptote label="img_crossp_parallelepiped">
+
+
+
+            //ASY file for figcrosspparallelpiped.asy in Chapter 10
+            // NOT SHADED!!
+
+            size(200,200,IgnoreAspect);
+            //currentprojection=perspective(7,2,1);
+            currentprojection=orthographic(4,4,2);
+            defaultrender.merge=true;
+
+            // setup and draw the axes
+            //real[] myxchoice={};
+            //real[] myychoice={};
+            //real[] myzchoice={};
+            defaultpen(0.5mm);
+            //xaxis3("$x$",-0.5,1,black,OutTicks(myxchoice),Arrow3(size=3mm));
+            //yaxis3("$y$",-1,1,black,OutTicks(myychoice),Arrow3(size=3mm));
+            //zaxis3("$z$",-0.5,1.5,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+            //Draw the parallelepiped with u=&lt;1,1,0&gt;, v=&lt;-1,1,0&gt;, w=&lt;0,1,1&gt;
+            draw((1,1,0)--(0,0,0), Arrow3(size=3mm));// u
+						label("$\vec{u}$",(0,0,0),W);
+					 draw((1,1,0)--(0,2,0), Arrow3(size=3mm));// v
+					 label("$\vec{v}$",(0,2,0),S);
+					 draw((1,1,0)--(1,2,1), Arrow3(size=3mm));// w
+				 	 label("$\vec{w}$",(1,2,1),W);
+				 	 //shifted u to get the other edges of the box
+					 draw((-1,1,0)--(0,2,0),bluepen);// u shifted to v
+				 	 draw((0,1,1)--(1,2,1),bluepen);// u shifted to w
+					 draw((-1,2,1)--(0,3,1),bluepen);// u shifted to v+w
+					 //shifted v to get the other edges of the box
+					 draw((0,0,0)--(-1,1,0),bluepen);// v shifted to u
+					 draw((0,1,1)--(-1,2,1),bluepen);// v shifted to w
+					 draw((1,2,1)--(0,3,1),bluepen);// v shifted to u+w
+					 //shifted w to get the other edges of the box
+					 draw((0,0,0)--(0,1,1),bluepen);// w shifted to u
+					 draw((-1,1,0)--(-1,2,1),bluepen);// w shifted to v
+					 draw((0,2,0)--(0,3,1),bluepen);// w shifted to u+v
+
+            // MIGHT BE ABLE TO USE THIS TO FILL IN THE 6 SIDES
+            // Fill in the parallelogram
+            //I changed the viewpoint to (1,4,1), then added://Hartman comment
+            //triple f(pair t) {return (1+t.x+2t.y,1+2t.x+2t.y,1+t.x+t.y);}
+            //surface s=surface(f,(0,0),(1,1),1,1);
+            //pen p=apexmeshpen;
+            //draw(s,surfacepen,meshpen=p);
+
+            //OR THIS FROM THE WEB????
+            //http://tex.stackexchange.com/questions/137153/fill-a-region-between-two-coplanar-paths-in-asymptote
+            //settings.outformat="pdf";
+            //settings.render=0;
+            //import three;
+            //size(5cm);
+            //path3 p =  (0,-2,-2)-- (0,2,-2) -- (0,2,2) -- (0,-2,2) -- (0,-2,-2) -- (0,-2,-2);
+            //path3 q =  (0,-.25,-1.1) -- (0,.25,-1.1) -- (0,.25,1.1) -- (0,-.25,1.1) -- (0,-.25,-1.1);
+            //draw(surface(p -- reverse(q) -- cycle), emissive(yellow));
+            //draw(p ^^ q, black);
+
+            //my try
+            import three;
+            path3 p =  (0,0,0)-- (1,1,0) -- (0,2,0) -- (-1,1,0); //Left
+            draw(surface(p -- cycle), simplesurfacepen);
+            path3 p =  (0,0,0)-- (1,1,0) -- (1,2,1) -- (0,1,1); //bottom
+            draw(surface(p -- cycle), simplesurfacepen);
+            path3 p =  (-1,1,0)-- (0,2,0) -- (0,3,1) -- (-1,2,1); //right
+            draw(surface(p -- cycle), simplesurfacepen);
+            path3 p =  (0,0,0)-- (-1,1,0) -- (-1,2,1) -- (0,1,1); //back
+            draw(surface(p -- cycle), simplesurfacepen);
+            path3 p =  (1,1,0)-- (0,2,0) -- (0,3,1) -- (1,2,1); //front
+            draw(surface(p -- cycle), simplesurfacepen);
+            path3 p =  (0,1,1)-- (1,2,1) -- (0,3,1) -- (-1,2,1); //top
+            draw(surface(p -- cycle), simplesurfacepen);
+
+          </asymptote>
+        </image>
+        <!-- figures/figcrosspparallelpiped_3D.asy END -->
+      </figure>
+
+      <p>
+            <idx><h>cross product</h><h>applications!volume of parallelepiped</h></idx>
+      </p>
+
+      <p>
+        Thus the volume of a parallelepiped defined by vectors <m>\vecu</m>,
+        <m>\vecv</m> and <m>\vec w</m> is
+        <men xml:id="eq_crossp2">
+          V = \abs{\vecu\cdot (\crossp vw)}
+        </men>.
+      </p>
+
+      <p>
+        Note how this is the Triple Scalar Product,
+        first seen in <xref ref="thm_cross_prod_prop"/>.
+        Applying the identities given in the theorem shows that we can apply the Triple Scalar Product in any <q>order</q>
+        we choose to find the volume.
+        That is,
+        <me>
+          V = \abs{\vecu\cdot(\crossp vw)} = \abs{\vec u\cdot (\crossp wv)} = \abs{(\crossp uv)\cdot \vecw}, \text{ etc. }
+        </me>
+      </p>
+
+      <example xml:id="ex_crossp6">
+        <title>Finding the volume of parallelepiped</title>
+        <statement>
+          <p>
+            Find the volume of the parallelepiped defined by the vectors <m>\vecu = \bbm  1\\1\\0\ebm</m>,
+            <m>\vecv = \bbm  -1\\1\\0\ebm</m> and <m>\vecw = \bbm  0\\1\\1\ebm</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We apply <xref ref="eq_crossp2">Equation</xref>.
+            We first find <m>\crossp vw =\bbm  1\\1\\-1\ebm</m>.
+            Then
+            <me>
+              \abs{\vec u\cdot(\crossp vw)} = \abs{\bbm  1\\1\\0\ebm \cdot \bbm 1\\1\\-1\ebm} = 2
+            </me>.
+          </p>
+
+          <p>
+            So the volume of the parallelepiped is 2 cubic units.
+          </p>
+
+          <figure xml:id="fig_crossp6">
+            <caption>A parallelepiped in <xref ref="ex_crossp6"/></caption>
+
+            <!-- START figures/figcrossp6_3D.asy -->
+            <image width="47%">
+              <shortdescription>The parallelepiped whose volume is computed in this example.</shortdescription>
+              <description>
+                <p>
+                  A parallelpiped is plotted against a three-dimensional coordinate system,
+                  with <m>x</m>, <m>y</m>, and <m>z</m> axes.
+                  Vectors <m>\vec{u}, \vec{v}, \vec{w}</m> are plotted with their tails at the origin,
+                  although the vector <m>\vec{v}</m> is not visible in the default view of the parallelepiped.
+                  (It can be seen once the image is rotated.)
+                </p>
+
+                <p>
+                  These vectors make up the three edges of the parallelepiped that are adjacent to the origin.
+                </p>
+              </description>
+              <asymptote label="img_crossp6">
+
+
+
+                //ASY file for figcrossp6.asy in Chapter 10
+
+                size(200,200,IgnoreAspect);
+                //currentprojection=perspective(7,2,1);
+                currentprojection=orthographic(4,4,2);
+                defaultrender.merge=true;
+
+                // setup and draw the axes
+                real[] myxchoice={1};
+                real[] myychoice={2};
+                real[] myzchoice={0.5,1};
+                defaultpen(0.5mm);
+
+                pair xbounds=(-1.5,1.5);
+                pair ybounds=(0,3);
+                pair zbounds=(-0.5,1.5);
+
+                xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+                yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+                zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+                label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+                label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+                label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+                //Draw the parallelepiped with u=&lt;1,1,0&gt;, v=&lt;-1,1,0&gt;, w=&lt;0,1,1&gt;
+                draw((0,0,0)--(1,1,0), Arrow3(size=3mm));// u
+                label("$\vec{u}$",(1,1,0),W);
+                draw((0,0,0)--(-1,1,0), Arrow3(size=3mm));// v
+                label("$\vec{v}$",(-1,1,0),N);
+                draw((0,0,0)--(0,1,1), Arrow3(size=3mm));// w
+                label("$\vec{w}$",(0,1,1),W);
+                //shifted u to get the other edges of the box
+                draw((-1,1,0)--(0,2,0),bluepen);// u shifted to v
+                draw((0,1,1)--(1,2,1),bluepen);// u shifted to w
+                draw((-1,2,1)--(0,3,1),bluepen);// u shifted to v+w
+                //shifted v to get the other edges of the box
+                draw((1,1,0)--(0,2,0),bluepen);// v shifted to u
+                draw((0,1,1)--(-1,2,1),bluepen);// v shifted to w
+                draw((1,2,1)--(0,3,1),bluepen);// v shifted to u+w
+                //shifted w to get the other edges of the box
+                draw((1,1,0)--(1,2,1),bluepen);// w shifted to u
+                draw((-1,1,0)--(-1,2,1),bluepen);// w shifted to v
+                draw((0,2,0)--(0,3,1),bluepen);// w shifted to u+v
+
+                //my try at shading.
+                import three;
+                path3 p =  (0,0,0)-- (1,1,0) -- (0,2,0) -- (-1,1,0); //Left
+                draw(surface(p -- cycle), simplesurfacepen);
+                path3 p =  (0,0,0)-- (1,1,0) -- (1,2,1) -- (0,1,1); //bottom
+                draw(surface(p -- cycle), simplesurfacepen);
+                path3 p =  (-1,1,0)-- (0,2,0) -- (0,3,1) -- (-1,2,1); //right
+                draw(surface(p -- cycle), simplesurfacepen);
+                path3 p =  (0,0,0)-- (-1,1,0) -- (-1,2,1) -- (0,1,1); //back
+                draw(surface(p -- cycle), simplesurfacepen);
+                path3 p =  (1,1,0)-- (0,2,0) -- (0,3,1) -- (1,2,1); //front
+                draw(surface(p -- cycle), simplesurfacepen);
+                path3 p =  (0,1,1)-- (1,2,1) -- (0,3,1) -- (-1,2,1); //top
+                draw(surface(p -- cycle), simplesurfacepen);
+
+              </asymptote>
+            </image>
+            <!-- figures/figcrossp6_3D.asy END -->
+          </figure>
+        </solution>
+        <solution component="video">
+          <title>Video solution</title>
+          <video width="98%" youtube="r2_dGc1KWEc" xml:id="vid-vectors-crossprod-volume" label="vid-vectors-crossprod-volume" component="video"/>
+        </solution>
+      </example>
+
+      <p>
+        Let's take another look at how <xref ref="eq-crossp2" text="local">Equation</xref> 
+        is computed in terms of our formulas for the dot and cross products. 
+        With <m>\vec u = \bbm  u_1\\ u_2\\ u_3\ebm, \vec v = \bbm  v_1\\ v_2\\ v_3\ebm</m>, 
+        and <m>\vec w = \bbm  w_1\\ w_2\\ w_3\ebm</m>, we have
+        <md>
+          <mrow>\vec{u}\boldsymbol{\cdot}(\crossp vw)\amp = \bbm  u_1\\ u_2\\ u_3\ebm \boldsymbol{\cdot}\left\bbm  \bvm v_2  \amp  v_3\\w_2 \amp w_3\evm\\ -\bvm v_1 &amp; v_3\\ w_1 &amp; w_3\evm\\ \bvm v_1 &amp; v_2\\ w_1 &amp; w_2\evm\right\ebm</mrow>
+          <mrow> \amp = u_1\bvm v_2  \amp  v_3\\w_2 \amp w_3\evm - u_2\bvm v_1 &amp; v_3\\ w_1 &amp; w_3\evm + u_3\bvm v_1 &amp; v_2\\ w_1 &amp; w_2\evm</mrow>
+        </md>.
+      </p>
+
+      <p>
+        Compare this with our determinant formula for computing the cross product,
+        <me>
+          \crossp vw = \bvm \veci  \amp  \vecj  \amp  \veck\\ v_1 &amp; v_2 &amp; v_3\\ w_1 &amp; w_2 &amp; w_3\evm = \bvm v_2 &amp; v_3\\w_2&amp;w_3\evm\veci - \bvm v_1 &amp; v_3\\ w_1 &amp; w_3\evm\vecj + \bvm v_1 &amp; v_2\\ w_1 &amp; w_2\evm\veck
+        </me>.
+        If we replace the unit vectors <m>\veci, \vecj, veck</m> in the above equation with the components of <m>\vec{u}</m>, 
+        we arrive at our first instance of a <m>3\times 3</m> <term>determinant</term>, along with a method for computing such an object:
+        <me>
+          \bvm u_1  \amp  u_2  \amp  u_3\\ v_1 &amp; v_2 &amp; v_3\\ w_1 &amp; w_2 &amp; w_3\evm = u_1 \bvm v_2 &amp; v_3\\ w_2 &amp; w_3\evm - u_2\bvm v_1 &amp; v_3\\ w_1 &amp; w_3\evm + u_3\bvm v_1 &amp; v_2\\ w_1 &amp; w_2\evm = \vec u\boldsymbol{\cdot}(\crossp vw)
+        </me>.
+      </p>
+
+      <p>
+        We will return to our study of determinants in <xref ref="sec-determinant_1"/>, 
+        where we will learn techniques for efficiently computing determinants of any size.
+      </p>
+    </paragraphs>
+
+    <paragraphs>
+      <title>Torque</title>
+      <p>
+        <em>Torque</em> is a measure of the turning force applied to an object.
+        A classic scenario involving torque is the application of a wrench to a bolt.
+        When a force is applied to the wrench, the bolt turns.
+        When we represent the force and wrench with vectors <m>\vec F</m> and <m>\vec \ell</m>,
+        we see that the bolt moves
+        (because of the threads)
+        in a direction orthogonal to <m>\vec F</m> and <m>\vec \ell</m>.
+        Torque is usually represented by the Greek letter <m>\tau</m>, or tau,
+        and has units of N<m>\cdot</m>m,
+        a Newton<ndash/>meter, or ft<m>\cdot</m>lb, a foot<ndash/>pound.
+            <idx><h>cross product</h><h>applications!torque</h></idx>
+            <idx><h>torque</h></idx>
+      </p>
+
+      <p>
+        While a full understanding of torque is beyond the purposes of this book,
+        when a force <m>\vec F</m> is applied to a lever arm
+        <m>\vec \ell</m>, the resulting torque is
+        <men xml:id="eq_crossp3">
+          \vec \tau = \crossp \ell F
+        </men>.
+      </p>
+
+      <example xml:id="ex_crossp7">
+        <title>Computing torque</title>
+        <statement>
+          <p>
+            A lever of length 2ft makes an angle with the horizontal of <m>45^\circ</m>.
+            Find the resulting torque when a force of 10lb is applied to the end of the level where:
+          </p>
+
+          <figure xml:id="fig_crossp7">
+            <caption>Showing a force being applied to a lever in <xref ref="ex_crossp7"/></caption>
+            <!-- START figures/fig_crossp7.tex -->
+            <image width="47%">
+              <shortdescription>Two adjacent images, each showing a pair of vectors, one of which represents a lever, and the other, a force.</shortdescription>
+              <description>
+                <p>
+                  Two images are shown side-by-side.
+                  Both images show a pair of vectors, one of which is labeled <m>\vec l</m> (the lever),
+                  and the other, which is labeled <m>\vec F</m> (the force).
+                </p>
+
+                <p>
+                  In each image, the vector <m>\vec l</m> has its tail at a pivot point.
+                  A circular arrow is drawn around this point to show the direction of rotation of the lever about the pivot.
+                  The direction is clockwise in each image.
+                </p>
+
+                <p>
+                  The force vector <m>\vec F</m> is drawn with its tip at the tip of the vector <m>\vec l</m>.
+                  In both images, the vector <m>\vec l</m> points up and to the right,
+                  and the vector <m>\vec F</m> points down and to the right.
+                  The difference is that in the first image, the vectors meet at a <m>90^\circ</m> angle,
+                  while in the second image, the angle is <m>60^\circ</m>.
+                </p>
+              </description>
+              <latex-image label="img_crossp7">
+
+              \begin{tikzpicture}[&gt;=stealth]
+
+              \draw [thick,-&gt;,rotate=45] (-2,0) -- (0,0) node [below,pos=.5] { $\vec\ell$};
+              \draw [rotate=45,-&gt;] (-1.8,0) arc (0:-270:.2);
+              \draw [rotate=45] (-.4,0) arc (180:90:.4);
+              \draw [rotate=0] (-.6,0) node { $90^\circ$};
+
+              \filldraw [black,rotate=45] (-2,0) circle (1.5pt);
+
+              \begin{scope}[shift={(-.05,.05)}]
+                \draw [thick,-&gt;,rotate=-45] (-1.5,0)node [left] { $\vec F$} -- (0,0);
+              \end{scope}
+
+              \begin{scope}[shift={(3,0)}]
+
+                \draw [thick,-&gt;,rotate=45] (-2,0) -- (0,0) node [below,pos=.5] { $\vec\ell$};
+                \draw [rotate=45,-&gt;] (-1.8,0) arc (0:-270:.2);
+                \draw [rotate=45] (-.4,0) arc (180:120:.4);
+                \draw [rotate=15] (-.6,0) node { $60^\circ$};
+
+                \filldraw [black,rotate=45] (-2,0) circle (1.5pt);
+
+                \begin{scope}[shift={(-.05,.05)}]
+                  \draw [thick,-&gt;,rotate=-15] (-1.5,0) node [above] { $\vec F$} -- (0,0);
+                \end{scope}
+
+              \end{scope}
+
+              \end{tikzpicture}
+
+              </latex-image>
+            </image>
+            <!-- figures/fig_crossp7.tex END -->
+          </figure>
+
+          <p>
+            <ol>
+              <li>
+                <p>
+                  the force is perpendicular to the lever, and
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  the force makes an angle of <m>60^\circ</m> with the lever,
+                  as shown in <xref ref="fig_crossp7"/>.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  We start by determining vectors for the force and lever arm.
+                  Since the lever arm makes a
+                  <m>45^\circ</m> angle with the horizontal and is 2ft long,
+                  we can state that <m>\vec \ell = 2\bbm  \cos(45^\circ) \\\sin(45^\circ) \ra = \la \sqrt2\\\sqrt2\ebm</m>.
+
+                  Since the force vector is perpendicular to the lever arm (as seen in the left hand side of <xref ref="fig_crossp7"/>),
+                  we can conclude it is making an angle of <m>-45^\circ</m> with the horizontal.
+                  As it has a magnitude of 10lb, we can state <m>\vec F = 10\bbm  \cos(-45^\circ)\\ \sin(-45^\circ)\ra = \la 5\sqrt2\\-5\sqrt2\ebm</m>.
+
+                  Using <xref ref="eq_crossp3">Equation</xref> to find the torque requires a cross product. We again let the third component of each vector be 0  and compute the cross product:
+                  <md>
+                    <mrow>\vec\tau \amp = \crossp \ell F</mrow>
+                    <mrow>\amp = \bbm  \sqrt2\\\sqrt2\\0\ebm \times \bbm  5\sqrt2\\-5\sqrt2\\0\ebm</mrow>
+                    <mrow>\amp = \bbm  0\\0\\-20\ebm</mrow>
+                  </md>
+                  This clearly has a magnitude of 20 ft-lb.
+                  We can view the force and lever arm vectors as lying <q>on the page</q>;
+                  our computation of <m>\vec\tau</m> shows that the torque goes <q>into the page.</q>
+                  This follows the Right Hand Rule of the cross product,
+                  and it also matches well with the example of the wrench turning the bolt.
+                  Turning a bolt clockwise moves it in.
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  Our lever arm can still be represented by <m>\vec \ell = \bbm  \sqrt2\\\sqrt2\ebm</m>.
+                  As our force vector makes a
+                  <m>60^\circ</m> angle with <m>\vec \ell</m>, we can see
+                  (referencing the right hand side of the figure)
+                  that <m>\vec F</m> makes a
+                  <m>-15^\circ</m> angle with the horizontal.
+                  Thus
+                  <md>
+                    <mrow>\vec F = 10\bbm  \cos-15^\circ\\\sin-15^\circ\ra \amp = \la \frac{5(1+\sqrt3)}{\sqrt2}\\\frac{5(-1+\sqrt3)}{\sqrt2}\ebm</mrow>
+                    <mrow>\amp \approx \bbm  9.659\\-2.588\ebm</mrow>
+                  </md>.
+                  We again make the third component 0 and take the cross product to find the torque:
+                  <md>
+                    <mrow>\vec\tau \amp = \crossp \ell F</mrow>
+                    <mrow>\amp = \bbm  \sqrt2\\\sqrt2\\0\ebm \times  \bbm  \frac{5(1+\sqrt3)}{\sqrt2}\\\frac{5(-1+\sqrt3)}{\sqrt2}\\0\ebm</mrow>
+                    <mrow>\amp = \bbm  0\\0\\-10\sqrt3\ebm</mrow>
+                    <mrow>\amp \approx \bbm  0\\0\\-17.321\ebm</mrow>
+                  </md>.
+                  As one might expect, when the force and lever arm vectors
+                  <em>are</em> orthogonal,
+                  the magnitude of force is greater than when the vectors
+                  <em>are not</em> orthogonal.
+                </p>
+              </li>
+            </ol>
+          </p>
+        </solution>
+      </example>
+    </paragraphs>
+
+    <p>
+      While the cross product has a variety of applications
+      (as noted in this chapter),
+      its fundamental use is finding a vector perpendicular to two others.
+      Knowing a vector is orthogonal to two others is of incredible importance,
+      as it allows us to find the equations of lines and planes in a variety of contexts.
+      The importance of the cross product,
+      in some sense, relies on the importance of lines and planes,
+      which see widespread use throughout engineering, physics and mathematics.
+      We study lines and planes in the next two sections.
+    </p>
+  </subsection>
+
+  <exercises>
+    <subexercises xml:id="TaC-cross-product">
+      <title>Terms and Concepts</title>
+
+      <exercise label="TaC-cross-product-1">
+        <!--<webwork xml:id="webwork-TaC-cross-product-1">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                The cross product of two vectors is a <fillin/>, not a scalar.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                vector
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-cross-product-2">
+        <!--<webwork xml:id="webwork-TaC-cross-product-2">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                One can visualize the direction of <m>\vec u\times\vec v</m> using the
+              </p>
+
+              <p>
+                <fillin/> <fillin/> <fillin/>.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                right hand rule
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-cross-product-3">
+        <!--<webwork xml:id="webwork-TaC-cross-product-3">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                Give a synonym for <q>orthogonal.</q>
+              </p>
+            </statement>
+            <answer>
+              <p>
+                <q>Perpendicular</q> is one answer.
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-cross-product-4">
+        <webwork xml:id="webwork-TaC-cross-product-4">
+
+            <pg-code>
+              $true=PopUp(['?','True','False'],1);
+              $false=PopUp(['?','True','False'],2);
+            </pg-code>
+
+            <statement>
+              <p>
+                True or False?
+                A fundamental principle of the cross product is that
+                <m>\vec u\times\vec v</m> is orthogonal to <m>\vec u</m> and <m>\vec v</m>.
+                <var name="$true" form="popup"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="TaC-cross-product-5">
+        <!--<webwork xml:id="webwork-TaC-cross-product-5">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                <fillin/> is a measure of the turning force applied to an object.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                Torque
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-cross-product-6">
+        <statement>
+          <p>
+            T/F: If <m>\vec u</m> and <m>\vec v</m> are parallel,
+            then <m>\vec u\times\vec v=\vec 0</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            T
+          </p>
+        </answer>
+      </exercise>
+
+    </subexercises>
+    <subexercises>
+      <title>Problems</title>
+      <exercisegroup cols="2" xml:id="exset-cross-product-compute">
+
+        <introduction>
+          <p>
+            In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given.
+            Compute <m>\vec u\times\vec v</m> and check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+          </p>
+        </introduction>
+
+        <exercise label="ex-cross-product-compute-1">
+          <webwork xml:id="webwork-ex-cross-product-compute-1">
+              <pg-code>
+                Context("Vector");
+                $cp=Vector("&lt;12, -15, 3&gt;");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Let <m>\vec u = \bbm  3\\2\\-2\ebm</m>,
+                  <m>\vec v = \bbm  0\\1\\5\ebm</m>.
+                </p>
+
+                <p>
+                  <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
+                </p>
+
+                <p>
+                  Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-compute-2">
+          <webwork xml:id="webwork-ex-cross-product-compute-2">
+              <pg-code>
+                Context("Vector");
+                $cp=Vector("&lt;11, 1, -17&gt;");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Let <m>\vec u = \bbm  5\\ -4\\ 3\ebm</m>,
+                  <m>\vec v = \bbm  2\\ -5\\ 1\ebm</m>.
+                </p>
+
+                <p>
+                  <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
+                </p>
+
+                <p>
+                  Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-compute-3">
+          <webwork xml:id="webwork-ex-cross-product-compute-3">
+              <pg-code>
+                Context("Vector");
+                $cp=Vector("&lt;-5, -31, 27&gt;");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Let <m>\vec u = \bbm  4\\ -5\\ -5\ebm</m>,
+                  <m>\vec v = \bbm  3\\ 3\\ 4\ebm</m>.
+                </p>
+
+                <p>
+                  <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
+                </p>
+
+                <p>
+                  Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-compute-4">
+          <webwork xml:id="webwork-ex-cross-product-compute-4">
+              <pg-code>
+                Context("Vector");
+                $cp=Vector("&lt;47, -36, -44&gt;");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Let <m>\vec u = \bbm  -4\\ 7\\ -10\ebm</m>,
+                  <m>\vec v = \bbm  4\\ 4\\ 1\ebm</m>.
+                </p>
+
+                <p>
+                  <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
+                </p>
+
+                <p>
+                  Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-compute-5">
+          <webwork xml:id="webwork-ex-cross-product-compute-5">
+              <pg-code>
+                Context("Vector");
+                $cp=Vector("&lt;0, -2, 0&gt;");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Let <m>\vec u = \bbm  1\\ 0\\ 1\ebm</m>,
+                  <m>\vec v = \bbm  5\\ 0\\ 7\ebm</m>.
+                </p>
+
+                <p>
+                  <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
+                </p>
+
+                <p>
+                  Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-compute-6">
+          <webwork xml:id="webwork-ex-cross-product-compute-6">
+              <pg-code>
+                Context("Vector");
+                $cp=Vector("&lt;0, 0, 0&gt;");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Let <m>\vec u = \bbm  1\\ 5\\ -4\ebm</m>,
+                  <m>\vec v = \bbm  -2\\ -10\\ 8\ebm</m>.
+                </p>
+
+                <p>
+                  <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
+                </p>
+
+                <p>
+                  Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      <exercise label="ex-cross-product-compute-7">
+        <statement>
+          <p>
+            <m>\vec u = \bbm  a\\b\\0\ebm</m>,
+            <m>\vec v = \bbm  c\\d\\0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\vec u\times \vec v = \bbm  0\\0\\ad-bc\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+
+        <exercise label="ex-cross-product-compute-8">
+          <webwork xml:id="webwork-ex-cross-product-compute-8">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(ijk=&gt;1);
+                $cp=Vector("k");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Let <m>\vec u = \hat\imath</m>,
+                  <m>\vec v = \hat\jmath</m>.
+                </p>
+
+                <p>
+                  <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
+                </p>
+
+                <p>
+                  Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-compute-9">
+          <webwork xml:id="webwork-ex-cross-product-compute-9">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(ijk=&gt;1);
+                $cp=Vector("-j");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Let <m>\vec u = \hat\imath</m>, <m>\vec v = \hat{k}</m>.
+                </p>
+
+                <p>
+                  <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
+                </p>
+
+                <p>
+                  Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-compute-10">
+          <webwork xml:id="webwork-ex-cross-product-compute-10">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(ijk=&gt;1);
+                $cp=Vector("i");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Let <m>\vec u = \hat\jmath</m>, <m>\vec v = \hat{k}</m>.
+                </p>
+
+                <p>
+                  <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
+                </p>
+
+                <p>
+                  Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+
+      <exercise label="ex-cross-product-dist-prop">
+        <!--<webwork xml:id="webwork-ex-cross-product-dist-prop">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                Pick any vectors <m>\vec u</m>,
+                <m>\vec v</m> and <m>\vec w</m> in
+                <m>\mathbb{R}^3</m> and show that <m>\vec u \times (\vec v+\vec w) = \vec u\times \vec v+\vec u\times \vec w</m>.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                Answers will vary.
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-cross-product-triple-prop">
+        <!--<webwork xml:id="webwork-ex-cross-product-triple-prop">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                Pick any vectors <m>\vec u</m>,
+                <m>\vec v</m> and <m>\vec w</m> in
+                <m>\mathbb{R}^3</m> and show that <m>\vec u \cdot (\vec v\times\vec w) = (\vec u\times \vec v)\cdot \vec w</m>.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                Answers will vary.
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercisegroup cols="2" xml:id="exset-cross-product-angle-mag">
+
+        <introduction>
+          <p>
+            In the following exercises,
+            the magnitudes of vectors <m>\vec u</m> and <m>\vec v</m> in <m>\mathbb{R}^3</m> are given,
+            along with the angle <m>\theta</m> between them.
+            Use this information to find the magnitude of <m>\vec u\times\vec v</m>.
+          </p>
+        </introduction>
+
+        <exercise label="ex-cross-product-angle-mag-1">
+          <webwork xml:id="webwork-ex-cross-product-angle-mag-1">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $normucv=Formula("5");
+              </pg-code>
+
+              <statement>
+                <p>
+                  If <m>\vnorm{u} = 2</m>, <m>\vnorm{v} = 5</m>,
+                  and <m>\theta = 30^{\circ}</m> is the angle between <m>\vec u</m> and <m>\vec v</m>,
+                  then <m>\norm{\vec u\times\vec v}=</m><var name="$normucv" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-angle-mag-2">
+          <webwork xml:id="webwork-ex-cross-product-angle-mag-2">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $normucv=Formula("21");
+              </pg-code>
+
+              <statement>
+                <p>
+                  If <m>\vnorm{u} = 3</m>, <m>\vnorm{v} = 7</m>,
+                  and <m>\theta = \pi/2</m> is the angle between <m>\vec u</m> and <m>\vec v</m>,
+                  then <m>\norm{\vec u\times\vec v}=</m><var name="$normucv" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-angle-mag-3">
+          <webwork xml:id="webwork-ex-cross-product-angle-mag-3">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $normucv=Formula("0");
+              </pg-code>
+
+              <statement>
+                <p>
+                  If <m>\vnorm{u} = 3</m>, <m>\vnorm{v} = 4</m>,
+                  and <m>\theta = \pi</m> is the angle between <m>\vec u</m> and <m>\vec v</m>,
+                  then <m>\norm{\vec u\times\vec v}=</m><var name="$normucv" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-angle-mag-4">
+          <webwork xml:id="webwork-ex-cross-product-angle-mag-4">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $normucv=Formula("5");
+              </pg-code>
+
+              <statement>
+                <p>
+                  If <m>\vnorm{u} = 2</m>, <m>\vnorm{v} = 5</m>,
+                  and <m>\theta = 5\pi/6</m> is the angle between <m>\vec u</m> and <m>\vec v</m>,
+                  then <m>\norm{\vec u\times\vec v}=</m><var name="$normucv" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-cross-product-parallelogram">
+
+        <introduction>
+          <p>
+            In the following exercises,
+            find the area of the parallelogram defined by the given vectors.
+          </p>
+        </introduction>
+
+        <exercise label="ex-cross-product-parallelogram-1">
+          <webwork xml:id="webwork-ex-cross-product-parallelogram-1">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $area=Formula("sqrt(14)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the area of the parallelogram defined by <m>\vec u = \bbm  1\\1\\2\ebm</m>,
+                  and <m>\vec v = \bbm  2\\0\\3\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$area" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-parallelogram-2">
+          <webwork xml:id="webwork-ex-cross-product-parallelogram-2">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $area=Formula("sqrt(230)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the area of the parallelogram defined by <m>\vec u = \bbm  -2\\1\\5\ebm</m>,
+                  and <m>\vec v = \bbm  -1\\3\\1\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$area" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-parallelogram-3">
+          <webwork xml:id="webwork-ex-cross-product-parallelogram-3">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $area=Formula("3");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the area of the parallelogram defined by <m>\vec u = \bbm  1\\2\ebm</m>,
+                  and <m>\vec v = \bbm  2\\1\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$area" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-parallelogram-4">
+          <webwork xml:id="webwork-ex-cross-product-parallelogram-4">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $area=Formula("6");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the area of the parallelogram defined by <m>\vec u = \bbm  2\\0\ebm</m>,
+                  and <m>\vec v = \bbm  0\\3\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$area" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-cross-product-triangle">
+
+        <introduction>
+          <p>
+            In the following exercises,
+            find the area of the triangle with the given vertices.
+          </p>
+        </introduction>
+
+        <exercise label="ex-cross-product-triangle-1">
+          <webwork xml:id="webwork-ex-cross-product-triangle-1">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $area=Formula("5sqrt(2)/2");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the area of the triangle with vertices <m>(0,0,0)</m>,
+                  <m>(1,3,-1)</m> and <m>(2,1,1)</m>.
+                </p>
+
+                <p>
+                  <var name="$area" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-triangle-2">
+          <webwork xml:id="webwork-ex-cross-product-triangle-2">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $area=Formula("3sqrt(30)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the area of the triangle with vertices <m>(5,2,-1)</m>,
+                  <m>(3,6,2)</m> and <m>(1,0,4)</m>.
+                </p>
+
+                <p>
+                  <var name="$area" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-triangle-3">
+          <webwork xml:id="webwork-ex-cross-product-triangle-3">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $area=Formula("1");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the area of the triangle with vertices <m>(1,1)</m>,
+                  <m>(1,3)</m> and <m>(2,2)</m>.
+                </p>
+
+                <p>
+                  <var name="$area" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-triangle-4">
+          <webwork xml:id="webwork-ex-cross-product-triangle-4">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $area=Formula("5/2");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the area of the triangle with vertices <m>(3,1)</m>,
+                  <m>(1,2)</m> and <m>(4,3)</m>.
+                </p>
+
+                <p>
+                  <var name="$area" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-cross-product-quadrilateral">
+
+        <introduction>
+          <p>
+            In the following exercises,
+            find the area of the quadrilateral with the given vertices.
+            (Hint: break the quadrilateral into two triangles.)
+          </p>
+        </introduction>
+
+        <exercise label="ex-cross-product-quadrilateral-1">
+          <webwork xml:id="webwork-ex-cross-product-quadrilateral-1">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $area=Formula("7");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the area of the quadrilateral with vertices <m>(0,0)</m>,
+                  <m>(1,2)</m>,
+                  <m>(3,0)</m>, and <m>(4,3)</m>.
+                </p>
+
+                <p>
+                  <var name="$area" width="10"/>
+                </p>
+              </statement>
+              <hint>
+                <p>
+                  Break the quadrilateral into two triangles.
+                </p>
+              </hint>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-quadrilateral-2">
+          <webwork xml:id="webwork-ex-cross-product-quadrilateral-2">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $area=Formula("4sqrt(14)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the area of the quadrilateral with vertices <m>(0,0,0)</m>,
+                  <m>(2,1,1)</m>, <m>(-1,2,-8)</m>, and <m>(1,-1,5)</m>.
+                </p>
+
+                <p>
+                  <var name="$area" width="10"/>
+                </p>
+              </statement>
+              <hint>
+                <p>
+                  Break the quadrilateral into two triangles.
+                </p>
+              </hint>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-cross-product-parallelepiped">
+
+        <introduction>
+          <p>
+            In the following exercises,
+            find the volume of the parallelepiped defined by the given vectors.
+          </p>
+        </introduction>
+
+        <exercise label="ex-cross-product-parallelepiped-1">
+          <webwork xml:id="webwork-ex-cross-product-parallelepiped-1">
+              <pg-code>
+                $volume=Compute("2");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the volume of the parallelepiped defined by <m>\vec u = \bbm  1\\1\\1\ebm</m>,
+                  <m>\vec v=\bbm  1\\2\\3\ebm</m>, and <m>\vec w = \bbm  1\\0\\1\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$volume" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-parallelepiped-2">
+          <webwork xml:id="webwork-ex-cross-product-parallelepiped-2">
+              <pg-code>
+                $volume=Compute("15");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the volume of the parallelepiped defined by <m>\vec u = \bbm  -1\\2\\1\ebm</m>,
+                  <m>\vec v=\bbm  2\\2\\1\ebm</m>, and <m>\vec w = \bbm  3\\1\\3\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$volume" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-cross-product-unit-ortho">
+
+        <introduction>
+          <p>
+            In the following exercises,
+            find a unit vector orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+          </p>
+        </introduction>
+
+        <exercise label="ex-cross-product-unit-ortho-1">
+          <webwork xml:id="webwork-ex-cross-product-unit-ortho-1">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $w=Compute("&lt;1/sqrt(6),1/sqrt(6),-2/sqrt(6)&gt;");
+                $w=OneOf("$w,-$w");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find a unit vector orthogonal to both <m>\vec u = \bbm  1\\1\\1\ebm</m>,
+                  and <m>\vec v=\bbm  2\\0\\1\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$w" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-unit-ortho-2">
+          <webwork xml:id="webwork-ex-cross-product-unit-ortho-2">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $w=Compute("&lt;-2/sqrt(21),1/sqrt(21),4/sqrt(21)&gt;");
+                $w=OneOf("$w,-$w");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find a unit vector orthogonal to both <m>\vec u = \bbm  1\\-2\\1\ebm</m>,
+                  and <m>\vec v=\bbm  3\\2\\1\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$w" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-unit-ortho-3">
+          <webwork xml:id="webwork-ex-cross-product-unit-ortho-3">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $w=Compute("&lt;0,1,0&gt;");
+                $w=OneOf("$w,-$w");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find a unit vector orthogonal to both <m>\vec u = \bbm  5\\0\\2\ebm</m>,
+                  and <m>\vec v=\bbm  -3\\0\\7\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$w" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-cross-product-unit-ortho-4">
+          <webwork xml:id="webwork-ex-cross-product-unit-ortho-4">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0, reduceConstantFunctions=&gt;0);
+                $u=Compute("&lt;1,-2,1&gt;");
+                $w=Compute("&lt;2/sqrt(5),1/sqrt(5),0&gt;");
+                $ev=$w-&gt;cmp(checker =&gt; sub {
+                        my ($correct,$student,$self) = @_;
+                        return 1 if (($student . $student == 1) and ($student . $u == 0));
+                     });
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find a unit vector orthogonal to both <m>\vec u = \bbm  1\\-2\\1\ebm</m>,
+                  and <m>\vec v=\bbm  -2\\4\\-2\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$w" evaluator="$ev" width="30"/>
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  Since <m>\vec u</m> and <m>\vec v</m> are parallel,
+                 any unit vector orthogonal to <m>\vec u</m> works
+                 (such as <m>\frac{1}{\sqrt{2}}\bbm  1\\0\\-1\ebm</m>).
+                </p>
+              </solution>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+
+      <exercise label="ex-cross-product-torque-1">
+        <!--<webwork xml:id="webwork-ex-cross-product-torque-1">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                A bicycle rider applies 150lb of force, straight down,
+                onto a pedal that extends 7in horizontally from the crankshaft.
+                Find the magnitude of the torque applied to the crankshaft.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                <m>87.5</m>ft<ndash/>lb
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-cross-product-torque-2">
+        <!--<webwork xml:id="webwork-ex-cross-product-torque-2">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                A bicycle rider applies 150lb of force,
+                straight down, onto a pedal that extends 7in from the crankshaft,
+                making a <m>30^\circ</m> angle with the horizontal.
+                Find the magnitude of the torque applied to the crankshaft.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                <m>43.75\sqrt{3}\approx 75.78</m>ft<ndash/>lb
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-cross-product-torque-3">
+        <!--<webwork xml:id="webwork-ex-cross-product-torque-3">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                To turn a stubborn bolt, 80lb of force is applied to a 10in wrench.
+                What is the maximum amount of torque that can be applied to the bolt?
+              </p>
+            </statement>
+            <answer>
+              <p>
+                <m>200/3\approx 66.67</m>ft<ndash/>lb
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-cross-product-torque-4">
+        <!--<webwork xml:id="webwork-ex-cross-product-torque-4">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                To turn a stubborn bolt, 80lb of force is applied to a 10in wrench in a confined space,
+                where the direction of applied force makes a
+                <m>10^\circ</m> angle with the wrench.
+                How much torque is subsequently applied to the wrench?
+              </p>
+            </statement>
+            <answer>
+              <p>
+                <m>11.58</m>ft<ndash/>lb
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-cross-product-ortho-proof">
+        <!--<webwork xml:id="webwork-ex-cross-product-ortho-proof">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                Show, using the definition of the Cross Product,
+                that <m>\vec u\cdot(\vec u\times\vec v)=0</m>;
+                that is, that <m>\vec u</m> is orthogonal to the cross product of <m>\vec u</m> and <m>\vec v</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                With <m>\vec u = \bbm  u_1\\u_2\\u_3\ebm</m> and <m>\vec v = \bbm  v_1\\v_2\\v_3\ebm</m>, we have
+                <md>
+                  <mrow>\vec u\cdot(\vec u\times\vec v) \amp = \bbm  u_1\\u_2\\u_3\ebm\cdot (\bbm  u_2v_3-u_3v_2\\-(u_1v_3-u_3v_1)\\u_1v_2-u_2v_1\ebm)</mrow>
+                  <mrow>\amp = u_1(u_2v_3-u_3v_2) - u2(u_1v_3-u_3v_1)+u3(u_1v_2-u_2v_1)</mrow>
+                  <mrow>\amp =0</mrow>
+                </md>.
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-cross-product-self-zero">
+        <!--<webwork xml:id="webwork-ex-cross-product-self-zero">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                Show, using the definition of the Cross Product,
+                that <m>\vec u\times\vec u=\vec 0</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                With <m>\vec u = \bbm  u_1\\u_2\\u_3\ebm</m>, we have
+                <md>
+                  <mrow>\vec u\times\vec u \amp = \bbm  u_2u_3-u_3u_2\\-(u_1u_3-u_3u_1)\\u_1u_2-u_2u_1\ebm)</mrow>
+                  <mrow>\amp = \bbm  0\\0\\0\ebm</mrow>
+                  <mrow>\amp =\vec 0</mrow>
+                </md>.
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+    </subexercises>
+  </exercises>
+</section>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+  <xi:include href="./docinfo.ptx"/>
+
+  <book xml:id="intro-linear">
+    <title>Elementary Linear Algebra</title>
+    <subtitle>For University of Lethbridge Math 1410</subtitle>
+    <frontmatter label="frontmatter">
+      <titlepage>
+        <author>
+          <personname>Gregory Hartman, Ph.D.</personname>
+          <department>Department of Applied Mathematics</department>
+          <institution>Virginia Military Institute</institution>
+        </author>
+
+        <author>
+          <personname>Carl Stitz, Ph.D</personname>
+          <institution>Lakeland Community College</institution>
+        </author>
+
+        <author>
+          <personname>Jeff Zeager, Ph.D.</personname>
+          <institution>Lorain County Community College</institution>
+        </author>
+
+        <author>
+          <personname>Sean Fitzpatrick, Ph.D.</personname>
+          <department>Department of Mathematics and Computer Science</department>
+          <institution>University of Lethbridge</institution>
+        </author>
+
+        <editor>
+          <personname>Sean Fitzpatrick, Ph.D.</personname>
+          <department>Department of Mathematics and Computer Science</department>
+          <institution>University of Lethbridge</institution>
+        </editor>
+        <date><today/></date>
+      </titlepage>
+      
+      <colophon label="colophon">
+        
+        <credit>
+          <role>Source for Chapter 1</role>
+          <entity><em>Precalculus</em>, by Stitz and Zeager</entity>
+        </credit>
+        
+        <credit>
+          <role>Source for Chapter 2</role>
+          <entity><em>APEX Calculus</em>, by Greg Hartman</entity>
+        </credit>
+        
+        <credit>
+          <role>Primary text source</role>
+          <entity><em>Fundamentals of Matrix Algebra</em>, by Greg Hartman</entity>
+        </credit>
+        
+        <credit>
+          <role>Author for supplmental material</role>
+          <entity>Sean Fitzpatrick</entity>
+        </credit>
+        
+        <copyright>
+          <year>2024</year>
+          <holder>Authors as indicated above</holder>
+          <minilicense>Creative Commons BY NC</minilicense>
+          <shortlicense>
+            Licensed to the public under Creative Commons Attribution-Noncommercial 4.0 International Public License
+          </shortlicense>
+        </copyright>
+      </colophon>
+    </frontmatter>
+
+    <xi:include href="./chapter-reals.ptx"/>
+    <xi:include href="./chapter-vectors.ptx"/>
+    <xi:include href="./chapter-linear.ptx"/>
+    <xi:include href="./chapter-algebra.ptx"/>
+    <xi:include href="./chapter-transformations.ptx"/>
+
+    <backmatter label="backmatter">
+      <solutions divisional="answer" admit="odd" label="selected-answers">
+        <title>Answers to Selected Exercises</title>
+      </solutions>
+      <xi:include href="./appendix-back-reference.ptx"/>
+      <index label="terminology-index">
+        <title>Index</title>
+        <index-list/>
+      </index>
+    </backmatter>
+  </book>
+</pretext>

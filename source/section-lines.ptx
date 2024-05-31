@@ -1,0 +1,2906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_lines" label="sec_lines">
+  <title>Lines</title>
+  <introduction>
+    <p>
+          <idx><h>lines</h></idx>
+      To find the equation of a line in the <m>xy</m>-plane, we need two pieces of information: a point and the slope.
+      The slope conveys <em>direction</em> information.
+      As vertical lines have an undefined slope,
+      the following statement is more accurate:
+    </p>
+
+    <p>
+      To define a line, one needs a point on the line and the direction of the line.
+    </p>
+
+    <p>
+      This holds true for lines in space.
+    </p>
+
+    <figure xml:id="vid-vectors-lines-intro" component="video">
+      <caption>Video introduction to <xref ref="sec_lines"/></caption>
+      <video youtube="rA3i_j9MGEM" label="vid-vectors-lines-intro"/>
+    </figure>
+  </introduction>
+
+  <subsection xml:id="subsec_lines_space_def">
+    <title>Lines in space</title>
+    <p>
+      Let <m>P</m> be a point in space,
+      let <m>\vec p</m> be the vector with initial point at the origin and terminal point at <m>P</m> (<ie/>, <m>\vec p</m>
+      <q>points</q> to <m>P</m>),
+      and let <m>\vec d</m> be a vector.
+      Consider the points on the line through <m>P</m> in the direction of <m>\vec d</m>.
+    </p>
+
+    <p>
+      Clearly one point on the line is <m>P</m>;
+      we can say that the <em>vector</em>
+      <m>\vec p</m> lies at this point on the line.
+      To find another point on the line,
+      we can start at <m>\vec p</m> and move in a direction parallel to <m>\vec d</m>.
+      For instance,
+      starting at <m>\vec p</m> and traveling one length of <m>\vec d</m> places one at another point on the line.
+      Consider <xref ref="fig_lines_intro"/>
+      where certain points along the line are indicated.
+    </p>
+
+    <figure xml:id="fig_lines_intro">
+      <caption>Defining a line in space</caption>
+
+      <!-- START figures/figlines_intro_3D.asy -->
+      <image width="47%">
+        <shortdescription>In three dimensions, vectors p (position), d (direction), and p+d are plotted. A line passes through the tips of p and p+d.</shortdescription>
+        <description>
+          <p>
+            In a three-dimensional coordinate system, vectors <m>\vec d</m> and <m>\vec p</m> are plotted with their tails at the origin,
+            along with their sum, <m>\vec{p}+\vec{d}</m>.
+            The vector <m>\vec{p}</m> is the position vector for a line, which is also shown.
+            The line passes through the tips of <m>\vec{p}</m> and <m>\vec{p}+\vec{d}</m>,
+            since the difference <m>(\vec{p}+\vec{d})-\vec{p}=\vec d</m> is the direction vector of the line.
+            Also plotted is the vector <m>\vec{p}-2\vec{d}</m>, which points to another point on the line.
+          </p>
+        </description>
+        <asymptote label="img_lines_intro">
+
+
+
+          //ASY file for figlines_intro.asy in Chapter 10
+
+          size(200,200,IgnoreAspect);
+          //currentprojection=perspective(7,2,1);
+          currentprojection=orthographic(4,4,2);
+          defaultrender.merge=true;
+
+          // setup and draw the axes
+          real[] myxchoice={};
+          real[] myychoice={};
+          real[] myzchoice={};
+          defaultpen(0.5mm);
+          pair xbounds=(-1,1);
+          pair ybounds=(-1,3.5);
+          pair zbounds=(-1,1.5);
+
+          xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+          yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+          zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+          label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+          label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+          label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+          //draw vector d=&lt;-1,0,1&gt;
+          draw((0,0,0)--(-1,0,1),redpen,Arrow3(size=2mm));
+          label("$\vec{d}$",(-1,0,1),N);
+          //draw vector p=&lt;0,2,1&gt;
+          draw((0,0,0)--(0,2,1),black,Arrow3(size=2mm));
+          label("$\vec{p}$",(0,2,1),N);
+          //draw vector p+d
+          draw((0,0,0)--(-1,2,2),black,Arrow3(size=2mm));
+          label("$\vec{p}+\vec{d}$",(-1,2,2),W);
+          //draw vector p-2d
+          draw((0,0,0)--(2,2,-1),black,Arrow3(size=2mm));
+          label("$\vec{p}-2\vec{d}$",(2,2,-1),W);
+          //draw the line ({-x},{2},{1+x});
+          draw((2.2,2,-1.2)--(-1.5,2,2.5),bluepen);
+
+        </asymptote>
+      </image>
+      <!-- figures/figlines_intro_3D.asy END -->
+    </figure>
+
+    <p>
+      The figure illustrates how every point on the line can be obtained by starting with <m>\vec p</m> 
+      and moving a certain distance in the direction of <m>\vec d</m>.
+      That is, we can define the line as a function of <m>t</m>:
+      <men xml:id="eq_lines1">
+        \vec\ell(t) = \vec p + t\ \vec d
+      </men>.
+    </p>
+
+    <p>
+      In many ways, this is <em>not</em> a new concept.
+      Compare <xref ref="eq_lines1">Equation</xref> to the familiar
+      <q><m>y=mx+b</m></q> equation of a line:
+    </p>
+
+    <figure xml:id="fig_lines_eq">
+      <caption>Understanding the vector equation of a line</caption>
+      <image width="67%">
+        <shortdescription>A text description, comparing the elements the equations of a line in the plane, and in space.</shortdescription>
+        <description>
+          <p>
+            On the left is the equation <m>y=mx+b</m> for a line in the plane with slope <m>m</m> and <m>y</m> intercept <m>b</m>.
+            On the right is the equation <m>\vec{\ell}(t) = \vec p + t\vec d</m> for a line in space
+            through the point <m>\vec p</m> with direction vector <m>\vec d</m>.
+          </p>
+
+          <p>
+            Above the two equations is the text <q>Starting Point</q>.
+            From this text are two arrows, pointing to the value <m>b</m> in the plane equation, and the value <m>\vec p</m> in the space equation.
+            Also above the equations is the text <q>Direction</q>.
+            From this text, two arrows point to the value <m>m</m> in the plane equation, and the value <m>\vec d</m> in the space equation.
+          </p>
+
+          <p>
+            Below the two equations is the text <q>How Far To Go In That Direction</q>.
+            Arrows point from this text to the value <m>x</m> in the plane equation, and the value <m>t</m> in the space equation.
+          </p>
+        </description>
+        <latex-image label="img_lines_intro_3D">
+
+        \begin{tikzpicture}[&gt;=stealth]
+
+        \draw (0,0) node (L) {\(y\ =\ b\ +\ m x\)};
+        \draw (5,0) node (R) {\(\vec \ell(t)\ =\ \vec p\ +\ t \vec d\)};
+
+        \node (A) at (1,1.5) {Starting Point};
+        \node (B) at (4,1.5) {Direction};
+        \node (C) at (2.5,-1.5) {How Far To Go In That Direction};
+
+        \draw [-&gt;,thick] (A) -- (5,.2);
+        \draw [-&gt;,thick] (A) -- (0,.2);
+        \draw [-&gt;,thick] (B) -- (.9,.2);
+        \draw [-&gt;,thick] (B) -- (6,.2);
+        \draw [-&gt;,thick] (C) -- (1.3,-.15);
+        \draw [-&gt;,thick] (C) -- (6.4,-.3);
+
+        \end{tikzpicture}
+
+        </latex-image>
+      </image>
+    </figure>
+
+    <p>
+      The equations exhibit the same structure:
+      they give a starting point,
+      define a direction, and state how far in that direction to travel.
+    </p>
+
+    <p>
+      There are other ways to represent a line.
+      Let <m>P = (x_0,y_0,z_0)</m>, <m>\vec p = \bbm  x_0\\y_0\\z_0\ebm</m>, and let <m>\vec d = \bbm  a\\b\\c\ebm</m>.
+      Then the equation of the line through <m>P</m> in the direction of <m>\vec d</m> is:
+      <md>
+        <mrow>\vec\ell(t) \amp = \vec p + t\vec d</mrow>
+        <mrow>\amp = \bbm  x_0\\y_0\\z_0\ebm + t\bbm  a\\b\\c\ebm</mrow>
+        <mrow>\amp = \bbm  x_0 + at\\ y_0+bt\\ z_0+ct\ebm</mrow>
+      </md>.
+    </p>
+
+    <p>
+      The last line states that the <m>x</m> values of the line are given by <m>x=x_0+at</m>,
+      the <m>y</m> values are given by <m>y = y_0+bt</m>,
+      and the <m>z</m> values are given by <m>z = z_0 + ct</m>.
+      These three equations, taken together,
+      are the <em>parametric equations of the line</em>
+      through <m>\vec p</m> in the direction of <m>\vec d</m>.
+    </p>
+
+    <p>
+      Finally, each of the equations for <m>x</m>,
+      <m>y</m> and <m>z</m> above contain the variable <m>t</m>.
+      We can solve for <m>t</m> in each equation:
+      <md>
+        <mrow>x = x_0+at \amp \Rightarrow t=\frac{x-x_0}{a},</mrow>
+        <mrow>y=y_0+bt \amp \Rightarrow t = \frac{y-y_0}{b},</mrow>
+        <mrow>z = z_0+ct \amp \Rightarrow t = \frac{z-z_0}{c}</mrow>
+      </md>,
+      assuming <m>a,b,c\neq 0</m>.
+      Since <m>t</m> is equal to each expression on the right,
+      we can set these equal to each other,
+      forming the <em>symmetric equations of the line</em>
+      through <m>\vec p</m> in the direction of <m>\vec d</m>:
+      <me>
+        \frac{x-x_0}{a} = \frac{y-y_0}{b}=\frac{z-z_0}{c}
+      </me>.
+    </p>
+
+    <p>
+      Each representation has its own advantages, depending on the context.
+      We summarize these three forms in the following definition,
+      then give examples of their use.
+    </p>
+
+    <definition xml:id="def_lines">
+      <title>Equations of Lines in Space</title>
+      <statement>
+        <p>
+          Let <m>P = (x_0,y_0,z_0)</m> and let <m>\vec p = \bbm  x_0\\y_0\\z_0\ebm</m>. Consider the line in space that passes through
+          <m>P</m> in the direction of <m>\vec d = \bbm  a\\b\\c\ebm</m>.
+              <idx><h>lines</h><h>equations for</h></idx>
+        </p>
+
+        <p>
+          <ol>
+            <li>
+              <p>
+                The <em>vector equation</em> of the line is
+                <me>
+                  \vec \ell(t) = \vec p+t\vec d
+                </me>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                The <em>parametric equations</em> of the line are
+                <me>
+                  x = x_0+at,  y=y_0+bt,  z = z_0+ct
+                </me>.
+              </p>
+            </li>
+
+            <li>
+              <p>
+                The <em>symmetric equations</em> of the line are
+                <me>
+                  \frac{x-x_0}{a} = \frac{y-y_0}{b}=\frac{z-z_0}{c}
+                </me>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </definition>
+
+    <example xml:id="ex_lines1">
+      <title>Finding the equation of a line</title>
+      <statement>
+        <p>
+          Give all three equations,
+          as given in <xref ref="def_lines"/>,
+          of the line through <m>P = (2,3,1)</m> in the direction of <m>\vec d = \bbm  -1\\1\\2\ebm</m>.
+          Does the point <m>Q=(-1,6,6)</m> lie on this line?
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We identify the point <m>P=(2,3,1)</m> with the vector <m>\vec p =\bbm  2\\3\\1\ebm</m>.
+          Following the definition, we have
+        </p>
+
+        <p>
+          <ul>
+            <li>
+              <p>
+                the vector equation of the line is <m>\vec\ell(t) = \bbm  2\\3\\1\ebm + t\bbm  -1\\1\\2\ebm</m>;
+              </p>
+            </li>
+
+            <li>
+              <p>
+                the parametric equations of the line are
+                <me>
+                  x = 2-t, y = 3+t, z = 1+2t; \text{ and }
+                </me>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                the symmetric equations of the line are
+                <me>
+                  \frac{x-2}{-1}=\frac{y-3}{1} = \frac{z-1}{2}
+                </me>.
+              </p>
+            </li>
+          </ul>
+        </p>
+
+        <figure xml:id="fig_lines1">
+          <caption>Graphing a line in <xref ref="ex_lines1"/></caption>
+
+          <!-- START figures/figlines1_3D.asy -->
+          <image width="47%">
+            <shortdescription>A line in space with direction vector d passes through a point P.</shortdescription>
+            <description>
+              <p>
+                A set three-dimensional coordinate axes is shown.
+                A vector <m>\vec d</m> is plotted with its tail at the origin of this coordinate system;
+                it is the direction vector for a line. The line is also plotted,
+                and is shown passing through a point <m>P</m>.
+                An additional point <m>Q</m> is in the image, but it is not on the line.
+              </p>
+            </description>
+            <asymptote label="img_lines1">
+
+
+
+              //ASY file forfiglines1.asy in Chapter 10
+
+              size(200,200,IgnoreAspect);
+              //currentprojection=perspective(7,2,1);
+              currentprojection=orthographic(4,4,2.5);
+              defaultrender.merge=true;
+
+              // setup and draw the axes
+              real[] myxchoice={2};
+              real[] myychoice={5};
+              real[] myzchoice={5};
+              defaultpen(0.5mm);
+              pair xbounds=(-1,2.5);
+              pair ybounds=(-1,5.5);
+              pair zbounds=(-1,5.5);
+
+              xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+              yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+              zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+              label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+              label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+              label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+              //draw vector d=&lt;-1,1,2&gt;
+              draw((0,0,0)--(-1,1,2),black,Arrow3(size=2mm));
+              label("$\vec{d}$",(-1,0,1),N);
+              // dot at P=(2,3,1)
+              dotfactor=3;dot((2,3,1));
+              label("P",(2,3,1),N);
+              // dot at Q=(-1,6,6)
+              dotfactor=3;dot((-1,6,6));
+              label("Q",(-1,6,6),S);
+              //draw the line ({2-t},{3+t},{1+2t});
+              draw((3,2,-1)--(-1,6,7),bluepen);
+
+            </asymptote>
+          </image>
+          <!-- figures/figlines1_3D.asy END -->
+        </figure>
+
+        <p>
+          The first two equations of the line are useful when a <m>t</m> value is given:
+          one can immediately find the corresponding point on the line.
+          These forms are good when calculating with a computer;
+          most software programs easily handle equations in these formats. (For instance,
+          the graphics program that made <xref ref="fig_lines1"/>
+          can be given the input <q><c>(2-t,3+t,1+2*t)</c></q>
+          for <m>-1\leq t\leq 3</m>.).
+        </p>
+
+        <p>
+          Does the point <m>Q = (-1,6,6)</m> lie on the line?
+          The graph in <xref ref="fig_lines1"/>
+          makes it clear that it does not.
+          We can answer this question without the graph using any of the three equation forms.
+          Of the three,
+          the symmetric equations are probably best suited for this task.
+          Simply plug in the values of <m>x</m>,
+          <m>y</m> and <m>z</m> and see if equality is maintained:
+          <me>
+            \frac{-1-2}{-1} \stackrel{?}{=} \frac{6-3}{1} \stackrel{?}{=} \frac{6-1}{2}  \Rightarrow  3=3\neq2.5
+          </me>.
+        </p>
+
+        <p>
+          We see that <m>Q</m> does not lie on the line as it did not satisfy the symmetric equations.
+        </p>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="i307pfanflE" xml:id="vid-vectors-lines-example1" label="vid-vectors-lines-example1" component="video"/>
+      </solution>
+    </example>
+
+    <example xml:id="ex_lines6">
+      <title>Finding the equation of a line through two points</title>
+      <statement>
+        <p>
+          Find the parametric equations of the line through the points
+          <m>P=(2,-1,2)</m> and <m>Q = (1,3,-1)</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Recall the statement made at the beginning of this section:
+          to find the equation of a line,
+          we need a point and a direction.
+          We have <em>two</em> points;
+          either one will suffice.
+          The direction of the line can be found by the vector with initial point <m>P</m> and terminal point <m>Q</m>:
+          <m>\overrightarrow{PQ} = \bbm  -1\\4\\-3\ebm</m>.
+        </p>
+
+        <p>
+          The parametric equations of the line <m>\ell</m> through <m>P</m> in the direction of <m>\overrightarrow{PQ}</m> are:
+          <me>
+            \ell:  x= 2-t y=-1+4t  z=2-3t
+          </me>.
+        </p>
+
+        <figure xml:id="fig_lines6">
+          <caption>A graph of the line in <xref ref="ex_lines6"/></caption>
+
+          <!-- START figures/figlines6_3D.asy -->
+          <image width="47%">
+            <shortdescription>A line in space passes through points P and Q. The vector PQ between these points is also shown.</shortdescription>
+            <description>
+              <p>
+                Two points <m>P</m> and <m>Q</m> are plotted in space, against a set of three-dimensional coordinate axes.
+                The vector <m>\overrightarrow{PQ}</m> is plotted as an arrow pointing from <m>P</m> to <m>Q</m>.
+                The line passing through <m>P</m> and <m>Q</m> is also plotted;
+                between <m>P</m> and <m>Q</m>, it overlaps with the vector <m>\overrightarrow{PQ}</m>.
+              </p>
+            </description>
+            <asymptote label="img_lines6">
+
+
+
+              //ASY file for figlines6.asy in Chapter 10
+
+              size(200,200,IgnoreAspect);
+              //currentprojection=perspective(7,2,1);
+              currentprojection=orthographic(4,17,9);
+              defaultrender.merge=true;
+
+              // setup and draw the axes
+              real[] myxchoice={2};
+              real[] myychoice={-4,4};
+              real[] myzchoice={-4,4};
+              defaultpen(0.5mm);
+              pair xbounds=(-1,3);
+              pair ybounds=(-4.5,4.5);
+              pair zbounds=(-4.5,4.5);
+
+              xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+              yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+              zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+              label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+              label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+              label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+              //draw vector PQ=&lt;-1,4,-3&gt;
+              draw((2,-1,2)--(1,3,-1),redpen,Arrow3(size=2mm));
+              label("$\overrightarrow{PQ}$",(1.5,1,0.5),S);
+              // dot at P=(2,-1,2)
+              dotfactor=3;dot((2,-1,2));label("P",(2,-1,2),N);
+              // dot at Q=(1,3,-1)
+              dotfactor=3;dot((1,3,-1));label("Q",(1,3,-1),N);
+              //draw the line ({2-t},{-1+4t},{2-3t}) in two parts, before P and after Q
+              draw((2.5,-3,3.5)--(2,-1,2),bluepen);
+              draw((1,3,-1)--(0.5,5,-2.5),bluepen);
+
+            </asymptote>
+          </image>
+          <!-- figures/figlines6_3D.asy END -->
+        </figure>
+
+        <p>
+          A graph of the points and line are given in <xref ref="fig_lines6"/>.
+          Note how in the given parametrization of the line,
+          <m>t=0</m> corresponds to the point <m>P</m>,
+          and <m>t=1</m> corresponds to the point <m>Q</m>.
+          This relates to the understanding of the vector equation of a line described in <xref ref="fig_lines_eq"/>.
+          The parametric equations <q>start</q> at the point <m>P</m>,
+          and <m>t</m> determines how far in the direction of <m>\overrightarrow{PQ}</m> to travel.
+          When <m>t=0</m>, we travel 0 lengths of <m>\overrightarrow{PQ}</m>;
+          when <m>t=1</m>, we travel one length of <m>\overrightarrow{PQ}</m>,
+          resulting in the point <m>Q</m>.
+        </p>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="3ROgMsmz0J0" xml:id="vid-vectors-lines-example2" label="vid-vectors-lines-example2" component="video"/>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection xml:id="subsec-lines-compare">
+    <title>Parallel, Intersecting and Skew Lines</title>
+
+    <p>
+      In the plane, two <em>distinct</em>
+      lines can either be parallel or they will intersect at exactly one point.
+      In space, given equations of two lines,
+      it can sometimes be difficult to tell whether the lines are distinct or not (<ie/>, the same line can be represented in different ways).
+      Given lines <m>\vec\ell_1(t) = \vec p_1 + t\vec d_1</m> and <m>\vec \ell_2(t) = \vec p_2+t\vec d_2</m>,
+      we have four possibilities:
+      <m>\vec \ell_1</m> and <m>\vec \ell_2</m> are
+          <idx><h>lines</h><h>skew</h></idx>
+          <idx><h>lines</h><h>parallel</h></idx>
+          <idx><h>lines</h><h>intersecting</h></idx>
+    </p>
+
+    <p>
+      <dl>
+        <li>
+          <title>the same line</title>
+          <p>they share all points</p>
+        </li>
+
+        <li>
+          <title>intersecting lines</title>
+          <p>they share only 1 point;</p>
+        </li>
+
+        <li>
+          <title>parallel lines</title>
+          <p><m>\vec d_1\parallel \vec d_2</m>, no points in common;</p>
+        </li>
+
+        <li>
+          <title>skew lines</title>
+          <p><m>\vec d_1\nparallel \vec d_2</m>, no points in common.</p>
+        </li>
+      </dl>
+    </p>
+
+    <p>
+      The next two examples investigate these possibilities.
+    </p>
+
+    <example xml:id="ex_lines2">
+      <title>Comparing lines</title>
+      <statement>
+        <p>
+          Consider lines <m>\ell_1</m> and <m>\ell_2</m>,
+          given in parametric equation form:
+          <me>
+            \ell_1:\, \begin{matrix}
+                      x\amp =\amp 1+3t \\
+                      y\amp =\amp 2-t\\
+                      z\amp =\amp t
+                    \end{matrix}\qquad\qquad
+            \ell_2:\, \begin{matrix}
+                      x\amp =\amp -2+4s\\
+                      y\amp =\amp 3+s\\
+                      z\amp =\amp 5+2s
+                    \end{matrix}
+          </me>.
+        </p>
+
+        <p>
+          Determine whether <m>\ell_1</m> and <m>\ell_2</m> are the same line,
+          intersect, are parallel, or skew.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We start by looking at the directions of each line.
+          Line <m>\ell_1</m> has the direction given by
+          <m>\vec d_1=\bbm  3\\-1\\1\ebm</m> and line <m>\ell_2</m> has the direction given by <m>\vec d_2 = \bbm  4\\1\\2\ebm</m>.
+          It should be clear that <m>\vec d_1</m> and <m>\vec d_2</m> are not parallel,
+          hence <m>\ell_1</m> and <m>\ell_2</m> are not the same line,
+          nor are they parallel.
+          <xref ref="fig_lines2"/> verifies this fact
+          (where the points and directions indicated by the equations of each line are identified).
+        </p>
+
+        <figure xml:id="fig_lines2">
+          <caption>Sketching the lines from <xref ref="ex_lines2"/></caption>
+
+          <!-- START figures/figlines2_3D.asy -->
+          <image width="47%">
+            <shortdescription>A three dimensional plot of two lines in space. The lines are not parallel, and they do not intersect.</shortdescription>
+            <description>
+              <p>
+                A set of three-dimensional coordinate axes are shown,
+                with labels <m>x</m>, <m>y</m>, and <m>z</m>, as usual.
+                Two points <m>P_1</m> and <m>P_2</m> are plotted.
+                The point <m>P_1</m> is in the <m>xy</m> plane,
+                while the point <m>P_2</m> is higher up, near the top of the figure.
+              </p>
+
+              <p>
+                Through each of the two points, a line is drawn.
+                The line through <m>P_1</m> has a direction vector <m>\vec{d}_1</m> 
+                that points in a different direction from that of the direction vector <m>\vec{d}_2</m> of the line through <m>P_2</m>,
+                so the lines are not parallel. It also appears from the figure that the lines do not intersect.
+              </p>
+            </description>
+            <asymptote label="img_lines2">
+
+
+
+              //ASY file for figlines2.asy in Chapter 10
+
+              size(200,200,IgnoreAspect);
+              //currentprojection=perspective(7,2,1);
+              currentprojection=orthographic(4,4,2);
+              defaultrender.merge=true;
+
+              // setup and draw the axes
+              real[] myxchoice={-5,5};
+              real[] myychoice={-5,5};
+              real[] myzchoice={-5,5};
+              defaultpen(0.5mm);
+              pair xbounds=(-5.5,5.5);
+              pair ybounds=(-5.5,5.5);
+              pair zbounds=(-1,6);
+
+              xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+              yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+              zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+              label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+              label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+              label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+              //draw P1 and vector d1 at P1
+              dotfactor=3;dot((1,2,0));label("$P_1$",(1,2,0),S);
+              draw((1,2,0)--(4,1,1),black,Arrow3(size=2mm));
+              label("$\vec{d}_1$",(4,1,1),N);
+
+              //draw P2 and vector d2 at P2
+              dotfactor=3;dot((-2,3,5));label("$P_2$",(-2,3,5),N);
+              draw((-2,3,5)--(2,4,7),black,Arrow3(size=2mm));
+              label("$\vec{d}_2$",(2,4,7),S);
+
+              //draw the line L1 ({1+3t},{2-t},{t}) in two parts, before P1 and after P1+d1
+              draw((-2,3,-1)--(1,2,0),bluepen);
+              draw((4,1,1)--(7,0,2),bluepen);
+              label("$\ell_1$",(7,0,2),S);
+
+              //draw the line L2 ({-2+4t},{3+t},{5+2t}) in two parts, before P2 and after P2+d2
+              draw((-6,2,3)--(-2,3,5),bluepen);
+              draw((2,4,7)--(6,5,9),bluepen);
+              label("$\ell_2$",(-6,2,3),S);
+
+            </asymptote>
+          </image>
+          <!-- figures/figlines2_3D.asy END -->
+        </figure>
+
+        <p>
+          We next check to see if they intersect
+          (if they do not, they are skew lines).
+          To find if they intersect,
+          we look for <m>t</m> and <m>s</m> values such that the respective <m>x</m>,
+          <m>y</m> and <m>z</m> values are the same.
+          That is, we want <m>s</m> and <m>t</m> such that:
+          <me>
+            \begin{matrix} 1+3t \amp =\amp -2+4s\\ 2-t\amp =\amp 3+s\\ t\amp =\amp 5+2s \end{matrix}
+          </me>.
+        </p>
+
+        <p>
+          This is a relatively simple system of linear equations.
+          Since the last equation is already solved for <m>t</m>,
+          substitute that value of <m>t</m> into the equation above it:
+          <me>
+            2-(5+2s) = 3+s  \Rightarrow  s=-2,\ t=1
+          </me>.
+        </p>
+
+        <aside>
+          <p>
+            We say that a system of equations with no solution,
+            such as the one in <xref ref="ex_lines2"/>, is <term>inconsistent</term>.
+            Although it is possible to find values that work for any two of the three equations,
+            there is no set of values of <m>s</m> and <m>t</m> that works for all three equations simultaneously.
+            We'll develop general techniques for investigating such systems in <xref ref="chapter-linear"/>.
+          </p>
+        </aside>
+
+        <p>
+          A key to remember is that we have
+          <em>three</em> equations;
+          we need to check if <m>s=-2,\ t=1</m> satisfies the first equation as well:
+          <me>
+            1+3(1) \neq -2+4(-2)
+          </me>.
+        </p>
+
+        <p>
+          It does not.
+          Therefore, we conclude that the lines <m>\ell_1</m> and <m>\ell_2</m> are skew.
+        </p>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="hEYfincwMX0" xml:id="vid-vectors-lines-compare" label="vid-vectors-lines-compare" component="video"/>
+      </solution>
+    </example>
+
+    <example xml:id="ex_lines3">
+      <title>Comparing lines</title>
+      <statement>
+        <p>
+          Consider lines <m>\ell_1</m> and <m>\ell_2</m>,
+          given in parametric equation form:
+          <me>
+            \ell_1:\, \begin{matrix} x\amp =\amp -0.7+1.6t \\ y\amp =\amp 4.2+2.72t\\z\amp =\amp 2.3-3.36t \end{matrix} \qquad\qquad \ell_2:\,\begin{matrix} x\amp =\amp 2.8-2.9s\\y\amp =\amp 10.15-4.93s\\z\amp =\amp -5.05+6.09s. \end{matrix}
+          </me>
+        </p>
+
+        <p>
+          Determine whether <m>\ell_1</m> and <m>\ell_2</m> are the same line,
+          intersect, are parallel, or skew.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          It is obviously very difficult to simply look at these equations and discern anything.
+          This is done intentionally.
+          In the <q>real world,</q> most equations that are used do not have nice,
+          integer coefficients.
+          Rather, there are lots of digits after the decimal and the equations can look <q>messy.</q>
+        </p>
+
+        <p>
+          We again start by deciding whether or not each line has the same direction.
+          The direction of <m>\ell_1</m> is given by
+          <m>\vec d_1 = \bbm  1.6\\2.72\\-3.36\ebm</m> and the direction of <m>\ell_2</m> is given by <m>\vec d_2 = \bbm  -2.9\\-4.93\\6.09\ebm</m>.
+          When it is not clear through observation whether two vectors are parallel or not,
+          the standard way of determining this is by comparing their respective unit vectors.
+          Using a calculator, we find:
+          <md>
+            <mrow>\vec u_1 \amp = \frac{\vec d_1}{\norm{\vec d_1}} = \bbm  0.3471\\0.5901\\-0.7289\ebm</mrow>
+            <mrow>\vec u_2 \amp = \frac{\vec d_2}{\norm{\vec d_2}} = \bbm  -0.3471\\-0.5901\\0.7289\ebm</mrow>
+          </md>.
+        </p>
+
+        <p>
+          The two vectors seem to be parallel
+          (at least, their components are equal to 4 decimal places).
+          In most situations,
+          it would suffice to conclude that the lines are at least parallel,
+          if not the same.
+          One way to be sure is to rewrite <m>\vec d_1</m> and
+          <m>\vec d_2</m> in terms of fractions, not decimals.
+          We have
+          <me>
+            \vec d_1 =\bbm  \frac{16}{10}\\\frac{272}{100}\\-\frac{336}{100}\ebm \qquad \vec d_2 = \bbm  -\frac{29}{10}\\-\frac{493}{100}\\\frac{609}{100}\ebm
+          </me>.
+        </p>
+
+        <p>
+          One can then find the magnitudes of each vector in terms of fractions,
+          then compute the unit vectors likewise.
+          After a lot of manual arithmetic
+          (or after briefly using a computer algebra system),
+          one finds that
+          <me>
+            \vec u_1 = \bbm  \sqrt{\frac{10}{83}}\\\frac{17}{\sqrt{830}}\\-\frac{21}{\sqrt{830}}\ebm \qquad \vec u_2 = \bbm  -\sqrt{\frac{10}{83}}\\-\frac{17}{\sqrt{830}}\\\frac{21}{\sqrt{830}}\ebm
+          </me>.
+        </p>
+
+        <p>
+          We can now say without equivocation that these lines are parallel.
+        </p>
+
+        <p>
+          Are they the same line?
+          The parametric equations for a line describe one point that lies on the line,
+          so we know that the point <m>P_1 = (-0.7,4.2,2.3)</m> lies on <m>\ell_1</m>.
+          To determine if this point also lies on <m>\ell_2</m>,
+          plug in the <m>x</m>,
+          <m>y</m> and <m>z</m> values of <m>P_1</m> into the symmetric equations for <m>\ell_2</m>:
+          <md>
+            <mrow>\frac{(-0.7)-2.8}{-2.9} \amp \stackrel{?}{=} \frac{(4.2)-10.15}{-4.93} \stackrel{?}{=} \frac{(2.3)-(-5.05)}{6.09}</mrow>
+            <mrow>1.2069\amp=1.2069=1.2069</mrow>
+          </md>.
+        </p>
+
+        <figure xml:id="fig_lines3">
+          <caption>Graphing the lines in <xref ref="ex_lines3"/></caption>
+
+          <!-- START figures/figlines3_3D.asy -->
+          <image width="47%">
+            <shortdescription>A plot in space of a single line through two points, with two parallel direction vectors shown next to it.</shortdescription>
+            <description>
+              <p>
+                Two points <m>P_1</m> and <m>P_2</m> are plotted in a three-dimensional coordinate system.
+                A line is shown passing through these two points.
+                Next to the line, two vectors are plotted.
+                The vector <m>\vec{d}_1</m> points downward, in the direction of the line.
+                The vector <m>\vec{d}_2</m> points in the opposite direction, and is twice as long.
+              </p>
+
+              <p>
+                The diagram shows that the line through <m>P_1</m> in the direction of <m>\vec{d}_1</m>
+                is in fact the same as the line through <m>P_2</m> in the direction of <m>\vec{d}_2</m>.
+              </p>
+            </description>
+            <asymptote label="img_lines3">
+
+
+
+              //ASY file for figlines3.asy in Chapter 10
+
+              size(200,200,IgnoreAspect);
+              //currentprojection=perspective(7,2,1);
+              currentprojection=orthographic(10,26,7);
+              defaultrender.merge=true;
+
+              // setup and draw the axes
+              real[] myxchoice={2,4};
+              real[] myychoice={10};
+              real[] myzchoice={-5,5};
+              defaultpen(0.5mm);
+              pair xbounds=(-1,4.5);
+              pair ybounds=(-1,11);
+              pair zbounds=(-6,6);
+
+              xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+              yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+              zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+              label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+              label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+              label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+              //draw P1 and vector d1 at P1
+              dotfactor=3;dot((-0.7,4.2,2.3));label("$P_1$",(-0.7,4.2,2.3),E);
+              //draw((-0.7,4.2,2.3)--(0.9,6.92,-1.06),black,Arrow3(size=2mm));
+              label("$\vec{d}_1$",(0.9+.5,6.92,-1.06),W);
+
+              //draw P2 and vector d2 at P2
+              //dotfactor=3;dot((5.7,15.08,-11.14));label("$P_2$",(5.7,15.08,-11.14),E);
+              //draw((5.7,15.08,-11.14)--(2.8,10.15,-5.05),black,Arrow3(size=2mm));
+              //label("$\vec{d}_2$",(2.8,10.15,-5.05),E);
+
+              dotfactor=3;dot((2.8,10.15,-5.05));label("$P_2$",(2.8,10.15,-5.05),W);
+              //draw((2.8,10.15,-5.05)--(-.1,5.22,1.04),black,Arrow3(size=2mm));
+              label("$\vec{d}_2$",(-.1-.5,5.22,1.04),E);
+
+              //draw the line L ({-0.7+1.6t},{4.2+2.72t},{2.3-3.36t})
+              draw((3.3,11,-6.1)--(-2.3,1.48,5.66),bluepen);
+
+              draw((2.8-.5,10.15,-5.05)--(-.1-.5,5.22,1.04),redpen,Arrow3(size=2mm));
+              draw((-0.7+.5,4.2,2.3)--(0.9+.5,6.92,-1.06),redpen,Arrow3(size=2mm));
+
+            </asymptote>
+          </image>
+          <!-- figures/figlines3_3D.asy END -->
+        </figure>
+
+        <p>
+          The point <m>P_1</m> lies on both lines,
+          so we conclude they are the same line,
+          just parametrized differently.
+          <xref ref="fig_lines3"/>
+          graphs this line along with the points and vectors described by the parametric equations.
+          Note how <m>\vec d_1</m> and <m>\vec d_2</m> are parallel,
+          though point in opposite directions
+          (as indicated by their unit vectors above).
+        </p>
+      </solution>
+    </example>
+  </subsection>
+
+  <subsection>
+    <title>Distances</title>
+    <p>
+      Given a point <m>Q</m> and a line <m>\vec\ell(t) = \vec p+t\vec d</m> in space,
+      it is often useful to know the distance from the point to the line.
+      (Here we use the standard definition of <q>distance,</q>
+      <ie/>, the length of the shortest line segment from the point to the line.)
+      Identifying <m>\vec p</m> with the point <m>P</m>,
+      <xref ref="fig_lines_dist1"/>
+      will help establish a general method of computing this distance <m>h</m>.
+    </p>
+
+    <p>
+      Our method will be based on the <xref ref="def_orthogonal_projection" text="title"/>
+      from <xref ref="sec_dot_product"/>.
+      Although it is possible to derive a formula that gives the distance immediately,
+      our method will help develop geometric intuition that we can adapt to later situations,
+      and it also has the advantage of letting us identify the point <m>R</m> on the line that is closest to <m>Q</m>.
+    </p>
+
+    <aside>
+      <p>
+        It is possible to obtain a formula for the distance from <m>Q</m> to the line using a clever trick:
+        consider the triangle that has <m>\vec d</m> and <m>\overrightarrow{PQ}</m> as two of its sides.
+        The area of this triangle can be found using the usual formula <m>A=\frac12 bh</m>,
+        but it can also be computed in terms of a cross product.
+        See if you can use this observation to come up with a formula,
+        but be cautioned that you will probably be expected to use the method outlined below.
+      </p>
+    </aside>
+
+    <p>
+      The basic idea is that the vector <m>\overrightarrow{PR}</m> must be the orthogonal projection of the vector
+      <m>\overrightarrow{PQ}</m> onto the direction vector <m>\vec d</m>.
+    </p>
+
+    <figure xml:id="fig_lines_dist1">
+      <caption>Establishing the distance from a point to a line</caption>
+      <!-- START figures/fig_lines_dist1.tex -->
+      <image width="33%">
+        <shortdescription>A line through a point P, with direction d. Near the line is a point Q, whose distance to the line is shown as the height h of a triangle.</shortdescription>
+        <description>
+          <p>          
+            A generic line is shown, without coordinates.
+            On the line is a point <m>P</m> and a direction vector <m>\vec{d}</m>.
+            Near the line is a point <m>Q</m>.
+            The vector <m>\overrightarrow{PQ}</m> points from the point <m>P</m> on the line to the point <m>Q</m> off the line.
+            This vector forms the hypotenuse of a right-angled triangle whose base is part of the line,
+            and whose height, <m>h</m>, is shown as a dashed line segment from <m>Q</m> to the line.
+            The angle <m>\theta</m> between <m>\vec d</m> and <m>\overrightarrow{PQ}</m> is also shown.
+            The height <m>h</m> is the perpendicular distance from <m>Q</m> to the line.
+          </p>
+        </description>
+        <latex-image label="img_lines_dist1">
+
+        \begin{tikzpicture}[&gt;=stealth]
+
+        \draw [thin,firstcolor] (-2,-1) -- (2,1);
+        \draw [thick,-&gt;,secondcolor] (0,0) -- (1,.5) node [below,black] { $\vec d$};
+
+        \filldraw [black] (0,3) circle (1.5pt) node [above] { $Q$}
+									        (0,0) circle (1.5pt) node [below] { $P$};
+
+        \draw [thick,dashed] (0,3) -- (1.2,.6) node [right,pos=.5] { $h$};
+        \draw [thick,-&gt;] (0,0) -- (0,3) node [pos=.5,left] { $\overrightarrow{PQ}$};
+        \draw [rotate=58.3] (.4,0) node { $\theta$};
+
+        \end{tikzpicture}
+
+        </latex-image>
+      </image>
+      <!-- figures/fig_lines_dist1.tex END -->
+    </figure>
+
+    <figure xml:id="vid-vectors-lines-distance-point" component="video">
+      <caption>Determining distance from a line to a point</caption>
+      <video youtube="ZJ_e_0s2s2M" label="vid-vectors-lines-distance-point"/>
+    </figure>
+
+    <example xml:id="ex_lines4">
+      <title>Finding the distance from a point to a line</title>
+      <statement>     
+       <p>    
+         Find the distance from the point <m>Q=(1,1,3)</m> to the line <m>\vec\ell(t) = \bbm  1\\-1\\1\ebm+t\bbm  2\\3\\1\ebm.</m>
+        </p>
+     </statement>
+     <solution>
+      <p>
+        From the equation of the line, we know that the point <m>P=(1,-1,1)</m> is on the line,
+        and that the vector <m>\vec{d}=\bbm 2\\3\\1\ebm</m> is in the direciton of the line.
+        Let
+        <me>
+          \vec {v} = \overrightarrow{PQ} = \bbm 1-1\\1-(-1)\\3-1\ebm = \bbm 0\\2\\2\ebm
+        </me>.
+        We know that if <m>R</m> is the point on the line closest to <m>Q</m>,
+        then the projection of <m>\vec{v}</m> onto <m>\vec d</m> will equal <m>\overrightarrow{PR}</m>.
+      </p>
+
+      <p>
+        We compute
+        <me>
+          \proj vd = \frac{\dotp vd}{\dotp dd}\vec{d} = \frac{0+6+2}{4+9+1}\bbm 2\\3\\1\ebm = \frac47\bbm 2\\3\\1\ebm
+        </me>.
+        Now, if <m>R=(x_1,y_1,z_1)</m>, we know that <m>\overrightarrow{PR} = \bbm x_1-1\\x_2-(-1)\\x_3-1\ebm</m>,
+        since <m>P=(1,-1,1)</m>. This gives us <m>\bbm x_1-1\\x_2-(-1)\\x_3-1\ebm=\frac47\bbm 2\\3\\1\ebm</m>,
+        so <m>x_1 = 1+\frac87 = \frac{15}{7}</m>, <m>x_2 = -1+\frac{12}{7}=\frac57</m>, 
+        and <m>x_3 = 1+\frac47 = \frac{11}{7}</m>. Therefore,
+        <me>
+          R = \left(\frac{15}{7},\frac{5}{7},\frac{11}{7})
+        </me>
+        is the point on the line that is closest to <m>Q</m>.
+      </p>
+
+      <p>
+        The desired distance is therefore the distance from <m>Q</m> to <m>R</m>, 
+        which can be found using the distance formula:
+        <md>
+          <mrow>h \amp = \sqrt{\left(1-\frac{15}{7}\right)^2+\left(1-\frac{5}{7}\right)^2+\left(3-\frac{11}{7}^2\right)}</mrow>
+          <mrow> \amp = \sqrt{\left(-\frac87\right)^2+\left(\frac27\right)^2+\left(\frac{10}{7}\right)^2}</mrow>
+          <mrow> \amp =\frac17\sqrt{8^2+2^2+10^2}</mrow>
+          <mrow> \amp = \frac{\sqrt{168}}{7}=2\sqrt{\frac67}</mrow>
+        </md>.
+      </p>
+     </solution>
+    </example>
+
+    <p>
+      We summarize the steps involved to give the following general advice:
+    </p>
+
+    <insight xml:id="idea-distance_method">
+      <title>Steps for solving shortest distance problems</title>
+      <p>    
+        Suppose you are asked to find the distance between two objects, 
+        or to determine an object (such as a point) that is closest to a given object (a line or plane). 
+        Your solution to the problem should always include the following steps:
+        <ol>
+          <li>
+            <p>
+              Make a list of all the information provided in the problem.
+            </p>
+          </li>
+          <li>
+            <p>
+              Make a note of what quantities you're asked to determine.
+            </p>
+          </li>
+          <li>
+            <p>
+              <alert>Draw a diagram</alert>. Label all relevant points and vectors, including those you know, and those you want to find.
+            </p>
+          </li>
+          <li>
+            <p>
+              Using your diagram as a reference, compute any unknown points or vectors.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </insight>
+
+    <aside>
+      <p>
+        <alert>Note:</alert> We can't overemphasize the fact that the diagram referred to in <xref ref="idea-distance_method"/> 
+        <em>does not have to be accurate</em> with respect to the coordinates and directions involved. 
+        It simply has to be capable of representing the information in the problem. 
+        Note that in <xref ref="fig-linedistsetup"/> in <xref ref="ex_lines4a"/> we've drawn a line, 
+        some points, and some vectors that represent the problem, without reference to a coordinate system. 
+        The goal is to provide enough detail to allow us to set up the problem.
+      </p>
+    </aside>
+
+    <example xml:id="ex_lines4a">
+      <title>Finding the closest point on a line</title>
+      <statement>
+        <p>
+          Find the distance from the point <m>Q=(1,3,-2)</m> to the line <m>\vec\ell</m> 
+          that passes through the point <m>P=(2,0,-1)</m> in the direction of <m>\vec d = \bbm  1\\-1\\0\ebm</m>, 
+          and find the point <m>R</m> on <m>\vec\ell</m> that is closest to <m>Q</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We're given a point <m>P</m> on the line, along with a direction vector <m>\vec d</m>, 
+          and a point <m>Q</m> not on the line. We seek the point <m>R</m> on the line that is closest to <m>Q</m>, 
+          as well as the distance from <m>Q</m> to <m>R</m>. We begin by diagramming the information in <xref ref="fig-linedistsetup"/>.
+        </p>
+
+        <figure xml:id="fig-linedistsetup">
+          <caption>Setting up the solution in <xref ref="ex_lines4a"/></caption>
+          <image width="47%">
+            <shortdescription>A horizontal line, on which points P and R are plotted. R is the point closest to another point Q.</shortdescription>
+            <description>
+              <p>
+                A line <m>\ell</m> is drawn horizontally, although the direction of the line is not important.
+                On the line, a point <m>P</m> is marked, and at that point, a direction vector <m>\vec{d}</m> is drawn.
+                Another point <m>Q</m> is above the line, and the vector <m>\overrightarrow{PQ}</m> is drawn.
+              </p>
+
+              <p>
+                An additional point <m>R</m> is marked on the line <m>\ell</m>, so that the triangle <m>PQR</m> is a right-angled triangle.
+                The height of this triangle (the distance from <m>Q</m> to <m>R</m>), is the distance from <m>Q</m> to the line.
+              </p>
+            </description>
+            <latex-image label="pointlinedist">
+              \begin{tikzpicture}
+                \draw (0,0) -- (8,0);
+                \node at (1,0) [below] {$P$};
+                \node at (0.5,0) [above] {$\ell$};
+                \node at (7,0) [below] {$R$};
+                \node at (7,4) [right] {$Q$};
+                \draw[blue,-{Kite}] (1,0) -- (7,4) node [midway,above left] {$\overrightarrow{PQ}$};
+                \draw[dashed] (7,0) -- (7,4) node [midway,right] {$h$};
+                \draw[red,-{Kite}] (1,0) -- (3,0) node [midway,below] {$\vec d$};
+                \node at (6,0) [below left] {$\overrightarrow{PR} = \operatorname{proj}_{\vec d}\overrightarrow{PQ}$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </figure>
+
+        <p>
+          From the given points <m>P</m> and <m>Q</m> we can immediately construct the vector
+          <me>
+            \overrightarrow{PQ}=\bbm  1-2\\ 3-0\\ -2-(-1)\ebm = \bbm  -1\\ 3\\ -1\ebm
+          </me>.
+          We begin by finding the point <m>R</m> on the line that is closest to <m>Q</m>. 
+          From our diagram, we can see that the vector <m>\overrightarrow{PR}</m> from <m>P</m> to <m>R</m> 
+          is equal to the projection of <m>\overrightarrow{PQ}</m> onto the distance vector <m>\vec{d}</m>:
+          <me>
+            \overrightarrow{PR}=\operatorname{proj}_{\vec{d}}\overrightarrow{PQ}= 
+            \left(\frac{\bbm  -1\\3\\-1\ebm\boldsymbol{\cdot}\bbm  1\\-1\\0\ebm}{\bbm  1\\-1\\0\ebm\boldsymbol{\cdot}\bbm  1\\-1\\0\ebm}\right)\bbm  1\\-1\\0\ebm = \bbm  -2\\2\\0\ebm
+          </me>.          
+        </p>
+
+        <p>
+          Now, we need to pause and take care that we don't make a very common mistake: 
+          the vector <m>\overrightarrow{PR}</m> does \textbf{not} give the coordinates of the point <m>R</m>. 
+          Instead, <m>\overrightarrow{PR}</m> tells us how to get <em>from</em> the point <m>P</m> <em>to</em> the point <m>R</m>. 
+          Letting <m>O</m> denote the origin, we can write <m>\overrightarrow{OP}</m> and <m>\overrightarrow{OR}</m> 
+          for the position vectors of <m>P</m> and <m>R</m>, respectively. 
+          Since <m>\overrightarrow{PR} = \overrightarrow{OR}-\overrightarrow{OP}</m> using the <q>tip minus tail</q> 
+          rule for computing the vector between two points, we have
+          <me>
+            \overrightarrow{OR} = \overrightarrow{OP}+\overrightarrow{PR} = \bbm  2\\ 0\\ -1\ebm + \bbm  -2\\ 2\\ 0\ebm = \bbm  0\\ 2\\ -1\ebm
+          </me>.
+        </p>
+
+        <p>
+          Thus, we have <m>R=(0,2,-1)</m> as the point on the line closest to the point <m>Q</m>. 
+          We can now find the distance from <m>Q</m> to the line using the distance formula:
+          <me>
+            D= \sqrt{(1-0)^2+(3-2)^2+(-2-(-1))^2} = \sqrt{3}
+          </me>.
+        </p>
+
+        <p>
+          An alternative way of computing the distance is to make use of the orthogonal decomposition in 
+          <xref ref="idea-orthog_proj"/>. By definition of the distance from a point to a line, 
+          we know that the vector <m>\overrightarrow{RQ}</m> must be orthogonal to the line, 
+          and thus to the direction vector <m>\vec{d}</m>. Using <xref ref="idea-orthog_proj"/>, we have that
+          <me>
+            \overrightarrow{RQ}= \overrightarrow{PQ}-\overrightarrow{PR} = \bbm  -1\\ 3\\ -1\ebm - \bbm  -2\\ 2\\ 0\ebm = \bbm  -1\\ 1\\ 1\ebm
+          </me>,
+          and the shortest distance is given by <m>\norm{\overrightarrow{RQ}}=\sqrt{3}</m>, as before.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      It is also useful to determine the distance between lines,
+      which we define as the length of the shortest line segment that connects the two lines
+      (an argument from geometry shows that this line segments is perpendicular to both lines).
+      Let lines <m>\vec\ell_1(t) = \vec p_1 + t\vec d_1</m> and <m>\vec\ell_2(t) = \vec p_2 + t\vec d_2</m> be given,
+      as shown in <xref ref="fig_lines_dist2"/>.
+      To find the direction orthogonal to both <m>\vec d_1</m> and <m>\vec d_2</m>,
+      we take the cross product:
+      <m>\vec c = \vec d_1\times \vec d_2</m>.
+      The magnitude of the orthogonal projection of
+      <m>\overrightarrow{P_1P_2}</m> onto <m>\vec c</m> is the distance <m>h</m> we seek:
+      <mdn>
+        <mrow>h\amp =    \norm{\operatorname{proj}_{\vec c}\overrightarrow{P_1P_2}} = \norm{\frac{\overrightarrow{P_1P_2}\cdot\vec c}{\dotp cc}\vec c}</mrow>
+        <mrow xml:id="eq-skewlinesdist">\amp =\frac{\abs{\overrightarrow{P_1P_2}\cdot \vec c}}{\vnorm c^2}\vnorm c =\frac{\abs{\overrightarrow{P_1P_2}\cdot \vec c}}{\vnorm c}</mrow>
+      </mdn>.
+    </p>
+
+    <figure xml:id="fig_lines_dist2">
+      <caption>Establishing the distance between lines</caption>
+
+      <!-- START figures/figlines_dist2_3D.asy -->
+      <image width="47%">
+        <shortdescription>Two skew lines in space are plotted with respective points and direction vectors. The distance h between them is indicated.</shortdescription>
+        <description>
+          <p>
+            Two lines in space are shown, without a coordinate system.
+            The lines pass, respectively, through points <m>P_1</m> and <m>P_2</m>,
+            and have respective direction vectors <m>\vec{d}_1</m> and <m>\vec{d}_2</m>.
+          </p>
+
+          <p>
+            The vector <m>\overrightarrow{P_1P_2}</m> is shown pointing from the first line to the second.
+            Also shown is the cross product <m>\vec{c}=\vec{d}_1\times\vec{d}_2</m>;
+            this vector is perpendicular to both lines. 
+            The distance <m>h</m> between the lines is shown as a segment parallel to <m>\vec c</m>.
+          </p>
+        </description>
+        <asymptote label="img_lines_dist2">
+
+
+
+          //ASY file for figlines_dist23D.asy in Chapter 10
+
+          size(200,200,IgnoreAspect);
+          //currentprojection=perspective(7,2,1);
+          currentprojection=orthographic((-.14,-9.67,3.98),(0.003,0.01,0.026),(0,0,0),1,(-0.09,-0.2));
+          defaultrender.merge=true;
+
+
+          // setup and draw the axes
+          real[] myxchoice={};
+          real[] myychoice={};
+          real[] myzchoice={};
+          defaultpen(0.5mm);
+          pair xbounds=(-3,3);
+          pair ybounds=(-3,3);
+          pair zbounds=(-3,3);
+
+          xaxis3("",xbounds.x,xbounds.y,invisible,OutTicks(myxchoice),Arrow3(size=3mm));
+          yaxis3("",ybounds.x,ybounds.y,invisible,OutTicks(myychoice),Arrow3(size=3mm));
+          zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+          triple p1=(0,0,0);
+          triple p2=(0,0,2);
+          triple p12=p2-p1;
+          triple d1=(1,0,0);
+          triple d2=(1,1,-1);
+
+          // line 1
+          triple f(real t) {
+            return (p1+t*d1);}
+
+          // line 2
+          triple g(real t) {
+            return (p2+t*d2);}
+
+          //draw P1 (t=0) and vector d1 at P1 (t=1)
+          dotfactor=3;
+          dot(p1);label("$P_1$",p1,S);
+          draw(f(0)--f(.6),redpen+.7mm,Arrow3(size=2mm));
+          label("$\vec{d}_1$",f(.6),S);
+
+          //draw P2 (t=-1.5) and vector d2 at P2 (t=-0.5)
+          dotfactor=3;
+          dot(p2);label("$P_2$",p2,N);
+          draw(g(0)--g(.6),redpen+.7mm,Arrow3(size=2mm));
+          label("$\vec{d}_2$",g(.6),N);
+
+          //draw vector P1 to P2
+          draw(p1--p2,black,Arrow3(size=2mm));
+          //label("$\overrightarrow{P_1 P_2}$",(p1+p2)/2,W);
+          label("$\overrightarrow{P_1 P_2}$",(p1+p2)/2,W);
+
+          //draw the lines
+          draw(f(-1)--f(0),bluepen);//L1
+          draw(f(.6)--f(2),bluepen);//L1
+          draw(g(-1)--g(0),bluepen);//L2
+          draw(g(.6)--g(2),bluepen);//L2
+
+          triple c=cross(d1,d2);
+          c=c/sqrt(dot(c,c));
+
+          //draw perp line
+          draw(f(1)--f(1)+c*abs(dot(p12,c)),black);
+
+          // draw perp vector
+          draw(f(.9)--f(.9)+c*abs(dot(p12,c))*.4,redpen,Arrow3(size=2mm));
+          label("$\vec c$",f(.9)+c*abs(dot(p12,c))*.4,W);
+
+          label("$h$",(f(1)+f(1)+c*abs(dot(p12,c)))/2,E);
+
+          // draw squares on perp line
+          triple sq1a = f(1)+c*abs(dot(p12,c))*.15;
+          triple sq1b = sq1a+.15*d1;
+          triple sq1c = sq1b+(f(1)-sq1a);
+          draw(sq1a -- sq1b -- sq1c);
+
+          triple sq2a = f(1)+c*abs(dot(p12,c))*.85;
+          triple sq2b = sq2a+.15*d2/length(d2);
+          triple sq2c = sq2b+(f(1)+c*abs(dot(p12,c))-sq2a);
+          draw(sq2a -- sq2b -- sq2c);
+
+        </asymptote>
+      </image>
+      <!-- figures/figlines_dist2_3D.asy END -->
+    </figure>
+
+    <p>
+      A problem in the exercises of this section is to show that this distance is 0 when the lines intersect.
+      Note the use of the Triple Scalar Product:
+      <m>\overrightarrow{P_1P_2}\cdot \vec c = \overrightarrow{P_1P_2}\cdot (\vec d_1\times \vec d_2)</m>.
+    </p>
+
+    <aside>
+      <p>
+        It turns out that skew lines always lie in parallel planes. In the next section,
+        we'll see that a plane can be determined by two non-parallel direction vectors and a point on the plane.
+        The distance between two skew lines is then equal to the distance between the parallel planes.
+      </p>
+    </aside>
+
+    <figure xml:id="vid-vectors-lines-distance-skew" component="video">
+      <caption>Determining distance between skew lines</caption>
+      <video youtube="h0x9SfUVGVc" label="vid-vectors-lines-distance-skew"/>
+    </figure>
+
+    <!-- <p>
+      The following Key Idea restates these two distance formulas.
+    </p>
+
+    <insight xml:id="idea_line_distance">
+      <title>Distances to Lines</title>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Let <m>P</m> be a point on a line <m>\ell</m> that is parallel to <m>\vec d</m>.
+              The distance <m>h</m> from a point <m>Q</m> to the line <m>\ell</m> is:
+                <idx><h>distance</h><h>between point and line</h></idx>
+                <idx><h>distance</h><h>between lines</h></idx>
+                <idx><h>lines</h><h>distances between</h></idx>
+              <me>
+                h =\frac{\norm{\overrightarrow{PQ}\times \vec d}}{\vnorm{d}}
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Let <m>P_1</m> be a point on line <m>\ell_1</m> that is parallel to <m>\vec d_1</m>,
+              and let <m>P_2</m> be a point on line <m>\ell_2</m> parallel to <m>\vec d_2</m>,
+              and let <m>\vec c = \vec d_1\times \vec d_2</m>,
+              where lines <m>\ell_1</m> and <m>\ell_2</m> are not parallel.
+              The distance <m>h</m> between the two lines is:
+              <me>
+                h=\frac{\abs{\overrightarrow{P_1P_2}\cdot \vec c}}{\vnorm c}
+              </me>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </insight> -->
+
+    <!-- <example xml:id="ex_lines4">
+      <title>Finding the distance from a point to a line</title>
+      <statement>
+        <p>
+          Find the distance from the point
+          <m>Q=(1,1,3)</m> to the line <m>\vec\ell(t) = \bbm  1\\-1\\1\ebm+t\bbm  2\\3\\1\ebm</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The equation of the line gives us the point
+          <m>P=(1,-1,1)</m> that lies on the line,
+          hence <m>\overrightarrow{PQ} = \bbm  0\\2\\2\ebm</m>.
+          The equation also gives <m>\vec d= \bbm  2\\3\\1\ebm</m>.
+          Following <xref ref="idea_line_distance"/>,
+          we have the distance as
+          <md>
+            <mrow>h \amp = \frac{\norm{\overrightarrow{PQ}\times \vec d}}{\vnorm{d}}</mrow>
+            <mrow>\amp = \frac{\norm{\bbm  -4\\4\\-4\ebm}}{\sqrt{14}}</mrow>
+            <mrow>\amp =\frac{4\sqrt{3}}{\sqrt{14}} \approx 1.852</mrow>
+          </md>.
+        </p>
+
+        <p>
+          The point <m>Q</m> is approximately <m>1.852</m> units from the line <m>\vec\ell(t)</m>.
+        </p>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="xDB7li9crEs" xml:id="vid-vectors-lines-pointdist-eg" label="vid-vectors-lines-pointdist-eg" component="video"/>
+      </solution>
+    </example> -->
+
+    <example xml:id="ex_lines5">
+      <title>Finding the distance between lines</title>
+      <statement>
+        <p>
+          Find the distance between the lines
+          <me>
+            \ell_1: \begin{matrix} x\amp =\amp 1+3t \\ y\amp =\amp 2-t\\z\amp =\amp t \end{matrix} \qquad\qquad
+            \ell_2:\begin{matrix} x\amp =\amp -2+4s\\y\amp =\amp 3+s\\z\amp =\amp 5+2s. \end{matrix}
+          </me>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          These are the sames lines as given in <xref ref="ex_lines2"/>,
+          where we showed them to be skew.
+          The equations allow us to identify the following points and vectors:
+          <me>
+            P_1 = (1,2,0) P_2 = (-2,3,5)  \Rightarrow  \overrightarrow{P_1P_2} = \bbm  -3\\1\\5\ebm
+          </me>.
+          <me>
+            \vec d_1 = \bbm  3\\-1\\1\ebm  \vec d_2 = \bbm  4\\1\\2\ebm  \Rightarrow  \vec c = \vec d_1\times \vec d_2 = \bbm  -3\\-2\\7\ebm
+          </me>.
+        </p>
+
+        <p>
+          From <xref ref="idea_line_distance"/>
+          we have the distance <m>h</m> between the two lines is
+          <md>
+            <mrow>h \amp = \frac{\abs{\overrightarrow{P_1P_2}\cdot \vec c}}{\vnorm c}</mrow>
+            <mrow>\amp =\frac{42}{\sqrt{62}} \approx 5.334</mrow>
+          </md>.
+        </p>
+
+        <p>
+          The lines are approximately 5.334 units apart.
+        </p>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="h0x9SfUVGVc" xml:id="vid-vectors-lines-skewdist-eg" label="vid-vectors-lines-skewdist-eg" component="video"/>
+      </solution>
+    </example>
+
+    <p>
+      Once again, we do not recommend attempting to memorize <xref ref="eq-skewlinesdist" text="local">Equation</xref>. 
+      Unless you somehow find yourself at a point in your life where you need to find the distances between a whole lot of pairs of skew lines, 
+      you will be better served by learning the skills required to set up and think through a problem 
+      than you will be by memorizing a formula to plug numbers into. In the case of skew lines, 
+      the key observation is that if we take the vector between <em>any</em> pair of points, one on each line, 
+      and project it onto the vector <m>\vec c = \vec{d}_1\times\vec{d}_2</m>, the length of the resulting vector is the distance we seek.
+    </p>
+
+    <p>
+      Somewhat more challenging is the problem of finding the points on each line that actually <em>realize</em> this shortest distance.
+    </p>
+
+    <example xml:id="ex_lines7">
+      <title>Finding the closest points on skew lines</title>
+      <statement>
+    
+        <p>
+          Find the points <m>R_1</m> on <m>\vec\ell_1</m> and <m>R_2</m> on <m>\vec\ell_2</m>, 
+          where <m>\vec\ell_1</m> and <m>\vec\ell_2</m> are the lines from <xref ref="ex_lines5"/>, 
+          such that the distance from <m>R_1</m> to <m>R_2</m> is a minimum.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>R_1</m> is a point on <m>\vec\ell_1</m>, we know that
+          <men xml:id="eq-skewpoint1">
+            R_1 = (1+3t, 2-t, t), \quad \text{ for some real number } t
+          </men>,
+          and similarly,
+          <men xml:id="eq-skewpoint2">
+            R_2 = (-2+4s, 3+s, 5+2s), \quad \text{ for some real number } s
+          </men>.          
+        </p>
+
+        <p>
+          The vector <m>\overrightarrow{R_1R_2}</m> is therefore given by
+          <me>
+            \overrightarrow{R_1R_2}=\bbm  -3+4s-3t\\ 1+s+t\\ 5+2s-t\ebm
+          </me>,
+          for some pair of real numbers <m>s</m> and <m>t</m>.
+        </p>
+
+        <p>
+          We know that the line segment <m>\overline{R_1R_2}</m> must be perpendicular to both <m>\vec\ell_1</m> and <m>\vec\ell_2</m> 
+          in order to minimize the distance, so the vector <m>\overrightarrow{R_1R_2}</m> must be orthogonal to both <m>\vec{d}_1</m> and 
+          <m>\vec{d}_2</m>. Thus,
+          <md>
+            <mrow> 0 = \vec{d}_1\boldsymbol{\cdot}\overrightarrow{R_1R_2} \amp = 3(-3+4s-3t)-1(1+s+t)+1(5+2s-t) </mrow>
+            <mrow> \amp =13s-11t-5, \text{ and}</mrow>
+            <mrow>0 = \vec{d}_2\boldsymbol{\cdot}\overrightarrow{R_1R_2} \amp = 4(-3+4s-3t)+1(1+s+t)+2(5+2s-t)</mrow>
+            <mrow> \amp  = 21s-13t-1</mrow>
+          </md>.
+        </p>
+
+        <p>
+          We end up having to solve a <em>system</em> of two linear equations in the two variables, <m>s</m> and <m>t</m>, given by
+          <me>
+            begin{array}{ccccc}
+              13s \amp - \amp 11t \amp = \amp 5\\
+              21s \amp - \amp 13t \amp = \amp 1
+            \end{array}
+          </me>.
+          You probably had to solve such systems in high school. One option is to solve graphically, 
+          by plotting the lines given by each equation, and seeing where they intersect. 
+          However, this method has little hope of providing an accurate answer. Instead, we try a little algebra.
+        </p>
+
+        <p>
+          Multiplying the first equation by 21 and the second by 13 gives us the equations <m>273s-231t=105</m> and <m>273s-169t=13</m>, respectively.
+          Subtracting the second equation from the first, we have <m>-62t = 92</m>, so <m>t=-\frac{92}{62}=-\frac{46}{31}</m>. 
+          Plugging this value back into any of the previous equations gives us <m>s=-\frac{351}{403}=-\frac{27}{31}</m>. 
+          (We didn't promise that the numbers would work out nicely!) 
+          Plugging these values back into equations <xref ref="eq-skewpoint1"/> and <xref ref="eq-skewpoint2"/>, we find
+          <me>
+            R_1 = \left(-\frac{107}{31}, \frac{108}{31}, -\frac{46}{31}\right) \quad \text{ and } \quad R_2 = \left(-\frac{170}{31}, \frac{66}{31}, \frac{101}{31}\right)
+          </me>.          
+        </p>
+
+        <p>
+          Our vector <m>\overrightarrow{R_1R_2}</m> is then given by
+          <me>
+            \overrightarrow{R_1R_2} = \left\bbm  -\frac{63}{31}\\ -\frac{42}{31}\\ \frac{147}{31}\right\ebm = \frac{1}{31}\bbm  -63\\ -42\\ 147\ebm
+          </me>,
+          and the distance between the two lines is given by
+          <me>
+            \norm{\overrightarrow{R_1R_2}} = \frac{1}{31}\sqrt{63^2+42^2+147^2} = \frac{42}{\sqrt{62}},
+          </me>
+          as before.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      <xref ref="ex_lines7"/> required us to solve a system of two linear equations in two unknowns <m>s</m> and <m>t</m>. 
+      Although this involved some messy fractions, the algebra involved was fairly straightforward. 
+      In many real life problems it is necessary to be able to solve systems involving hundreds or even thousands of equations and variables. 
+      We will begin our study of how to systematically solve such systems in the next chapter.
+    </p>
+
+    <p>
+      One of the key points to understand from this section is this:
+      to describe a line, we need a point and a direction.
+      Whenever a problem is posed concerning a line,
+      one needs to take whatever information is offered and glean point and direction information.
+      Many questions can be asked
+      (and <em>are</em> asked in the Exercise section)
+      whose answer immediately follows from this understanding.
+    </p>
+
+    <p>
+      Lines are one of two fundamental objects of study in space.
+      The other fundamental object is the <em>plane</em>,
+      which we study in detail in the next section.
+      Many complex three dimensional objects are studied by approximating their surfaces with lines and planes.
+    </p>
+  </subsection>
+
+  <exercises>
+    <subexercises xml:id="TaC-vector-lines">
+      <title>Terms and Concepts</title>
+      <exercise label="TaC-vector-lines-1">
+        <!--<webwork xml:id="webwork-TaC-vector-lines-1">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                To find an equation of a line,
+                what two pieces of information are needed?
+              </p>
+            </statement>
+            <answer>
+              <p>
+                A point on the line and the direction of the line.
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-vector-lines-2">
+        <!--<webwork xml:id="webwork-TaC-vector-lines-2">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                Two distinct lines in the plane can intersect or be <fillin/>.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                parallel
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-vector-lines-3">
+        <!--<webwork xml:id="webwork-TaC-vector-lines-3">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                Two distinct lines in space can intersect,
+                be <fillin/> or be <fillin/>.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                parallel, skew
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-vector-lines-4">
+        <!--<webwork xml:id="webwork-TaC-vector-lines-4">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                Use your own words to describe what it means for two lines in space to be skew.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                Answers will vary
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+    </subexercises>
+    <subexercises>
+      <title>Problems</title>
+      <exercisegroup cols="2" xml:id="exset-vector-lines-parametric-symmetric">
+
+        <introduction>
+          <p>
+            Write the vector,
+            parametric and symmetric equations of the lines described.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vector-lines-parametric-symmetric-1">
+          <!--<webwork xml:id="webwork-ex-vector-lines-parametric-symmetric-1">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  Passes through <m>P=(2,-4,1)</m>,
+                  parallel to <m>\vec d=\bbm  9\\2\\5\ebm</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  vector: <m>\ell(t) = \bbm  2\\-4\\1\ebm + t\bbm  9\\2\\5\ebm</m>
+                </p>
+
+                <p>
+                  parametric: <m>x= 2+9t</m>, <m>y=-4+2t</m>, <m>z = 1+5t</m>
+                </p>
+
+                <p>
+                  symmetric: <m>(x-2)/9 =(y+4)/2 = (z-1)/5</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-lines-parametric-symmetric-2">
+          <webwork xml:id="webwork-ex-vector-lines-parametric-symmetric-2">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;variables-&gt;are(t=&gt;"Real");
+                $v=Compute("(6,1,7)+t&lt;-3,2,5&gt;");
+                $vev=$v-&gt;cmp(checker=&gt;sub{my($c,$st,$aH)=@_;
+                 $ds=Formula($st)-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");}else{return 0;};
+                 $dc=$c-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=Formula($st)-&gt;eval(t=&gt;0);$cp=$c-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return ($par and $tch);
+                });
+                Context("Numeric");
+                Context()-&gt;variables-&gt;add(y=&gt;"Real",z=&gt;"Real",t=&gt;"Real");
+                parser::Assignment-&gt;Allow;
+                $p=List(Formula("x=6-3t"),Formula("y=1+2t"),Formula("z=7+5t"));
+                $pev=$p-&gt;cmp(list_checker=&gt;sub{my($c,$st,$aH,$value)=@_;
+                 my$n=scalar(@$st);
+                 my@err=();my$i,$j;
+                 Context("Vector");
+                 Context()-&gt;variables-&gt;add(t=&gt;"Real");
+                 my$sV=Formula("(0,0,0)+t*&lt;0,0,0&gt;");
+                 for($i=0;$i&lt;$n;$i++){
+                  my$ith=Value::List-&gt;NameForNumber($i+1);
+                  my$entry=$st-&gt;[$i];
+                  my$var;my$for;
+                  if($entry-&gt;type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                  else{($var,$for)=split('=',"$entry");
+                   $var=Formula("$var");$for=Formula("$for");
+                   if(!($var!=Formula("x") or $var!=Formula("y") or $var!=Formula("z")) or $for-&gt;usesOneOf("x","y","z"))
+                    {push(@err,"Your $ith entry is not a parametrization")unless $aH-&gt;{isPreview};next;}
+                  };
+                  for($j=0,$used=0;$j&lt;$i;$j++){
+                   if($st-&gt;[$j]-&gt;type eq "Assignment"){
+                    my($vj,$fj)=split('=',$st-&gt;[$j]-&gt;string);
+                    $vj=Formula("$vj");
+                    if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH-&gt;{isPreview};$used = 1;last;}
+                  }}
+                  if(!$used){
+                   if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0,0&gt;")}
+                   elsif($var eq 'y'){$sV=$sV+Formula("&lt;0,$for,0&gt;")}
+                   else{$sV=$sV+Formula("&lt;0,0,$for&gt;")};
+                 }}
+                 if(!$aH-&gt;{isPreview}){
+                  push(@err,"You need to provide more parametrizations")if $i&lt;3;
+                  push(@err,"You have given too many parametrizations")if $i&gt;3;
+                 }
+                 $sV=Formula($sV);
+                 $ds=$sV-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");} else{return 0;};
+                 $dc=$v-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=$sV-&gt;eval(t=&gt;0);$cp=$v-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return (3*($par and $tch),@err);
+                });
+                Context("Numeric");
+                Context()-&gt;variables-&gt;add(y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;operators-&gt;redefine('=',using=&gt;',',from=&gt;'Numeric');
+                Context()-&gt;operators-&gt;set('='=&gt;{string=&gt;' = ',TeX=&gt;'='});
+                Context()-&gt;lists-&gt;set(List=&gt;{separator=&gt;" = "});
+                $s=List("(x-6)/-3","(y-1)/2","(z-7)/5");
+                $sev=$s-&gt;cmp(list_checker=&gt;sub{my($c,$st,$aH,$value)=@_;
+                 my$n=scalar(@$st);
+                 my@err=();my$i,$j;
+                 Context("Vector");
+                 Context()-&gt;variables-&gt;add(t=&gt;"Real");
+                 my$sV=Formula("(0,0,0)+t*&lt;0,0,0&gt;");
+                 for($i=0;$i&lt;$n;$i++){
+                  my$ith=Value::List-&gt;NameForNumber($i+1);
+                  my$entry=$st-&gt;[$i];
+                  my$dv;my$incpt;my%uses;
+                  if($entry-&gt;class ne "Formula"){push(@err,"Your $ith quantity $entry is not a formula");next;}
+                  else{$uses{'x'}=$entry-&gt;usesOneOf("x");$uses{'y'}=$entry-&gt;usesOneOf("y");$uses{'z'}=$entry-&gt;usesOneOf("z");
+                   if($uses{'x'}+$uses{'y'}+$uses{'z'}!=1){push(@err,"Your $ith quantity is not a formula in only x, y, or z");next;};
+                   $dv=$entry-&gt;D('x')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)+$entry-&gt;D('y')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)+$entry-&gt;D('z')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0);
+                   $incpt=$entry-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)/$dv;
+                  };
+                  for($j=0,$used=0;$j&lt;$i;$j++){
+                   if($st-&gt;[$j]-&gt;class eq "Formula"){
+                    $uj{'x'}=$st-&gt;[$j]-&gt;usesOneOf("x");
+                    $uj{'y'}=$st-&gt;[$j]-&gt;usesOneOf("y");
+                    $uj{'z'}=$st-&gt;[$j]-&gt;usesOneOf("z");
+                     if(($uses{'x'} and $uj{'x'}) or ($uses{'y'} and $uj{'y'}) or ($uses{'z'} and $uj{'z'})){
+                      push(@err,"Your $ith quantity uses the same variable as a previous one")unless $aH-&gt;{isPreview};
+                    $used=1;last;
+                  }}}
+                  if(!$used){
+                   if($uses{'x'}){$sV=$sV+Formula("&lt;t/$dv-$incpt,0,0&gt;")};
+                   if($uses{'y'}){$sV=$sV+Formula("&lt;0,t/$dv-$incpt,0&gt;")};
+                   if($uses{'z'}){$sV=$sV+Formula("&lt;0,0,t/$dv-$incpt&gt;")};
+                 }}
+                 if(!$aH-&gt;{isPreview}){
+                  push(@err,"You need to provide more symmetric quantities") if $i&lt;3;
+                  push(@err,"You have given too many symmetric quantities") if $i&gt;3;
+                 }
+                 $sV=Formula($sV);
+                 $ds=$sV-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant) {$ds = Vector("$ds");} else {return 0;};
+                 $dc=$v-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=$sV-&gt;eval(t=&gt;0);$cp=$v-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return (3*($par and $tch),@err);
+                });
+
+              </pg-code>
+
+              <statement>
+                <p>
+                  <m>\ell</m> is a line that passes through <m>P=(6,1,7)</m>,
+                  parallel to <m>\vec d=\bbm  -3\\2\\5\ebm</m>.
+                </p>
+
+                <instruction>
+                  Give a vector equation for <m>\ell</m>.
+                </instruction>
+                <p>
+                  <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30"/>.
+                </p>
+
+                <instruction>
+                  Give the parametric equations for <m>\ell</m>
+                  (separated using commas).
+                </instruction>
+                <p>
+                  <var name="$p" evaluator="$pev" width="50"/>
+                </p>
+
+                <instruction>
+                  Give the symmetric equations for <m>\ell</m>.
+                  (Enter <c>DNE</c> if they are not defined.)
+                </instruction>
+                <p>
+                  <var name="$s" evaluator="$sev" width="50"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-parametric-symmetric-3">
+          <!--<webwork xml:id="webwork-ex-vector-lines-parametric-symmetric-3">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  Passes through <m>P=(2,1,5)</m> and <m>Q = (7,-2,4)</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  Answers can vary:
+                  vector: <m>\ell(t) = \bbm  2\\1\\5\ebm + t\bbm  5\\-3\\-1\ebm</m>
+                </p>
+
+                <p>
+                  parametric: <m>x= 2+5t</m>, <m>y=1-3t</m>, <m>z = 5-t</m>
+                </p>
+
+                <p>
+                  symmetric: <m>(x-2)/5 =-(y-1)/3 = -(z-5)</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-lines-parametric-symmetric-4">
+          <webwork xml:id="webwork-ex-vector-lines-parametric-symmetric-4">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;variables-&gt;are(t=&gt;"Real");
+                $v=Compute("(1,-2,3)+t&lt;4,7,2&gt;");
+                $vev=$v-&gt;cmp(checker=&gt;sub{my($c,$st,$aH)=@_;
+                 $ds=Formula($st)-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");}else{return 0;};
+                 $dc=$c-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=Formula($st)-&gt;eval(t=&gt;0);$cp=$c-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return ($par and $tch);
+                });
+                Context("Numeric");
+                Context()-&gt;variables-&gt;add(y=&gt;"Real",z=&gt;"Real",t=&gt;"Real");
+                parser::Assignment-&gt;Allow;
+                $p=List(Formula("x=1+4t"),Formula("y=-2+7t"),Formula("z=3+2t"));
+                $pev=$p-&gt;cmp(list_checker=&gt;sub{my($c,$st,$aH,$value)=@_;
+                 my$n=scalar(@$st);
+                 my@err=();my$i,$j;
+                 Context("Vector");
+                 Context()-&gt;variables-&gt;add(t=&gt;"Real");
+                 my$sV=Formula("(0,0,0)+t*&lt;0,0,0&gt;");
+                 for($i=0;$i&lt;$n;$i++){
+                  my$ith=Value::List-&gt;NameForNumber($i+1);
+                  my$entry=$st-&gt;[$i];
+                  my$var;my$for;
+                  if($entry-&gt;type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                  else{
+                   ($var,$for)=split('=',"$entry");
+                   $var=Formula("$var");$for=Formula("$for");
+                   if(!($var!=Formula("x") or $var!=Formula("y") or $var!=Formula("z")) or $for-&gt;usesOneOf("x","y","z"))
+                    {push(@err,"Your $ith entry is not a parametrization")unless $aH-&gt;{isPreview};next;}
+                  };
+                  for($j=0,$used=0;$j&lt;$i;$j++){
+                   if($st-&gt;[$j]-&gt;type eq "Assignment"){
+                    my($vj,$fj)=split('=',$st-&gt;[$j]-&gt;string);
+                    $vj=Formula("$vj");
+                    if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH-&gt;{isPreview};$used = 1;last;}
+                   }
+                  }
+                  if(!$used){
+                   if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0,0&gt;")}
+                   elsif($var eq 'y'){$sV=$sV+Formula("&lt;0,$for,0&gt;")}
+                   else{$sV=$sV+Formula("&lt;0,0,$for&gt;")};
+                  }
+                 }
+                 if(!$aH-&gt;{isPreview}){
+                  push(@err,"You need to provide more parametrizations")if $i&lt;3;
+                  push(@err,"You have given too many parametrizations")if $i&gt;3;
+                 }
+                 $sV=Formula($sV);
+                 $ds=$sV-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");} else{return 0;};
+                 $dc=$v-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=$sV-&gt;eval(t=&gt;0);$cp=$v-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return (3*($par and $tch),@err);
+                });
+                Context("Numeric");
+                Context()-&gt;variables-&gt;add(y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;operators-&gt;redefine('=',using=&gt;',',from=&gt;'Numeric');
+                Context()-&gt;operators-&gt;set('='=&gt;{string=&gt;' = ',TeX=&gt;'='});
+                Context()-&gt;lists-&gt;set(List=&gt;{separator=&gt;" = "});
+                $s=List("(x-1)/4","(y+2)/7","(z-3)/2");
+                $sev=$s-&gt;cmp(list_checker=&gt;sub{my($c,$st,$aH,$value)=@_;
+                 my$n=scalar(@$st);
+                 my@err=();my$i,$j;
+                 Context("Vector");
+                 Context()-&gt;variables-&gt;add(t=&gt;"Real");
+                 my$sV=Formula("(0,0,0)+t*&lt;0,0,0&gt;");
+                 for($i=0;$i&lt;$n;$i++){
+                  my$ith=Value::List-&gt;NameForNumber($i+1);
+                  my$entry=$st-&gt;[$i];
+                  my$dv;my$incpt;my%uses;
+                  if($entry-&gt;class ne "Formula"){push(@err,"Your $ith quantity $entry is not a formula");next;}
+                  else {
+                   $uses{'x'}=$entry-&gt;usesOneOf("x");
+                   $uses{'y'}=$entry-&gt;usesOneOf("y");
+                   $uses{'z'}=$entry-&gt;usesOneOf("z");
+                   if($uses{'x'}+$uses{'y'}+$uses{'z'}!=1){push(@err,"Your $ith quantity is not a formula in only x, y, or z");next;};
+                   $dv=$entry-&gt;D('x')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)+$entry-&gt;D('y')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)+$entry-&gt;D('z')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0);
+                   $incpt=$entry-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)/$dv;
+                  };
+                  for($j=0,$used=0;$j&lt;$i;$j++){
+                   if($st-&gt;[$j]-&gt;class eq "Formula"){
+                    $uj{'x'}=$st-&gt;[$j]-&gt;usesOneOf("x");
+                    $uj{'y'}=$st-&gt;[$j]-&gt;usesOneOf("y");
+                    $uj{'z'}=$st-&gt;[$j]-&gt;usesOneOf("z");
+                     if(($uses{'x'} and $uj{'x'}) or ($uses{'y'} and $uj{'y'}) or ($uses{'z'} and $uj{'z'})){
+                      push(@err,"Your $ith quantity uses the same variable as a previous one")unless $aH-&gt;{isPreview};
+                    $used=1;last;
+                    }
+                   }
+                  }
+                  if(!$used){
+                   if($uses{'x'}){$sV=$sV+Formula("&lt;t/$dv-$incpt,0,0&gt;")};
+                   if($uses{'y'}){$sV=$sV+Formula("&lt;0,t/$dv-$incpt,0&gt;")};
+                   if($uses{'z'}){$sV=$sV+Formula("&lt;0,0,t/$dv-$incpt&gt;")};
+                  }
+                 }
+                 if(!$aH-&gt;{isPreview}){
+                  push(@err,"You need to provide more symmetric quantities") if $i&lt;3;
+                  push(@err,"You have given too many symmetric quantities") if $i&gt;3;
+                 }
+                 $sV=Formula($sV);
+                 $ds=$sV-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant) {$ds = Vector("$ds");} else {return 0;};
+                 $dc=$v-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=$sV-&gt;eval(t=&gt;0);$cp=$v-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return (3*($par and $tch),@err);
+                });
+
+              </pg-code>
+
+              <statement>
+                <p>
+                  <m>\ell</m> is a line that passes through
+                  <m>P=(1,-2,3)</m> and <m>Q = (5,5,5)</m>.
+                </p>
+
+                <instruction>
+                  Give a vector equation for <m>\ell</m>.
+                </instruction>
+                <p>
+                  <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30"/>.
+                </p>
+
+                <instruction>
+                  Give the parametric equations for <m>\ell</m>
+                  (separated using commas).
+                </instruction>
+                <p>
+                  <var name="$p" evaluator="$pev" width="50"/>
+                </p>
+
+                <instruction>
+                  Give the ymmetric equations for <m>\ell</m>.
+                  (Enter <c>DNE</c> if they are not defined.)
+                </instruction>
+                <p>
+                  <var name="$s" evaluator="$sev" width="50"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-parametric-symmetric-5">
+          <!--<webwork xml:id="webwork-ex-vector-lines-parametric-symmetric-5">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  Passes through <m>P=(0,1,2)</m> and orthogonal to both
+                </p>
+
+                <p>
+                  <m>\vec d_1=\bbm  2\\-1\\7\ebm</m> and <m>\vec d_2=\bbm  7\\1\\3\ebm</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  Answers can vary;
+                  here the direction is given by <m>\vec d_1\times \vec d_2</m>:
+                  vector: <m>\ell(t) = \bbm  0\\1\\2\ebm + t\bbm  -10\\43\\9\ebm</m>
+                </p>
+
+                <p>
+                  parametric: <m>x= -10t</m>, <m>y=1+43t</m>, <m>z = 2+9t</m>
+                </p>
+
+                <p>
+                  symmetric: <m>-x/10 =(y-1)/43 = (z-2)/9</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-lines-parametric-symmetric-6">
+          <webwork xml:id="webwork-ex-vector-lines-parametric-symmetric-6">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;variables-&gt;are(t=&gt;"Real");
+                $v=Compute("(5,1,9)+t&lt;0,-1,0&gt;");
+                $vev=$v-&gt;cmp(checker=&gt;sub{my($c,$st,$aH)=@_;
+                 $ds=Formula($st)-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");}else{return 0;};
+                 $dc=$c-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=Formula($st)-&gt;eval(t=&gt;0);$cp=$c-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return ($par and $tch);
+                });
+                Context("Numeric");
+                Context()-&gt;variables-&gt;add(y=&gt;"Real",z=&gt;"Real",t=&gt;"Real");
+                parser::Assignment-&gt;Allow;
+                $p=List(Formula("x=5"),Formula("y=1-t"),Formula("z=9"));
+                $pev=$p-&gt;cmp(list_checker=&gt;sub{my($c,$st,$aH,$value)=@_;
+                 my$n=scalar(@$st);
+                 my@err=();my$i,$j;
+                 Context("Vector");
+                 Context()-&gt;variables-&gt;add(t=&gt;"Real");
+                 my$sV=Formula("(0,0,0)+t*&lt;0,0,0&gt;");
+                 for($i=0;$i&lt;$n;$i++){
+                  my$ith=Value::List-&gt;NameForNumber($i+1);
+                  my$entry=$st-&gt;[$i];
+                  my$var;my$for;
+                  if($entry-&gt;type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                  else{
+                   ($var,$for)=split('=',"$entry");
+                   $var=Formula("$var");$for=Formula("$for");
+                   if(!($var!=Formula("x") or $var!=Formula("y") or $var!=Formula("z")) or $for-&gt;usesOneOf("x","y","z"))
+                    {push(@err,"Your $ith entry is not a parametrization")unless $aH-&gt;{isPreview};next;}
+                  };
+                  for($j=0,$used=0;$j&lt;$i;$j++){
+                   if($st-&gt;[$j]-&gt;type eq "Assignment"){
+                    my($vj,$fj)=split('=',$st-&gt;[$j]-&gt;string);
+                    $vj=Formula("$vj");
+                    if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH-&gt;{isPreview};$used = 1;last;}
+                   }
+                  }
+                  if(!$used){
+                   if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0,0&gt;")}
+                   elsif($var eq 'y'){$sV=$sV+Formula("&lt;0,$for,0&gt;")}
+                   else{$sV=$sV+Formula("&lt;0,0,$for&gt;")};
+                  }
+                 }
+                 if(!$aH-&gt;{isPreview}){
+                  push(@err,"You need to provide more parametrizations")if $i&lt;3;
+                  push(@err,"You have given too many parametrizations")if $i&gt;3;
+                 }
+                 $sV=Formula($sV);
+                 $ds=$sV-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");} else{return 0;};
+                 $dc=$v-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=$sV-&gt;eval(t=&gt;0);$cp=$v-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return (3*($par and $tch),@err);
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  <m>\ell</m> is a line that passes through
+                  <m>P=(5,1,9)</m> and is orthogonal to both
+                  <m>\vec d_1=\bbm  1\\0\\1\ebm</m> and <m>\vec d_2=\bbm  2\\0\\3\ebm</m>.
+                </p>
+
+                <instruction>
+                  Give a vector equation for <m>\ell</m>.
+                </instruction>
+                <p>
+                  <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30"/>.
+                </p>
+
+                <instruction>
+                  Give parametric equations for <m>\ell</m>
+                  (separated using commas).
+                </instruction>
+                <p>
+                  <var name="$p" evaluator="$pev" width="50"/>
+                </p>
+
+                <instruction>
+                  Give symmetric equations for <m>\ell</m>.
+                  (Enter <c>DNE</c> if they are not defined.)
+                </instruction>
+                <p>
+                  <var name="DNE" width="50"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-parametric-symmetric-7">
+          <webwork xml:id="webwork-ex-vector-lines-parametric-symmetric-7">
+              <pg-code>
+                Context("Vector");Context()-&gt;variables-&gt;are(t=&gt;"Real");
+                $v=Compute("(7,2,-1)+t&lt;1,-1,2&gt;");
+                $vev=$v-&gt;cmp(checker=&gt;sub{my($c,$st,$aH)=@_;
+                 $ds=Formula($st)-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");}else{return 0;};
+                 $dc=$c-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=Formula($st)-&gt;eval(t=&gt;0);$cp=$c-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return($par and $tch);
+                });
+                Context("Numeric");Context()-&gt;variables-&gt;add(y=&gt;"Real",z=&gt;"Real",t=&gt;"Real");
+                parser::Assignment-&gt;Allow;
+                $p=List(Formula("x=7+t"),Formula("y=2-t"),Formula("z=-1+2t"));
+                $pev=$p-&gt;cmp(list_checker=&gt;sub{my($c,$st,$aH,$value)=@_;
+                 my$n=scalar(@$st);
+                 my@err=();my$i,$j;
+                 Context("Vector");
+                 Context()-&gt;variables-&gt;add(t=&gt;"Real");
+                 my$sV=Formula("(0,0,0)+t*&lt;0,0,0&gt;");
+                 for($i=0;$i&lt;$n;$i++){
+                  my$ith=Value::List-&gt;NameForNumber($i+1);
+                  my$entry=$st-&gt;[$i];
+                  my$var;my$for;
+                  if($entry-&gt;type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                  else{($var,$for)=split('=',"$entry");
+                   $var=Formula("$var");$for=Formula("$for");
+                   if(!($var!=Formula("x") or $var!=Formula("y") or $var!=Formula("z")) or $for-&gt;usesOneOf("x","y","z"))
+                    {push(@err,"Your $ith entry is not a parametrization")unless $aH-&gt;{isPreview};next;}
+                  };
+                  for($j=0,$used=0;$j&lt;$i;$j++){
+                   if($st-&gt;[$j]-&gt;type eq "Assignment"){
+                    my($vj,$fj)=split('=',$st-&gt;[$j]-&gt;string);
+                    $vj=Formula("$vj");
+                    if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH-&gt;{isPreview};$used = 1;last;}
+                  }}
+                  if(!$used){
+                   if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0,0&gt;")}
+                   elsif($var eq 'y'){$sV=$sV+Formula("&lt;0,$for,0&gt;")}
+                   else{$sV=$sV+Formula("&lt;0,0,$for&gt;")};
+                 }}
+                 if(!$aH-&gt;{isPreview}){push(@err,"You need to provide more parametrizations")if $i&lt;3;push(@err,"You have given too many parametrizations")if $i&gt;3;}
+                 $sV=Formula($sV);
+                 $ds=$sV-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");} else{return 0;};
+                 $dc=$v-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=$sV-&gt;eval(t=&gt;0);$cp=$v-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return(3*($par and $tch),@err);
+                });
+                Context("Numeric");Context()-&gt;variables-&gt;add(y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;operators-&gt;redefine('=',using=&gt;',',from=&gt;'Numeric');
+                Context()-&gt;operators-&gt;set('='=&gt;{string=&gt;' = ',TeX=&gt;'='});
+                Context()-&gt;lists-&gt;set(List=&gt;{separator=&gt;" = "});
+                $s=List("x-7","2-y","(z+1)/2");
+                $sev=$s-&gt;cmp(list_checker=&gt;sub{my($c,$st,$aH,$value)=@_;
+                 my$n=scalar(@$st);
+                 my@err=();my$i,$j;
+                 Context("Vector");Context()-&gt;variables-&gt;add(t=&gt;"Real");
+                 my$sV=Formula("(0,0,0)+t*&lt;0,0,0&gt;");
+                 for($i=0;$i&lt;$n;$i++){
+                  my$ith=Value::List-&gt;NameForNumber($i+1);
+                  my$entry=$st-&gt;[$i];
+                  my$dv;my$incpt;my%uses;
+                  if($entry-&gt;class ne "Formula"){push(@err,"Your $ith quantity $entry is not a formula");next;}
+                  else{$uses{'x'}=$entry-&gt;usesOneOf("x");$uses{'y'}=$entry-&gt;usesOneOf("y");$uses{'z'}=$entry-&gt;usesOneOf("z");
+                   if($uses{'x'}+$uses{'y'}+$uses{'z'}!=1){push(@err,"Your $ith quantity is not a formula in only x, y, or z");next;};
+                   $dv=$entry-&gt;D('x')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)+$entry-&gt;D('y')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)+$entry-&gt;D('z')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0);
+                   $incpt=$entry-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)/$dv;};
+                  for($j=0,$used=0;$j&lt;$i;$j++){
+                   if($st-&gt;[$j]-&gt;class eq "Formula"){
+                    $uj{'x'}=$st-&gt;[$j]-&gt;usesOneOf("x");$uj{'y'}=$st-&gt;[$j]-&gt;usesOneOf("y");$uj{'z'}=$st-&gt;[$j]-&gt;usesOneOf("z");
+                     if(($uses{'x'} and $uj{'x'}) or ($uses{'y'} and $uj{'y'}) or ($uses{'z'} and $uj{'z'})){push(@err,"Your $ith quantity uses the same variable as a previous one")unless $aH-&gt;{isPreview};$used=1;last;}
+                  }}
+                  if(!$used){
+                   if($uses{'x'}){$sV=$sV+Formula("&lt;t/$dv-$incpt,0,0&gt;")};
+                   if($uses{'y'}){$sV=$sV+Formula("&lt;0,t/$dv-$incpt,0&gt;")};
+                   if($uses{'z'}){$sV=$sV+Formula("&lt;0,0,t/$dv-$incpt&gt;")};
+                 }}
+                 if(!$aH-&gt;{isPreview}){push(@err,"You need to provide more symmetric quantities") if $i&lt;3;push(@err,"You have given too many symmetric quantities") if $i&gt;3;}
+                 $sV=Formula($sV);$ds=$sV-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant) {$ds = Vector("$ds");} else {return 0;};
+                 $dc=$v-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=$sV-&gt;eval(t=&gt;0);$cp=$v-&gt;eval(t=&gt;0);$tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return(3*($par and $tch),@err);
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  <m>\ell</m> is a line that passes through the intersection of
+                  <m>\vec\ell_1(t)=\bbm 2\\1\\1\ebm+t\bbm 5\\1\\-2\ebm</m> and <m>\vec\ell_2(t)=\bbm -2\\-1\\2\ebm+t\bbm  3\\1\\-1\ebm</m>,
+                  and is orthogonal to both lines.
+                </p>
+
+                <instruction>
+                  Give a vector equation for <m>\ell</m>.
+                </instruction>
+                <p>
+                  <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30"/>.
+                </p>
+
+                <instruction>
+                  Give parametric equations for <m>\ell</m>
+                  (separated using commas).
+                </instruction>
+                <p>
+                  <var name="$p" evaluator="$pev" width="50"/>
+                </p>
+
+                <instruction>
+                  Give symmetric equations for <m>\ell</m>.
+                  (Enter <c>DNE</c> if they are not defined.)
+                </instruction>
+                <p>
+                  <var name="$s" evaluator="$sev" width="50"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-parametric-symmetric-8">
+          <webwork xml:id="webwork-ex-vector-lines-parametric-symmetric-8">
+              <pg-code>
+                Context("Vector");Context()-&gt;variables-&gt;are(t=&gt;"Real");
+                $v=Compute("(2,2,3)+t&lt;5,-1,-3&gt;");
+                $vev=$v-&gt;cmp(checker=&gt;sub{my($c,$st,$aH)=@_;
+                 $ds=Formula($st)-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");}else{return 0;};
+                 $dc=$c-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=Formula($st)-&gt;eval(t=&gt;0);$cp=$c-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return($par and $tch);
+                });
+                Context("Numeric");Context()-&gt;variables-&gt;add(y=&gt;"Real",z=&gt;"Real",t=&gt;"Real");
+                parser::Assignment-&gt;Allow;
+                $p=List(Formula("x=2+5t"),Formula("y=2-t"),Formula("z=3-3t"));
+                $pev=$p-&gt;cmp(list_checker=&gt;sub{my($c,$st,$aH,$value)=@_;
+                 my$n=scalar(@$st);
+                 my@err=();my$i,$j;
+                 Context("Vector");
+                 Context()-&gt;variables-&gt;add(t=&gt;"Real");
+                 my$sV=Formula("(0,0,0)+t*&lt;0,0,0&gt;");
+                 for($i=0;$i&lt;$n;$i++){
+                  my$ith=Value::List-&gt;NameForNumber($i+1);
+                  my$entry=$st-&gt;[$i];
+                  my$var;my$for;
+                  if($entry-&gt;type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                  else{($var,$for)=split('=',"$entry");
+                   $var=Formula("$var");$for=Formula("$for");
+                   if(!($var!=Formula("x") or $var!=Formula("y") or $var!=Formula("z")) or $for-&gt;usesOneOf("x","y","z"))
+                    {push(@err,"Your $ith entry is not a parametrization")unless $aH-&gt;{isPreview};next;}
+                  };
+                  for($j=0,$used=0;$j&lt;$i;$j++){
+                   if($st-&gt;[$j]-&gt;type eq "Assignment"){
+                    my($vj,$fj)=split('=',$st-&gt;[$j]-&gt;string);
+                    $vj=Formula("$vj");
+                    if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH-&gt;{isPreview};$used = 1;last;}
+                  }}
+                  if(!$used){
+                   if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0,0&gt;")}
+                   elsif($var eq 'y'){$sV=$sV+Formula("&lt;0,$for,0&gt;")}
+                   else{$sV=$sV+Formula("&lt;0,0,$for&gt;")};
+                 }}
+                 if(!$aH-&gt;{isPreview}){push(@err,"You need to provide more parametrizations")if $i&lt;3;push(@err,"You have given too many parametrizations")if $i&gt;3;}
+                 $sV=Formula($sV);
+                 $ds=$sV-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");} else{return 0;};
+                 $dc=$v-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=$sV-&gt;eval(t=&gt;0);$cp=$v-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return(3*($par and $tch),@err);
+                });
+                Context("Numeric");Context()-&gt;variables-&gt;add(y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;operators-&gt;redefine('=',using=&gt;',',from=&gt;'Numeric');
+                Context()-&gt;operators-&gt;set('='=&gt;{string=&gt;' = ',TeX=&gt;'='});
+                Context()-&gt;lists-&gt;set(List=&gt;{separator=&gt;" = "});
+                $s=List("(x-2)/5","-(y-2)","-(z-3)/3");
+                $sev=$s-&gt;cmp(list_checker=&gt;sub{my($c,$st,$aH,$value)=@_;
+                 my$n=scalar(@$st);
+                 my@err=();my$i,$j;
+                 Context("Vector");Context()-&gt;variables-&gt;add(t=&gt;"Real");
+                 my$sV=Formula("(0,0,0)+t*&lt;0,0,0&gt;");
+                 for($i=0;$i&lt;$n;$i++){
+                  my$ith=Value::List-&gt;NameForNumber($i+1);
+                  my$entry=$st-&gt;[$i];
+                  my$dv;my$incpt;my%uses;
+                  if($entry-&gt;class ne "Formula"){push(@err,"Your $ith quantity $entry is not a formula");next;}
+                  else{$uses{'x'}=$entry-&gt;usesOneOf("x");$uses{'y'}=$entry-&gt;usesOneOf("y");$uses{'z'}=$entry-&gt;usesOneOf("z");
+                   if($uses{'x'}+$uses{'y'}+$uses{'z'}!=1){push(@err,"Your $ith quantity is not a formula in only x, y, or z");next;};
+                   $dv=$entry-&gt;D('x')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)+$entry-&gt;D('y')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)+$entry-&gt;D('z')-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0);
+                   $incpt=$entry-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)/$dv;};
+                  for($j=0,$used=0;$j&lt;$i;$j++){
+                   if($st-&gt;[$j]-&gt;class eq "Formula"){
+                    $uj{'x'}=$st-&gt;[$j]-&gt;usesOneOf("x");$uj{'y'}=$st-&gt;[$j]-&gt;usesOneOf("y");$uj{'z'}=$st-&gt;[$j]-&gt;usesOneOf("z");
+                     if(($uses{'x'} and $uj{'x'}) or ($uses{'y'} and $uj{'y'}) or ($uses{'z'} and $uj{'z'})){push(@err,"Your $ith quantity uses the same variable as a previous one")unless $aH-&gt;{isPreview};$used=1;last;}
+                  }}
+                  if(!$used){
+                   if($uses{'x'}){$sV=$sV+Formula("&lt;t/$dv-$incpt,0,0&gt;")};
+                   if($uses{'y'}){$sV=$sV+Formula("&lt;0,t/$dv-$incpt,0&gt;")};
+                   if($uses{'z'}){$sV=$sV+Formula("&lt;0,0,t/$dv-$incpt&gt;")};
+                 }}
+                 if(!$aH-&gt;{isPreview}){push(@err,"You need to provide more symmetric quantities") if $i&lt;3;push(@err,"You have given too many symmetric quantities") if $i&gt;3;}
+                 $sV=Formula($sV);$ds=$sV-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant) {$ds = Vector("$ds");} else {return 0;};
+                 $dc=$v-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=$sV-&gt;eval(t=&gt;0);$cp=$v-&gt;eval(t=&gt;0);$tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return(3*($par and $tch),@err);
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  <m>\ell</m> is a line that passes through the intersection of
+                  <m>\vec\ell_1(t)=\begin{cases}x\amp=t\\y\amp=-2+2t\\z\amp=1+t\end{cases}</m> and <m>\vec\ell_2(t)=\begin{cases}x\amp=2+t\\y\amp=2-t\\z\amp=3+2t\end{cases}</m>,
+                  and is orthogonal to both lines.
+                </p>
+
+                <instruction>
+                  Give a vector equation for <m>\ell</m>.
+                </instruction>
+                <p>
+                  <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30"/>.
+                </p>
+
+                <instruction>
+                  Give parametric equations for <m>\ell</m>
+                  (separated using commas).
+                </instruction>
+                <p>
+                  <var name="$p" evaluator="$pev" width="50"/>
+                </p>
+
+                <instruction>
+                  Give symmetric equations for <m>\ell</m>.
+                  (Enter <c>DNE</c> if they are not defined.)
+                </instruction>
+                <p>
+                  <var name="$s" evaluator="$sev" width="50"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-parametric-symmetric-9">
+          <!--<webwork xml:id="webwork-ex-vector-lines-parametric-symmetric-9">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  Passes through <m>P=(1,1)</m>,
+                  parallel to <m>\vec d = \bbm  2\\3\ebm</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  vector: <m>\ell(t) = \bbm  1\\1\ra + t\la 2\\3\ebm</m>
+                </p>
+
+                <p>
+                  parametric: <m>x= 1+2t</m>, <m>y=1+3t</m>
+                </p>
+
+                <p>
+                  symmetric: <m>(x-1)/2=(y-1)/3</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-lines-parametric-symmetric-10">
+          <webwork xml:id="webwork-ex-vector-lines-parametric-symmetric-10">
+              <pg-code>
+                Context("Vector");Context()-&gt;variables-&gt;are(t=&gt;"Real");
+                $v=Compute("(-2,5)+t&lt;0,1&gt;");
+                $vev=$v-&gt;cmp(checker=&gt;sub{my($c,$st,$aH)=@_;
+                 $ds=Formula($st)-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");}else{return 0;};
+                 $dc=$c-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=Formula($st)-&gt;eval(t=&gt;0);$cp=$c-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return($par and $tch);
+                });
+                Context("Numeric");Context()-&gt;variables-&gt;add(y=&gt;"Real",t=&gt;"Real");
+                parser::Assignment-&gt;Allow;
+                $p=List(Formula("x=-2"),Formula("y=5+t"));
+                $pev=$p-&gt;cmp(list_checker=&gt;sub{my($c,$st,$aH,$value)=@_;
+                 my$n=scalar(@$st);
+                 my@err=();my$i,$j;
+                 Context("Vector");
+                 Context()-&gt;variables-&gt;add(t=&gt;"Real");
+                 my$sV=Formula("(0,0)+t*&lt;0,0&gt;");
+                 for($i=0;$i&lt;$n;$i++){
+                  my$ith=Value::List-&gt;NameForNumber($i+1);
+                  my$entry=$st-&gt;[$i];
+                  my$var;my$for;
+                  if($entry-&gt;type ne "Assignment"){push(@err,"Your $ith entry is not a parametrization");next;}
+                  else{($var,$for)=split('=',"$entry");
+                   $var=Formula("$var");$for=Formula("$for");
+                   if(!($var!=Formula("x") or $var!=Formula("y")) or $for-&gt;usesOneOf("x","y"))
+                    {push(@err,"Your $ith entry is not a parametrization")unless $aH-&gt;{isPreview};next;}
+                  };
+                  for($j=0,$used=0;$j&lt;$i;$j++){
+                   if($st-&gt;[$j]-&gt;type eq "Assignment"){
+                    my($vj,$fj)=split('=',$st-&gt;[$j]-&gt;string);
+                    $vj=Formula("$vj");
+                    if($vj==$var) {push(@err,"Your $ith entry parametrizes the same variable as a previous one") unless $aH-&gt;{isPreview};$used = 1;last;}
+                  }}
+                  if(!$used){
+                   if($var eq 'x'){$sV=$sV+Formula("&lt;$for,0&gt;")}
+                   else{$sV=$sV+Formula("&lt;0,$for&gt;")};
+                 }}
+                 if(!$aH-&gt;{isPreview}){push(@err,"You need to provide more parametrizations")if $i&lt;2;push(@err,"You have given too many parametrizations")if $i&gt;2;}
+                 $sV=Formula($sV);
+                 $ds=$sV-&gt;D('t')-&gt;reduce;
+                 if($ds-&gt;isConstant){$ds=Vector("$ds");} else{return 0;};
+                 $dc=$v-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                 $sp=$sV-&gt;eval(t=&gt;0);$cp=$v-&gt;eval(t=&gt;0);
+                 $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                 return(2*($par and $tch),@err);
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  <m>\ell</m> is a line that passes through <m>P=(-2,5)</m>,
+                  parallel to <m>\vec d = \bbm  0\\1\ebm</m>.
+                </p>
+
+                <instruction>
+                  Give a vector equation for <m>\ell</m>.
+                </instruction>
+                <p>
+                  <m>\ell(t)=</m><var name="$v" evaluator="$vev" width="30"/>.
+                </p>
+
+                <instruction>
+                  Give parametric equations for <m>\ell</m>
+                  (separated using commas)
+                </instruction>
+                <p>
+                  <var name="$p" evaluator="$pev" width="50"/>
+                </p>
+
+                <instruction>
+                  Give symmetric equations for <m>\ell</m>.
+                  (Enter <c>DNE</c> if they are not defined.)
+                </instruction>
+                <p>
+                  <var name="DNE" width="50"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-vector-lines-intersection">
+
+        <introduction>
+          <p>
+            Determine if the described lines are the same line,
+            parallel lines, intersecting or skew lines.
+            If intersecting, give the point of intersection.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vector-lines-intersection-1">
+          <webwork xml:id="webwork-ex-vector-lines-intersection-1">
+              <pg-code>
+                Context("Point");
+                Context()-&gt;strings-&gt;add(same=&gt;{},parallel=&gt;{},skew=&gt;{});
+                $answer=Compute("parallel");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Determine if <m>\vec\ell_1(t) = \bbm  1\\2\\1\ebm + t\bbm  2\\-1\\1\ebm</m> and
+                  <m>\vec\ell_2(t) = \bbm  3\\3\\3\ebm + t\bbm  -4\\2\\-2\ebm</m> describe the same line,
+                  parallel lines, intersecting or skew lines.
+                  You can answer with <q><c>same</c></q>,
+                  <q><c>parallel</c></q>,
+                  <q><c>skew</c></q>,
+                  or give the point of intersection.
+                </p>
+
+                <p>
+                  <var name="$answer" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-intersection-2">
+          <webwork xml:id="webwork-ex-vector-lines-intersection-2">
+              <pg-code>
+                Context("Point");
+                Context()-&gt;strings-&gt;add(same=&gt;{},parallel=&gt;{},skew=&gt;{});
+                $answer=Compute("(12,3,7)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Determine if <m>\vec\ell_1(t) = \bbm  2\\1\\1\ebm + t\bbm  5\\1\\3\ebm</m> and
+                  <m>\vec\ell_2(t) = \bbm  14\\5\\9\ebm + t\bbm  1\\1\\1\ebm</m> describe the same line,
+                  parallel lines, intersecting or skew lines.
+                  You can answer with <q><c>same</c></q>,
+                  <q><c>parallel</c></q>,
+                  <q><c>skew</c></q>,
+                  or give the point of intersection.
+                </p>
+
+                <p>
+                  <var name="$answer" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-intersection-3">
+          <!--<webwork xml:id="webwork-ex-vector-lines-intersection-3">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  <m>\vec\ell_1(t) = \bbm  3\\4\\1\ebm + t\bbm  2\\-3\\4\ebm</m>,
+                </p>
+
+                <p>
+                  <m>\vec\ell_2(t) = \bbm  -3\\3\\-3\ebm + t\bbm  3\\-2\\4\ebm</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  intersecting;
+                  <m>\vec\ell_1(3) = \vec\ell_2(4) = \bbm  9\\-5\\13\ebm</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-lines-intersection-4">
+          <webwork xml:id="webwork-ex-vector-lines-intersection-4">
+              <pg-code>
+                Context("Point");
+                Context()-&gt;strings-&gt;add(same=&gt;{},parallel=&gt;{},skew=&gt;{});
+                $answer=Compute("same");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Determine if <m>\vec\ell_1(t) = \bbm  1\\1\\1\ebm + t\bbm  3\\1\\3\ebm</m> and
+                  <m>\vec\ell_2(t) = \bbm  7\\3\\7\ebm + t\bbm  6\\2\\6\ebm</m> describe the same line,
+                  parallel lines, intersecting or skew lines.
+                  You can answer with <q><c>same</c></q>,
+                  <q><c>parallel</c></q>,
+                  <q><c>skew</c></q>,
+                  or give the point of intersection.
+                </p>
+
+                <p>
+                  <var name="$answer" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-intersection-5">
+          <webwork xml:id="webwork-ex-vector-lines-intersection-5">
+              <pg-code>
+                Context("Point");
+                Context()-&gt;strings-&gt;add(same=&gt;{},parallel=&gt;{},skew=&gt;{});
+                $answer=Compute("skew");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Determine if <m>\vec\ell_1(t) = \begin{cases}x\amp = 1+2t\\ y\amp = 3-2t\\ z\amp = t\end{cases}</m> and
+                  <m>\vec\ell_2(t) = \begin{cases}x\amp = 3-t\\ y\amp = 3+5t\\ z\amp = 2+7t\end{cases}</m> describe the same line,
+                  parallel lines, intersecting or skew lines.
+                  You can answer with <q><c>same</c></q>,
+                  <q><c>parallel</c></q>,
+                  <q><c>skew</c></q>,
+                  or give the point of intersection.
+                </p>
+
+                <p>
+                  <var name="$answer" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-intersection-6">
+          <webwork xml:id="webwork-ex-vector-lines-intersection-6">
+              <pg-code>
+                Context("Point");
+                Context()-&gt;strings-&gt;add(same=&gt;{},parallel=&gt;{},skew=&gt;{});
+                $answer=Compute("parallel");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Determine if <m>\vec\ell_1(t) = \begin{cases}x\amp = 1.1+0.6t\\ y\amp = 3.77+0.9t\\ z\amp = -2.3+1.5t\end{cases}</m> and
+                  <m>\vec\ell_2(t) = \begin{cases}x\amp = 3.11+3.4t\\ y\amp = 2+5.1t\\ z\amp = 2.5+8.5t\end{cases}</m> describe the same line,
+                  parallel lines, intersecting or skew lines.
+                  You can answer with <q><c>same</c></q>,
+                  <q><c>parallel</c></q>,
+                  <q><c>skew</c></q>,
+                  or give the point of intersection.
+                </p>
+
+                <p>
+                  <var name="$answer" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-intersection-7">
+          <!--<webwork xml:id="webwork-ex-vector-lines-intersection-7">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  <m>\ell_1 = \left\{\begin{aligned}x\amp = 0.2+0.6t\\ y\amp = 1.33-0.45t\\ z\amp = -4.2+1.05t
+                  \end{aligned} \right.</m> and
+                  <m>\ell_2 = \left\{\begin{aligned}x\amp = 0.86+9.2t\\ y\amp = 0.835-6.9t\\ z\amp = -3.045+16.1t
+                  \end{aligned} \right.</m>
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  same
+                </p>
+              </answer>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-lines-intersection-8">
+          <webwork xml:id="webwork-ex-vector-lines-intersection-8">
+              <pg-code>
+                Context("Point");
+                Context()-&gt;strings-&gt;add(same=&gt;{},parallel=&gt;{},skew=&gt;{});
+                $answer=Compute("skew");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Determine if <m>\vec\ell_1(t) = \begin{cases}x\amp = 0.1+1.1t\\ y\amp = 2.9-1.5t\\ z\amp = 3.2+1.6t\end{cases}</m> and
+                  <m>\vec\ell_2(t) = \begin{cases}x\amp = 4-2.1t\\ y\amp = 1.8+7.2t\\ z\amp = 3.1+1.1t\end{cases}</m> describe the same line,
+                  parallel lines, intersecting or skew lines.
+                  You can answer with <q><c>same</c></q>,
+                  <q><c>parallel</c></q>,
+                  <q><c>skew</c></q>,
+                  or give the point of intersection.
+                </p>
+
+                <p>
+                  <var name="$answer" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-vector-lines-distance-point-line">
+
+        <introduction>
+          <p>
+            Find the distance from the point to the line.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vector-lines-distance-point-line-1">
+          <!--<webwork xml:id="webwork-ex-vector-lines-distance-point-line-1">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  <m>Q=(1,1,1)</m>, <m>\vec\ell(t) = \bbm  2\\1\\3\ebm + t\bbm  2\\1\\-2\ebm</m>
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  <m>\sqrt{41}/3</m>
+                </p>
+              </answer>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-lines-distance-point-line-2">
+          <webwork xml:id="webwork-ex-vector-lines-distance-point-line-2">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+                $distance=Formula("3sqrt(2)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the distance from the point
+                  <m>Q=(2,5,6)</m> to the line <m>\vec\ell(t) = \bbm  -1\\1\\1\ebm + t\bbm  1\\0\\1\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$distance" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vector-lines-distance-point-line-3">
+          <!--<webwork xml:id="webwork-ex-vector-lines-distance-point-line-3">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  <m>Q=(0,3)</m>, <m>\vec\ell(t) = \bbm  2\\0\ra + t\la 1\\1\ebm</m>
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  <m>5\sqrt{2}/2</m>
+                </p>
+              </answer>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-lines-distance-point-line-4">
+          <webwork xml:id="webwork-ex-vector-lines-distance-point-line-4">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+                $distance=Formula("5");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the distance from the point <m>Q=(1,1)</m> to the line <m>\vec\ell(t) = \bbm  4\\5\ra + t\la -4\\3\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$distance" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-vector-lines-distance-two-lines">
+
+        <introduction>
+          <p>
+            Find the distance between the two lines.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vector-lines-distance-two-lines-1">
+          <!--<webwork xml:id="webwork-ex-vector-lines-distance-two-lines-1">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  <m>\vec\ell_1(t) = \bbm  1\\2\\1\ebm + t\bbm  2\\-1\\1\ebm</m>,
+                </p>
+
+                <p>
+                  <m>\vec\ell_2(t) = \bbm  3\\3\\3\ebm + t\bbm  4\\2\\-2\ebm</m>.
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  <m>3/\sqrt{2}</m>
+                </p>
+              </answer>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-lines-distance-two-lines-2">
+          <webwork xml:id="webwork-ex-vector-lines-distance-two-lines-2">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+                $distance=Formula("2");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the distance between the line
+                  <m>\vec\ell_1(t) = \bbm  0\\0\\1\ebm + t\bbm  1\\0\\0\ebm</m> and the line <m>\vec\ell_2(t) = \bbm  0\\0\\3\ebm + t\bbm  0\\1\\0\ebm</m>.
+                </p>
+
+                <p>
+                  <var name="$distance" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-vector-lines-distance-formula">
+
+        <introduction>
+          <p>
+            The following exercises explore special cases of the distance formulas found in <xref ref="idea_line_distance"/>.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vector-lines-distance-formula-1">
+          <!--<webwork xml:id="webwork-ex-vector-lines-distance-formula-1">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  Let <m>Q</m> be a point on the line <m>\vec\ell(t)</m>.
+                  Show why the distance formula correctly gives the distance from the point to the line as <m>0</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  Since both <m>P</m> and <m>Q</m> are on the line,
+                  <m>\overrightarrow{PQ}</m> is parallel to <m>\vec d</m>.
+                  Thus <m>\overrightarrow{PQ}\times \vec d = \vec 0</m>,
+                  giving a distance of <m>0</m>.
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise xml:id="x10_05_ex_30" label="ex-vector-lines-distance-formula-2">
+          <!--<webwork xml:id="webwork-ex-vector-lines-distance-formula-2">
+              <pg-code>
+              </pg-code> -->
+              <statement>
+                <p>
+                  Let lines <m>\vec\ell_1(t)</m> and
+                  <m>\vec\ell_2(t)</m> be intersecting lines.
+                  Show why the distance formula correctly gives the distance between these lines as <m>0</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  (Note: this solution is easier once one has studied <xref ref="sec_planes"/>.) Since the two lines intersect,
+                  we can state <m>P_2= P_1 + a\vec d_1+b\vec d_2</m> for some scalars <m>a</m> and <m>b</m>.
+                  (Here we abuse notation slightly and add points to vectors.)
+                  Thus <m>\overrightarrow{P_1P_2} = a\vec d_1+b\vec d_2</m>.
+                  Vector <m>\vec c</m> is the cross product of <m>\vec d_1</m> and <m>\vec d_2</m>,
+                  hence is orthogonal to both, and hence is orthogonal to <m>\overrightarrow{P_1P_2}</m>.
+                  Thus <m>\overrightarrow{P_1P_2}\cdot\vec c = 0</m>,
+                  and the distance between lines is <m>0</m>.
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vector-lines-distance-formula-3">
+          <!--<webwork xml:id="webwork-ex-vector-lines-distance-formula-3">
+              <pg-code>
+              </pg-code> -->
+              <introduction>
+                <p>
+                  Let lines <m>\vec\ell_1(t)</m> and <m>\vec\ell_2(t)</m> be parallel.
+                </p>
+              </introduction>
+
+              <task label="ex-vector-lines-distance-formula-3a">
+                <statement>
+                  <p>
+                    Show why the distance formula for distance between lines cannot be used as stated to find the distance between the lines.
+                  </p>
+                </statement>
+                <solution>
+                  <p>
+                    The distance formula cannot be used because since
+                    <m>\vec d_1</m> and <m>\vec d_2</m> are parallel,
+                    <m>\vec c</m> is <m>\vec 0</m> and we cannot divide by <m>\vnorm{0}</m>.
+                  </p>
+                </solution>
+              </task>
+
+              <task label="ex-vector-lines-distance-formula-3b">
+                <statement>
+                  <p>
+                    Show why letting <m>\vec c=(\overrightarrow{P_1P_2}\times\vec d_2)\times\vec d_2</m> allows one to the use the formula.
+                  </p>
+                </statement>
+                <solution>
+                  <p>
+                    Since <m>\vec d_1</m> and <m>\vec d_2</m> are parallel,
+                    <m>\overrightarrow{P_1P_2}</m> lies in the plane formed by the two lines.
+                    Thus <m>\overrightarrow{P_1P_2}\times\vec d_2</m> is orthogonal to this plane,
+                    and <m>\vec c=(\overrightarrow{P_1P_2}\times\vec d_2)\times \vec d_2</m> is parallel to the plane,
+                    but still orthogonal to both <m>\vec d_1</m> and <m>\vec d_2</m>.
+                    We desire the length of the projection of <m>\overrightarrow{P_1P_2}</m> onto <m>\vec c</m>,
+                    which is what the formula provides.
+                  </p>
+                </solution>
+              </task>
+
+              <task label="ex-vector-lines-distance-formula-3c">
+                <statement>
+                  <p>
+                    Show how one can use the formula for the distance between a point and a line to find the distance between parallel lines.
+                  </p>
+                </statement>
+                <solution>
+                  <p>
+                    Since the lines are parallel,
+                    one can measure the distance between the lines at any location on either line
+                    (just as to find the distance between straight railroad tracks,
+                    one can use a measuring tape anywhere along the track,
+                    not just at one specific place.)
+                    Let <m>P=P_1</m> and <m>Q=P_2</m> as given by the equations of the lines,
+                    and apply the formula for distance between a point and a line.
+                  </p>
+                </solution>
+              </task>
+          <!-- </webwork> -->
+        </exercise>
+      </exercisegroup>
+    </subexercises>
+  </exercises>
+</section>

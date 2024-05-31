@@ -1,0 +1,1079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-lin_trans" label="sec-lin_trans">
+  <title>Properties of Linear Transformations</title>
+
+  <p>
+    In the previous section we discussed standard transformations of the Cartesian plane 
+    <mdash/> rotations, reflections, <etc/>. As a motivational example for this section's study, 
+    let's consider another transformation. Let's find the matrix that moves the unit square one unit to the right 
+    (see <xref ref="fig-translation"/>). This is called a <term>translation</term>.
+  </p>
+
+  <figure xml:id="fig-translation">
+    <caption>Translating the unit square one unit to the right</caption>
+    <image width="60%">
+      <shortdescription>Two unit squares are plotted on coordinate axes. The second is shifted to the right.</shortdescription>
+      <latex-image label="img-translation">
+        \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
+        \drawxlines{-1}{2.5}{1,2};
+        \drawylines{-1}{2.5}{1,2};
+        \unitsquare[thick];
+        \begin{scope}[shift={(3cm,0)}]
+          \drawxlines{-1}{2.5}{1,2};
+          \drawylines{-1}{2.5}{1,2};
+          \unitsquare[thick,cm={1,0,0,1,(1,0)}];
+        \end{scope}        
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+  </figure>
+
+  <p>
+    Our work from the previous section allows us to find the matrix quickly. By looking at the picture, it is easy to see that <m>\veone</m> is moved to <m>\bbm 2\\0\ebm</m> and <m>\vetwo</m> is moved to <m>\bbm 1\\1\ebm</m>. Therefore, the transformation matrix should be 
+    <me>
+        \tta = \bbm 2 \amp 1\\0 \amp 1\ebm
+    </me>.
+  </p>
+
+  <p>
+    <em>However</em>, look at <xref ref="fig-translation2"/> where the unit square is drawn after being transformed by <m>\tta</m>. 
+    It is clear that we did not get the desired result; the unit square was not translated, but rather stretched/sheared in some way.
+  </p>
+
+  <figure xml:id="fig-translation2">
+    <caption>Actual transformation of the unit square by matrix <m>\tta</m></caption>
+    <image width="60%">
+      <shortdescription>A unit square on the left, and on the right, a parallelogram.</shortdescription>
+      <latex-image label="img-translation2">
+        \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
+        \drawxlines{-1}{2.5}{1,2};
+        \drawylines{-1}{2.5}{1,2};
+        \unitsquare[thick];
+        \begin{scope}[shift={(3cm,0)}]
+          \drawxlines{-1}{2.5}{1,2};
+          \drawylines{-1}{2.5}{1,2};
+          \unitsquare[thick,cm={2,0,1,1,(0,0)}];
+        \end{scope}
+          
+        \end{tikzpicture}
+      </latex-image>
+    </image>
+  </figure>
+
+  <p>
+    What did we do wrong? We will answer this question, but first we need to develop a few thoughts and vocabulary terms. 
+  </p>
+
+  <p>
+    We've been using the term <q>transformation</q> to describe how we've changed vectors. 
+    In fact, <q>transformation</q> is synonymous to <q>function.</q> 
+    We are used to functions like <m>f(x) = x^2</m>, where the input is a number and the output is another number. 
+    In the previous section, we learned about transformations (functions) 
+    where the input was a vector and the output was another vector. 
+    If <m>\tta</m> is a <q>transformation matrix,</q> then we could create a function of the form <m>T(\vx) = \tta\vx</m>. 
+    That is, a vector <m>\vx</m> is the input, and the output is <m>\vx</m> multiplied by <m>\tta</m>.
+  </p>
+
+  <p>
+    When we defined <m>f(x) = x^2</m> above, we let the reader assume that the input was indeed a number. 
+    If we wanted to be complete, we should have stated 
+    <me>
+        f:\R\to\R \quad \text{ where } \quad f(x)=x^2
+    </me>.
+  </p>
+
+  <p>
+    The first part of that line told us that the input was a real number (that was the first<m>\R\</m>) 
+    and the output was also a real number (the second<m>\R\</m>).
+  </p>
+
+  <p>
+    To define a transformation where a 2D vector is transformed into another 2D vector 
+    via multiplication by a <m>2\times 2</m> matrix <m>\tta</m>, we should write 
+    <me>
+        T:\R^{2}\to\R^{2} \quad \text{ where } \quad T(\vx) = \tta\vx
+    </me>.
+  </p>
+
+  <p>
+    Here, the first<m>\R^{2}\</m> means that we are using 2D vectors as our input, 
+    and the second<m>\R^{2}\</m> means that a 2D vector is the output.
+  </p>
+
+  <aside>
+    <p>
+      We use <m>T</m> instead of <m>f</m> to define the function <m>T(\vx)=\tta\vx</m> 
+      to help differentiate it from <q>regular</q> functions. 
+      <q>Normally</q> functions are defined using lower case letters when the input is a number; 
+      when the input is a vector, we use upper case letters. 
+      (It also appears to be tradition to use the letter <m>T</m> to describe linear transformations, 
+      and mathematicians are suckers for tradition.)
+    </p>
+  </aside> 
+
+  <p>
+    Consider a quick example: 
+    <me>
+        T:\R^{2}\to\R^{3} \quad \text{ where } \quad T\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1^2\\2x_1\\x_1x_2\ebm
+    </me>.
+  </p>
+
+  <p>
+    Notice that this takes 2D vectors as input and returns 3D vectors as output. For instance, 
+    <me>
+        T\left(\bbm 3\\-2\ebm\right) = \bbm 9\\6\\-6\ebm
+    </me>.
+  </p>
+
+  <p>
+    We now define a special type of transformation (function).
+  </p>
+
+
+  <definition xml:id="def-lin_trans">
+    <title>Linear Transformation</title>
+    <statement>
+      <p>
+        <idx><h>linear transformation</h><h>definition</h></idx>
+        
+        A transformation <m>T:\realnm</m> is a <term>linear transformation</term> if it satisfies the following two properties:
+        <ol>
+          <li><m>T(\vx + \vy) = T(\vx) + T(\vy)</m> for all vectors <m>\vx</m> and <m>\vy</m>, and</li>
+          <li><m>T(k\vx)= kT(\vx)</m> for all vectors <m>\vx</m> and all scalars <m>k</m>.</li>
+        </ol>
+      </p>
+
+      <p>
+        If <m>T</m> is a linear transformation, it is often said that <q><m>T</m> is <term>linear.</term></q>
+      </p>
+    </statement>
+  </definition>
+
+
+  <p>
+    Note that the two defining properties of a linear transformation, when combined, 
+    tell us that linear transformations <q>map linear combinations to linear combinations.</q> 
+    That is, if we know the values of <m>T(\vec{v}_1), T(\vec{v}_2), \ldots, T(\vec{v}_k)</m>, 
+    and we're given <m>\vec{v} = c_1\vec{v}_1+c_2\vec{v}_2+\cdots+c_k\vec{v}_k</m>, then
+    <md>
+      <mrow>T(\vec{v}) \amp  = T(c_1\vec{v}_1+c_2\vec{v}_2+\cdots+c_k\vec{v}_k)</mrow>
+      <mrow>  \amp =T(c_1\vec{v}_1)+T(c_2\vec{v}_2)+\cdots + T(c_k\vec{v}_k)</mrow>
+      <mrow>  \amp =c_1T(\vec{v}_1)+c_2T(\vec{v}_2)+\cdots + c_kT(\vec{v}_k)</mrow>
+    </md>.
+  </p>
+
+  <example xml:id="ex_lin_trans_a">
+    <title>Computing a linear transformation from given values</title>
+    <statement>
+      <p>
+        Given that <m>T:\R_3\to \R_2</m> is a linear transformation such that
+        <me>
+            T(\vec{u}) = \bbm -1\\2\ebm, T(\vec{v}) = \bbm 3\\0\ebm, \text{ and } T(\vec{w}) = \bbm 1\\-4\ebm
+        </me>,
+        compute the value of <m>T(2\vec{u}-3\vec{v}+\vec{w})</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        As argued above, we have
+        <md>
+          <mrow>T(2\vec{u}-3\vec{v}+\vec{w})\amp  = 2T(\vec{u})-3T(\vec{v})+T(\vec{w})</mrow>
+          <mrow>\amp  = 2\bbm -1\\2\ebm -3\bbm 3\\0\ebm + \bbm 1\\-4\ebm</mrow>
+          <mrow>\amp  = \bbm -10\\0\ebm</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex_lin_trans_b">
+    <title>Computing a linear transformation from given values</title>
+    <statement>
+      <p>
+        Suppose <m>T:\R^2\to \R^3</m> is a linear transformation such that
+        <me>
+            T\left(\bbm 2\\1\ebm\right) = \bbm 2\\-1\\3\ebm \text{ and } T\left(\bbm -1\\3\ebm\right) = \bbm 0\\4\\1\ebm
+        </me>.
+      </p>
+
+      <p>
+        Compute the value of <m>T\left(\bbm 1\\11\ebm\right)</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        This problem takes some more work, 
+        since we first need to figure out how to write the vector <m>\bbm 1\\11\ebm</m> 
+        as a linear combination of the vectors <m>\bbm 2\\1\ebm</m> and <m>\bbm -1\\3\ebm</m>. 
+        That is, we need to find scalars <m>a</m> and <m>b</m> such that
+        <me>
+            a\bbm 2\\1\ebm+b\bbm -1\\3\ebm = \bbm 1\\11\ebm
+        </me>.
+      </p>
+
+      <p>
+        Writing the left-hand side as the single vector <m>\bbm 2a-b\\a+3b\ebm</m>, we see that this amounts to solving the pair of equations
+        <me>
+          \begin{array}{ccccc}
+          2a\amp -\amp b\amp =\amp 1\\
+          a\amp +\amp 3b\amp =\amp 11
+          \end{array}
+        </me>.
+      </p>
+      
+      <p>
+        If we multiply the first equation by 3 and add it to the second, we get <m>7a+0b=14</m>, so <m>a=2</m>. 
+        Plugging this value back into either equation gives us <m>b=3</m>, so we have
+        <md>
+          <mrow>T\left(\bbm 1\\11\ebm\right) \amp  = T\left(2\bbm 2\\1\ebm + 3\bbm -1\\3\ebm\right)</mrow>
+          <mrow>  \amp  = 2T\left(\bbm 2\\1\ebm\right)+3 T\left(\bbm -1\\3\ebm\right)</mrow>
+          <mrow>  \amp  = 2\bbm 2\\-1\\3\ebm+3\bbm 0\\4\\1\ebm = \bbm 4\\10\\9\ebm</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Notice that in <xref ref="ex_lin_trans_b"/>, in order to make use of the properties of our linear transformation, 
+    we had to first solve a system of linear equations. With two equations in two unknowns, 
+    it's not too hard to come up with the answer. As the size and number of the vectors involved increases, 
+    such problems cannot be tackled without a systematic method for solving systems of linear equations. 
+    Fortunately, we will be introducing just such a method in <xref ref="chapter-linear"/>. 
+  </p>
+
+  <p>
+    The previous two examples show us what we can do if we know in advance that our transformation is linear. 
+    The next two examples show us how to determine if a given transformation is indeed a linear transformation.
+  </p>
+
+
+  <example xml:id="ex_lin_trans_1">
+    <title>Identifying linear transformations</title>
+    <statement>
+      <p>
+        Determine whether or not the transformation <m>T:\R^{2}\to\R^{3}</m> is a linear transformation, where 
+        <me>
+            T\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1^2\\2x_1\\x_1x_2\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We'll arbitrarily pick two vectors <m>\vx</m> and <m>\vy</m>: 
+        <me>
+          \vx = \bbm 3\\-2\ebm \quad \text{ and } \quad \vy = \bbm 1\\5\ebm
+        </me>.
+      </p>
+
+      <p>
+        Let's check to see if <m>T</m> is linear by using the definition.
+      </p>
+
+      <p>
+        Is <m>T(\vx+\vy) = T(\vx)+T(\vy)</m>? First, compute <m>\vx+\vy</m>:
+        <me>
+          \vx+\vy = \bbm 3\\-2\ebm + \bbm 1\\5\ebm = \bbm 4\\3\ebm
+        </me>.
+      </p>
+      
+      <p>
+        Now compute <m>T(\vx)</m>, <m>T(\vy)</m>, and <m>T(\vx+\vy)</m>:
+        <md>
+          <mrow>T(\vx) \amp = T\left(\bbm 3\\-2\ebm\right)= \bbm 9\\6\\-6\ebm</mrow>
+          <mrow>T(\vy) \amp = T\left(\bbm 1\\5\ebm\right)= \bbm 1\\2\\5\ebm</mrow>
+          <mrow>T(\vx+\vy) \amp = T\left(\bbm 4\\3\ebm\right)= \bbm 16\\8\\12\ebm</mrow>
+        </md>.
+      </p>
+      
+      <p>
+        Is <m>T(\vx+\vy) = T(\vx)+T(\vy)</m>? 
+        <me>
+          \bbm 9\\6\\-6\ebm+\bbm 1\\2\\5\ebm \overset{!}{\neq} \bbm 16\\8\\12\ebm
+        </me>.	
+        Therefore, <m>T</m> is <term>not</term> a linear transformation.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    So we have an example of something that <em>doesn't</em> work. Let's try an example where things <em>do</em> work.
+  </p>
+
+  <aside>
+    <p>
+      In <xref ref="ex_lin_trans_2"/>, it's important to remember the following principle of logic: 
+      to show that something doesn't work, we just need to show one case where it fails, 
+      which we did in <xref ref="ex_lin_trans_1"/>. To show that something <em>always</em> works, 
+      we need to show it works for <em>all</em> cases <mdash/> simply showing it works for a few cases isn't enough. 
+      (An example is not a proof.) However, doing so can be helpful in understanding the situation better, 
+      and can give us clues as to how to construct a general proof.
+    </p>
+  </aside>
+
+  <example xml:id="ex_lin_trans_2">
+    <title>Identifying linear transformations</title>
+    <statement>
+      <p>
+        Determine whether or not the transformation <m>T:\R^{2}\to\R^{2}</m> is a linear transformation, where <m>T(\vx) = \tta\vx</m> and 
+        <me>
+            \tta = \bbm 1 \amp 2\\3 \amp 4\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let's start by again choosing a couple of vectors and seeing what happens. 
+        Let's choose the same <m>\vx</m> and <m>\vy</m> from <xref ref="ex_lin_trans_1"/>. 
+        <me>
+          \vx = \bbm 3\\-2\ebm \quad \text{ and } \quad \vy = \bbm 1\\5\ebm
+        </me>.
+      </p>
+
+      <p>
+        If the linearity properties hold for these vectors, then <em>maybe</em> it is actually linear (and we'll do more work). 
+      </p>	
+      
+      <p>
+        Is <m>T(\vx+\vy) = T(\vx)+T(\vy)</m>? Recall:
+        <me>
+          \vx+\vy = \bbm 4\\3\ebm
+        </me>.
+      </p>
+      
+      <p>
+        Now compute <m>T(\vx)</m>, <m>T(\vy)</m>, and <m>T(\vx)+T(\vy)</m>:
+        <md> 
+          <mrow>T(\vx) \amp = T\left(\bbm 3\\-2\ebm\right) = \bbm -1\\1\ebm </mrow>
+          <mrow>T(\vy) \amp = T\left(\bbm 1\\5\ebm\right)= \bbm 11\\23\ebm</mrow>
+          <mrow>T(\vx+\vy) \amp = T\left(\bbm 4\\3\ebm\right)= \bbm 10\\24\ebm</mrow>
+        </md>.
+      </p>
+      
+      <p>
+        Is <m>T(\vx+\vy) = T(\vx)+T(\vy)</m>? 
+        <me>
+            \bbm -1\\1\ebm+\bbm 11\\23\ebm = \bbm 10\\24\ebm \quad !
+        </me>.
+      </p>
+      
+      <p>
+        So far, so good: <m>T(\vx+\vy)</m> is equal to  <m>T(\vx)+T(\vy)</m>.
+      </p>
+      
+      <p>
+        Is <m>T(k\vx) = kT(\vx)</m>? Let's pick <m>k=7</m> (or whatever value you prefer), and use <m>\vx</m> as before.
+        <md> 
+            <mrow>T(7\vx) \amp = T\left(\bbm 21\\-14\ebm\right) </mrow>
+            <mrow>				\amp = \bbm-7\\7\ebm </mrow>
+            <mrow>				\amp = 7\bbm -1\\1\ebm </mrow>
+            <mrow>				\amp = 7\cdot T(\vx) \quad !</mrow>
+        </md>
+      </p>
+      
+      <p>
+        So far it <em>seems</em> that <m>T</m> is indeed linear, 
+        for it worked in one example with arbitrarily chosen vectors and scalar. 
+        Now we need to try to show it is always true. 
+      </p>
+      
+      <p>
+        Consider <m>T(\vx+\vy)</m>. By the definition of <m>T</m>, we have 
+        <me>
+            T(\vx+\vy) = \tta(\vx+\vy)
+        </me>.
+      </p>
+      
+      <p>
+        By <xref ref="thm-matrix_multiplication"/>, part <xref ref="thm-mat_mult_dist"/> 
+        we state that the Distributive Property holds for matrix multiplication. 
+        (Recall that a vector is just a special type of matrix, so this theorem applies to matrix<ndash/>vector multiplication as well.) 
+        So <m>\tta(\vx+\vy) = \tta\vx + \tta\vy</m>. 
+        Recognize now that this last part is just <m>T(\vx) + T(\vy)</m>! We repeat the above steps, all together:
+        <md>
+          <mrow>T(\vx+\vy)	\amp = \tta(\vx+\vy) \quad \text{ (by the definition of } T \text{ in this example)}</mrow>
+          <mrow> \amp = \tta\vx + \tta\vy \quad \text{ (by the Distributive Property)}</mrow>
+          <mrow> \amp = T(\vx) + T(\vy) \quad \text{ (again, by the definition of } T)</mrow>
+        </md>.
+      </p>
+      
+      <p>
+        Therefore, no matter what <m>\vx</m> and <m>\vy</m> are chosen, <m>T(\vx+\vy) = T(\vx) + T(\vy)</m>. 
+        Thus the first part of the linearity definition is satisfied.
+      </p>
+      <p>
+        The second part is satisfied in a similar fashion. Let <m>k</m> be a scalar, and consider:
+        <md>
+          <mrow>T(k\vx)	\amp =	\tta(k\vx) \quad \text{ (by the definition of } T \text{ in this example)}</mrow>
+          <mrow> \amp =	k\tta\vx \quad \text{ (by <xref ref="thm-matrix_multiplication"/> part <xref ref="thm-mat_mult_scalar"/>)}</mrow>
+          <mrow> \amp = kT(\vx) \quad \text{ (again, by the definition of } T)</mrow>
+        </md>
+      </p>
+      
+      <p>
+        Since <m>T</m> satisfies both parts of the definition, we conclude that <m>T</m> is a linear transformation.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    In the previous two examples of transformations, we saw one transformation that was not linear and one that was. 
+    One might wonder <q>Why is linearity important?</q>, which we'll address shortly.
+  </p>
+
+  <p>
+    First, consider how we proved the transformation in <xref ref="ex_lin_trans_2"/> was linear. 
+    We defined <m>T</m> by matrix multiplication, that is, <m>T(\vx) = \tta\vx</m>. 
+    We proved <m>T</m> was linear using properties of matrix multiplication <mdash/> 
+    <em>we never considered the specific values of <m>\tta</m>!</em> 
+    That is, we didn't just choose a good matrix for <m>T</m>; <em>any</em> matrix <m>\tta</m> would have worked. 
+    This leads us to an important theorem. The first part we have essentially just proved; 
+    the second part we won't prove, although its truth is very powerful.
+  </p>
+
+  <theorem xml:id="thm-linear_matrix">
+    <title>Matrices and Linear Transformations</title>
+    <statement>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Define <m>T:\R^{n}\to\R^{m}</m> by <m>T(\vx) = \tta\vx</m>, 
+              where <m>\tta</m> is an <m>m\times n</m> matrix. Then <m>T</m> is a linear transformation.
+            </p>
+          </li>
+          <li>
+            <p>
+              Let <m>T:\R^{n}\to\R^{m}</m> be any linear transformation. 
+              Then there exists an unique <m>m\times n</m> matrix <m>\tta</m> such that <m>T(\vx) = \tta\vx</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    The second part of the theorem says that <em>all</em> linear transformations can be described using matrix multiplication. 
+    Given <em>any</em> linear transformation, there is a matrix that completely defines that transformation. 
+    This important matrix gets its own name.
+  </p>
+
+  <definition xml:id="def-standard_matrix">
+    <title>Standard Matrix of a Linear Transformation</title>
+    <statement>
+      <p>
+        <idx><h>linear transformation</h><h>standard matrix of</h></idx>
+
+        Let <m>T:\R^{n}\to\R^{m}</m> be a linear transformation. 
+        By <xref ref="thm-linear_matrix"/>, there is a matrix <m>\tta</m> such that <m>T(\vx) = \tta\vx</m>. 
+        This matrix <m>\tta</m> is called the <term>standard matrix of the linear transformation <m>T</m></term>, 
+        and is denoted <m>[\, T\, ]</m>. 
+      </p>
+    </statement>
+  </definition>
+
+  <aside>
+    <p>
+      The matrix<ndash/>like brackets around <m>T</m> are intended to suggest that the standard matrix <m>\tta</m> 
+      is a matrix representative of the given transformation.
+    </p>
+  </aside>
+
+  <p>
+    While exploring all of the ramifications of <xref ref="thm-linear_matrix"/> 
+    is outside the scope of this text, let it suffice to say that since 
+    1) linear transformations are very, 
+    very important in economics, science, engineering and mathematics, and 
+    2) the theory of matrices is well developed and easy to implement by hand and on computers, then 
+    3) it is great news that these two concepts go hand in hand.
+  </p>
+
+  <p>
+    We have already used the second part of this theorem in a small way. 
+    In the previous section we looked at transformations graphically and found the matrices that produced them. 
+    At the time, we didn't realize that these transformations were linear, but indeed they were.
+  </p>
+
+  <p>
+    This brings us back to the motivating example with which we started this section. 
+    We tried to find the matrix that translated the unit square one unit to the right. 
+    Our attempt failed, and we have yet to determine why. 
+    Given our link between matrices and linear transformations, the answer is likely 
+    <q>the translation transformation is not a linear transformation.</q> 
+    While that is a true statement, it doesn't really explain things all that well. 
+    Is there some way we could have recognized that this transformation wasn't linear? 
+    (That is, apart from applying the definition directly?)
+  </p>
+
+  <p>
+    Yes, there is. Consider the second part of the linear transformation definition. 
+    It states that <m>T(k\vx) = kT(\vx)</m> for all scalars <m>k</m>. If we let <m>k=0</m>, 
+    we have <m>T(0\vx) = 0\cdot T(\vx)</m>, or more simply, <m>T(\zero) = \zero</m>. 
+    That is, if <m>T</m> is to be a linear transformation, it must send the zero vector to the zero vector.
+  </p>
+
+  <p>
+    This is a quick way to see that the translation transformation fails to be linear. 
+    By shifting the unit square to the right one unit, the corner at the point <m>(0,0)</m> was sent to the point <m>(1,0)</m>, <ie/>, 
+    <me>
+        \text{the vector } \bbm 0\\0\ebm \text{ was sent to the vector } \bbm 1\\0\ebm
+    </me>.
+  </p>
+
+  <p>
+    This property relating to <m>\zero</m> is important, so we highlight it here.
+  </p>
+
+  <insight xml:id="idea-transform_zero">
+    <title>Linear Transformations and \zero</title>
+    <p>
+      <idx><h>linear transformation</h><h>and \zero</h></idx>
+
+      Let <m>T:\R^{n}\to\R^{m}</m> be a linear transformation. Then: 
+      <me>
+          T(\zero_n) = \zero_m
+      </me>.
+    </p>
+
+    <p>
+      That is, the zero vector in<m>\R^{n}\</m>\ gets sent to the zero vector in<m>\R^{m}\</m>.}
+    </p>
+  </insight>
+
+  <aside>
+    <p>
+      The idea that linear transformations <q>send zero to zero</q> has an interesting relation to terminology. 
+      The reader is likely familiar with functions like <m>f(x) = 2x+3</m> and would likely refer to this as a <q>linear function.</q> 
+      However, <m>f(0) \neq 0</m>, so <m>f</m> is <em>not</em> <q>linear</q> by our new definition of linear. 
+      We erroneously call <m>f</m> <q>linear</q> since its graph produces a line, 
+      though we should be careful to instead state that <q>the graph of <m>f</m> is a line.</q> 
+    </p>
+
+    <p>
+      In the context of calculus are only linear transformations if <m>b=0</m>. 
+      In the case of maps <m>T:\R^n\to\R^m</m>, we can similarly consider functions of the form <m>T(\vec x) = A\vec x + \vec b</m>; 
+      such functions are again useful in areas such as vector calculus, but unless <m>\vec b = \vec 0</m>, 
+      they are not linear transformations, since <m>T(\vec 0) = \vec b</m>.
+    </p>
+
+    <p>
+      Mathematicians do, of course, have a word for such maps:
+      a function of hte form <m>T(\vec x)= A\vec x+\vec b</m> is known as an <term>affine transformation</term>.
+    </p>
+  </aside> 
+
+  <paragraphs>
+    <title>The Standard Matrix of a Linear Transformation</title>
+    
+    <p>
+      It is often the case that while one can describe a linear transformation,
+      one doesn't know what matrix performs that transformation 
+      (<ie/>, one doesn't know the standard matrix of that linear transformation). 
+      How do we systematically find it? We'll need a new definition.
+    </p>
+    
+    <definition xml:id="def-standard_unit1">
+      <title>Standard Unit Vectors</title>
+      <statement>
+        <p>
+          <idx><h>standard unit vector</h></idx>
+    
+          In<m>\R^{n}\</m>, the <term>standard unit vectors</term> <m>\vei</m> 
+          are the vectors with a <m>1</m> in the <m>i</m>th entry and <m>0</m>s everywhere else.
+        </p>
+      </statement>
+    </definition>
+    
+    <aside>
+      <p>
+        Recall that in <xref ref="ex_lin_trans_b"/>, 
+        we had to solve a system of equations to determine how to write our given vector in terms 
+        of two other vectors for which the value of a transformation is known. 
+        The advantage of knowing the values of a transformation on the standard unit vectors 
+        is that we know immediately how to write any other vector in terms of them.
+      </p>
+    </aside>
+    
+    <p>
+      We've already seen these vectors in the previous section. In<m>\R^{2}\</m>, we identified 
+      <me>
+          \veone = \bbm 1\\0\ebm \quad \text{ and } \quad \vetwo = \bbm 0\\1\ebm
+      </me>.
+    </p>
+    
+    <p>
+      In<m>\R^{4}\</m>, there are 4 standard unit vectors:
+      <me>
+          \veone = \bbm 1\\0\\0\\0\ebm, \quad \vetwo = \bbm 0\\1\\0\\0\ebm, \quad \vethree = \bbm 0\\0\\1\\0\ebm, \quad \text{and} \quad \ven{4} = \bbm 0\\0\\0\\1\ebm
+      </me>.
+    </p>
+    
+    <p>
+      How do these vectors help us find the standard matrix of a linear transformation? Recall again our work in the previous section. 
+      There, we practised looking at the transformed unit square and deducing the standard transformation matrix <m>\tta</m>. 
+      We did this by making the first column of <m>\tta</m> the vector where <m>\veone</m> 
+      ended up and making the second column of <m>\tta</m> the vector where <m>\vetwo</m> ended up. One could represent this with:
+      <me>
+          \tta = \bbm T(\veone)  \amp  T(\vetwo) \ebm = [\, T\, ].
+      </me>
+    </p>
+    
+    <p>
+      That is, <m>T(\veone)</m> is the vector where <m>\veone</m> ends up, and <m>T(\vetwo)</m> is the vector where <m>\vetwo</m> ends up. 
+    </p>
+
+    <p>
+      The same holds true in general. Given a linear transformation <m>T:\R^{n}\to\R^{m}</m>, 
+      the standard matrix of <m>T</m> is the matrix whose <m>i</m>th column is the vector where <m>\vei</m> ends up. 
+      To see that this is the case, note that any vector <m>\vec x\in\R^n</m> can be written as
+      <me>
+          \vec x = x_1\veone + x_2\vetwo + \cdots + x_n\ven{n},
+      </me>
+      and by <xref ref="def-lin_trans"/>, we have
+      <md>
+        <mrow>T(\vec x) \amp  = T(x_1\veone + x_2\vetwo + \cdots + x_n\ven{n})</mrow>
+        <mrow> \amp  = x_1T(\veone) + x_2T(\vetwo) + \cdots + x_nT(\ven{n})</mrow>
+        <mrow> \amp  = \bbm T(\veone)  \amp  T(\vetwo) \amp  \cdots \amp  T(\ven{n})\ebm\bbm x_1\\x_2\\ \vdots \\ x_n\ebm</mrow>
+        <mrow> \amp  = A\vec x</mrow>
+      </md>,
+      where <m>A = \bbm T(\veone) \amp  T(\vetwo) \amp  \cdots \amp  T(\ven{n})\ebm</m> is the <m>m\times n</m> matrix whose columns are given by the vectors <m>T(\ven{i})</m>, for <m>i=1,2,\ldots, n</m>. Thus, we have the following theorem. \label{page:standard_matrix}
+    </p>
+    
+    <theorem xml:id="thm-standard_matrix">
+      <title>The Standard Matrix of a Linear Transformation</title>
+      <statement>
+        <p>
+          <idx><h>linear transformation</h><h>standard matrix of</h></idx>
+          Let <m>T:\R^{n}\to\R^{m}</m> be a linear transformation. Then <m>[\, T \, ]</m> is the <m>m\times n</m> matrix:  
+          <me>
+              [\, T \, ] = \bbm T(\veone)  \amp  T(\vetwo) \amp  \cdots \amp  T(\ven{n}) \ebm
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      Let's practice this theorem in an example.
+    </p>
+    
+    <example xml:id="ex_stand_mat1">
+      <title>Computing the matrix of a linear transformation</title>
+      <statement>
+        <p>
+          Define <m>T:\R^{3}\to\R^{4}</m> to be the linear transformation where 
+          <me>
+              T\left(\bbm x_1\\x_2\\x_3\ebm\right) = \bbm x_1+x_2\\ 3x_1-x_3 \\ 2x_2+5x_3 \\ 4x_1+3x_2+2x_3\ebm 
+          </me>.
+        </p>
+        
+        <p>
+          Find <m>\TT</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>T</m> takes vectors from<m>\R^{3}\</m> into<m>\R^{4}\</m>, 
+          so <m>[\, T \, ]</m> is going to be a <m>4\times 3</m> matrix. Note that 
+          <me>
+            \veone = \bbm 1\\0\\0\ebm, \quad \vetwo = \bbm 0\\1\\0\ebm \quad \text{ and } \quad \vethree = \bbm 0\\0\\1\ebm
+          </me>.
+        </p>
+
+        <p>
+          We find the columns of <m>\TT</m> by finding where <m>\veone</m>, 
+          <m>\vetwo</m> and <m>\vethree</m> are sent, that is, we find <m>T(\veone)</m>, <m>T(\vetwo)</m> and <m>T(\vethree)</m>. 
+          <md>
+            <mrow>T(\veone) \amp = T\left(\bbm 1\\0\\0\ebm\right) = \bbm 1\\3\\0\\4\ebm </mrow>
+            <mrow>T(\vetwo) \amp = T\left(\bbm 0\\1\\0\ebm\right) = \bbm 1\\0\\2\\3\ebm</mrow>
+            <mrow>T(\vethree) \amp = T\left(\bbm 0\\0\\1\ebm\right) = \bbm 0\\-1\\5\\2\ebm</mrow>
+          </md>
+        </p>
+
+        <p>
+          Thus 
+          <me>
+              \TT =\tta = \bbm 1 \amp 1 \amp 0 \\ 3 \amp  0\amp -1\\ 0\amp 2\amp 5\\ 4\amp 3\amp 2\ebm 
+          </me>.
+        </p>
+        
+        
+        <p>
+          Let's check this. Consider the vector 
+          <me>
+              \vx = \bbm 1\\2\\3\ebm
+          </me>.
+        </p>
+        
+        <p>
+          Strictly from the original definition, we can compute that 
+          <me>
+              T(\vx) = T\left(\bbm 1\\2\\3\ebm\right) = \bbm 1+2\\3-3\\4+15\\4+6+6 \ebm = \bbm 3\\0\\19\\16\ebm
+          </me>.
+        </p>
+        
+        
+        <p>
+          Now compute <m>T(\vx)</m> by computing <m>\TT\vx = \tta\vx</m>.
+          <me>
+            \tta\vx = \bbm 1 \amp 1 \amp 0 \\ 3 \amp  0\amp -1\\ 0\amp 2\amp 5\\ 4\amp 3\amp 2\ebm\bbm 1\\2\\3\ebm = \bbm 3\\0\\19\\16\ebm
+          </me>.
+          They match! (Of course they do. That was the whole point.)
+        </p>
+      </solution>
+    </example>
+        
+    <p>
+      Let's do another example, one that is more application oriented.
+    </p>
+    
+    
+    <example xml:id="ex_stand_mat2">
+      <title>An application to baseball</title>
+      <statement>
+        <p>
+          A baseball team manager has collected basic data concerning his hitters. 
+          He has the number of singles, doubles, triples, and home runs they have hit over the past year. 
+          For each player, he wants two more pieces of information: the total number of hits and the total number of bases. 
+        </p>
+
+        <p>
+          Using the techniques developed in this section, devise a method for the manager to accomplish his goal.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If the manager only wants to compute this for a few players, then he could do it by hand fairly easily. After all:
+        </p>
+
+        <p>
+          total # hits = # of singles + # of doubles + # of triples + # of home runs,
+        </p>
+        <p>
+          and
+        </p>
+        <p>
+          total # bases = # of singles + <m>2\,\times</m># of doubles + <m>3\,\times</m># of triples + <m>4\,\times</m># of home runs.
+        </p>
+
+        <p>
+          However, if he has a lot of players to do this for, he would likely want a way to automate the work.  
+          One way of approaching the problem starts with recognizing that he wants to input four numbers into a function 
+          (<ie/>, the number of singles, doubles, <etc/>) and he wants two numbers as output 
+          (<ie/>, number of hits and bases). Thus he wants a transformation 
+          <m>T:\R^{4}\to\R^{2}</m> where each vector in <m>\R^{4}\</m> can be interpreted as 
+          <me>
+              \bbm \text{\#\ of singles} \\\text{\#\ of doubles} \\ \text{\#\ of triples} \\ \text{\#\ of home runs} \ebm,
+          </me>
+        </p>
+        
+        <p>
+          and each vector in <m>\R^{2}\</m> can be interpreted as 
+          <me>
+              \bbm \text{\#\ of hits} \\\text{\#\ of bases} \ebm
+          </me>.
+        </p>
+        
+        <p>
+          To find <m>\TT</m>, he computes <m>T(\veone)</m>, <m>T(\vetwo)</m>, <m>T(\vethree)</m> and <m>T(\ven{4})</m>.
+          <md>
+            <mrow>T(\veone)  \amp = T\left(\bbm 1\\0\\0\\0\ebm\right) = \bbm 1\\1 \ebm  \amp </mrow>
+            <mrow>T(\vetwo)  \amp = T\left(\bbm 0\\1\\0\\0\ebm\right) = \bbm 1\\2\ebm</mrow>
+            <mrow>T(\vethree)  \amp = T\left(\bbm 0\\0\\1\\0\ebm\right) = \bbm 1\\3 \ebm  \amp </mrow>
+            <mrow>T(\ven{4})  \amp = T\left(\bbm 0\\0\\0\\1\ebm\right) = \bbm 1\\4 \ebm </mrow>
+           </md>.   
+           (What do these calculations mean? For example, 
+           finding <m>T(\vethree) = \bbm 1\\3\ebm</m> means that one triple counts as 1 hit and 3 bases.)
+        </p>
+        
+        <p>
+          Thus our transformation matrix <m>\TT</m> is 
+          <me>
+              \TT = \tta =\bbm 1 \amp 1 \amp 1\amp 1\\1\amp 2\amp 3\amp 4\ebm
+          </me>.
+        </p>
+        
+        <p>
+          As an example, consider a player who had 102 singles, 30 doubles, 8 triples and 14 home runs. By using <m>\tta</m>, we find that 
+          <me>
+              \bbm 1 \amp 1 \amp 1\amp 1\\1\amp 2\amp 3\amp 4\ebm\bbm 102\\30\\8\\14\ebm = \bbm 154\\242\ebm,
+          </me>
+        </p>
+        
+        <p>
+          meaning the player had 154 hits and 242 total bases.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      A question that we should ask concerning the previous example is <q>How do we know that the function the manager used was actually a linear transformation? After all, we were wrong before <mdash/> the translation example at the beginning of this section had us fooled at first.</q>
+    </p>
+    
+    <p>
+      This is a good point; the answer is fairly easy. Recall from <xref ref="ex_lin_trans_1"/> the transformation 
+      <me>
+          T_{\text{6.2.3}}\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1^2\\2x_1\\x_1x_2\ebm
+      </me>
+      and from <xref ref="ex_stand_mat1"/>
+      <me>
+          T_{\text{6.2.5}}\left(\bbm x_1\\x_2\\x_3\ebm\right) = \bbm x_1+x_2\\ 3x_1-x_3 \\ 2x_2+5x_3 \\ 4x_1+3x_2+2x_3\ebm
+      </me>,
+      where we use the subscripts for <m>T</m> to remind us which example they came from.
+    </p>
+    
+    <p>
+      We found that <m>T_{\text{6.2.3}}</m> was not a linear transformation, 
+      but stated that <m>T_{\text{6.2.5}}</m> was (although we didn't prove this). What made the difference? 
+    </p>
+    
+    <p>
+      Look at the entries of <m>T_{\text{6.2.3}}(\vx)</m> and <m>T_{\text{6.2.5}}(\vx)</m>. 
+      <m>T_{\text{6.2.3}}</m> contains entries where a variable is squared, 
+      and where 2 variables are multiplied together <mdash/> these prevent 
+      <m>T_{\text{6.2.3}}</m> from being linear. 
+      On the other hand, the entries of <m>T_{\text{6.2.5}}</m> are all of the form <m>a_1x_1 + \cdots + a_nx_n</m>; 
+      that is, they are just sums of the variables multiplied by coefficients. 
+      <m>T</m> is linear if and only if the entries of <m>T(\vx)</m> are of this form. 
+      (Hence linear transformations are related to linear equations, as defined in <xref ref="sec-intro"/>.) This idea is important.
+    </p>
+    
+    
+    <insight xml:id="idea-when_linear">
+      <title>Conditions on Linear Transformations</title>
+      <p>
+        <idx><h>linear transformation</h><h>conditions on</h></idx>
+    
+        Let <m>T:\R^{n}\to\R^{m}</m> be a transformation and consider the entries of 
+        <me>
+            T(\vx) = T\left(\bbm x_1\\x_2\\ \vdots \\ x_n\ebm\right)
+        </me>.
+        <m>T</m> is linear if and only if each entry of <m>T(\vx)</m> is of the form <m>a_1x_1 + a_2x_2+\cdots a_nx_n</m>.
+      </p>
+    </insight>
+    
+    <p>
+      Going back to our baseball example, the manager could have defined his transformation as 
+      <me>
+          T\left(\bbm x_1\\x_2\\x_3\\x_4\ebm\right) = \bbm x_1+x_2+x_3+x_4 \\ x_1+2x_2+3x_3+4x_4\ebm
+      </me>.
+    </p>
+    
+    <p>
+      Since that fits the model shown in <xref ref="idea-when_linear"/>, 
+      the transformation <m>T</m> is indeed linear and hence we can find a matrix <m>\TT</m> that represents it.
+    </p>
+    <p>
+      Let's practice this concept further in an example.
+    </p>
+    
+    <example xml:id="ex_is_linear">
+      <title>Using <xref ref="idea-when_linear"/> to identify linear transformations</title>
+      <statement>
+     
+        <p>
+          Using <xref ref="idea-when_linear"/>, determine whether or not each of the following transformations is linear.
+          <md>
+            <mrow> T_1\left(\bbm x_1\\x_2\ebm\right) \amp = \bbm x_1+1\\x_2\ebm \amp T_2\left(\bbm x_1\\x_2\ebm\right) \amp = \bbm x_1/x_2\\ \sqrt{x_2}\ebm</mrow>
+            <mrow> T_3\left(\bbm x_1\\x_2\ebm\right) \amp = \bbm \sqrt{7}x_1-x_2\\ \pi x_2\ebm\amp \amp </mrow>
+          </md>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>T_1</m> is <em>not</em> linear! This may come as a surprise, 
+          but we are not allowed to add constants to the variables. 
+          By thinking about this, we can see that this transformation is trying to accomplish the translation 
+          that got us started in this section <mdash/> it adds 1 to all the <m>x</m> values and leaves the <m>y</m> values alone, 
+          shifting everything to the right one unit. However, this is not linear; 
+          again, notice how <m>\zero</m> does not get mapped to <m>\zero</m>.
+        </p>
+    
+        <p>
+          <m>T_2</m> is also not linear. We cannot divide variables, 
+          nor can we put variables inside the square root function 
+          (among other other things; again, see <xref ref="sec-intro"/>). 
+          This means that the baseball manager would not be able to use matrices to compute a batting average, 
+          which is (number of hits)/(number of at bats).
+        </p>
+    
+        <p>
+          <m>T_3</m> is linear. Recall that the coefficients <m>\sqrt{7}</m> and <m>\pi</m> are just numbers.
+        </p>
+      </solution>
+    </example>
+    
+    <p>
+      In the next section we introduce the concept of a <term>subspace</term>. 
+      This subject is closely related to the concepts of span and linear independence covered in <xref ref="sec-Rn"/>. 
+      We introduce it here in preparation for our final section, 
+      where we will define two important subspaces associated to a matrix transformation: the null space and the column space.
+    </p>
+  </paragraphs>
+ 
+  <exercises>
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          A transformation <m>T</m> is given. Determine whether or not <m>T</m> is linear; if not, state why not.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1+x_2\\3x_1-x_2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Yes
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1+x_2^2\\x_1-x_2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            No; cannot have a squared term.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1+1\\x_2+1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            No; cannot add a constant.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\ebm\right) = \bbm 1\\1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            No; cannot add a constant.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\ebm\right) = \bbm 0\\0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Yes.
+          </p>
+        </answer>
+      </exercise>
+    
+    </exercisegroup>
+
+    <exercisegroup>
+    
+      <introduction>
+        <p>
+          A linear transformation <m>T</m> is given. Find <m>[\, T\, ]</m>.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1+2x_2\\ 3x_1-5x_2\\2x_2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>[\, T\, ] = \bbm 1 \amp 2\3 \amp -5\\0&amp;2\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\\x_3\\x_4\ebm\right) = \bbm x_1+2x_2+3x_3+4x_4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>[\, T\, ] = \bbm 1 \amp 2\amp 3\amp 4\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\ebm\right) = \bbm 0\\0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>[\, T\, ] = \bbm 0 \amp 0\0 \amp 0\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1+x_2\\x_1-x_2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>[\, T\, ] = \bbm 1 \amp 1\1 \amp -1\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\\x_3\ebm\right) = \bbm x_1+2x_2-3x_3\\ 0\\ x_1+4x_3\\5x_2+x_3\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>[\, T\, ] = \bbm 1 \amp 2 \amp -3\0&amp;0&amp;0\\1&amp;0&amp;4\\0&amp;5&amp;1\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>T\left(\bbm x_1\\x_2\\x_3\ebm\right) = \bbm x_1+3x_3\\ x_1-x_3\\ x_1+x_3\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>[\, T\, ] = \bbm 1 \amp 0 \amp 3\1&amp;0&amp;-1\\1&amp;0&amp;1\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+    
+    </exercisegroup>
+  </exercises>
+
+</section>
+
+

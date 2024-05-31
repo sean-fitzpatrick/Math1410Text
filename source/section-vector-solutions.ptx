@@ -1,0 +1,1687 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-vector_solutions" label="sec-vector_solutions">
+  <title>Vector Solutions to Linear Systems</title>
+
+
+  <p>
+    So far in this chapter, we've learned a systematic method for solving systems of linear equations. 
+    Some of the applied examples we considered in the previous section led naturally to systems of equations, 
+    and had solutions that were best interpreted in that context. Other examples, 
+    such as those involving span and linear independence, were stated in terms of vectors. 
+    In this section, we discuss how to write a system of linear equations in terms of vectors and matrices, and express solutions as vectors. 
+  </p>
+
+  <p>
+    Expressing the solutions of linear systems in terms of vectors will give us additional insight 
+    into the behaviour of those systems, and provides a stepping-off point for the study of the algebra of matrices.
+  </p>
+
+  <p>
+    We have often relied on previous algebra experience to help us understand linear algebra concepts. 
+    We do that again here. Consider the equation <m>ax=b</m>, where <m>a=3</m> and <m>b=6</m>. 
+    If we asked one to <q>solve for <m>x</m>,</q> what exactly would we be asking? 
+    We would want to find a number, which we call <m>x</m>, where <m>a</m> times <m>x</m> gives <m>b</m>; 
+    in this case, it is a number, when multiplied by 3, returns 6. As long as <m>a\neq 0</m> (what if <m>a</m> does equal zero?), 
+    we know that we can multiply both sides of the equation by <m>\frac{1}{a}</m> to get <m>x = \frac{1}{a}(b) = \frac{b}{a}</m>.
+  </p>
+
+  <p>
+    Consider a general system of linear equations, of the form
+    <men xml:id="eq-linsys">
+      \begin{array}{ccccccccc}
+      a_{11}x_1\amp +\amp a_{12}x_2\amp +\amp \cdots\amp +\amp a_{1n}x_n\amp =\amp b_1\\
+      a_{21}x_1\amp +\amp a_{22}x_2\amp +\amp \cdots\amp +\amp a_{2n}x_n\amp =\amp b_2\\
+      \vdots  \amp   \amp  \vdots \amp  \amp  \amp  \amp  \vdots \amp  \amp  \vdots\\
+      a_{m1}x_1 \amp + \amp a_{m2}x_2\amp +\amp \cdots\amp +\amp a_{mn}x_n\amp =\amp b_m\\
+      \end{array}
+    </men>.
+  </p>
+
+  <p>
+    Notice that the information we place into our augmented matrix can be divided into two pieces: the coefficient matrix
+    <me>
+      A = \bbm a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n}\\
+            a_{21}  \amp  a_{22}  \amp  \cdots \amp  a_{2n}\\
+            \vdots  \amp  \vdots  \amp  \ddots \amp  \vdots\\
+            a_{m1}  \amp  a_{m2} \amp  \cdots \amp  a_{mn}
+        \ebm
+    </me>
+    and the column vector
+    <me>
+      \vec{b} = \bbm b_1\\b_2\\\vdots \\b_m\ebm
+    </me>.
+    Moreover, instead of writing our solution as a list (<m>x_1 = , x_2 = \ldots</m>), we can arrange our variables into a vector
+    <me>
+      \vec{x} = \bbm x_1\\x_2\\\vdots\\x_n\ebm
+    </me>,
+    and express our solution as a single vector rather than a list of numbers.
+  </p>
+
+  <p>
+    To create an analogy with the single variable equation <m>ax=b</m>, we ask: 
+    Is there a way to define the product <m>A\vec{x}</m> of a matrix and a column vector in such a way that the 
+    system <xref ref="eq-linsys"/> can be written in the form
+    <me>
+      A\vec{x}=\vec{b}
+    </me>?
+    Fortunately for us, the answer is yes! Even better, we'll see that the definition we give here turns out to be a special case 
+    (and motivating example) for the general definition of matrix multiplication given in <xref ref="sec-matrix_multiplication"/>.
+  </p>
+
+  <p>
+    The definition of the product <m>A\vec{x}</m> is straightforward. 
+    We want the result to be a column vector of size <m>m</m> (that is, with <m>m</m> entries), 
+    so that we can set it equal to the column vector <m>\vec{b}</m>. 
+    Furthermore, each entry in <m>\vec{b}</m> is the right-hand side of an equation in <xref ref="eq-linsys"/>, 
+    so we want the corresponding entry in <m>A\vec{x}</m> to be the left-hand side. We are immediately forced to adopt the following rule.
+  </p>
+
+  <definition xml:id="def-Ax">
+    <title>The product <m>A\vec{x}</m></title>
+    <statement>
+      <p>
+        The product of the matrix <m>A = \bbm a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n}\\
+        a_{21}  \amp  a_{22}  \amp  \cdots \amp  a_{2n}\\
+        \vdots  \amp  \vdots  \amp  \ddots \amp  \vdots\\
+        a_{m1}  \amp  a_{m2} \amp  \cdots \amp  a_{mn}\ebm</m> and the vector <m>\vec{x} = \bbm x_1\\x_2\\\vdots\\x_n\ebm</m> is given by
+        <me>
+          A\vec{x} = \bbm a_{11}x_1+a_{12}x_2+\cdots +a_{1n}x_n\\
+                 a_{21}x_1+a_{22}x_2+\cdots +a_{2n}x_n\\
+                 \vdots\\
+                 a_{m1}x_1+a_{m2}x_2+\cdots +a_{mn}x_n
+            \ebm  
+        </me>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    A few remarks about <xref ref="def-Ax"/> are needed here. 
+    First, note that the number of columns in the matrix <m>A</m> matches the number of entries in the vector <m>\vec{x}</m>, 
+    and the number of rows in <m>A</m> matches the number of entries in the vector <m>\vec{b}</m>. Moreover,
+  </p>
+
+  <blockquote>
+    <p>
+      The <m>i</m>th entry in the vector <m>A\vec{x}</m> is obtained by forming the <term>dot product</term> 
+      of row <m>i</m> in the matrix <m>A</m> (viewed as a vector in <m>\R^n</m>) with the vector <m>\vec{x}</m>.
+    </p>
+  </blockquote>
+
+  <p>
+    That is, since each row of <m>A</m> has <m>n</m> entries, as does the vector <m>\vec{x}</m>, 
+    we can form the dot product of <m>\vec{x}</m> with any of the rows of <m>A</m>. 
+    Each such dot product forms the corresponding entry in the vector <m>A\vec{x}</m>.
+  </p>
+
+  <p>
+    Second, the right-hand side of the equation defining <m>A\vx</m> in <xref ref="def-Ax"/>
+    can be rewritten as follows:
+    <me>
+      A\vx = \bbm a_{11}x_1+a_{12}x_2+\cdots +a_{1n}x_n\\
+      a_{21}x_1+a_{22}x_2+\cdots +a_{2n}x_n\\
+      \vdots\\
+      a_{m1}x_1+a_{m2}x_2+\cdots +a_{mn}x_n
+      \ebm  = x_1\bbm a_{11}\\ a_{12}\\ \vdots \\ a_{m1}\ebm + x_2 \bbm a_{21}\\a_{22}\\ \vdots\\ a_{m2}\ebm 
+      + \cdots + x_x\bbm a_{1n}\\ a_{2n}\\ \vdots \\ a_{mn}\ebm
+    </me>.
+    That is, <em>the product</em> <m>A\vx</m> <em>is a linear combination of the columns of </em> <m>A</m>,
+    <em>with the entries of</em> <m>\vx</m> <em>as coefficients</em>.
+  </p>
+
+  <p>
+    Or equivalently, using the language of <xref ref="sec-Rn"/>,
+    the vector <m>A\vx</m> belongs to the <term>span</term> of the columns of <m>A</m>.
+    This will be a useful observation when solving questions about span.
+  </p>
+
+  <p>
+    To help understand what this is asking, we'll consider an example. Let 
+    <me>
+      \tta = \bbm 1 \amp 1 \amp 1\\1\amp -1\amp 2\\2\amp 0\amp 1\ebm, \quad \vb = \bbm 2\\-3\\1\ebm \quad \text{and} \quad \vx=\bbm x_1\\x_2\\x_3\ebm
+    </me>.
+    (We don't know what <m>\vx</m> is, so we have to represent its entries with the variables <m>x_1</m>, <m>x_2</m> and <m>x_3</m>.) 
+    Let's <q>solve for <m>\vx</m>,</q> given the equation <m>\ttaxb</m>.
+  </p>
+
+  <p>
+    We multiply out the left hand side of this equation according to <xref ref="def-Ax"/>. 
+    The first row of <m>A</m> is the row vector <m>\vec{a}_1=\bbm 1\amp 1\amp 1\ebm</m>. 
+    Treating this as a column vector, we form the dot product with <m>\vec{x}</m>, giving us
+    <me>
+      \vec{a}_1\boldsymbol{\cdot}\vec{x} = x_1+x_2+x_3
+    </me>.
+    Similarly, letting <m>\vec{a}_2</m> and <m>\vec{a}_3</m> denote the second and third rows of <m>A</m>, respectively, we find
+    <md>
+      <mrow>\vec{a}_2\boldsymbol{\cdot}\vec{x} \amp = x_1-x_2+2x_3</mrow>
+      <mrow>\vec{a}_3\boldsymbol{\cdot}\vec{x} \amp = 2x_1+x_3</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Putting things together, we find that 
+    <me>
+      \tta\vx = \bbm x_1+x_2+x_3\\x_1-x_2+2x_3\\2x_1+x_3\ebm
+    </me>.
+    Be sure to note that the product is just a vector; it has just one column.
+  </p>
+
+  <p>
+    If you prefer to think in terms of the columns of <m>A</m>,
+    we can use the observation above, that <m>A\vx</m> is a linear combination of the columns of <m>A</m>.
+    This gives us
+    <me>
+      A\vx = x_1\bbm 1\\1\\2\ebm + x_2 \bbm 1\\-1\\0\ebm + x_3\bbm 1\\2\\1\ebm = \bbm x_1\\x_1\\2x_1\ebm+\bbm x_2\\-x_2\\0\ebm + \bbm x_3\\2x_3\\x_3\ebm
+    </me>.
+    When we add these three columns together, we get the same result as above.
+  </p>
+
+  <p>
+    Setting <m>\tta\vx</m> equal to <m>\vb</m>, we have  
+    <me>
+      \bbm x_1+x_2+x_3\\x_1-x_2+2x_3\\2x_1+x_3\ebm = \bbm 2\\-3\\1\ebm
+    </me>.
+    Since two vectors are equal only when their corresponding entries are equal, we know 
+    <md> 
+      <mrow>x_1+x_2+x_3\amp =2</mrow>
+      <mrow>x_1-x_2+2x_3\amp =-3</mrow>
+      <mrow>2x_1+x_3\amp =1</mrow>
+    </md>.
+  </p>
+
+  <p>
+    This should look familiar; it is a system of linear equations! 
+    Given the matrix-vector equation <m>\tta\vx=\vb</m>, 
+    we can recognize <m>\tta</m> as the coefficient matrix from a linear system and  as the vector of the constants from the linear system. 
+    Given a system of equations, rewriting it in matrix form is equally straightforward. 
+  </p>
+
+  <p>
+    To solve a matrix--vector equation (and the corresponding linear system), 
+    we simply augment the matrix <m>\tta</m> with the vector <m>\vb</m>,  
+    put this matrix into reduced row echelon form, and interpret the results.
+  </p>
+
+  <p>
+    We convert the above linear system into an augmented matrix and find the reduced row echelon form: 
+    <me>
+      \bam{3}1 \amp 1 \amp 1\amp 2\\1\amp -1\amp 2\amp -3\\2\amp 0\amp 1\amp 1\eam \quad\overrightarrow{\text{rref}}\quad \bam{3}1\amp 0\amp 0\amp 1\\0\amp 1\amp 0\amp 2\\0\amp 0\amp 1\amp -1\eam
+    </me>.
+    This tells us that <m>x_1=1</m>, <m>x_2=2</m> and <m>x_3 = -1</m>, so 
+    <me>
+      \vx = \bbm 1\\2\\-1\ebm
+    </me>.
+  </p>
+
+  <p>
+    We should check our work; multiply out <m>\tta\vx</m> and verify that we indeed get <m>\vb</m>: 
+    <me>
+      \bbm 1 \amp 1 \amp 1\\1\amp -1\amp 2\\2\amp 0\amp 1\ebm\bbm 1\\2\\-1\ebm \quad\text{does equal}\quad \bbm 2\\-3\\1\ebm
+    </me>.
+  </p>
+
+  <example xml:id="ex_vector_solution_1">
+    <title>Solving a matrix equation</title>
+    <statement>
+ 
+      <p>
+        Solve the equation <m>\tta\vx=\vb</m> for <m>\vx</m> where 
+        <me>
+          \tta = \bbm 1 \amp 2 \amp 3\\-1\amp 2\amp 1\\1\amp 1\amp 0\ebm \quad \text{and}\quad \bbm 5\\-1\\2\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        The solution is rather straightforward, even though we did a lot of work before to find the answer. 
+        Form the augmented matrix <m>\bbm \tta\amp \vb\ebm</m> and interpret its reduced row echelon form.
+        <me>
+          \bam{3} 1 \amp 2 \amp 3\amp 5\\-1\amp 2\amp 1\amp -1\\1\amp 1\amp 0\amp 2\eam\quad\overrightarrow{\text{rref}}\quad \bam{3}1\amp 0\amp 0\amp 2\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 1\eam
+        </me>.
+      </p>
+
+      <p>
+        In previous sections we were fine stating that the result as
+        <me>
+          x_1=2, \quad x_2=0,\quad x_3=1
+        </me>,
+        but we were asked to find <m>\vx</m>; therefore, we state the solution as 
+        <me>
+          \vx = \bbm 2\\0\\1\ebm
+        </me>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    This probably seems all well and good. 
+    While asking one to solve the equation <m>\tta\vx=\vb</m> for <m>\vx</m> seems like a new problem, 
+    in reality it is just asking that we solve a system of linear equations. Our variables <m>x_1</m>, <etc/>, 
+    appear not individually but as the entries of our vector <m>\vx</m>. We are simply writing an old problem in a new way.
+  </p>
+
+  <p>
+    In line with this new way of writing the problem, we have a new way of writing the solution. 
+    Instead of listing, individually, the values of the unknowns, we simply list them as the elements of our vector<m>\vx</m>.
+  </p>
+
+  <p>
+    These are important ideas, so we state the basic principle once more: 
+    solving the equation <m>\tta\vx=\vb</m> for <m>\vx</m> is the same thing as solving a linear system of equations. 
+    Equivalently, any system of linear equations can be written in the form <m>\tta\vx=\vb</m> for some matrix <m>\tta</m> and vector<m>\vb</m>.
+  </p>
+
+  <p>
+    Since these ideas are equivalent, we'll refer to <m>\tta\vx=\vb</m> both as a 
+    matrix<ndash/>vector equation and as a system of linear equations: they are the same thing.
+  </p>
+
+  <p>
+    We've seen two examples illustrating this idea so far, and in both cases the linear system had exactly one solution. 
+    We know from <xref ref="thm-existence_uniqueness"/> that any linear system has either one solution, 
+    infinitely many solutions, or no solution. 
+    So how does our new method of writing a solution work with infinitely many solutions and no solutions?
+  </p>
+
+  <p>
+    Certainly, if <m>\tta\vx=\vb</m> has no solution, we simply say that the linear system has no solution. 
+    There isn't anything special to write. So the only other option to consider is the case where we have infinitely many solutions. 
+    We'll learn how to handle these situations through examples.
+  </p>
+
+  <example xml:id="ex_vector_solution_101">
+    <title>Finding the vector solution to a linear system</title>
+    <statement>
+ 
+      <p>
+        Solve the linear system <m>\tta\vx=\zero</m> for <m>\vx</m> and write the solution in vector form, where 
+        <me>
+          \tta = \bbm 1 \amp 2\\2 \amp 4 \ebm \quad \text{and} \quad \zero = \bbm 0\\0\ebm
+        </me>.
+      </p>
+      <aside>
+        <p>
+          <alert>Note:</alert> Our convention is always that <m>\vec 0</m> 
+          denotes the vector of the appropriate size whose entries are all zero, 
+          so we didn't really need to specify that <m>\zero = \bbm 0\\0\ebm,</m> 
+          but we did just to eliminate any uncertainty.
+        </p>
+      </aside>
+    </statement>
+    <solution>
+      <p>
+        To solve this system, put the augmented matrix into reduced row echelon form, which we do below.
+        <me>
+          \bam{2} 1 \amp 2 \amp 0\\2\amp 4\amp 0\eam \quad \arref \quad \bam{2} 1\amp 2\amp 0\\0\amp 0\amp 0\eam
+        </me>
+      </p>
+      
+      <p>
+        We interpret the reduced row echelon form of this matrix to write the solution as 
+        <md> 
+          <mrow>x_1 \amp = -2t</mrow>
+          <mrow>x_2 \amp = t \text{ is free}</mrow>
+        </md>. 
+      </p>
+
+      <p>
+        We are not done; we need to write the solution in vector form, for our solution is the vector<m>\vx</m>. Recall that 
+        <me>
+          \vx = \bbm x_1\\x_2\ebm
+        </me>.
+        From above we know that <m>x_1 = -2x_2</m>, where <m>x_2=t</m>, 
+        so we replace the <m>x_1</m> in <m>\vx</m> with <m>-2t</m> and replace <m>x_2</m> by <m>t</m>. 
+        This gives our solution as 
+        <me>
+          \vx = \bbm -2t\\t\ebm
+        </me>.
+      </p>
+
+      <p>
+        Note that we can now pull the <m>t</m> out of the vector (it is just a scalar) and write <m>\vx</m> as 
+        <me>
+          \vx = t\bbm-2\\1\ebm
+        </me>.
+        For convenience, if we set 
+        <me>
+          \vv = \bbm -2\\1\ebm
+        </me>,
+        then our solution can be simply written as 
+        <me>
+          \vx = t\vv
+        </me>.
+      </p>
+
+      <p>
+        Recall that since our system was consistent and had a free variable, we have infinitely many solutions. 
+        This form of the solution highlights this fact; pick any value for <m>t</m> and we get a different solution. 
+      </p>
+      
+      <p>
+        For instance, by setting <m>t = -1</m>, <m>0</m>, and <m>5</m>, we get the solutions 
+        <me>
+          \vx = \bbm 2\\-1\ebm, \quad \bbm 0\\0\ebm,\quad \text{ and }\quad \bbm -10\\5\ebm
+        </me>,
+        respectively. 
+      </p>
+
+      <p>
+        We should check our work; multiply each of the above vectors by <m>\tta</m> to see if we indeed get <m>\zero</m>. 
+        Or, we can save ourselves some time and check the general solution. We have
+        <me>
+          A\vx = A(t\vv) = t(A\vv) = t\bbm 1 \amp 2\\2 \amp 4\ebm \bbm -2\\1\ebm = t\bbm 0\\0\ebm = \bbm 0\\0\ebm
+        </me>
+        for <em>every</em> value of <m>t</m>.
+      </p>
+
+      <p>
+        We have officially solved this problem; we have found the solution to <m>\tta\vx=\zero</m> and written it properly. 
+        One final thing we will do here is <em>graph</em> the solution, using our skills learned in the previous section.
+      </p>
+      
+      <p>
+        Our solution is 
+        <me>
+          \vx = x_2\bbm-2\\1\ebm
+        </me>.
+        This means that any scalar multiple of the vector <m>\vv = \bbm -2\\1\ebm</m> is a solution; 
+        we know how to sketch the scalar multiples of <m>\vv</m>. This is done in <xref ref="fig-vect_sol_101"/>. 
+      </p>
+      
+      <figure xml:id="fig-vect_sol_101">
+        <caption>The solution, as a line, to <m>\protect\tta\protect\vx=\protect\zero</m> in <xref ref="ex_vector_solution_101"/></caption>
+        <image>
+          <shortdescription>A line through the origin in the plane, with slope -0.5. The direction vector v points from the origin to (-2,1).</shortdescription>
+          <latex-image label="img-vect-sol-101">
+            \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
+      
+            \drawxlines{-4.5}{4.5}{-4,...,4};
+            \drawylines{-3.5}{3.5}{-3,...,3};
+            \draw [&lt;-&gt;](-4,2)--(4,-2);
+            \draw [-&gt;,thick] (0,0)--(-2,1) node [above] {$\vv$};
+              
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+
+      <p>
+        Here vector <m>\vv</m> is drawn as well as the line that goes through the origin in the direction of <m>\vv</m>. 
+        Any vector along this line is a solution. So in some sense, we can say that the solution to <m>\tta\vx=\zero</m> is <em>a line</em>. 
+      </p>      
+    </solution>
+  </example>
+
+  <p>
+    A few comments are in order here. First, matrix equations (or the corresponding system of linear equations) 
+    such as the above where the vector on the right-hand side 
+    is the zero vector form a special case that is important enough to have its own name: 
+    these are known as <term>homogeneous</term> systems of equations. The formal definition is as follows.
+  </p>
+
+  <definition xml:id="def-homogeneous">
+    <title>Homogeneous Linear System of Equations</title>
+    <statement>
+      <p>
+        <idx><h>system of linear equations</h><h>homogeneous</h></idx>
+        <idx><h>homogeneous</h></idx>
+        A system of linear equations is <em>homogeneous</em> if the constant term in each equation is zero.
+      </p>
+
+      <p>
+        Note: a homogeneous system of equations can be written in vector form as <m>\tta\vx = \zero</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    The term <em>homogeneous</em> comes from two Greek words; <em>homo</em> meaning <q>same</q> and <em>genus</em> meaning <q>type.</q> 
+    A homogeneous system of equations is a system in which each equation is of the same type <mdash/> all constants are 0.
+    In mathematics, objects that are considered homogeneous often have some sort of <em>scale invariance</em>,
+    and that is the case here: if <m>\vx</m> is a solution to <m>\tta\vx=\zero</m>,
+    then so is <m>c\vx</m> for any scalar <m>c</m>. (Do you see why?)
+  </p>
+
+  <p>
+    Notice that the line <m>\vx =t\vv</m> in the solution of <xref ref="ex_vector_solution_101"/> above passes through the origin. 
+    This is an important characteristic of homogeneous systems: 
+    since <m>A\vec 0 = \vec 0</m> for any matrix <m>A</m>, we always have (at least) the solution <m>\vx = \vec 0</m>. 
+    (We'll have more to say about this below.)
+  </p>
+
+  <example xml:id="ex_vect_sol_102">
+    <title>Determining the solution of a homogeneous system</title>
+    <statement>
+ 
+      <p>
+        Determine the solution to the system <m>A\vx = \vec 0</m>, where
+        <me>
+          \tta = \bbm 2  \amp  -3 \\ -2  \amp  3\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We proceed exactly as we did in <xref ref="ex_vector_solution_101"/>, 
+        by forming the proper augmented matrix and putting it into reduced row echelon form, which we do below. 
+        <me>
+          \bam{2} 2 \amp -3 \amp 0\\-2 \amp  3\amp 0\eam \quad \arref \quad \bam{2} 1 \amp  -3/2 \amp  0 \\0\amp 0\amp 0\eam
+        </me>
+      </p>
+
+      <p>
+        We interpret the reduced row echelon form of this matrix to find that 
+        <md>
+        <mrow>x_1  \amp = 3/2 t </mrow>
+          <mrow>x_2  \amp  = t \text{ is free}</mrow>
+        </md>.
+        As before, we can say that <m>A\vx=\vec 0</m> provided that
+        <me>
+          \vx = \bbm x_1\\x_2\ebm = \bbm \frac{3}{2}t\\ t\ebm = t\bbm \frac{3}{2}\\1\ebm
+        </me>.
+        If we set 
+        <me>
+          \vv = \bbm 3/2\\1\ebm
+        </me>,
+        then our solution can be written as 
+        <me>
+          \left\{t\vv \,|\, t\in\R \text{ and } \vv = \bbm 3/2\\1\ebm\right\}
+        </me>.
+      </p>
+
+      <p>
+        Again, we have infinitely many solutions to the equation <m>A\vx  = \vec 0</m>; 
+        any choice of <m>x_2</m> gives us one of these solutions. For instance, picking <m>x_2=2</m> gives the solution 
+        <me>
+          \vx = \bbm 3\\2\ebm
+        </me>.
+        This is a particularly nice solution, since there are no fractions! 
+        In fact, since the parameter <m>t</m> can take on any <em>real</em> value, 
+        there is nothing preventing us from defining a new parameter <m>s = t/2</m>, and then
+        <me>
+          \vx = t\bbm 3/2 \\1\ebm = t\left(\frac{1}{2}\bbm 3\\2\ebm \right) = \frac{t}{2}\bbm 3\\2\ebm = s\bbm 3\\2\ebm = s\vec w
+        </me>,
+        where <m>\vec w = 2\vv</m>.
+      </p>
+
+      <p>
+        As in the previous example, our solutions are multiples of a vector, and hence we can graph this, 
+        as done in <xref ref="fig-vect_sol_102"/>.
+      </p>
+
+      <figure xml:id="fig-vect_sol_102">
+        <caption>The solution, as a line, to <m>\protect\tta\protect\vx=\protect\zero</m> in <xref ref="ex_vect_sol_102"/></caption>
+        <image>
+          <shortdescription>A line through the origin in the plane, with slope 2/3. The vector v points from the origin to (3/2,1).</shortdescription>
+          <latex-image label="img-vect-sol-102">
+            \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
+
+            \drawxlines{-3.5}{6}{-3,...,6};
+            \drawylines{-2.5}{4.5}{-2,...,4};
+            \draw [&lt;-&gt;](-3,-2)--(6,4);
+            \draw [-&gt;,thick] (0,0)--(1.5,1) node [above] {$\vv$};
+              
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+    </solution>
+  </example>
+
+  <p>
+    In the last two examples, we saw that the general solution could be written in the form <m>\vx = t\vv</m> 
+    for a vector <m>\vv</m> such that <m>A\vv =\vec 0</m>. Such vectors are known as the <term>basic solutions</term> 
+    to a  homogeneous linear system.
+  </p>
+
+  <definition xml:id="def-basic_sol">
+    <title>Basic solution</title>
+    <statement>
+      <p>
+        <idx><h>solution</h><h>basic</h></idx> 
+        <idx><h>basic solution</h></idx>
+        Let <m>A\vx = \vec 0</m> be a homogeneous linear system of equations with infinitely many solutions and free variables 
+        <me>
+          x_{i_1}=t_1, x_{i_2} = t_2, \ldots, x_{i_k} = t_k
+        </me>.
+      </p>
+
+      <p>
+        The <term>basic</term> solutions to the system <m>A\vx = \vec 0</m> are the vectors 
+        <m>\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k</m> such that the general solution to the system is given by
+        <me>
+          \vx = t_1\vec{v}_1 + t_2\vec{v}_2 + \cdots + t_k\vec{v}_k
+        </me>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    To help clarify <xref ref="def-basic_sol"/>, let's do one more example where we have more than one basic solution.
+  </p>
+
+  <example xml:id="ex_basic_sols">
+    <title>A homogeneous system with two basic solutions</title>
+    <statement>
+ 
+      <p>
+        Find the general solution to the homogeneous system <m>A\vx = \vec 0</m>, where 
+        <me>
+          A = \bbm 1 \amp -2 \amp 0\amp 4\\3\amp -1\amp 5\amp 2\\-2\amp -6\amp -10\amp 12\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>        
+        As usual, to find the basic solutions, we set up the augmented matrix of the system and reduce:
+        <me>
+          \bam{4}1\amp -2\amp 0\amp 4\amp 0\\3\amp -1\amp 5\amp 2\amp 0\\-2\amp -6\amp -10\amp 12\amp 0\eam \quad \arref \quad
+         \bam{4}1\amp 0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp -2\amp 0\\0\amp 0\amp 0\amp 0\amp 0\eam
+        </me>.
+      </p>
+
+      <p>
+        From the reduced row echelon form of the augmented matrix, we can read off the following general solution:
+        <md>
+          <mrow>x_1 \amp = -2s</mrow>
+          <mrow>x_2 \amp = -s+2t</mrow>
+          <mrow>x_3 \amp = s \text{ is free}</mrow>
+          <mrow>x_4 \amp = t \text{ is free}</mrow>
+        </md>.
+        In this case, we have two parameters, so we expect two basic solutions. To find these, we write our solution in vector form:
+        <me>
+          \vx = \bbm x_1\\x_2\\x_3\\x_4\ebm = \bbm -2s\\-s+2t\\s\\t\ebm = s\bbm -2\\-1\\1\\0\ebm + t\bbm 0\\2\\0\\1\ebm
+        </me>.
+        From the above, we see that the general solution can be written as <m>\vx = s\vv +t\vec{w}</m>, where 
+        <me>
+          \vv = \bbm -2\\-1\\1\\0\ebm \quad \text{ and } \quad \vec{w} = \bbm 0\\2\\0\\1\ebm
+        </me>
+        are the basic solutions to <m>A\vx = \vec 0</m>. 
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Let's practice finding vector solutions again; this time, we won't solve a system of the form <m>\tta\vx=\zero</m>, 
+    but instead <m>\ttaxb</m>, for some vector <m>\vb\neq \vec 0</m>. 
+    Such systems are known (unsurprisingly) as <term>non-homogeneous</term> systems.
+  </p>
+
+  <example xml:id="ex_vect_sol_103">
+    <title>A non-homogeneous linear system</title>
+    <statement>
+ 
+      <p>
+        Solve the linear system <m>\ttaxb</m>, where 
+        <me>
+          \tta = \bbm 1 \amp 2\\2 \amp 4\ebm \quad \text{and} \quad \vb = \bbm 3\\6\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        (Note that this is the same matrix <m>\tta</m> that we used in <xref ref="ex_vector_solution_101"/>. This will be important later.)
+      </p>
+
+      <p>
+        Our methodology is the same as before; we form the augmented matrix and put it into reduced row echelon form.
+        <me>
+          \bam{2} 1 \amp 2 \amp 3\\2\amp 4\amp 6\eam \quad \arref \quad \bam{2} 1\amp 2\amp 3\\0\amp 0\amp 0\eam
+        </me>
+      </p>
+
+      <p>
+        Interpreting this reduced row echelon form, we find that 
+        <md>
+        <mrow>x_1  \amp = 3-2t</mrow>
+        <mrow>x_2  \amp =t \text{ is free}</mrow>
+        </md>.
+        Putting things into vector form, we have
+        <me>
+          \vx = \bbm x_1\\x_2\ebm = \bbm 3-2t\\t\ebm
+        </me>.
+      </p>
+
+      <p>
+        This solution is different than what we've seen in the past two examples; 
+        we can't simply pull out a <m>t</m> since there is a 3 in the first entry. 
+        Using the properties of matrix addition, we can <q>pull apart</q> this vector 
+        and write it as the sum of two vectors: one which contains only constants, 
+        and one that contains only terms involving the parameter <m>t</m>. We do this below. 
+        <md> 
+          <mrow>\vx \amp = \bbm 3-2t\\t\ebm</mrow>
+          <mrow>  \amp = \bbm 3\\0\ebm + \bbm -2t\\t\ebm</mrow>
+          <mrow>  \amp = \bbm 3\\0\ebm + t\bbm-2\\1\ebm</mrow>
+        </md>.
+      </p>
+
+      <p>
+        Once again, let's give names to the different component vectors of this solution 
+        (we are getting near the explanation of why we are doing this). Let 
+        <me>
+          \vec{x}_p = \bbm 3\\0\ebm \quad \text{and} \quad \vv = \bbm-2\\1\ebm
+        </me>.
+        We can then write our solution in the form 
+        <me>
+          \vx = \vec{x}_p + t\vv
+        </me>.
+      </p>
+
+      <p>
+        We still have infinitely many solutions; by picking a value for <m>t</m> we get one of these solutions. 
+        For instance, by letting <m>t= -1</m>, <m>0</m>, or <m>2</m>, we get the solutions 
+        <me>
+          \bbm 5\\-1\ebm, \quad \bbm 3\\0\ebm \quad \text{and} \quad \bbm -1\\2\ebm
+        </me>.
+      </p>
+
+      <p>
+        We have officially solved the problem; we have solved the equation <m>\ttaxb</m> for <m>\vx</m> 
+        and have written the solution in vector form. As an additional visual aid, we will graph this solution. 
+      </p>
+
+      <p>
+        Each vector in the solution can be written as the sum of two vectors: 
+        <m>\vec{x}_p</m> and a multiple of <m>\vv</m>. In <xref ref="fig-vect_sol_103"/>, 
+        <m>\vec{x}_p</m> is graphed and <m>\vv</m> is graphed with its origin starting at the tip of <m>\vec{x}_p</m>. 
+        Finally, a line is drawn in the direction of <m>\vv</m> from the tip of <m>\vec{x}_p</m>; 
+        any vector pointing to any point on this line is a solution to <m>\ttaxb</m>.
+      </p>
+
+      <figure xml:id="fig-vect_sol_103">
+        <caption>The solution, as a line, to <m>\protect\tta\protect\vx=\protect\vb</m> in <xref ref="ex_vect_sol_103"/></caption>
+        <image>
+          <shortdescription>A line in the plane through (3,0) with slope -0.5. A vector points from the origin to (3,0), and a vector v points from (3,0) to (3/2,1).</shortdescription>
+          <latex-image label="fig-vect-sol-103">
+            \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
+
+            \drawxlines{-4.5}{4.5}{-4,...,4};
+            \drawylines{-2.5}{5.5}{-2,...,5};
+            \draw [&lt;-&gt;](5,-1)--(-5,4);
+            \draw [-&gt;,thick] (0,0)--(3,0) node [below] {$\vec{x}_p$};
+            \draw [-&gt;,thick] (3,0) -- (1,1) node [above] {$\vv$};
+              
+            \end{tikzpicture}
+          </latex-image>
+        </image>
+      </figure>
+
+      <p>
+        Notice that in this case our line does <em>not</em> pass through the origin, so the set of solutions is not a subspace. On the other hand, every solution to the system <m>A\vec x = \vec b</m> can be obtained by adding the vector <m>\vec{x}_p</m> to an element of the set of solutions to the homogeneous system <m>A\vx = \vec 0</m>. We'll elaborate on this shortly.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    The previous examples illustrate some important concepts. 
+    One is that (at least, when <m>\vec x\in \R^2</m> or <m>\R^3</m>) we can visualize the solution to a system of linear equations. 
+    Before, when we had infinitely many solutions, we knew we could arbitrarily pick values for our free variables and get different solutions. 
+    We knew this to be true, and we even practised it, but the result was not very <q>tangible.</q> 
+    Now, we can view our solution as a vector; by picking different values for our free variables, 
+    we see this as multiplying certain important vectors by a scalar which gives a different solution.
+  </p>
+
+  <aside>
+    <p>
+      <alert>Note:</alert> Visually, the solutions in Examples <xref ref="ex_vector_solution_101"/> 
+      and <xref ref="ex_vect_sol_103"/> were both lines; from our experience with <xref ref="sec-lines"/> 
+      we know that this makes sense, since the solutions involved a single parameter <m>t</m>. 
+      The reader can similarly expect that a solution involving two parameters can be visualized as a plane. 
+      Such was the case in <xref ref="ex_basic_sols"/>, except that here, our solution is a plane in <m>\R^4</m>, 
+      making it somewhat harder to visualize.
+    </p>
+  </aside> 
+
+  <p>
+    Another important concept that these examples demonstrate comes from the fact that Examples 
+    <xref ref="ex_vector_solution_101" text="local"/> and <xref ref="ex_vect_sol_103" text="local"/> 
+    were only <q>slightly different</q> and hence had only <q>slightly different</q> answers. Both solutions had 
+    <me>
+      t\bbm-2\\1\ebm
+    </me>
+    in them; in <xref ref="ex_vect_sol_103"/> the solution also had another vector added to this. 
+    The addition of the vector <m>\vec{x}_p</m> in <xref ref="ex_vect_sol_103"/> 
+    is needed to account for the fact that we were dealing with a non-homogeneous system of linear equations.
+  </p>
+
+  <p>
+    Recall that for a homogeneous system of linear equations, we know that <m>\vx = \vec 0</m> will be a solution, 
+    since no matter what the matrix <m>A</m> is, we can be certain that <m>\tta\zero = \zero</m>.  
+    This fact is important; the zero vector is <em>always</em> a solution to a homogeneous linear system. 
+    Therefore a homogeneous system is always consistent; 
+    we need only to determine whether we have exactly one solution (just <m>\zero</m>) or infinitely many solutions. 
+    This idea is important, so we give it its own box.
+  </p>
+
+  <insight xml:id="idea-homogeneous">
+    <title>Homogeneous Systems and Consistency</title>
+    <p>
+      <idx><h>consistent</h></idx>
+      <idx><h>system of linear equations</h><h>consistent</h></idx>
+      <idx><h>homogeneous</h></idx>
+      All homogeneous linear systems are consistent.
+    </p>
+  </insight>
+
+  <p>
+    How do we determine if we have exactly one or infinitely many solutions? 
+    Recall <xref ref="idea-consistent"/>: if the solution has any free variables, 
+    then it will have infinitely many solutions. How can we tell if the system has free variables? 
+    Form the augmented matrix <m>\bbm \tta \amp  \zero \ebm</m>, put it into reduced row echelon form, and interpret the result. 
+  </p>
+
+  <p>
+    It may seem that we've brought up a new question, 
+    <q>When does <m>\tta\vx=\zero</m> have exactly one or infinitely many solutions?</q> 
+    only to answer with <q>Look at the reduced row echelon form of <m>\tta</m> and interpret the results, just as always.</q> 
+    Why bring up a new question if the answer is an old one?
+  </p>
+
+  <p>
+    While the new question has an old solution, it does lead to a great idea. 
+    Let's refresh our memory; earlier we solved two linear systems, 
+    <me>
+      \tta\vx = \zero \quad \text{and} \quad \tta\vx = \vb
+    </me>
+    where
+    <me>
+      \tta = \bbm 1 \amp 2\\2 \amp 4\ebm \quad \text{and} \quad \vb = \bbm 3\\6\ebm
+    </me>.
+    The solution to the first system of equations, <m>\ttaxo</m>, is 
+    <me>
+      \vx = t\bbm-2\\1\ebm = t\vv
+    </me>
+    and the solution to the second set of equations, <m>\ttaxb</m>, is 
+    <me>
+      \vx = \bbm 3\\0\ebm + t\bbm-2\\1\ebm = \vec{x}_p+t\vv,
+    </me>
+    for all <m>t\in\R</m>, where <m>\vec{x}_p = \bbm 3\\0\ebm</m> and <m>\vv = \bbm -2\\1\ebm</m>.
+  </p>
+
+  <p>
+    To see why the general solution to <m>\ttaxb</m> works, note that
+    <me>
+      A\vec{x}_p = \bbm 1 \amp 2\\2 \amp 4\ebm\bbm 3\\0\ebm = \bbm 3\\6\ebm = \vec{b}
+    </me>,
+    so <m>\vec{x}_p</m> is a solution. 
+    (The subscript <m>p</m> of <q><m>\vec{x}_p</m></q> is used to denote that this vector is a <term>particular</term> solution: 
+    see <xref ref="def-particular"/>.) What about the general solution <m>\vec x = \vec{x}_p+t\vv</m>? 
+    Recalling that <m>A\vv=\zero</m>, we have
+    <md>
+      <mrow>A\vx \amp  = A(\vec{x}_p+t\vec v) = A\vec{x}_p + t(A\vv)</mrow>
+      <mrow> \amp  = \vec{b}+t(\vec 0) = \vec{b}</mrow>
+    </md>,
+    for any value of <m>t</m>, so there are infinitely many solutions to our system, one for each <m>t\in \R</m>. 
+    The whole point is that <m>\vec{x}_p</m> itself is a solution to <m>\tta\vx = \vb</m>, 
+    and we could find more solutions by adding vectors <q>that go to zero</q> when multiplied by <m>\tta</m>. 
+  </p>
+
+  <p>
+    So we wonder: does this mean that <m>\tta\vx = \vb</m> will have infinitely many solutions? 
+    After all, if <m>\vec{x}_p</m> and <m>\vec{x}_p+\vv</m> are both solutions, don't we have infinitely many solutions?
+  </p>
+
+  <p>
+    No. If <m>\tta\vx = \zero</m> has exactly one solution, then <m>\vv = \zero</m>, 
+    and <m>\vec{x}_p = \vec{x}_p +\vv</m>; we only have one solution.
+  </p>
+
+  <p>
+    So here is the culmination of all of our fun that started a few pages back. 
+    If <m>\vv</m> is a solution to <m>\tta\vx=\zero</m> and <m>\vec{x}_p</m> is a solution to <m>\tta\vx=\vb</m>, 
+    then <m>\vec{x}_p+\vv</m> is also a solution to <m>\tta\vx=\vb</m>. 
+    If <m>\tta\vx=\zero</m> has infinitely many solutions, so does <m>\tta\vx = \vb</m>; 
+    if <m>\tta\vx=\zero</m> has only one solution, so does <m>\tta\vx = \vb</m>. 
+    This culminating idea is of course important enough to be stated again.
+  </p>
+
+  <insight xml:id="idea-unique_solutions">
+    <title>Solutions of Consistent Systems</title>
+    <p>
+      <idx><h>homogeneous</h></idx>
+      <idx><h>consistent</h></idx>
+      <idx><h>system of linear equations</h><h>consistent</h></idx>
+      <idx><h>solution</h><h>unique</h></idx>
+      <idx><h>solution</h><h>infinitely many</h></idx>
+
+      Let <m>\tta\vx=\vb</m> be a consistent system of linear equations. 
+      <ol>
+        <li>
+          <p>
+            If <m>\tta\vx = \zero</m> has exactly one solution <m>(\vx = \zero)</m>, 
+            then <m>\tta\vx = \vb</m> has exactly one solution.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>\tta\vx =\zero</m> has infinitely many solutions, then <m>\tta\vx=\vb</m> has infinitely many solutions.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </insight>
+
+  <p>
+    A key word in the above statement is <em>consistent</em>. 
+    If <m>\tta\vx = \vb</m> is inconsistent (the linear system has no solution), 
+    then it doesn't matter how many solutions <m>\tta\vx = \zero</m> has; <m>\tta\vx=\vb</m> has no solution.
+  </p>
+
+  <p>
+    We can elaborate on <xref ref="idea-unique_solutions"/> above, 
+    as well as <xref ref="idea-consistent"/> from <xref ref="sec-existence"/> 
+    by introducing one more piece of important terminology. 
+    By now it is probably clear that the leading 1s in the reduced row echelon form of a matrix play a key role in understanding the system. 
+    In fact, it turns out that we can describe all of the different possibilities for a linear system in terms of one number: 
+    the number of leading 1s in the reduced row echelon form of a matrix.
+  </p>
+
+  <definition xml:id="def-rank">
+    <title>The rank of a matrix</title>
+    <statement>
+      <p>
+        The <term>rank</term> of a matrix <m>A</m> is denoted by <m>\operatorname{rank}(A)</m> 
+        and defined as the number of leading 1s in the reduced row echelon form of <m>A</m>.
+        <idx><h>rank </h><h> in terms of leading 1s</h></idx>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Although we do not prove it in this textbook, the reduced row echelon form of any matrix is <em>unique</em>; 
+    it follows from this fact that the rank of a matrix is a well-defined number. 
+    The importance of rank is outlined in the following result.
+  </p>
+
+  <theorem xml:id="thm-rank_and_sols">
+    <title>Rank and solution types</title>
+    <statement>
+      <p>
+        Let <m>A</m> be an <m>m\times n</m> matrix.  
+        For any linear system <m>\ttaxb</m> in <m>n</m> variables, we have the following possibilities:
+        <ol>
+          <li>
+            <p>
+              If <m>\operatorname{rank}(A) \lt \operatorname{rank}\bbm A \amp \vec{b}\ebm</m>, 
+              then the system <m>\ttaxb</m> is inconsistent.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>\operatorname{rank}(A)=\operatorname{rank}\bbm A \amp \vec b\ebm = n</m> 
+              (where <m>n</m> is the number of variables), then the system <m>\ttaxb</m> has a unique solution.
+            </p>
+          </li>
+          <li>
+            <p>
+              If <m>\operatorname{rank}(A)=\operatorname{rank}\bbm A \amp \vec b\ebm = \lt n</m>, 
+              then the system <m>\ttaxb</m> has infinitely solutions. 
+              Moreover, the general solution to <m>\ttaxb</m> will involve <m>k</m> parameters, where
+              <me>
+                k = n - \operatorname{rank}(A)
+              </me>.
+            </p>
+          </li>        
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    To understand Item 1 above, note that if
+    <me>
+      \operatorname{rank}(A)\lt \operatorname{rank}\bbm A \amp \vec b\ebm
+    </me>,
+    then there must be a leading 1 in the right-hand column of the reduced row echelon form of <m>\bbm A \amp  \vec b\ebm</m>, 
+    meaning that we have a row of the form 
+    <me>
+      \bbm 0  \amp  0 \amp  \cdots \amp  0 \amp  1\ebm
+    </me>,
+    which is exactly what we expect in a system with no solutions.
+  </p>
+
+  <p>
+    Items 2 and 3 in <xref ref="thm-rank_and_sols"/> simply give another way of stating the fact that the free 
+    variables are those variables that do <em>not</em> have a leading 1 in their column. 
+    This seems like an obvious fact, but it is very important. 
+    We will see in <xref ref="sec-null_column"/> that this observation leads to a major theorem, 
+    sometimes known as the Fundamental Theorem of Linear Transformations: see <xref ref="thm-fund_thm_lin_maps"/>.
+  </p>
+
+  <p>
+    Let us explore this result with a series of examples.
+  </p>
+
+  <example xml:id="ex_vector_solution_5">
+    <title>Using matrices and vectors to solve a system of equations</title>
+    <statement>
+ 
+      <p>
+        Rewrite the linear system 
+        <me>
+          \begin{array}{ccccccccccc} x_1 \amp + \amp 2x_2\amp -\amp 3x_3\amp +\amp 2x_4\amp +\amp 7x_5\amp =\amp 2\\3x_1\amp +\amp 4x_2\amp +\amp 5x_3\amp +\amp 2x_4\amp +\amp 3x_5\amp =\amp -4 \end{array}
+        </me>
+        as a matrix--vector equation, solve the system using vector notation, and give the solution to the related homogeneous equations.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Rewriting the linear system in the form of <m>\tta\vx=\vb</m>, we have that 
+        <me>
+          \tta = \bbm 1 \amp 2 \amp -3\amp 2\amp 7\\3\amp 4\amp 5\amp 2\amp 3\ebm,\quad \vx = \bbm x_1\\x_2\\x_3\\x_4\\x_5\ebm \quad \text{and} \quad \vb = \bbm 2\\-4\ebm
+        </me>.
+      </p>
+
+      <p>
+        To solve the system, we put the associated augmented matrix into reduced row echelon form and interpret the results.
+        <me>
+          \bam{5}1 \amp 2 \amp -3\amp 2\amp 7\amp 2\\3\amp 4\amp 5\amp 2\amp 3\amp -4\eam\quad \arref \quad \bam{5}1\amp 0\amp 11\amp -2\amp -11\amp -8\\0\amp 1\amp -7\amp 2\amp 9\amp 5\eam
+        </me>
+        <md>
+          <mrow>x_1 \amp =-8-11r+2s+11t</mrow> 
+          <mrow>x_2 \amp =5+7r-2s-9t</mrow>
+          <mrow>x_3 \amp =r \text{ is free}</mrow>
+          <mrow>x_4 \amp =s \text{ is free}</mrow>
+          <mrow>x_5 \amp =t \text{ is free}</mrow>
+        </md>.
+      </p>
+
+      <p>
+        We use this information to write<m>\vx</m>, again pulling it apart. 
+        Since we have three free variables and also constants, we'll need to pull <m>\vx</m> apart into four separate vectors.
+        <md>
+          <mrow>\vx \amp = \bbm x_1\\x_2\\x_3\\x_4\\x_5\ebm = \bbm-8-11r+2s+11t\\5+7r-2s-9t\\r\\s\\t\ebm</mrow>
+          <mrow> \amp = \bbm-8\\5\\0\\0\\0\ebm + \bbm-11r\\7r\\r\\0\\0\ebm+ \bbm 2s\\-2s\\0\\s\\0\ebm + \bbm 11t\\-9t\\0\\0\\t\ebm</mrow>
+          <mrow> \amp = \bbm-8\\5\\0\\0\\0\ebm + r\bbm-11\\7\\1\\0\\0\ebm+ s\bbm 2\\-2\\0\\1\\0\ebm + t\bbm 11\\-9\\0\\0\\1\ebm </mrow>
+          <mrow> \amp = \underbrace{\vec{x}_p}_{{\text{particular solution}}}+ \underbrace{r\vec{u}+s\vec{v}+t\vec{w}}_{{\text{solution to homogeneous equations } A\vec x=\vec 0}}</mrow>
+        </md>.
+      </p>
+
+      <p>
+        So <m>\vec{x}_p</m> is a particular solution; <m>\tta\vxp = \vb</m>. 
+        (Multiply it out to verify that this is true.) The other vectors, <m>\vu</m>, <m>\vv</m> and <m>\vec{w}</m>, 
+        that are multiplied by our free variables <m>x_3=r</m>, <m>x_4=s</m> and <m>x_5=t</m>, 
+        are each solutions to the homogeneous equations, <m>\tta\vx=\zero</m>. 
+        Any linear combination of these three vectors, <ie/>, 
+        any vector found by choosing values for <m>r</m>, <m>s</m> and <m>t</m> in <m>r\vu+s\vv+t\vec{w}</m>
+        is a solution to <m>\tta\vx=\zero</m>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex_vector_solution_6">
+    <title>Finding vector solutions</title>
+    <statement>
+ 
+      <p>
+        Let 
+        <me>
+          \tta = \bbm 1 \amp 2\\4 \amp 5\ebm \quad \text{and} \quad \vb = \bbm 3\\6\ebm
+        </me>.
+        Find the solutions to <m>\tta\vx=\vb</m> and <m>\tta\vx = \zero</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We go through the familiar work of finding the reduced row echelon form of the appropriate augmented matrix and interpreting the solution. 
+        <me>
+          \bbm 1 \amp 2 \amp 3\\4\amp 5\amp 6\ebm \quad \arref \quad \bbm 1\amp 0\amp -1\\0\amp 1\amp 2\ebm
+        </me>
+        <md> 
+          <mrow>x_1  \amp = -1</mrow>
+          <mrow>x_2  \amp = 2</mrow>
+        </md>.
+        Thus 
+        <me>
+          \vx = \bbm x_1\\x_2\ebm = \bbm-1\\2\ebm
+        </me>.
+      </p>
+
+      <p>
+        This may strike us as a bit odd; we are used to having lots of different vectors in the solution. 
+        However, in this case, the linear system <m>\tta\vx = \vb</m> has exactly one solution, 
+        and we've found it. What is the solution to <m>\tta\vx=\zero</m>? 
+        Since we've only found one solution to <m>\tta\vx=\vb</m>, we can conclude from <xref ref="idea-unique_solutions"/> 
+        the related homogeneous equations <m>\tta\vx=\zero</m> have only one solution, namely <m>\vx = \zero</m>. 
+        We can write our solution vector <m>\vx</m> in a form similar to our previous examples to highlight this: 
+        <md>
+          <mrow>\vx \amp = \bbm-1\\2\ebm </mrow>
+          <mrow> \amp = \bbm-1\\2\ebm + \bbm 0\\0\ebm</mrow>
+          <mrow> \amp = \underbrace{\vxp}_{\text{particular solution}} + \underbrace{\zero_{\text{solution to } \tta\vx=\zero}}</mrow>
+        </md>.
+      </p>
+
+      <p>
+        Again, in light of <xref ref="thm-rank_and_sols"/>, this should not be too surprising. 
+        The reduced row echelon form of <m>A</m> is <m>\bbm 1\amp 0\\0\amp 1\ebm</m>, so the rank of <m>A</m> is 2, 
+        and there are 2 variables in our system, so we expect <m>2-2=0</m> parameters in our general solution.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex_vector_solution_7">
+    <title>Further vector solutions</title>
+    <statement>
+ 
+      <p>
+        Let 
+        <me>
+          \tta = \bbm 1 \amp 1\\2 \amp 2\ebm \quad \text{and} \quad \vb = \bbm 1\\1\ebm
+        </me>.
+        Find the solutions to <m>\tta\vx=\vb</m> and <m>\tta\vx = \zero</m>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        To solve <m>\ttaxb</m>, we put the appropriate augmented matrix into reduced row echelon form and interpret the results.
+        <me>
+          \bam{2}1 \amp 1 \amp 1\\2\amp 2\amp 1\eam \quad \arref \quad \bam{2}1\amp 1\amp 0\\0\amp 0\amp 1\eam
+        </me>
+      </p>
+
+      <p>
+        We immediately have a problem; we see that the second row tells us that <m>0x_1+0x_2 = 1</m>, 
+        the sign that  our system does not have a solution. Thus <m>\ttaxb</m> has no solution. 
+        Of course, this does not mean that <m>\ttaxo</m> has no solution; it always has a solution.
+      </p>
+
+      <aside>
+        <p>
+          As previously noted, the fact that <m>\ttaxb</m> has no solution in <xref ref="ex_vector_solution_7"/> 
+          simply indicates the fact that <m>\vec{b}</m> is not in the column space of <m>A</m>. Since the rank of <m>A</m> is equal to one, 
+          we know that <m>\operatorname{col}(A)</m> is spanned by the single vector <m>\vv = \bbm 1\\2\ebm</m>. 
+          Thus, we can only expect <m>\ttaxb</m> to have a solution if <m>\vb</m> is a scalar multiple of <m>\vv</m>.
+        </p>
+      </aside> 
+
+      <p>
+        To find the solution to <m>\ttaxo</m>, we interpret the reduced row echelon form of the appropriate augmented matrix. 
+        <me>
+          \bbm 1 \amp 1 \amp 0\\2\amp 2\amp 0\ebm \quad \arref \quad \bbm 1\amp 1\amp 0\\0\amp 0\amp 0\ebm
+        </me>
+        <md> 
+          <mrow>x_1 \amp =-x_2</mrow>
+          <mrow>x_2 \amp \text{ is free}</mrow>
+        </md>.
+        Thus,
+        <me>
+          \vx = \bbm x_1\\x_2\ebm = \bbm-x_2\\x_2\ebm = x_2\bbm-1\\1\ebm = x_2\vu
+        </me>.
+      </p>
+
+      <p>
+        We have no solution to <m>\ttaxb</m>, but infinitely many solutions to <m>\ttaxo</m>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    The previous example may seem to violate the principle of <xref ref="idea-unique_solutions"/>. 
+    After all, it seems that having infinitely many solutions to <m>\ttaxo</m> should imply infinitely many solutions to <m>\ttaxb</m>. 
+    However, we remind ourselves of the key word in the idea that we observed before: <em>consistent</em>. 
+    If <m>\ttaxb</m> is consistent and <m>\ttaxo</m> has infinitely many solutions, then so will <m>\ttaxb</m>. 
+    But if <m>\ttaxb</m> is not consistent, it does not matter how many solutions <m>\ttaxo</m> has; <m>\ttaxb</m> is still inconsistent.
+  </p>
+
+  <p>
+    In this chapter, we developed a systematic method for solving systems of linear equations. 
+    A key tool in this method was the augmented matrix corresponding to a given system. 
+    In this final section, we've seen that further insight into the structure of solutions can be gained by 
+    considering our systems in terms of matrices and vectors.
+  </p>
+
+  <p>
+    In the next chapter, we will begin the study of matrices as objects unto themselves. 
+    We will see that they can be added and multiplied by scalars in exactly the same way as vectors, 
+    and in addition to this, matrices of the correct sizes can be <em>multiplied</em> in a way that reproduces 
+    <xref ref="def-Ax"/> above as a special case. 
+  </p>
+
+  <p>
+    One question that may have occurred to you as you worked through this section is the following: 
+    in the one-variable linear equation <m>ax=b</m>, we know that as long as <m>a\neq 0</m>, 
+    we can divide both sides by <m>a</m>, giving us the solution <m>x=b/a</m>. 
+    Now, given the matrix equation <m>A\vec{x}=\vec{b}</m>, 
+    is there some equivalent means of <q>dividing by <m>A</m></q> to obtain the solution <m>\vec{x}</m>? 
+    The short answer is no. Indeed, there is no such thing as matrix division; 
+    the algebraic rules for matrix multiplication are much more complicated than they are for numbers. 
+    (In particular, we'll see that for matrices, <m>AB</m> is usually <em>not</em> the same thing as <m>BA</m>!) 
+  </p>
+
+  <p>
+    The slightly longer answer to our question might be phrased as <q>Sometimes. Well, sort of.</q> 
+    To obtain the correct (and much longer) answer, we will be led in the next chapter to the definition of the <em>inverse</em> of a matrix.
+  </p>
+
+  <exercises>
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          A matrix <m>\tta</m> and vectors <m>\vb</m>, <m>\vu</m> and <m>\vv</m> are given. 
+          Verify that <m>\vu</m> and <m>\vv</m> are both solutions to the equation <m>\ttaxb</m>; 
+          that is, show that <m>\tta\vu=\tta\vv=\vb</m>.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 1 \amp -2\   -3 \amp 6 \ebm </m>,       
+            <m>\vb=\bbm 0\\   0 \ebm </m>, 
+            <m>\vu = \bbm 2\\ 1 \ebm</m>, 
+            <m>\vv = \bbm -10\\ -5 \ebm</m> 
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 1 \amp 0\   2 \amp 0 \ebm </m>,       
+            <m>\vb=\bbm 0\\   0 \ebm </m>, 
+            <m>\vu = \bbm 0\\ -1 \ebm</m>, 
+            <m>\vv = \bbm 0\\ 59 \ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 1 \amp 0\   2 \amp 0 \ebm </m>, 
+            <m>\vb=\bbm -3\\   -6 \ebm </m>, 
+            <m>\vu = \bbm -3\\ -1 \ebm</m>, <m>\vv = \bbm -3\\ 59 \ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 1 \amp -2\   -3 \amp 6 \ebm </m>,       
+            <m>\vb=\bbm 2\\   -6 \ebm </m>, 
+            <m>\vu = \bbm 0\\ -1 \ebm</m>, <m>\vv = \bbm 2\\ 0 \ebm</m> 
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 0  \amp  -3  \amp  -1 &amp; -3 \    -4 &amp; 2 &amp; -3 &amp; 5 \ebm </m>, 
+            <m>\vb=\bbm 0\\   0 \ebm </m>, 
+            <m>\vu = \bbm 11 \\ 4 \\ -12 \\ 0 \ebm</m>,         
+            <m>\vv = \bbm 9\\ -12\\ 0 \\ 12 \ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 0  \amp  -3  \amp  -1 &amp; -3 \    -4 &amp; 2 &amp; -3 &amp; 5 \ebm </m>, 
+            <m>\vb=\bbm 48\\   36 \ebm </m>, 
+            <m>\vu = \bbm -17 \\ -16 \\ 0 \\ 0 \ebm</m>, 
+            <m>\vv = \bbm -8\\ -28\\ 0 \\ 12 \ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+          </p>
+        </answer>
+      </exercise>    
+    </exercisegroup>
+
+    <exercisegroup>
+    
+      <introduction>
+        <p>
+          A matrix <m>\tta</m> and vectors <m>\vb</m>, <m>\vu</m> and <m>\vv</m> are given. 
+          Verify that <m>\tta\vu=\zero</m>, <m>\tta\vv=\vb</m> and <m>\tta(\vu+\vv)=\vb</m>.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 2 \amp -2 \amp -1 \    -1&amp;1&amp;-1\\    -2&amp;2&amp;-1 \ebm </m>, 
+            <m>\vb=\bbm 1\\   1 \\    1 \ebm </m>, 
+            <m>\vu = \bbm 1 \\ 1 \\ 0  \ebm</m>, 
+            <m>\vv = \bbm 1\\ 1 \\ -1  \ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Multiply <m>\tta\vu</m>, <m>\tta\vv</m> and <m>\tta(\vu+\vv)</m> to verify.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 1  \amp  -1  \amp  3 \    3&amp;-3&amp;-3\\    -1&amp;1&amp;1 \ebm </m>, 
+            <m>\vb=\bbm -1\\    -3 \\    1 \ebm </m>, 
+            <m>\vu = \bbm 2 \\ 2 \\ 0  \ebm</m>, 
+            <m>\vv = \bbm 2\\ 3 \\ 0  \ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Multiply <m>\tta\vu</m>, <m>\tta\vv</m> and <m>\tta(\vu+\vv)</m> to verify.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 2  \amp  0  \amp  0 \  0&amp;1&amp;-3\\  3&amp;1&amp;-3 \ebm </m>, 
+            <m>\vb=\bbm 2\\    -4 \\    -1 \ebm </m>, 
+            <m>\vu = \bbm 0 \\ 6 \\ 2  \ebm</m>, 
+            <m>\vv = \bbm 1\\ -1 \\ 1  \ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Multiply <m>\tta\vu</m>, <m>\tta\vv</m> and <m>\tta(\vu+\vv)</m> to verify.
+          </p>
+        </answer>
+      </exercise>
+    
+    </exercisegroup>
+
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          A matrix <m>\tta</m> and vector  are given.
+          <ol marker="(a)">
+            <li>Solve the equation <m>\tta\vx=\zero</m>.</li>
+            <li>Solve the equation <m>\tta\vx=\vb</m>.</li>
+          </ol>
+        </p>
+
+        <p>
+          In each of the above, be sure to write your answer in vector format. 
+          Also, when possible, give 2 particular solutions to each equation.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 0 \amp 2\  -1 \amp 3\ebm</m>, <m>\vb=\bbm -2\\  -1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=\bbm 0\\0\ebm</m></li>
+              <li><m>\vx=\bbm -2\\  -1\ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm -4 \amp -1\  -3 \amp -2\ebm</m>, <m>\vb=\bbm 1\\  4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=\bbm 0\\0\ebm</m></li>
+              <li><m>\vx=\bbm 2/5\\   -13/5</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+ 
+      <exercise>
+        <statement>
+          <p>
+            <m> = \bbm 1 \amp -2\  0 \amp 1\ebm</m>, <m>\vb=\bbm 0\\  -5\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=\bbm 0\\0\ebm</m></li>
+              <li><m>\vx=\bbm -10\\  -5\ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m> = \bbm 1 \amp 0\  5 \amp -4\ebm</m>, <m>\vb=\bbm -2\\  -1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=\bbm 0\\0\ebm</m></li>
+              <li><m>\vx=\bbm -2\\  -9/4\ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m> = \bbm 2 \amp -3\  -4 \amp 6\ebm</m>, <m>\vb=\bbm 1\\  -1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=x_2\bbm 3/2\\1\ebm</m></li>
+              <li>No solution.</li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm -4 \amp 3 \amp 2\  -4&amp;5&amp;0\ebm</m>, <m>\vb=\bbm -4\\  -4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=x_3\bbm 5/4\\  1\\  1\ebm</m></li>
+              <li><m>\vx=\bbm 1\\  0\\  0\ebm+x_3\bbm 5/4\\  1\\  1\ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 1 \amp 5 \amp -2\  1&amp;4&amp;5\ebm</m>, <m>\vb=\bbm 0\\  1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=x_3\bbm -33\\  7\\  1\ebm</m></li>
+              <li><m>\vx=\bbm 5\\  -1\\  0\ebm+x_3\bbm -33\\  7\\  1\ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm -1 \amp -2 \amp -2\  3&amp;4&amp;-2\ebm </m>, <m>\vb=\bbm -4\\  -4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=x_3\bbm 6\\  -4\\  1\ebm</m></li>
+              <li><m>\vx=\bbm -12\\  8\\0\ebm +x_3\bbm 6\\  -4\\  1\ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 2 \amp 2 \amp 2\  5&amp;5&amp;-3\ebm</m>, <m>\vb=\bbm 3\\  -3\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=x_2\bbm -1\\  1\\  0\ebm</m></li>
+              <li><m>\vx=\bbm 3/16\\  0\\  {21/16}\ebm+x_2\bbm -1\\  1\\  0\ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 1 \amp 5 \amp -4&amp;-1\  1&amp;0&amp;-2&amp;1\ebm </m>,
+            <m>\vb=\bbm 0\\  -2\ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=x_3\bbm 2\\2/5\\1\\0\ebm+x_4\bbm-1\\2/5\\0\\1\ebm</m></li>
+              <li><m>\vx=\bbm-2\\2/5\\0\\0\ebm + x_3\bbm 2\\2/5\\1\\0\ebm +x_4\bbm-1\\2/5\\0\\1\ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm -4 \amp 2 \amp -5&amp;4\  0&amp;1&amp;-1&amp;5\ebm </m>, 
+            <m>\vb=\bbm -3\\  -2\ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=x_3\bbm-3/4\\1\\1\\0\ebm+x_4\bbm-3/2\\-5\\0\\1\ebm</m></li>
+              <li><m>\vx=\bbm-1/4\\-2\\0\\0\ebm + x_3\bbm-3/4\\1\\1\\0\ebm+x_4\bbm-3/2\\-5\\0\\1\ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \left[\hskip -3pt \begin{array}{ccccc} 0 \amp 0 \amp 2&amp;1&amp;4\  -2&amp;-1&amp;-4&amp;-1&amp;5\ebm</m>, 
+            <m>\vb=\bbm 3\\  4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=x_2\bbm-1/2\\1\\0\\0\\0\ebm+x_4\bbm 1/2\\0\\-1/2\\1\\0\ebm+x_5\bbm 13/2\\0\\-2\\0\\1\ebm</m></li>
+              <li><m>\vx=\bbm-5\\0\\ 3/2 \\0\\0\ebm + x_2\bbm-1/2\\1\\0\\0\\0\ebm+x_4\bbm 1/2 \\0\\-1/2\\1\\0\ebm+x_5\bbm 13/2\\0\\-2\\0\\1\ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \left[\hskip -3pt \begin{array}{ccccc} 3 \amp 0 \amp -2&amp;-4&amp;5\  2&amp;3&amp;2&amp;0&amp;2\\  -5&amp;0&amp;4&amp;0&amp;5\ebm</m>, 
+            <m>\vb=\bbm -1\\  -5\\  4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=x_4\bbm 8\\-12\\10\\1\\0\ebm+x_5\bbm -15\\ 68/3 \\-20\\0\\1 \ebm</m></li>
+              <li><m>\vx=\bbm 2\\ -16/3\\ 7/2 \\ 0\\ 0  \ebm + x_4\bbm 8\\-12\\10\\1\\0\ebm+x_5\bbm -15\\ 68/3 \\-20\\0\\1 \ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm -1 \amp 3 \amp 1&amp;-3&amp;4\  3&amp;-3&amp;-1&amp;1 &amp;-4\\  -2&amp;3&amp;-2&amp;-3&amp;1\ebm </m>, 
+            <m>\vb=\bbm 1\\  1\\  -5\ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\vx=x_4\bbm 1\\ 13/9 \\-1/3 \\1\\0\ebm+x_5\bbm 0\\ -1 \\-1\\0\\1 \ebm</m></li>
+              <li><m>\vx=\bbm 1\\ 1/9 \\ 5/3 \\ 0\\ 0  \ebm + x_4\bbm 1\\ 13/9 \\ -1/3 \\1\\0\ebm+x_5\bbm 0\\ -1 \\-1\\0\\1 \ebm</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          A matrix <m>\tta</m> and vector  are given. 
+          Solve the equation <m>\ttaxb</m>, write the solution in vector format, 
+          and sketch the solution as the appropriate line on the Cartesian plane.
+        </p>
+      </introduction>
+
+      <exercise>
+        <statement>
+          <p>
+            <m> = \bbm 2&amp;4\\  -1&amp;-2\ebm</m>, <m>\vb=\bbm 0\\  0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\vx = x_2\bbm -2\\1\ebm = x_2\vv</m>
+          </p>
+
+          <image>
+            <shortdescription>A line in the plane.</shortdescription>
+            <latex-image label="img-vector-sol-ex-1">
+              \begin{tikzpicture}[x={(.4cm,0)},y={(0,.4cm)}, &gt;=latex]
+              \drawxlines{-4.5}{4.5}{-4,...,4};
+              \drawylines{-2.5}{2.5}{-2,...,2};
+              \draw [&lt;-&gt;](-4,2)--(4,-2);
+              \draw [-&gt;,thick] (0,0)--(-2,1) node [above] {$\vv$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </answer>
+      </exercise>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 2&amp;-5\\  -4&amp;-10\ebm</m>, <m>\vb=\bbm 1\\  2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\vx = \bbm 0.5\\0\ebm + x_2\bbm 2.5\\1\ebm = \vec{x}_{p} + x_2\vv</m>
+          </p>
+
+          <image>
+            <shortdescription>A line in the plane</shortdescription>
+            <latex-image label="img-vect-sol-ex-02">
+              \begin{tikzpicture}[x={(.4cm,0)},y={(0,.4cm)}, &gt;=latex]
+              \drawxlines{-4.5}{4.5}{-4,...,4};
+              \drawylines{-2.5}{2.5}{-2,...,2};
+              \draw [&lt;-&gt;](-4,-1.8)--(4,1.4);
+              \draw [-&gt;,thick] (0,0)--(0.5,0) node [below] {$\vec{x}_{p}$};
+              \draw [-&gt;,thick] (0.5,0)--(3,1) node [above] {$\vv$};
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m> = \bbm 2&amp;4\\  -1&amp;-2\ebm</m>, <m>\vb=\bbm -6\\  3\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\vx = \bbm -3\\0\ebm + x_2\bbm -2\\1\ebm = \vec{x}_{p} + x_2\vv</m>
+          </p>
+
+          <image>
+            <shortdescription>A line in the plane</shortdescription>
+            <latex-image label="img-vect-sol-ex-03">
+              \begin{tikzpicture}[x={(.4cm,0)},y={(0,.4cm)}, &gt;=latex]
+              \drawxlines{-4.5}{4.5}{-4,...,4};
+              \drawylines{-4.5}{2.5}{-4,...,2};
+              \draw [&lt;-&gt;](-4,.5)--(4,-3.5);
+              \draw [-&gt;,thick] (0,0)--(-3,0) node [below] {$\vec{x}_{p}$};
+              \draw [-&gt;,thick] (-3,0)--(-5,1) node [above] {$\vv$};
+                
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 2&amp;-5\\  -4&amp;-10\ebm</m>, <m>\vb=\bbm 0\\  0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\vx = x_2\bbm 2.5\\1\ebm = x_2\vv</m>
+          </p>
+
+          <image>
+            <shortdescription>A line in the plane</shortdescription>
+            <latex-image label="img-vect-sol-ex-04">
+              \begin{tikzpicture}[x={(.4cm,0)},y={(0,.4cm)}, &gt;=latex]
+              \drawxlines{-4.5}{4.5}{-4,...,4};
+              \drawylines{-2.5}{2.5}{-2,...,2};
+              \draw [&lt;-&gt;](-4,-1.6)--(4,1.6);
+              \draw [-&gt;,thick] (0,0)--(2.5,1) node [above] {$\vv$};
+              \end{tikzpicture}
+                
+              \end{tikzpicture}
+            </latex-image>
+          </image>
+        </answer>
+      </exercise>
+    
+    </exercisegroup>
+  </exercises>
+
+</section>

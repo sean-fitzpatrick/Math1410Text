@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="RealNumberArithmetic" label="RealNumberArithmetic">
+  <title>Real Number Arithmetic</title>
+
+  <p>
+    In this section we list the properties of real number arithmetic.  
+    We will focus on those aspects that are most needed for linear algebra 
+    (things like the algebraic axioms, and working with fractions), 
+    and gloss over those that are more calculus related (exponents, roots, <etc/>). 
+    In particular, since this is an <em>algebra</em> textbook, 
+    we will assume that the reader has encountered the real number system before, and omit a definition, 
+    focusing instead on the algebraic properties of real numbers. We begin with the axioms for addition of real numbers.
+  </p>
+
+  <aside>
+    <p>
+      The set of real numbers is denoted usually denoted <m>\R</m>. 
+      A careful definition of <m>\R</m> is actually quite complicated, 
+      and even most calculus classes choose not to include it. If you want to <em>really</em>
+      understand what the real numbers are, you'll need to take a course in Real Analysis.
+    </p>
+  </aside>
+
+  <definition xml:id="realnumberaddition">
+    <title>Properties of Real Number Addition</title>
+    <statement>
+      <p>
+        <dl>
+          <li>
+            <title>Closure</title>
+            <p>
+              For all real numbers <m>a</m> and <m>b</m>,  <m>a+b</m> is also a real number.
+            </p>
+          </li>
+          <li>
+            <title>Commutativity</title>
+            <p>
+              For all real numbers <m>a</m> and <m>b</m>, <m>a+b = b+a</m>.
+            </p>
+          </li>
+          <li>
+            <title>Associativity</title>
+            <p>
+              For all real numbers <m>a</m>, <m>b</m> and <m>c</m>, <m>a+(b+c) = (a+b)+c</m>.
+            </p>
+          </li>
+          <li>
+            <title>Identity</title>
+            <p>
+              There is a real number <q><m>0</m></q> so that for all real numbers <m>a</m>, <m>a+0 = a</m>.
+            </p>
+          </li>
+          <li>
+            <title>Inverse</title>
+            <p>
+              For all real numbers <m>a</m>, there is a real number <m>-a</m> such that <m>a + (-a) = 0</m>.
+            </p>
+          </li>
+          <li>
+            <title>Definition of Subtraction</title>
+            <p>
+              For all real numbers <m>a</m> and <m>b</m>, <m>a - b = a + (-b)</m>.
+            </p>
+          </li>
+        </dl>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Next, we give real number multiplication a similar treatment.  
+    Recall that we may denote the product of two real numbers <m>a</m> and <m>b</m> a variety of ways:  
+    <m>ab</m>, <m>a \cdot b</m>, <m>a(b)</m>, <m>(a)(b)</m> and so on.  
+    We'll refrain from using <m>a \times b</m> for real number multiplication in this text.        
+  </p>
+
+
+  <aside>
+    <p>
+      While it is true that <m>ab=ba</m> for any pair of real numbers <m>a</m> and <m>b</m>, 
+      there are plenty of algebraic systems where this property does not hold. In particular, in 
+      <xref ref="chapter-algebra"/> we'll learn how to multiply <em>matrices</em> <m>A</m> and <m>B</m>, 
+      and see that in most cases, the matrix product <m>AB</m> is <alert>>not</alert> equal to the product <m>BA</m>. 
+      (We'll also see that such products are not even guaranteed to be <em>defined</em>!) 
+      Students are so used to the commutative property for multiplication of real numbers 
+      that it can be difficult to make the adjustment to the non-commutative nature matrix multiplication, 
+      and this is the source of many common errors in a first course in linear algebra.
+    </p>
+  </aside> 
+
+  <definition xml:id="realnumbermultiplication">
+    <title>Properties of Real Number Multiplication</title>
+    <statement>
+      <p>
+        <dl>
+          <li>
+            <title>Closure</title>
+            <p>
+              For all real numbers <m>a</m> and <m>b</m>,  <m>ab</m> is also a real number.
+            </p>
+          </li>
+          <li>
+            <title>Commutativity</title>
+            <p>
+              For all real numbers <m>a</m> and <m>b</m>, <m>ab = ba</m>.
+            </p>
+          </li>
+          <li>
+            <title>Associativity</title>
+            <p>
+              For all real numbers <m>a</m>, <m>b</m> and <m>c</m>, <m>a(bc) = (ab)c</m>.
+            </p>
+          </li>
+          <li>
+            <title>Identity</title>
+            <p>
+              There is a real number <q><m>1</m></q> so that for all real numbers <m>a</m>, <m>a \cdot 1 = a</m>.
+            </p>
+          </li>
+          <li>
+            <title>Inverse</title>
+            <p>
+              For all real numbers <m>a \neq 0</m>, there is a real number <m>\dfrac{1}{a}</m> such that <m>a \left(\dfrac{1}{a}\right) = 1</m>.
+            </p>
+          </li>
+          <li>
+            <title>Definition of Division</title>
+            <p>
+              For all real numbers <m>a</m> and <m>b \neq 0</m>, <m>a \div b = \dfrac{a}{b} = a  \left(\dfrac{1}{b}\right)</m>.
+            </p>
+          </li>
+        </dl>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    While most students (and some faculty) tend to skip over these properties or give them a cursory glance at best, 
+    it is important to realize that the properties stated above are what drive the symbolic manipulation for all of agebra.  
+    When listing a tally of more than two numbers, 
+    <men xml:id="howtoaddonetwothree">
+      1 + 2 + 3
+    </men>
+    for example, we don't need to specify the order in which those numbers are added. 
+    Notice though, try as we might, we can add only two numbers at a time and it is the associative property of addition 
+    which assures us that we could organize this sum as <m>(1+2) + 3</m> or <m>1+(2+3)</m>.  
+    This brings up a note about <q>grouping symbols</q>.  
+    Recall that parentheses and brackets are used in order to specify which operations are to be performed first.  
+    In the absence of such grouping symbols, multiplication (and hence division) is given priority over addition (and hence subtraction). 
+    For example, <m>1 + 2 \cdot 3 = 1+6 = 7</m>, but <m>(1+2) \cdot 3 = 3 \cdot 3 = 9</m>.  
+    As you may recall, we can <q>distribute</q> the <m>3</m> across the addition if we really wanted to do the multiplication first:  
+    <m>(1+2) \cdot 3 = 1\cdot 3 + 2 \cdot 3 = 3 + 6 = 9</m>. More generally, we have the following.
+  </p>
+
+  <definition xml:id="distributiveproperty">
+    <title>The Distributive Property and Factoring</title>
+    <statement>
+      <p>
+        For all real numbers <m>a</m>, <m>b</m> and <m>c</m>:
+        <dl>
+          <li>
+            <title>Distributive Property</title>
+            <p>
+              <m>a(b+c) = ab + ac</m> and <m>(a+b)c = ac + bc</m>.
+            </p>
+          </li>
+          <li>
+            <title>Factoring</title>
+            <p>
+              <m>ab+ac = a(b+c)</m> and <m>ac + bc = (a+b)c</m>.
+            </p>
+          </li>
+        </dl>
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    <alert>Warning:</alert> A common source of errors for beginning students is the misuse (that is, lack of use) of parentheses. 
+    When in doubt, more is better than less: redundant parentheses add clutter, but do not change meaning, 
+    whereas writing <m>2x+1</m> when you meant to write <m>2(x+1)</m> is almost guaranteed to cause you to make a mistake. 
+    (Even if you're able to proceed correctly in spite of your lack of proper notation, 
+    this is the sort of thing that will get you on your grader's bad side, so it's probably best to avoid the problem in the first place.)
+  </p>
+
+  <aside>
+    <p>
+      Taken together, the axioms for addition and multiplication of real numbers, 
+      along with the distributive property, tell us that algebraically, 
+      the set of real numbers is a <url href="https://en.wikipedia.org/wiki/Field_(mathematics)" visual="en.wikipedia.org/wiki/Field_(mathematics)">field</url>.
+    </p>
+  </aside>
+
+  <p>
+    It is worth pointing out that we didn't really need to list the Distributive Property both for <m>a(b+c)</m> 
+    (distributing from the left) and <m>(a+b)c</m> (distributing from the right), 
+    since the commutative property of multiplication gives us one from the other.  
+    Also, <q>factoring</q> really is the same equation as the distributive property, just read from right to left. 
+    These are the first of many redundancies in this section, and they exist in this review section for one reason only
+    <ndash/> in our experience, many students <em>see</em> these things differently so we will list them as such.   
+  </p>
+
+  <p>
+    It is hard to overstate the importance of the Distributive Property.  
+    For example, in the expression <m>5(2+x)</m>, without knowing the value of <m>x</m>, 
+    we cannot perform the addition inside the parentheses first;  we must rely on the distributive property here to get  
+    <m>5(2+x) = 5\cdot 2 + 5 \cdot x = 10 + 5x</m>.  The Distributive Property is also responsible for combining <q>like terms</q>.  
+    Why is <m>3x + 2x = 5x</m>?  Because  <m>3x + 2x = (3+2)x = 5x</m>.  
+  </p>
+
+  <p>
+    We continue our review with summaries of other properties of arithmetic, 
+    each of which can be derived from the properties listed above.  
+    First up are properties of the additive identity <m>0</m>.
+  </p>
+
+  <theorem xml:id="propertiesofzero">
+    <title>Properties of Zero</title>
+    <statement>
+      <p>
+        Suppose <m>a</m> and <m>b</m> are real numbers.
+        <dl>
+          <li>
+            <title>Zero Product Property</title>
+            <p>
+              <m>ab = 0</m> if and only if <m>a=0</m> or <m>b=0</m> (or both)
+            </p>
+            <p>
+              <alert>Note:</alert> This not only says that <m>0 \cdot a = 0</m> for any real number <m>a</m>, 
+              it also says that the <em>only</em> way to get an answer of <q><m>0</m></q> 
+              when multiplying two real numbers is to have one (or both) of the numbers be <q><m>0</m></q> in the first place.
+            </p>
+          </li>
+          <li>
+            <title>Zeros in Fractions</title>
+            <p>
+              If <m>a \neq 0</m>, <m>\dfrac{0}{a} = 0 \cdot \left(\dfrac{1}{a}\right) = 0</m>.
+            </p>
+            <p>
+              <alert>Note:</alert> The quantity <m>\dfrac{a}{0}</m> is undefined.
+            </p>
+          </li>
+        </dl>
+      </p>
+    </statement>
+  </theorem>
+
+  <aside>
+    <p>
+      The Zero Product Property drives most of the equation solving algorithms in algebra 
+      because it allows us to take complicated equations and reduce them to simpler ones.  
+      For example, you may recall that one way to solve  <m>x^2+x-6=0</m> is by factoring the left hand side of this equation to get  
+      <m>(x-2)(x+3) = 0</m>.  From here, we apply the Zero Product Property and set each factor equal to zero.  
+      This yields  <m>x-2=0</m> or <m>x+3=0</m> so <m>x=2</m> or <m>x=-3</m>.  
+      This type of calculation is key to finding the eigenvalues of a matrix, as we'll see in <xref ref="sec-eigen"/>.
+    </p>
+  </aside>
+
+  <p>
+    We now continue with a review of arithmetic with fractions.
+  </p>
+
+
+
+  <insight xml:id="fractionarithmetic">
+    <title>Properties of Fractions</title>
+    <p>
+      Suppose <m>a</m>, <m>b</m>, <m>c</m> and <m>d</m> are real numbers.  
+      Assume them to be nonzero whenever necessary; for example,  when they appear in a denominator.
+      <dl>
+        <li>
+          <title>Identity Properties</title>
+          <p>
+            <m>a = \dfrac{a}{1}</m> and <m>\dfrac{a}{a} = 1</m>.
+          </p>
+        </li>
+        <li>
+          <title>Fraction Equality</title>
+          <p>
+            <m>\dfrac{a}{b} = \dfrac{c}{d}</m> if and only if <m>ad = bc</m>. 
+          </p>
+        </li>
+        <li>
+          <title>Multiplication of Fractions</title>
+          <p>
+            <m>\dfrac{a}{b} \cdot \dfrac{c}{d} = \dfrac{ac}{bd}</m>. 
+            In particular:  <m>\dfrac{a}{b} \cdot c = \dfrac{a}{b} \cdot \dfrac{c}{1} = \dfrac{ac}{b}</m>.
+          </p>
+        </li>
+        <li>
+          <title>Division of Fractions</title>
+          <p>
+            <m>\dfrac{a}{b} \left/ \dfrac{c}{d}\right. = \dfrac{a}{b} \cdot \dfrac{d}{c} = \dfrac{ad}{bc}</m>.
+          </p>
+          <p>
+            In particular: <m>1 \left/ \dfrac{a}{b}\right. = \dfrac{b}{a}</m> and  
+            <m>\left.\dfrac{a}{b} \right/ c  = \dfrac{a}{b} \left/ \dfrac{c}{1}\right.  = \dfrac{a}{b} \cdot \dfrac{1}{c} = \dfrac{a}{bc}</m>.
+          </p>
+          <p>
+            <alert>Note:</alert> A common denominator is <em>not</em> required to multiply or divide fractions!
+          </p>
+        </li>
+        <li>
+          <title>Addition and Subtraction of Fractions</title>
+          <p>
+            <m>\dfrac{a}{b} \pm \dfrac{c}{b} = \dfrac{a \pm c}{b}</m>.  
+          </p>
+          <p>
+            <alert>Note:</alert> A common denominator <em>is</em> required to add or subtract fractions!
+          </p>
+        </li>
+        <li>
+          <title>Equivalent Fractions</title>
+          <p>
+            <m>\dfrac{a}{b} = \dfrac{ad}{bd}</m>, 
+            since <m> \dfrac{a}{b} = \dfrac{a}{b} \cdot 1 = \dfrac{a}{b} \cdot \dfrac{d}{d} = \dfrac{ad}{bd}</m>.
+          </p>
+
+          <p>
+            <alert>Note:</alert> The <em>only</em> way to change the denominator is to multiply both it and the numerator by the same nonzero value because we are, 
+            in essence, multiplying the fraction by <m>1</m>.
+          </p>
+        </li>
+        <li>
+          <title><q>Reducing</q> Fractions</title>
+          <p>
+            <m>\dfrac{a\cancel{d}}{b\cancel{d}} = \dfrac{a}{b}</m>, 
+            since  <m>\dfrac{ad}{bd} = \dfrac{a}{b} \cdot \dfrac{d}{d} = \dfrac{a}{b} \cdot 1 = \dfrac{a}{b}</m>.
+          </p>
+          <p>
+            In particular, <m>\dfrac{ab}{b} = a</m> since <m>\dfrac{ab}{b} = \dfrac{ab}{1 \cdot b} =  \dfrac{a \cancel{b}}{1 \cdot \cancel{b}} = \dfrac{a}{1} = a</m> 
+            and <m>\dfrac{b-a}{a-b} = \dfrac{(-1)\cancel{(a-b)}}{\cancel{(a-b)}} = -1</m>.
+          </p>
+        </li>
+      </dl>
+    </p>
+  </insight>
+
+
+
+  <aside>
+    <p>
+      It's always worth remembering that <em>division is the same as multiplication by the reciprocal</em>. 
+      You'd be surprised how often this comes in handy.
+    </p>
+
+    <p>
+      We reduce fractions by <q>cancelling</q> common factors <ndash/> this is really just reading the previous property 
+      <q>from right to left</q>.
+    </p>
+
+    <p>
+      <alert>Caution:</alert>  We may only cancel common <em>factors</em> from both numerator and denominator: 
+      we can cancel the twos in <m>\dfrac{3(2)}{5(2)}</m>, but <em>not</em> in <m>\dfrac{3+2}{5+2}</m>.
+    </p>
+  </aside>
+
+  <p>
+    Next up is a review of the arithmetic of <q>negatives</q>. 
+    In <xref ref="realnumberaddition"/> we first introduced the dash which we all recognize as the <q>negative</q> 
+    symbol in terms of the additive inverse.  For example, the number <m>-3</m> (read <q>negative <m>3</m></q>) 
+    is defined so that <m>3 + (-3) = 0</m>.  We then defined subtraction using the concept of the additive inverse again so that, 
+    for example, <m>5 - 3 = 5 + (-3)</m>.  
+  </p>
+
+  <insight xml:id="propertiesofnegatives">
+    <title>Properties of Negatives</title>
+    <p>
+      Given real numbers <m>a</m> and <m>b</m> we have the following.
+      <dl>
+        <li>
+          <title>Additive Inverse Properties</title>
+          <p>
+            <m>-a = (-1)a</m> and <m>-(-a) = a</m>.
+          </p>
+        </li>
+        <li>
+          <title>Products of Negatives</title>
+          <p>
+            <m>(-a)(-b) = ab</m>.
+          </p>
+        </li>
+        <li>
+          <title>Negatives and Products</title>
+          <p>
+            <m>-ab = -(ab) = (-a)b = a(-b)</m>.
+          </p>
+        </li>
+        <li>
+          <title>Negatives and Fractions</title>
+          <p>
+            If <m>b</m> is nonzero, <m>-\dfrac{a}{b} = \dfrac{-a}{b} = \dfrac{a}{-b}</m> and <m>\dfrac{-a}{-b} = \dfrac{a}{b}</m>.
+          </p>
+        </li>
+        <li>
+          <title><q>Distributing</q> Negatives</title>
+          <p>
+            <m>-(a+b) = -a-b</m> and <m>-(a-b) = -a + b = b-a</m>.
+          </p>
+        </li>
+        <li>
+          <title><q>Factoring</q> Negatives</title>
+          <p>
+            <m>-a-b = -(a+b)</m> and <m>b-a = -(a-b)</m>.
+          </p>
+        </li>
+      </dl>
+    </p>
+  </insight>
+
+  <aside>
+    <p>
+      In this text we do not distinguish typographically between the dashes in the expressions 
+      <q><m>5-3</m></q> and <q><m>-3</m></q> even though they are mathematically quite different. 
+      In the expression <q><m>5-3</m>,</q> the dash is a <em>binary</em> operation
+      (that is, an operation requiring <em>two</em> numbers) whereas in <q><m>-3</m></q>, 
+      the dash is a <em>unary</em> operation (that is, an operation requiring only one number).  
+      You might ask, <q>Who cares?</q>  Your calculator does - that's who!  
+      In the text we can write <m>-3 - 3 = -6</m> but that will not work in your calculator.  
+      Instead you'd need to type <m>^{-}3 - 3</m> to get <m>-6</m> where the first dash comes from the <q><m>+/-</m></q> key.
+    </p>
+  </aside>  
+
+  <p>
+    An important point here is that when we <q>distribute</q> negatives, we do so across addition or subtraction only.  
+    This is because we are really distributing a factor of <m>-1</m> across each of these terms:  
+    <m>-(a+b) = (-1)(a+b) = (-1)(a) + (-1)(b) = (-a)+(-b) = -a-b</m>. 
+    Negatives do not <q>distribute</q> across multiplication:  <m>- (2 \cdot 3) \neq (-2)\cdot(-3)</m>. 
+    Instead, <m>-(2\cdot 3) = (-2)\cdot (3) = (2) \cdot (-3) = -6</m>.  
+    The same sort of thing goes for fractions:  <m>- \frac{3}{5}</m> can be written as <m>\frac{-3}{5}</m> or <m>\frac{3}{-5}</m>, 
+    but not <m>\frac{-3}{-5}</m>.  It's about time we did a few examples to see how these properties work in practice.
+  </p>
+
+  <example xml:id="fractionreview">
+    <title>Arithmetic with fractions</title>
+    <introduction> 
+      <p>
+        Perform the indicated operations and simplify. 
+        By <q>simplify</q> here, we mean to have the final answer written in the form <m>\frac{a}{b}</m> 
+        where <m>a</m> and <m>b</m> are integers which have no common factors.  
+        Said another way, we want <m>\frac{a}{b}</m> in <q>lowest terms</q>.
+      </p>
+    </introduction>
+    <task>
+      <statement>
+        <p>
+          <m>\dfrac{1}{4} + \dfrac{6}{7}</m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          It may seem silly to start with an example this basic but experience has taught us not to take much for granted.  
+          We start by finding the lowest common denominator and then we rewrite the fractions using that new denominator.  
+          Since <m>4</m> and <m>7</m> are <term>relatively prime</term>,<idx><h>relatively prime</h></idx> 
+          meaning they have no factors in common, the lowest common denominator is <m>4 \cdot 7 = 28</m>.
+          <md>
+            <mrow> \dfrac{1}{4} + \dfrac{6}{7}\amp \dfrac{1}{4} \cdot \dfrac{7}{7} + \dfrac{6}{7} \cdot \dfrac{4}{4} \quad \text{(Equivalent Fractions)}</mrow>
+            <mrow> \amp \dfrac{7}{28}  + \dfrac{24}{28} \quad \text{(Multiplication of Fractions)}</mrow>
+            <mrow> \amp \dfrac{31}{28} \quad \text{(Addition of Fractions)}</mrow>
+          </md>.
+          The result is in lowest terms because <m>31</m> and <m>28</m> are relatively prime so we're done.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>\dfrac{5}{12} - \left(\dfrac{47}{30} - \dfrac{7}{3}\right)</m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We could begin with the subtraction in parentheses, namely <m>\frac{47}{30} - \frac{7}{3}</m>, 
+          and then subtract that result from <m>\frac{5}{12}</m>.  
+          It's easier, however, to first distribute the negative across the quantity in parentheses and then use the 
+          Associative Property to perform all of the addition and subtraction in one step.  
+          The lowest common denominator for all three fractions is <m>60</m>.
+        </p>
+
+        <p>
+          <md>
+            <mrow> \dfrac{5}{12} - \left(\dfrac{47}{30} - \dfrac{7}{3}\right)\amp  =\dfrac{5}{12} - \dfrac{47}{30} + \dfrac{7}{3} \quad \text{(Distribute the Negative)}</mrow>
+            <mrow> \amp =\dfrac{5}{12} \cdot \dfrac{5}{5} - \dfrac{47}{30} \cdot \dfrac{2}{2} + \dfrac{7}{3} \cdot \dfrac{20}{20} \quad \text{(Equivalent Fractions)}</mrow>
+            <mrow> \amp =\dfrac{25}{60} - \dfrac{94}{60} + \dfrac{140}{60} \quad \text{(Multiplication of Fractions)}</mrow>
+            <mrow> \amp =\dfrac{71}{60} \quad \text{(Addition and Subtraction of Fractions)}</mrow>
+          </md>
+        </p>
+
+        <p>
+          The numerator and denominator are relatively prime so the fraction is in lowest terms and we have our final answer.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          <m>\dfrac{\dfrac{12}{5} - \dfrac{7}{24}}{1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)}</m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          What we are asked to simplify in this problem is known as a  <q>complex</q> or <q>compound</q> fraction.  
+          Simply put, we have fractions within a fraction.  
+          The longest division line (also called a <q>vinculum</q>) performs the same sort of grouping function as parentheses:
+          <me>
+            \dfrac{\dfrac{12}{5} - \dfrac{7}{24}}{1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)} =  \dfrac{\left(\dfrac{12}{5} - \dfrac{7}{24}\right)}{\left(1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)\right)}
+          </me>.
+        </p>
+    
+        <p>
+          The first step to simplifying a compound fraction like this one is to see if you can simplify the little fractions inside it. 
+          There are two ways to proceed. One is to simplify the numerator and denominator separately, 
+          and then use the fact that division is the same thing as multiplication by the reciprocal, as follows:
+          <md>
+            <mrow> \dfrac{\left(\dfrac{12}{5} - \dfrac{7}{24}\right)}{\left(1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)\right)}\amp= \dfrac{\left(\dfrac{12}{5}\cdot \dfrac{24}{24} - \dfrac{7}{24}\cdot \dfrac{5}{5}\right)}{\left(1\cdot \dfrac{120}{120} + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)\right)} \quad \text{(Equivalent Fractions)}</mrow>
+            <mrow> \amp =\dfrac{288/120 - 35/120}{120/120 + 84/120} \quad \text{(Multiplication of fractions)} </mrow>
+            <mrow> \amp =\dfrac{253/120}{204/120} \quad \text{(Addition and subtraction of fractions)}</mrow>
+            <mrow> \amp =\dfrac{253}{\cancel{120}}\cdot \dfrac{\cancel{120}}{204} \quad \text{(Division of fractions and cancellation)}</mrow>
+            <mrow> \amp =\dfrac{253}{204}</mrow>
+          </md>.
+        </p>
+    
+        <p>
+          Since <m>253 = 11 \cdot 23</m> and <m>204 = 2 \cdot 2 \cdot 3 \cdot 17</m> 
+          have no common factors our result is in lowest terms which means we are done.
+        </p>
+    
+        <p>
+          While there is nothing wrong with the above approach, 
+          we can also use our Equivalent Fractions property to rid ourselves of the <q>compound</q> nature of this fraction straight away.  
+          The idea is to multiply both the numerator and denominator by the lowest common denominator of each of the <q>smaller</q> fractions
+          <ndash/> in this case, <m>24 \cdot 5 = 120</m>.
+          <md>
+            <mrow> \dfrac{\left(\dfrac{12}{5} - \dfrac{7}{24}\right)}{\left(1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)\right)}\amp =\dfrac{\left(\dfrac{12}{5} - \dfrac{7}{24}\right) \cdot 120}{\left(1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)\right) \cdot 120} \quad \text{(Equivalent Fractions)}</mrow>
+            <mrow> \amp =\dfrac{\left(\dfrac{12}{5}\right) (120) - \left(\dfrac{7}{24}\right) (120)}{(1)(120) + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)(120)} \quad \text{(Distributive Property)}</mrow>
+            <mrow> \amp =\dfrac{\dfrac{12 \cdot 120}{5} - \dfrac{7 \cdot 120}{24}}{120 + \dfrac{12 \cdot 7 \cdot 120}{5 \cdot 24}} \quad \text{(Multiply fractions)}</mrow>
+            <mrow> \amp =\dfrac{\dfrac{12 \cdot 24 \cdot \cancel{5}}{\cancel{5}} - \dfrac{7 \cdot 5 \cdot \cancel{24}}{\cancel{24}}}{120 + \dfrac{12 \cdot 7 \cdot \cancel{5} \cdot \cancel{24}}{\cancel{5} \cdot \cancel{24}}} \quad \text{(Factor and cancel)}</mrow>
+            <mrow> \amp =\dfrac{(12 \cdot 24) - (7 \cdot 5)}{120 + (12 \cdot 7)}</mrow>
+            <mrow> \amp =\dfrac{288 - 35}{120 + 84} =  \dfrac{253}{204}</mrow>
+          </md>,
+          which is the same as we obtained above.
+        </p>
+      </solution>
+    </task>  
+  
+    <task>
+      <statement>
+        <p>
+          <m>\dfrac{(2(2)+1)(-3-(-3)) - 5(4-7)}{4-2(3)}</m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This fraction may look simpler than the one before it, but the negative signs and parentheses mean that we shouldn't get complacent.  
+          Again we note that the division line here acts as a grouping symbol.  That is,
+          <me>
+            \dfrac{(2(2)+1)(-3-(-3)) - 5(4-7)}{4-2(3)} = \dfrac{\left((2(2)+1)(-3-(-3)) - 5(4-7) \right)}{(4-2(3))}
+          </me>.
+        </p>
+
+        <p>
+          This means that we should simplify the numerator and denominator first, then perform the division last.  
+          We tend to what's in parentheses first, giving multiplication priority over addition and subtraction.
+          <md>
+            <mrow> \dfrac{(2(2)+1)(-3-(-3)) - 5(4-7)}{4-2(3)}\amp =\dfrac{(4+1)(-3+3)-5(-3)}{4 - 6} </mrow>
+            <mrow> \amp =  \dfrac{(5)(0) + 15}{-2}  =  \dfrac{15}{-2}</mrow>
+            <mrow> \amp =  -\dfrac{15}{2} \quad \text{(Properties of Negatives)}</mrow>
+          </md>.
+          Since <m>15 = 3\cdot 5</m> and <m>2</m> have no common factors, we are done.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          <m>\left(\dfrac{3}{5} \right) \left(\dfrac{5}{13} \right) - \left(\dfrac{4}{5}\right) \left( - \dfrac{12}{13}\right)</m>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In this problem, we have multiplication and subtraction.  
+          Multiplication takes precedence so we perform it first.  
+          Recall that to multiply fractions, we do <em>not</em> need to obtain common denominators;  
+          rather, we multiply the corresponding numerators together along with the corresponding denominators.  
+          However, when we perform the subtraction, we <em>do</em> need a common denominator, 
+          so we will resist the temptation to cancel the fives in the first term straight away.
+          <md>
+            <mrow> \left(\dfrac{3}{5} \right) \left(\dfrac{5}{13} \right) - \left(\dfrac{4}{5}\right) \left( - \dfrac{12}{13}\right)\amp =  \dfrac{3 \cdot 5}{5 \cdot 13} - \dfrac{4\cdot (-12)}{5 \cdot 13} \quad \text{(Multiply fractions)}</mrow>
+            <mrow> \amp =  \dfrac{15}{65} - \dfrac{-48}{65}</mrow>
+            <mrow> \amp =  \dfrac{15}{65} + \dfrac{48}{65} \quad \text{(Properties of Negatives)}</mrow>
+            <mrow> \amp = \dfrac{15+48}{65} \quad \text{(Add numerators)}</mrow>
+            <mrow> \amp =\dfrac{63}{65}</mrow>
+          </md>.
+        </p>
+
+        <p>
+          Since <m>64 = 3 \cdot 3 \cdot 7</m> and <m>65 = 5 \cdot 13</m> have no common factors, 
+          our answer <m>\dfrac{63}{65}</m> is in lowest terms and we are done. 
+        </p>
+      </solution>
+    </task>
+  </example>
+
+  <p>
+    Of the issues discussed in the previous set of examples none causes students more trouble than simplifying compound fractions.  
+    We presented two different methods for simplifying them:  
+    one in which we simplified the overall numerator and denominator and then performed the division 
+    and one in which we removed the compound nature of the fraction at the very beginning.   
+    We encourage the reader to go back and use both methods on each of the compound fractions presented.  
+    Keep in mind that when a compound fraction is encountered in the rest of the text it will usually be simplified 
+    using only one method and we may not choose your favourite method.  Feel free to use the other one in your notes.    
+  </p>
+
+  <exercises xml:id="exercises-arithmetic">
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          Perform the indicated operations and simplify.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{3 - \frac{4}{9}}{-2 - (-3)}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\dfrac{23}{9}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{2}{3} - \dfrac{4}{7}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+             <m>\dfrac{2}{21}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\left(-\frac{32}{9}\right)^{-3/5}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-\dfrac{3\sqrt[5]{3}}{8} = -\dfrac{3^{6/5}}{8}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{1 - 2(-3)}{5(-3) + 7}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+             <m>-\dfrac{7}{8}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{1 + 2^{-3}}{3 - 4^{-1}}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\dfrac{9}{22}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{3}{8} + \dfrac{5}{12}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+             <m>\dfrac{19}{24}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{-12 + \sqrt{18}}{21}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+             <m>\dfrac{-4 + \sqrt{2}}{7}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>3^{-1} - 4^{-2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\dfrac{13}{48}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\sqrt{(2 - (-1))^2 + \left(\frac{1}{2} - 3\right)^2}</m> 
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\dfrac{\sqrt{61}}{2}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{-(-4) + \sqrt{(-4)^2 - 4(1)(-1)}}{2(1)}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+             <m>2 + \sqrt{5}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{2\left(\frac{4}{3}\right)}{1 - \left(\frac{4}{3}\right)^2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-\dfrac{24}{7}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>3\sqrt{2(4)+1} + 3(4)\left(\frac{1}{2}\right)(2(4)+1)^{-1/2}(2)</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>13</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>5 - 2 + 3</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>6</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>2(-7)\sqrt[3]{1-(-7)} + (-7)^2 \left(\frac{1}{3}\right)(1-(-7))^{-2/3}(-1)</m> 
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-\dfrac{385}{12}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{4 - 5.8}{2 - 2.1}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>18</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{5(3) - 7}{2(3)^2-3(3)-9}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            undefined
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{(-2)^2 - (-2) - 6}{(-2)^2 - 4}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            undefined
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\sqrt{12} - \sqrt{75}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-3\sqrt{3}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>2(-5)(-5+1)^{-1} + (-5)^2(-1)(-5+1)^{-2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+             <m>\dfrac{15}{16}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>(-8)^{2/3} - 9^{-3/2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\dfrac{107}{27}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{2(3)-(4-1)}{2^2 + 1}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\dfrac{3}{5}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\sqrt{(\sqrt{5} - 2\sqrt{5})^2 + (\sqrt{18} - \sqrt{8})^2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\sqrt{7}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{2(-3)}{3 - (-3)}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-1</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\left(\dfrac{2}{3}\right)^{-5}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\dfrac{243}{32}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\sqrt{3^2 + 4^2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>5</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{2((-1)^2-1)}{((-1)^2+1)^2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>0</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\sqrt{(3-4)^2 + (5-2)^2}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+             <m>\sqrt{10}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{\frac{2}{3} - \frac{4}{5}}{4 - \frac{7}{10}}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+             <m>-\dfrac{4}{99}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{-2 - \sqrt{(2)^2 - 4(3)(-1)}}{2(3)}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-1</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{1 - \left(\frac{5}{3}\right)\left(\frac{3}{5}\right)}{1 + \left(\frac{5}{3}\right)\left(\frac{3}{5}\right)}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>0</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{5-3}{-2-4}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-\dfrac{1}{3}</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>5 - (2+3)</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>0</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\dfrac{3\cdot 5^{100}}{12 \cdot 5^{98}}</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\dfrac{25}{4}</m>
+          </p>
+        </answer>
+      </exercise>
+    
+    </exercisegroup>
+  </exercises>
+</section>
+
+
+
+

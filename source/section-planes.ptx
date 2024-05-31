@@ -1,0 +1,2461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec_planes" label="sec_planes">
+  <title>Planes</title>
+  <introduction>
+    <p>
+      Any flat surface, such as a wall,
+      table top or stiff piece of cardboard can be thought of as representing part of a plane.
+      Consider a piece of cardboard with a point <m>P</m> marked on it.
+      One can take a nail and stick it into the cardboard at <m>P</m> such that the nail is perpendicular to the cardboard;
+      see <xref ref="fig_planes_intro"/>.
+    </p>
+
+    <figure xml:id="fig_planes_intro">
+      <caption>Illustrating defining a plane with a sheet of cardboard and a nail</caption>
+
+      <!-- START figures/figplanes_intro_3D.asy -->
+      <image width="47%">
+        <shortdescription>A nail sticks into a flat, rectangular sheet of cardboard.</shortdescription>
+        <description>
+          <p>
+            A flat, rectangular surface represents a sheet of cardboard.
+            The image of a nail is drawn sticking into the sheet, at a point <m>P</m>, which is marked.
+            The nail is standing upright, in a position perpendicular to the sheet of cardboard.
+          </p>
+        </description>
+        <asymptote label="img_planes_intro">
+
+
+
+          //ASY file for figlines3.asy in Chapter 10
+
+          size(200,200,IgnoreAspect);
+          //currentprojection=perspective(7,2,1);
+          currentprojection=orthographic((-4,27,7),(.012,-0.002,0.015),(0,0,0),.9);
+          defaultrender.merge=true;
+
+          // setup and draw the axes
+          real[] myxchoice={};
+          real[] myychoice={};
+          real[] myzchoice={};
+
+          pair xbounds=(-2,2);
+          pair ybounds=(-2,2);
+          pair zbounds=(-2,2);
+
+          xaxis3("",xbounds.x,xbounds.y,invisible,OutTicks(myxchoice),Arrow3(size=3mm));
+          yaxis3("",ybounds.x,ybounds.y,invisible,OutTicks(myychoice),Arrow3(size=3mm));
+          zaxis3("",zbounds.x,zbounds.y,invisible,OutTicks(myzchoice),Arrow3(size=3mm));
+
+          defaultpen(0.5mm);
+
+          real f(pair z) {return 0;}
+          surface s=surface(f,(-2,-2),(2,2),1,1);
+          pen p=bluepen+.3mm;
+          draw(s,surfacepen,meshpen=p,render(merge=true));
+
+          draw(scale(.1,.1,.2)*rotate(180,Y)*shift(-1Z)*unitcone,surfacepen=white);
+          draw(scale(.1,.1,.5)*shift(.4Z)*unitcylinder,surfacepen=white);
+          draw(scale(.15,.15,.05)*shift(14Z)*unitcylinder,surfacepen=white);
+
+          //real f(pair z) {return 0;}
+          //surface s=surface(f,(-2,-2),(2,2));
+          //draw(s,white,meshpen=p,render(merge=true));
+          draw(scale3(.15)*shift(4.7Z)*unitdisk,surfacepen=white);
+          draw(scale3(.15)*shift(5Z)*unitdisk,surfacepen=white);
+
+          draw(scale3(.05)*unitdisk);
+          label("$P$",(0,0,0),NW);
+
+          //draw((0,0,.9)--(0,0,0),gray+1mm,Arrow3(size=2mm));
+          //draw((0,0,.9)--(0,0,1),gray+1.2mm);
+
+        </asymptote>
+      </image>
+      <!-- figures/figplanes_intro_3D.asy END -->
+    </figure>
+
+    <p>
+      This nail provides a <q>handle</q> for the cardboard.
+      Moving the cardboard around moves <m>P</m> to different locations in space.
+      Tilting the nail
+      (but keeping <m>P</m> fixed)
+      tilts the cardboard.
+      Both moving and tilting the cardboard defines a different plane in space.
+      In fact, we can define a plane by: 1) the location of <m>P</m> in space,
+      and 2) the direction of the nail.
+    </p>
+
+    <figure xml:id="vid-vectors-planes-intro" component="video">
+      <caption>Video inroduction to <xref ref="sec_planes"/></caption>
+      <video youtube="aP-fcbArvtA" label="vid-vectors-planes-intro"/>
+    </figure>
+
+    <p>
+      The previous section showed that one can define a line given a point on the line and the direction of the line
+      (usually given by a vector).
+      One can make a similar statement about planes:
+      we can define a plane in space given a point on the plane and the direction the plane <q>faces</q>
+      (using the description above,
+      the direction of the nail).
+      Once again, the direction information will be supplied by a vector,
+      called a <em>normal vector</em>,
+      that is orthogonal to the plane.
+          <idx><h>vectors</h><h>normal vector</h></idx>
+          <idx><h>normal vector</h></idx>
+          <idx><h>planes</h><h>normal vector</h></idx>
+    </p>
+
+    <p>
+      What exactly does <q>orthogonal to the plane</q> mean?
+      Choose any two points <m>P</m> and <m>Q</m> in the plane,
+      and consider the vector <m>\overrightarrow{PQ}</m>.
+      We say a vector <m>\vec n</m> is orthogonal to the plane if <m>\vec n</m> is perpendicular to <m>\overrightarrow{PQ}</m> for all choices of <m>P</m> and <m>Q</m>;
+      that is, if <m>\vec n\cdot \overrightarrow{PQ}=0</m> for all <m>P</m> and <m>Q</m>.
+    </p>
+
+    <p>
+      This gives us way of writing an equation describing the plane.
+      Let <m>P=(x_0,y_0,z_0)</m> be a point in the plane and let
+      <m>\vec n = \bbm  a\\b\\c\ebm</m> be a normal vector to the plane.
+      A point <m>Q = (x,y,z)</m> lies in the plane defined by <m>P</m> and <m>\vec n</m> if,
+      and only if, <m>\overrightarrow{PQ}</m> is orthogonal to <m>\vec n</m>.
+      Knowing <m>\overrightarrow{PQ} = \bbm  x-x_0\\y-y_0\\z-z_0\ebm</m>, consider:
+      <mdn>
+        <mrow number="no">\overrightarrow{PQ}\cdot\vec n \amp = 0</mrow>
+        <mrow number="no">\bbm  x-x_0\\y-y_0\\z-z_0\ebm\cdot \bbm  a\\b\\c\ebm \amp =0</mrow>
+        <mrow xml:id="eq-plane-standard-form">a(x-x_0)+b(y-y_0)+c(z-z_0) \amp =0</mrow>
+      </mdn>.
+      <xref ref="eq-plane-standard-form">Equation</xref> defines an <em>implicit</em> function describing the plane. More algebra produces:
+      <me>
+        ax+by+cz = ax_0+by_0+cz_0
+      </me>.
+      The right hand side is just a number, so we replace it with <m>d</m>:
+      <men xml:id="eq-plane-general-form">
+        ax+by+cz = d
+      </men>.
+      As long as <m>c\neq 0</m>, we can solve for <m>z</m>:
+      <men xml:id="eq-plane-graph-form">
+        z = \frac1c(d-ax-by)
+      </men>.
+    </p>
+
+    <p>
+      <xref ref="eq-plane-graph-form">Equation</xref> is especially useful as many computer programs can graph functions in this form.
+      Equations <xref ref="eq-plane-standard-form"/> and <xref ref="eq-plane-general-form"/> have specific names,
+      given next.
+    </p>
+
+    <definition xml:id="def_planes">
+      <title>Equations of a Plane in Standard and General Forms</title>
+      <statement>
+        <p>
+          The plane passing through the point <m>P=(x_0,y_0,z_0)</m> with normal vector
+          <m>\vec n=\bbm  a\\b\\c\ebm</m> can be described by an equation with
+          <term>standard form</term>
+          <me>
+            a(x-x_0)+b(y-y_0)+c(z-z_0) =0;
+          </me>
+          the equation's <term>general form</term>
+          is <idx><h>planes</h><h>equations of</h></idx>
+          <me>
+            ax+by+cz = d
+          </me>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      A key to remember throughout this section is this:
+      to find the equation of a plane,
+      we need a point and a normal vector.
+      We will give several examples of finding the equation of a plane,
+      and in each one different types of information are given.
+      In each case,
+      we need to use the given information to find a point on the plane and a normal vector.
+    </p>
+
+    <example xml:id="ex_planes1">
+      <title>Finding the equation of a plane</title>
+      <statement>
+        <p>
+          Write the equation of the plane that passes through the points <m>P=(1,1,0)</m>,
+          <m>Q = (1,2,-1)</m> and <m>R = (0,1,2)</m> in standard form.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          We need a vector <m>\vec n</m> that is orthogonal to the plane.
+          Since <m>P</m>, <m>Q</m> and <m>R</m> are in the plane,
+          so are the vectors <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{PR}</m>;
+          <m>\overrightarrow{PQ}\times\overrightarrow{PR}</m> is orthogonal to <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{PR}</m> and hence the plane itself.
+        </p>
+
+        <p>
+          It is straightforward to compute <m>\vec n = \overrightarrow{PQ}\times\overrightarrow{PR} = \bbm  2\\1\\1\ebm</m>.
+          We can use any point we wish in the plane
+          (any of <m>P</m>, <m>Q</m> or <m>R</m> will do)
+          and we arbitrarily choose <m>P</m>.
+          Following <xref ref="def_planes"/>,
+          the equation of the plane in standard form is
+          <me>
+            2(x-1) + (y-1)+z = 0
+          </me>.
+        </p>
+
+        <p>
+          The plane is sketched in <xref ref="fig_planes1"/>.
+        </p>
+
+        <figure xml:id="fig_planes1">
+          <caption>Sketching the plane in <xref ref="ex_planes1"/></caption>
+
+          <!-- START figures/figplanes1_3D.asy -->
+          <image width="47%">
+            <shortdescription>Three points P, Q, and R are plotted in space, along with the plane containing them.</shortdescription>
+            <description>
+              <p>
+                In a three-dimensional coordinate system, three points <m>P</m>, <m>Q</m>, and <m>R</m> are plotted.
+                Three vectors are drawn with their tails at <m>P</m>:
+                <m>\overrightarrow{PQ}</m>, <m>\overrightarrow{PR}</m>, and the cross product <m>\overrightarrow{PQ}\times\overrightarrow{PR}</m>.
+                The plane containing <m>P</m>, <m>Q</m>, and <m>R</m> is also shown.
+                The vectors <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{PR}</m> are parallel to the plane,
+                while their cross product is perpendicular to the plane.
+              </p>
+            </description>
+            <asymptote label="img_planes1">
+
+
+
+              //ASY file for figlines_dist2.asy in Chapter 10
+              //ASY file for figplanes1.asy in Chapter 10
+
+              //size(200,200,IgnoreAspect);
+              size(282,282,Aspect);
+              //currentprojection=perspective(7,2,1);
+              currentprojection=orthographic((1.92,19.3,4),(0,-0.015,0.06),(0,0,0),1);
+              defaultrender.merge=true;
+
+
+              // setup and draw the axes
+              real[] myxchoice={-4,4};
+              real[] myychoice={-4,4};
+              real[] myzchoice={-4,4};
+              defaultpen(0.5mm);
+              pair xbounds=(-3.5,3.5);
+              pair ybounds=(-4.5,4.5);
+              pair zbounds=(-4.5,6.5);
+
+              xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+              yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+              zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+              label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+              label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0),S);
+              label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+              //Draw the plane
+              triple f(pair t) {
+                return (t.x,t.y,-2*t.x-t.y+3);
+              }
+              surface s=surface(f,(-1,-2),(2,3),8,8,Spline);
+              pen p=apexmeshpen+.2mm;
+              draw(s,surfacepen,meshpen=p,nolight,render(merge=true));
+
+              //Draw points P=(1,1,0), Q=(1,2,-1), R=(0,1,2)
+              dotfactor=3;
+              dot((1,1,0));label("$P$",(1,1,0),N);
+              dot((1,2,-1));label("$Q$",(1,2,-1),W);
+              dot((0,1,2));label("$R$",(0,1,2),W);
+              //Draw Vectors
+              draw((1,1,0)--(1,2,-1),bluepen,Arrow3(size=2mm));//PQ
+              draw((1,1,0)--(0,1,2),bluepen,Arrow3(size=2mm));//PR
+              draw((1,1,0)--(3,2,1),bluepen,Arrow3(size=2mm));//P to PQxPR
+              label("$\overrightarrow{PQ}\times \overrightarrow{PR}$",(3,2,1),N);
+
+              //test i,j,k moved to P
+              //draw((1,1,0)--(2,1,0),bluepen,Arrow3(size=2mm));//P by i
+              //draw((1,1,0)--(1,2,0),bluepen,Arrow3(size=2mm));//P by j
+              //draw((1,1,0)--(1,1,1),bluepen,Arrow3(size=2mm));//P by k
+
+              // Use lines L1 1+3t,2-t,t  and L2 -2+4t,3+t,5+2t
+              //draw P1 (t=0) and vector d1 at P1 (t=1)
+              //dotfactor=3;dot((1,2,0));label("$P_1$",(1,2,0),N);
+              //draw((1,2,0)--(4,1,1),redpen,Arrow3(size=2mm));
+              //label("$\vec{d}_1$",(4,1,1),N);
+              //draw P2 (t=-1.5) and vector d2 at P2 (t=-0.5)
+              //dotfactor=3;dot((-8,1.5,2));label("$P_2$",(-8,1.5,2),N);
+              //draw((-8,1.5,2)--(-4,2.5,4),redpen,Arrow3(size=2mm));
+              //label("$\vec{d}_2$",(-4,2.5,4),N);
+
+              //draw vector P1 to P2
+              //draw((1,2,0)--(-8,1.5,2),black,Arrow3(size=2mm));
+              //label("$\overrightarrow{P_1 P_2}$",(-3.5,1.75,1),W);
+
+              //draw the lines 1+3t,2-t,t  and -2+4t,3+t,5+2t
+              //draw((-5,4,-2)--(7,0,2),bluepen);//L1
+              //draw((-14,0,-1)--(2,4,7),bluepen);//L2
+
+            </asymptote>
+          </image>
+          <!-- figures/figplanes1_3D.asy END -->
+        </figure>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="oc77R0am1vk" xml:id="vid-vectors-planes-3points" label="vid-vectors-planes-3points" component="video"/>
+      </solution>
+    </example>
+
+    <p>
+      We have just demonstrated the fact that any three non-collinear points define a plane.
+      (This is why a three-legged stool does not <q>rock;</q>
+      it's three feet always lie in a plane.
+      A four-legged stool will rock unless all four feet lie in the same plane.)
+    </p>
+
+    <example xml:id="ex_planes2">
+      <title>Finding the equation of a plane</title>
+      <statement>
+        <p>
+          Verify that lines <m>\ell_1</m> and <m>\ell_2</m>,
+          whose parametric equations are given below, intersect,
+          then give the equation of the plane that contains these two lines in general form.
+          <me>
+            \ell_1: \begin{matrix} x\amp =\amp -5+2s \\ y\amp =\amp 1+s \\ z\amp =\amp -4+2s \end{matrix}  \qquad\qquad \ell_2: \begin{matrix} x \amp =\amp  2+3t\\ y\amp =\amp 1-2t \\ z\amp =\amp 1+t \end{matrix}
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The lines clearly are not parallel.
+          If they do not intersect, they are skew,
+          meaning there is not a plane that contains them both.
+          If they do intersect, there is such a plane.
+        </p>
+
+        <p>
+          To find their point of intersection, we set the <m>x</m>,
+          <m>y</m> and <m>z</m> equations equal to each other and solve for <m>s</m> and <m>t</m>:
+          <me>
+            \begin{matrix} -5+2s \amp =\amp 2+3t \\ 1+s \amp =\amp  1-2t \\ -4+2s \amp =\amp  1+t \end{matrix}   \Rightarrow   s=2, t=-1
+          </me>.
+        </p>
+
+        <p>
+          When <m>s=2</m> and <m>t=-1</m>,
+          the lines intersect at the point <m>P= (-1,3,0)</m>.
+        </p>
+
+        <p>
+          Let <m>\vec d_1 = \bbm  2\\1\\2\ebm</m> and
+          <m>\vec d_2=\bbm  3\\-2\\1\ebm</m> be the directions of lines <m>\ell_1</m> and <m>\ell_2</m>,
+          respectively.
+          A normal vector to the plane containing these the two lines will also be orthogonal to <m>\vec d_1</m> and <m>\vec d_2</m>.
+          Thus we find a normal vector <m>\vec n</m> by computing <m>\vec n = \vec d_1 \times \vec d_2= \bbm  5\\4-7\ebm</m>.
+        </p>
+
+        <p>
+          We can pick any point in the plane with which to write our equation;
+          each line gives us infinite choices of points.
+          We choose <m>P</m>, the point of intersection.
+          We follow <xref ref="def_planes"/>
+          to write the plane's equation in general form:
+          <md>
+            <mrow>5(x+1) +4(y-3) -7z \amp = 0</mrow>
+            <mrow>5x + 5 + 4y-12 -7z \amp = 0</mrow>
+            <mrow>5x+4y-7z \amp = 7</mrow>
+          </md>.
+        </p>
+
+        <p>
+          The plane's equation in general form is <m>5x+4y-7z=7</m>;
+          it is sketched in <xref ref="fig_planes2"/>.
+        </p>
+
+        <figure xml:id="fig_planes2">
+          <caption>Sketching the plane in <xref ref="ex_planes2"/></caption>
+
+          <!-- START figures/figplanes2_3D.asy -->
+          <image width="47%">
+            <shortdescription>In three dimensions, two lines are plotted, intersecting at a point P, along with the plane containing both lines.</shortdescription>
+            <description>
+              <p>
+                Three-dimensional coordinate axes are shown, with the points <m>(5,0,0)</m>, <m>(0,5,0)</m>, and <m>(0,0,-5)</m> indicated for scale.
+                A point <m>P</m> is plotted in space. Two lines <m>\ell_1</m> and <m>\ell_2</m> are shown intersecting at this point.
+                The plane containing both lines is also plotted, along with a normal vector, located with its tail at <m>P</m>.
+              </p>
+            </description>
+            <asymptote label="img_planes2">
+
+
+
+              //ASY file for figplanes2.asy in Chapter 10
+
+              size(282,282,Aspect);
+              //size(200,200,IgnoreAspect);
+              //currentprojection=perspective(7,2,1);
+              currentprojection=orthographic((-16,18.6,6.76),(0.014,-0.015,0077),(0,0,0),.99);
+              defaultrender.merge=true;
+
+              // setup and draw the axes
+              real[] myxchoice={5};
+              real[] myychoice={5};
+              real[] myzchoice={-5};
+              defaultpen(0.5mm);
+              pair xbounds=(-4,6);
+              pair ybounds=(-1,6);
+              pair zbounds=(-6,5);
+
+              xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+              yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+              zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+              label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+              label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+              label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+              //Draw the plane
+              triple f(pair t) {
+                return (t.x,t.y,(5/7)*t.x+(4/7)*t.y-1);
+              }
+              surface s=surface(f,(-5,-6),(5,6),8,8,Spline);
+              pen p=apexmeshpen+.1mm;
+              draw(s,surfacepen,meshpen=p,nolight,render(merge=true));
+
+              //Draw points P=(-1,3,0)
+              dotfactor=3;dot((-1,3,0));label("$P$",(-1,3,0),E);
+
+              //Draw normal vector at P, n=(5,4,-7)
+              draw((-1,3,0)--(4,7,-7),black,Arrow3(size=2mm));//n at P
+              label("$\vec{n}$",(4,7,-7),W);
+
+              //draw the lines -5+2t,1+t,-4+2t  and 2+3t,1-2t,1+t
+              draw((5,6,6)--(-5,1,-4),bluepen);label("$\ell_1$",(5,6,6),N);//L1
+              draw((5,-1,2)--(-4.9,5.6,-1.3),bluepen);label("$\ell_2$",(5,-1,2),N);//L2
+
+            </asymptote>
+          </image>
+          <!-- figures/figplanes2_3D.asy END -->
+        </figure>
+      </solution>
+    </example>
+
+    <aside>
+      <p>
+        We can think of the point <m>P=(-1,3,0)</m> in <xref ref="ex_planes2"/>
+        as defining a point of <q>origin</q> on the plane,
+        and even though they are not perpendicular,
+        we can think of the lines <m>\ell_1</m> and <m>\ell_2</m> as a pair of coordinate axes on the plane.
+        Any other point on the plane can be located with respect to these two lines.
+        (Any two non-parallel lines define a coordinate system in a plane;
+        perpendicular lines just happen to be more convenient than other options.)
+      </p>
+    </aside>
+
+    <p>
+      The two previous examples hint at an alternative method for describing a plane in <m>\R^3</m>: 
+      instead of providing a single direction orthogonal to the plane (given by the normal vector), 
+      we can give two directions that are <em>parallel</em> to the plane, 
+      such as the vectors <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{PR}</m> 
+      in <xref ref="fig-planes1"/>, or the direction vectors <m>\vec{d}_1</m> and <m>\vec{d}_2</m> 
+      to the lines in <xref ref="fig-planes2"/>.
+    </p>
+
+    <p>
+      Suppose <m>(x,y,z)</m> is a point on the plane <m>5x+4y-7z=7</m> from <xref ref="ex_planes2"/>. 
+      We can treat the point <m>(-1,3,0)</m> where the lines <m>\vec\ell_1</m> and <m>\vec\ell_2</m> 
+      intersect as our point of reference on the plane. From this point, we can reach the point <m>(x,y,z)</m> 
+      by first travelling some distance in the direction of <m>\vec{d}_1</m> (parallel to <m>\vec\ell_1</m>), 
+      and then some distance in the direction of <m>\vec{d}_2</m> (parallel to <m>\vec\ell_2</m>). 
+      We can express this mathematically as follows:
+      <mdn>
+        <mrow xml:id="eq-planes2a"> \bbm  x\\y\\z\ebm \amp = \bbm  -1\\ 3\\ 0\ebm + s\vec{d}_1+t\vec{d}_2</mrow>
+        <mrow> \amp  = \bbm  -1 +2s+3t\\ 3+s-2t\\ 2s+t\ebm</mrow>
+      </mdn>.
+    </p>
+
+    <p>
+      <xref ref="eq-planes2a" text="local">Equation</xref> can be viewed as a two-dimensional analogue of the 
+      vector equation of a line given in the previous section. 
+      It tells us that to get from the origin <m>(0,0,0)</m> to the point <m>(x,y,z)</m> on the plane, 
+      we should first travel to the point <m>(-1,3,0)</m> on the plane, 
+      and then move parallel to the lines <m>\vec\ell_1</m> and <m>\vec\ell_2</m> until we reach our point. 
+      This vector equation for a plane is not particularly useful in Science or Engineering applications, 
+      but it is useful mathematically. In particular, if we wanted to describe a two-dimensional plane in <m>\R^4</m> 
+      (or any higher-dimensional space), we would have to resort to this method. 
+      (Keeping this method for describing a plane in mind will also help us to access some geometric intuition when 
+      we discuss span and linear independence later in the text.)
+    </p>
+
+    <example xml:id="ex_planes3">
+      <title>Finding the equation of a plane</title>
+      <statement>
+        <p>
+          Give the equation, in standard form,
+          of the plane that passes through the point
+          <m>P=(-1,0,1)</m> and is orthogonal to the line with vector equation <m>\vec \ell(t) = \bbm  -1\\0\\1\ebm + t\bbm  1\\2\\2\ebm</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          As the plane is to be orthogonal to the line,
+          the plane must be orthogonal to the direction of the line given by <m>\vec d = \bbm  1\\2\\2\ebm</m>.
+          We use this as our normal vector.
+          Thus the plane's equation, in standard form, is
+          <me>
+            (x+1) +2y+2(z-1)=0
+          </me>.
+        </p>
+
+        <p>
+          The line and plane are sketched in <xref ref="fig_planes3"/>.
+        </p>
+
+        <figure xml:id="fig_planes3">
+          <caption>The line and plane in <xref ref="ex_planes3"/></caption>
+
+          <!-- START figures/figplanes3_3D.asy -->
+          <image width="47%">
+            <shortdescription>A plane is plotted in a three-dimensional coordinate system, along with a line passing through it at a point P.</shortdescription>
+            <description>
+              <p>
+                A plane is plotted against a set of three-dimensional coordinate axes.
+                A line passes through the plane, intersecting it at a point <m>P</m>.
+                The line is perpendicular to the plane.
+              </p>
+            </description>
+            <asymptote label="img_planes3">
+
+
+
+              //ASY file for figplanes3.asy in Chapter 10
+
+              size(282,282,Aspect);
+              //size(200,200,IgnoreAspect);
+              //currentprojection=perspective(7,2,1);
+              currentprojection=orthographic(4,4,2);
+              defaultrender.merge=true;
+
+              // setup and draw the axes
+              real[] myxchoice={-3,3};
+              real[] myychoice={-3,3};
+              real[] myzchoice={-3,3};
+              defaultpen(0.5mm);
+              pair xbounds=(-4,4);
+              pair ybounds=(-4,4);
+              pair zbounds=(-4,4);
+
+              xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+              yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+              zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+              label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+              label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+              label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+              //Draw the plane z=-(x+1)/2-y+1
+              triple f(pair t) {
+                return (t.x,t.y,(-1/2)*(t.x+1)-t.y+1);
+              }
+              surface s=surface(f,(-3,-3),(3,3),8,8,Spline);
+              pen p=apexmeshpen+.1mm;
+              draw(s,surfacepen,meshpen=p,nolight,render(merge=true));
+
+              //Draw points P=(-1,0,1)
+              dotfactor=3;dot((-1,0,1));label("$P$",(-1,0,1),N);
+
+              //draw the line -1+t,2t,1+2t
+              draw((1,4,5)--(-3,-4,-3),bluepen);//L t=2 to t=-2
+
+              //Draw normal vector at P, n=(1,2,2)
+              //draw((-1,3,0)--(4,7,-7),black,Arrow3(size=2mm));//n at P
+              //label("$\vec{n}$",(4,7,-7),W);
+
+            </asymptote>
+          </image>
+          <!-- figures/figplanes3_3D.asy END -->
+        </figure>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="2diP-H-QLoI" xml:id="vid-vectors-planes-given-normal" label="vid-vectors-planes-given-normal" component="video"/>
+      </solution>
+    </example>
+
+    <example xml:id="ex_planes4">
+      <title>Finding the intersection of two planes</title>
+      <statement>
+        <p>
+          Give the parametric equations of the line that is the intersection of the planes <m>p_1</m> and <m>p_2</m>, where:
+          <md>
+            <mrow>p_1: x-(y-2)+(z-1) =0</mrow>
+            <mrow>p_2: -2(x-2)+(y+1)+(z-3)=0</mrow>
+          </md>
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          To find an equation of a line,
+          we need a point on the line and the direction of the line.
+        </p>
+
+        <p>
+          We can find a point on the line by solving each equation of the planes for <m>z</m>:
+          <md>
+            <mrow>p_1: z = -x+y-1</mrow>
+            <mrow>p_2: z = 2x-y-2</mrow>
+          </md>
+        </p>
+
+        <p>
+          We can now set these two equations equal to each other (<ie/>, we are finding values of <m>x</m> and <m>y</m> where the planes have the same <m>z</m> value):
+          <md>
+            <mrow>-x+y-1 \amp = 2x-y-2</mrow>
+            <mrow>2y \amp = 3x-1</mrow>
+            <mrow>y \amp = \frac12(3x-1)</mrow>
+          </md>
+        </p>
+
+        <p>
+          We can choose any value for <m>x</m>;
+          we choose <m>x=1</m>.
+          This determines that <m>y=1</m>.
+          We can now use the equations of either plane to find <m>z</m>:
+          when <m>x=1</m> and <m>y=1</m>,
+          <m>z=-1</m> on both planes.
+          We have found a point <m>P</m> on the line: <m>P= (1,1,-1)</m>.
+        </p>
+
+        <p>
+          We now need the direction of the line.
+          Since the line lies in each plane,
+          its direction is orthogonal to a normal vector for each plane.
+          Considering the equations for <m>p_1</m> and <m>p_2</m>,
+          we can quickly determine their normal vectors.
+          For <m>p_1</m>,
+          <m>\vec n_1 = \bbm  1\\-1\\1\ebm</m> and for <m>p_2</m>,
+          <m>\vec n_2 = \bbm  -2\\1\\1\ebm</m>.
+          A direction orthogonal to both of these directions is their cross product:
+          <m>\vec d = \vec n_1\times \vec n_2 = \bbm  -2\\-3\\-1\ebm</m>.
+        </p>
+
+        <p>
+          The parametric equations of the line through
+          <m>P=(1,1,-1)</m> in the direction of <m>d=\bbm  -2\\-3\\-1\ebm</m> is:
+          <me>
+            \ell:  x= -2t+1 y = -3t+1 z=-t-1
+          </me>.
+        </p>
+
+        <p>
+          The planes and line are graphed in <xref ref="fig_planes4"/>.
+        </p>
+
+        <figure xml:id="fig_planes4">
+          <caption>Graphing the planes and their line of intersection in <xref ref="ex_planes4"/></caption>
+
+          <!-- START figures/figplanes4_3D.asy -->
+          <image width="47%">
+            <shortdescription>Two planes are shown intersecting along a common line.</shortdescription>
+            <description>
+              <p>
+                Two planes are plotted in a three-dimensional coordinate system.
+                The planes intersect along a line, which is also plotted,
+                along with a point <m>P</m> that lies on the line, as well as on both planes.
+              </p>
+            </description>
+            <asymptote label="img_planes4">
+
+
+
+              //ASY file for figplanes43D.asy in Chapter 10
+
+              //size(282,282,Aspect);
+              size(200,200,IgnoreAspect);
+              //currentprojection=perspective(7,2,1);
+              currentprojection=orthographic(8,14.7,14);
+              defaultrender.merge=true;
+
+              // setup and draw the axes
+              real[] myxchoice={-2,2};
+              real[] myychoice={-2,2};
+              real[] myzchoice={-5};
+              defaultpen(0.5mm);
+              pair xbounds=(-3,3);
+              pair ybounds=(-3,3);
+              pair zbounds=(-6,2);
+
+              xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+              yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+              zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+              label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+              label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+              label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+              //Draw the planes z=-x+y-1 and z=2x-y-2
+              triple f(pair t) {
+                return (t.x,t.y,-t.x+t.y-1);
+              }
+              surface s=surface(f,(-3,-3),(3,3),8,8,Spline);
+              pen p=apexmeshpen;
+              draw(s,surfacepen,meshpen=p+.2mm,nolight,render(merge=true));
+              triple f(pair t) {
+                return (t.x,t.y,2*t.x-t.y-2);
+              }
+              surface s=surface(f,(-3,-3),(3,3),8,8,Spline);
+              pen pp=apexmeshpen+.2mm;
+              //draw(s,rgb(1,.4,.7)+opacity(.7),meshpen=pp,nolight,render(merge=true)); // HOT PINK
+
+              pen q=redcurvepen+.1mm;
+              draw(s,surfacepen2,meshpen=q,nolight,render(merge=true)); // better red
+
+              //Draw point P=(1,1,-1)
+              dotfactor=3;dot((1,1,-1));label("$P$",(1,1,-1),N);
+
+              //draw the line 1-2t,1-3t,-1-t
+              draw((4,5.5,0.5)--(-2,-3.5,-2.5),bluepen);//L t=-1.5 to t=1.5
+
+            </asymptote>
+          </image>
+          <!-- figures/figplanes4_3D.asy END -->
+        </figure>
+        <figure xml:id="vid-vectors-planes-interection2" component="video">
+          <caption>An alternative method for solving <xref ref="ex_planes4"/></caption>
+          <video width="98%" youtube="tthyDV7cjR8" label="vid-vectors-planes-interection2"/>
+        </figure>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="x2HB6huEEmQ" xml:id="vid-vectors-planes-interect1" label="vid-vectors-planes-interect1" component="video"/>
+      </solution>
+    </example>
+
+    <aside>
+      <p>
+        The method used to solve for the point <m>P</m> in <xref ref="ex_planes4"/>
+        would not be considered best practice in a linear algebra course,
+        but we have not yet developed systematic methods for solving systems of equations.
+      </p>
+
+      <p>
+        Another option would be to pick a value for one coordinate (like the choice <m>x=1</m>),
+        and then solve the remaining set of two equations in two variables (<m>y</m> and <m>z</m>).
+      </p>
+
+      <p>
+        Later we will see that the general algorithm for solving systems of equations leads directly
+        to parametric equations for the line of intersection of the two planes.
+      </p>
+    </aside>
+
+    <example xml:id="ex_planes5">
+      <title>Finding the intersection of a plane and a line</title>
+      <statement>
+        <p>
+          Find the point of intersection, if any,
+          of the line <m>\ell(t) = \bbm  3\\-3\\-1\ebm +t\bbm -1\\2\\1\ebm</m> and the plane with equation in general form <m>2x+y+z=4</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          The equation of the plane shows that the vector
+          <m>\vec n = \bbm  2\\1\\1\ebm</m> is a normal vector to the plane,
+          and the equation of the line shows that the line moves parallel to <m>\vec d = \bbm  -1\\2\\1\ebm</m>.
+          Since these are not orthogonal,
+          we know there is a point of intersection.
+          (If there were orthogonal,
+          it would mean that the plane and line were parallel to each other,
+          either never intersecting or the line was in the plane itself.)
+        </p>
+
+        <p>
+          To find the point of intersection,
+          we need to find a <m>t</m> value such that <m>\ell(t)</m> satisfies the equation of the plane.
+          Rewriting the equation of the line with parametric equations will help:
+          <me>
+            \ell(t) = \left\{\begin{aligned}x\amp = 3-t\\ y\amp =-3+2t\\ z\amp = -1+t \end{aligned} \right.
+          </me>.
+        </p>
+
+        <p>
+          Replacing <m>x</m>,
+          <m>y</m> and <m>z</m> in the equation of the plane with the expressions containing <m>t</m> found in the equation of the line allows us to determine a <m>t</m> value that indicates the point of intersection:
+          <md>
+            <mrow>2x+y+z \amp =4</mrow>
+            <mrow>2(3-t) + (-3+2t) + (-1+t) \amp = 4</mrow>
+            <mrow>t\amp =2</mrow>
+          </md>.
+        </p>
+
+        <p>
+          When <m>t=2</m>,
+          the point on the line satisfies the equation of the plane;
+          that point is <m>\ell(2) = \bbm  1\\1\\1\ebm</m>.
+          Thus the point <m>(1,1,1)</m> is the point of intersection between the plane and the line,
+          illustrated in <xref ref="fig_planes5"/>.
+        </p>
+
+        <figure xml:id="fig_planes5">
+          <caption>Illustrating the intersection of a line and a plane in <xref ref="ex_planes5"/></caption>
+
+          <!-- START figures/figplanes5_3D.asy -->
+          <image width="47%">
+            <shortdescription>A line in three dimensions passes through a plane, intersecting it at a point.</shortdescription>
+            <description>
+              <p>
+                A plane is plotted against a three-dimensional coordinate system.
+                A line, labelled <m>\ell(t)</m>, is also plotted.
+                The line appears to be almost, but not quite, parallel to the plane.
+                It passes through the plane, intersecting it at a point that is plotted, but not labelled.
+              </p>
+            </description>
+            <asymptote label="img_planes5">
+
+
+
+              //ASY file for figplanes53D.asy in Chapter 10
+
+              //size(282,282,Aspect);
+              size(200,200,IgnoreAspect);
+              //currentprojection=perspective(7,2,1);
+              currentprojection=orthographic(5,4,2);
+              defaultrender.merge=true;
+
+              // setup and draw the axes
+              real[] myxchoice={-2,2};
+              real[] myychoice={-2,2};
+              real[] myzchoice={2};
+              defaultpen(0.5mm);
+              pair xbounds=(-3,4);
+              pair ybounds=(-3,4);
+              pair zbounds=(-2,7);
+
+              xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+              yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+              zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+              label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+              label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+              label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+              //Draw the plane z=4-2x-y
+              triple f(pair t) {
+                return (t.x,t.y,4-2*t.x-t.y);
+              }
+              surface s=surface(f,(-2,-2),(3,3),8,8,Spline);
+              pen p=apexmeshpen+.2mm;
+              draw(s,surfacepen,meshpen=p,nolight,render(merge=true));
+
+              //Draw point P=(1,1,1)
+              dotfactor=3;dot((1,1,1),redpen);//label("$P$",(1,1,1),N);
+
+              //draw the line 3-t,-3+2t,-1+t
+              draw((3,-3,-1)--(0,3,2),redpen);//L t=0 to t=3
+              label("$\ell(t)$",(3,-3,-1),N);
+
+            </asymptote>
+          </image>
+          <!-- figures/figplanes5_3D.asy END -->
+        </figure>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="DjuaixH0ayo" xml:id="vid-vectors-planes-lineint" label="vid-vectors-planes-lineint" component="video"/>
+      </solution>
+    </example>
+  </introduction>
+
+  <subsection xml:id="subsec_planes_distances">
+    <title>Distances</title>
+    <p>
+      Just as it was useful to find distances between points and lines in the previous section,
+      it is also often necessary to find the distance from a point to a plane.
+    </p>
+
+    <aside>
+      <p>
+        <alert>Note:</alert> <xref ref="eq-plane_dist" text="local">Equation</xref>
+        is useful as it does more than just give the distance between a point and a plane. 
+        We will see how it allows us to find several other distances as well: 
+        the distance between parallel planes and the distance from a line to a plane.
+      </p>
+
+      <p>
+        However, as with the distance problems in the previous section, 
+        learning to follow the steps in <xref ref="idea-distance_method"/> will pay off more in the long run than memorizing a formula. 
+        Here, our key steps are to draw a diagram such as <xref ref="fig-planes_dist"/>, 
+        which doesn't need to be accurate, but does need to contain all the information needed to construct 
+        the projection whose length gives us the desired distance.
+      </p>
+    </aside> 
+
+    <figure xml:id="vid-vectors-planes-distance" component="video">
+      <caption>Video introduction to <xref ref="subsec_planes_distances"/></caption>
+      <video youtube="DT4JMy5Ak54" label="vid-vectors-planes-distance"/>
+    </figure>
+
+    <p>
+      Consider <xref ref="fig_planes_dist"/>,
+      where a plane with normal vector <m>\vec n</m> is sketched containing a point <m>P</m> and a point <m>Q</m>,
+      not on the plane, is given.
+      We measure the distance from <m>Q</m> to the plane by measuring the length of the projection of <m>\overrightarrow{PQ}</m> onto <m>\vec n</m>.
+      That is, we want:
+      <men xml:id="eq_plane_dist">
+        \norm{\text{ proj } _{\,\vec n}\,{\overrightarrow{PQ}}} = \norm{\frac{\vec n\cdot \overrightarrow{PQ}}{\vnorm n^2}\vec n} = \frac{\abs{\vec n\cdot \overrightarrow{PQ}}}{\vnorm n}
+      </men>
+      <idx><h>planes</h><h>distance between point and plane</h></idx>
+      <idx><h>distance</h><h>between point and plane</h></idx>
+    </p>
+
+    <p>
+      <xref ref="eq_plane_dist">Equation</xref> is important as it does more than just give the distance between a point and a plane.
+      We will see how it allows us to find several other distances as well:
+      the distance between parallel planes and the distance from a line and a plane.
+      Because <xref ref="eq_plane_dist">Equation</xref> is important,
+      we restate it as a Key Idea.
+    </p>
+
+    <figure xml:id="fig_planes_dist">
+      <caption>Illustrating finding the distance from a point to a plane</caption>
+
+      <!-- START figures/figplanes_dist_3D.asy -->
+      <image width="47%">
+        <shortdescription>A plane, on which a point P and normal vector n are marked, along with a point Q not on the plane, and its distance from the plane.</shortdescription>
+        <description>
+          <p>
+            A generic plane is shown, along with a point <m>P</m> on the plane.
+            The normal vector <m>\vec n</m> is plotted with its tail at <m>P</m>.
+            A point <m>Q</m> is shown above the plane, and the vector <m>\overrightarrow{PQ}</m> from <m>P</m> to <m>Q</m> is drawn.
+            A perpendicular is drawn from the point <m>Q</m> to the plane, and labelled with the distance <m>h</m>.
+          </p>
+        </description>
+        <asymptote label="img_planes_dist">
+
+
+
+          //ASY file for figplanes_dist3D.asy in Chapter 10
+
+          size(282,282,Aspect);
+          //size(200,200,IgnoreAspect);
+          //currentprojection=perspective(7,2,1);
+          currentprojection=orthographic(4.5,4.5,1.5);
+          defaultrender.merge=true;
+
+          // setup and draw the axes
+          real[] myxchoice={-4,4};
+          real[] myychoice={-4,4};
+          real[] myzchoice={2};
+          defaultpen(0.5mm);
+          pair xbounds=(-5,5);
+          pair ybounds=(-5,5);
+          pair zbounds=(-5,5);
+
+          //xaxis3("",xbounds.x,xbounds.y,black,OutTicks(myxchoice),Arrow3(size=3mm));
+          //yaxis3("",ybounds.x,ybounds.y,black,OutTicks(myychoice),Arrow3(size=3mm));
+          //zaxis3("",zbounds.x,zbounds.y,black,OutTicks(myzchoice),Arrow3(size=3mm));
+
+          //label("$x$",(xbounds.y+0.05*(xbounds.y-xbounds.x),0,0));
+          //label("$y$",(0,ybounds.y+0.05*(ybounds.y-ybounds.x),0));
+          //label("$z$",(0,0,zbounds.y+0.05*(zbounds.y-zbounds.x)));
+
+          //Draw the plane xy-plane
+          triple f(pair t) {
+            return (t.x,t.y,0);
+          }
+          surface s=surface(f,(-2,-1),(2,1.5),1,1,Spline);
+          pen p=blackmeshpen;
+          //pen p=apexmeshpen;
+          draw(s,rgb(1,1,1)+opacity(0),meshpen=p+thick(),nolight,render(merge=true));
+          //draw(s,surfacepen,meshpen=p,nolight,render(merge=true));
+
+          //Draw origin point and P=(1,1,1)
+          dotfactor=3;dot((0,0,0),black);dot((0,1,0),black);label("$P$",(0,1,0),E);
+
+          //Draw the normal at P
+          draw((0,1,0)--(0,1,1),linewidth(.75),Arrow3(size=2mm));label("$\vec{n}$",(0,1,1),E);
+
+          //Draw the dashed line from origin to Q=(0,0,2) with label h
+          draw((0,0,0)--(0,0,2),dashed+linewidth(.75));dot((0,0,2),black);label("$Q$",(0,0,2),W);
+          label("$h$",(0,0,1),W);
+
+          //Draw the vector PQ stopping just short of Q
+          draw((0,1,0)--(0,.05,1.95),linewidth(.75),Arrow3(size=2mm));//label("$\vec{n}$",(0,1,1),E);
+
+          //Draw the perpendicular symbol as two small lines
+          draw((0,0,0.2)--(0,0.2,0.2),linewidth(.75));
+          draw((0,0.2,0)--(0,0.2,0.2),linewidth(.75));
+
+        </asymptote>
+      </image>
+      <!-- figures/figplanes_dist_3D.asy END -->
+    </figure>
+
+    <!-- <insight xml:id="idea_planes_dist">
+      <title>Distance from a Point to a Plane</title>
+      <p>
+        Let a plane with normal vector <m>\vec n</m> be given,
+        and let <m>Q</m> be a point.
+        The distance <m>h</m> from <m>Q</m> to the plane is
+        <me>
+          h = \frac{\abs{\vec n\cdot \overrightarrow{PQ}}}{\vnorm n}
+        </me>,
+        where <m>P</m> is any point in the plane.
+           
+      </p>
+    </insight> -->
+
+    <example xml:id="ex_planes6">
+      <title>Distance between a point and a plane</title>
+      <statement>
+        <p>
+          Find the distance between the point
+          <m>Q = (2,1,4)</m> and the plane with equation <m>2x-5y+6z=9</m>.
+        </p>
+      </statement>
+
+      <solution>
+        <p>
+          Using the equation of the plane,
+          we find the normal vector <m>\vec n = \bbm  2\\-5\\6\ebm</m>.
+          To find a point on the plane,
+          we can let <m>x</m> and <m>y</m> be anything we choose,
+          then let <m>z</m> be whatever satisfies the equation.
+          Letting <m>x</m> and <m>y</m> be 0 seems simple;
+          this makes <m>z = 1.5</m>.
+          Thus we let <m>P = \bbm  0\\0\\1.5\ebm</m>,
+          and <m>\overrightarrow{PQ} = \bbm  2\\1\\2.5\ebm</m>.
+        </p>
+
+        <p>
+          The distance <m>h</m> from <m>Q</m> to the plane is given by <xref ref="idea_planes_dist"/>:
+          <md>
+            <mrow>h \amp = \frac{\abs{\vec n\cdot \overrightarrow{PQ}}}{\vnorm n}</mrow>
+            <mrow>\amp = \frac{\abs{\bbm  2\\-5\\6\ebm \cdot \bbm  2\\1\\2.5\ebm}}{\norm{\bbm  2\\-5\\6\ebm}}</mrow>
+            <mrow>\amp = \frac{ \abs{14}}{\sqrt{65}}</mrow>
+            <mrow>\amp \approx 1.74</mrow>
+          </md>.
+        </p>
+      </solution>
+      <solution component="video">
+        <title>Video solution</title>
+        <video width="98%" youtube="SqA4OLUmoFk" xml:id="vid-vectors-planes-dist-eg" label="vid-vectors-planes-dist-eg" component="video"/>
+      </solution>
+    </example>
+
+    <p>
+      Although it was not requested in <xref ref="ex_planes6"/>, 
+      note that we can also find the point <m>R</m> on the plane that is closest to <m>Q</m>. 
+      The desired point must be such that <m>\overrightarrow{RQ} = \operatorname{proj}_{\vec n}\overrightarrow{PQ}</m>. 
+      Since we know the point <m>Q</m> and the vector <m>\overrightarrow{RQ}</m>, we can find the point <m>R</m>: 
+      since <m>\overrightarrow{RQ} = \overrightarrow{OQ}-\overrightarrow{OR}</m>, we find that
+      <md>
+        <mrow> \overrightarrow{OR} \amp = \overrightarrow{OQ}-\overrightarrow{RQ}</mrow>
+        <mrow> \amp = \bbm  2\\ 1\\ 4\ebm - \frac{14}{65}\bbm  2\\ -5\\ 6\ebm</mrow>
+        <mrow> \amp = \frac{1}{65}\bbm  102\\ 135\\ 176\ebm</mrow>
+      </md>.
+    </p>
+
+    <p>
+      The desired point <m>R</m> thus has coordinates <m>\left(\dfrac{102}{65}, \dfrac{135}{65}, \dfrac{176}{65}\right)</m>. 
+      To make sure that we haven't made any mistakes, let's make sure that this point is indeed on the plane. We have
+      <me>
+        2\left(\frac{102}{65}\right)-5\left(\frac{135}{65}\right)+6\left(\frac{176}{65}\right) = \frac{1}{65}(204-675+1056) = \frac{585}{65}=9
+      </me>,
+      as expected.
+    </p>
+
+    <example xml:id="ex_planes7">
+      <title>Distance between a line and a plane</title>
+      <statement>
+        <p>
+          Let <m>\ell</m> be the line with vector equation
+          <me>
+            \vec\ell(t) = \bbm  3\\ 2\\ -4\ebm + t\bbm  3\\ 1\\ -1\ebm
+          </me>,
+          and let <m>p</m> be the plane with equation <m>x-2y+z=4</m>. 
+          Verify that the line <m>\ell</m> is parallel to the plane <m>p</m>, and find the distance between them.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From the vector equation for <m>\ell</m> we have the direction vector <m>\vec{d} = \bbm  3\\ 1\\ -1\ebm</m>, 
+          and from the equation for <m>p</m> we can read off the normal vector <m>\vec{n} = \bbm  1\\ -2\\ 1\ebm</m>. Since
+          <me>
+            \dotp dn = 3(1)+1(-2)-1(1) = 0
+          </me>,
+          we know that <m>\vec{d}</m> is orthogonal to <m>\vec{n}</m>, and thus <m>\ell</m> is parallel to <m>p</m>. 
+          To find the distance from <m>\ell</m> to <m>p</m>, we first choose a point on each object. 
+          From the vector equation for <m>\ell</m> we have the point <m>P=(2,0,-4)</m>, 
+          and setting <m>y=z=0</m> in the equation for <m>p</m>, we get <m>x=4</m> and the point <m>Q=(4,0,0)</m>.
+        </p>
+
+        <p>
+          From these two points we can construct the vector 
+          <me>
+            \vec v = \overrightarrow{PQ} = \bbm  1\\ -2\\ 4\ebm
+          </me>
+          which begins on <m>\ell</m> and ends on <m>p</m>. 
+          The distance from <m>\ell</m> to <m>p</m> is then given by the normal component of <m>\vec{v}</m>: we have
+          <me>
+            h = \norm{\operatorname{proj}_{\vec{n}}\vec{v}} = \frac{\abs{\dotp nv}}{\norm{\vec{n}}} = \frac{9}{6} = \frac{3}{2}
+          </me>.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      In the previous section we used <xref ref="eq-skewlinesdist" text="local">Equation</xref> 
+      to find the shortest distance between a pair of skew lines. Although we provided some discussion of how this formula was obtained, 
+      it's once again the case that memorizing such a formula is not as effective as understanding the process that leads to it. 
+      In the next example, we repeat <xref ref="ex_lines5"/>, but this time we try to understand the problem using planes.
+    </p>
+
+
+    <example xml:id="ex_planes8">
+      <title>Distance between skew lines</title>
+      <statement>
+    
+        <p>
+          Find the distance between the skew lines
+          <md>
+            <mrow> \ell_1: \bbm  x\\ y\\ z\ebm \amp = \bbm  1\\ 2\\ 0\ebm + t\bbm  3\\ -1\\ 1\ebm </mrow>
+            <mrow> \ell_2: \bbm  x\\ y\\ z\ebm \amp = \bbm  -2\\ 3\\ 5\ebm +t\bbm  4\\ 1\\ 2\ebm </mrow>
+          </md>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We already found the distance between these two lines in <xref ref="ex_lines5"/> using <xref ref="eq-skewlinesdist" text="local">Equation</xref>
+          Supposing that we forgot this formula, how would we proceed? The key is to realize that whenever we have a pair of skew lines, 
+          we also have a pair of parallel planes, each of which contains one of the lines. 
+          To see this, we first compute the cross product of the direction vectors 
+          <m>\vec{d}_1 = \bbm  3\\ -1\\ 1\ebm</m> and <m>\vec{d}_2 = \bbm  4\\ 1\\ 2\ebm</m> for the two lines. We find
+          <me>
+            \vec{n} = \vec{d}_1\times\vec{d}_2 =  \bbm  -3\\ -2\\ 7\ebm
+          </me>,
+          which is the same as the cross product we computed in <xref ref="ex_lines5"/>. 
+          Since <m>\vec{n}</m> is orthogonal to <m>\vec{d}_1</m>, 
+          the plane through the point <m>(1,2,0)</m> with normal vector <m>\vec{n}</m> contains the line <m>\ell_1</m>. 
+          Similarly, the plane through <m>(-2,3,5)</m> with normal vector <m>\vec{n}</m> contains <m>\ell_2</m>. 
+          We now have our parallel planes.
+        </p>
+
+        <p>
+          The next step is to realize that at this point, the problem is no different from the one we solved in <xref ref="ex_planes6"/>: 
+          the distance from <m>\ell_1</m> to <m>\ell_2</m> is the same as the distance between the parallel planes, 
+          and the distance between parallel planes is equal to the distance between the first plane, and any point on the second plane.
+        </p>
+
+        <p>
+          By definition, the point <m>P_1 = (1,2,0)</m> on <m>\ell_1</m> lies on the first plane, 
+          and the point <m>P_2 = (-2, 3, 5)</m> on <m>\ell_2</m> lies on the second plane. 
+          We compute the vector <m>\overrightarrow{P_1P_2} = \bbm  -3\\ 1\\ 5\ebm</m>, 
+          and then find the projection of this vector onto <m>\vec{n}</m>, as in <xref ref="ex_planes6"/>. We have
+          <md>
+            <mrow> \operatorname{proj}_{\vec n}\overrightarrow{P_1P_2}\amp = \left(\frac{\overrightarrow{P_1P_2}\boldsymbol{\cdot}\vec n}{\norm{\vec n}^2}\right)\vec n</mrow>
+            <mrow> \amp = \left(\frac{\bbm  -3\\ 1\\ 5\ebm \boldsymbol{\cdot} \bbm  -3\\ -2\\ 7\ebm}{(3^2+2^2+7^2)}\right)\bbm  -3\\ -2\\ 7\ebm</mrow>
+            <mrow> \amp = \frac{42}{62}\bbm  -3\\ -2\\ 7\ebm</mrow>
+          </md>.
+        </p>
+
+        <p>
+          The distance is then given by
+          <me>
+            \norm{\operatorname{proj}_{\vec n}\overrightarrow{P_1P_2}} = \frac{42}{\sqrt{62}}
+          </me>,
+          as before.
+        </p>
+      </solution>
+    </example>
+
+    <p>
+      We can use <xref ref="idea_planes_dist"/> to find other distances.
+      Given two parallel planes,
+      we can find the distance between these planes by letting <m>P</m> be a point on one plane and <m>Q</m> a point on the other.
+      If <m>\ell</m> is a line parallel to a plane,
+      we can use the Key Idea to find the distance between them as well:
+      again, let <m>P</m> be a point in the plane and let <m>Q</m> be any point on the line.
+      (One can also use <xref ref="idea_line_distance"/>.)
+      The Exercise section contains problems of these types.
+    </p>
+
+    <p>
+      These past two sections have not explored lines and planes in space as an exercise of mathematical curiosity.
+      However, there are many, many applications of these fundamental concepts.
+      Complex shapes can be modeled (or,
+      <em>approximated</em>) using planes.
+      For instance,
+      part of the exterior of an aircraft may have a complex,
+      yet smooth, shape,
+      and engineers will want to know how air flows across this piece as well as how heat might build up due to air friction.
+      Many equations that help determine air flow and heat dissipation are difficult to apply to arbitrary surfaces,
+      but simple to apply to planes.
+      By approximating a surface with millions of small planes one can more readily model the needed behavior.
+    </p>
+  </subsection>
+
+  <exercises>
+    <subexercises xml:id="TaC-vectors-planes">
+      <title>Terms and Concepts</title>
+      <exercise label="TaC-vectors-planes-1">
+        <!--<webwork xml:id="webwork-TaC-vectors-planes-1">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                In order to find the equation of a plane,
+                what two pieces of information must one have?
+              </p>
+            </statement>
+            <answer>
+              <p>
+                A point in the plane and a normal vector (<ie/>, a direction orthogonal to the plane).
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="TaC-vectors-planes-2">
+        <!--<webwork xml:id="webwork-TaC-vectors-planes-2">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                What is the relationship between a plane and one of its normal vectors?
+              </p>
+            </statement>
+            <answer>
+              <p>
+                A normal vector is orthogonal to the plane.
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+    </subexercises>
+    <subexercises>
+      <title>Problems</title>
+      <exercisegroup cols="2" xml:id="exset-vectors-planes-find-points">
+
+        <introduction>
+          <p>
+            In the following exercises, give any two points in the given plane.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vectors-planes-find-points-1">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-find-points-1">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  <m>2x-4y+7z=2</m>
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  Answers will vary.
+                </p>
+              </answer>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-find-points-2">
+          <webwork xml:id="webwork-ex-vectors-planes-find-points-2">
+              <pg-code>
+                Context("Point");
+                $points=List("(-2,9,0),(2,9,3)");
+                $pev=$points-&gt;cmp(list_checker =&gt; sub {
+                  my ($correct,$student,$ansHash,$value) = @_;
+                  my $n = scalar(@$student);
+                  my $score = 0;
+                  my @errors = ();
+                  my $i, $j;
+                  for ($i = 0; $i &lt; $n; $i++) {
+                    my $ith = Value::List-&gt;NameForNumber($i+1);
+                    my $p = $student-&gt;[$i];   # i-th student answer
+                    if ($p-&gt;type ne "Point") {
+                       push(@errors,"Your $ith entry is not a point");
+                       next;
+                    }
+                    for ($j = 0, $used = 0; $j &lt; $i; $j++) {
+                      if ($student-&gt;[$j]-&gt;type eq "Point" and $student-&gt;[$j] == $p) {
+                        push(@errors,"Your $ith point is the same as a previous one") unless $ansHash-&gt;{isPreview};
+                        $used = 1; last;
+                      }
+                    }
+                    if (!$used) {
+                      my ($a,$b,$c) = $p-&gt;value;
+                      if (3*($a+2)+5*($b-9)-4*$c==0) {$score++} else {
+                        push(@errors,"Your $ith point is not correct") unless $ansHash-&gt;{isPreview}
+                      }
+                    }
+                  }
+                  if (!$ansHash-&gt;{isPreview}) {
+                    push(@errors,"You need to provide more points") if $i &lt; 2;
+                    push(@errors,"You have given too many points") if $score &gt; 2 and $i != $score;
+                  }
+                  return ($score,@errors);
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  List any two points in the plane with equation <m>3(x+2)+5(y-9)-4z=0</m>.
+                </p>
+
+                <p>
+                  <var name="$points" evaluator="$pev" width="20"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-find-points-3">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-find-points-3">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  <m>x=2</m>
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  Answers will vary.
+                </p>
+              </answer>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-find-points-4">
+          <webwork xml:id="webwork-ex-vectors-planes-find-points-4">
+              <pg-code>
+                Context("Point");
+                $points=List("(0,-2,6),(1,-2,6)");
+                $pev=$points-&gt;cmp(list_checker =&gt; sub {
+                  my ($correct,$student,$ansHash,$value) = @_;
+                  my $n = scalar(@$student);
+                  my $score = 0;
+                  my @errors = ();
+                  my $i, $j;
+                  for ($i = 0; $i &lt; $n; $i++) {
+                    my $ith = Value::List-&gt;NameForNumber($i+1);
+                    my $p = $student-&gt;[$i];   # i-th student answer
+                    if ($p-&gt;type ne "Point") {
+                       push(@errors,"Your $ith entry is not a point");
+                       next;
+                    }
+                    for ($j = 0, $used = 0; $j &lt; $i; $j++) {
+                      if ($student-&gt;[$j]-&gt;type eq "Point" and $student-&gt;[$j] == $p) {
+                        push(@errors,"Your $ith point is the same as a previous one") unless $ansHash-&gt;{isPreview};
+                        $used = 1; last;
+                      }
+                    }
+                    if (!$used) {
+                      my ($a,$b,$c) = $p-&gt;value;
+                      if (4*($b+2)-($c-6)==0) {$score++} else {
+                        push(@errors,"Your $ith point is not correct") unless $ansHash-&gt;{isPreview}
+                      }
+                    }
+                  }
+                  if (!$ansHash-&gt;{isPreview}) {
+                    push(@errors,"You need to provide more points") if $i &lt; 2;
+                    push(@errors,"You have given too many points") if $score &gt; 2 and $i != $score;
+                  }
+                  return ($score,@errors);
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  List any two points in the plane with equation <m>4(y+2)-(z-6)=0</m>.
+                </p>
+
+                <p>
+                  <var name="$points" evaluator="$pev" width="20"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-vectors-planes-equation">
+
+        <introduction>
+          <p>
+            In the following exercises,
+            give the equation of the described plane in standard and general forms.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vectors-planes-equation-1">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-equation-1">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  Passes through <m>(2,3,4)</m> and has normal vector
+                </p>
+
+                <p>
+                  <m>\vec n= \bbm  3\\-1\\7\ebm</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  Standard form: <m>3(x-2)-(y-3)+7(z-4)=0</m>
+                </p>
+
+                <p>
+                  general form: <m>3x-y+7z=31</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-2">
+          <webwork xml:id="webwork-ex-vectors-planes-equation-2">
+              <pg-code>
+                sub grouped {
+                  my $op = shift;
+                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                  my $context=Context();
+                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                  };
+                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+                };
+                Context("ImplicitEquation");
+                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+                $st=ImplicitEquation("2(y-3)+4(z-5)=0");
+                $stev=$st-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                  return $correct == $student;
+                });
+                $ge=ImplicitEquation("2y+4z=26");
+                $geev=$ge-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                  return $correct == $student;
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  A plane passes through <m>(1,3,5)</m> and has normal vector <m>\vec n= \bbm  0\\2\\4\ebm</m>.
+                </p>
+
+                <instruction>
+                  An equation for this plane in standard form is:
+                </instruction>
+                <p>
+                   <var name="$st" evaluator="$stev" width="30"/>
+                </p>
+
+                <instruction>
+                  An equation for this plane in general form is:
+                </instruction>
+                <p>
+                  <var name="$ge" evaluator="$geev" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-3">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-equation-3">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  Passes through the points <m>(1,2,3)</m>,
+                  <m>(3,-1,4)</m> and <m>(1,0,1)</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  Answers may vary;
+                </p>
+
+                <p>
+                  Standard form: <m>8(x-1)+4(y-2)-4(z-3)=0</m>
+                </p>
+
+                <p>
+                  general form: <m>8x+4y-4z=4</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-4">
+          <webwork xml:id="webwork-ex-vectors-planes-equation-4">
+
+              <pg-code>
+                sub grouped {
+                  my $op = shift;
+                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                  my $context=Context();
+                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                  };
+                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+                };
+                Context("ImplicitEquation");
+                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+                $st=ImplicitEquation("-5(x-5)+3(y-3)+2(z-8)=0");
+                $stev=$st-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                  return $correct == $student;
+                });
+                $ge=ImplicitEquation("-5x+3y+2z=0");
+                $geev=$ge-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                  return $correct == $student;
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  A plane passes through the points <m>(5,3,8)</m>,
+                  <m>(6,4,9)</m> and <m>(3,3,3)</m>.
+                </p>
+
+                <instruction>
+                  An equation for this plane in standard form is:
+                </instruction>
+                <p>
+                  <var name="$st" evaluator="$stev" width="30"/>
+                </p>
+
+                <instruction>
+                  An equation for this plane in general form is:
+                </instruction>
+                <p>
+                  <var name="$ge" evaluator="$geev" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-5">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-equation-5">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  Contains the intersecting lines
+                </p>
+
+                <p>
+                  <m>\vec\ell_1(t) = \bbm  2\\1\\2\ebm + t\bbm  1\\2\\3\ebm</m> and
+                </p>
+
+                <p>
+                  <m>\vec\ell_2(t) = \bbm  2\\1\\2\ebm + t\bbm  2\\5\\4\ebm</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  Answers may vary;
+                </p>
+
+                <p>
+                  Standard form: <m>-7(x-2)+2(y-1)+(z-2)=0</m>
+                </p>
+
+                <p>
+                  general form: <m>-7x+2y+z=-10</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-6">
+          <webwork xml:id="webwork-ex-vectors-planes-equation-6">
+
+              <pg-code>
+                sub grouped {
+                  my $op = shift;
+                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                  my $context=Context();
+                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                  };
+                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+                };
+                Context("ImplicitEquation");
+                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+                $st=ImplicitEquation("3(x-5)+3(z-3)=0");
+                $stev=$st-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                  return $correct == $student;
+                });
+                $ge=ImplicitEquation("3x+3z=24");
+                $geev=$ge-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                  return $correct == $student;
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  A plane contains the intersecting lines
+                  <m>\vec\ell_1(t) = \bbm  5\\0\\3\ebm + t\bbm  -1\\1\\1\ebm</m> and <m>\vec\ell_2(t) = \bbm  1\\4\\7\ebm + t\bbm  3\\0\\-3\ebm</m>.
+                </p>
+
+                <instruction>
+                  An equation for this plane in standard form is:
+                </instruction>
+                <p>
+                  <var name="$st" evaluator="$stev" width="30"/>
+                </p>
+
+                <instruction>
+                  An equation for this plane in general form is:
+                </instruction>
+                <p>
+                  <var name="$ge" evaluator="$geev" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-7">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-equation-7">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  Contains the parallel lines
+                </p>
+
+                <p>
+                  <m>\vec\ell_1(t) = \bbm  1\\1\\1\ebm + t\bbm  1\\2\\3\ebm</m> and
+                </p>
+
+                <p>
+                  <m>\vec\ell_2(t) = \bbm  1\\1\\2\ebm + t\bbm  1\\2\\3\ebm</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  Answers may vary;
+                </p>
+
+                <p>
+                  Standard form: <m>2(x-1)-(y-1)=0</m>
+                </p>
+
+                <p>
+                  general form: <m>2x-y=1</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-8">
+          <webwork xml:id="webwork-ex-vectors-planes-equation-8">
+
+              <pg-code>
+                sub grouped {
+                  my $op = shift;
+                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                  my $context=Context();
+                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                  };
+                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+                };
+                Context("ImplicitEquation");
+                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+                $st=ImplicitEquation("2(x-1)+(y-1)-3(z-1)=0");
+                $stev=$st-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                  return $correct == $student;
+                });
+                $ge=ImplicitEquation("2x+y-3z=0");
+                $geev=$ge-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                  return $correct == $student;
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  A plane contains the parallel lines
+                  <m>\vec\ell_1(t) = \bbm  1\\1\\1\ebm + t\bbm  4\\1\\3\ebm</m> and <m>\vec\ell_2(t) = \bbm  2\\2\\2\ebm + t\bbm  4\\1\\3\ebm</m>.
+                </p>
+
+                <instruction>
+                  An equation for this plane in standard form is:
+                </instruction>
+                <p>
+                  <var name="$st" evaluator="$stev" width="30"/>
+                </p>
+
+                <instruction>
+                  An equation for this plane in general form is:
+                </instruction>
+                <p>
+                  <var name="$ge" evaluator="$geev" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-9">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-equation-9">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  Contains the point <m>(2,-6,1)</m> and the line
+                </p>
+
+                <p>
+                  <m>\vec\ell(t) = \left\{\begin{aligned}x\amp =2+5t \\
+  																	y\amp =2+2t \\
+  																	z\amp =-1+2t
+                  \end{aligned} \right.</m>
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  Answers may vary;
+                </p>
+
+                <p>
+                  Standard form: <m>2(x-2)-(y+6)-4(z-1)=0</m>
+                </p>
+
+                <p>
+                  general form: <m>2x-y-4z=6</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-10">
+          <webwork xml:id="webwork-ex-vectors-planes-equation-10">
+
+              <pg-code>
+                sub grouped {
+                  my $op = shift;
+                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                  my $context=Context();
+                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                  };
+                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+                };
+                Context("ImplicitEquation");
+                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+                $st=ImplicitEquation("4(x-5)-2(y-7)-2(z-3)=0");
+                $stev=$st-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                  return $correct == $student;
+                });
+                $ge=ImplicitEquation("4x-2y-2z=0");
+                $geev=$ge-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                  return $correct == $student;
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  A plane contains the point <m>(5,7,3)</m> and the line <m>\vec\ell(t) = \begin{cases}x\amp=t\\y\amp=t\\z\amp=t\end{cases}</m>.
+                </p>
+
+                <instruction>
+                  An equation for this plane in standard form is:
+                </instruction>
+                <p>
+                  <var name="$st" evaluator="$stev" width="30"/>
+                </p>
+
+                <instruction>
+                  An equation for this plane in general form is:
+                </instruction>
+                <p>
+                  <var name="$ge" evaluator="$geev" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-11">
+          <webwork xml:id="webwork-ex-vectors-planes-equation-11">
+
+              <pg-code>
+                sub grouped {
+                  my $op = shift;
+                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                  my $context=Context();
+                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                  };
+                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+                };
+                Context("ImplicitEquation");
+                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+                $st=ImplicitEquation("(x-5)+(y-7)+(z-3)=0");
+                $stev=$st-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                  return $correct == $student;
+                });
+                $ge=ImplicitEquation("x+y+z=15");
+                $geev=$ge-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                  return $correct == $student;
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  A plane contains the point <m>(5,7,3)</m> and is orthogonal to the line <m>\vec\ell(t) = \bbm  4\\5\\6\ebm+ t\bbm  1\\1\\1\ebm</m>.
+                </p>
+
+                <instruction>
+                  An equation for this plane in standard form is:
+                </instruction>
+                <p>
+                  <var name="$st" evaluator="$stev" width="30"/>
+                </p>
+
+                <instruction>
+                  An equation for this plane in general form is:
+                </instruction>
+                <p>
+                  <var name="$ge" evaluator="$geev" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-12">
+          <webwork xml:id="webwork-ex-vectors-planes-equation-12">
+
+              <pg-code>
+                sub grouped {
+                  my $op = shift;
+                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                  my $context=Context();
+                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                  };
+                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+                };
+                Context("ImplicitEquation");
+                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+                $st=ImplicitEquation("4(x-4)+(y-1)+(z-1)=0");
+                $stev=$st-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                  return $correct == $student;
+                });
+                $ge=ImplicitEquation("4x+y+z=18");
+                $geev=$ge-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                  return $correct == $student;
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  A plane contains the point <m>(4,1,1)</m> and is orthogonal to the line <m>\begin{cases}x\amp=4+4t\\y\amp=1+t\\z\amp=1+t\end{cases}</m>.
+                </p>
+
+                <instruction>
+                  An equation for this plane in standard form is:
+                </instruction>
+                <p>
+                  <var name="$st" evaluator="$stev" width="30"/>
+                </p>
+
+                <instruction>
+                  An equation for this plane in general form is:
+                </instruction>
+                <p>
+                  <var name="$ge" evaluator="$geev" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-13">
+          <webwork xml:id="webwork-ex-vectors-planes-equation-13">
+
+              <pg-code>
+                sub grouped {
+                  my $op = shift;
+                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                  my $context=Context();
+                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                  };
+                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+                };
+                Context("ImplicitEquation");
+                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+                $st=ImplicitEquation("3(x+4)+8(y-7)-10(z-2)=0");
+                $stev=$st-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                  return $correct == $student;
+                });
+                $ge=ImplicitEquation("3x+8y-10z=24");
+                $geev=$ge-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                  return $correct == $student;
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  A plane contains the point
+                  <m>(-4,7,2)</m> and is parallel to the plane <m>3(x-2)+8(y+1) -10z=0</m>.
+                </p>
+
+                <instruction>
+                  An equation for this plane in standard form is:
+                </instruction>
+                <p>
+                  <var name="$st" evaluator="$stev" width="30"/>
+                </p>
+
+                <instruction>
+                  An equation for this plane in general form is:
+                </instruction>
+                <p>
+                  <var name="$ge" evaluator="$geev" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-equation-14">
+          <webwork xml:id="webwork-ex-vectors-planes-equation-14">
+
+              <pg-code>
+                sub grouped {
+                  my $op = shift;
+                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                  my $context=Context();
+                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                  };
+                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+                };
+                Context("ImplicitEquation");
+                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+                $st=ImplicitEquation("x-1=0");
+                $stev=$st-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                  return $correct == $student;
+                });
+                $ge=ImplicitEquation("x=1");
+                $geev=$ge-&gt;cmp(checker=&gt;sub{
+                  my ( $correct, $student, $ansHash ) = @_;
+                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                  my $context = Context();
+                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                  return $correct == $student;
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  A plane contains the point <m>(1,2,3)</m> and is parallel to the plane <m>x=5</m>.
+                </p>
+
+                <instruction>
+                  An equation for this plane in standard form is:
+                </instruction>
+                <p>
+                  <var name="$st" evaluator="$stev" width="30"/>
+                </p>
+
+                <instruction>
+                  An equation for this plane in general form is:
+                </instruction>
+                <p>
+                  <var name="$ge" evaluator="$geev" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-vectors-planes-intersection">
+
+        <introduction>
+          <p>
+            In the following exercises,
+            give the equation of the line that is the intersection of the given planes.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vectors-planes-intersection-1">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-intersection-1">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  <m>p1:\ 3 (x - 2) + (y - 1) + 4 z=0</m>, and
+                </p>
+
+                <p>
+                  <m>p2:\ 2 (x - 1) - 2 (y + 3) + 6 (z - 1)=0</m>.
+                </p>
+              </statement>
+              <solution>
+                <p>
+                  Answers may vary:
+                </p>
+
+                <p>
+                  <m>\ell = \left\{\begin{aligned}x \amp = 14t\\
+                  y \amp = -1-10t\\
+                  z\amp = 2-8t
+                  \end{aligned} \right.</m>
+                </p>
+              </solution>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-intersection-2">
+          <webwork xml:id="webwork-ex-vectors-planes-intersection-2">
+              <pg-code>
+                Context("Vector");
+                Context()-&gt;variables-&gt;are(t=&gt;"Real");
+                $v=Compute("(1,3,3.5)+t&lt;20,2,-26&gt;");
+                $vev=$v-&gt;cmp(checker=&gt;sub{my($c,$st,$aH)=@_;
+                  $ds=Formula($st)-&gt;D('t')-&gt;reduce;
+                  if($ds-&gt;isConstant){$ds=Vector("$ds");}else{return 0;};
+                  $dc=$c-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                  $sp=Formula($st)-&gt;eval(t=&gt;0);$cp=$c-&gt;eval(t=&gt;0);
+                  $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                  return ($par and $tch);
+                });
+              </pg-code>
+
+              <statement>
+                <p>
+                  Give the equation of the line
+                  (in vector form)
+                  that is the intersection of the planes <m>5 (x - 5) + 2 (y + 2) + 4 (z - 1)=0</m>,
+                  and <m>3 x - 4 (y - 1) + 2 (z - 1)=0</m>.
+                </p>
+
+                <p>
+                  <var name="$v" evaluator="$vev" width="30"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-vectors-planes-intersect-line">
+
+        <introduction>
+          <p>
+            Find the point of intersection between the line and the plane.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vectors-planes-intersect-line-1">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-intersect-line-1">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  line: <m>\bbm  5\\1\\-1\ebm + t\bbm  2\\2\\1\ebm</m>,
+                </p>
+
+                <p>
+                  plane: <m>5x-y-z=-3</m>
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  <m>(-3,-7,-5)</m>
+                </p>
+              </answer>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-intersect-line-2">
+          <webwork xml:id="webwork-ex-vectors-planes-intersect-line-2">
+              <pg-code>
+                Context("Point");
+                Context()-&gt;strings-&gt;add('the entire line'=&gt;{});
+                $point=Point("(3,1,1)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the point of intersection between the line
+                  <m>\bbm  4\\1\\0\ebm + t\bbm  1\\0\\-1\ebm</m> and the plane <m>3x+y-2z=8</m>.
+                  (If the plane contains the line,
+                  enter <q>the entire line</q>.
+                  If the line does not intersect the plane at all, enter <q>none</q>.)
+                </p>
+
+                <p>
+                  <var name="$point" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-intersect-line-3">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-intersect-line-3">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  line: <m>\bbm  1\\2\\3\ebm + t\bbm  3\\5\\-1\ebm</m>,
+                </p>
+
+                <p>
+                  plane: <m>3x-2y-z=4</m>
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  No point of intersection; the plane and line are parallel.
+                </p>
+              </answer>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-intersect-line-4">
+          <webwork xml:id="webwork-ex-vectors-planes-intersect-line-4">
+              <pg-code>
+                Context("Point");
+                Context()-&gt;strings-&gt;add('the entire line'=&gt;{});
+                $point=Compute('the entire line');
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the point of intersection between the line
+                  <m>\bbm  1\\2\\3\ebm + t\bbm  3\\5\\-1\ebm</m> and the plane <m>3x-2y-z=-4</m>.
+                  (If the plane contains the line,
+                  enter <q>the entire line</q>.
+                  If the line does not intersect the plane at all, enter <q>none</q>.)
+                </p>
+
+                <p>
+                  <var name="$point" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+      <exercisegroup cols="2" xml:id="exset-vectors-planes-distance">
+
+        <introduction>
+          <p>
+            Find the indicated distance.
+          </p>
+        </introduction>
+
+        <exercise label="ex-vectors-planes-distance-1">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-distance-1">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  The distance from the point <m>(1,2,3)</m> to the plane
+                </p>
+
+                <p>
+                  <m>3(x-1)+(y-2)+5(z-2)=0</m>.
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  <m>\sqrt{5/7}</m>
+                </p>
+              </answer>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-distance-2">
+          <webwork xml:id="webwork-ex-vectors-planes-distance-2">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+                $distance=Formula("8/sqrt(21)");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the distance from the point <m>(2,6,2)</m> to the plane <m>2(x-1)-y+4(z+1)=0</m>.
+                </p>
+
+                <p>
+                  <var name="$distance" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+        <exercise label="ex-vectors-planes-distance-3">
+          <!--<webwork xml:id="webwork-ex-vectors-planes-distance-3">
+              <pg-code>
+              </pg-code>
+              -->
+              <statement>
+                <p>
+                  The distance between the parallel planes
+                </p>
+
+                <p>
+                  <m>x+y+z=0</m> and
+                </p>
+
+                <p>
+                  <m>(x-2)+(y-3)+(z+4)=0</m>
+                </p>
+              </statement>
+              <answer>
+                <p>
+                  <m>1/\sqrt{3}</m>
+                </p>
+              </answer>
+          <!-- </webwork> -->
+        </exercise>
+
+        <exercise label="ex-vectors-planes-distance-4">
+          <webwork xml:id="webwork-ex-vectors-planes-distance-4">
+              <pg-code>
+                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+                $distance=Formula("3");
+              </pg-code>
+
+              <statement>
+                <p>
+                  Find the distance between the parallel planes
+                  <m>2(x-1)+2(y+1)+(z-2)=0</m> and <m>2(x-3)+2(y-1)+(z-3)=0</m>.
+                </p>
+
+                <p>
+                  <var name="$distance" width="10"/>
+                </p>
+              </statement>
+          </webwork>
+        </exercise>
+
+      </exercisegroup>
+
+      <exercise label="ex-vectors-planes-distance-formula">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-distance-formula">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                Show why if the point <m>Q</m> lies in a plane,
+                then the distance formula correctly gives the distance from the point to the plane as <m>0</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                If <m>P</m> is any point in the plane,
+                and <m>Q</m> is also in the plane,
+                then <m>\overrightarrow{PQ}</m> lies parallel to the plane and is orthogonal to <m>\vec n</m>,
+                the normal vector.
+                Thus <m>\vec n\cdot \overrightarrow{PQ}=0</m>, giving the distance as 0.
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vectors-planes-understand-lines">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-understand-lines">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                How is <xref ref="x10_05_ex_30"/>
+                in <xref ref="sec_lines"/>
+                easier to answer once we have an understanding of planes?
+              </p>
+            </statement>
+            <solution>
+              <p>
+                The intersecting lines define a plane with normal vector <m>\vec n = \vec c = \vec d_1\times \vec d_2</m>.
+                Since points <m>P_1</m> and <m>P_2</m> lie in the plane,
+                <m>\vec c</m> is orthogonal to <m>\overrightarrow{P_1P_2}</m>,
+                hence <m>\overrightarrow{P_1P_2}\cdot\vec c = 0</m>, giving a distance of 0.
+                Knowing the principles of planes,
+                especially their normal vectors, makes this simpler.
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+    </subexercises>
+  </exercises>
+</section>

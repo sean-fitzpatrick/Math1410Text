@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-matrix-arithmetic" label="sec-matrix-arithmetic">
+  <title>Matrix Addition and Scalar Multiplication</title>
+
+  <p>
+    As mentioned above, a <term>matrix</term> is a construction that allows us to organize information in a tabular form. 
+    For example, we may be interested in the following (made up) data involving crop yields on several Southern Alberta farms, 
+    given in tabular form:
+  </p>
+
+  <table>
+    <title>2014 crop yields, in metric tonnes</title>
+    <tabular>
+      <row bottom="minor">
+        <cell/><cell>Corn</cell><cell>Potatoes</cell><cell>Soybeans</cell><cell>Wheat</cell>
+      </row>
+      <row>
+        <cell>Farm A</cell><cell>48</cell><cell>18</cell><cell>92</cell><cell>0</cell>
+      </row>
+      <row>
+        <cell>Farm B</cell><cell>0</cell><cell>0</cell><cell>73</cell><cell>152</cell>
+      </row>
+      <row>
+        <cell>Farm C</cell><cell>34</cell><cell>203</cell><cell>0</cell><cell>88</cell>
+      </row>
+    </tabular>
+  </table>
+
+  <p>
+    Someone in charge of compiling data on farms and crops probably already has a program or spreadsheet 
+    set up with all of the farms and crops pre-defined; what they are interested in are the numbers giving the crop yields. 
+    Thus, when they enter their data into the computer, they are probably more interested in the array
+    <men xml:id="eq-farmmatrix">
+      A = \bbm 48 \amp  18 \amp  92 \amp  0\\ 0 \amp  0 \amp  73 \amp  152\\ 34 \amp  203 \amp  0 \amp  88 \ebm
+    </men>.
+    As long as we're consistent and always assign each farm to the same row, 
+    and each crop to the same column, we can dispense with the labels and work directly with the data.
+  </p>
+
+  <aside>
+    <p>
+      Matrices work well in situations such as our farming example where the data we need to organize falls into two categories, 
+      in this case, farms and crops. What if our data depends on three or more categories? 
+      (Perhaps we also want to track type of fertilizer?) It turns out that along with matrices, 
+      mathematicians have invented higher-dimensional arrays called tensors, 
+      that can handle almost any data organization scenario you can think of. 
+      Tensors are usually encountered in more advanced courses in abstract algebra.
+    </p>
+  </aside>
+
+  <p>
+    The array above is our first example of a matrix, which we now define.
+    The definition of matrix is remarkable only in how unremarkable it seems <mdash/> 
+    it is simply a way of organizing information (usually numbers) into an array.
+  </p>
+
+  <definition xml:id="def-matrix">
+    <title>Matrix</title>
+    <statement>
+      <p>
+        <idx><h>matrix</h><h>definition</h></idx>
+        A <term>matrix</term> is a rectangular array of numbers.
+      </p>
+
+      <p>
+        The horizontal lines of numbers form <term>rows</term> and the vertical lines of numbers form <term>columns</term>. 
+        A matrix with <m>m</m> rows and <m>n</m> columns is said to be an <m>m\times n</m> matrix 
+        (<q>an <m>m</m> by <m>n</m> matrix</q>, or a matrix of <term>size</term> <m>m\times n</m>).
+      </p>
+
+      <p>
+        The entries of an <m>m\times n</m> matrix are indexed as follows:
+        <me>
+          \bbm
+            a_{11}\amp a_{12}\amp a_{13}\amp \cdots\amp a_{1n}\\
+            a_{21}\amp a_{22}\amp a_{23}\amp \cdots\amp a_{2n}\\
+            a_{31}\amp a_{32}\amp a_{33}\amp \cdots\amp a_{3n}\\
+            \vdots\amp \vdots\amp \vdots\amp \ddots\amp \vdots\\
+            a_{m1}\amp a_{m2}\amp a_{m3}\amp \cdots\amp a_{mn} \ebm
+        </me>.
+      </p>
+
+      <p>
+        That is, <m>a_{32}</m> means <q>the number in the third row and second column.</q> 
+        To save space, we will sometimes use the shorthand notation <m>A = [a_{ij}]</m> 
+        to denote a matrix <m>A</m> with entries <m>a_{ij}</m>. If we need to specify the size, 
+        we can also write <m>A=[a_{ij}]_{m\times n}</m>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Two special types of matrix are worth noting: those with a single row or column. Such matrices are known as <term>vectors</term>.
+  </p>
+
+  <definition xml:id="def-rcvect">
+    <title>Row and column vectors</title>
+    <statement>
+      <p>
+        <idx><h>row vector</h></idx>
+        <idx><h>column vector</h></idx>
+        <idx><h>vector </h><h> row</h></idx> 
+        <idx><h>vector </h><h> column</h></idx>
+
+        A <term>row vector</term> is a <m>1\times n</m> matrix of the form
+        <me>
+          R = \bbm r_1  \amp  r_2 \amp  \cdots \amp  r_n\ebm
+        </me>.
+      </p>
+
+      <p>
+        A <term>column vector</term> is a <m>m\times 1</m> matrix of the form
+        <me>
+          C = \bbm c_1\\c_2\\ \vdots \\ c_m\ebm
+        </me>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    In particular, we can obtain row or column vectors by isolating any row or column of a given <m>m\times n</m> matrix. 
+    For example, given our matrix of crop data in <xref ref="eq-farmmatrix" text="local">Equation</xref>, 
+    we might be interested only in Farm B, in which case we would want the row vector
+    <me>
+      R_B = \bbm 0  \amp  0 \amp  73 \amp  152\ebm
+    </me>.
+    Similarly, we might only be interested in yields for soybean crops, in which case the column vector
+    <me>
+      C_{\text{soy}} = \bbm 92 \\ 73\\0\ebm
+    </me>
+    is our object of interest.
+  </p>
+
+  <p>
+    Continuing with our farming example, 
+    suppose that in addition to the matrix <m>A</m> of 2014 crop yields above we also have data for 2015 crop yields given by
+    <me>
+      B = \bbm 41  \amp  25  \amp  15 \amp  20\\ 0 \amp  72 \amp  0 \amp  165\\ 47 \amp  193 \amp  0 \amp  77\ebm
+    </me>.
+    We might be interested in quantities such as the total crop yields over two years. 
+    If we arrange these totals into a matrix <m>T</m>, 
+    it seems like it should be reasonable to define matrix addition in such a way that we can write
+    <me>
+      T = A + B
+    </me>.
+  </p>
+
+  <p>
+    This leads to two questions. First, how do we define matrix addition in order to ensure this outcome? 
+    Second, and perhaps more fundamentally, what do we mean by <q><m>=</m></q> in the context of matrices? 
+    Let us tackle the second question first.
+  </p>
+
+  <definition xml:id="def-matrix_equality">
+    <title>Matrix Equality</title>
+    <statement>
+      <p>
+        <idx><h>matrix</h><h>equality</h></idx> 
+        
+        Two <m>m\times n</m> matrices <m>\tta</m> and <m>\ttb</m> are <term>equal</term> if their corresponding entries are equal.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    Notice that our more formal definition specifies that if matrices are equal, they have the same size. This should make sense.
+  </p>
+
+  <p>
+    Now we move on to describing how to add two matrices together. 
+    To start off, take a wild stab: how do you think we should add our matrices of crop data above? 
+    Well, if we want the sum to represent the total yields for each crop, 
+    then it stands to reason that to add the two matrices, we add together each of the corresponding crop yields within them:
+    <md>
+      <mrow>T \amp  = A+B</mrow>
+      <mrow>  \amp  = \bbm 48  \amp  18 \amp  92 \amp  0\\ 0 \amp  0 \amp  73 \amp  152\\ 34 \amp  203 \amp  0 \amp  88 \ebm + \bbm 41 \amp  25 \amp  15 \amp  20\\ 0 \amp  72 \amp  0 \amp  165\\ 47 \amp  193 \amp  0 \amp  77\ebm</mrow>
+      <mrow>  \amp  = \bbm 48+41  \amp  18+25 \amp  92+15 \amp  0+20\\ 0 + 0 \amp  0 + 72 \amp  73 + 0 \amp  152 +165\\ 34+47 \amp  203 + 193 \amp  0 + 0 \amp  88+77\ebm</mrow>
+      <mrow>  \amp  = \bbm 89  \amp  43 \amp  107 \amp  20\\0\amp  72 \amp  73 \amp  317\\81 \amp  396 \amp  0 \amp  165\ebm</mrow>
+    </md>.
+  </p>
+
+  <p>
+    So to add the two matrices, we added their corresponding entries. This is exactly how we define matrix addition in general:
+  </p>
+
+
+  <definition xml:id="def-addition">
+    <title>Matrix Addition</title>
+    <statement>
+      <p>
+        <idx><h>matrix</h><h>addition</h></idx>
+
+        Let <m>A=[a_{ij}]</m> and <m>B=[b_{ij}]</m> be <m>m\times n</m> matrices. 
+        The <term>sum</term> of <m>\tta</m> and <m>\ttb</m>, denoted <m>\tta+\ttb</m>, is 
+        <me>
+          \bbm a_{11}+b_{11} \amp a_{12}+b_{12} \amp \cdots\amp a_{1n}+b_{1n}\\ a_{21}+b_{21}\amp a_{22}+b_{22}\amp \cdots\amp a_{2n}+b_{2n}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\ a_{m1}+b_{m1}\amp a_{m2}+b_{m2}\amp \cdots\amp a_{mn}+b_{mn}\ebm
+        </me>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    For another example, suppose we wanted to know the total production for each farm in 2014, 
+    assuming that our matrices represent all of the crops each farm produces. 
+    This would be obtained by simply calculating the total for each row in the matrix <m>A</m>. 
+    Another way to accomplish the same task is as follows: let
+    <me>
+      C_1 = \bbm 48\\0\\34\ebm, C_2 = \bbm 18\\0\\203\ebm, C_3 = \bbm 92\\73\\0\ebm, C_4 = \bbm 0\\152\\88\ebm
+    </me>
+    denote the columns of the matrix <m>A</m>; 
+    note that each column represents the yields across all three farms for each crop. 
+  </p>
+
+  <p>
+    The total yield for each farm can then be calculated according to
+    <md>
+      <mrow>Y \amp  = C_1+C_2+C_3+C_4</mrow>
+      <mrow> \amp  \bbm 48\\0\\34\ebm + \bbm 18\\0\\203\ebm + \bbm 92\\73\\0\ebm + \bbm 0\\152\\88\ebm = \bbm 158\\225\\325\ebm</mrow>
+    </md>.
+    The column vector <m>Y</m> then contains the total yields for each farm. 
+    Notice that although we only defined the sum of <em>two</em> matrices in <xref ref="def-addition"/>, 
+    it makes sense to add any number of matrices, and there is no need to add parentheses.
+  </p>
+
+  <p>
+    Recall from <xref ref="chapter-vectors"/> that we defined the multiplication of a vector 
+    <m>\vec{v} = \bbm  a\\ b\\ c\ebm</m> by a scalar <m>t\in\mathbb{R}</m> by
+    <me>
+      t\vec{v} = t\bbm  a\\ b\\ c\ebm = \bbm  ta\\ tb\\ tc\ebm
+    </me>.
+  </p>
+
+  <p>
+    It stands to reason that scalar multiplication should be defined in exactly the same way for row and column vectors; 
+    after all, in most cases these are just different ways of writing down the same mathematical object. 
+    Thus, in order to multiply a row or column vector by a scalar, we should multiply each entry in the vector by that scalar. 
+    From here, it's not too much of a stretch to conclude that the same definition is reasonable for matrices in general.
+  </p>
+
+  <definition xml:id="def-scalar_multiplication">
+    <title>Scalar Multiplication</title>
+    <statement>
+      <p>
+        <idx><h>matrix</h><h>scalar multiplication</h></idx>
+
+        Let <m>\tta = [a_{ij}]</m> be an <m>m\times n</m> matrix and let <m>k</m> be a scalar. 
+        The <term>scalar multiplication</term> <m>\tta</m> by <m>k</m>, denoted <m>k\tta</m>, is defined by
+        <me>
+          \bbm ka_{11} \amp ka_{12} \amp \cdots\amp ka_{1n}\\ka_{21}\amp ka_{22}\amp \cdots\amp ka_{2n}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\ka_{m1}\amp ka_{m2}\amp \cdots\amp ka_{mn}\ebm
+        </me>.
+      </p>
+    </statement>
+  </definition>
+
+  <aside>
+    <p>
+      <alert>Note:</alert> In Linear Algebra, a <term>scalar</term><idx><h>scalar</h></idx> is simply a number. 
+      For most of this text, the scalars we consider are real numbers, although one can also use complex numbers as scalars. 
+      (Complex numbers were introduced in <xref ref="CmpNums"/>.)  
+      As we saw in <xref ref="chapter-vectors"/>, multiplying a vector by a scalar <em>scales</em> the length of that vector.
+    </p>
+  </aside> 
+
+  <p>
+    Referring one last time to our farming data, 
+    we could imagine that a fertilizer company is advertising a new product they claim will increase crop yields by 30%. 
+    Increasing the yield of each crop by 30\% amounts to multiplying each of the entries in the matrices 
+    <m>A</m> or <m>B</m> by a factor of 1.3; according to <xref ref="def-scalar_multiplication"/>, 
+    this is the same as forming the scalar multiples <m>1.3\tta</m> and <m>1.3\ttb</m>.
+  </p>
+
+  <p>
+    Since we have two years' worth of crop data, we could also ask for the <em>average</em> yield for each crop on each farm. 
+    For example, Farm A produced 48 tonnes of corn in 2014, and 41 tonnes of corn in 2015. 
+    The two-year average for corn on Farm A is thus
+    <me>
+      \frac{48+41}{2} = \frac{89}{2} = 44.5 \text{ tonnes}
+    </me>.
+    Notice that we can obtain the average for each entry by dividing each entry in <m>T=A+B</m> by 2, 
+    which is the same thing as multiplying by <m>\frac{1}{2}</m>. Our matrix of averages is
+    <me>
+      \frac{1}{2}T = \frac{1}{2}\bbm 89  \amp  43  \amp  107 \amp  20\\0\amp  72 \amp  73 \amp  317\\81 \amp  396 \amp  0 \amp  165\ebm = \bbm 89/2 \amp  43/2 \amp  107/2 \amp  10\\0\amp  36 \amp  73/2 \amp  317/2\\81/2 \amp  198 \amp  0 \amp  165/2\ebm
+    </me>.
+    Finally, notice also that since
+    <me>
+      \frac{48+41}{2} = \frac{1}{2}(48)+\frac{1}{2}(41)
+    </me>,
+    with similar considerations for the other entries, 
+    we also could have obtained the average by first dividing <m>A</m> and <m>B</m> by <m>\frac{1}{2}</m>, 
+    and then adding the result. That is,
+    <me>
+      \frac{1}{2}T = \frac{1}{2}(A+B) = \frac{1}{2}A +\frac{1}{2}B
+    </me>.
+    We'll see shortly that this result is due to a general property of matrix arithmetic, called the <em>distributive property</em>.
+  </p>
+
+  <p>
+    Expressions such as <m>\frac12 A+\frac12 B</m> that use both addition and scalar multiplication together 
+    occur frequently in Linear Algebra, and are known as <term>linear combinations</term>. 
+    In general, a linear combination can be formed from any number of matrices, as long as they're all of the same size.
+  </p>
+
+  <definition xml:id="def-linear_combination">
+    <title>Linear combination</title>
+    <statement>
+      <p>
+        <idx><h>linear combination</h></idx>
+
+        Given <m>m\times n</m> matrices <m>A_1, A_2, \ldots, A_k</m>, 
+        a <term>linear combination</term> of these matrices is any expression of the form
+        <me>
+          B = c_1A_1+c_2A_2+\cdots +c_kA_k
+        </me>,
+        where <m>c_1, c_2, \ldots, c_k</m> are scalars.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    It is time to forget our farm data and move into some abstract computational examples 
+    to make sure we have the hang of these new operations.
+  </p>
+
+  <example xml:id="ex_mat_add_1">
+    <title>Matrix addition and scalar multiplication</title>
+    <statement>
+ 
+      <p>
+        Let 
+        <me>
+          \tta = \bbm 1 \amp 2 \amp 3\\-1\amp 2\amp 1\\5\amp 5\amp 5\ebm,\quad \ttb = \bbm 2\amp 4\amp 6\\1\amp 2\amp 2\\-1\amp 0\amp 4\ebm,\quad \ttc = \bbm 1\amp 2\amp 3\\9\amp 8\amp 7\ebm
+        </me>.
+        Simplify the following matrix expressions.
+        <ol cols="2">
+          <li><m>\tta+\ttb</m></li>
+          <li><m>\ttb+\tta</m></li>
+          <li><m>\tta-\ttb</m></li>
+          <li><m>\tta + \ttc</m></li>
+          <li><m>-3\tta +2\ttb</m></li>
+          <li><m>\tta -\tta</m></li>
+          <li><m>5\tta + 5\ttb</m></li>
+          <li><m>5(\tta+\ttb)</m></li>
+        </ol>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        <ol>
+          <li>
+            <p>
+              Adding the corresponding entries of <m>A</m> and <m>B</m>, we have
+              <me>
+                \tta + \ttb =
+                \bbm 1+2\amp 2+4\amp 3+6\\-1+1\amp 2+2\amp 1+2\\5-1\amp 5+0\amp 5+4\ebm = \bbm 3\amp 6\amp 9\\0\amp 4\amp 3\\4\amp 5\amp 9\ebm
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              To compute <m>B+A</m>, we again add the corresponding entries, but in the opposite order:
+              <me>
+                \ttb + \tta = \bbm 2+14+2\amp 6+3\\1-1\amp 2+2\amp 2+1\\-1+5\amp 0+5\amp 4+5\ebm = \bbm 3\amp 6\amp 9\\0\amp 4\amp 3\\4\amp 5\amp 9\ebm
+              </me>.
+            </p>
+          </li>
+          
+          <li>
+            <p>
+               In this case, we have to subtract the entries of <m>B</m> from those of <m>A</m>. This gives us
+               <me>
+                \tta - \ttb = \bbm-1\amp -2\amp -3\\-2\amp 0\amp -1\\6\amp 5\amp 1\ebm
+               </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              <m>\tta + \ttc</m> is not defined. If we look at our definition of matrix addition, 
+              we see that the two matrices need to be the same size. 
+              Since <m>\tta</m> and <m>\ttc</m> have different dimensions, 
+              we don't even try to create something as an addition; we simply say that the sum is not defined.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              To compute this linear combination we first carry out the scalar multiplication, followed by the addition:
+              <md>
+                <mrow>-3\tta + 2\ttb \amp  = -3\bbm 1\amp 2\amp 3\\-1\amp 2\amp 1\\5\amp 5\amp 5\ebm + 2\bbm 2\amp 4\amp 6\\1\amp 2\amp 2\\-1\amp 0\amp 4\ebm</mrow>
+                <mrow>  \amp  = \bbm-3\amp -6\amp -9\\3\amp -6\amp -3\\-15\amp -15\amp -15\ebm + \bbm 4\amp 8\amp 12\\2\amp 4\amp 4\\-2\amp 0\amp 8\ebm</mrow>
+                <mrow>  \amp = \bbm 1\amp 2\amp 3\\5\amp -2\amp 1\\-17\amp -15\amp -7\ebm</mrow>
+              </md>.
+            </p>
+          </li>
+          	
+          <li>
+            <p>
+              Subtracting each entry of <m>A</m> from itself, we get 
+              <me>
+                \tta - \tta = \bbm 0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              Carrying out the scalar multiplication followed by the addition, we find
+              <me>
+                5A+5B = \bbm 5\amp 10\amp 15\\-5\amp 10\amp 5\\25\amp 25\amp 25\ebm +\bbm 10\amp 20\amp 30\\5\amp 10\amp 10\\-5\amp 0\amp 20\ebm = \bbm 15\amp 30\amp 45\\0\amp 20\amp 15\\20\amp 25\amp 45\ebm
+              </me>.
+            </p>
+          </li>
+          
+          <li>
+            <p>
+              In this case, we first perform the addition, followed by the scalar multiplication. We obtain:
+              <md>
+                <mrow>5\left(\bbm 1\amp 2\amp 3\\-1\amp 2\amp 1\\5\amp 5\amp 5\ebm + \bbm 2\amp 4\amp 6\\1\amp 2\amp 2\\-1\amp 0\amp 4\ebm\right) \amp = 5\cdot\bbm 3\amp 6\amp 9\\0\amp 4\amp 3\\4\amp 5\amp 9\ebm</mrow>
+                <mrow> \amp = \bbm 15 \amp 30\amp 45\\0\amp 20\amp 15\\20\amp 25\amp 45\ebm</mrow>
+              </md>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Our example raised a few interesting points. 
+    Notice how <m>\tta + \ttb = \ttb + \tta</m>. 
+    We probably aren't surprised by this, since we know that when dealing with numbers, <m>a+b = b+a</m>. 
+    Also, notice that <m>5\tta+5\ttb = 5(\tta+\ttb)</m>. In our example, 
+    we were careful to compute each of these expressions following the proper order of operations; 
+    knowing these are equal allows us to compute similar expressions in the most convenient way. 
+  </p>
+
+  <p>
+    Another interesting thing that came from our previous example is that 
+    <me>
+      \tta - \tta = \bbm 0 \amp 0 \amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm
+    </me>.
+    It seems like this should be a special matrix; after all, every entry is 0 and 0 is a special number. 
+  </p>
+
+  <p>
+    In fact, this is a special matrix. We define <m>\tto</m>, which we read as <q>the zero matrix,</q> 
+    to be the matrix of all zeros. We should be careful; this previous <q>definition</q> is a bit ambiguous, 
+    for we have not stated what size the zero matrix should be. Is <m>\bbm 0\amp 0\\0\amp 0\\ \ebm</m> the zero matrix? 
+    How about <m>\bbm 0\amp 0\ebm</m>?
+  </p>
+
+  <p>
+    Let's not get bogged down in semantics. If we ever see <m>\tto</m> in an expression, 
+    we will usually know right away what size <m>\tto</m> should be; 
+    it will be the size that allows the expression to make sense. 
+    If <m>\tta</m> is a <m>3\times 5</m> matrix, and we write <m>\tta + \tto</m>, 
+    we'll simply assume that <m>\tto</m> is also a <m>3\times 5</m> matrix. 
+    If we are ever in doubt, we can add a subscript; for instance, <m>\tto_{2\times 7}</m> is the <m>2\times7</m> matrix of all zeros.
+  </p>
+
+  <p>
+    Since the zero matrix is an important concept, we give it its own definition box.  
+  </p>
+
+  <definition xml:id="def-zero_matrix">
+    <title>The Zero Matrix</title>
+    <statement>
+      <p>
+        <idx><h>zero matrix</h></idx>
+        <idx><h>matrix</h><h>the zero matrix</h></idx>
+        
+        The <m>m\times n</m> matrix of all zeros, denoted <m>\tto_{m\times n}</m>, is the <term>zero matrix</term>.
+      </p>
+
+      <p>
+        When the dimensions of the zero matrix are clear from the context, the subscript is generally omitted.
+      </p>
+    </statement>
+  </definition>
+
+  <aside>
+    <p>
+      We use the bold face to distinguish the zero matrix, <m>\tto</m>, from the number zero, 0. 
+    </p>
+  </aside>
+
+  <p>
+    The following presents some of the properties of matrix addition and scalar multiplication that we discovered above, 
+    plus a few more.
+  </p>
+
+  <theorem xml:id="thm-addition_properties">
+    <title>Properties of Matrix Addition and Scalar Multiplication</title>
+    <statement>
+      <p>
+        <idx><h>matrix</h><h>arithmetic properties</h></idx>
+
+        The following equalities hold for all <m>m\times n</m> matrices <m>\tta</m>, 
+        <m>\ttb</m> and <m>\ttc</m> and scalars <m>k</m>.
+        <ol>
+          <li><m>\tta+\ttb = \ttb + \tta</m> (Commutative Property)</li>
+          <li><m>(\tta+\ttb)+\ttc = \tta + (\ttb+\ttc)</m> (Associative Property)</li>
+          <li><m>k(\tta + \ttb) = k\tta + k\ttb</m> (Scalar Multiplication Distributive Property)</li>
+          <li><m>k\tta = \tta k</m></li>
+          <li><m>\tta +\tto = \tto+\tta = \tta</m> (Additive Identity)</li>
+          <li><m>0\tta = \tto</m></li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Be sure that this last property makes sense; it says that if we multiply any matrix by the <em>number</em> 0, 
+    the result is the <em>zero matrix</em>, or <m>\tto</m>. (You now have more than one kind of zero to keep track of!)
+  </p>
+
+  <p>
+    It's important to understand that since matrix addition and scalar multiplication are defined 
+    in terms of the entries of our matrices, the properties in <xref ref="thm-addition_properties"/> 
+    follow directly from the properties of real number arithmetic in <xref ref="RealNumberArithmetic"/>. 
+    For example to prove item 1 above, let <m>A=[a_{ij}]</m> and <m>B=[b_{ij}]</m> be <m>m\times n</m> matrices. 
+    We then have
+    <md>
+      <mrow>A+B \amp  = [a_{ij}]+[b_{ij}]</mrow>
+      <mrow>\amp  = [a_{ij}+b_{ij}] \quad \text{ (by <xref ref="def-addition"/>)}</mrow>
+      <mrow>\amp  = [b_{ij}+a_{ij}] \quad \text{ (since addition of real numbers commutes)}</mrow>
+      <mrow>\amp  = [b_{ij}]+[a_{ij}] \quad \text{ (by <xref ref="def-addition"/>)}</mrow>
+      <mrow>\amp  = B+A</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Similarly, the distributive property in item 3 is valid since
+    <md>
+      <mrow>k(A+B) \amp  = k([a_{ij}]+[b_{ij}])</mrow>
+      <mrow> \amp  = k[a_{ij}+b_{ij}] \quad \text{ (definition of matrix addition)}</mrow>
+      <mrow> \amp  = [k(a_{ij}+b_{ij})] \quad \text{ (definition of scalar multiplication)}</mrow>
+      <mrow> \amp  = [k\cdot a_{ij}+k\cdot b_{ij}] \quad \text{ (distributive property of real numbers)}</mrow>
+      <mrow> \amp  = [k\cdot a_{ij}] + [\cdot b_{ij}] \quad \text{ (definition of matrix addition)}</mrow>
+      <mrow> \amp  = k[a_{ij}]+k[b_{ij}] \quad \text{ (definition of scalar multiplication)}</mrow>
+      <mrow> \amp  = kA +kB</mrow>
+    </md>.
+  </p>
+
+  <p>
+    The verification of the remaining properties in <xref ref="thm-addition_properties"/> is similar, 
+    and left as an exercise for the reader.
+  </p>
+
+  <p>
+    We began this section with the concept of matrix equality. 
+    Let's put our matrix addition properties to use and solve a matrix equation.
+  </p>
+
+  <example xml:id="ex_equal">
+    <title>Solving a matrix equation</title>
+    <statement>
+ 
+      <p>
+        Let 
+        <me>
+          \tta = \bbm 2 \amp -1\\3 \amp 6\ebm
+        </me>.
+        Find the matrix <m>\ttx</m> such that 
+        <me>
+          2\tta + 3\ttx = -4\tta
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We can use basic algebra techniques to manipulate this equation for <m>\ttx</m> first, 
+        let's subtract <m>2\tta</m> from both sides. This gives us 
+        <me>
+          3\ttx = -6\tta
+        </me>.
+        Now divide both sides by 3 to get 
+        <me>
+          \ttx = -2\tta
+        </me>.
+        Now we just need to compute <m>-2\tta</m>; we find that 
+        <me>
+          \ttx = \bbm -4 \amp 2\\ -6 \amp -12\ebm
+        </me>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Our matrix properties identified <m>\tto</m> as the Additive Identity; <ie/>, 
+    if you add <m>\tto</m> to any matrix <m>\tta</m>, you simply get <m>\tta</m>. 
+    This is similar in notion to the fact that for all numbers <m>a</m>, <m>a+0 = a</m>. 
+    A <em>Multiplicative Identity</em> would be a matrix <m>\tti</m> where <m>\tti\times\tta = \tta</m> 
+    for all matrices <m>\tta</m>. (What would such a matrix look like? A matrix of all 1s, perhaps?) 
+    However, in order for this to make sense, we'll need to learn to multiply matrices together, which we'll do in the next section.
+  </p>
+
+  <exercises>
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          For the matrices <m>\tta</m> and <m>\ttb</m> given below,
+          simplify the given expression.
+          <me>
+            \tta = \bbm 1 \amp -1\\ 7 \amp 4\ebm \quad \ttb = \bbm -3 \amp 2\\5 \amp 9\ebm
+          </me>.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta + \ttb</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm -2 \amp  -1\12  \amp  13\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>2\tta - 3\ttb</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm 11 \amp  -8\-1  \amp  -19\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>3\tta - \tta</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm 2  \amp  -2\14  \amp  8\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>4\ttb - 2\tta</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm -14\\-5 \\ -9\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>3(\tta - \ttb)+\ttb</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm 9 \amp  -7\11  \amp  -6\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>2(\tta - \ttb)-(\tta - 3\ttb)</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm -2 \amp 1\12 \amp 13\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          For the matrices <m>\tta</m> and <m>\ttb</m> given below,
+          simplify the given expression.
+          <me>
+            \tta = \bbm 3\\ 5\ebm \quad \ttb = \bbm -2\\4\ebm
+          </me>.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>4\ttb - 2\tta</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm -14\\6 \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>-2\tta + 3\tta</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm -12\\2 \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>-2\tta - 3\tta</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm -15\\-25 \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>-\ttb + 3\ttb-2\ttb</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm 0\\0 \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+    
+    </exercisegroup>
+
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          For the matrices <m>\tta</m> and <m>\ttb</m> given below,
+          find <m>\ttx</m> that satisfies the given equation.
+          <me>
+            \tta = \bbm 3 \amp -1\\ 2 \amp 5\ebm \quad \ttb = \bbm 1 \amp 7\\3 \amp -4\ebm
+          </me>
+
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>2\tta + \ttx = \ttb</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\ttx = \bbm -5  \amp  9 \-1  \amp  -14 \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta - \ttx = 3\ttb</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\ttx = \bbm 0  \amp  -22 \-7  \amp  17 \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>3\tta + 2\ttx = -1\ttb</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\ttx = \bbm -5  \amp  -2 \-9/2  \amp  -19/2 \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta - \frac12\ttx = -\ttb</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\ttx = \bbm 8  \amp  12 \10  \amp  2 \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+    
+    </exercisegroup>
+
+    <exercisegroup>
+    
+      <introduction>
+        <p>
+          Find values for the scalars <m>a</m> and <m>b</m> that satisfy the given equation.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>a\bbm 1\\2 \ebm + b\bbm -1\\5\ebm = \bbm 1\\9 \ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>a = 2</m>, <m>b = 1</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>a\bbm -3\\1 \ebm + b\bbm 8\\4\ebm = \bbm 7\\1 \ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>a = -1</m>, <m>b = 1/2</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>a\bbm 4\\-2 \ebm + b\bbm -6\\3\ebm = \bbm 10\\-5 \ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>a = 5/2 + 3/2b</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>a\bbm 1\\1 \ebm + b\bbm -1\\3\ebm = \bbm 5\\5 \ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>a = 5</m>, <m>b = 0</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>a\bbm 1\\3 \ebm + b\bbm -3\\-9\ebm = \bbm 4\\-12 \ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            No solution.
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>a\bbm 1\\2\\3 \ebm + b\bbm 1\\1\\2\ebm = \bbm 0\\ -1\\-1 \ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>a=-1</m>, <m>b=1</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>a\bbm 1\\0\\1 \ebm + b\bbm 5\\1\\2\ebm = \bbm 3\\ 4\\7 \ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            No solution.
+          </p>
+        </answer>
+      </exercise>
+    
+    </exercisegroup>
+
+    <exercise>
+      <statement>
+        <p>
+          Complete the proof of <xref ref="thm-addition_properties"/>.
+        </p>
+      </statement>
+      <answer>
+        <p>
+          
+        </p>
+      </answer>
+    </exercise>
+  </exercises>
+
+</section>
