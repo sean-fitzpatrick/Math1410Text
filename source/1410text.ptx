@@ -3,7 +3,7 @@
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
   <xi:include href="./docinfo.ptx"/>
 
-  <book xml:id="intro-linear">
+  <book xml:id="math-1410">
     <title>Elementary Linear Algebra</title>
     <subtitle>For University of Lethbridge Math 1410</subtitle>
     <frontmatter label="frontmatter">
@@ -76,6 +76,7 @@
     <xi:include href="./chapter-linear.ptx"/>
     <xi:include href="./chapter-algebra.ptx"/>
     <xi:include href="./chapter-transformations.ptx"/>
+    <xi:include href="./chapter-eigen.ptx"/>
 
     <backmatter label="backmatter">
       <solutions divisional="answer" admit="odd" label="selected-answers">

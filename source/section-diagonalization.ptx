@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-diagonalization" label="sec-diagonalization">
+  <title>Eigenvalues and Diagonalization</title>
+
+  <p>
+    Up to now we have concentrated primarily on finding eigenvalues and eigenvectors, 
+    and while we may have claimed that this is a particularly useful endeavour, 
+    we haven't offered much to back up this claim, aside from referring the reader to a Wikipedia page. 
+    While a complete treatment of the theory and applications of eigenvalues and eigenvectors goes well beyond the scope of this book, 
+    we can offer a brief taste of what's to come (should the reader choose to further their studies in linear algebra).
+  </p>
+
+  <paragraphs>
+    <title>Similar matrices</title>
+
+    <definition xml:id="def-similar">
+      <title>Similar Matrices</title>
+      <statement>
+        <p>
+          <idx><h>similar matrices</h></idx> 
+          <idx><h>matrix</h><h>similar</h></idx>
+    
+          Let <m>A</m> and <m>B</m> be <m>n\times n</m> matrices. 
+          We say that <m>A</m> is <term>similar</term> to <m>B</m>, and write <m>A\sim B</m>, 
+          if there exists an invertible <m>n\times n</m> matrix <m>P</m> such that
+          <me>
+              A = P^{-1}BP
+          </me>.
+        </p>
+      </statement>
+    </definition>
+       
+      
+    <p>
+        Although our definition above is not symmetric (it defines what it means for <m>A</m> to be similar to <m>B</m>, but not vice-versa), 
+        there is in fact no ambiguity in using a statement such as <q><m>A</m> and <m>B</m> are similar matrices,</q> 
+        as the next theorem demonstrates.
+    </p>
+
+    <theorem xml:id="thm-similarprops">
+        <title>Properties of matrix similarity</title>
+        <statement>
+          <p>
+            Let <m>A</m>, <m>B</m>, and <m>C</m> be <m>n\times n</m> matrices. Then:
+            <ol>
+              <li>
+              <p>
+                <m>A\sim A</m>
+              </p>
+              </li>
+              <li>
+              <p>
+                If <m>A\sim B</m>, then  <m>B\sim A</m>
+              </p>
+              </li>
+              <li>
+              <p>
+                If <m>A\sim B</m> and <m>B\sim C</m>, then <m>A\sim C</m>.
+              </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+    </theorem>
+       
+    <p>
+      Let's see why these results are true.
+      <ol>
+        <li>
+          <p>
+            Setting <m>P=I</m>, the <m>n\times n</m> identity matrix, we have <m>A = I^{-1}AI</m>, and thus <m>A\sim A</m>.
+          </p>
+        </li>
+        <li>
+          <p>
+            Suppose <m>A\sim B</m>. Then we know that <m>A = P^{-1}BP</m> for some invertible matrix <m>P</m>. 
+            Setting <m>Q=P^{-1}</m>, (and noting <m>Q^{-1} = P</m>) we have
+            <me>
+                B = (PP^{-1})B(PP^{-1}) = P(P^{-1}BP)P^{-1} = Q^{-1}AQ,
+            </me>
+            so <m>B\sim A</m>.
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            Suppose that <m>A\sim B</m> and <m>B\sim C</m>. 
+            Then there exist <m>n\times n</m> matrices <m>P</m> and <m>Q</m> such that <m>A = P^{-1}BP</m> and <m>B=Q^{-1}CQ</m>. 
+            But then
+            <me>
+                A = P^{-1}BP = P^{-1}(Q^{-1}CQ)P = (P^{-1}Q^{-1})C(QP) = (QP)^{-1}C(QP),
+            </me>
+            which shows that <m>A\sim C</m>.
+          </p>
+        </li>         
+      </ol>
+    </p>
+
+    <p>
+      The fact that the definition of matrix similarity satisfies the three properties in the theorem 
+      above tells us that matrix similarity is an example of what is called an <em>equivalence relation</em>.
+      This equivalence relation breaks the set of all <m>n\times n</m> matrices into sets of <q>equivalent</q> matrices.  
+      Similar matrices are so-called because, although they often have very different entries, 
+      they share many of the same properties. 
+      (At the end of this section, we'll discuss the fact that from the point of view of linear transformations, 
+      similar matrices describe the same linear transformation, if we represent that linear transformation using different choices of basis.) 
+      The following theorem gives some of the properties similar matrices share.
+
+      <idx><h>equivalence relation</h></idx>
+    </p>
+
+    <theorem xml:id="thm-similarmatrixprops">
+      <title>Shared properties of similar matrices</title>
+      <statement>
+        <p><idx><h>similar matrices</h><h>properties of</h></idx>
+
+          Let <m>A</m> and <m>B</m> be <m>n\times n</m> matrices. If <m>A\sim B</m>, then:
+          <ol>
+            <li>
+              <p>
+                <m>\tr(A) = \tr(B)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>\det(A) = \det(B)</m>
+              </p>
+            </li>
+            <li>
+              <p>
+                <m>A</m> and <m>B</m> have the same eigenvalues.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+    
+    <p>
+      Let us again check the details on each of the points in the above theorem to see why they're true.
+      <ol>
+        <li>
+          <p>
+            Recall that the trace satisfies <m>\tr(AB) = \tr(BA)</m> for any <m>n\times n</m> matrices <m>A</m> and <m>B</m>. 
+            Thus, if <m>A = P^{-1}BP</m>, we have
+            <me>
+              \tr(A) = \tr(P^{-1}BP) = \tr(B(P^{-1}P)) = \tr(BI)=\tr(B)
+            </me>.
+          </p>
+        </li>
+      
+        <li>
+          <p>
+            Recall that the determinant satisfies <m>\det(AB) = \det(A)\det(B)</m> for any 
+            <m>n\times n</m> matrices <m>A</m> and <m>B</m>, and <m>\det(A^{-1}) = \dfrac{1}{\det(A)}</m> 
+            for any invertible matrix <m>A</m>. Thus, if <m>A = P^{-1}BP</m>, we have
+            <md>
+              <mrow>\det(A)  \amp = \det(P^{-1}BP) = \det(P^{-1})\det(B)\det(P)</mrow>
+              <mrow> \amp  = \frac{1}{\det(P)}\det(B)\det(P) = \det(B)</mrow>
+            </md>.
+          </p>
+        </li>
+      
+        <li>
+          <p>
+            Suppose that <m>\lambda</m> is an eigenvalue of <m>A</m>, and that <m>A\sim B</m>. 
+            Since <m>\lambda</m> is an eigenvalue of <m>A</m>, we have
+            <me>
+              A\vec{v} = \lambda\vec{v}
+            </me>
+            for some nonzero vector <m>\vec{v}</m>. But if <m>A\sim B</m>, then <m>A = P^{-1}BP</m> for some invertible matrix <m>P</m>, so 
+            <me>
+              P^{-1}BP\vec{v} = \lambda\vec{v}
+            </me>.
+          </p>
+
+          <p>
+            Multiplying both sides on the left by <m>P</m>, we have
+            <me>
+              B(P\vec{v}) = P(\lambda\vec{v}) = \lambda(P\vec{v})
+            </me>.
+            Since <m>P</m> is invertible and <m>\vec{v}\neq \vec{0}</m>, 
+            we know that <m>\vec{w} = P\vec{v}</m> is nonzero, 
+            and thus <m>\lambda</m> is an eigenvalue of <m>B</m> with corresponding eigenvector <m>P\vec{v}</m>.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </paragraphs>
+
+  <paragraphs>
+    <title>Multiplicity of an eigenvalue</title>
+    
+    <p>
+      <idx><h>multiplicity</h><h>of an eigenvalue</h></idx>
+
+      To clarify the presentation in this section, we will shift our notation somewhat from what we've been using so far in the textbook. 
+      Previously, we used the definition
+      <me>
+        p_A(\lambda) = \det(A-\lambda I)
+      </me>
+      for the characteristic polynomial of a matrix <m>A</m>. 
+      We will adjust this in two ways: first, we will use <m>x</m> as the variable in our polynomial; 
+      second, we will shift the sign of the characteristic polynomial and make the following definition:
+    </p>
+
+    <definition xml:id="def-char_poly2">
+      <title>Characteristic Polynomial (revised definition)</title>
+      <statement>
+        <p>
+          <idx><h>characteristic polynomial</h></idx>
+          
+          The <term>characteristic polynomial</term> of an <m>n\times n</m> matrix <m>A</m> 
+          is the degree-<m>n</m> polynomial <m>p_A(x)</m> defined by
+          <me>
+            p_A(x) = \det(xI-A)
+          </me>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      Notice that we are using <m>xI-A</m> rather than <m>A-xI</m>. 
+      This guarantees that the highest-degree term in <m>p_A(x)</m> is always <m>x^n</m> (with coefficient 1), 
+      whereas before this term was <m>\pm x^n</m>, depending on whether <m>n</m> is even or odd. 
+      We are using <m>x</m> as our variable to make it easier to talk about factors of the characteristic polynomial: 
+      with this change, the statements <q><m>\lambda</m> is an eigenvalue of <m>A</m></q> and <q><m>(x-\lambda)</m> 
+      is a factor of <m>p_A(x)</m></q> are equivalent.
+    </p>
+
+    <p>
+      In the previous sections, we saw examples of matrices whose characteristic polynomial had a repeated root. 
+      In such cases, it is sometimes possible (but not guaranteed) 
+      that there is more than one independent eigenvector associated with the repeated eigenvalue. 
+      Indeed, consider the matrices
+      <me>
+        A = \bbm 2 \amp 0 \amp 0\\0\amp 2\amp 0\\0\amp 0\amp 2\ebm, \quad B = \bbm 2\amp 0\amp 0\\0\amp 2\amp 1\\0\amp 0\amp 2\ebm, \quad C = \bbm 2\amp 1\amp 0\\0\amp 2\amp 1\\0\amp 0\amp 2\ebm
+      </me>.
+      All three matrices are upper-triangular, so they have the same characteristic polynomial, namely:
+      <me>
+        p(x) = (x-2)^3
+      </me>.
+      Notice that the eigenvalue <m>\lambda = 2</m> is <q>repeated</q>, 
+      in the sense that it is a repeated root of the characteristic polynomial. 
+      This leads to the following definition:
+    </p>
+
+    <definition xml:id="def-algebraicmultiplicity">
+      <title>Algebraic Multiplicity of an Eigenvalue</title>
+      <statement>
+        <p>
+          <idx><h>multiplicity</h><h>algebraic</h></idx>
+    
+          We say that <m>\lambda</m> is an eigenvalue with <term>algebraic multiplicity</term> 
+          <m>k</m> if <m>(x-\lambda)^k</m> is a factor of <m>p_A(x)</m>, but <m>(x-\lambda)^{k+1}</m> is not.
+        </p>
+      </statement>
+    </definition>
+    
+    <p>
+      In other words, the algebraic multiplicity of an eigenvalue <m>\lambda </m> is the (largest) 
+      power to which the corresponding factor <m>(x-\lambda)</m> appears in the characteristic polynomial. 
+      In our example above, all three of the matrices <m>A</m>, <m>B</m>, and <m>C</m> 
+      have the eigenvalue <m>2</m> with algebraic multiplicity 3. 
+      However, consider the corresponding eigenvectors in each case:
+    </p>
+
+    <p>
+      For <m>A = \bbm 2\amp 0\amp 0\\0\amp 2\amp 0\\0\amp 0\amp 2\ebm</m>, we have <m>A-2I = 0</m>, 
+      so <em>every</em> non-zero vector <m>\vec{x}</m> is an eigenvector. Indeed, <m>A=2I</m>, so
+      <me>
+        A\vec{x} = (2I)\vec{x} = I(2\vec{x}) = 2\vec{x}
+      </me>
+      for every vector. In particular, we can choose the standard unit basis vectors
+      <me>
+        \vec{e}_1 = \bbm 1\\0\\0\ebm, \vec{e}_2 = \bbm 0\\1\\0\ebm, \vec{e}_3 = \bbm 0\\0\\1\ebm 
+      </me>
+      as our basic eigenvectors, and we see that there are three independent eigenvectors corresponding to the eigenvalue <m>\lambda=2</m>.
+    </p>
+
+    <p>
+      For <m>B = \bbm 2\amp 0\amp 0\\0\amp 2\amp 1\\0\amp 0\amp 2\ebm</m>, we have <m>B-2I = \bbm 0\amp 0\amp 0\\0\amp 0\amp 1\\0\amp 0\amp 0\ebm</m>, which is row-equivalent to <m>\bbm 0\amp 0\amp 1\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm</m>. The general solution to the equation <m>(B-2I)\vec{x}=\vec{0}</m> is thus given by
+      <me>
+        \vec{x} = \bbm s\\t\\0\ebm = s\bbm 1\\0\\0\ebm + t\bbm 0\\1\\0\ebm,
+      </me>
+      since the reduced row-echelon form of <m>B-2I</m> tells us that we must have <m>z=0</m>, 
+      while <m>x</m> and <m>y</m> are free. Thus, in this case we have two independent basic eigenvectors, 
+      given by the standard unit basis vectors <m>\vec{e}_1</m> and <m>\vec{e}_2</m>.
+    </p>
+
+    <p>
+      Finally, for <m>C= \bbm 2\amp 1\amp 0\\0\amp 2\amp 1\\0\amp 0\amp 2\ebm</m> have have <m>C-2I = \bbm 0\amp 1\amp 0\\0\amp 0\amp 1\\0\amp 0\amp 0\ebm</m>, which is already in reduced-row echelon form. From this, we can see that the system <m>(C-2I)\vec{x}=\vec{0}</m> has general solution
+      <me>
+        \vec{x} = \bbm t\\0\\0\ebm = t\vec{e}_1,
+      </me>
+      so we have only one independent eigenvector associated to <m>\lambda=2</m>; namely, <m>\vec{e}_1</m>.
+    </p>
+
+    <p>
+      The above shows us that when the algebraic multiplicity of an eigenvalue is greater than one, 
+      we might have multiple independent eigenvectors associated to that eigenvalue, but this is not guaranteed. 
+      To quantify this situation, we introduce further terminology. First, we make a definition: 
+      the <term>null space</term> of an <m>n\times n</m> matrix <m>A</m> is the set defined by
+      <me>
+        \operatorname{null}(A) = \{\vec{x}\in\R^n \,|\, A\vec{x}=\vec{0}\}
+      </me>.
+      In this language, we note that every eigenvector associated to an eigenvalue <m>\lambda</m> 
+      belongs to the null space of <m>A-\lambda I</m>. Indeed, <m>\operatorname{null}(A-\lambda I)</m> 
+      is equal to the set of all eigenvectors associated to the eigenvalue <m>\lambda</m>, along with the zero vector. 
+      This leads to another definition:
+    </p>
+
+    <definition xml:id="def-eigenspace">
+      <title>Eigenspace</title>
+      <statement>
+        <p>
+          <idx><h>eigenspace</h></idx>
+     
+          Let <m>A</m> be an <m>n\times n</m> matrix, and let <m>\lambda</m> be any real number. 
+          The <m>\lambda</m>-<term>eigenspace</term> of <m>A</m>, denoted by <m>E(A,\lambda)</m>, is defined by
+          <me>
+            E(A,\lambda) = \operatorname{null}(A-\lambda I)
+          </me>.
+        </p>
+      </statement>
+    </definition>
+          
+    <p>
+      A couple of remarks on this definition are in order. 
+      First, notice that <m>\lambda</m> is not assumed to be an eigenvalue in the definition above. 
+      However, for any real number <m>\lambda</m> which is not an eigenvalue, we have
+      <me>
+        E(A,\lambda) = \{\vec{0}\}
+      </me>.
+      The eigenvalues of <m>A</m> can thus be described as those real numbers for which <m>E(A,\lambda)\neq \{\vec{0}\}</m>. 
+      When <m>\lambda</m> is an eigenvalue, the <em>basic</em> eigenvectors associated to <m>\lambda</m> 
+      (that is, the basic solutions to the system <m>(A-\lambda I)\vec{x}=\vec{0}</m>) form a 
+      <term>basis</term> for <m>E(A,\lambda)</m>. 
+      This tells us that the dimension of each eigenspace is given by the number of independent 
+      basic eigenvectors associated to the corresponding eigenvalue, and gives us one more definition:
+    </p>
+
+    <definition xml:id="def-geometricmultiplicity">
+      <title>Geometric Multiplicity of an Eigenvalue</title>
+      <statement>
+        <p>
+          <idx><h>multiplicity</h><h>geometric</h></idx>
+     
+          Let <m>A</m> be an <m>n\times n</m> matrix. 
+          The <term>geometric multiplicity</term> of an eigenvalue <m>\lambda</m> of <m>A</m> 
+          is defined to be the dimension of the eigenspace <m>E(A,\lambda)</m>.
+        </p>
+      </statement>
+    </definition>
+    
+  </paragraphs>
+
+
+
+<example xml:id="ex_multiplicities">
+  <title>Computing eigenvalues and their multiplicities</title>
+  <statement>
+ 
+   <p>
+      Determine the eigenvalues of the matrix <m>A = \bbm 0 \amp 1 \amp 1\\1\amp 0\amp 1\\1\amp 1\amp 0\ebm</m>, along with their algebraic and geometric multiplicities.}
+{We first compute the eigenvalues of <m>A</m>. The characteristic polynomial of <m>A</m> is given by
+<md>
+ <mrow>c_A(x)  \amp  = \begin{vmatrix}x \amp -1\amp -1\\-1\amp x\amp -1\\-1\amp -1\amp x\end{vmatrix}</mrow>
+ <mrow> \amp  = x\begin{vmatrix}x \amp -1\\-1\amp x\end{vmatrix}+\begin{vmatrix}-1\amp -1\\-1\amp x\end{vmatrix}-\begin{vmatrix}-1\amp x\\-1\amp -1\end{vmatrix}</mrow>
+ <mrow> \amp  = x(x^2-1)-(x+1)-(x+1)</mrow>
+ <mrow> \amp  = x(x-1)(x+1)-2(x+1)</mrow>
+ <mrow> \amp  = (x^2-x-2)(x+1)</mrow>
+ <mrow> \amp  = (x-2)(x+1)^2</mrow>
+</md>.
+We see that the roots of <m>c_A(x)</m> are <m>\lambda_1 = 2</m>, which has algebraic multiplicity 1, and <m>\lambda_2 = -1</m>, which has algebraic multiplicity 2. To determine the geometric multiplicities, we compute the corresponding eigenvectors. For <m>\lambda = 2</m>, we have
+<me>
+   A-2I = \bbm -2 \amp 1 \amp 1\\1\amp -2\amp 1\\1\amp 1\amp -2\ebm \xrightarrow{\text{RREF}} \bbm 1\amp 0\amp -1\\0\amp 1\amp -1\\0\amp 0\amp 0\ebm
+</me>.
+Thus, <m>(A-2I)\vec{x} = \vec{0}</m> for <m>\vec{x} = \bbm t\\t\\t\ebm = t\bbm 1\\1\\1\ebm</m>, so <m>\vec{x}_1 = \bbm 1\\1\\1\ebm</m> is the (single) basic eigenvector associated to <m>\lambda = 2</m>. This gives us
+<me>
+   E(A,2) = \operatorname{span}\left\{\bbm 1\\1\\1\ebm\right\},
+</me>
+so the geometric multiplicity of <m>\lambda = 2</m> is <m>\dim E(A,2) = 1</m>. For <m>\lambda = -1</m>, we find
+<me>
+   A-(-1)I = \bbm 1 \amp 1 \amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm \xrightarrow{\text{RREF}} \bbm 1\amp 1\amp 1\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm
+</me>.
+This tells us that the general solution to <m>(A+I)\vec{x}=\vec{0}</m> is
+<me>
+   \vec{x} = \bbm -s-t\\s\\t\ebm = s\bbm -1\\1\\0\ebm + t\bbm -1\\0\\1\ebm,
+</me>
+so
+<me>
+   E(A,-1) = \operatorname{span}\left\{\bbm -1\\1\\0\ebm, \bbm -1\\0\\1\ebm\right\},
+</me>
+and the geometric multiplicity of <m>\lambda = -1</m> is <m>\dim E(A,-1) = 2</m>.
+}\\
+
+\subsection*{Diagonalization}<idx><h>diagonalization</h></idx>
+
+One common application of matrix algebra is to a class of dynamical systems known as <em>linear recurrences</em>. A linear recurrence is a process that occurs in discrete steps, such that the state of the system at any step <m>k</m> depends linearly on the state of the system after the previous step. An example might be a population model for an ecosystem involving several species. For a simple two-species <q>predator-prey</q> model, we might have two populations <m>P_1</m> (of rabbits, perhaps?) and <m>P_2</m> (let's say these are foxes) where the populations at a time <m>t_k</m> satisfy a relationship such as
+<md>
+ <mrow>P_1(t_k)  \amp = aP_1(t_{k-1}) + bP_2(t_{k-1})</mrow>
+ <mrow>P_2(t_k)  \amp = cP_1(t_{k-1}) + dP_2(t_{k-1}).</mrow>
+</md>
+A reasonable model would probably have positive values for the coefficients <m>a</m> and <m>d</m> (absent competition, predators, etc. we expect the populations to increase), while <m>b</m> would be negative (more foxes mean fewer rabbits) and <m>c</m> would be positive (more rabbits provide more fox food). If we introduce a <q>population vector</q> <m>\vec{P}(t) = \bbm P_1(t)\\P_2(t)\ebm</m> to describe the situation at a time <m>t</m>, then the above system can be written in the form <m>\vec{P}(t_k) = A\vec{P}(t_{k-1})</m>, where <m>A = \bbm a\amp b\\c\amp d\ebm</m>.
+
+Now, given an initial population state <m>\vec{P}(t_0)</m>, we might want to know what to expect after several generations (or seasons, or some other reasonable unit of time). Notice that we have
+<md>
+ <mrow>\vec{P}(t_1)  \amp  = A\vec{P}(t_0)</mrow>
+ <mrow>\vec{P}(t_2)  \amp  = A\vec{P}(t_1) = A(A\vec{P}(t_0)) = A^2\vec{P}(t_0)</mrow>
+ <mrow>\vec{P}(t_3)  \amp  = A\vec{P}(t_2) = A(A^2\vec{P}(t_0)) = A^3\vec{P}(t_0)</mrow>
+ <mrow>\vdots \quad  \amp  \quad \vdots</mrow>
+ <mrow>\vec{P}(t_k)  \amp  = A^k\vec{P}(t_0).</mrow>
+</md>
+Thus, to model the time evolution of our system, it suffices to compute powers of our matrix <m>A</m>. If we want to study a system over long periods of time, we need to be able to compute large powers of our matrix, and for complex systems, being able to do so efficiently will become increasingly important. (For example, we may be interested in whether or not the system settles into an equilibrium state. This would be the case, for example, if we were able to show that <m>A^k</m> was approximately equal to the identity matrix for large values of <m>k</m>.)
+
+One case where this is easily done is when the initial state <m>\vec{P}_0=\vec{P}(t_0)</m> is an eigenvector for our matrix: if <m>A\vec{P}_0 = \lambda\vec{P}_0</m>, then we have
+<md>
+ <mrow>A^2\vec{P}_0  \amp = A(A\vec{P}_0) = A(\lambda \vec{P}_0) = \lambda (A\vec{P}_0) = \lambda(\lambda \vec{P}_0) = \lambda^2\vec{P}_0</mrow>
+ <mrow>A^3\vec{P}_0  \amp = A(A^2\vec{P}_0) = A(\lambda^2\vec{P}_0) = \lambda^2 (A\vec{P}_0) = \lambda^2(\lambda\vec{P}_0) = \lambda^3\vec{P}_0,</mrow>
+</md>
+and so on: in general, <m>A^k\vec{P}_0 = \lambda^k\vec{P}_0</m>. This is useful, since computing powers of a number is much simpler than computing powers of a matrix.
+
+What if the initial state is not an eigenvector? It turns out that the same trick works as long as <m>\vec{P}_0</m> can be written as a <em>linear combination</em> of eigenvectors: suppose that
+<me>
+   \vec{P}_0 = c_1\vec{x}_1 + c_2\vec{x}_2 + \cdots + c_k\vec{x}_k,
+</me>
+where <m>\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_k</m> are eigenvectors of <m>A</m> with eigenvalues <m>\lambda_1, \lambda_2, \ldots, \lambda_k</m>, respectively. (Note that at this point we've moved away from the original premise of a <m>2\times 2</m> matrix <m>A</m> to consider a more general situation.) In this case, for any natural number <m>n</m>, we have
+<md>
+ <mrow>A^n\vec{P}_0  \amp = A^n(c_1\vec{x}_1 + c_2\vec{x}_2 + \cdots + c_k\vec{x}_k)</mrow>
+ <mrow> \amp  = c_1(A^n\vec{x}_1) + c_2(A^n\vec{x}_2) + \cdots + c_k(A^n\vec{x}_k)</mrow>
+ <mrow> \amp  = c_1(\lambda_1^n\vec{x}_1) + c_2(\lambda_2^n\vec{x}_2) + \cdots + c_k(\lambda_k^n\vec{x}_k),</mrow>
+</md>
+using our previous result. Again, we only need to be able to compute powers of the eigenvalues, and not of the original matrix.
+
+With the above in mind, we will clearly be in an advantageous situation if we can guarantee that \textbf{every} vector in our space can be written as a linear combination of eigenvectors. We know from our earlier work that in order to guarantee this, we would need to be able to construct a \textbf{basis of eigenvectors}. We will see how such a basis can be used after we make a definition.
+
+
+
+<definition xml:id="def-diagonalizable">
+  <title>Diagonalizable Matrix</title>
+  <statement>
+    <p>
+<idx><h>diagonalizable matrix}\index{matrix</h><h>diagonalizable</h></idx>
+ We say that an <m>n\times n</m> matrix <m>A</m> is \textbf{diagonalizable} (can be diagonalized) if <m>A\sim D</m> for some diagonal matrix <m>D</m>. In other words, <m>A</m> is diagonalizable if there exists an invertible matrix <m>P</m> such that <m>D=P^{-1}AP</m> is a diagonal matrix.
+}
+
+
+
+<theorem xml:id="thm-diagonalization">
+  <title>A matrix with a basis of eigenvectors is diagonalizable</title>
+  <statement>
+    <p>
+ An <m>n\times n</m> matrix <m>A</m> is diagonalizable if and only if there exists a basis for <m>\R^n</m> consisting of eigenvectors of <m>A</m>.
+}
+
+
+
+
+We will now proceed with a proof of this theorem. We will see that in addition to the theoretical interest in providing a proof, the ideas in this proof will have practical use as well.
+
+ First, suppose that <m>A</m> can be diagonalized. Then there exists an invertible matrix <m>P</m> such that <m>P^{-1}AP = D</m>, where
+<me>
+   D = \bbm \lambda_1  \amp  0  \amp  \cdots \amp  0\\0\amp \lambda_2 \amp  \cdots \amp  0\\\vdots \amp  \vdots \amp  \ddots \amp \vdots\\0\amp 0\amp \cdots \amp  \lambda_n\ebm,
+</me>
+where <m>\lambda_1, \lambda_2, \ldots, \lambda_n</m> are the (not necessarily distinct) eigenvalues of <m>A</m>. Letting <m>\vec{e}_1,\ldots, \vec{e}_n</m> denote the standard basis for <m>\R^n</m> we have, for each <m>j=1,2,\ldots, n</m>:
+<md>
+ <mrow>D\vec{e}_j  \amp  = \lambda_j \vec{e}_j</mrow>
+ <mrow>(P^{-1}AP)\vec{e}_j  \amp  = \lambda_j\vec{e}_j</mrow>
+ <mrow>(AP)\vec{e}_j  \amp  = P(\lambda_j\vec{e}_j)</mrow>
+ <mrow>A(P\vec{e}_j)  \amp  \lambda_j(P\vec{e}_j),</mrow>
+</md>
+so <m>\vec{x}_j = P\vec{e}_j</m> is an eigenvector for <m>A</m> with eigenvalue <m>\lambda_j</m>. Moreover, since <m>P</m> is invertible, we know that the vectors <m>\vec{x}_1, \ldots, \vec{x}_n</m> are linearly independent, and thus form our desired basis of eigenvectors. (See the margin note for a proof of this fact.)
+
+<aside>
+  <p>
+    Suppose that $c_1\vec{x
+  </p>
+</aside>_1+c_2\vec{x}_2+\cdots +c_k\vec{x}_k=\vec{0}<m> for some scalars </m>c_1,c_2,\ldots, c_k$. Then we have
+<me>
+   \vec{0} = c_1P\vec{e}_1+\cdots +c_nP\vec{e}_n = P(c_1\vec{e}_1+\cdots +c_n\vec{e}_n)
+</me>.
+Since <m>P</m> is invertible, we can conclude that <m>c_1\vec{e}_1+\cdots + c_n\vec{e}_n = \vec{0}</m>, and thus <m>c_1=c_2=\cdots=c_n=0</m>, as required.}
+
+Conversely, suppose that we have a basis <m>\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_n</m> of eigenvectors for <m>A</m>, with corresponding eigenvalues <m>\lambda_1,\lambda_2, \ldots, \lambda_n</m>. Let <m>P</m> be the matrix whose columns are given by these vectors. Then <m>P</m> is invertible, since its columns are linearly independent. Let <m>D</m> be defined as above. Then
+<me>
+   PD = \bbm \vec{x}_1  \amp  \vec{x}_2  \amp \cdots \amp  \vec{x}_n\ebm \bbm \lambda_1 \amp  0 \amp  \cdots \amp  0\\0\amp \lambda_2 \amp  \cdots \amp  0\\\vdots \amp  \vdots \amp  \ddots \amp \vdots\\0\amp 0\amp \cdots \amp  \lambda_n\ebm = \bbm \lambda_1\vec{x}_1 \amp  \lambda_2\vec{x}_2 \amp  \cdots \amp  \lambda_n\vec{x}_n\ebm,
+</me>
+while
+<me>
+   <mrow>AP = A\bbm \vec{x}_1  \amp  \vec{x}_2 \amp  \cdots \amp \vec{x}_n\ebm = \bbm A\vec{x}_1 \amp  A\vec{x}_2 \amp  \cdots \amp  A\vec{x}_n\ebm = \bbm \lambda_1\vec{x}_1\amp \lambda_2\vec{x}_2\amp \cdots \amp  \lambda_n\vec{x}_n\ebm.</mrow>
+</me>
+Thus, <m>PD=AP</m>, and since <m>P</m> is invertible, this gives us <m>D=P^{-1}AP</m>, as required.
+
+
+
+As we discussed above, the diagonalizability of <m>A</m> makes it easy to compute powers of <m>A</m>. Indeed, suppose <m>P^{-1}AP=D</m> is diagonal, for some invertible matrix <m>P</m>. Then <m>A = PDP^{-1}</m>, and
+<me>
+   A^n = (PDP^{-1})^n = (PDP^{-1})\cdots (PDP^{-1}) = PD(P^{-1}P)D\cdots (P^{-1}P)DP^{-1} = PD^nP^{-1}
+</me>.
+This makes it easy to compute <m>A^n</m>, since it's easy to compute <m>D^n</m>:
+<me>
+   \text{If } D=\bbm \lambda_1  \amp  0  \amp  \cdots \amp  0\\0\amp \lambda_2 \amp  \cdots \amp  0\\\vdots \amp  \vdots \amp  \ddots \amp \vdots\\0\amp 0\amp \cdots \amp  \lambda_n\ebm, \text{ then } D^n = \bbm \lambda_1^n \amp  0 \amp  \cdots \amp  0\\0\amp \lambda_2^n \amp  \cdots \amp  0\\\vdots \amp  \vdots \amp  \ddots \amp \vdots\\0\amp 0\amp \cdots \amp  \lambda_n^n\ebm
+</me>.
+
+
+
+The proof <xref ref="thm-diagonalization"/> is quite useful, since it tells us two things: first, we now know what it takes to diagonalize a matrix: for an <m>n\times n</m> matrix, we need to be able to find <m>n</m> independent eigenvectors. Second, the proof of the theorem tells us \textbf{how} to diagonalize: once we've found our eigenvectors, we construct the matrix <m>P</m> whose columns are given by the eigenvectors of <m>A</m>; the matrix <m>P^{-1}AP</m> will then be a diagonal matrix with the eigenvalues of <m>A</m> on the main diagonal. This leaves us with the question: when can we be sure we have enough eigenvectors? To answer this, we begin with a theorem:
+
+
+
+<theorem xml:id="thm-indep_eigen">
+  <title>Linear independence of eigenvectors</title>
+  <statement>
+    <p>
+ The eigenvectors <m>\vec{x}_1,\ldots, \vec{x}_k</m> corresponding to \textbf{distinct} eigenvalues of <m>A</m> are linearly independent.
+}
+
+
+
+The above theorem leads to the following corollary:
+
+
+
+<theorem xml:id="thm-distinct_eigen">
+  <title>Distinct eigenvalues and diagonalization</title>
+  <statement>
+    <p>
+ If an <m>n\times n</m> matrix <m>A</m> has <m>n</m> distinct eigenvalues, then <m>A</m> is diagonalizable.
+}
+
+
+
+
+Let us first see how the above corollary follows from our theorem. We know that every eigenvalue has at least one associated eigenvector. If there are <m>n</m> distinct eigenvalues, then we have <m>n</m> associated eigenvectors which, by the theorem above, are linearly independent, and we know that any set of <m>n</m> linearly independent vectors in <m>\R^n</m> forms a basis for <m>\R^n</m>.
+
+As for the proof of the theorem, we use an argument by contradiction: suppose, to the contrary, that the eigenvectors <m>\vec{x}_1, \ldots, \vec{x}_k</m> are linearly <em>dependent</em>. Then there is some <m>m</m>, <m>2\leq m\leq k-1</m>, such that the vectors <m>\vec{x}_1, \ldots, \vec{x}_m</m> are linearly independent, but <m>\vec{x}_{m+1}</m> can be written as a linear combination of the vectors <m>\vec{x}_1, \ldots, \vec{x}_m</m>; that is,
+\begin{equation}\label{eq-indepeigen}
+ \vec{x}_{m+1} = c_1\vec{x}_1+c_2\vec{x}_2+\cdots + c_m\vec{x}_m,
+\end{equation}
+for some scalars <m>c_1,\ldots, c_m</m>. Then, multiplying both sides of \eqref{eq-indepeigen} on the left by <m>A</m>, we must have
+<me>
+   A\vec{x}_{m+1} = A(c_1\vec{x}_1+c_2\vec{x}_2+\cdots + c_m\vec{x}_m) = c_1(A\vec{x}_1)+c_2(A\vec{x}_2)+\cdots + c_m(A\vec{x}_m),
+</me>
+but each vector <m>\vec{x}_i</m> is an eigenvector of <m>A</m> with eigenvalue <m>\lambda_i</m>. Thus,
+<me>
+   \lambda_{m+1}\vec{x}_{m+1} = c_1\lambda_1\vec{x}_1+c_2\lambda_2\vec{x}_2+\cdots + c_m\lambda_m\vec{x}_m
+</me>.
+On the other hand, if we multiply both sides of \eqref{eq-indepeigen} by the scalar <m>\lambda_{m+1}</m>, we have
+<me>
+   \lambda_{m+1}\vec{x}_{m+1} = c_1\lambda_{m+1}\vec{x}_1 + c_2\lambda_{m+1}\vec{x}_2 + \cdots + c_m\lambda_{m+1}\vec{x}_{m+1}
+</me>.
+Subtracting these last two equations, we find:
+<me>
+   \vec{0} = c_1(\lambda_{m+1}-\lambda_1)\vec{x}_1 + c_2(\lambda_{m+1}-\lambda_2)\vec{x}_2+\cdots + c_m(\lambda_{m+1}-\lambda_m)\vec{x}_m
+</me>.
+Now, we are assuming that our eigenvalues are all <em>distinct</em>. Thus, <m>\lambda_{m+1}-\lambda_i\neq 0</m> for all <m>i=1,2,\ldots, m</m>. On the other hand, the vectors <m>\vec{x}_1,\vec{x}_2, \ldots, \vec{x}_m</m> are assumed to be linearly independent, so we must have
+<me>
+   c_1(\lambda_{m+1}-\lambda_1) = 0, c_2(\lambda_{m+1}-\lambda_2)=0, \ldots, c_m(\lambda_{m+1}-\lambda_m)=0
+</me>.
+Since none of the <m>\lambda_{m+1}-\lambda_i</m> terms vanish, it must be the case that <m>c_1=c_2=\cdots =c_m=0</m>. But if that is true, then
+<me>
+   \vec{x}_{m+1} = 0\vec{x}_1+0\vec{x}_2+\cdots + 0\vec{x}_m = \vec{0},
+</me>
+which is impossible, since <m>\vec{x}_{m+1}</m> was assumed to be an eigenvector, and eigenvectors are nonzero. Thus, it must be the case that all of our eigenvectors are linearly independent.
+
+
+
+The above tells us that any <m>n\times n</m> matrix <m>A</m> with <m>n</m> distinct eigenvalues is automatically diagonalizable. There are two other possibilities. One is that the characteristic polynomial of <m>A</m> cannot be completely factored over the real numbers. In this case, diagonalization is impossible, <em>unless</em> we are willing to consider \textbf{complex} eigenvalues. Recall (from way back in Chapter 2) that over the complex numbers, <em>every</em> polynomial can be completely factored. (This is the Fundamental Theorem of Algebra.) In this case, we may still be able to diagonalize, but the eigenvectors corresponding to the complex eigenvalues may well be complex themselves, so the matrix <m>P</m> used to diagonalize <m>A</m> could have complex entries.
+
+The other possibility is that we have repeated eigenvalues. Here, it is possible that we encounter truly insurmountable obstacles. First, we have the following theorem, which we will state without proof. The interested reader can easily find the details in other linear algebra textbooks or online.
+
+
+
+<theorem xml:id="thm-multiplicity_bound">
+  <title>Algebraic versus geometric multiplicity</title>
+  <statement>
+    <p>
+ Let <m>A</m> be an <m>n\times n</m> matrix, and for each real number <m>\lambda</m>, let <m>m_\lambda(A)</m> denote the <em>algebraic</em> multiplicity of <m>\lambda</m>. (If <m>\lambda</m> is not an eigenvalue of <m>A</m>, we set <m>m_\lambda(A)=0</m>.) Then for all numbers <m>\lambda</m>, we have
+<me>
+   \dim\operatorname{null}(A-\lambda I)\leq m_\lambda(A)
+</me>.
+}
+
+
+
+In other words, the geometric multiplicity of an eigenvalue is always less than or equal to the algebraic multiplicity. Note that the sum of the algebraic multiplicities is always equal to the degree of the characteristic polynomial, which, in turn, is equal to <m>n</m>, for an <m>n\times n</m> matrix <m>A</m>. On the other hand, the total number of independent eigenvectors for <m>A</m> is equal to the sum of the geometric multiplicities. (We know that eigenvectors for <em>different</em> eigenvalues are independent, and the geometric multiplicity tells us how many independent eigenvectors we'll have for a single eigenvalue.) As a result, we have the following:
+
+
+
+<theorem xml:id="thm-diagonalization_general">
+  <title>Diagonalization and multiplicities</title>
+  <statement>
+    <p><idx><h>multiplicity</h><h>and diagonalization</h></idx>
+ An <m>n\times n</m> matrix <m>A</m> is diagonalizable if and only if <m>\dim\operatorname{null}(A) = m_\lambda(A)</m> for each eigenvalue <m>\lambda</m> of <m>A</m>; that is, if the geometric multiplicity of each eigenvalue is equal to its algebraic multiplicity.
+}
+
+
+
+This also tells us exactly when we can expect a matrix to fail to be diagonalizable: this will be the case if <m>A</m> has an eigenvalue of algebraic multiplicity greater than 1 for which the geometric multiplicity is less than the algebraic multiplicity. (That is, if we don't get <q>enough</q> basic eigenvectors corresponding to a repeated eigenvalue.)
+
+
+
+The reader may wonder if there is anything further that can be said in the case that a matrix <m>A</m> is not diagonalizable, and indeed, there is. As long as we are willing to work over the complex numbers (to avoid situations where the characteristic polynomial cannot be factored), one can prove that in the worst-case scenario, there exists an invertible matrix <m>P</m> such that the matrix <m>P^{-1}AP</m> is triangular. (If we can't get a diagonal matrix, upper or lower-triangular is the next best thing.) The standard form of such a matrix is called the \textbf{Jordan Canonical Form}; it is obtained using what are called <em>generalized eigenvectors</em>. The Jordan Canonical Form of a matrix is studied in more advanced courses in linear algebra.<idx><h>Jordan Canonical Form</h></idx>
+
+
+
+One last important result that we do not have time to study concerns the case of symmetric matrices. Recall that an <m>n\times n</m> matrix <m>A</m> is <em>symmetric</em> if <m>A^T=A</m>. An important result called the \textbf{Spectral Theorem} guarantees that every symmetric matrix <m>A</m> is diagonalizable. In fact, the spectral theorem goes one step further. Recall that two vectors <m>\vec{u}</m> and <m>\vec{v}</m> are <em>orthogonal</em> if <m>\vec{u}\dotp\vec{v}=0</m>. We say that a <em>set</em> of vectors <m>\{\vec{x}_1,\vec{x}_2,\ldots, \vec{x}_k\}</m> is \textbf{orthogonal} if <m>\vec{x}_i\neq \vec{0}</m> for each <m>i</m>, and <m>\vec{x}_i\dotp \vec{x}_j = 0</m> for all <m>i\neq j</m>. Orthogonality is a <q>stronger</q> condition than linear independence. Indeed, if the vectors <m>\vec{x}_1,\ldots, \vec{x}_k</m> are orthogonal and<idx><h>diagonalization</h><h>orthogonal</h></idx>
+<me>
+   c_1\vec{x}_1+c_2\vec{x}_2+\cdots + c_k\vec{x}_k = \vec{0}
+</me>
+for some scalars <m>c_1,c_2,\ldots, c_k</m>, taking the dot product of both sides of the above equation with <m>\vec{x}_1</m> gives us
+<me>
+   c_1(\vec{x}_1\dotp \vec{x}_1)+c_2(0)+\cdots + c_k(0)=0,
+</me>
+and since <m>\vec{x}_1\dotp \vec{x}_1 = \lVert \vec{x}_1\rVert^2 \neq 0</m>, it must be that <m>c_1=0</m>, and similarly, all the other scalars must be zero as well.
+
+For a symmetric matrix, eigenvectors corresponding to distinct eigenvalues are not just independent, they're orthogonal. Indeed, since <m>\vec{x}_1\dotp \vec{x}_2</m> can be written as the matrix product  <m>\vec{x}_1^T\vec{x}_2</m>, we have (using the fact that <m>A^T=A</m>):
+<me>
+   \lambda_1(\vec{x}_1\dotp \vec{x}_2) = (\lambda_1\vec{x}_1)^T\vec{x}_2 = (A\vec{x}_1)^T\vec{x}_2 = (\vec{x}_1^TA^T)\vec{x}_2 = \vec{x}_1^T(A\vec{x}_2) = \vec{x}_1^T(\lambda_2\vec{x}_2) = \lambda_2(\vec{x}_1\dotp \vec{x}_2),
+</me>
+Thus, <m>(\lambda_1-\lambda_2)(\vec{x}_1\dotp\vec{x}_2) = 0</m>, and since <m>\lambda_1\neq \lambda_2</m>, we must have <m>\vec{x}_1\dotp \vec{x}_2 = 0</m>.
+
+It is possible to prove that for a symmetric matrix, one can find an \textbf{orthogonal basis} of eigenvectors. This observation has a number of important applications. (Try an online search for <q>orthogonal diagonalization</q> and you should be able to find several examples.)
+
+
+
+\subsection*{Matrix similarity and change of basis for transformations}
+We end this section with the promised explanation of how similar matrices can be viewed as different representations of the same linear transformation.
+If we think of matrices in terms of the matrix transformations they define, then two matrix transformations obtained from similar matrices should be viewed as two descriptions of the same linear transformation using different <q>coordinate systems</q>. Let us explain what we mean here. Suppose
+<me>
+   T:\R^n\to \R^n
+</me>
+is a matrix transformation defined by <m>T(\vec{x}) = A\vec{x}</m> for some <m>n\times n</m> matrix <m>A</m>. Let us consider this to be a transformation defined in terms of the standard basis vectors <m>\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n</m> for <m>\R^n</m>. We can then write
+<me>
+   <mrow>\vec{x} = \bbm x_1  \amp  x_2 \amp  \cdots \amp  x_n\ebm^T = x_1\vec{e}_1+x_2\vec{e}_2+\cdots +x_n\vec{e}_n</mrow>
+</me>
+and think of <m>T</m> as a function of the variables <m>x_1,x_2,\ldots, x_n</m>. To put this another way, when we speak of a matrix transformation with standard matrix <m>A</m>, that matrix <m>A</m> is defined with respect to the standard basis. In general, let <m>\mathcal{A}=\{\vec{e}_1,\ldots, \vec{e}_n\}</m> denote our standard basis, and suppose
+<me>
+   \mathcal{B} = \{\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_n\}
+</me>
+is another basis for <m>\R^n</m>. Recall that when we say that the set <m>\mathcal{B}</m> is a <em>basis</em>, we mean that <m>\operatorname{span}\mathcal{B} = \R^n</m>, so that every vector in <m>\R^n</m> can be written as a linear combination of the vectors in <m>\mathcal{B}</m>, and <m>\mathcal{B}</m> is linearly independent, which means that every vector in <m>\R^n</m> can be written <m><em>uniquely</em></m> as a linear combination of the vectors in <m>\mathcal{B}</m>.
+
+Let <m>\vec{v} = y_1\vec{b}_1+y_2\vec{b}_2+\cdots +y_n\vec{b}_n</m> any vector in <m>\R^n</m>. Using the same linear transformation <m>T</m> as above, we have
+<me>
+   T(\vec{v}) = T(y_1\vec{b}_1+y_2\vec{b}_2+\cdots +y_n\vec{b}_n) = y_1T(\vec{b}_1)+y_2T(\vec{b}_2)+\cdots + y_nT(\vec{b}_n)
+</me>.
+Now, each of the vectors <m>T(\vec{b}_i)</m> can, in turn, be written in terms of the basis <m>\mathcal{B}</m>: we have
+<md>
+ <mrow>T(\vec{b}_1)  \amp = b_{11}\vec{b}_1 + b_{21}\vec{b}_2 + \cdots + b_{n1}\vec{b}_n</mrow>
+ <mrow>T(\vec{b}_2)  \amp = b_{12}\vec{b}_1 + b_{22}\vec{b}_2 + \cdots + b_{n2}\vec{b}_n</mrow>
+  <mrow>\vdots \quad  \amp  \quad \vdots \quad \vdots \quad \quad \vdots</mrow>
+ <mrow>T(\vec{b}_n)  \amp = b_{1n}\vec{b}_1 + b_{2n}\vec{b}_2 + \cdots + b_{nn}\vec{b}_n.</mrow>
+</md>
+The coefficients <m>b_{ij}</m> obtained above determine a new matrix <m>B</m>, which we define to be the \textbf{matrix of <m>T</m> with respect to the basis} <m>\mathcal{B}</m>. Notice that if we write <m>\vec{y} = \bbm y_1 \amp  y_2 \amp  \cdots \amp  y_n\ebm^T</m>, we have
+<me>
+  B\vec{y} = \bbm b_{11}  \amp  b_{12}  \amp  \cdots \amp  b_{1n}\\b_{21} \amp  b_{22} \amp  \cdots \amp  b_{2n}\\\vdots \amp  \vdots \amp  \ddots \amp  \vdots\\b_{n1}\amp b_{n2}\amp \cdots \amp n_{nn}\ebm</mrow>
+  \bbm y_1\\y_2\\\vdots \\y_n\ebm = \bbm b_{11}y_1+b_{12}y_2+\cdots b_{1n}y_n\\b_{21}y_1+b_{22}y_2 + \cdots + b_{2n}y_n\\ \vdots \\b_{n1}y_1+b_{n2}y_2+\cdots b_{nn}y_n\ebm
+</me>..
+Let's introduce some notation: for any vector <m>\vec{w}</m> in <m>\R^n</m>, we will let <m>[\vec{w}]_{\mathcal{B}}</m> denote the <m>n\times 1</m> column vector defined as follows: 
+<me>
+   \text{If } \, \vec{w} = w_1\vec{b}_1 + w_2\vec{b}_2 + \cdots + w_n\vec{b}_n, \, \text{ then } \, [\vec{w}]_{\mathcal{B}} = \bbm w_1\\w_2\\\vdots \\w_n\ebm
+</me>.
+In this notation, we have <m>\vec{y}=[\vec{v}]_{\mathcal{B}}</m>, and <m>[T(\vec{v})]_{\mathcal{B}} = \bbm b_{11}y_1+b_{12}y_2+\cdots b_{1n}y_n\\b_{21}y_1+b_{22}y_2 + \cdots + b_{2n}y_n\\ \vdots \\b_{n1}y_1+b_{n2}y_2+\cdots b_{nn}y_n\ebm</m>, since
+<md>
+ <mrow>(b_{11}y_1+\cdots b_{1n}y_n)\vec{b}_1  \amp  +  \cdots + (b_{n1}y_1+\cdots + b_{nn}y_n)\vec{b}_n</mrow>
+\amp  = y_1(b_{11}\vec{b}_1+\cdots + b_{n1}\vec{b}_n) +   \cdots + y_n(b_{1n}\vec{b}_1+\cdots + b_{nn}\vec{b}_n)\\
+\amp  = y_1T(\vec{b}_1) +  \cdots + y_nT(\vec{b}_n)\\
+\amp  = T(y_1\vec{b}_1 +  \cdots + y_n\vec{b}_n)\\
+\amp  = T(\vec{v}).
+</md>
+Let's tie everything together. First, let <m>P</m> be the <m>n\times n</m> matrix whose columns are the vectors in <m>\mathcal{B}</m>. Then we know that
+<me>
+   \vec{b}_1 = P\vec{e}_1, \vec{b}_2=P\vec{e}_2, \ldots, \vec{b}_n = P\vec{e}_n,
+</me>
+and conversely,
+<me>
+   \vec{e}_1 = P^{-1}\vec{b}_1, \vec{e}_2 = P^{-1}\vec{b}_2, \ldots, \vec{e}_n = P^{-1}\vec{b}_n
+</me>.
+If <m>[\vec{v}]_{\mathcal{B}} = \bbm v_1\\v_2\\\vdots \\v_n\ebm</m>, then we have
+<me>
+   \vec{v} = v_1\vec{b}_1 +\cdots + v_n\vec{b}_n = v_1P\vec{e}_1 +\cdots +v_nP\vec{e}_n = P(v_1\vec{e}_1+\cdots + v_n\vec{e}_n) = P[\vec{v}]_{\mathcal{B}}
+</me>.
+Note that we can also write <m>\vec{v} = [\vec{v}]_{\mathcal{A}}</m>, where <m>\mathcal{A}</m> is the standard basis, since by default, all of our vectors are written in terms of the standard basis. Thus, we can conclude that
+\begin{equation}
+ [\vec{v}]_{\mathcal{A}} = P[\vec{v}]_{\mathcal{B}}\label{eq-simbasis_a}
+\end{equation}
+defines the relationship between the column vector representations of our vector with respect to the two bases. Similarly, we can write
+\begin{equation}
+ [T(\vec{v})]_{\mathcal{A}} = P[T(\vec{v})]_{\mathcal{B}}\label{eq-simbasis_b}
+\end{equation}
+for the column representations of the output of our linear transformation <m>T</m>. However, we also know that our transformation was originally defined using the matrix <m>A</m> according to
+\begin{equation}\label{eq-simbasis_c}
+ [T(\vec{v})]_{\mathcal{A}} = A[\vec{v}]_{\mathcal{A}}
+\end{equation}
+and that the matrix <m>B</m> above was defined such that
+\begin{equation}\label{eq-simbasis_d}
+ [T(\vec{v})]_{\mathcal{B}} = B[\vec{v}]_{\mathcal{B}}.
+\end{equation}
+Equating the two expressions above for <m>[T(\vec{v})]_{\mathcal{A}}</m>, in Equations \eqref{eq-simbasis_b} and \eqref{eq-simbasis_c} we have
+<me>
+   P[T(\vec{v})]_{\mathcal{B}} = A[\vec{v}]_{\mathcal{A}}
+</me>.
+Plugging in Equations \eqref{eq-simbasis_d} on the left and \eqref{eq-simbasis_a} on the right, we have
+<me>
+   PB[\vec{v}]_{\mathcal{B}} = AP[\vec{v}]_{\mathcal{B}}
+</me>.
+Since this must be true for any vector, we conclude that <m>PB = AP</m>, and thus
+<me>
+   B = P^{-1}AP,
+</me>
+so <m>B</m> is similar to <m>A</m>.
+
+\printexercises{exercises/04_03_exercises}

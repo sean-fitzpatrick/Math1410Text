@@ -2,14 +2,16 @@
 <section xml:id="sec-null_column" label="sec-null_column">
   <title>Null Space and Column Space</title>
   
-  <p>
-    We close this chapter with some discussion of a theoretical nature. 
-    First, we will attempt to gain some additional insight into the (initially mysterious) 
-    definition of matrix multiplication by revisiting it from the point of view of linear transformations. 
-    We'll then introduce two fundamental subspaces associated with a matrix transformation.
-  </p>
+  <introduction>
+    <p>
+      We close this chapter with some discussion of a theoretical nature. 
+      First, we will attempt to gain some additional insight into the (initially mysterious) 
+      definition of matrix multiplication by revisiting it from the point of view of linear transformations. 
+      We'll then introduce two fundamental subspaces associated with a matrix transformation.
+    </p>
+  </introduction>
 
-  <paragraphs>
+  <subsection>
     <title>Matrix multiplication as function composition</title>
     
     <p>
@@ -180,9 +182,9 @@
       is <m>m\times n</m> and <m>B</m> is <m>n\times k</m>, 
       but you can probably guess that the algebra gets a bit messy on that one, so we'll spare you the details.
     </p>
-  </paragraphs>
+  </subsection>
 
-  <paragraphs>
+  <subsection>
     <title>Column space</title>
     
     <p>
@@ -412,7 +414,7 @@
       vector <m>\vb = \bbm a\\b\\c\ebm</m>. As with the previous examples, 
       we set up the augmented matrix and reduce:
       <me>
-        \bam{4}1 \amp -2 \amp 0\amp 4\amp a\\3\amp -1\amp 5\amp 2\amp b\\-2\amp -6\amp -10\amp 12\amp c\eam \quad \longrightarrow \quad \bam{4}1\amp -2\amp 0\amp 4\amp a\\0\amp 1\amp 1\amp -2\amp (b-3a)/5\\0\amp 0\amp 0\amp 0\amp (c-4a+2b)/10\eam
+        \left[\begin{array}{cccc|c}1 \amp -2 \amp 0\amp 4\amp a\\3\amp -1\amp 5\amp 2\amp b\\-2\amp -6\amp -10\amp 12\amp c\end{array}\right] \quad \longrightarrow \quad \left[\begin{array}{cccc|c}1\amp -2\amp 0\amp 4\amp a\\0\amp 1\amp 1\amp -2\amp (b-3a)/5\\0\amp 0\amp 0\amp 0\amp (c-4a+2b)/10\end{array}\right]
       </me>.
     </p>
 
@@ -425,9 +427,9 @@
       </me>,
       which (after multiplying both sides by 10) is exactly the same as what we found using the cross product.
     </p>
-  </paragraphs>
+  </subsection>
 
-  <paragraphs>
+  <subsection>
     <title>Null space</title>
     
     <p>
@@ -479,7 +481,7 @@
           the matrix equation <m>A\vec x = \vec 0</m>, we proceed by forming the proper augmented matrix 
           and putting it into reduced row echelon form, which we do below. 
           <me>
-            \bam{2} 2 \amp -3 \amp 0\\-2 \amp  3\amp 0\eam \quad \arref \quad \bam{2} 1 \amp  -3/2 \amp  0 \\0\amp 0\amp 0\eam
+            \left[\begin{array}{cc|c} 2 \amp -3 \amp 0\\-2 \amp  3\amp 0\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c} 1 \amp  -3/2 \amp  0 \\0\amp 0\amp 0\end{array}\right]
           </me>
         </p>
 
@@ -498,11 +500,11 @@
           </me>.
           If we set 
           <me>
-            \vv = \bbm 3/2\\1\ebm
+            \vvv = \bbm 3/2\\1\ebm
           </me>,
           then we can write our solution as 
           <me>
-            \operatorname{null}(A) = \left\{t\vv \,|\, t\in\R \text{ and } \vv = \bbm 3/2\\1\ebm\right\}
+            \operatorname{null}(A) = \left\{t\vvv \,|\, t\in\R \text{ and } \vvv = \bbm 3/2\\1\ebm\right\}
           </me>.
         </p>
 
@@ -521,7 +523,7 @@
           <me>
             \vx = t\bbm 3/2 \\1\ebm = t\left(\frac{1}{2}\bbm 3\\2\ebm \right) = \frac{t}{2}\bbm 3\\2\ebm = s\bbm 3\\2\ebm = s\vec w,
           </me>
-          where <m>\vec w = 2\vv</m>.
+          where <m>\vec w = 2\vvv</m>.
         </p>
 
         <p>
@@ -539,7 +541,7 @@
               \drawxlines{-3.5}{6}{-3,...,6};
               \drawylines{-2.5}{4.5}{-2,...,4};
               \draw [&lt;-&gt;](-3,-2)--(6,4);
-              \draw [-&gt;,thick] (0,0)--(1.5,1) node [above] {$\vv$};
+              \draw [-&gt;,thick] (0,0)--(1.5,1) node [above] {$\vvv$};
                 
               \end{tikzpicture}
             </latex-image>
@@ -629,8 +631,8 @@
           and by <xref ref="idea-nullbasis"/>, a basis for <m>\operatorname{null}(A)</m> is given by the basic solutions to this system. 
           As usual, to find the basic solutions, we set up the augmented matrix of the system and reduce:
           <me>
-            \bam{4}1\amp -2\amp 0\amp 4\amp 0\\3\amp -1\amp 5\amp 2\amp 0\\-2\amp -6\amp -10\amp 12\amp 0\eam \quad \arref \quad
-            \bam{4}1\amp 0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp -2\amp 0\\0\amp 0\amp 0\amp 0\amp 0\eam
+            \left[\begin{array}{cccc|c}1\amp -2\amp 0\amp 4\amp 0\\3\amp -1\amp 5\amp 2\amp 0\\-2\amp -6\amp -10\amp 12\amp 0\end{array}\right] \quad \arref \quad
+            \left[\begin{array}{cccc|c}1\amp 0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp -2\amp 0\\0\amp 0\amp 0\amp 0\amp 0\end{array}\right]
           </me>.
         </p>
 
@@ -649,17 +651,17 @@
           <me>
             \vx = \bbm x_1\\x_2\\x_3\\x_4\ebm = \bbm -2s\\-s+2t\\s\\t\ebm = s\bbm -2\\-1\\1\\0\ebm + t\bbm 0\\2\\0\\1\ebm
           </me>.
-          From the above, we see that the general solution can be written as <m>\vx = s\vv +t\vec{w}</m>, where 
+          From the above, we see that the general solution can be written as <m>\vx = s\vvv +t\vec{w}</m>, where 
           <me>
-            \vv = \bbm -2\\-1\\1\\0\ebm \quad \text{ and } \quad \vec{w} = \bbm 0\\2\\0\\1\ebm
+            \vvv = \bbm -2\\-1\\1\\0\ebm \quad \text{ and } \quad \vec{w} = \bbm 0\\2\\0\\1\ebm
           </me>
           are the basic solutions to <m>A\vx = \vec 0</m>. 
           Since the null space of <m>A</m> is equal to the set of solutions to <m>A\vx  = \vec 0</m>, 
-          and since every solution to <m>A\vx = \vec 0</m> can be written in terms of <m>\vv</m> and <m>\vec{w}</m>, it follows that
+          and since every solution to <m>A\vx = \vec 0</m> can be written in terms of <m>\vvv</m> and <m>\vec{w}</m>, it follows that
           <me>
-            \operatorname{null}(A) = \operatorname{span}\{\vv, \vec{w}\},
+            \operatorname{null}(A) = \operatorname{span}\{\vvv, \vec{w}\},
           </me>
-          and that <m>\{\vv, \vec{w}\}</m> is a basis for <m>\operatorname{null}(A)</m>.
+          and that <m>\{\vvv, \vec{w}\}</m> is a basis for <m>\operatorname{null}(A)</m>.
         </p>
       </solution>
     </example>
@@ -776,7 +778,7 @@
           We'll tackle the null space first. 
           We form the augmented matrix for the system <m>\ttaxo</m>, put it into reduced row echelon form, and interpret the result. 
           <me>
-            \bam{4}1 \amp -1 \amp 1\amp 3\amp 0\\4\amp 2\amp 4\amp 6\amp 0\eam \quad \arref \quad \bam{4}1\amp 0\amp 1\amp 2\amp 0\\0\amp 1\amp 0\amp -1\amp 0\eam
+            \left[\begin{array}{cccc|c}1 \amp -1 \amp 1\amp 3\amp 0\\4\amp 2\amp 4\amp 6\amp 0\end{array}\right] \quad \arref \quad \left[\begin{array}{cccc|c}1\amp 0\amp 1\amp 2\amp 0\\0\amp 1\amp 0\amp -1\amp 0\end{array}\right]
           </me>
           <md>
             <mrow>x_1 \amp =-x_3-2x_4</mrow>
@@ -800,20 +802,20 @@
               <mrow>\vx \amp = \bbm-x_3-2x_4\\x_4\\x_3\\x_4\ebm</mrow>
               <mrow> \amp = \bbm-x_3\\0\\x_3\\0\ebm + \bbm-2x_4\\x_4\\0\\x_4\ebm</mrow>
               <mrow> \amp =x_3\bbm-10\\1\\0\ebm + x_4\bbm-2\\1\\0\\1\ebm</mrow>
-              <mrow> \amp =x_3\vu + x_4\vv </mrow>
+              <mrow> \amp =x_3\vu + x_4\vvv </mrow>
           </md>.
         </p>
 
         <p>
-          We use <m>\vu</m> and <m>\vv</m> simply to give these vectors names (and save some space). In terms of these names, we can write
+          We use <m>\vu</m> and <m>\vvv</m> simply to give these vectors names (and save some space). In terms of these names, we can write
           <me>
-            \operatorname{null}(A) = \operatorname{span}\{\vu, \vv\}
+            \operatorname{null}(A) = \operatorname{span}\{\vu, \vvv\}
           </me>.
-          It is easy to confirm that both <m>\vu</m> and <m>\vv</m> are solutions to the linear system <m>\tta\vx=\zero</m>. 
-          (Just multiply <m>\tta\vu</m> and <m>\tta\vv</m> and see that both are \zero.) 
+          It is easy to confirm that both <m>\vu</m> and <m>\vvv</m> are solutions to the linear system <m>\tta\vx=\zero</m>. 
+          (Just multiply <m>\tta\vu</m> and <m>\tta\vvv</m> and see that both are \zero.) 
           Since both are solutions to a homogeneous system of linear equations, 
-          any linear combination of <m>\vu</m> and <m>\vv</m> will be a solution, too, 
-          so the vectors <m>\vu</m> and <m>\vv</m> form a basis for the null space of <m>A</m>.
+          any linear combination of <m>\vu</m> and <m>\vvv</m> will be a solution, too, 
+          so the vectors <m>\vu</m> and <m>\vvv</m> form a basis for the null space of <m>A</m>.
         </p>
 
         <p>
@@ -821,7 +823,7 @@
           Determining whether or not <m>\vec b</m> belongs to the column space is the same as solving the system <m>\tta\vx = \vb</m>. 
           Once again we put the associated augmented matrix into reduced row echelon form and interpret the results.
           <me>
-            \bam{4}1 \amp -1 \amp 1\amp 3\amp 1\\4\amp 2\amp 4\amp 6\amp 10\eam \quad \arref \quad \bam{4}1\amp 0\amp 1\amp 2\amp 2\\0\amp 1\amp 0\amp -1\amp 1\eam
+            \left[\begin{array}{cccc|c}1 \amp -1 \amp 1\amp 3\amp 1\\4\amp 2\amp 4\amp 6\amp 10\end{array}\right] \quad \arref \quad \left[\begin{array}{cccc|c}1\amp 0\amp 1\amp 2\amp 2\\0\amp 1\amp 0\amp -1\amp 1\end{array}\right]
           </me>
           <md>
            <mrow>x_1 \amp =2-s-2t</mrow>
@@ -843,7 +845,7 @@
           <mrow>\vx  \amp = \bbm 2-s-2t\\1+t\\s\\t\ebm</mrow>
               <mrow> \amp = \bbm 2\\1\\0\\0\ebm + \bbm-s\\0\\s\\0\ebm + \bbm-2t\\t\\0\\t\ebm</mrow>
               <mrow> \amp =\bbm 2\\1\\0\\0\ebm+s\bbm-1\\0\\1\\0\ebm + t\bbm-2\\1\\0\\1\ebm</mrow>
-              <mrow> \amp =\underbrace{\vec{x}_p}_{\text{particular solution}}+\underbrace{s\vu + t\vv}_{\text{solution to homogeneous system}}</mrow>
+              <mrow> \amp =\underbrace{\vec{x}_p}_{\text{particular solution}}+\underbrace{s\vu + t\vvv}_{\text{solution to homogeneous system}}</mrow>
           </md>.
           Note that <m>\tta\vec{x}_p = \vb</m>; by itself, <m>\vec{x}_p</m> is a solution. 
           The fact that we have at least one vector <m>\vec{x}_p</m> such that <m>A\vec{x}_p=\vec{b}</m> 
@@ -864,7 +866,7 @@
       the reader is encouraged to revisit the examples of <xref ref="sec-vector_solutions"/> 
       and re-interpret them in the context of null space and column space.
     </p>
-  </paragraphs>
+  </subsection>
 
   <exercises>
     <exercisegroup>

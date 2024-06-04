@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec_planes" label="sec_planes">
+<section xml:id="sec-planes" label="sec-planes">
   <title>Planes</title>
   <introduction>
     <p>
@@ -87,7 +87,7 @@
     </p>
 
     <figure xml:id="vid-vectors-planes-intro" component="video">
-      <caption>Video inroduction to <xref ref="sec_planes"/></caption>
+      <caption>Video inroduction to <xref ref="sec-planes"/></caption>
       <video youtube="aP-fcbArvtA" label="vid-vectors-planes-intro"/>
     </figure>
 
@@ -459,8 +459,8 @@
       instead of providing a single direction orthogonal to the plane (given by the normal vector), 
       we can give two directions that are <em>parallel</em> to the plane, 
       such as the vectors <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{PR}</m> 
-      in <xref ref="fig-planes1"/>, or the direction vectors <m>\vec{d}_1</m> and <m>\vec{d}_2</m> 
-      to the lines in <xref ref="fig-planes2"/>.
+      in <xref ref="fig_planes1"/>, or the direction vectors <m>\vec{d}_1</m> and <m>\vec{d}_2</m> 
+      to the lines in <xref ref="fig_planes2"/>.
     </p>
 
     <p>
@@ -880,7 +880,7 @@
 
     <aside>
       <p>
-        <alert>Note:</alert> <xref ref="eq-plane_dist" text="local">Equation</xref>
+        <alert>Note:</alert> <xref ref="eq_plane_dist" text="local">Equation</xref>
         is useful as it does more than just give the distance between a point and a plane. 
         We will see how it allows us to find several other distances as well: 
         the distance between parallel planes and the distance from a line to a plane.
@@ -889,7 +889,7 @@
       <p>
         However, as with the distance problems in the previous section, 
         learning to follow the steps in <xref ref="idea-distance_method"/> will pay off more in the long run than memorizing a formula. 
-        Here, our key steps are to draw a diagram such as <xref ref="fig-planes_dist"/>, 
+        Here, our key steps are to draw a diagram such as <xref ref="fig_planes_dist"/>, 
         which doesn't need to be accurate, but does need to contain all the information needed to construct 
         the projection whose length gives us the desired distance.
       </p>
@@ -1033,7 +1033,8 @@
         </p>
 
         <p>
-          The distance <m>h</m> from <m>Q</m> to the plane is given by <xref ref="idea_planes_dist"/>:
+          The distance <m>h</m> from <m>Q</m> to the plane is given by the length of the projection of
+          <m>\overrightarrow{PQ}</m> onto <m>\vec n</m>:
           <md>
             <mrow>h \amp = \frac{\abs{\vec n\cdot \overrightarrow{PQ}}}{\vnorm n}</mrow>
             <mrow>\amp = \frac{\abs{\bbm  2\\-5\\6\ebm \cdot \bbm  2\\1\\2.5\ebm}}{\norm{\bbm  2\\-5\\6\ebm}}</mrow>
@@ -1175,13 +1176,11 @@
     </example>
 
     <p>
-      We can use <xref ref="idea_planes_dist"/> to find other distances.
       Given two parallel planes,
       we can find the distance between these planes by letting <m>P</m> be a point on one plane and <m>Q</m> a point on the other.
       If <m>\ell</m> is a line parallel to a plane,
       we can use the Key Idea to find the distance between them as well:
       again, let <m>P</m> be a point in the plane and let <m>Q</m> be any point on the line.
-      (One can also use <xref ref="idea_line_distance"/>.)
       The Exercise section contains problems of these types.
     </p>
 
@@ -2432,30 +2431,7 @@
         <!-- </webwork> -->
       </exercise>
 
-      <exercise label="ex-vectors-planes-understand-lines">
-        <!--<webwork xml:id="webwork-ex-vectors-planes-understand-lines">
-            <pg-code>
-            </pg-code>
-            -->
-            <statement>
-              <p>
-                How is <xref ref="x10_05_ex_30"/>
-                in <xref ref="sec_lines"/>
-                easier to answer once we have an understanding of planes?
-              </p>
-            </statement>
-            <solution>
-              <p>
-                The intersecting lines define a plane with normal vector <m>\vec n = \vec c = \vec d_1\times \vec d_2</m>.
-                Since points <m>P_1</m> and <m>P_2</m> lie in the plane,
-                <m>\vec c</m> is orthogonal to <m>\overrightarrow{P_1P_2}</m>,
-                hence <m>\overrightarrow{P_1P_2}\cdot\vec c = 0</m>, giving a distance of 0.
-                Knowing the principles of planes,
-                especially their normal vectors, makes this simpler.
-              </p>
-            </solution>
-        <!-- </webwork> -->
-      </exercise>
+      
     </subexercises>
   </exercises>
 </section>

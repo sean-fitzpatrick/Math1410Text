@@ -33,7 +33,7 @@
         <ol marker="(a)">
           <li xml:id="imt-def">
             <p>
-              \label{} <m>\tta</m> is invertible. \addtocounter{IMTcount}{\value{IMTcount_temp}}
+              <m>\tta</m> is invertible.
             </p>
           </li>
           <li xml:id="imt-axo">
@@ -191,7 +191,7 @@
   <aside>
     <p>
       Think about how we, up to this point, determined the solution to <m>\ttaxb</m>. 
-      We set up the augmented matrix <m>\bam{1}\tta \amp  \vb \eam</m> and put it into reduced row echelon form. 
+      We set up the augmented matrix <m>\left[\begin{array}{c|c}\tta \amp  \vb \end{array}\right]</m> and put it into reduced row echelon form. 
       We know that getting the identity matrix on the left means that we had a unique solution 
       (and not getting the identity means we either have no solution or infinitely many solutions). 
       So getting <m>\tti</m> on the left means having a unique solution; having <m>\tti</m> 

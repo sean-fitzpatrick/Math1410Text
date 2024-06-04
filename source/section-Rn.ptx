@@ -1,184 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec-Rn" label="sec-Rn">
-  <title>The Vector Space <m>\mathbb{R}^n</m></title>
+  <title>Span and Linear Independence</title>
 
-  <p>
-    So far in this chapter, we have restricted our attention to vectors in two or three dimensions, 
-    where we are able to visualize things geometrically. 
-    Something that you may have noticed is that the algebraic rules for the addition and scalar multiplication vectors 
-    are the same in both dimensions.
-  </p>
-
-  <p>
-    In this section, we consider this algebra of vectors abstractly, 
-    which will allow us to move beyond three dimensions to vectors with an arbitrary number of components. 
-  </p>
-  
-  <p>
-    Despite the fact that we cannot easily visualize them, higher-dimensional vectors frequently arise in 
-    applications where there are many variables involved. 
-    The fact that the rules of algebra remain the same mean that we can continue to manipulate these objects, 
-    even though we can no longer picture them.
-  </p>
-
-  <p>
-    For each positive integer <m>n</m>, a column vector <m>\vec{x}</m> is formed by arranging <m>n</m> 
-    real numbers <m>x_1, x_2, \ldots, x_n</m> into a column <m>\vec{x} = \bbm x_1\\x_2\\\vdots \\x_n\ebm</m>. 
-    In <xref ref="chapter-algebra"/> we will see that this is a special type of <em>matrix</em>; 
-    for now, we can think of a column vector as an alternative to the notation <m>\bbm  x_1\\x_2\\\ldots, x_n\ebm</m> 
-    encountered earlier in this chapter. In particular, we still refer to the numbers <m>x_1,x_2,\ldots, x_n</m> in <m>\vec{x}</m>
-     as the <term>components</term> of <m>\vec{x}</m>, 
-     and we define addition and scalar multiplication of column vectors in terms of their components, 
-     as we did for vectors in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m>. 
-  </p> 
-
-  <p>
-    That is, given vectors <m>\vec{x} = \bbm x_1\\x_2\\\vdots\\x_n\ebm</m> and <m>\vec{y} = \bbm y_1\\y_2\\\vdots \\y_n\ebm</m>, 
-    and a scalar <m>c</m>, we define
-    <me>
-      \vec{x}+\vec{y} = \bbm x_1\\x_2\\\vdots\\x_n\ebm + \bbm y_1\\y_2\\\vdots \\y_n\ebm = \bbm x_1+y_1\\x_2+y_2\\\vdots \\x_n+y_n\ebm
-    </me>
-    and
-    <me>
-      c\vec{x} = c\bbm x_1\\x_2\\\vdots\\x_n\ebm = \bbm cx_1\\cx_2\\\vdots\\cx_n\ebm
-    </me>.    
-  </p>
-
-  <p>
-    With these operations, the set of all <m>n\times 1</m> column vectors provides an example of what is known as a <term>vector space</term>.
-    <idx><h>vector space</h></idx> 
-  </p>
-
-  <definition xml:id="def-spaceRn">
-    <title>The vector space <m>\mathbb{R}^n</m></title>
-    <statement>
-      <p>
-        <idx><h>vector space </h><h> of column vectors</h></idx>
-        The space of all <term>column vectors</term> of real numbers is denoted by
-        <me>
-          \mathbb{R}^n = \left\{\left.\bbm x_1\\x_2 \\ \vdots \\x_n\ebm \,\,\right| \, x_1, x_2, \ldots, x_n\in \mathbb{R}\right\}
-        </me>.
-      </p>
-    </statement>
-  </definition>
-
-  <p>
-    As with the vectors in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m> we encountered in <xref ref="chapter-vectors"/>, 
-    we allow the notation <m>\mathbb{R}^n</m> to represent both the <em>space</em> of points <m>(x_1,x_2, \ldots, x_n)</m>, 
-    and the set of vectors defined within that space. 
-    Since we can identify any point <m>P</m> with the position vector <m>\overrightarrow{OP}</m>, 
-    the difference between viewing <m>\mathbb{R}^n</m> as a set of points or as a set of vectors is primarily one of perspective.
-  </p>
-
-  <p>
-    When <m>n\geq 4</m> we can no longer visualize vectors in <m>\mathbb{R}^n</m> as we did in <xref ref="chapter-vectors"/>, 
-    but we can handle them algebraically exactly as we did before, and we can extend the definitions of <xref ref="chapter-vectors"/> 
-    to apply to vectors in <m>\mathbb{R}^n</m>.
-  </p>
-
-  <p>
-    In particular, we can define the <term>length</term> of a vector 
-    <me>
-      \vec{x}=\bbm x_1\\x_2\\ \vdots\\ x_n\ebm\in\mathbb{R}^n
-    </me> 
-    by
-    <me>
-      \norm{\vec{x}} = \sqrt{x_1^2+x_2^2+\cdots +x_n^2}
-    </me>,
-    and the dot product of vectors <m>\vec{x}, \vec{y}\in\mathbb{R}^n</m> by
-    <me>
-      \dotp xy = x_1y_1+x_2y_2+\cdots + x_ny_n
-    </me>.
-  </p>
-
-  <p>
-    Having defined the dot product, we can still declare two vectors <m>\vec x</m> and <m>\vec y</m> to be orthogonal if <m>\dotp xy = 0</m>, 
-    and define the angle between two vectors by requiring that the identity
-    <me>
-      \dotp xy = \norm{\vec{x}}\norm{\vec{y}}\cos\theta
-    </me>
-    remain valid. Using these definitions, along with <xref ref="thm-addition_properties"/>, 
-    we can see that all of the properties of vector operations given in <xref ref="thm-vector_properties"/> 
-    remain valid in <m>\mathbb{R}^n</m>.        
-  </p>
-
-  <theorem xml:id="thm-Rn_properties">
-    <title>Algebraic properties of <m>\R^n</m></title>
-    <statement>
-      <p>
-        The following properties hold for the space <m>\R^n</m> of <m>n\times 1</m> column vectors:
-        <ol>
-          <li>
-            <p>
-              If <m>\vec v</m> and <m>\vec w</m> are vectors in <m>\mathbb{R}^n</m>, <m>\vec{v}+\vec{w}</m> is also a vector in <m>\mathbb{R}^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              For any vectors <m>\vec v, \vec w</m>, <m>\vec v + \vec w = \vec w+ \vec v</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              For any vectors <m>\vec u, \vec v, \vec w</m>, <m>(\vec u + \vec v)+\vec w = \vec u + (\vec v + \vec w)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              For any vector <m>\vec v</m>, <m>\vec v+\vec 0 = \vec v</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              For any vector <m>\vec v</m>, we can define <m>-\vec v</m> such that <m>\vec v + (-\vec v) = \vec 0</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              If <m>k</m> is a scalar and <m>\vec v</m> is a vector in <m>\mathbb{R}^n</m>, then <m>k\vec v</m> is also a vector in <m>\mathbb{R}^n</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              For any vector <m>\vec v</m>, <m>1\cdot \vec v = \vec v</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              For any scalars <m>c, d</m> and any vector <m>\vec v</m>, <m>c(d\vec v) = (cd)\vec v)</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              For any scalar <m>c</m> and vectors <m>\vec v</m>, <m>\vec w</m>, <m>c(\vec v+\vec w) = c\vec v+c\vec w</m>.
-            </p>
-          </li>
-          <li>
-            <p>
-              For any scalars <m>c, d</m> and vector <m>\vec v</m>, <m>(c+d)\vec v = c\vec v+d\vec v</m>.
-            </p>
-          </li>
-        </ol>
-      </p>
-    </statement>
-  </theorem>
-
-  <aside>
+  <introduction>
     <p>
-      Vector spaces are defined in general to be sets on which one can define addition and scalar multiplication 
-      satisfying the algebraic properties given in <xref ref="thm-Rn_properties"/>.
-      Examples of vector spaces other than <m>\R^n</m> include the space of <m>m\times n</m> matrices 
-      (each choice of <m>m</m> and <m>n</m> gives a different space), and the space of all polynomial functions of a real variable. 
+      So far in this chapter, we have restricted our attention to vectors in two or three dimensions, 
+      where we are able to visualize things geometrically. 
+      Something that you may have noticed is that the algebraic rules for the addition and scalar multiplication vectors 
+      are the same in both dimensions.
     </p>
-  </aside>
 
-  <p>
-    Then ten properties listed in <xref ref="thm-Rn_properties"/> are known as the <term>vector space axioms</term>. 
-    Any set of objects satisfying these axioms is known as a <term>vector space</term>. 
-    There are many interesting examples of vector spaces other than <m>\mathbb{R}^n</m>, but we will not study vector spaces in general in this text. 
-  </p>
+    <p>
+      In this section, we consider this algebra of vectors abstractly, 
+      which will allow us to move beyond three dimensions to vectors with an arbitrary number of components. 
+    </p>
+    
+    <p>
+      Despite the fact that we cannot easily visualize them, higher-dimensional vectors frequently arise in 
+      applications where there are many variables involved. 
+      The fact that the rules of algebra remain the same mean that we can continue to manipulate these objects, 
+      even though we can no longer picture them.
+    </p>
+  </introduction>
 
-  <paragraphs>
+  <subsection>
+    <title>The vector space <m>\R^n</m></title>
+
+    <p>
+      For each positive integer <m>n</m>, a column vector <m>\vec{x}</m> is formed by arranging <m>n</m> 
+      real numbers <m>x_1, x_2, \ldots, x_n</m> into a column <m>\vec{x} = \bbm x_1\\x_2\\\vdots \\x_n\ebm</m>. 
+      In <xref ref="chapter-algebra"/> we will see that this is a special type of <em>matrix</em>; 
+      for now, we can think of a column vector as an alternative to the notation <m>\bbm  x_1\\x_2\\\ldots, x_n\ebm</m> 
+      encountered earlier in this chapter. In particular, we still refer to the numbers <m>x_1,x_2,\ldots, x_n</m> in <m>\vec{x}</m>
+      as the <term>components</term> of <m>\vec{x}</m>, 
+      and we define addition and scalar multiplication of column vectors in terms of their components, 
+      as we did for vectors in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m>. 
+    </p> 
+
+    <p>
+      That is, given vectors <m>\vec{x} = \bbm x_1\\x_2\\\vdots\\x_n\ebm</m> and <m>\vec{y} = \bbm y_1\\y_2\\\vdots \\y_n\ebm</m>, 
+      and a scalar <m>c</m>, we define
+      <me>
+        \vec{x}+\vec{y} = \bbm x_1\\x_2\\\vdots\\x_n\ebm + \bbm y_1\\y_2\\\vdots \\y_n\ebm = \bbm x_1+y_1\\x_2+y_2\\\vdots \\x_n+y_n\ebm
+      </me>
+      and
+      <me>
+        c\vec{x} = c\bbm x_1\\x_2\\\vdots\\x_n\ebm = \bbm cx_1\\cx_2\\\vdots\\cx_n\ebm
+      </me>.    
+    </p>
+
+    <p>
+      With these operations, the set of all <m>n\times 1</m> column vectors provides an example of what is known as a <term>vector space</term>.
+      <idx><h>vector space</h></idx> 
+    </p>
+
+    <definition xml:id="def-spaceRn">
+      <title>The vector space <m>\mathbb{R}^n</m></title>
+      <statement>
+        <p>
+          <idx><h>vector space </h><h> of column vectors</h></idx>
+          The space of all <term>column vectors</term> of real numbers is denoted by
+          <me>
+            \mathbb{R}^n = \left\{\left.\bbm x_1\\x_2 \\ \vdots \\x_n\ebm \,\,\right| \, x_1, x_2, \ldots, x_n\in \mathbb{R}\right\}
+          </me>.
+        </p>
+      </statement>
+    </definition>
+
+    <p>
+      As with the vectors in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m> we encountered in <xref ref="chapter-vectors"/>, 
+      we allow the notation <m>\mathbb{R}^n</m> to represent both the <em>space</em> of points <m>(x_1,x_2, \ldots, x_n)</m>, 
+      and the set of vectors defined within that space. 
+      Since we can identify any point <m>P</m> with the position vector <m>\overrightarrow{OP}</m>, 
+      the difference between viewing <m>\mathbb{R}^n</m> as a set of points or as a set of vectors is primarily one of perspective.
+    </p>
+
+    <p>
+      When <m>n\geq 4</m> we can no longer visualize vectors in <m>\mathbb{R}^n</m> as we did in <xref ref="chapter-vectors"/>, 
+      but we can handle them algebraically exactly as we did before, and we can extend the definitions of <xref ref="chapter-vectors"/> 
+      to apply to vectors in <m>\mathbb{R}^n</m>.
+    </p>
+
+    <p>
+      In particular, we can define the <term>length</term> of a vector 
+      <me>
+        \vec{x}=\bbm x_1\\x_2\\ \vdots\\ x_n\ebm\in\mathbb{R}^n
+      </me> 
+      by
+      <me>
+        \norm{\vec{x}} = \sqrt{x_1^2+x_2^2+\cdots +x_n^2}
+      </me>,
+      and the dot product of vectors <m>\vec{x}, \vec{y}\in\mathbb{R}^n</m> by
+      <me>
+        \dotp xy = x_1y_1+x_2y_2+\cdots + x_ny_n
+      </me>.
+    </p>
+
+    <p>
+      Having defined the dot product, we can still declare two vectors <m>\vec x</m> and <m>\vec y</m> to be orthogonal if <m>\dotp xy = 0</m>, 
+      and define the angle between two vectors by requiring that the identity
+      <me>
+        \dotp xy = \norm{\vec{x}}\norm{\vec{y}}\cos\theta
+      </me>
+      remain valid. Using these definitions, along with <xref ref="thm-addition_properties"/>, 
+      we can see that all of the properties of vector operations given in <xref ref="thm_vector_properties"/> 
+      remain valid in <m>\mathbb{R}^n</m>.        
+    </p>
+
+    <theorem xml:id="thm-Rn_properties">
+      <title>Algebraic properties of <m>\R^n</m></title>
+      <statement>
+        <p>
+          The following properties hold for the space <m>\R^n</m> of <m>n\times 1</m> column vectors:
+          <ol>
+            <li>
+              <p>
+                If <m>\vec v</m> and <m>\vec w</m> are vectors in <m>\mathbb{R}^n</m>, <m>\vec{v}+\vec{w}</m> is also a vector in <m>\mathbb{R}^n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For any vectors <m>\vec v, \vec w</m>, <m>\vec v + \vec w = \vec w+ \vec v</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For any vectors <m>\vec u, \vec v, \vec w</m>, <m>(\vec u + \vec v)+\vec w = \vec u + (\vec v + \vec w)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For any vector <m>\vec v</m>, <m>\vec v+\vec 0 = \vec v</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For any vector <m>\vec v</m>, we can define <m>-\vec v</m> such that <m>\vec v + (-\vec v) = \vec 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                If <m>k</m> is a scalar and <m>\vec v</m> is a vector in <m>\mathbb{R}^n</m>, then <m>k\vec v</m> is also a vector in <m>\mathbb{R}^n</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For any vector <m>\vec v</m>, <m>1\cdot \vec v = \vec v</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For any scalars <m>c, d</m> and any vector <m>\vec v</m>, <m>c(d\vec v) = (cd)\vec v)</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For any scalar <m>c</m> and vectors <m>\vec v</m>, <m>\vec w</m>, <m>c(\vec v+\vec w) = c\vec v+c\vec w</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                For any scalars <m>c, d</m> and vector <m>\vec v</m>, <m>(c+d)\vec v = c\vec v+d\vec v</m>.
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
+    </theorem>
+
+    <aside>
+      <p>
+        Vector spaces are defined in general to be sets on which one can define addition and scalar multiplication 
+        satisfying the algebraic properties given in <xref ref="thm-Rn_properties"/>.
+        Examples of vector spaces other than <m>\R^n</m> include the space of <m>m\times n</m> matrices 
+        (each choice of <m>m</m> and <m>n</m> gives a different space), and the space of all polynomial functions of a real variable. 
+      </p>
+    </aside>
+
+    <p>
+      Then ten properties listed in <xref ref="thm-Rn_properties"/> are known as the <term>vector space axioms</term>. 
+      Any set of objects satisfying these axioms is known as a <term>vector space</term>. 
+      There are many interesting examples of vector spaces other than <m>\mathbb{R}^n</m>, but we will not study vector spaces in general in this text. 
+    </p>
+  </subsection>
+
+  <subsection>
     <title>Linear combinations and span</title>
     
     <p>
@@ -532,9 +538,9 @@
         </p>
       </solution>
     </example>
-  </paragraphs>
+  </subsection>
 
-  <paragraphs>
+  <subsection>
     <title>Linear independence</title>
     
     <p>
@@ -740,90 +746,89 @@
         system of linear equations with more variables than equations, and that such a system is guaranteed to have non-trivial solutions.
       </p>
     </aside>
-    
-  </paragraphs>
 
-  <p>
-    This section introduced several new ideas. Some, like linear combinations, are straightforward. 
-    Others, like span and linear independence, take some getting used to. There remain two very obvious questions to address:
-    <ol>
-      <li>
-        <p>
-          How do we tell whether or not a given vector belongs to the span of a set of vectors?
-        </p>
-      </li>
-      <li>
-        <p>
-          How do we tell if a set of vectors is linearly independent?
-        </p>
-      </li>
-    </ol>
-  </p>
+    <p>
+      This section introduced several new ideas. Some, like linear combinations, are straightforward. 
+      Others, like span and linear independence, take some getting used to. There remain two very obvious questions to address:
+      <ol>
+        <li>
+          <p>
+            How do we tell whether or not a given vector belongs to the span of a set of vectors?
+          </p>
+        </li>
+        <li>
+          <p>
+            How do we tell if a set of vectors is linearly independent?
+          </p>
+        </li>
+      </ol>
+    </p>
 
-  <p>
-    It turns out that both questions lead to <term>systems of linear equations</term>. 
-    As we saw in <xref ref="ex_spanRn2"/>, we are currently unable to systematically solve such problems.  
-    In Chapters <xref ref="chapter-linear"/> and <xref ref="chapter-algebra"/> 
-    we will develop the techniques needed to systematically solve such systems, 
-    at which point we will be able to easily answer questions about linear independence and span.
-  </p>
+    <p>
+      It turns out that both questions lead to <term>systems of linear equations</term>. 
+      As we saw in <xref ref="ex_spanRn2"/>, we are currently unable to systematically solve such problems.  
+      In Chapters <xref ref="chapter-linear"/> and <xref ref="chapter-algebra"/> 
+      we will develop the techniques needed to systematically solve such systems, 
+      at which point we will be able to easily answer questions about linear independence and span.
+    </p>
 
-  <p>
-    To see how such systems arise, suppose we want to know whether or not the vector 
-    <m>\vec w = \bbm 2\\-1\\3\\0\ebm \in\mathbb{R}^4</m> belongs to the set
-    <m>V = \operatorname{span}\{\vec{v}_1, \vec{v}_2, \vec{v}_3\}</m>, where
-    <me>
-      \vec{v}_1 = \bbm 0\\2\\-1\\4\ebm, \vec{v}_2 = \bbm 3\\1\\0\\-4\ebm, \vec{v}_3 = \bbm -3\\6\\7\\2\ebm
-    </me>.
-  </p>
+    <p>
+      To see how such systems arise, suppose we want to know whether or not the vector 
+      <m>\vec w = \bbm 2\\-1\\3\\0\ebm \in\mathbb{R}^4</m> belongs to the set
+      <m>V = \operatorname{span}\{\vec{v}_1, \vec{v}_2, \vec{v}_3\}</m>, where
+      <me>
+        \vec{v}_1 = \bbm 0\\2\\-1\\4\ebm, \vec{v}_2 = \bbm 3\\1\\0\\-4\ebm, \vec{v}_3 = \bbm -3\\6\\7\\2\ebm
+      </me>.
+    </p>
 
-  <p>
-    By definition, <m>V</m> is the set of all possible linear combinations of the vectors <m>\vec{v}_1, \vec{v}_2, \vec{v}_3</m>, 
-    so saying that <m>\vec w \in V</m> is the same as saying that we can write <m>\vec w</m> as a linear combination of these vectors. 
-    Thus, what we want to know is whether or not there exist scalars <m>x_1, x_2, x_3</m> such that
-    <me>
-      \vec w = x_1\vec{v}_1 + x_2\vec{v}_2 + x_3\vec{v}_3
-    </me>.
-    Substituting in the values for our vectors, this gives
-    <me>
-      x_1\bbm 0\\2\\-1\\4\ebm + x_2\bbm 3\\1\\0\\-4\ebm + x_3\bbm -3\\6\\7\\2\ebm  = 
-      \bbm 3x_2-3x_3\\2x_1+x_2+6x_3\\-x_1+7x_3\\4x_1-4x_2+2x_3\ebm = \bbm 2\\-1\\3\\0\ebm
-    </me>.
-  </p>
+    <p>
+      By definition, <m>V</m> is the set of all possible linear combinations of the vectors <m>\vec{v}_1, \vec{v}_2, \vec{v}_3</m>, 
+      so saying that <m>\vec w \in V</m> is the same as saying that we can write <m>\vec w</m> as a linear combination of these vectors. 
+      Thus, what we want to know is whether or not there exist scalars <m>x_1, x_2, x_3</m> such that
+      <me>
+        \vec w = x_1\vec{v}_1 + x_2\vec{v}_2 + x_3\vec{v}_3
+      </me>.
+      Substituting in the values for our vectors, this gives
+      <me>
+        x_1\bbm 0\\2\\-1\\4\ebm + x_2\bbm 3\\1\\0\\-4\ebm + x_3\bbm -3\\6\\7\\2\ebm  = 
+        \bbm 3x_2-3x_3\\2x_1+x_2+6x_3\\-x_1+7x_3\\4x_1-4x_2+2x_3\ebm = \bbm 2\\-1\\3\\0\ebm
+      </me>.
+    </p>
 
-  <p>
-    Since two vectors are equal if and only if each component is equal, 
-    the above vector equation leads to the following system of four equations:
-    <me>\arraycolsep=2pt
-      \begin{array}{ccccccc}
-       \amp   \amp 3x_2 \amp-\amp3x_3 \amp= \amp2\\
-      2x_1&amp;+&amp;x_2&amp;+&amp;6x_3&amp;=&amp;-1\\
-      -x_1&amp; &amp; &amp;+&amp;7x_3&amp;=&amp;3\\
-      4x_1&amp;-&amp;4x_2&amp;+&amp;2x_3&amp;=&amp;0
-      \end{array}
-    </me>.
-    Thus, the question <q>Is the vector <m>\vec w</m> an element of <m>V</m>?</q> 
-    is equivalent to the question <q>Is there a solution to the above system of equations?</q> 
-  </p>
+    <p>
+      Since two vectors are equal if and only if each component is equal, 
+      the above vector equation leads to the following system of four equations:
+      <me>\arraycolsep=2pt
+        \begin{array}{ccccccc}
+        \amp   \amp 3x_2 \amp-\amp3x_3 \amp= \amp2\\
+        2x_1&amp;+&amp;x_2&amp;+&amp;6x_3&amp;=&amp;-1\\
+        -x_1&amp; &amp; &amp;+&amp;7x_3&amp;=&amp;3\\
+        4x_1&amp;-&amp;4x_2&amp;+&amp;2x_3&amp;=&amp;0
+        \end{array}
+      </me>.
+      Thus, the question <q>Is the vector <m>\vec w</m> an element of <m>V</m>?</q> 
+      is equivalent to the question <q>Is there a solution to the above system of equations?</q> 
+    </p>
 
-  <p>
-    Questions about linear independence are similar, but not quite the same. 
-    With the above example involving span, what we wanted to know is <q>Does a solution exist?</q> 
-    With linear independence, it is not whether a solution exists that is in doubt, but whether or not that solution is <em>unique</em>. 
-    For example, suppose we wanted to know if the vectors in our span example above are linearly independent. 
-    We would start with the vector equation
-    <me>
-      x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 = \vec 0
-    </me>,
-    and ask whether or not there are any solutions other than <m>x_1=x_2=x_3=0</m>. 
-  </p>
+    <p>
+      Questions about linear independence are similar, but not quite the same. 
+      With the above example involving span, what we wanted to know is <q>Does a solution exist?</q> 
+      With linear independence, it is not whether a solution exists that is in doubt, but whether or not that solution is <em>unique</em>. 
+      For example, suppose we wanted to know if the vectors in our span example above are linearly independent. 
+      We would start with the vector equation
+      <me>
+        x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 = \vec 0
+      </me>,
+      and ask whether or not there are any solutions other than <m>x_1=x_2=x_3=0</m>. 
+    </p>
 
-  <p>
-    This vector equation leads to a system just like the one above, 
-    except that the numbers to the right of the <m>=</m> signs would all be zeros. 
-    The techniques needed to answer these and other questions will be developed beginning in <xref ref="chapter-linear"/>.
-  </p>
-
+    <p>
+      This vector equation leads to a system just like the one above, 
+      except that the numbers to the right of the <m>=</m> signs would all be zeros. 
+      The techniques needed to answer these and other questions will be developed beginning in <xref ref="chapter-linear"/>.
+    </p>
+  </subsection>
+  
   <exercises>
     <exercisegroup cols="2">
     
@@ -896,7 +901,7 @@
         <p>
           Calculate the given quantity, where
           <me>
-            \vu = \bbm 2\\0\\-1\\3\\7\ebm, \vv = \bbm -3\\5\\0\\-6\\1\ebm, \text{ and } \vec w = \bbm 0\\-3\\5\\2\\-4\ebm
+            \vu = \bbm 2\\0\\-1\\3\\7\ebm, \vvv = \bbm -3\\5\\0\\-6\\1\ebm, \text{ and } \vec w = \bbm 0\\-3\\5\\2\\-4\ebm
           </me>.
         </p>
       </introduction>

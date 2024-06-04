@@ -635,7 +635,9 @@
         <mrow> \amp  = \bbm T(\veone)  \amp  T(\vetwo) \amp  \cdots \amp  T(\ven{n})\ebm\bbm x_1\\x_2\\ \vdots \\ x_n\ebm</mrow>
         <mrow> \amp  = A\vec x</mrow>
       </md>,
-      where <m>A = \bbm T(\veone) \amp  T(\vetwo) \amp  \cdots \amp  T(\ven{n})\ebm</m> is the <m>m\times n</m> matrix whose columns are given by the vectors <m>T(\ven{i})</m>, for <m>i=1,2,\ldots, n</m>. Thus, we have the following theorem. \label{page:standard_matrix}
+      where <m>A = \bbm T(\veone) \amp  T(\vetwo) \amp  \cdots \amp  T(\ven{n})\ebm</m> 
+      is the <m>m\times n</m> matrix whose columns are given by the vectors <m>T(\ven{i})</m>, 
+      for <m>i=1,2,\ldots, n</m>. Thus, we have the following theorem.
     </p>
     
     <theorem xml:id="thm-standard_matrix">

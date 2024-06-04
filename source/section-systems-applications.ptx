@@ -111,7 +111,7 @@
         To find the solution, let's form the appropriate augmented matrix and put it into reduced row echelon form. 
         We do so here, without showing the steps.
         <me>
-          \bam{4}1 \amp 1 \amp 1\amp 1\amp 100\\2\amp 0\amp 0\amp -1\amp 0\\1\amp 0\amp -1\amp 0\amp 10\\-1\amp -1\amp 1\amp 1\amp 0\\ \eam \quad\quad \overrightarrow{\text{rref}} \quad\quad \bam{4} 1\amp 0\amp 0\amp 0\amp 20\\0\amp 1\amp 0\amp 0\amp 30\\0\amp 0\amp 1\amp 0\amp 10\\0\amp 0\amp 0\amp 1\amp 40\\ \eam
+          \left[\begin{array}{cccc|c}1 \amp 1 \amp 1\amp 1\amp 100\\2\amp 0\amp 0\amp -1\amp 0\\1\amp 0\amp -1\amp 0\amp 10\\-1\amp -1\amp 1\amp 1\amp 0\\ \end{array}\right] \quad\quad \overrightarrow{\text{rref}} \quad\quad \left[\begin{array}{cccc|c} 1\amp 0\amp 0\amp 0\amp 20\\0\amp 1\amp 0\amp 0\amp 30\\0\amp 0\amp 1\amp 0\amp 10\\0\amp 0\amp 0\amp 1\amp 40\\ \end{array}\right]
         </me>.
       </p>
 
@@ -255,14 +255,14 @@
         </me>,
         and the corresponding augmented matrix is 
         <me>
-          \bam{3}1 \amp 1 \amp 0\amp 105\\0\amp 1\amp 1\amp 103\\1\amp 0\amp 1\amp 88\\ \eam
+          \left[\begin{array}{ccc|c}1 \amp 1 \amp 0\amp 105\\0\amp 1\amp 1\amp 103\\1\amp 0\amp 1\amp 88\\ \end{array}\right]
         </me>.
       </p>
       
       <p>
         To solve our system, let's put this matrix into reduced row echelon form.
         <me>
-          \bam{3}1 \amp 1 \amp 0\amp 105\\0\amp 1\amp 1\amp 103\\1\amp 0\amp 1\amp 88\\ \eam \quad \quad \overrightarrow{\text{rref}} \quad\quad \bam{3}1\amp 0\amp 0\amp 45\\0\amp 1\amp 0\amp 60\\0\amp 0\amp 1\amp 43\\ \eam
+          \left[\begin{array}{ccc|c}1 \amp 1 \amp 0\amp 105\\0\amp 1\amp 1\amp 103\\1\amp 0\amp 1\amp 88\\ \end{array}\right] \quad \quad \overrightarrow{\text{rref}} \quad\quad \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 45\\0\amp 1\amp 0\amp 60\\0\amp 0\amp 1\amp 43\\ \end{array}\right]
         </me>.
       </p>
             
@@ -335,7 +335,7 @@
       <p>
         The corresponding augmented matrix is 
         <me>
-          \bam{2} 1  \amp  1  \amp  4\\ 2\amp -1\amp 4\\ \eam
+          \left[\begin{array}{cc|c} 1  \amp  1  \amp  4\\ 2\amp -1\amp 4\\ \end{array}\right]
         </me>.
         Note that we decided to let the first column hold the coefficients of <m>b</m>.
       </p>
@@ -343,7 +343,7 @@
       <p>
         Putting this matrix in reduced row echelon form gives us: 
         <me>
-          \bam{2} 1  \amp  1  \amp  4\\ 2\amp -1\amp 4\\ \eam\quad\quad\overrightarrow{\text{rref}}\quad\quad\bam{2}1\amp 0\amp 8/3\\0\amp 1\amp 4/3\\ \eam
+          \left[\begin{array}{cc|c} 1  \amp  1  \amp  4\\ 2\amp -1\amp 4\\ \end{array}\right]\quad\quad\overrightarrow{\text{rref}}\quad\quad\left[\begin{array}{cc|c}1\amp 0\amp 8/3\\0\amp 1\amp 4/3\\ \end{array}\right]
         </me>.
       </p>
       
@@ -394,7 +394,7 @@
         Again, to solve our system, we find the reduced row echelon form of the corresponding augmented matrix. 
         We don't show the steps here, just the final result.
         <me>
-          \bam{3}1 \amp -1 \amp 1\amp 6\\1\amp 1\amp 1\amp 2\\4\amp 2\amp 1\amp 3\\ \eam \quad\quad \overrightarrow{\text{ rref }}\quad\quad \bam{3}1\amp 0\amp 0\amp 1\\0\amp 1\amp 0\amp -2\\0\amp 0\amp 1\amp 3\\ \eam
+          \left[\begin{array}{ccc|c}1 \amp -1 \amp 1\amp 6\\1\amp 1\amp 1\amp 2\\4\amp 2\amp 1\amp 3\\ \end{array}\right] \quad\quad \overrightarrow{\text{ rref }}\quad\quad \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 1\\0\amp 1\amp 0\amp -2\\0\amp 0\amp 1\amp 3\\ \end{array}\right]
         </me>
       </p>
       
@@ -459,7 +459,7 @@
       <p>
         Putting the system into a matrix and then finding the reduced row echelon form, we have 
         <me>
-          \bam{3}1\amp 1\amp 1\amp 32\\ 1\amp 5\amp 10\amp 100 \eam \qquad \overrightarrow{\text{rref}}\qquad \bam{3}1\amp 0\amp -\frac54\amp 15\\0\amp 1\amp \frac94\amp 17 \eam.
+          \left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 32\\ 1\amp 5\amp 10\amp 100 \end{array}\right] \qquad \overrightarrow{\text{rref}}\qquad \left[\begin{array}{ccc|c}1\amp 0\amp -\frac54\amp 15\\0\amp 1\amp \frac94\amp 17 \end{array}\right].
         </me>.
       </p>
       
@@ -545,7 +545,7 @@
       <p>
         To solve our problem, we put these equations into a matrix and put the matrix into reduced row echelon form. Doing so, we find 
         <me>
-          \bam{4}1 \amp 1 \amp 1\amp 1\amp 7\\ 6\amp 1\amp 2\amp 3\amp 24\\1\amp -1\amp -1\amp 0\amp 0 \eam \quad\quad\overrightarrow{\text{rref}}\quad\quad \bam{4} 1\amp 0\amp 0\amp 0.5\amp 3.5\\0\amp 1\amp 0\amp 1\amp 4\\ 0\amp 0\amp 1\amp -0.5\amp -0.5 \eam
+          \left[\begin{array}{cccc|c}1 \amp 1 \amp 1\amp 1\amp 7\\ 6\amp 1\amp 2\amp 3\amp 24\\1\amp -1\amp -1\amp 0\amp 0 \end{array}\right] \quad\quad\overrightarrow{\text{rref}}\quad\quad \left[\begin{array}{cccc|c} 1\amp 0\amp 0\amp 0.5\amp 3.5\\0\amp 1\amp 0\amp 1\amp 4\\ 0\amp 0\amp 1\amp -0.5\amp -0.5 \end{array}\right]
         </me>.
       </p>
       
@@ -678,7 +678,7 @@
         <p>
           We now what to do from here: we set up our augmented matrix and reduce:
           <me>
-            \bam{3}1\amp 3\amp 3\amp 2\\ -2\amp 4\amp -1\amp -14\\0\amp 8\amp 4\amp -8 \eam \qquad \overrightarrow{\text{rref}}\qquad \bam{3}1\amp 0\amp \frac32\amp 5\\0\amp 1\amp \frac12\amp -1\\0\amp 0\amp 0\amp 0 \eam.
+            \left[\begin{array}{ccc|c}1\amp 3\amp 3\amp 2\\ -2\amp 4\amp -1\amp -14\\0\amp 8\amp 4\amp -8 \end{array}\right] \qquad \overrightarrow{\text{rref}}\qquad \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp 5\\0\amp 1\amp \frac12\amp -1\\0\amp 0\amp 0\amp 0 \end{array}\right].
           </me>.
         </p>
     
@@ -706,7 +706,7 @@
           (since these are defined by the vector <m>\vec{b}</m>), 
           so we can proceed by replacing the right-hand column in our augmented matrix above by the vector <m>\vec{b}</m>, and reducing:
           <me>
-            \bam{3}1\amp 3\amp 3\amp 1\\ -2\amp 4\amp -1\amp 0\\0\amp 8\amp 4\amp -4 \eam \qquad \overrightarrow{\text{rref}}\qquad \bam{3}1\amp 0\amp \frac32\amp \frac25\\0\amp 1\amp \frac12\amp \frac15\\0\amp 0\amp 0\amp -\frac{7}{10} \eam
+            \left[\begin{array}{ccc|c}1\amp 3\amp 3\amp 1\\ -2\amp 4\amp -1\amp 0\\0\amp 8\amp 4\amp -4 \end{array}\right] \qquad \overrightarrow{\text{rref}}\qquad \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp \frac25\\0\amp 1\amp \frac12\amp \frac15\\0\amp 0\amp 0\amp -\frac{7}{10} \end{array}\right]
           </me>.
         </p>
         <p>
@@ -724,7 +724,7 @@
           The solution for the vector <m>\vec{c}</m> is similar. 
           We replace the right-hand column in our augmented matrix by <m>\vec{c}</m> and reduce:
           <me>
-            \bam{3}1\amp 3\amp 3\amp -4\\ -2\amp 4\amp -1\amp 3\\0\amp 8\amp 4\amp 1 \eam \qquad \overrightarrow{\text{rref}}\qquad \bam{3}1\amp 0\amp \frac32\amp -\frac52\\0\amp 1\amp \frac12\amp -\frac12\\0\amp 0\amp 0\amp \frac58 \eam
+            \left[\begin{array}{ccc|c}1\amp 3\amp 3\amp -4\\ -2\amp 4\amp -1\amp 3\\0\amp 8\amp 4\amp 1 \end{array}\right] \qquad \overrightarrow{\text{rref}}\qquad \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp -\frac52\\0\amp 1\amp \frac12\amp -\frac12\\0\amp 0\amp 0\amp \frac58 \end{array}\right]
           </me>.
         </p>
     
@@ -850,9 +850,9 @@
           Since a homogeneous system is, after all, a linear system, we know how to proceed: 
           set up the corresponding augmented matrix and reduce.
           <me>
-            \bam{3} 1\amp -2\amp 2\amp 0\\-3\amp 1\amp 0\amp 0\\4\amp -3\amp -1\amp 0\eam
+            \left[\begin{array}{ccc|c} 1\amp -2\amp 2\amp 0\\-3\amp 1\amp 0\amp 0\\4\amp -3\amp -1\amp 0\end{array}\right]
             \qquad \overrightarrow{\text{rref}}\qquad
-            \bam{3} 1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 0\eam
+            \left[\begin{array}{ccc|c} 1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 0\end{array}\right]
           </me>.
         </p>
 
@@ -882,9 +882,9 @@
           and the vectors <m>\vec{w}_1</m>, <m>\vec{w}_2</m>, <m>\vec{w}_3</m> make up the columns on the left of the corresponding augmented matrix. 
           We find
           <me>
-            \bam{3} 2\amp 3\amp 1\amp 0\\-3\amp 0\amp 12\amp 0\\1\amp 4\amp 8\amp 0\eam
+            \left[\begin{array}{ccc|c} 2\amp 3\amp 1\amp 0\\-3\amp 0\amp 12\amp 0\\1\amp 4\amp 8\amp 0\end{array}\right]
             \qquad \overrightarrow{\text{rref}}\qquad
-            \bam{3} 1\amp 0\amp -4\amp 0\\0\amp 1\amp 3\amp 0\\0\amp 0\amp 0\amp 0\eam
+            \left[\begin{array}{ccc|c} 1\amp 0\amp -4\amp 0\\0\amp 1\amp 3\amp 0\\0\amp 0\amp 0\amp 0\end{array}\right]
           </me>.
         </p>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <docinfo>
-  <brandlogo url="http://www.apexcalculus.com" source="images/APEX.png"/>
+  <brandlogo url="https://opentext.uleth.ca" source="fiatlux.jpg"/>
   <initialism>Math1410</initialism>
 
   <document-id edition="5">1410text</document-id>
@@ -9,6 +9,8 @@
     A traditional calculus textbook with many exercises and few proofs,
     covering calculus from limits to vector calculus.
   </blurb>
+
+  <math-package latex-name="cancel" mathjax-name="cancel"/>
 
   <macros>
     \newcommand{\colorlinecolor}{blue!95!black!30}
@@ -22,8 +24,6 @@
     \newcommand{\thet}{\theta}
     \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
     \newcommand{\vnorm}[1]{\left\lVert\vec #1\right\rVert}
-    \newcommand{\la}{\left\langle}
-    \newcommand{\ra}{\right\rangle}
     \newcommand{\dotp}[2]{\vec #1 \,\boldsymbol{\cdot}\, \vec #2}
     \newcommand{\proj}[2]{\operatorname{proj}_{\,\vec #2}{\,\vec #1}}
     \newcommand{\crossp}[2]{\vec #1 \times \vec #2}
@@ -37,20 +37,20 @@
     \newcommand{\vecy}{\vec y}
     \newcommand{\abs}[1]{\left\lvert #1\right\rvert}
     \newcommand{\noin}{\noindent}
-    \newcommand{\vx}[1][]{\vec{x_{#1}}}
-    \newcommand{\vxp}{\\vec{x_p}}
+    \newcommand{\vx}[1][]{\vec{x}_{#1}}
+    \newcommand{\vxp}{\vec{x}_p}
     \newcommand{\vu}{\vec{u}}
-    \renewcommand{\vv}{\vec{v}}
+    \newcommand{\vvv}{\vec{v}}
     \newcommand{\vy}{\vec{y}}
     \newcommand{\vz}{\vec{z}}
     \newcommand{\vb}{\vec{b}}
     \newcommand{\vw}{\vec{w}}
-    \newcommand{\veone}{\vec{e_1}}
-    \newcommand{\vetwo}{\vec{e_2}}
-    \newcommand{\vethree}{\vec{e_3}}
-    \newcommand{\vei}{\vec{e_i}}
-    \newcommand{\ven}[1]{\vec{e_{#1}}}
-    \newcommand{\zero}{\vec{\text{\it 0}}}
+    \newcommand{\veone}{\vec{e}_1}
+    \newcommand{\vetwo}{\vec{e}_2}
+    \newcommand{\vethree}{\vec{e}_3}
+    \newcommand{\vei}{\vec{e}_i}
+    \newcommand{\ven}[1]{\vec{e}_{#1}}
+    \newcommand{\zero}{\vec{0}}
     \newcommand{\arref}{\overrightarrow{\text{rref}}}
     \newcommand{\tta}{A}
     \newcommand{\ttb}{B}
@@ -83,24 +83,8 @@
     \newcommand{\real}[1]{\mathbb{R}^{#1}}
     \newcommand{\TT}{[\, T\, ]}
     \newcommand{\R}{\mathbb{R}}
-    \newenvironment{amatrix}[1]{%
-      \left[\begin{array}{@{}*{#1}{c}|c@{}}
-    }{%
-      \end{array}\right]
-    }
-    \newenvironment{aamatrix}[1]{%
-      \left[\begin{array}{@{}*{#1}{c}|*{#1}{c}@{}}
-    }{%
-      \end{array}\right]
-    }
-    \newcommand{\bam}{\begin{amatrix}}
-    \newcommand{\eam}{\end{amatrix}}
-    \newcommand{\baam}{\begin{aamatrix}}
-    \newcommand{\eaam}{\end{aamatrix}}
     \newcommand{\bvm}{\begin{vmatrix}}
-    \newcommand{\evm}{\end{vmatrix}}
-    \newcommand{\drawxticks}[1]
-    
+    \newcommand{\evm}{\end{vmatrix}}    
   </macros>
 
   <latex-image-preamble component="color">
@@ -267,13 +251,23 @@
       \filldraw [fill=white,thick]  (D) ++(-2.5pt,-2.5pt) -- ++(5pt,0pt) -- ++(-2.5pt,5pt) -- cycle;%green
       \end{scope}
     }
+    \newcommand{\vmispider}[1][]
     {\begin{scope}[#1]
-    \draw  (-2,2) -- (0,-1) -- (2,2);
-    \draw  (-1,-1) -- (-1,2) -- (0,1) -- (1,2) -- (1,-1);
-    \draw  (-1,2.5) -- (1,2.5);
-    \draw  (-1,-1.5) -- (1,-1.5);
-    \draw  (0,-1.5) -- (0,2.5);
+      \draw  (-2,2) -- (0,-1) -- (2,2);
+      \draw  (-1,-1) -- (-1,2) -- (0,1) -- (1,2) -- (1,-1);
+      \draw  (-1,2.5) -- (1,2.5);
+      \draw  (-1,-1.5) -- (1,-1.5);
+      \draw  (0,-1.5) -- (0,2.5);
     \end{scope}
+    }
+    \newcommand{\unitsquarewithoutarrows}[1][]
+    {\begin{scope}
+      \draw [#1] (0,0) node (A) {} -- (1,0) node (B) {} -- (1,1) node (C) {} -- (0,1) node (D) {} -- cycle;
+      \filldraw [black]  (A) circle (2pt);%black
+      \filldraw [fill=white,thick]  (B) ++(-2pt,-2pt) rectangle ++(4pt,4pt);%red
+      \filldraw [fill=white,thick]  (C) circle (2pt);%blue
+      \filldraw [fill=white,thick]  (D) ++(-2.5pt,-2.5pt) -- ++(5pt,0pt) -- ++(-2.5pt,5pt) -- cycle;%green
+      \end{scope}
     }
   </latex-image-preamble>
 
@@ -449,6 +443,14 @@
       \draw  (-1,-1.5) -- (1,-1.5);
       \draw  (0,-1.5) -- (0,2.5);
     \end{scope}
+    }\newcommand{\unitsquarewithoutarrows}[1][]
+    {\begin{scope}
+      \draw [#1] (0,0) node (A) {} -- (1,0) node (B) {} -- (1,1) node (C) {} -- (0,1) node (D) {} -- cycle;
+      \filldraw [black]  (A) circle (2pt);%black
+      \filldraw [fill=white,thick]  (B) ++(-2pt,-2pt) rectangle ++(4pt,4pt);%red
+      \filldraw [fill=white,thick]  (C) circle (2pt);%blue
+      \filldraw [fill=white,thick]  (D) ++(-2.5pt,-2.5pt) -- ++(5pt,0pt) -- ++(-2.5pt,5pt) -- cycle;%green
+      \end{scope}
     }
   </latex-image-preamble>
 
@@ -477,6 +479,7 @@
     pen curvepen=.4mm+bluepen;
     pen curvepen2=.4mm+redpen;
     pen darksurfacepen=rgb(.2,.2,1)+opacity(.7);
+    currentlight.background=opacity(0.0);
   </asymptote-preamble>
 
   <asymptote-preamble component="print">

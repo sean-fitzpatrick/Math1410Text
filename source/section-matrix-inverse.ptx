@@ -513,13 +513,13 @@
   </p>
 
   <p>
-    No. Suppose we are told that a known vector <m>\vv</m> is a solution to the equation <m>\ttaxb</m>; 
-    that is, we know that <m>\tta\vv=\vb</m>. We can repeat the above steps:
+    No. Suppose we are told that a known vector <m>\vvv</m> is a solution to the equation <m>\ttaxb</m>; 
+    that is, we know that <m>\tta\vvv=\vb</m>. We can repeat the above steps:
     <md> 
-      <mrow>\tta\vv \amp =\vb</mrow>
-      <mrow>\ttai\tta\vv  \amp =\ttai\vb </mrow>
-      <mrow>\tti\vv  \amp = \ttai\vb </mrow>
-      <mrow>\vv  \amp = \ttai\vb </mrow>
+      <mrow>\tta\vvv \amp =\vb</mrow>
+      <mrow>\ttai\tta\vvv  \amp =\ttai\vb </mrow>
+      <mrow>\tti\vvv  \amp = \ttai\vb </mrow>
+      <mrow>\vvv  \amp = \ttai\vb </mrow>
     </md>.
   </p>
 

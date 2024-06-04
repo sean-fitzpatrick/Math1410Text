@@ -74,10 +74,10 @@
     <statement>
       <p>
         Let <m>\vu</m> be an <m>1\times n</m> row vector with entries <m>u_1, u_2, \cdots, u_n</m> 
-        and let <m>\vv</m> be an <m>n\times 1</m> column vector with entries <m>v_1, v_2, \cdots, v_n</m>. 
-        The <term>product of <m>\vu</m> and \vv</term>, denoted <m>\dotp uv</m> or <m>\vu\vv</m>, is 
+        and let <m>\vvv</m> be an <m>n\times 1</m> column vector with entries <m>v_1, v_2, \cdots, v_n</m>. 
+        The <term>product of <m>\vu</m> and \vvv</term>, denoted <m>\dotp uv</m> or <m>\vu\vvv</m>, is 
         <me>
-          \vu\vv = \sum_{i=1}^n  u_iv_i = u_1v_1 + u_2v_2 + \cdots + u_nv_n
+          \vu\vvv = \sum_{i=1}^n  u_iv_i = u_1v_1 + u_2v_2 + \cdots + u_nv_n
         </me>.
       </p>
     </statement>
@@ -90,13 +90,13 @@
     <ol>
       <li>
         <p>
-          In order for the product <m>\vu\vv</m> to be defined, 
-          <m>\vu</m> and <m>\vv</m> need to have the <em>same number of entries</em>.
+          In order for the product <m>\vu\vvv</m> to be defined, 
+          <m>\vu</m> and <m>\vvv</m> need to have the <em>same number of entries</em>.
         </p>
       </li>
       <li>
         <p>
-          To multiply <m>\vu</m> and <m>\vv</m>, we <em>multiply the corresponding entries</em>, 
+          To multiply <m>\vu</m> and <m>\vvv</m>, we <em>multiply the corresponding entries</em>, 
           and then <alert>add up</alert> the resulting values.
         </p>
       </li>
@@ -110,14 +110,14 @@
       <p>
         Let 
         <me>
-          \vu = \bbm 1 \amp 2 \amp 3\ebm,\ \vv = \bbm 2\amp 0\amp 1\amp -1\ebm,\ \vx = \bbm-2\\4\\3\ebm,\ \vy = \bbm 1\\2\\5\\0\ebm
+          \vu = \bbm 1 \amp 2 \amp 3\ebm,\ \vvv = \bbm 2\amp 0\amp 1\amp -1\ebm,\ \vx = \bbm-2\\4\\3\ebm,\ \vy = \bbm 1\\2\\5\\0\ebm
         </me>.
         Find the following products. 
         <ol cols="3">
           <li><m>\vu\vx</m></li>
-          <li><m>\vv\vy</m></li>
+          <li><m>\vvv\vy</m></li>
           <li><m>\vu\vy</m></li>
-          <li><m>\vu\vv</m></li>
+          <li><m>\vu\vvv</m></li>
           <li><m>\vx\vu</m></li>
         </ol>
       </p>
@@ -126,7 +126,7 @@
       <p>
         <ol>
           <li><m>\vu\vx = \bbm 1\amp 2\amp 3\ebm\bbm-2\\4\\3\ebm = 1(-2)+2(4)+3(3) = 15</m></li>
-          <li><m>\vv\vy = \bbm 2\amp 0\amp 1\amp -1\ebm\bbm 1\\2\\5\\0\ebm = 2(1)+0(2)+1(5)-1(0) = 7</m></li>
+          <li><m>\vvv\vy = \bbm 2\amp 0\amp 1\amp -1\ebm\bbm 1\\2\\5\\0\ebm = 2(1)+0(2)+1(5)-1(0) = 7</m></li>
           <li>
             <p>
               <m>\vu\vy</m> is not defined; <xref ref="def-vector_multiply"/> 
@@ -136,7 +136,7 @@
           </li>
           <li>
             <p>
-              <m>\vu\vv</m> is not defined; we only know how to multipy row vectors by column vectors. 
+              <m>\vu\vvv</m> is not defined; we only know how to multipy row vectors by column vectors. 
               We haven't defined how to multiply two row vectors (in general, it can't be done).
             </p>
           </li>
@@ -740,14 +740,14 @@
     <exercisegroup cols="2">
       <introduction>
         <p>
-          Row and column vectors <m>\vu</m> and <m>\vv</m> are given. Find the product <m>\vu\vv</m>, where possible.
+          Row and column vectors <m>\vu</m> and <m>\vvv</m> are given. Find the product <m>\vu\vvv</m>, where possible.
         </p>
       </introduction>
         
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 1 \amp -4\ebm \quad \vv = \bbm -2\5\ebm</m>
+            <m>\vu = \bbm 1 \amp -4\ebm \quad \vvv = \bbm -2\5\ebm</m>
           </p>
         </statement>
         <answer>
@@ -760,7 +760,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 2 \amp 3\ebm \quad \vv = \bbm 7\-4\ebm</m>
+            <m>\vu = \bbm 2 \amp 3\ebm \quad \vvv = \bbm 7\-4\ebm</m>
           </p>
         </statement>
         <answer>
@@ -773,7 +773,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 1 \amp -1\ebm \quad \vv = \bbm 3\3\ebm</m>
+            <m>\vu = \bbm 1 \amp -1\ebm \quad \vvv = \bbm 3\3\ebm</m>
           </p>
         </statement>
         <answer>
@@ -786,7 +786,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 0.6 \amp 0.8\ebm \quad \vv = \bbm 0.6\0.8\ebm</m>
+            <m>\vu = \bbm 0.6 \amp 0.8\ebm \quad \vvv = \bbm 0.6\0.8\ebm</m>
           </p>
         </statement>
         <answer>
@@ -799,7 +799,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 1 \amp 2 \amp -1\ebm \ \vv = \bbm 2\1\\-1\ebm</m>
+            <m>\vu = \bbm 1 \amp 2 \amp -1\ebm \ \vvv = \bbm 2\1\\-1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -812,7 +812,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 3 \amp 2 \amp -2\ebm \ \vv = \bbm -1\0\\9\ebm</m>
+            <m>\vu = \bbm 3 \amp 2 \amp -2\ebm \ \vvv = \bbm -1\0\\9\ebm</m>
           </p>
         </statement>
         <answer>
@@ -825,7 +825,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 8 \amp -4 \amp 3\ebm \ \vv = \bbm 2\4\\5\ebm</m>
+            <m>\vu = \bbm 8 \amp -4 \amp 3\ebm \ \vvv = \bbm 2\4\\5\ebm</m>
           </p>
         </statement>
         <answer>
@@ -838,7 +838,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm -3 \amp 6 \amp 1\ebm</m> \ <m>\vv = \bbm 1\-1\\1\ebm</m>
+            <m>\vu = \bbm -3 \amp 6 \amp 1\ebm</m> \ <m>\vvv = \bbm 1\-1\\1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -852,7 +852,7 @@
         <statement>
           <p>
             <m>\vu = \bbm 1 \amp 2\amp 3\amp 4\ebm</m>     
-            <m>\vv = \bbm 1\\-1\\1\\-1\ebm</m>
+            <m>\vvv = \bbm 1\\-1\\1\\-1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -866,7 +866,7 @@
         <statement>
           <p>
             <m>\vu = \bbm 6 \amp 2\amp -1\amp 2\ebm</m>    
-            <m>\vv = \bbm 3\\2\\9\\5\ebm</m>
+            <m>\vvv = \bbm 3\\2\\9\\5\ebm</m>
           </p>
         </statement>
         <answer>
@@ -879,7 +879,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 1 \amp 2 \amp 3\ebm \quad \vv = \bbm 3\2\ebm</m>
+            <m>\vu = \bbm 1 \amp 2 \amp 3\ebm \quad \vvv = \bbm 3\2\ebm</m>
           </p>
         </statement>
         <answer>
@@ -892,7 +892,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 2 \amp -5\ebm \quad \vv = \bbm 1\1\\1\ebm</m>
+            <m>\vu = \bbm 2 \amp -5\ebm \quad \vvv = \bbm 1\1\\1\ebm</m>
           </p>
         </statement>
         <answer>

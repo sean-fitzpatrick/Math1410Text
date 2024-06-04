@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-trace" label="sec-trace">
+  <title>The Matrix Trace</title>
+
+  <p>
+    In the previous section, we learned about an operation we can peform on matrices, namely the transpose. 
+    Given a matrix <m>\tta</m>, we can <q>find the transpose of <m>\tta</m>,</q> which is another matrix. 
+    In this section we learn about a new operation called the <em>trace</em>. 
+    It is a different type of operation than the transpose. Given a matrix <m>\tta</m>, 
+    we can <q>find the trace of <m>\tta</m>,</q> which is not a matrix but rather a number. We formally define it here.
+  </p>
+
+  <definition xml:id="def-trace">
+    <title>The Trace</title>
+    <statement>
+      <p>
+        <idx><h>trace</h><h>definition</h></idx>
+        
+        Let <m>\tta</m> be an <m>n\times n</m> matrix. The <term>trace of \tta</term>, 
+        denoted <m>\tr(\tta)</m>, is the sum of the diagonal elements of <m>\tta</m>. That is,
+        <me>
+          \tr(\tta) = a_{11}+a_{22}+\cdots+a_{nn}
+        </me>.
+      </p>
+    </statement>
+  </definition>
+
+  <p>
+    This seems like a simple definition, and it really is. Just to make sure it is clear, let's practice.
+  </p>
+
+  <example xml:id="ex_trace_1">
+    <title>Computing the trace of a matrix</title>
+    <statement>
+ 
+      <p>
+        Find the trace of <m>\tta</m>, <m>\ttb</m>, <m>\ttc</m> and \tti<m>_4</m>, where 
+        <me>
+          \tta = \bbm 1 \amp 2\\3 \amp 4\ebm,\ \ttb = \bbm 1\amp 2\amp 0\\3\amp 8\amp 1\\-2\amp 7\amp -5\ebm \ \text{and}\ \ttc=\bbm 1\amp 2\amp 3\\4\amp 5\amp 6\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        To find the trace of <m>\tta</m>, note that the diagonal elements of <m>\tta</m> are 1 and 4. Therefore, <m>\tr(\tta) = 1+4 = 5</m>.
+      </p>
+
+      <p>
+        We see that the diagonal elements of <m>\ttb</m> are 1, 8 and -5, so <m>\tr(\ttb) = 1+8-5 = 4</m>.
+      </p>
+
+      <p>
+        The matrix <m>\ttc</m> is not a square matrix, and our definition states that we must start with a square matrix. 
+        Therefore <m>\tr(\ttc)</m> is not defined.
+      </p>
+
+      <p>
+        Finally, the diagonal of <m>\tti_4</m> consists of four 1s. Therefore <m>\tr(\tti_4) = 4</m>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Now that we have defined the trace of a matrix, we should think like mathematicians and ask some questions. 
+    The first questions that should pop into our minds should be along the lines of 
+    <q>How does the trace work with other matrix operations?</q> 
+    (Recall that we asked a similar question once we learned about the transpose.) 
+    We should think about how the trace works with matrix addition, scalar multiplication, 
+    matrix multiplication, matrix inverses, and the transpose.
+  </p>
+
+  <p>
+    We'll give a theorem that will formally tell us what is true in a moment, 
+    but first let's play with two sample matrices and see if we can see what will happen. Let 
+    <me>
+      \tta = \bbm 2 \amp 1 \amp 3\\2\amp 0\amp -1\\3\amp -1\amp 3\ebm \ \text{and} \ \ttb = \bbm 2\amp 0\amp 1\\-1\amp 2\amp 0\\0\amp 2\amp -1\ebm
+    </me>.
+  </p>
+
+  <p>
+    It should be clear that <m>\tr(\tta) = 5</m> and <m>\tr(\ttb) = 3</m>. What is  <m>\tr(\tta+\ttb)</m>?
+    <md>
+      <mrow>\tr(\tta+\ttb) \amp =	\tr\left(\bbm 2\amp 1\amp 3\\2\amp 0\amp -1\\3\amp -1\amp 3\ebm + \bbm 2\amp 0\amp 1\\-1\amp 2\amp 0\\0\amp 2\amp -1\ebm\right)</mrow>
+      <mrow>      \amp =	\tr\left(\bbm 4\amp 1\amp 4\\1\amp 2\amp -1\\3\amp 1\amp 2\ebm\right)</mrow>
+      <mrow>      \amp = 8</mrow>
+    </md>.
+    So we notice that <m>\tr(\tta+\ttb) = \tr(\tta) + \tr(\ttb)</m>. This probably isn't a coincidence.
+  </p>
+
+  <p>
+    How does the trace work with scalar multiplication? If we multiply <m>\tta</m> by 4, 
+    then the diagonal elements will be 8, 0 and 12, so <m>\tr(4\tta) = 20</m>. 
+    Is it a coincidence that this is 4 times the trace of <m>\tta</m>?
+  </p>
+
+  <p>
+    Let's move on to matrix multiplication. 
+    How will the trace of <m>\tta\ttb</m> relate to the traces of <m>\tta</m> and <m>\ttb</m>? Let's see:
+    <md>
+      <mrow>\tr(\tta\ttb) \amp =\tr\left(\bbm 2\amp 1\amp 3\\2\amp 0\amp -1\\3\amp -1\amp 3\ebm \bbm 2\amp 0\amp 1\\-1\amp 2\amp 0\\0\amp 2\amp -1\ebm\right)</mrow>
+      <mrow>        \amp =	\tr\left(\bbm 3\amp 8\amp -1\\4\amp -2\amp 3\\7\amp 4\amp 0\ebm\right)</mrow>
+      <mrow>        \amp =	1</mrow>
+	  </md>.
+  </p>
+
+  <p>
+    It isn't exactly clear what the relationship is among <m>\tr(\tta)</m>, <m>\tr(\ttb)</m> and <m>\tr(\tta\ttb)</m>. 
+    Before moving on, let's find <m>\tr(\ttb\tta)</m>:
+    <md>
+    <mrow>\tr(\ttb\tta)  \amp = \tr\left(\bbm 2 \amp 0\amp 1\\-1\amp 2\amp 0\\0\amp 2\amp -1\ebm\bbm 2\amp 1\amp 3\\2\amp 0\amp -1\\3\amp -1\amp 3\ebm\right)</mrow>
+    <mrow>							  \amp = \tr \left(\bbm 7  \amp  1 \amp  9 \\2 \amp  -1 \amp  -5\\ 1 \amp  1 \amp  -5 \ebm\right)</mrow>
+    <mrow>							  \amp = 1</mrow>
+    </md>.
+  </p>
+
+  <p>
+    We notice that <m>\tr(\tta\ttb) =  \tr(\ttb\tta)</m>. Is this coincidental?
+  </p>
+
+  <p>
+    How are the traces of <m>\tta</m> and <m>\ttai</m> related? We compute <m>\ttai</m> and find that 
+    <me>
+      \ttai = \bbm 1/17  \amp  6/17  \amp  1/17\\9/17 \amp  3/17 \amp  -8/17\\ 2/17 \amp  -5/17 \amp  2/17 \ebm
+    </me>.
+    Therefore <m>\tr(\ttai) = 6/17</m>. Again, the relationship isn't clear.
+  </p>
+
+  <aside>
+    <p>
+      his example brings to light many interesting ideas that we'll flesh out just a little bit here. 
+      <ol>
+        <li>
+          <p>
+            Notice that the elements of <m>\tta</m> are <m>1</m>, <m>-2</m>,  <m>1</m> and <m>1</m>. 
+            Add the squares of these numbers: <m>1^2 + (-2)^2 + 1^2 + 1^2  = 7 = \tr(\ttat\tta)</m>.
+          </p>
+
+          <p>
+            Notice that the elements of <m>\ttb</m> are <m>6</m>, <m>7</m>, <m>11</m> and <m>-4</m>. 
+            Add the squares of these numbers: <m>6^2 + 7^2 + 11^2 + (-4)^2 = 222 =\tr(\ttbt\ttb)</m>.
+          </p>
+
+          <p>
+            Can you see why this is true? When looking at multiplying <m>\ttat\tta</m>, 
+            focus only on where the elements on the diagonal come from since they are the only ones that matter when taking the trace.
+          </p>
+        </li>
+              
+        <li>
+          <p>
+            You can confirm on your own that regardless of the dimensions of <m>\tta</m>, 
+            <m>\tr(\ttat\tta) = \tr(\tta\ttat)</m>. To see why this is true, consider the previous point. 
+            (Recall also that \ttat<m>\tta</m> and \tta<m>\ttat</m> are always square, regardless of the dimensions of <m>\tta</m>.)
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Mathematicians are actually more interested in <m>\sqrt{\tr(\ttat\tta)}</m> than just <m>\tr(\ttat\tta)</m>. 
+            The reason for this is a bit complicated; the short answer is that <q>it works better.</q> 
+            The reason <q>it works better</q> is related to the Pythagorean Theorem, all of all things. 
+            If we know that the legs of a right triangle have length <m>a</m> and <m>b</m>, 
+            we are more interested in <m>\sqrt{a^2+b^2}</m> than just <m>a^2+b^2</m>. 
+            Of course, this explanation raises more questions than it answers; 
+            our goal here is just to whet your appetite and get you to do some more reading. 
+            A Numerical Linear Algebra book would be a good place to start.
+          </p>
+        </li>
+      </ol>
+    </p>
+  </aside>
+
+  <p>
+    Finally, let's see how the trace is related to the transpose. We actually don't have to formally compute anything. 
+    Recall from the previous section that the diagonals of <m>\tta</m> and <m>\ttat</m> are identical; 
+    therefore, <m>\tr(\tta) = \tr(\ttat)</m>. That, we know for sure, isn't a coincidence.
+  </p>
+
+  <p>
+    We now formally state what equalities are true when considering the interaction of the trace with other matrix operations.
+  </p>
+
+  <theorem xml:id="thm-trace">
+    <title>Properties of the Matrix Trace</title>
+    <statement>
+      <p>
+        <idx><h>trace</h><h>properties</h></idx>
+
+        Let <m>\tta</m> and <m>\ttb</m> be <m>n\times n</m> matrices. Then:
+        <ol>
+          <li><m>\tr(\tta+\ttb) = \tr(\tta) + \tr(\ttb) </m></li>
+          <li><m>\tr(\tta-\ttb) = \tr(\tta)  -  \tr(\ttb)</m></li>
+          <li><m>\tr(k\tta) = k\cdot \tr(\tta)</m></li>
+          <li><m>\tr(\tta\ttb) = \tr(\ttb\tta)</m></li>
+          <li><m>\tr(\ttat) = \tr(\tta)</m></li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    One of the key things to note here is what this theorem does <em>not</em> say. 
+    It says nothing about how the trace relates to matrix multiplication; 
+    that is, we can't figure out what <m>\tr(\tta\ttb)</m> is just by knowing what <m>\tr(\tta)</m> and <m>\tr(\ttb)</m> are. 
+    The theorem also says nothing about how the trace relates to inverses.
+    The reason for the silence in these areas is that there simply is not a relationship. 
+  </p>
+
+<p>
+  We end this section by again wondering why anyone would care about the trace of matrix. 
+  One reason mathematicians are interested in it is that it can give a measurement of the <q>size</q> of a matrix. 
+</p>
+
+  <aside>
+    <p>
+      There are many different measurements of a matrix size. 
+      In this text, we just refer to its dimensions. Some measurements of size refer the magnitude of the elements in the matrix. 
+      The next section describes yet another measurement of matrix size.
+    </p>
+  </aside>
+
+  <p>
+    Consider the following <m>2 \times 2</m> matrices:
+    <me>
+      \tta = \bbm 1 \amp -2\\1 \amp 1\ebm \ \text{and}\ \ttb = \bbm 6\amp 7\\11\amp -4\ebm
+    </me>.
+  </p>
+
+  <p>
+    These matrices have the same trace, yet <m>\ttb</m> clearly has bigger elements in it. 
+    So how can we use the trace to determine a <q>size</q> of these matrices? 
+    We can consider <m>\tr(\ttat\tta)</m> and <m>\tr(\ttbt\ttb)</m>.
+    <md>
+      <mrow>\tr(\ttat\tta) \amp = \tr\left(\bbm 1\amp 1\\-2\amp 1\ebm\bbm 1\amp -2\\1\amp 1\ebm\right)</mrow>
+      <mrow>      \amp =	\tr\left( \bbm 2\amp -1\\-1\amp 5\ebm\right)</mrow>
+      <mrow>      \amp = 7</mrow>
+      <mrow>\tr(\ttbt\ttb) \amp = \tr\left(\bbm 6\amp 11\\7\amp -4\ebm\bbm 6\amp 7\\11\amp -4\ebm\right)</mrow>
+		  <mrow>					\amp = \tr\left(\bbm 157 \amp  -2\\-2 \amp  65\ebm \right)</mrow>
+		  <mrow>					\amp = 222</mrow>
+    </md>.
+  </p>
+
+  <p>
+    Our concern is not how to interpret what this <q>size</q> measurement means, 
+    but rather to demonstrate that the trace (along with the transpose) can be used to give (perhaps useful) information about a matrix.
+  </p>
+
+  <exercises>
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          Find the trace of the given matrix.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 6\amp 5\\  2\amp 10\\  3\amp 3\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Not defined; the matrix must be square.
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 1\amp -5\\  9\amp 5\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>6</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 7\amp 5\\  -5\amp -4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>3</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -10\amp 6\amp -7\amp -9\\  -2\amp 1\amp 6\amp -9\\  0\amp 4\amp -4\amp 0\\  -3\amp -9\amp 3\amp -10\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-23</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -4\amp 1\amp 1\\  -2\amp 0\amp 0\\  -1\amp -2\amp -5\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-9</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 5\amp 2\amp 2\amp 2\\  -7\amp 4\amp -7\amp -3\\  9\amp -9\amp -7\amp 2\\  -4\amp 8\amp -8\amp -2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>0</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 0\amp -3\amp 1\\  5\amp -5\amp 5\\  -4\amp 1\amp 0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-5</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -2\amp -3\amp 5\\  5\amp 2\amp 0\\  -1\amp -3\amp 1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>1</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -3\amp -10\\  -6\amp 4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>1</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 4\amp 2\amp -1\\  -4\amp 1\amp 4\\  0\amp -5\amp 5\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>10</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 2\amp 6\amp 4\\  -1\amp 8\amp -10\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            Not defined; the matrix must be square.
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -6\amp 0\\  -10\amp 9\bbm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>3</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            A matrix <m>\tta</m> that is skew symmetric.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>0</m>
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\tti_4</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            4
+          </p>
+        </answer>
+      </exercise>
+      
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\tti_n</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>n</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          Verify <xref ref="thm-trace"/> by:
+          <ol>
+            <li>Showing that <m>\tr(\tta)+\tr(\ttb) = \tr(\tta+\ttb)</m></li>
+            <li>Showing that <m>\tr(\tta\ttb) = \tr(\ttb\tta)</m></li>
+          </ol>
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm -8\amp -10\amp 10\\  10\amp 5\amp -6\\  -10\amp 1\amp 3\ebm</m>,
+            <m>\ttb = \bbm -10\amp -4\amp -3\\  -4\amp -5\amp 4\\  3\amp 7\amp 3\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\tr(\tta)=0</m>; <m>\tr(\ttb)=-12</m>; <m>\tr(\tta+\ttb)=-12</m></li>
+              <li><m>\tr(\tta\ttb) = 86 = \tr(\ttb\tta)</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm -10\amp 7\amp 5\\  7\amp 7\amp -5\\  8\amp -9\amp 2\ebm</m>,
+            <m>\ttb = \bbm -3\amp -4\amp 9\\  4\amp -1\amp -9\\  -7\amp -8\amp 10\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\tr(\tta)=-1</m>; <m>\tr(\ttb)=</m>; <m>\tr(\tta+\ttb)=5</m></li>
+              <li><m>\tr(\tta\ttb) = 201 = \tr(\ttb\tta)</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 0\amp -8\\  1\amp 8\ebm</m>,
+            <m>\ttb = \bbm -4\amp 5\\  -4\amp 2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\tr(\tta)=8</m>; <m>\tr(\ttb)=-2</m>; <m>\tr(\tta+\ttb)=6</m></li>
+              <li><m>\tr(\tta\ttb) = 53 = \tr(\ttb\tta)</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+      
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 1\amp -1\\  9\amp -6\ebm</m>,
+            <m>\ttb = \bbm -1\amp 0\\  -6\amp 3\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li><m>\tr(\tta)=-5</m>; <m>\tr(\ttb)=-4</m>; <m>\tr(\tta+\ttb)=-9</m></li>
+              <li><m>\tr(\tta\ttb) = 23 = \tr(\ttb\tta)</m></li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+    
+    </exercisegroup>
+  </exercises>
+</section>

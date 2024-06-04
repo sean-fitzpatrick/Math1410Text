@@ -270,7 +270,7 @@
       <p>
         Create the corresponding augmented matrix, and then put the matrix into reduced row echelon form.
         <me>
-          \bam{2} 1 \amp 1 \amp 1\\2\amp 2\amp 2\eam \qquad \overrightarrow{\text{rref}} \qquad \bam{2} 1\amp 1\amp 1\\0\amp 0\amp 0\eam 
+          \left[\begin{array}{cc|c} 1 \amp 1 \amp 1\\2\amp 2\amp 2\end{array}\right] \qquad \overrightarrow{\text{rref}} \qquad \left[\begin{array}{cc|c} 1\amp 1\amp 1\\0\amp 0\amp 0\end{array}\right] 
         </me>.        
       </p>
 
@@ -345,7 +345,7 @@
       <p>
         To find the solution, put the corresponding matrix into reduced row echelon form.
         <me>
-          \bam{3} 0 \amp 1 \amp -1\amp 3\\ 1\amp 0\amp 2\amp 2\\ 0\amp -3\amp 3\amp -9\eam \qquad \overrightarrow{\text{rref}} \qquad \bam{3}1\amp 0\amp 2\amp 2\\ 0\amp 1\amp -1\amp 3\\ 0\amp 0\amp 0\amp 0 \eam
+          \left[\begin{array}{ccc|c} 0 \amp 1 \amp -1\amp 3\\ 1\amp 0\amp 2\amp 2\\ 0\amp -3\amp 3\amp -9\end{array}\right] \qquad \overrightarrow{\text{rref}} \qquad \left[\begin{array}{ccc|c}1\amp 0\amp 2\amp 2\\ 0\amp 1\amp -1\amp 3\\ 0\amp 0\amp 0\amp 0 \end{array}\right]
         </me>.        
       </p>
 
@@ -525,7 +525,7 @@
       <p>
         We start by putting the corresponding matrix into reduced row echelon form.
         <me>
-          \bam{3} 1 \amp 1 \amp 1\amp 1\\1\amp 2\amp 1\amp 2\\ 2\amp 3\amp 2\amp 0\\ \eam \qquad \overrightarrow{\text{rref}} \qquad \bam{3} 1\amp 0\amp 1\amp 0\\ 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp 1\\ \eam
+          \left[\begin{array}{ccc|c} 1 \amp 1 \amp 1\amp 1\\1\amp 2\amp 1\amp 2\\ 2\amp 3\amp 2\amp 0\\ \end{array}\right] \qquad \overrightarrow{\text{rref}} \qquad \left[\begin{array}{ccc|c} 1\amp 0\amp 1\amp 0\\ 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp 1\\ \end{array}\right]
         </me>.        
       </p>
 
@@ -601,7 +601,7 @@
         Now let us confirm this using the prescribed technique from above.
         The reduced row echelon form  of the corresponding augmented matrix is 
         <me>
-          \bam{2} 1 \amp 1 \amp 0\\0\amp 0\amp 1\\ \eam
+          \left[\begin{array}{cc|c} 1 \amp 1 \amp 0\\0\amp 0\amp 1\\ \end{array}\right]
         </me>.
         We have a leading 1 in the last column, so therefore the system is inconsistent.
       </p>
@@ -649,7 +649,7 @@
       <p>
         Give the general solution to a linear system whose augmented matrix in reduced row echelon form is 
         <me>
-          \bam{4} 1 \amp -1 \amp 0\amp 2\amp 4\\ 0\amp 0\amp 1\amp -3\amp 7\\ 0\amp 0\amp 0\amp 0\amp 0\\ \eam
+          \left[\begin{array}{cccc|c} 1 \amp -1 \amp 0\amp 2\amp 4\\ 0\amp 0\amp 1\amp -3\amp 7\\ 0\amp 0\amp 0\amp 0\amp 0\\ \end{array}\right]
         </me>,
         and give two particular solutions.
       </p>
@@ -750,7 +750,7 @@
       <p>
         Find the solution to a linear system whose augmented matrix in reduced row echelon form is 
         <me>
-          \bam{4} 1 \amp 0 \amp 0\amp 2\amp 3\\0\amp 1\amp 0\amp 4\amp 5\\ \eam
+          \left[\begin{array}{cccc|c} 1 \amp 0 \amp 0\amp 2\amp 3\\0\amp 1\amp 0\amp 4\amp 5\\ \end{array}\right]
         </me>
         and give two particular solutions.
       </p>
@@ -846,7 +846,7 @@
       <p>
         The corresponding augmented matrix and its reduced row echelon form are given below.
         <me>
-          \bam{3}1 \amp 1 \amp 1\amp 5\\1\amp -1\amp 1\amp 3\\ \eam\quad \quad \overrightarrow{\text{rref}}\quad\quad \bam{3}1\amp 0\amp 1\amp 4\\0\amp 1\amp 0\amp 1\\ \eam
+          \left[\begin{array}{ccc|c}1 \amp 1 \amp 1\amp 5\\1\amp -1\amp 1\amp 3\\ \end{array}\right]\quad \quad \overrightarrow{\text{rref}}\quad\quad \left[\begin{array}{ccc|c}1\amp 0\amp 1\amp 4\\0\amp 1\amp 0\amp 1\\ \end{array}\right]
         </me>
       </p>
 
@@ -922,7 +922,7 @@
         We answer this question by forming the augmented matrix and starting the process of putting it into reduced row echelon form.
         Below we see the augmented matrix and one elementary row operation that starts the Gaussian elimination process.
         <me>
-          \bam{2} 1 \amp 2 \amp 3\\3\amp k\amp 9\eam \qquad \overrightarrow{-3R_1+R_2\rightarrow R_2} \qquad \bam{2} 1\amp 2\amp 3\\0\amp k-6\amp 0\eam
+          \left[\begin{array}{cc|c} 1 \amp 2 \amp 3\\3\amp k\amp 9\end{array}\right] \qquad \overrightarrow{-3R_1+R_2\rightarrow R_2} \qquad \left[\begin{array}{cc|c} 1\amp 2\amp 3\\0\amp k-6\amp 0\end{array}\right]
         </me>
       </p>
 
@@ -945,7 +945,7 @@
     As an extension of the previous example, consider the similar augmented matrix where the constant 9 is replaced with a 10. 
     Performing the same elementary row operation gives
     <me>
-      \bam{2} 1 \amp 2 \amp 3\\3\amp k\amp 10\eam \qquad \overrightarrow{-3R_1+R_2\rightarrow R_2} \qquad \bam{2} 1\amp 2\amp 3\\0\amp k-6\amp 1\eam
+      \left[\begin{array}{cc|c} 1 \amp 2 \amp 3\\3\amp k\amp 10\end{array}\right] \qquad \overrightarrow{-3R_1+R_2\rightarrow R_2} \qquad \left[\begin{array}{cc|c} 1\amp 2\amp 3\\0\amp k-6\amp 1\end{array}\right]
     </me>.
   </p>
 

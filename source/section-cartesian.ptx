@@ -161,20 +161,6 @@
     </p>
   </insight>
 
-  <aside>
-    <p>
-      Cartesian coordinates are sometimes referred to as <em>rectangular coordinates</em>,
-      to distinguish them from other coordinate systems such as <em>polar coordinates</em>: 
-      see <xref ref="IntroPolar"/>.
-    </p>
-
-    <p>
-      We will also see in <xref ref="chapter-complex"/>
-      that the best way to visualize the set of <em>complex numbers</em> 
-      is by identifying complex numbers with points in the Cartesian plane.
-    </p>
-  </aside> 
-
   <example xml:id="ex_cartplot">
     <title>Plotting points in the Cartesian Plane</title>
     <statement>

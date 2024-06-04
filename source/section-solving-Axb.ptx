@@ -127,19 +127,19 @@
   <p>
     Why does this work? To see the answer, let's define five matrices. 
     <me>
-      \tta = \bbm 1 \amp 2\\3 \amp 4\ebm, \ \ \vu =\bbm 1\\1\ebm, \ \ \vv =\bbm-1\\1\ebm, \ \ \vw = \bbm 5\\6\ebm \ \ \text{and} \ \ \ttx = \bbm 1\amp -1\amp 5\\1\amp 1\amp 6\ebm
+      \tta = \bbm 1 \amp 2\\3 \amp 4\ebm, \ \ \vu =\bbm 1\\1\ebm, \ \ \vvv =\bbm-1\\1\ebm, \ \ \vw = \bbm 5\\6\ebm \ \ \text{and} \ \ \ttx = \bbm 1\amp -1\amp 5\\1\amp 1\amp 6\ebm
     </me>.
   </p>
 
   <p>
-    Notice that <m>\vu</m>, <m>\vv</m> and <m>\vw</m> are the first, second and third columns of <m>\ttx</m>, respectively. 
-    Now consider this list of matrix products: <m>\tta\vu</m>, <m>\tta\vv</m>, <m>\tta\vw</m> and <m>\tta\ttx</m>.
+    Notice that <m>\vu</m>, <m>\vvv</m> and <m>\vw</m> are the first, second and third columns of <m>\ttx</m>, respectively. 
+    Now consider this list of matrix products: <m>\tta\vu</m>, <m>\tta\vvv</m>, <m>\tta\vw</m> and <m>\tta\ttx</m>.
     <md>
       <mrow>\tta\vu \amp = \bbm 1\amp 2\\3\amp 4\ebm\bbm 1\\1\ebm</mrow>
       <mrow>  \amp = \bbm 3\\7\ebm</mrow>
       <mrow>\tta\vw	\amp = \bbm 1\amp 2\\3\amp 4\ebm\bbm 5\\6\ebm </mrow>
       <mrow>  \amp = \bbm 17\\39\ebm</mrow>
-      <mrow>\tta\vv \amp = \bbm 1\amp 2\\3\amp 4\ebm\bbm-1\\1\ebm</mrow>
+      <mrow>\tta\vvv \amp = \bbm 1\amp 2\\3\amp 4\ebm\bbm-1\\1\ebm</mrow>
       <mrow>  \amp = \bbm 1\\1\ebm</mrow>
       <mrow>\tta\ttx	\amp = \bbm 1\amp 2\\3\amp 4\ebm\bbm 1\amp -1\amp 5\\1\amp 1\amp 6\ebm</mrow>
       <mrow>  \amp = \bbm 3\amp 1\amp 17\\7\amp 1\amp 39\ebm </mrow>
@@ -147,15 +147,15 @@
   </p>
 
   <p>
-    So again note that the columns of <m>\ttx</m> are <m>\vu</m>, <m>\vv</m>, and <m>\vw</m>; that is, we can write 
+    So again note that the columns of <m>\ttx</m> are <m>\vu</m>, <m>\vvv</m>, and <m>\vw</m>; that is, we can write 
     <me>
-      \ttx = \bbm\vu  \amp  \vv\amp \vw \ebm
+      \ttx = \bbm\vu  \amp  \vvv\amp \vw \ebm
     </me>.
-    Notice also that the columns of <m>\tta\ttx</m> are <m>\tta\vu</m>, <m>\tta\vv</m> and <m>\tta\vw</m>, respectively. 
+    Notice also that the columns of <m>\tta\ttx</m> are <m>\tta\vu</m>, <m>\tta\vvv</m> and <m>\tta\vw</m>, respectively. 
     Thus we can write 
     <md>
-      <mrow>\tta\ttx \amp = \tta\bbm\vu \amp  \vv\amp \vw \ebm</mrow>
-      <mrow>    \amp =\bbm \tta\vu \amp  \tta\vv \amp  \tta\vw \ebm</mrow>
+      <mrow>\tta\ttx \amp = \tta\bbm\vu \amp  \vvv\amp \vw \ebm</mrow>
+      <mrow>    \amp =\bbm \tta\vu \amp  \tta\vvv \amp  \tta\vw \ebm</mrow>
       <mrow>    \amp =\bbm \bbm 3\\7\ebm \amp  \bbm 1\\1\ebm \amp  \bbm 17\\39\ebm \ebm </mrow>
       <mrow>    \amp =\bbm 3\amp 1\amp 17\\7\amp 1\amp 39\ebm</mrow>
     </md>.
@@ -331,8 +331,8 @@
       <p>
         We proceed as in the previous examples. For the equation <m>AX=B</m>, we have
         <me>
-          \bbm A\amp B\ebm = \begin{aamatrix}{3}1\amp 0\amp -3\amp 1\amp 2\amp 0\\-2\amp 3\amp 4\amp 1\amp 1\amp 3\\0\amp 6\amp -4\amp 6\amp 3\amp 0\end{aamatrix} \quad \to \quad
-          \begin{aamatrix}{3}1\amp 0\amp -3\amp 1\amp 2\amp 0\\0\amp 3\amp -2\amp 3\amp 5\amp 3\\0\amp 0\amp 0\amp 0\amp -7\amp -6\end{aamatrix}
+          \bbm A\amp B\ebm = \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 1\amp 2\amp 0\\-2\amp 3\amp 4\amp 1\amp 1\amp 3\\0\amp 6\amp -4\amp 6\amp 3\amp 0\end{array}\right] \quad \to \quad
+          \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 1\amp 2\amp 0\\0\amp 3\amp -2\amp 3\amp 5\amp 3\\0\amp 0\amp 0\amp 0\amp -7\amp -6\end{array}\right]
         </me>.
         We stopped before reaching the reduced row echelon form, but there's no reason to continue: 
         we already have a row of zeros on the left-hand side of the augmented matrix, 
@@ -344,9 +344,9 @@
       <p>
         For the equation <m>AX=C</m>, we have
         <me>
-          \bbm A\amp C\ebm = \begin{aamatrix}{3}1\amp 0\amp -3\amp 4\amp -2\amp -3\\-2\amp 3\amp 4\amp -6\amp 5\amp 7\\0\amp 6\amp -4\amp 4\amp 2\amp 2\end{aamatrix} \quad \arref \quad
-          \begin{aamatrix}{3}1\amp 0\amp -3\amp 4\amp -2\amp 3\\0\amp 1\amp -2/3\amp 2/3\amp 1/3\amp 1/3\\0\amp 0\amp 0\amp 0\amp 0\amp 0\end{aamatrix}.
-        </me>
+          \bbm A\amp C\ebm = \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 4\amp -2\amp -3\\-2\amp 3\amp 4\amp -6\amp 5\amp 7\\0\amp 6\amp -4\amp 4\amp 2\amp 2\end{array}\right] \quad \arref \quad
+          \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 4\amp -2\amp 3\\0\amp 1\amp -2/3\amp 2/3\amp 1/3\amp 1/3\\0\amp 0\amp 0\amp 0\amp 0\amp 0\end{array}\right]
+        </me>.
         In this case, we <em>are</em> able to solve for each column of <m>X</m>, 
         but in each case there are infinitely many possibilities: 
         we find <m>X = \bbm \vec{x}_1\amp \vec{x}_2\amp \vec{x}_3\ebm</m>, where

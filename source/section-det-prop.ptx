@@ -1,0 +1,1307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section xml:id="sec-determinant_properties" label="sec-determinant_properties">
+  <title>Properties of the Determinant</title>
+
+  <p>
+    In the previous section we learned how to compute the determinant. 
+    In this section we learn some of the properties of the determinant, 
+    and this will allow us to compute determinants more easily. 
+    In the next section we will see one application of  determinants.
+  </p>
+
+  <p>
+    We start with a theorem that gives us more freedom when computing determinants.
+  </p>
+
+  <theorem xml:id="thm-cofactor_choice">
+    <title>Cofactor Expansion Along Any Row or Column</title>
+    <statement>
+      <p>
+        <idx><h>cofactor</h><h>expansion</h></idx>
+
+        Let <m>\tta</m> be an <m>n\times n</m> matrix. 
+        The determinant of <m>\tta</m> can be computed using cofactor expansion along any row or column of <m>\tta</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <aside>
+    <p>
+      <alert>Note:</alert><xref ref="thm-cofactor_choice"/> is sometimes called the <em>Laplace Expansion Theorem</em>, 
+      after Pierre-Simon, Marquis de Laplace (1749-1827), 
+      a French mathematician and physicist whose importance and influence rivals that of Newton. 
+      The reader may be wondering why we have not included a proof of this result, 
+      which is one of the more important computational facts about the determinant. 
+      The answer is that in most textbooks we checked that included the proof, 
+      the complete details take up some four pages or so, 
+      and don't really add all that much to the understanding of what's going on. 
+    </p>
+  </aside> 
+
+  <p>
+    We alluded to this fact way back after <xref ref="ex_cofactor"/>. 
+    We had just learned what cofactor expansion was and we practised along the second row and down the third column. 
+    Later, we found the determinant of this matrix by computing the cofactor expansion along the first row. 
+    In all three cases, we got the number 0. This wasn't a coincidence. 
+    The above theorem states that all three expansions were actually computing the determinant.
+  </p>
+
+  <p>
+    How does this help us? By giving us freedom to choose any row or column to use for the expansion, 
+    we can choose a row or column that looks <q>most appealing.</q> This usually means <q>it has lots of zeros.</q> 
+    We demonstrate this principle below.
+  </p>
+
+  <example xml:id="ex_determinant_5">
+    <title>Computing a <m>4\times 4</m> determinant</title>
+    <statement>
+ 
+      <p>
+        Find the determinant of 
+        <me>
+          \tta = \bbm 1 \amp 2 \amp 0\amp 9\\2\amp -3\amp 0\amp 5\\7\amp 2\amp 3\amp 8\\-4\amp 1\amp 0\amp 2\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Our first reaction may well be <q>Oh no! Not another <m>4\times 4</m> determinant!</q> 
+        However, we can use cofactor expansion along any row or column that we choose. 
+        The third column looks great; it has lots of zeros in it. The cofactor expansion along this column is
+        <md>
+          <mrow>\det(A) \amp  = a_{1,3}C_{1,3} + a_{2,3}C_{2,3} + a_{3,3}C_{3,3}+a_{4,3}C_{4,3}</mrow>
+          <mrow>  \amp = 0\cdot C_{1,3} + 0\cdot C_{2,3} + 3\cdot C_{3,3} + 0\cdot C_{4,3}</mrow>
+        </md>.
+      </p>
+
+      <p>
+        The wonderful thing here is that three of our cofactors are multiplied by 0. 
+        We won't bother computing them since they will not contribute to the determinant. Thus 
+        <md>
+          <mrow>\det(A) \amp  = 3\cdot C_{3,3}</mrow>
+          <mrow>\amp  = 3\cdot (-1)^{3+3}\cdot \bvm 1\amp 2\amp 9\\2\amp -3\amp 5\\-4\amp 1\amp 2\evm </mrow>
+          <mrow>\amp = 3\cdot(-147) \quad\quad\quad \scriptsize{\begin{pmatrix}\text{we computed the determinant of the}\\ 3\times 3 \text{ matrix without showing our work;}\\ \text{it is } -147\end{pmatrix}}</mrow>
+          <mrow>\amp = -447</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    Wow. That was a lot simpler than computing all that we did in <xref ref="ex_determinant_4"/>. 
+    Of course, in that example, we didn't really have any shortcuts that we could have employed. 
+    Our next example involves a <m>5\times 5</m> determinant. At first, this looks like trouble, 
+    until we realize that the matrix is <em>triangular</em>. As we'll see, this makes our job much easier.
+  </p>
+  
+  <example xml:id="ex_determinant_6">
+    <title>Computing the determinant of a <m>5\times 5</m> (triangular) matrix</title>
+    <statement>
+      <p>
+        Find the determinant of 
+        <me>
+          \tta = \bbm 1 \amp 2 \amp 3\amp 4\amp 5\\0\amp 6\amp 7\amp 8\amp 9\\0\amp 0\amp 10\amp 11\amp 12\\0\amp 0\amp 0\amp 13\amp 14\\0\amp 0\amp 0\amp 0\amp 15\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Since we can expand along any row or column, things are not as bad as they might at first seem. 
+        In fact, this problem is very easy. 
+        What row or column should we choose to find the determinant along? 
+        There are two obvious choices: the first column or the last row. 
+        Both have 4 zeros in them. We choose the first column.  
+        We omit most of the cofactor expansion, since most of it is just 0:
+        <me>
+          \det(A) = 1\cdot (-1)^{1+1}\cdot\bvm 6 \amp 7 \amp 8\amp 9\\0\amp 10\amp 11\amp 12\\0\amp 0\amp 13\amp 14\\0\amp 0\amp 0\amp 15\evm
+        </me>.
+      </p>
+
+      <p>
+        Similarly, this determinant is not bad to compute; 
+        we again choose to use cofactor expansion along the first column. 
+        Note: technically, this cofactor expansion is <m>6\cdot(-1)^{1+1}A_{1,1}</m>; 
+        we are going to drop the <m>(-1)^{1+1}</m> terms from here on out in this example (it will show up a lot...).
+        <me>
+          \det(A) = 1\cdot 6\cdot\bvm 10 \amp 11 \amp 12\\0\amp 13\amp 14\\0\amp 0\amp 15\evm
+        </me>.
+      </p>
+
+      <p>
+        You can probably can see a trend. We'll finish out the steps without explaining each one.
+        <md>
+          <mrow>\det(A) \amp = 1\cdot6\cdot10\cdot\bvm 13\amp 14\\0\amp 15\evm</mrow>
+          <mrow>  \amp = 1\cdot6\cdot10\cdot13\cdot15</mrow>
+          <mrow>  \amp = 11700</mrow>
+        </md>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    We see that the final determinant is the product of the diagonal entries. 
+    This works for any triangular matrix (and since diagonal matrices are triangular, it works for diagonal matrices as well). 
+    This is an important enough idea that we'll put it into a box.
+  </p>
+
+  <insight xml:id="idea-determinant_triangular">
+    <title>The Determinant of Triangular Matrices</title>
+    <p>
+      <idx><h>determinant</h><h>of triangular matrices</h></idx>
+      <idx><h>triangular matrix</h><h>determinant</h></idx> 
+      
+      The determinant of a triangular matrix is the product of its diagonal elements.
+    </p>
+  </insight>
+
+  <p>
+    It is now again time to start thinking like a mathematician. 
+    Remember, mathematicians see something new and often ask <q>How does this relate to things I already know?</q> 
+    So now we ask, <q>If we change a matrix in some way, how is its determinant changed?</q>
+  </p>
+
+  <p>
+    The standard way that we change matrices is through elementary row operations. 
+    If we perform an elementary row operation on a matrix, 
+    how will the determinant of the new matrix compare to the determinant of the original matrix?
+  </p>
+
+  <p>
+    Let's experiment first and then we'll officially state what happens.
+  </p>
+
+  <example xml:id="ex_determinant_row_ops">
+    <title>Row operations and determinants</title>
+    <statement>
+      <p>
+        Let 
+        <me>
+          \tta = \bbm 1 \amp 2\\3 \amp 4\ebm
+        </me>.
+        Let <m>\ttb</m> be formed from <m>\tta</m> by doing one of the following elementary row operations:
+        <ol>
+          <li><m>2R_1+R_2\rightarrow R_2</m></li>
+          <li><m>5R_1 \rightarrow R_1</m></li>
+          <li><m>R_1\leftrightarrow R_2</m></li>
+        </ol>
+        Find <m>\det(A)</m> as well as <m>\det(B)</m> for each of the row operations above.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        It is straightforward to compute <m>\det(A) = -2</m>.
+      </p>
+
+      <p>
+        Let <m>\ttb</m> be formed by performing the first row operation on <m>\tta</m>; thus 
+        <me>
+          \ttb = \bbm 1 \amp 2\\5 \amp 8\ebm
+        </me>.
+        It is clear that <m>\det(B) = -2</m>, the same as <m>\det(A)</m>.
+      </p>
+
+      <p>
+        Now let <m>\ttb</m> be formed by performing the second elementary row operation on <m>\tta</m>; that is, 
+        <me>
+          \ttb = \bbm 5 \amp 10\\3 \amp 4\ebm
+        </me>.
+        We can see that <m>\det(B) = -10</m>, which is <m>5\cdot\det(A)</m>.
+      </p>
+
+      <p>
+        Finally, let <m>\ttb</m> be formed by the third row operation given; swap the two rows of <m>\tta</m>. We see that 
+        <me>
+          \ttb = \bbm 3 \amp 4\\1 \amp 2\ebm
+        </me>
+        and that <m>\det(B) = 2</m>, which is <m>(-1)\cdot\det(A)</m>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    We've seen in the above example that there seems to be a relationship between the determinants of matrices 
+    <q>before and after</q> being changed by elementary row operations. 
+    Certainly, one example isn't enough to base a theory on, and we have not proved anything yet. 
+    Regardless, the following theorem is true.
+  </p>
+
+  <theorem xml:id="thm-determinant_row_operations">
+    <title>The Determinant and Elementary Row Operations</title>
+    <statement>
+      <p>
+        <idx><h>elementary row operations</h><h>and determinants</h></idx>
+        <idx><h>determinant</h><h>and elementary row operations</h></idx>
+
+        Let <m>\tta</m> be an <m>n\times n</m> matrix and let <m>\ttb</m> 
+        be formed by performing one elementary row operation on <m>\tta</m>.
+        <ol>
+          <li>If <m>\ttb</m> is formed from <m>\tta</m> by adding a scalar multiple of one row to another, then <m>\det(B)=\det(A)</m>.</li>
+          <li>If <m>\ttb</m> is formed from <m>\tta</m> by multiplying one row of <m>\tta</m> by a scalar <m>k</m>, then <m>\det(B) = k\cdot\det(A)</m>.</li>
+          <li>If <m>\ttb</m> is formed from <m>\tta</m> by interchanging two rows of <m>\tta</m>, then <m>\det(B) = -\det(A)</m>.</li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Let's put this theorem to use in a couple of examples.
+  </p>
+  
+  <example xml:id="ex_determinant_7">
+    <title>Using row operations to compute a determinant</title>
+    <statement>
+      <p>
+        Let 
+        <me>
+          \tta = \bbm 1 \amp 2 \amp 1\\0\amp 1\amp 1\\1\amp 1\amp 1\ebm
+        </me>.
+        Compute <m>\det(A)</m>, then find the determinants of the following matrices by inspection using
+        <xref ref="thm-determinant_row_operations"/>.
+        <me>
+          \ttb = \bbm 1 \amp 1 \amp 1\\1\amp 2\amp 1\\0\amp 1\amp 1\ebm\quad 
+          \ttc = \bbm 1\amp 2\amp 1\\0\amp 1\amp 1\\7\amp 7\amp 7\ebm\quad 
+          \ttd = \bbm 1\amp -1\amp -2\\0\amp 1\amp 1\\1\amp 1\amp 1\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Computing <m>\det(A)</m> by cofactor expansion down the first column or along the second row seems like the best choice, 
+        utilizing the one zero in the matrix. We can quickly confirm that <m>\det(A) = 1</m>. 
+      </p>
+
+      <p>
+        To compute <m>\det(B)</m>, notice that the rows of <m>\tta</m> were rearranged to form <m>\ttb</m>. 
+        There are different ways to describe what happened; saying <m>R_1\leftrightarrow R_2</m> 
+        was followed by <m>R_1\leftrightarrow R_3</m> produces <m>\ttb</m> from <m>\tta</m>. 
+        Since there were <em>two</em> row swaps, <m>\det(B) = (-1)(-1)\det(A) = \det(A) = 1</m>.
+      </p>
+
+      <p>
+        Notice that <m>\ttc</m> is formed from <m>\tta</m> by multiplying the third row by 7. Thus <m>\det(C) = 7\cdot\det(A) = 7</m>.
+      </p>
+
+      <p>
+        It takes a little thought, but we can form <m>\ttd</m> from <m>\tta</m> by the operation <m>-3R_2+R_1\rightarrow R_1</m>. 
+        This type of elementary row operation does not change determinants, so <m>\det(D) = \det(A)</m>.
+      </p>
+    </solution>
+  </example>
+
+  <example xml:id="ex_det_elem_row_ops_2">
+    <title>Effect of elementary row operations on the determinant</title>
+    <statement>
+      <p>
+        The matrix <m>\ttb</m> was formed from <m>\tta</m> using the following elementary row operations, 
+        though not necessarily in this order. Find <m>\det(A)</m>.
+      </p>
+
+      <sidebyside>
+        <p>
+          <me>
+            B = \bbm 1 \amp 2 \amp 3\\0\amp 4\amp 5\\0\amp 0\amp 6\ebm
+          </me>
+        </p>
+
+        <p>
+          <md>
+            <mrow>2R_1\rightarrow R_1</mrow>
+            <mrow>\frac 13 R_3\rightarrow R_3</mrow>
+            <mrow>R_1 \leftrightarrow R_2</mrow>
+            <mrow>6R_1+R_2 \rightarrow R_2</mrow>
+          </md>
+        </p>
+      </sidebyside>
+    </statement>
+    <solution>
+      <p>
+        It doesn't take too much work to compute <m>\det\ttb=24</m>. 
+        In looking at our list of elementary row operations, 
+        we see that only the first three have an effect on the determinant. 
+        Therefore 
+        <me>
+          24 = \det(B) = 2\cdot \frac13  \cdot (-1)\cdot \det(A)
+        </me>
+        and hence 
+        <me>
+          \det(A) = -36
+        </me>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    In the previous example, we may have been tempted to <q>rebuild</q> <m>\tta</m> 
+    using the elementary row operations and then computing the determinant. 
+    This can be done, but in general it is a bad idea; it takes too much work and it is too easy to make a mistake. 
+  </p>
+
+  <p>
+    Let's continue to think like mathematicians; mathematicians tend to remember <q>problems</q> 
+    they've encountered in the past, and when they learn something new, 
+    in the backs of their minds they try to apply their new knowledge to solve their old problem. 
+    (This is why mathematicians rarely smile: they are remembering their problems)
+  </p>
+
+  <p>
+    What <q>problem</q> did we recently uncover? 
+    We stated in the last chapter that even computers could not compute the determinant of large matrices with cofactor expansion. 
+    How then can we compute the determinant of large matrices?
+  </p>
+
+  <p>
+    We just learned two interesting and useful facts about matrix determinants. 
+    First, the determinant of a triangular matrix is easy to compute: 
+    just multiply the diagonal elements. Secondly, we know that given any square matrix, 
+    we can use elementary row operations to put the matrix in triangular form.  
+    We can then find the determinant of the new matrix (which is easy), 
+    and adjust that number by recalling what elementary operations we performed. 
+  </p>
+
+  <example xml:id="ex_det_elem_row_ops_1">
+    <title>Reducing a determinant to triangular form</title>
+    <statement>
+      <p>
+        Find the determinant of <m>\tta</m> by first putting <m>\tta</m> into a triangular form, where 
+        <me>
+          \tta = \bbm 2 \amp 4 \amp -2\\-1\amp -2\amp 5\\3\amp 2\amp 1\ebm
+        </me>.
+      </p>
+    </statement>
+    <solution>
+      <p>
+        In putting <m>\tta</m> into a triangular form, we need not worry about getting leading 1s, 
+        but it does tend to make our life easier as we work out a problem by hand. So let's scale the first row by <m>1/2</m>:
+        <me>
+          \frac 12R_1 \rightarrow R_1 \qquad \bbm 1\amp 2\amp -1\\-1\amp -2\amp 5\\3\amp 2\amp 1\ebm
+        </me>.
+        Now let's get 0s below this leading 1:
+        <me>
+          \begin{matrix}R_1 + R_2 \rightarrow R_2\\-3R_1+R_3\rightarrow R_3\end{matrix} \qquad \bbm 1\amp 2\amp -1\\0\amp 0\amp 4\\0\amp -4\amp 4\ebm
+        </me>.
+        We can finish in one step; by interchanging rows 2 and 3 we'll have our matrix in triangular form.
+        <me>
+          R_2  \leftrightarrow R_3 \qquad \bbm 1\amp 2\amp -1\\0\amp -4\amp 4\\0\amp 0\amp 4\ebm
+        </me>.
+      </p>
+
+      <p>
+        Let's name this last matrix <m>\ttb</m>. 
+        The determinant of <m>\ttb</m> is easy to compute as it is triangular; <m>\det(\ttb) = -16</m>. 
+        We can use this to find <m>\det(\tta)</m>. 
+      </p>
+
+      <p>
+        Recall the steps we used to transform <m>\tta</m> into <m>\ttb</m>. They are:
+        <me>
+          \begin{matrix}\frac 12R_1 \rightarrow R_1\\R_1 + R_2 \rightarrow R_2\\-3R_1+R_3\rightarrow R_3\\R_2  \leftrightarrow R_3\end{matrix}
+        </me>
+      </p>
+      
+      <p>
+        The first operation multiplied a row of <m>\tta</m> by <m>\frac 12</m>. 
+        This means that the resulting matrix had a determinant that was <m>\frac12</m> the determinant of <m>\tta</m>. 
+      </p>
+
+      <p>
+        The next two operations did not affect the determinant at all. 
+        The last operation, the row swap, changed the sign. Combining these effects, we know that 
+        <me>
+          -16 = \det(\ttb)= (-1)\frac12\det(\tta)
+        </me>.
+        Solving for <m>\det(\tta)</m> we have that <m>\det(\tta)=32</m>.
+      </p>
+    </solution>
+  </example>
+
+  <p>
+    In practice, we don't need to keep track of operations where we add multiples of one row to another; 
+    they simply do not affect the determinant. Also, in practice, these steps are carried out by a computer, 
+    and computers don't care about leading 1s. Therefore, row scaling operations are rarely used. 
+    The only things to keep track of are row swaps, and even then all we care about are the number of row swaps. 
+    An odd number of row swaps means that the original determinant has the opposite sign of the triangular form matrix; 
+    an even number of row swaps means they have the same determinant.
+  </p>
+
+  <p>
+    If you find yourself needing to compute a determinant by hand (say, on an exam), it's a good idea to keep the following principles in mind:
+    <ol>
+      <li>
+        <p>
+          Stick to row operations of the type <m>R_i+kR_j\to R_i</m> as much as possible: <em>they don't change the determinant</em>.
+        </p>
+      </li>
+      <li>
+        <p>
+          Getting all the way to triangular form isn't really necessary. 
+          Use row operations of the above type to create as many zeros as possible in one of the columns, 
+          and then expand along that column.
+        </p>
+      </li>
+    </ol>
+  </p>
+
+  <aside>
+    <p>
+      <alert>Note:</alert> If you want to get really fancy, since <m>\det(A^T)=\det(A)</m>, 
+      and since performing row operations on <m>A^T</m> is the same as performing <em>column</em> operations on <m>A</m>, 
+      you can  also add a multiple of one column to another without changing the determinant!
+    </p>
+  </aside> 
+
+  <p>
+    To see how these principles work in practice, let's repeat <xref ref="ex_det_elem_row_ops_1"/>. 
+    This time we'll focus on creating zeros, but we won't worry about getting to triangular form. 
+    Since adding a multiple of one row to another doesn't change the determinant, 
+    we can compute <m>\det(A)</m> with a string of equalities, as follows:
+    <md>
+      <mrow>
+        \begin{vmatrix}
+        2\amp 4\amp -2\\-1\amp 2\amp 5\\3\amp 2\amp 1
+        \end{vmatrix} \amp = \begin{vmatrix}
+        0\amp 0\amp 8\\-1\amp 2\amp 5\\3\amp 2\amp 1
+        \end{vmatrix} \quad \text{ (Add } 2R_2 \text{ to } R_1)
+      </mrow>
+      <mrow>
+          \amp  = 0+0+8(-1)^{1+3}\begin{vmatrix}
+          -1\amp -2\\3\amp 2
+          \end{vmatrix} \quad \text{ (Expand along Row 1)}
+      </mrow>
+      <mrow>  \amp  = 8((-1)(2)-(-2)(3))</mrow>
+      <mrow>  \amp  = 8(4)=32</mrow>
+    </md>.
+    Of course, in this case we got lucky and ended up with two zeros in the first row after one row operation. 
+    However, had this not been the case, we would have simply done one more row operation (<m>R_3+3R_2\to R_3</m>) 
+    to create a second zero in the first column, and then done a cofactor expansion along that column.
+  </p>
+
+  <p>
+    For larger determinants, we can follow the same routine: create zeros in one column, 
+    expand along that column to get a smaller determinant, and repeat.
+  </p>
+
+  <p>
+    Let's think some more like a mathematician. How does the determinant work with other matrix operations that we know? 
+    Specifically, how does the determinant interact with matrix addition, scalar multiplication, matrix multiplication, 
+    the transpose and the trace? We'll again do an example to get an idea of what is going on, 
+    then give a theorem to state what is true.
+  </p>
+
+
+  <example xml:id="ex_determinant_8">
+    <title>Determinants and matrix operations</title>
+    <statement>
+      <p>
+        Let 
+        <me>
+          \tta = \bbm 1 \amp 2\\3 \amp 4\ebm \ \text{and} \ \ttb = \bbm 2\amp 1\\ 3\amp 5\ebm
+        </me>.
+        Find the determinants of the matrices <m>\tta</m>, <m>\ttb</m>, <m>\tta-\ttb</m>, <m>3\tta</m>, 
+        <m>\tta\ttb</m>, <m>\ttat</m>, and <m>\ttai</m>. Can you find any connections between these values?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We can quickly compute that <m>\det(A) = -2</m> and <m>\det(B) = 7</m>. 
+        <md>
+          <mrow>\det(\tta-\ttb) \amp = \det\left(\bbm 1\amp 2\\3\amp 4\ebm-\bbm 2\amp 1\\ 3\amp 5\ebm\right)</mrow>
+          <mrow>\amp = \bvm -1\amp 1\\0\amp -1\evm</mrow>
+          <mrow>\amp = 1</mrow>
+        </md>.
+        It's tough to find a connection between <m>\det(\tta-\ttb)</m>, <m>\det(A)</m> and  <m>\det(B)</m>.
+      </p>
+
+      <p>
+        <md>
+          <mrow>\det(3\tta) \amp = \bvm 3\amp 6\\9\amp 12\evm</mrow>
+          <mrow>\amp = -18</mrow>
+        </md>.
+        We can figure this one out; multiplying one row of <m>\tta</m> by 3 increases the determinant by a factor of 3; 
+        doing it again (and hence multiplying both rows by 3) increases the determinant again by a factor of 3. 
+        Therefore <m>\det(3\tta) = 3\cdot3\cdot\det(A)</m>, or <m>3^2\cdot\det(A)</m>.
+      </p>
+
+      <p>
+        <md>
+          <mrow>\det(\tta\ttb) \amp = \det\left(\bbm 1\amp 2\\3\amp 4\ebm\bbm 2\amp 1\\ 3\amp 5\ebm\right)</mrow>
+          <mrow>\amp =	\bvm 8\amp 11\\18 \amp  23\evm</mrow>
+          <mrow>\amp = -14</mrow>
+        </md>.
+        This one seems clear; <m>\det(\tta\ttb) = \det(A)\det(B)</m>.
+      </p>
+
+      <p>
+        <md>
+          <mrow>\det(A^T) \amp  = \bvm  1\amp 3\\2\amp 4\evm</mrow>
+          <mrow>\amp =	-2</mrow>
+        </md>.
+        Obviously <m>\det(A^T) = \det(A)</m>; is this always going to be the case? 
+        If we think about it, we can see that the cofactor expansion along the first <em>row</em> of <m>\tta</m> 
+        will give us the same result as the cofactor expansion along the first <em>column</em> of <m>\ttat</m>.
+      </p>
+
+      <p>
+        <md>
+          <mrow>\det(A^{-1}) \amp  = \bvm  -2\amp  1\\ 3/2 \amp  -1/2\evm</mrow>
+          <mrow>\amp =	1-3/2</mrow>
+          <mrow>\amp =-1/2</mrow>
+        </md>.
+        It seems as though 
+        <me>
+          \det(A^{-1}) = \frac{1}{\det(A)}
+        </me>.
+      </p>
+    </solution>
+  </example>
+
+  <aside>
+    <p>
+      Seeing that expansion along the first row agrees with expansion along the 
+      first column can be a bit tricky to think out in your head. 
+      Try it with a 3<m>\times 3</m> matrix <m>\tta</m> and see how it works. 
+      All the <m>2\times 2</m> submatrices that are created in <m>\ttat</m> are the transpose of those found in <m>\tta</m>; 
+      this doesn't matter since it is easy to see that the determinant isn't affected by the transpose in a <m>2\times 2</m> matrix.
+    </p>
+  </aside>
+
+  <p>
+    We now state a few theorems that confirm our conjectures from the previous example. 
+  </p>
+
+  <theorem xml:id="thm-no_inverse_zero_determinant">
+    <title>The determinant of a non-invertible matrix</title>
+    <statement>
+      <p>
+        If an <m>n\times n</m> matrix <m>A</m> is <em>not</em> invertible, then <m>\det(A)=0</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    To see that <xref ref="thm-no_inverse_zero_determinant"/> is true, note that if <m>A</m> is not invertible, 
+    then the reduced row echelon form <m>R</m> of <m>A</m> must have a row of zeros. 
+    Performing a cofactor expansion along this row, we immediately see that <m>\det(R)=0</m>. 
+    Since <m>R</m> is obtained from <m>A</m> by a series of elementary row operations, 
+    we know from <xref ref="thm-determinant_row_operations"/> that <m>\det(A)</m> 
+    is a multiple of <m>\det(R)</m>, and thus <m>\det(A)=0</m>.
+  </p>
+
+  <p>
+    It follows from <xref ref="thm-no_inverse_zero_determinant"/> (using the logical principle known as the <em>contrapositive</em>)  
+    that if <m>\det(A)\neq 0</m>, we're guaranteed that <m>A</m> is invertible.
+  </p>
+
+  <p>
+    At this point, we naturally should ask whether or not the converse to <xref ref="thm-no_inverse_zero_determinant"/> 
+    is true as well: suppose we know <m>\det(A)=0</m>. 
+    Does that imply that <m>A</m> is not invertible? 
+    (Or equivalently, if we know <m>A</m> is invertible, does this imply that <m>\det(A)\neq 0</m>?) 
+    The answer is yes, but to see this, we first need a more general result.
+  </p>
+
+  <theorem xml:id="thm-determinant_properties">
+    <title>Determinant Properties</title>
+    <statement>
+      <p>
+        <idx><h>determinant</h><h>properties</h></idx>
+
+        Let <m>\tta</m> and <m>\ttb</m> be <m>n\times n</m> matrices and let <m>k</m> be a scalar. The following are true:
+        <ol>
+          <li><m>\det(kA) = k^n\cdot\det(A)</m></li>
+          <li><m>\det(A^T) = \det(A)</m></li>
+          <li><m>\det(\tta\ttb) = \det(A)\det(B)</m></li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Proving that <m>\det(AB)=\det(A)\det(B)</m> is most easily done using elementary matrices. 
+    (See <xref ref="sec-elementary_matrices"/>.)
+    Recall that multiplying a matrix <em>on the left</em> by an elementary matrix is the same as doing the corresponding row operation: 
+    if <m>A</m> is any <m>3\times 3</m> matrix, then <m>EA</m> can be obtained from <m>A</m> 
+    using the same row operation used to create <m>E</m>.
+  </p>
+  
+  <p>
+    <xref ref="thm-determinant_row_operations"/> then tells us that 
+    <me>
+      \det(EB) = \det(E)\det(B)
+    </me>
+    for any matrix <m>B</m> and <em>elementary</em> matrix <m>E</m>. 
+    The rest boils down to two cases: either <m>\det(A)=0</m>, in which case <m>A</m> is not invertible, 
+    so neither is <m>AB</m>, and thus <m>\det(AB)=0 = 0\det(B)</m>, or <m>\det(A)\neq 0</m>. 
+    In the latter case, <m>A</m> is invertible, and can be written as a product of elementary matrices. 
+    We can then prove that <m>\det(AB)=\det(A)\det(B)</m> by applying <xref ref="thm-determinant_row_operations"/> repeatedly.
+  </p>
+
+  <p>
+    From <xref ref="thm-determinant_properties"/>, we see that <m>\det(AB)=\det(A)\det(B)</m> 
+    for any matrices <m>A</m> and <m>B</m>. What does this tell us in the case of an invertible matrix? 
+    Recall that if <m>A</m> is invertible, then we can determine the inverse matrix <m>A^{-1}</m> such that
+    <me>
+      AA^{-1} = I_n
+    </me>.
+  </p>
+
+  <p>
+    Now, the identity matrix is triangular, and all of its diagonal entries are equal to 1, 
+    so we immediately see that <m>\det(I_n) = 1</m>. Thus, taking the determinant of both sides of the above equation, we have
+    <me>
+      \det(AA^{-1}) = \det(A)\det(A^{-1})=1
+    </me>.
+    We have a product of two numbers equal to one, which tells us that neither of these numbers can be zero. 
+    (Otherwise, the product would be zero as well.) Thus, if <m>A</m> is invertible, 
+    it must be the case that <m>\det(A)\neq 0</m>, so a matrix <m>A</m> is invertible if <em>and only if</em> <m>\det(A)\neq 0</m>.
+  </p>
+
+  <p>
+    As an added bonus, we can rearrange the above equation to give us one more property of the determinant:
+  </p>
+
+  <theorem xml:id="thm-det_and_inverse">
+    <title>The determinant of an inverse</title>
+    <statement>
+      <p>
+        If <m>A</m> is an invertible matrix, then <m>\det(A)\neq 0</m>, and
+        <me>
+          \det(A^{-1}) = \frac{1}{\det(A)}
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Combining Theorems <xref ref="thm-no_inverse_zero_determinant"/> and <xref ref="thm-det_and_inverse"/> 
+    allows us to add on to our Invertible Matrix Theorem.
+  </p>
+
+  <theorem xml:id="thm-IMT_det">
+    <title>Invertible Matrix Theorem</title>
+    <statement>
+      <p>
+        <idx><h>Invertible Matrix Theorem</h></idx>
+
+        Let <m>\tta</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
+        <ol marker="(a)">
+          <li>
+            <p>
+              <m>\tta</m> is invertible.
+            </p>
+          </li>
+          <li>
+            <p>
+              The equation <m>\ttaxo</m> has exactly one solution (namely, <m>\vx = \zero</m>).
+            </p>
+          </li>
+          <li>
+            <p>
+              The reduced row echelon form of <m>\tta</m> is <m>\tti</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              The equation <m>\ttaxb</m> has exactly one solution for every <m>n\times 1</m> vector<m>\vb</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              There exists a matrix <m>\ttc</m> such that <m>\tta\ttc = \tti</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              There exists a matrix <m>\ttb</m> such that <m>\ttb\tta = \tti</m>.
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\det(A)\neq 0</m>.
+            </p>
+          </li>
+        </ol>
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    This new addition to the Invertible Matrix Theorem is very useful; 
+    we'll refer back to it in <xref ref="chapter-eigen"/> when we discuss eigenvalues.
+  </p>
+
+  <p>
+    In the next section we'll see how the determinant can be used to solve systems of linear equations.
+  </p>
+
+  <exercises>
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          Find the determinant of the given matrix using cofactor expansion along any row or column you choose.
+        </p>
+      </introduction>
+          
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 1\amp 2\amp 3\\  -5\amp 0\amp 3\\  4\amp 0\amp 6\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>84</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -4\amp 4\amp -4\\  0\amp 0\amp -3\\  -2\amp -2\amp -1\ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>48</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -4\amp 1\amp 1\\  0\amp 0\amp 0\\  -1\amp -2\amp -5\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>0</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 0\amp -3\amp 1\\  0\amp 0\amp 5\\  -4\amp 1\amp 0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>60</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -2\amp -3\amp 5\\  5\amp 2\amp 0\\  -1\amp 0\amp 0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>10</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -2\amp -2\amp 0\\  2\amp -5\amp -3\\  -5\amp 1\amp 0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-36</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -3\amp 0\amp -5\\  -2\amp -3\amp 3\\  -1\amp 0\amp 1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>24</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 0\amp 4\amp -4\\  3\amp 1\amp -3\\  -3\amp -4\amp 0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>72</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 5\amp -5\amp 0\amp 1\\  2\amp 4\amp -1\amp -1\\  5\amp 0\amp 0\amp 4\\  -1\amp -2\amp 0\amp 5\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>175</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -1\amp 3\amp 3\amp 4\\  0\amp 0\amp 0\amp 0\\  4\amp -5\amp -2\amp 0\\  0\amp 0\amp 2\amp 0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>0</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -5\amp -5\amp 0\amp -2\\  0\amp 0\amp 5\amp 0\\  1\amp 3\amp 3\amp 1\\  -4\amp -2\amp -1\amp -5\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-200</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -1\amp 0\amp -2\amp 5\\  3\amp -5\amp 1\amp -2\\  -5\amp -2\amp -1\amp -3\\  -1\amp 0\amp 0\amp 0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>57</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 4\amp 0\amp 5\amp 1\amp 0\\  1\amp 0\amp 3\amp 1\amp 5\\  2\amp 2\amp 0\amp 2\amp 2\\  1\amp 0\amp 0\amp 0\amp 0\\  4\amp 4\amp 2\amp 5\amp 3\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>34</m>
+          </p>
+        </answer>
+      </exercise>
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 2\amp 1\amp 1\amp 1\amp 1\\  4\amp 1\amp 2\amp 0\amp 2\\  0\amp 0\amp 1\amp 0\amp 0\\  1\amp 3\amp 2\amp 0\amp 3\\  5\amp 0\amp 5\amp 0\amp 4\ebm </m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>29</m>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          A matrix <m>\ttm</m> and <m>\det(\ttm)</m> are given. 
+          Matrices <m>\tta</m>, <m>\ttb</m> and <m>\ttc</m> are formed by performing operations on <m>\ttm</m>. 
+          Determine the determinants of <m>\tta</m>, <m>\ttb</m> and <m>\ttc</m> using 
+          <xref ref="thm-determinant_row_operations"/> and <xref ref="thm-determinant_properties"/>,
+          and indicate the operations used to form <m>\tta</m>, <m>\ttb</m> and <m>\ttc</m>.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\ttm=\bbm 9\amp 7\amp 8\\  1\amp 3\amp 7\\  6\amp 3\amp 3\ebm </m>,
+            <m>\det(\ttm)=45</m>.
+            <ol>
+              <li>
+                <p>
+                  <m>\tta = \bbm 18 \amp 14 \amp 16\  1\amp 3\amp 7\\  6\amp 3\amp 3\ebm</m>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>\ttb = \bbm 9\amp 7\amp 8\\  1\amp 3\amp 7\\  96\amp 73\amp 83\ebm</m>
+                </p>
+              </li>
+
+              <li>
+                <p>
+                  <m>\ttc = \bbm 9\amp 1\amp 6\\  7\amp 3\amp 3\\  8\amp 7\amp 3\ebm</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  <m>\det(\tta) = 90</m>; <m>2R_1\rightarrow R_1</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\det(\ttb) = 45</m>; <m>10R_1+R_3\rightarrow R_3</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\det(\ttc) = 45</m>; <m>\ttc = \ttat</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\ttm=\bbm 0\amp 3\amp 5\\  3\amp 1\amp 0\\  -2\amp -4\amp -1\ebm</m>,
+            <m>\det(\ttm)=-41</m>.
+            <ol>
+              <li>
+                <p>
+                  <m>\tta = \bbm 0 \amp 3 \amp 5\  -2\amp -4\amp -1\\  3\amp 1\amp 0\ebm</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\ttb = \bbm 0\amp 3\amp 5\\  3\amp 1\amp 0\\  8\amp 16\amp 4\ebm</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\ttc = \bbm 3\amp 4\amp 5\\  3\amp 1\amp 0\\  -2\amp -4\amp -1\ebm</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  <m>\det(\tta) = 41</m>; <m>R_2\leftrightarrow R_3</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\det(\ttb) = 164</m>; <m>-4R_3\rightarrow R_3</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\det(\ttc) = -41</m>; <m>R_2+R_1\rightarrow R_1</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\ttm=\bbm 5\amp 1\amp 5\\  4\amp 0\amp 2\\  0\amp 0\amp 4\ebm</m>,
+            <m>\det(\ttm)=-16</m>.
+            <ol>
+              <li>
+                <p>
+                  <m>\tta = \bbm 0 \amp 0 \amp 4\  5\amp 1\amp 5\\  4\amp 0\amp 2\ebm</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\ttb = \bbm -5\amp -1\amp -5\\  -4\amp 0\amp -2\\  0\amp 0\amp 4\ebm</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\ttc = \bbm 15\amp 3\amp 15\\  12\amp 0\amp 6\\  0\amp 0\amp 12\ebm</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  <m>\det(\tta) = -16</m>; <m>R_1\leftrightarrow R_2</m> then <m>R_1\leftrightarrow R_3</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\det(\ttb) = -16</m>; <m>-R_1\rightarrow R_1</m> and <m>-R_2\rightarrow R_2</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\det(\ttc) = -432</m>; <m>\ttc = 3*\ttm</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\ttm=\bbm 5\amp 4\amp 0\\  7\amp 9\amp 3\\  1\amp 3\amp 9\ebm</m>,
+            <m>\det(\ttm)=120</m>.
+            <ol>
+              <li>
+                <p>
+                  <m>\tta = \bbm 1 \amp 3 \amp 9\  7\amp 9\amp 3\\  5\amp 4\amp 0\ebm</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\ttb = \bbm 5\amp 4\amp 0\\  14\amp 18\amp 6\\  3\amp 9\amp 27\ebm</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\ttc = \bbm -5\amp -4\amp 0\\  -7\amp -9\amp -3\\  -1\amp -3\amp -9\ebm</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <ol>
+              <li>
+                <p>
+                  <m>\det(\tta) = -120</m>; <m>R_1\leftrightarrow R_2</m> then <m>R_1\leftrightarrow R_3</m> then <m>R_2\leftrightarrow R_3</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\det(\ttb) = 720</m>; <m>2R_2\rightarrow R_2</m> and <m>3R_3\rightarrow R_3</m>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <m>\det(\ttc) = -120</m>; <m>\ttc = -\ttm</m>
+                </p>
+              </li>
+            </ol>
+          </p>
+        </answer>
+      </exercise>
+    </exercisegroup>
+
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          Matrices <m>\tta</m> and <m>\ttb</m> are given. Verify part 3 of <xref ref="thm-determinant_properties"/> 
+          by computing <m>\det(\tta)</m>, <m>\det(\ttb)</m> and <m>\det(\tta\ttb)</m>.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 2 \amp 0\  1 \amp 2\ebm</m>,       
+            <m>\ttb = \bbm 0\amp -4\\  1\amp 3\ebm</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\det(\tta)=4</m>, <m>\det(\ttb)=4</m>, <m>\det(\tta\ttb)=16</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm 3 \amp -1\  4 \amp 1\ebm</m>,
+            <m>\ttb = \bbm -4\amp -1\\  -5\amp 3\ebm</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\det(\tta)=7</m>, <m>\det(\ttb)=-17</m>, <m>\det(\tta\ttb)=-119</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm -4 \amp 4\  5 \amp -2\ebm</m>,
+            <m>\ttb = \bbm -3\amp -4\\  5\amp -3\ebm</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\det(\tta)=-12</m>, <m>\det(\ttb)=29</m>, <m>\det(\tta\ttb)=-348</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\tta = \bbm -3 \amp -1\  2 \amp -3\ebm</m>,
+            <m>\ttb = \bbm 0\amp 0\\  4\amp -4\ebm</m>.
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\det(\tta)=11</m>, <m>\det(\ttb)=0</m>, <m>\det(\tta\ttb)=0</m>
+          </p>
+        </answer>
+      </exercise>
+    
+    </exercisegroup>
+
+    <exercisegroup cols="2">
+    
+      <introduction>
+        <p>
+          Find the determinant of the given matrix.
+        </p>
+      </introduction>
+    
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 3\amp 2\amp 3\\  -6\amp 1\amp -10\\  -8\amp -9\amp -9\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-59</m>
+          </p>
+        </answer>
+      </exercise>
+
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 8\amp -9\amp -2\\  -9\amp 9\amp -7\\  5\amp -1\amp 9\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>250</m>
+          </p>
+        </answer>
+      </exercise>
+
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -4\amp 3\amp -4\\  -4\amp -5\amp 3\\  3\amp -4\amp 5\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>15</m>
+          </p>
+        </answer>
+      </exercise>
+
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 1\amp -2\amp 1\\  5\amp 5\amp 4\\  4\amp 0\amp 0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>-52</m>
+          </p>
+        </answer>
+      </exercise>
+
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 1\amp -4\amp 1\\  0\amp 3\amp 0\\  1\amp 2\amp 2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>3</m>
+          </p>
+        </answer>
+      </exercise>
+
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 3\amp -1\amp 0\\  -3\amp 0\amp -4\\  0\amp -1\amp -4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>0</m>
+          </p>
+        </answer>
+      </exercise>
+
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm -5\amp 0\amp -4\\  2\amp 4\amp -1\\  -5\amp 0\amp -4\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>0</m>
+          </p>
+        </answer>
+      </exercise>
+
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 1\amp 0\amp 0\\  0\amp 1\amp 0\\  -1\amp 1\amp 1\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>1</m>
+          </p>
+        </answer>
+      </exercise>
+
+    
+    </exercisegroup>
+  </exercises>
+</section>

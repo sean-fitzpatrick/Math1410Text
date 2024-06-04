@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec_lines" label="sec_lines">
+<section xml:id="sec-lines" label="sec-lines">
   <title>Lines</title>
   <introduction>
     <p>
@@ -19,7 +19,7 @@
     </p>
 
     <figure xml:id="vid-vectors-lines-intro" component="video">
-      <caption>Video introduction to <xref ref="sec_lines"/></caption>
+      <caption>Video introduction to <xref ref="sec-lines"/></caption>
       <video youtube="rA3i_j9MGEM" label="vid-vectors-lines-intro"/>
     </figure>
   </introduction>
@@ -1141,9 +1141,9 @@
 
         <p>
           An alternative way of computing the distance is to make use of the orthogonal decomposition in 
-          <xref ref="idea-orthog_proj"/>. By definition of the distance from a point to a line, 
+          <xref ref="idea_orthog_proj"/>. By definition of the distance from a point to a line, 
           we know that the vector <m>\overrightarrow{RQ}</m> must be orthogonal to the line, 
-          and thus to the direction vector <m>\vec{d}</m>. Using <xref ref="idea-orthog_proj"/>, we have that
+          and thus to the direction vector <m>\vec{d}</m>. Using <xref ref="idea_orthog_proj"/>, we have that
           <me>
             \overrightarrow{RQ}= \overrightarrow{PQ}-\overrightarrow{PR} = \bbm  -1\\ 3\\ -1\ebm - \bbm  -2\\ 2\\ 0\ebm = \bbm  -1\\ 1\\ 1\ebm
           </me>,
@@ -1395,7 +1395,7 @@
         </p>
 
         <p>
-          From <xref ref="idea_line_distance"/>
+          Using <xref ref="eq-skewlinesdist" text="local">Equation</xref>
           we have the distance <m>h</m> between the two lines is
           <md>
             <mrow>h \amp = \frac{\abs{\overrightarrow{P_1P_2}\cdot \vec c}}{\vnorm c}</mrow>
@@ -2340,7 +2340,7 @@
               </statement>
               <solution>
                 <p>
-                  vector: <m>\ell(t) = \bbm  1\\1\ra + t\la 2\\3\ebm</m>
+                  vector: <m>\ell(t) = \bbm  1\\1\ebm + t\bbm 2\\3\ebm</m>
                 </p>
 
                 <p>
@@ -2700,7 +2700,7 @@
               </pg-code> -->
               <statement>
                 <p>
-                  <m>Q=(0,3)</m>, <m>\vec\ell(t) = \bbm  2\\0\ra + t\la 1\\1\ebm</m>
+                  <m>Q=(0,3)</m>, <m>\vec\ell(t) = \bbm  2\\0\ebm + t\bbm 1\\1\ebm</m>
                 </p>
               </statement>
               <answer>
@@ -2720,7 +2720,7 @@
 
               <statement>
                 <p>
-                  Find the distance from the point <m>Q=(1,1)</m> to the line <m>\vec\ell(t) = \bbm  4\\5\ra + t\la -4\\3\ebm</m>.
+                  Find the distance from the point <m>Q=(1,1)</m> to the line <m>\vec\ell(t) = \bbm  4\\5\ebm + t\bbm -4\\3\ebm</m>.
                 </p>
 
                 <p>
@@ -2780,126 +2780,6 @@
           </webwork>
         </exercise>
 
-      </exercisegroup>
-      <exercisegroup cols="2" xml:id="exset-vector-lines-distance-formula">
-
-        <introduction>
-          <p>
-            The following exercises explore special cases of the distance formulas found in <xref ref="idea_line_distance"/>.
-          </p>
-        </introduction>
-
-        <exercise label="ex-vector-lines-distance-formula-1">
-          <!--<webwork xml:id="webwork-ex-vector-lines-distance-formula-1">
-              <pg-code>
-              </pg-code> -->
-              <statement>
-                <p>
-                  Let <m>Q</m> be a point on the line <m>\vec\ell(t)</m>.
-                  Show why the distance formula correctly gives the distance from the point to the line as <m>0</m>.
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Since both <m>P</m> and <m>Q</m> are on the line,
-                  <m>\overrightarrow{PQ}</m> is parallel to <m>\vec d</m>.
-                  Thus <m>\overrightarrow{PQ}\times \vec d = \vec 0</m>,
-                  giving a distance of <m>0</m>.
-                </p>
-              </solution>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise xml:id="x10_05_ex_30" label="ex-vector-lines-distance-formula-2">
-          <!--<webwork xml:id="webwork-ex-vector-lines-distance-formula-2">
-              <pg-code>
-              </pg-code> -->
-              <statement>
-                <p>
-                  Let lines <m>\vec\ell_1(t)</m> and
-                  <m>\vec\ell_2(t)</m> be intersecting lines.
-                  Show why the distance formula correctly gives the distance between these lines as <m>0</m>.
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  (Note: this solution is easier once one has studied <xref ref="sec_planes"/>.) Since the two lines intersect,
-                  we can state <m>P_2= P_1 + a\vec d_1+b\vec d_2</m> for some scalars <m>a</m> and <m>b</m>.
-                  (Here we abuse notation slightly and add points to vectors.)
-                  Thus <m>\overrightarrow{P_1P_2} = a\vec d_1+b\vec d_2</m>.
-                  Vector <m>\vec c</m> is the cross product of <m>\vec d_1</m> and <m>\vec d_2</m>,
-                  hence is orthogonal to both, and hence is orthogonal to <m>\overrightarrow{P_1P_2}</m>.
-                  Thus <m>\overrightarrow{P_1P_2}\cdot\vec c = 0</m>,
-                  and the distance between lines is <m>0</m>.
-                </p>
-              </solution>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vector-lines-distance-formula-3">
-          <!--<webwork xml:id="webwork-ex-vector-lines-distance-formula-3">
-              <pg-code>
-              </pg-code> -->
-              <introduction>
-                <p>
-                  Let lines <m>\vec\ell_1(t)</m> and <m>\vec\ell_2(t)</m> be parallel.
-                </p>
-              </introduction>
-
-              <task label="ex-vector-lines-distance-formula-3a">
-                <statement>
-                  <p>
-                    Show why the distance formula for distance between lines cannot be used as stated to find the distance between the lines.
-                  </p>
-                </statement>
-                <solution>
-                  <p>
-                    The distance formula cannot be used because since
-                    <m>\vec d_1</m> and <m>\vec d_2</m> are parallel,
-                    <m>\vec c</m> is <m>\vec 0</m> and we cannot divide by <m>\vnorm{0}</m>.
-                  </p>
-                </solution>
-              </task>
-
-              <task label="ex-vector-lines-distance-formula-3b">
-                <statement>
-                  <p>
-                    Show why letting <m>\vec c=(\overrightarrow{P_1P_2}\times\vec d_2)\times\vec d_2</m> allows one to the use the formula.
-                  </p>
-                </statement>
-                <solution>
-                  <p>
-                    Since <m>\vec d_1</m> and <m>\vec d_2</m> are parallel,
-                    <m>\overrightarrow{P_1P_2}</m> lies in the plane formed by the two lines.
-                    Thus <m>\overrightarrow{P_1P_2}\times\vec d_2</m> is orthogonal to this plane,
-                    and <m>\vec c=(\overrightarrow{P_1P_2}\times\vec d_2)\times \vec d_2</m> is parallel to the plane,
-                    but still orthogonal to both <m>\vec d_1</m> and <m>\vec d_2</m>.
-                    We desire the length of the projection of <m>\overrightarrow{P_1P_2}</m> onto <m>\vec c</m>,
-                    which is what the formula provides.
-                  </p>
-                </solution>
-              </task>
-
-              <task label="ex-vector-lines-distance-formula-3c">
-                <statement>
-                  <p>
-                    Show how one can use the formula for the distance between a point and a line to find the distance between parallel lines.
-                  </p>
-                </statement>
-                <solution>
-                  <p>
-                    Since the lines are parallel,
-                    one can measure the distance between the lines at any location on either line
-                    (just as to find the distance between straight railroad tracks,
-                    one can use a measuring tape anywhere along the track,
-                    not just at one specific place.)
-                    Let <m>P=P_1</m> and <m>Q=P_2</m> as given by the equations of the lines,
-                    and apply the formula for distance between a point and a line.
-                  </p>
-                </solution>
-              </task>
-          <!-- </webwork> -->
-        </exercise>
       </exercisegroup>
     </subexercises>
   </exercises>

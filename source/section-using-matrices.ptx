@@ -167,9 +167,9 @@
             -1\amp 1\amp 1\amp 0\ebm</m>
           </cell>
           <cell>
-            <m>\bam{3}1\amp 1\amp 1\amp 30\\
+            <m>\left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 30\\
             0\amp -2\amp 1\amp 0\\
-            -1\amp 1\amp 1\amp 0\eam</m>
+            -1\amp 1\amp 1\amp 0\end{array}\right]</m>
           </cell>
         </row>
         <row>
@@ -190,7 +190,7 @@
     Let us look back at the steps we used to solve the system of equations at the beginning of this section. 
     Clearly, the order in which we right down our equations does not affect the solution; 
     in terms of our matrix, this means we can rearrange the rows as we please. 
-    Note, however, that we \textbf{cannot} rearrange the columns. To do so would mix up our variables, causing us to lose track of our system.
+    Note, however, that we <em>cannot</em> rearrange the columns. To do so would mix up our variables, causing us to lose track of our system.
   </p>
 
   <p>
@@ -211,135 +211,59 @@
     <idx><h>elementary row operation</h></idx>
   </p>
 
-  <sbsgroup widths="47% 47%">
-    <sidebyside>
-      <p>
-        <me>
-          \begin{array}{ccccccc}
-          b\amp +\amp g\amp +\amp r\amp =\amp 30\\
-             \amp -  \amp 2g\amp +\amp r\amp =\amp 0\\
-          -b\amp +\amp g\amp +\amp r\amp =\amp 0
-          \end{array}
-        </me>
-        Replace equation 3 with the sum of equations 1 and 3
-      </p>
-
-      <p>
-        <me>
-          \bam{3}1\amp 1\amp 1\amp 30\\ 0\amp -2\amp 1\amp 0\\-1\amp 1\amp 1\amp 0\eam
-        </me>
-        Replace row 3 with the sum of rows 1 and 3.
-        <me>(R_1+R_3\to R_3)</me>
-      </p>
-    </sidebyside>
-      
-    <sidebyside>
-      <p>
-        <me>
-          \begin{array}{ccccccc}
-          b\amp +\amp g\amp +\amp r\amp =\amp 30\\
+  <p>
+    <md>
+      <mrow>\begin{array}{ccccccc}
+        b\amp +\amp g\amp +\amp r\amp =\amp 30\\
             \amp -  \amp 2g\amp +\amp r\amp =\amp 0\\
-            \amp  \amp 2g\amp +\amp 2r\amp =\amp 30
-          \end{array}
-        </me>
-        Multiply equation 2 by <m>-\frac12</m>
-      </p>
+        -b\amp +\amp g\amp +\amp r\amp =\amp 0
+        \end{array}
+        \amp \left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 30\\ 0\amp -2\amp 1\amp 0\\-1\amp 1\amp 1\amp 0\end{array}\right]</mrow>
+      <mrow>\begin{matrix}\text{Replace equation 3 with the}\\ \text{sum of equations 1 and 3}\end{matrix}
+        \amp \begin{matrix}\text{Replace row 3 with the}\\ \text{sum of rows 1 and 3.}\\ (R_1+R_3\to R_3)\end{matrix}</mrow>
+      <mrow> \begin{array}{ccccccc}
+        b\amp +\amp g\amp +\amp r\amp =\amp 30\\
+          \amp -  \amp 2g\amp +\amp r\amp =\amp 0\\
+          \amp  \amp 2g\amp +\amp 2r\amp =\amp 30
+        \end{array}
+        \amp \left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 30\\ 0\amp -2\amp 1\amp 0\\0\amp 2\amp 2\amp 30\end{array}\right]</mrow>
+      <mrow>\text{Multiply equation 2 by } -\frac12 
+        \amp \begin{matrix}\text{Multiply row 2 by } -\frac12\\ (-\frac12R_2\to R_2)\end{matrix}</mrow> 
+      <mrow>\begin{array}{ccccccc}
+        b\amp +\amp g\amp +\amp r\amp =\amp 30\\
+            \amp   \amp g\amp +\amp -1/2r\amp =\amp 0\\
+          \amp  \amp 2g\amp +\amp 2r\amp =\amp 30
+        \end{array}
+          \amp \left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 30\\ 0\amp 1\amp -\frac12\amp 0\\0\amp 2\amp 2\amp 30\end{array}\right]</mrow>
+      <mrow>\begin{matrix}\text{Replace equation 1 with the}\\ \text{sum of } -1 \text{ times equation } 2 \\ \text{plus equation 1;}\\
+          \text{Replace equation 3 with the}\\ \text{ sum of } -2 \text{ times equation } 2\\ \text{plus equation 3}\end{matrix} 
+          \amp \begin{matrix}\text{Replace row 1 with the sum of}\\ -1 \text{ times row 2 plus row 1}\\(-R_2+R_1\rightarrow R_1)\\
+          \text{Replace row 3 with the sum of}\\ -2 \text{ times row 2 plus row 3}\\(-2R_2+R_3\rightarrow R_3)\end{matrix}</mrow>
+      <mrow>\begin{array}{ccccccc}
+        b\amp + \amp  \amp \amp 3/2r\amp =\amp 30\\
+          \amp    \amp g\amp -\amp 1/2r\amp =\amp 0\\
+          \amp   \amp  \amp \amp 3r\amp =\amp 30
+        \end{array}
+          \amp \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp 30\\0\amp 1\amp -\frac12\amp 0\\0\amp 0\amp 3\amp 30\end{array}\right]</mrow>
+      <mrow> \text{Multiply equation 3 by } \frac13\amp \begin{matrix}\text{Multiply row 3 by } \frac13\\(\frac13R_3\rightarrow R_3)\end{matrix}</mrow>
+      <mrow>\begin{array}{ccccccc}
+        b\amp + \amp  \amp \amp 3/2r\amp =\amp 30\\
+          \amp    \amp g\amp -\amp 1/2r\amp =\amp 0\\
+          \amp   \amp  \amp \amp r\amp =\amp 10
+        \end{array}
+          \amp \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp 30\\0\amp 1\amp -\frac12\amp 0\\0\amp 0\amp 1\amp 10\end{array}\right]</mrow>
+      <mrow>\begin{matrix}\text{Replace equation 2 with the}\\ \text{sum of } \frac12 \text{ times equation 3}\\ \text{plus equation 2;}\\
+        \text{Replace equation 1 with the}\\ \text{sum of } -\frac32 \text{ times equation 3}\\ \text{plus equation 1}\end{matrix} 
+        \amp \begin{matrix}\text{Replace row 2 with the sum}\\ \text{of } \frac12 \text{ times row 3 plus row 2}\\(\frac12R_3+R_2\rightarrow R_2)\\
+        \text{Replace row 1 with the sum}\\ \text{of } -\frac32 \text{ times row 3 plus row 1}\\(-\frac32R_3+R_1\rightarrow R_1)\end{matrix}</mrow>
+      <mrow>\begin{array}{ccccccc}
+        b \amp  \amp  \amp  \amp \amp =\amp 15\\
+          \amp    \amp g \amp  \amp \amp =\amp 5\\
+          \amp   \amp  \amp \amp r\amp =\amp 10
+        \end{array} \amp \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 15\\0\amp 1\amp 0\amp 5\\0\amp 0\amp 1\amp 10\end{array}\right]</mrow>
+    </md>
+  </p>
 
-      <p>
-        <me>
-          \bam{3}1\amp 1\amp 1\amp 30\\ 0\amp -2\amp 1\amp 0\\0\amp 2\amp 2\amp 30\eam
-        </me>
-        Multiply row 2 by <m>-\frac12</m>
-        <me>(-\frac12R_2\to R_2)</me>
-      </p>
-    </sidebyside>
-    <sidebyside>
-      <p>
-        <me>
-          \begin{array}{ccccccc}
-b\amp +\amp g\amp +\amp r\amp =\amp 30\\
-   \amp   \amp g\amp +\amp -1/2r\amp =\amp 0\\
-  \amp  \amp 2g\amp +\amp 2r\amp =\amp 30
-\end{array}
-        </me>
-        Replace equation 1 with the sum of <m>(-1)</m> times equation 2 plus equation 1; 
-        Replace equation 3 with the sum of <m>(-2)</m> times equation 2 plus equation 3
-      </p>
-
-      <p>
-        <me>
-          \bam{3}1\amp 1\amp 1\amp 30\\ 0\amp 1\amp -\frac12\amp 0\\0\amp 2\amp 2\amp 30\eam
-        </me>
-        Replace row 1 with the sum of <m>(-1)</m> times row 2 plus row 1 (<m>-R_2+R_1\rightarrow R_1)</m>; 
-        Replace row 3 with the sum of <m>(-2)</m> times row 2 plus row 3 <m>(-2R_2+R_3\rightarrow R_3)</m>
-      </p>
-    </sidebyside>
-
-    <sidebyside>
-      <p>
-        <me>
-          \begin{array}{ccccccc}
-          b\amp + \amp  \amp \amp 3/2r\amp =\amp 30\\
-            \amp    \amp g\amp -\amp 1/2r\amp =\amp 0\\
-            \amp   \amp  \amp \amp 3r\amp =\amp 30
-          \end{array}
-        </me>
-        Multiply equation 3 by <m>\frac13</m>
-      </p>
-
-      <p>
-        <me>
-          \bam{3}1\amp 0\amp \frac32\amp 30\\0\amp 1\amp -\frac12\amp 0\\0\amp 0\amp 3\amp 30\eam
-        </me>
-        Multiply row 3 by <m>\frac13</m>
-        <me>
-          (\frac13R_3\rightarrow R_3)
-        </me>
-      </p>
-    </sidebyside>
-
-    <sidebyside>
-      <p>
-        <me>
-          \begin{array}{ccccccc}
-          b\amp + \amp  \amp \amp 3/2r\amp =\amp 30\\
-            \amp    \amp g\amp -\amp 1/2r\amp =\amp 0\\
-            \amp   \amp  \amp \amp r\amp =\amp 10
-          \end{array}
-        </me>
-        Replace equation 2 with the sum of <m>\frac12</m> times equation 3 plus equation 2;
-        Replace equation 1 with the sum of <m>-\frac32</m> times equation 3 plus equation 1
-      </p>
-
-      <p>
-        <me>
-          \bam{3}1\amp 0\amp \frac32\amp 30\\0\amp 1\amp -\frac12\amp 0\\0\amp 0\amp 1\amp 10\eam
-        </me>
-        Replace row 2 with the sum of <m>\frac12</m> times row 3 plus row 2
-        <m>(\frac12R_3+R_2\rightarrow R_2)</m>;
-        Replace row 1 with the sum of <m>-\frac32</m> times row 3 plus row 1
-        <m>(-\frac32R_3+R_1\rightarrow R_1)</m>
-      </p>
-    </sidebyside>
-
-    <sidebyside>
-      <p>
-        <me>
-          \begin{array}{ccccccc}
-          b \amp  \amp  \amp  \amp \amp =\amp 15\\
-            \amp    \amp g \amp  \amp \amp =\amp 5\\
-            \amp   \amp  \amp \amp r\amp =\amp 10
-          \end{array}
-        </me>
-      </p>
-
-      <p>
-        <me>
-          \bam{3}1\amp 0\amp 0\amp 15\\0\amp 1\amp 0\amp 5\\0\amp 0\amp 1\amp 10\eam
-        </me>
-      </p>
-    </sidebyside>
-  </sbsgroup>
 
   <p>
     The final matrix contains the same solution information as we have on the left in the form of equations. 
@@ -380,149 +304,74 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
         The given system and its corresponding augmented matrix are seen below.
       </p>
 
-      <sbsgroup widths="47% 47%">
-        <sidebyside>
-          <p>
-            Original system of equations
-          </p>
-
-          <p>
-            Corresponding matrix
-          </p>
-        </sidebyside>
-        <sidebyside>
-          <p>
-            <me>
-              \begin{array}{ccccccc}
-              x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
-              2x_1\amp +\amp 2x_2\amp +\amp x_3\amp =\amp 0\\
-              -1x_1\amp +\amp x_2\amp -\amp 2x_3\amp =\amp 2
-              \end{array}
-            </me>
-          </p>
-
-          <p>
-            <me>
-              \bam{3}
-              1\amp 1\amp 1\amp 0\\ 2\amp 2\amp 1\amp 0\\ -1\amp 1\amp -2\amp 2\\
-              \eam
-            </me>
-          </p>
-        </sidebyside>
-      </sbsgroup>
+      <p>
+        <md>
+          <mrow>\text{Original system of equations} \amp \text{Corresponding matrix}</mrow>
+          <mrow>\begin{array}{ccccccc}
+            x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
+            2x_1\amp +\amp 2x_2\amp +\amp x_3\amp =\amp 0\\
+            -1x_1\amp +\amp x_2\amp -\amp 2x_3\amp =\amp 2
+            \end{array} \amp \left[\begin{array}{ccc|c}
+            1\amp 1\amp 1\amp 0\\ 2\amp 2\amp 1\amp 0\\ -1\amp 1\amp -2\amp 2\\
+            \end{array}\right]</mrow>
+        </md>
+      </p>
 
       <p>
         We'll proceed by trying to get the <m>x_1</m> out of the second and third equation.
       </p>
 
-      <sbsgroup widths="47% 47%">
-        <sidebyside>
-          <p>
-            Replace equation 2 with the sum of <m>(-2)</m> times equation 1 plus equation 2;
-            Replace equation 3 with the sum of equation 1 and equation 3
-          </p>
-
-          <p>
-            Replace row 2 with the sum of <m>(-2)</m> times row 1 plus row 2
-            <m>(-2R_1+R_2\rightarrow R_2)</m>;
-            Replace row 3 with the sum of row 1 and row 3
-            <m>(R_1+R_3\rightarrow R_3)</m>
-          </p>
-        </sidebyside>
-
-        <sidebyside>
-          <p>
-            <me>
-              \begin{array}{ccccccc}
-              x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
-                  \amp    \amp     \amp \amp -x_3\amp =\amp 0\\
-                  \amp  \amp 2x_2\amp -\amp x_3\amp =\amp 2
-              \end{array}
-            </me>
-          </p>
-
-          <p>
-            <me>
-              \bam{3}
-              1\amp 1\amp 1\amp 0\\ 0\amp 0\amp -1\amp 0\\ 0\amp 2\amp -1\amp 2\\
-              \eam
-            </me>
-          </p>
-        </sidebyside>
-      </sbsgroup>
-
       <p>
-        Notice that the second equation no longer contains <m>x_2</m>. 
-        We'll exchange the order of the equations so that we can follow the convention of solving for the second variable in the second equation. 
+        <md>
+          <mrow>\begin{matrix}\text{Replace equation 2 with the}\\ \text{sum of} -2 \text{ times equation 1}\\ \text{plus equation 2;}\\
+             \text{Replace equation 3 with}\\ \text{the sum of equation 1}\\ \text{ and equation 3}\end{matrix}
+             \amp \begin{matrix}\text{Replace row 2 with the sum of}\\ -2 \text{ times row 1 plus row 2}\\(-2R_1+R_2\rightarrow R_2)\\
+            \text{Replace row 3 with the sum of}\\ \text{row 1 and row 3}\\(R_1+R_3\rightarrow R_3)\end{matrix}</mrow>
+          <mrow>\begin{array}{ccccccc}
+            x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
+                \amp    \amp     \amp \amp -x_3\amp =\amp 0\\
+                \amp  \amp 2x_2\amp -\amp x_3\amp =\amp 2
+            \end{array} \amp \left[\begin{array}{ccc|c}
+            1\amp 1\amp 1\amp 0\\ 0\amp 0\amp -1\amp 0\\ 0\amp 2\amp -1\amp 2\\
+            \end{array}\right]</mrow>
+        </md>
       </p>
 
-      <sbsgroup widths="47% 47%">
-        <sidebyside>
-          <p>
-            Interchange equations 2 and 3
-            <me>
-              \begin{array}{ccccccc}
-              x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
-                  \amp    \amp 2x_2\amp -\amp x_3\amp =\amp 2\\
-                  \amp   \amp    \amp \amp -x_3\amp =\amp 0
-              \end{array}
-            </me>
-          </p>
-          <p>
-            Interchange rows 2 and 3
-            <me>(R_2\leftrightarrow R_3)</me>
-            <me>\bam{3}
-              1\amp 1\amp 1\amp 0\\ 0\amp 2\amp -1\amp 2\\ 0\amp 0\amp -1\amp 0\\
-              \eam</me>
-          </p>
-        </sidebyside>
+ 
+      <p>
+        Notice that the second equation no longer contains <m>x_2</m>. 
+        We'll exchange the order of the equations so that we can follow the convention 
+        of solving for the second variable in the second equation. 
+      </p>
 
-        <sidebyside>
-          <p>
-            Multiply equation 2 by <m>\frac12</m>
-            <me>
-              \begin{array}{ccccccc}
-              x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
-                  \amp    \amp x_2\amp -\amp \frac12x_3\amp =\amp 1\\
-                  \amp   \amp    \amp \amp -x_3\amp =\amp 0
-              \end{array}
-            </me>
-          </p>
-
-          <p>
-            Multiply row 2 by <m>\frac12</m>
-            <me>(\frac12 R_2\rightarrow R_2)</me>
-            <me>
-              \bam{3}
-              1\amp 1\amp 1\amp 0\\ 0\amp 1\amp -\frac12\amp 1\\ 0\amp 0\amp -1\amp 0\\
-              \eam
-            </me>
-          </p>
-        </sidebyside>
-
-        <sidebyside>
-          <p>
-            Multiply equation 3 by <m>-1</m>
-            <me>
-              \begin{array}{ccccccc}
+      <p>
+        <md>
+          <mrow>\text{Interchange equations 2 and 3} \amp \begin{matrix}\text{Interchange rows 2 and 3}\\(R_2\leftrightarrow R_3)\end{matrix}</mrow>
+          <mrow>\begin{array}{ccccccc}
+            x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
+                \amp    \amp 2x_2\amp -\amp x_3\amp =\amp 2\\
+                \amp   \amp    \amp \amp -x_3\amp =\amp 0
+            \end{array} \amp \left[\begin{array}{ccc|c}
+            1\amp 1\amp 1\amp 0\\ 0\amp 2\amp -1\amp 2\\ 0\amp 0\amp -1\amp 0\\
+            \end{array}\right]</mrow>
+          <mrow>\text{Multiply equation 2 by } \frac12 \amp \begin{matrix}\text{Multiply row 2 by } \frac12\\(\frac12 R_2\rightarrow R_2)\end{matrix}</mrow>
+          <mrow>\begin{array}{ccccccc}
+            x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
+                \amp    \amp x_2\amp -\amp \frac12x_3\amp =\amp 1\\
+                \amp   \amp    \amp \amp -x_3\amp =\amp 0
+            \end{array} \amp \left[\begin{array}{ccc|c}
+            1\amp 1\amp 1\amp 0\\ 0\amp 1\amp -\frac12\amp 1\\ 0\amp 0\amp -1\amp 0\\
+            \end{array}\right]</mrow>
+            <mrow>\text{ Multiply equation 3 by} -1\amp \begin{matrix}\text{ Multiply row 3 by } -1\\(-1 R_3\rightarrow R_3)\end{matrix}</mrow>
+            <mrow>\begin{array}{ccccccc}
               x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
                   \amp    \amp x_2\amp -\amp \frac12x_3\amp =\amp 1\\
                   \amp   \amp    \amp \amp x_3\amp =\amp 0
-              \end{array}
-            </me>
-          </p>
-
-          <p>
-            Multiply row 3 by <m>-1</m>
-            <me>(-1 R_3\rightarrow R_3)</me>
-            <me>
-              \bam{3}
+              \end{array} \amp \left[\begin{array}{ccc|c}
               1\amp 1\amp 1\amp 0\\ 0\amp 1\amp -\frac12\amp 1\\ 0\amp 0\amp 1\amp 0\\
-              \eam
-            </me>
-          </p>
-        </sidebyside>
-      </sbsgroup>
+              \end{array}\right]</mrow>
+        </md>
+      </p>
 
       <p>
         Notice that the last equation (and also the last row of the matrix) show that <m>x_3=0</m>. 
@@ -530,58 +379,39 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
         However, we will formally do this by manipulating the equations (and rows) as we have previously.
       </p>
 
-      <sidebyside widths="47% 47%">
-        <p>
-          Replace equation 1 with the sum of <m>(-1)</m> times equation 3 plus equation 1;
-          Replace equation 2 with the sum of <m>\frac12</m> times equation 3 plus equation 2
-          <me>
-            \begin{array}{ccccccc}
+      <p>
+        <md>
+          <mrow>\begin{matrix}\text{Replace equation 1 with the}\\ \text{sum of } -1 \text{ times equation 3}\\ \text{plus equation 1;}\\
+            \text{Replace equation 2 with the}\\ \text{sum of } \frac12 \text{ times equation 3} \\ \text{plus equation 2}\end{matrix}
+            \amp \begin{matrix}\text{Replace row 1 with the sum of}\\ -1 \text{ times row 3 plus row 1}\\(-R_3+R_1\rightarrow R_1)\\
+            \text{Replace row 2 with the sum of}\\ \frac12 \text{  times row 3 plus row 2}\\(\frac12R_3+R_2\rightarrow R_2)\end{matrix}</mrow>
+          <mrow>\begin{array}{ccccccc}
             x_1\amp +\amp x_2\amp \amp \amp =\amp 0\\
                 \amp    \amp x_2\amp \amp \amp =\amp 1\\
                 \amp   \amp    \amp \amp x_3\amp =\amp 0
-            \end{array}
-          </me>
-        </p>
-
-        <p>
-          Replace row 1 with the sum of <m>(-1)</m> times row 3 plus row 1
-          <m>(-R_3+R_1\rightarrow R_1)</m>;
-          Replace row 2 with the sum of <m>\frac12</m> times row 3 plus row 2
-          <m>(\frac12R_3+R_2\rightarrow R_2)</m>
-          <me>
-            \bam{3}
+            \end{array} \amp \left[\begin{array}{ccc|c}
             1\amp 1\amp 0\amp 0\\ 0\amp 1\amp 0\amp 1\\ 0\amp 0\amp 1\amp 0\\
-            \eam
-          </me>
-        </p>
-      </sidebyside>
+            \end{array}\right]</mrow>
+        </md>
+      </p>
 
       <p>
         Notice how the second equation shows that <m>x_2 = 1</m>. All that remains to do is to solve for <m>x_1</m>.
       </p>
 
-      <sidebyside widths="47% 47%">
-        <p>
-          Replace equation 1 with the sum of <m>(-1)</m> times equation 2 plus equation 1
-          <me>
-            \begin{array}{ccccccc}
+      <p>
+        <md>
+          <mrow>\begin{matrix}\text{Replace equation 1 with the}\\ \text{sum of} -1 \text{ times equation 2}\\ \text{plus equation 1}\end{matrix}
+            \amp \begim{matrix}\text{Replace row 1 with the sum of}\\ -1 \text{ times row 2 plus row 1}\\(-R_2+R_1\rightarrow R_1)\end{matrix}</mrow>
+          <mrow>\begin{array}{ccccccc}
             x_1 \amp  \amp   \amp \amp \amp =\amp -1\\
                 \amp    \amp x_2\amp \amp \amp =\amp 1\\
                 \amp   \amp    \amp \amp x_3\amp =\amp 0
-            \end{array}
-          </me>
-        </p>
-
-        <p>
-          Replace row 1 with the sum of <m>(-1)</m> times row 2 plus row 1
-          <me>(-R_2+R_1\rightarrow R_1)</me>
-          <me>
-            \bam{3}
+            \end{array} \amp \left[\begin{array}{ccc|c}
             1\amp 0\amp 0\amp -1\\ 0\amp 1\amp 0\amp 1\\ 0\amp 0\amp 1\amp 0\\
-            \eam
-          </me>
-        </p>
-      </sidebyside>
+            \end{array}\right]</mrow>
+        </md>
+      </p>
 
       <p>
         Obviously the equations on the left tell us that <m>x_1 = -1</m>, <m>x_2 = 1</m> and <m>x_3=0</m>, 
@@ -611,7 +441,7 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
         </statement>
         <answer>
           <p>
-            <m>\bam{3} 3 \amp 4 \amp 5\amp 7\\-1\amp 1\amp -3\amp 1\\2\amp -2\amp 3\amp 5 \eam</m>
+            <m>\left[\begin{array}{ccc|c} 3 \amp 4 \amp 5\amp 7\\-1\amp 1\amp -3\amp 1\\2\amp -2\amp 3\amp 5 \end{array}\right]</m>
           </p>
         </answer>
       </exercise>
@@ -628,7 +458,7 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
         </statement>
         <answer>
           <p>
-            <m>\bam{3} 2 \amp 5 \amp -6\amp 2\\9\amp 0\amp -8\amp 10\\-2\amp 4\amp 1\amp -7 \eam</m>
+            <m>\left[\begin{array}{ccc|c} 2 \amp 5 \amp -6\amp 2\\9\amp 0\amp -8\amp 10\\-2\amp 4\amp 1\amp -7 \end{array}\right]</m>
           </p>
         </answer>
       </exercise>
@@ -645,7 +475,7 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
         </statement>
         <answer>
           <p>
-            <m>\bam{4} 1 \amp 3 \amp -4\amp 5\amp 17\\-1\amp 0\amp 4\amp 8\amp 1\\ 2\amp 3\amp 4\amp 5\amp 6 \eam</m>
+            <m>\left[\begin{array}{cccc|c} 1 \amp 3 \amp -4\amp 5\amp 17\\-1\amp 0\amp 4\amp 8\amp 1\\ 2\amp 3\amp 4\amp 5\amp 6 \end{array}\right]</m>
           </p>
         </answer>
       </exercise>
@@ -663,7 +493,7 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
         </statement>
         <answer>
           <p>
-            <m>\bam{2} 3 \amp -2 \amp 4\\ 2\amp 0\amp 3\\-1\amp 9\amp 8\\5\amp -7\amp 13 \eam</m>
+            <m>\left[\begin{array}{cc|c} 3 \amp -2 \amp 4\\ 2\amp 0\amp 3\\-1\amp 9\amp 8\\5\amp -7\amp 13 \end{array}\right]</m>
           </p>
         </answer>
       </exercise>
@@ -681,9 +511,9 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
       <exercise>
         <statement>
           <p>
-            <m>\bam{2}
+            <m>\left[\begin{array}{cc|c}
                 1\amp 2\amp 3\\
-                -1\amp 3\amp 9\\ \eam</m>
+                -1\amp 3\amp 9\\ \end{array}\right]</m>
           </p>
         </statement>
         <answer>
@@ -698,9 +528,9 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
       <exercise>
         <statement>
           <p>
-            <m>\bam{2}
+            <m>\left[\begin{array}{cc|c}
               -3\amp 4\amp 7\\
-              0\amp 1\amp -2\\ \eam</m>
+              0\amp 1\amp -2\\ \end{array}\right]</m>
           </p>
         </statement>
         <answer>
@@ -715,9 +545,9 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
       <exercise>
         <statement>
           <p>
-            <m>\bam{4}
+            <m>\left[\begin{array}{cccc|c}
               1\amp 1\amp -1\amp -1\amp 2\\
-              2\amp 1\amp 3\amp 5\amp 7\\ \eam</m>
+              2\amp 1\amp 3\amp 5\amp 7\\ \end{array}\right]</m>
           </p>
         </statement>
         <answer>
@@ -732,11 +562,11 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
       <exercise>
         <statement>
           <p>
-            <m>\bam{4}
+            <m>\left[\begin{array}{cccc|c}
               1\amp 0\amp 0\amp 0\amp 2\\
               0\amp 1\amp 0\amp 0\amp -1\\
               0\amp 0\amp 1\amp 0\amp 5\\
-              0\amp 0\amp 0\amp 1\amp 3 \eam</m>
+              0\amp 0\amp 0\amp 1\amp 3 \end{array}\right]</m>
           </p>
         </statement>
         <answer>
@@ -753,11 +583,11 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
       <exercise>
         <statement>
           <p>
-            <m>\bam{4}
+            <m>\left[\begin{array}{cccc|c}
               1\amp 0\amp 0\amp 0\amp 2\\
               0\amp 1\amp 0\amp 0\amp -1\\
               0\amp 0\amp 1\amp 0\amp 5\\
-              0\amp 0\amp 0\amp 1\amp 3 \eam</m>
+              0\amp 0\amp 0\amp 1\amp 3 \end{array}\right]</m>
           </p>
         </statement>
         <answer>
@@ -774,10 +604,10 @@ b\amp +\amp g\amp +\amp r\amp =\amp 30\\
       <exercise>
         <statement>
           <p>
-            <m>\bam{5}
+            <m>\left[\begin{array}{ccccc|c}
               1\amp 0\amp 1\amp 0\amp 7\amp 2\\
               0\amp 1\amp 3\amp 2\amp 0\amp 5\\
-              \eam</m>
+              \end{array}\right]</m>
           </p>
         </statement>
         <answer>

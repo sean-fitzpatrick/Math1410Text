@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<section xml:id="sec=geom_3" label="sec-geom_3">
+<section xml:id="sec-geom_3" label="sec-geom_3">
 	<title>Matrix Transformations</title>
 
-	<p>
-		We already looked at the basics of graphing vectors, and the arithmetic of multiplying matrices. 
-		In this section and the next, we will return to the geometric interpretation of vectors given in <xref ref="chapter-vectors"/>. 
-		Our goal in doing so is to obtain a visual understanding of the definition of matrix multiplication given in 
-		<xref ref="sec-matrix_multiplication"/>. Although the algebraic definition of matrix multiplication appears strange at first, 
-		we'll see that our definition of matrix multiplication allows us to use matrices to define <term>functions</term> 
-		that transform one vector into another, just as the functions you're familiar with from high school or Calculus 
-		transform one number into another. We can then visualize matrices and matrix multiplication in terms of their effect on vectors.
-	</p>
+	<introduction>
+		<p>
+			We already looked at the basics of graphing vectors, and the arithmetic of multiplying matrices. 
+			In this section and the next, we will return to the geometric interpretation of vectors given in <xref ref="chapter-vectors"/>. 
+			Our goal in doing so is to obtain a visual understanding of the definition of matrix multiplication given in 
+			<xref ref="sec-matrix_multiplication"/>. Although the algebraic definition of matrix multiplication appears strange at first, 
+			we'll see that our definition of matrix multiplication allows us to use matrices to define <term>functions</term> 
+			that transform one vector into another, just as the functions you're familiar with from high school or Calculus 
+			transform one number into another. We can then visualize matrices and matrix multiplication in terms of their effect on vectors.
+		</p>
 
-	<p>
-		Given an <m>m\times n</m> matrix <m>A</m> we can define a function <m>T</m> 
-		that takes an <m>n\times 1</m> column vector <m>\vec x\in \mathbb{R}^n</m> as input, 
-		and produces an <m>m\times 1</m> column vector <m>\vec y\in \mathbb{R}^m</m> as output, according to the relationship
-		<me>
-			\vec y = T(\vec x) = A\vec x
-		</me>.
-		Such a function is known as a <term>matrix transformation</term>; 
-		it is an example of a more general class of functions between vector spaces known as <term>linear transformations</term>.
-		<idx><h>matrix transformation</h></idx>
-		<idx><h>transformation </h><h> matrix</h></idx>
-	</p>
+		<p>
+			Given an <m>m\times n</m> matrix <m>A</m> we can define a function <m>T</m> 
+			that takes an <m>n\times 1</m> column vector <m>\vec x\in \mathbb{R}^n</m> as input, 
+			and produces an <m>m\times 1</m> column vector <m>\vec y\in \mathbb{R}^m</m> as output, according to the relationship
+			<me>
+				\vec y = T(\vec x) = A\vec x
+			</me>.
+			Such a function is known as a <term>matrix transformation</term>; 
+			it is an example of a more general class of functions between vector spaces known as <term>linear transformations</term>.
+			<idx><h>matrix transformation</h></idx>
+			<idx><h>transformation </h><h> matrix</h></idx>
+		</p>
 
-	<p>
-		The graphical representation of vectors allows us to visualize matrix transformations (at least, in lower dimensions). 
-		This visualization plays a key role in applications such as computer graphics. 
-		We'll also see that the desire to define functions via matrix multiplication provides some 
-		justification for defining matrix multiplication the way we do.
-	</p>
-
-	<paragraphs>
+		<p>
+			The graphical representation of vectors allows us to visualize matrix transformations (at least, in lower dimensions). 
+			This visualization plays a key role in applications such as computer graphics. 
+			We'll also see that the desire to define functions via matrix multiplication provides some 
+			justification for defining matrix multiplication the way we do.
+		</p>
+	</introduction>
+	
+	<subsection>
 		<title>Matrix <ndash/> Vector Multiplication</title>
 		
 		<p>
@@ -271,9 +273,9 @@
 				</p>				
 			</solution>
 		</example>
-	</paragraphs>
+	</subsection>
 
-	<paragraphs>
+	<subsection>
 		<title>Transformations of the Cartesian Plane</title>
 		
 		<p>
@@ -400,7 +402,7 @@
 
 				<p>
 					To stress how <q>straight lines get transformed to straight lines,</q> 
-					consider <xref ref="fig-mv_3-2"/>. 
+					consider <xref ref="fig-mv_3b"/>. 
 					Here, the unit square has some additional points drawn on it which correspond to the shaded dots on the transformed parallelogram. 
 					Note how relative distances are also preserved; 
 					the dot halfway between the black and square dots is transformed to a position along the line, 
@@ -887,9 +889,9 @@
 			In the following figures, a transformation matrix will be given alongside a picture of the transformed unit square. 
 			(The original unit square is drawn lightly as well to serve as a reference.)
 		</p>
-	</paragraphs>
+	</subsection>
 
-	<paragraphs xml:id="page-plane_transformations">
+	<subsection xml:id="page-plane_transformations">
 		<title>2D Matrix Transformations</title>
 		
 		<sbsgroup widths="47% 47%">
@@ -1117,179 +1119,179 @@
 				</image>
 			</sidebyside>
 		</sbsgroup>
-	</paragraphs>
 
-	<p>
-		Now that we have seen a healthy list of transformations that we can perform on the Cartesian plane, let's practice a few more times creating the matrix that gives the desired transformation. In the following example, we develop our understanding one more critical step.
-	</p>
+		<p>
+			Now that we have seen a healthy list of transformations that we can perform on the Cartesian plane, let's practice a few more times creating the matrix that gives the desired transformation. In the following example, we develop our understanding one more critical step.
+		</p>
 
-	<example xml:id="ex_transf_3">
-		<title>Determining the matrix of a transformation</title>
-		<statement>
- 
-			<p>
-				Find the matrix <m>\tta</m> that transforms the Cartesian plane by performing the following operations in order:
-				<ol cols="2">
-					<li>
-						<p>
-							Vertical shear by a factor of 0.5
-						</p>
-					</li>
-					<li>
-						<p>
-							Counterclockwise rotation about the origin by an angle of <m>\theta = 30^\circ</m>
-						</p>
-					</li>
-					<li>
-						<p>
-							Horizontal stretch by a factor of 2
-						</p>
-					</li>
-					<li>
-						<p>
-							Diagonal reflection across the line <m>y=x</m>
-						</p>
-					</li>
-				</ol>
-			</p>
-		</statement>
-		<solution>
-			<p>
-				Wow! We already know how to do this <mdash/> sort of. 
-				We know we can find the columns of <m>\tta</m> by tracing where <m>\veone</m> and <m>\vetwo</m> end up, 
-				but this also seems difficult. There is so much that is going on. 
-				Fortunately, we can accomplish what we need without much difficulty by being systematic.
-			</p>
-
-			<p>
-				First, let's perform the vertical shear. The matrix that performs this is 
-				<me>
-						\tta_1 = \bbm 1 \amp 0\\0.5 \amp 1\ebm
-				</me>.
-			</p>
-			
-			<p>
-				After that, we want to rotate everything clockwise by <m>30^\circ</m>. To do this, we use 
-				<me>
-						\tta_2 = \bbm \cos 30^\circ  \amp  -\sin 30^\circ\\ \sin 30^\circ  \amp  \cos 30^\circ \ebm = \bbm \sqrt{3}/2 \amp  -1/2 \\ 1/2 \amp  \sqrt{3}/2\ebm
-				</me>.
-			</p>
-			
-			<p>
-				In order to do both of these operations, in order, we multiply <m>\tta_2\tta_1</m>. 
-			</p>
-			
-			<aside>
+		<example xml:id="ex_transf_3">
+			<title>Determining the matrix of a transformation</title>
+			<statement>
+	
 				<p>
-					<alert>Note:</alert> recall from <xref ref="sec-matrix_multiplication"/> 
-					that matrix multiplication is <em>not</em> commutative. 
-					Since <m>A_1A_2\neq A_2A_1</m> in general, 
-					we should expect that the transformation <m>A_2(A_1\vec x) = (A_2A_1)\vec x</m> 
-					is not the same as the transformation <m>A_1(A_2\vec x) = (A_1A_2)\vec x</m>. 
-					Interpreted as transformations of the plane, this makes sense visually: 
-					for example, in most cases, a reflection followed by a rotation will not produce the same result as performing the rotation first, 
-					followed by the reflection. 
-					The reader is encouraged to experiment with a few examples to see what happens when the order is reversed.
+					Find the matrix <m>\tta</m> that transforms the Cartesian plane by performing the following operations in order:
+					<ol cols="2">
+						<li>
+							<p>
+								Vertical shear by a factor of 0.5
+							</p>
+						</li>
+						<li>
+							<p>
+								Counterclockwise rotation about the origin by an angle of <m>\theta = 30^\circ</m>
+							</p>
+						</li>
+						<li>
+							<p>
+								Horizontal stretch by a factor of 2
+							</p>
+						</li>
+						<li>
+							<p>
+								Diagonal reflection across the line <m>y=x</m>
+							</p>
+						</li>
+					</ol>
+				</p>
+			</statement>
+			<solution>
+				<p>
+					Wow! We already know how to do this <mdash/> sort of. 
+					We know we can find the columns of <m>\tta</m> by tracing where <m>\veone</m> and <m>\vetwo</m> end up, 
+					but this also seems difficult. There is so much that is going on. 
+					Fortunately, we can accomplish what we need without much difficulty by being systematic.
 				</p>
 
 				<p>
-					To perform the final two operations, we note that 
+					First, let's perform the vertical shear. The matrix that performs this is 
 					<me>
-							\tta_3 = \bbm 2 \amp 0\\0 \amp 1\ebm \quad \text{ and } \quad \tta_4 = \bbm 0\amp 1 \\ 1\amp 0\ebm
-					</me>
-					perform the horizontal stretch and diagonal reflection, respectively. 
-					Thus to perform all of the operations <q>at once,</q> we need to multiply by 
-					<md> 
-						<mrow>\tta \amp = \tta_4\tta_3\tta_2\tta_1</mrow>
-						<mrow>			\amp  = \bbm 0\amp 1 \\ 1\amp 0\ebm\bbm 2\amp 0\\0\amp 1\ebm\bbm \sqrt{3}/2 \amp  -1/2 \\ 1/2 \amp  \sqrt{3}/2\ebm\bbm 1\amp 0\\0.5\amp 1\ebm</mrow>
-						<mrow>			\amp  = \bbm (\sqrt{3}+2)/4 \amp  \sqrt{3}/2 \\ (2\sqrt{3}-1)/2 \amp  -1\ebm</mrow>
-						<mrow>			\amp  \approx \bbm 0.933 \amp  0.866\\ 1.232 \amp  -1 \ebm</mrow>
-					</md>.
-				</p>				
-			</aside>
+							\tta_1 = \bbm 1 \amp 0\\0.5 \amp 1\ebm
+					</me>.
+				</p>
+				
+				<p>
+					After that, we want to rotate everything clockwise by <m>30^\circ</m>. To do this, we use 
+					<me>
+							\tta_2 = \bbm \cos 30^\circ  \amp  -\sin 30^\circ\\ \sin 30^\circ  \amp  \cos 30^\circ \ebm = \bbm \sqrt{3}/2 \amp  -1/2 \\ 1/2 \amp  \sqrt{3}/2\ebm
+					</me>.
+				</p>
+				
+				<p>
+					In order to do both of these operations, in order, we multiply <m>\tta_2\tta_1</m>. 
+				</p>
+				
+				<aside>
+					<p>
+						<alert>Note:</alert> recall from <xref ref="sec-matrix_multiplication"/> 
+						that matrix multiplication is <em>not</em> commutative. 
+						Since <m>A_1A_2\neq A_2A_1</m> in general, 
+						we should expect that the transformation <m>A_2(A_1\vec x) = (A_2A_1)\vec x</m> 
+						is not the same as the transformation <m>A_1(A_2\vec x) = (A_1A_2)\vec x</m>. 
+						Interpreted as transformations of the plane, this makes sense visually: 
+						for example, in most cases, a reflection followed by a rotation will not produce the same result as performing the rotation first, 
+						followed by the reflection. 
+						The reader is encouraged to experiment with a few examples to see what happens when the order is reversed.
+					</p>
 
-			<p>
-				Let's consider this closely. Suppose I want to know where a vector <m>\vx</m> ends up. 
-				We claim we can find the answer by multiplying <m>\tta\vx</m>. Why does this work? Consider:
-				<md>
-					<mrow>\tta\vx \amp = \tta_4\tta_3\tta_2\tta_1\vx \amp \amp</mrow>
-					<mrow>				\amp = \tta_4\tta_3\tta_2(\tta_1\vx) \amp  \amp \text{(performs the vertical shear)}</mrow>
-					<mrow>				\amp = \tta_4\tta_3(\tta_2\vx_1) \amp  \amp \text{(performs the rotation)}</mrow>
-					<mrow>				\amp = \tta_4(\tta_3\vx_2) \amp  \amp \text{(performs the horizontal stretch)}</mrow>
-					<mrow>				\amp = \tta_4\vx_3 \amp  \amp \text{(performs the diagonal reflection)}</mrow>
-					<mrow>				\amp = \vx_4 \amp  \amp \text{(the result of transforming } \vx)</mrow>
-				</md>
-			</p>
+					<p>
+						To perform the final two operations, we note that 
+						<me>
+								\tta_3 = \bbm 2 \amp 0\\0 \amp 1\ebm \quad \text{ and } \quad \tta_4 = \bbm 0\amp 1 \\ 1\amp 0\ebm
+						</me>
+						perform the horizontal stretch and diagonal reflection, respectively. 
+						Thus to perform all of the operations <q>at once,</q> we need to multiply by 
+						<md> 
+							<mrow>\tta \amp = \tta_4\tta_3\tta_2\tta_1</mrow>
+							<mrow>			\amp  = \bbm 0\amp 1 \\ 1\amp 0\ebm\bbm 2\amp 0\\0\amp 1\ebm\bbm \sqrt{3}/2 \amp  -1/2 \\ 1/2 \amp  \sqrt{3}/2\ebm\bbm 1\amp 0\\0.5\amp 1\ebm</mrow>
+							<mrow>			\amp  = \bbm (\sqrt{3}+2)/4 \amp  \sqrt{3}/2 \\ (2\sqrt{3}-1)/2 \amp  -1\ebm</mrow>
+							<mrow>			\amp  \approx \bbm 0.933 \amp  0.866\\ 1.232 \amp  -1 \ebm</mrow>
+						</md>.
+					</p>				
+				</aside>
 
-			<p>
-				Most readers are not able to visualize exactly what the given list of operations does to the Cartesian plane. 
-				In <xref ref="fig-trans_3_1"/> we sketch the transformed unit square; 
-				in <xref ref="fig-trans_3_2"/> we sketch a shape and its transformation.
-			</p>
+				<p>
+					Let's consider this closely. Suppose I want to know where a vector <m>\vx</m> ends up. 
+					We claim we can find the answer by multiplying <m>\tta\vx</m>. Why does this work? Consider:
+					<md>
+						<mrow>\tta\vx \amp = \tta_4\tta_3\tta_2\tta_1\vx \amp \amp</mrow>
+						<mrow>				\amp = \tta_4\tta_3\tta_2(\tta_1\vx) \amp  \amp \text{(performs the vertical shear)}</mrow>
+						<mrow>				\amp = \tta_4\tta_3(\tta_2\vx_1) \amp  \amp \text{(performs the rotation)}</mrow>
+						<mrow>				\amp = \tta_4(\tta_3\vx_2) \amp  \amp \text{(performs the horizontal stretch)}</mrow>
+						<mrow>				\amp = \tta_4\vx_3 \amp  \amp \text{(performs the diagonal reflection)}</mrow>
+						<mrow>				\amp = \vx_4 \amp  \amp \text{(the result of transforming } \vx)</mrow>
+					</md>
+				</p>
 
-			<figure xml:id="fig-trans_3_1">
-				<caption>The transformed unit square in <xref ref="ex_transf_3"/></caption>
-				<image>
-					<shortdescription>The unit square and its transformed image.</shortdescription>
-					<latex-image label="img-trans-3-1">
-						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-.5}{2.5}{1,2};
-						\drawylines{-1.5}{1.5}{-1,1};
-						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquare[thick,cm={0.933,1.232,0.866,-1,(0,0)}];							
-						\end{tikzpicture}
-					</latex-image>
-				</image>
-			</figure>
+				<p>
+					Most readers are not able to visualize exactly what the given list of operations does to the Cartesian plane. 
+					In <xref ref="fig-trans_3_1"/> we sketch the transformed unit square; 
+					in <xref ref="fig-trans_3_2"/> we sketch a shape and its transformation.
+				</p>
 
-			<figure xml:id="fig-trans_3_2">
-				<caption>A transformed shape in <xref ref="ex_transf_3"/></caption>
-				<sidebyside widths="40% 55%" margins="auto" valign="top">
+				<figure xml:id="fig-trans_3_1">
+					<caption>The transformed unit square in <xref ref="ex_transf_3"/></caption>
 					<image>
-						<shortdescription>The VMI logo, centred at the origin.</shortdescription>
-						<latex-image label="img-trans-3-2a">
-							\begin{tikzpicture}[x={(.75cm,0)},y={(0,.75cm)},&gt;=latex]
-							\draw [ultra thin,gray,step=.75cm] (-3,-3) grid (3,3);
-							\draw [&lt;-&gt;] (-3,0) -- (3,0);
-							\draw [&lt;-&gt;] (0,-3.5) -- (0,3.5);
-							\vmispider[very thick];
-							\end{tikzpicture}
-						</latex-image>						
-					</image>
-
-					<image>
-						<shortdescription>The transformed image of the VMI logo</shortdescription>
-						<latex-image label="img-trans-3-2b">
-							\begin{tikzpicture}[x={(.75cm,0)},y={(0,.75cm)},&gt;=latex]
-							\draw [ultra thin,gray,step=.75cm] (-3,-5) grid (4,3);
-							\draw [&lt;-&gt;] (-3.5,0) -- (4.5,0);
-							\draw [&lt;-&gt;] (0,-5.5) -- (0,3.5);
-							\vmispider[very thick,cm={0.933,1.232,0.866,-1,(0,0)}];
+						<shortdescription>The unit square and its transformed image.</shortdescription>
+						<latex-image label="img-trans-3-1">
+							\begin{tikzpicture}[&gt;=latex]
+							\drawxlines{-.5}{2.5}{1,2};
+							\drawylines{-1.5}{1.5}{-1,1};
+							\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
+							\unitsquare[thick,cm={0.933,1.232,0.866,-1,(0,0)}];							
 							\end{tikzpicture}
 						</latex-image>
-						
 					</image>
-				</sidebyside>
-			</figure>
-		</solution>
-	</example>
+				</figure>
 
-	<p>
-		Once we know what matrices perform the basic transformations, 
-		(or know where to find them) performing complex transformations on the Cartesian plane really isn't that <m>\ldots</m> complex. 
-		It boils down to multiplying by a series of matrices. 
-	</p>
+				<figure xml:id="fig-trans_3_2">
+					<caption>A transformed shape in <xref ref="ex_transf_3"/></caption>
+					<sidebyside widths="40% 55%" margins="auto" valign="top">
+						<image>
+							<shortdescription>The VMI logo, centred at the origin.</shortdescription>
+							<latex-image label="img-trans-3-2a">
+								\begin{tikzpicture}[x={(.75cm,0)},y={(0,.75cm)},&gt;=latex]
+								\draw [ultra thin,gray,step=.75cm] (-3,-3) grid (3,3);
+								\draw [&lt;-&gt;] (-3,0) -- (3,0);
+								\draw [&lt;-&gt;] (0,-3.5) -- (0,3.5);
+								\vmispider[very thick];
+								\end{tikzpicture}
+							</latex-image>						
+						</image>
 
-	<p>
-		We've shown many examples of transformations that we can do, and we've mentioned just a few that we can't <mdash/> for instance, 
-		we can't turn a square into a circle. Why not? Why is it that straight lines get sent to straight lines? 
-	</p>
+						<image>
+							<shortdescription>The transformed image of the VMI logo</shortdescription>
+							<latex-image label="img-trans-3-2b">
+								\begin{tikzpicture}[x={(.75cm,0)},y={(0,.75cm)},&gt;=latex]
+								\draw [ultra thin,gray,step=.75cm] (-3,-5) grid (4,3);
+								\draw [&lt;-&gt;] (-3.5,0) -- (4.5,0);
+								\draw [&lt;-&gt;] (0,-5.5) -- (0,3.5);
+								\vmispider[very thick,cm={0.933,1.232,0.866,-1,(0,0)}];
+								\end{tikzpicture}
+							</latex-image>
+							
+						</image>
+					</sidebyside>
+				</figure>
+			</solution>
+		</example>
 
-	<p>
-		All these questions require us to think like mathematicians <mdash/> we are being asked to study the 
-		<em>properties</em> of an object we just learned about and their connections to things we've already learned. 
-		We'll do all this (and more!) in the following section.
-	</p>
+		<p>
+			Once we know what matrices perform the basic transformations, 
+			(or know where to find them) performing complex transformations on the Cartesian plane really isn't that <m>\ldots</m> complex. 
+			It boils down to multiplying by a series of matrices. 
+		</p>
+
+		<p>
+			We've shown many examples of transformations that we can do, and we've mentioned just a few that we can't <mdash/> for instance, 
+			we can't turn a square into a circle. Why not? Why is it that straight lines get sent to straight lines? 
+		</p>
+
+		<p>
+			All these questions require us to think like mathematicians <mdash/> we are being asked to study the 
+			<em>properties</em> of an object we just learned about and their connections to things we've already learned. 
+			We'll do all this (and more!) in the following section.
+		</p>
+	</subsection>
 
 	<exercises>
 		<exercisegroup cols="2">

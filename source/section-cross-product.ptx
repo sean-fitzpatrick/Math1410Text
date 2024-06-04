@@ -182,7 +182,7 @@
       <shortdescription>Crossing out the row and column containing the unit vector i, and writing the resulting 2x2 determinant.</shortdescription>
       <latex-image label="img-crossp-det33a">
         \begin{tikzpicture}[baseline=-3pt,&gt;=stealth]
-          \node at (0,0) {$\bvm \fbox{\veci} \amp \vecj \amp \veck \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm -1&amp;4\\2&amp;5\evm\veci = -13\veci$};
+          \node at (0,0) {$\bvm \boxed{\veci} \amp \vecj \amp \veck \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm -1&amp;4\\2&amp;5\evm\veci = -13\veci$};
           \draw[thin] (-2.3,.6) -- (-2.3, -.6);
           \draw[thin] (-2.5,.4) -- (-.8,.4);
         \end{tikzpicture}
@@ -191,9 +191,9 @@
 
     <image width="47%">
       <shortdescription>Crossing out the row and column containing the unit vector j, and writing the resulting 2x2 determinant.</shortdescription>
-      <latex-image label="img-=crossp-det33b">
+      <latex-image label="img-crossp-det33b">
         \begin{tikzpicture}[baseline=-3pt,&gt;=stealth]
-          \node at (0,0) {$\bvm \veci \amp \fbox{\vecj} \amp \veck \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm 2&amp;4\\3&amp;5\evm\vecj = -2\vecj$};
+          \node at (0,0) {$\bvm \veci \amp \boxed{\vecj} \amp \veck \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm 2&amp;4\\3&amp;5\evm\vecj = -2\vecj$};
           \draw[thin] (-1.45,.6) -- (-1.45, -.6);
           \draw[thin] (-2.3,.4) -- (-.6,.4);
         \end{tikzpicture}
@@ -202,9 +202,9 @@
 
     <image width="47%">
       <shortdescription>Crossing out the row and column containing the unit vector k, and writing the resulting 2x2 determinant.</shortdescription>
-      <latex-image label="img-=crossp-det33c">
+      <latex-image label="img-crossp-det33c">
         \begin{tikzpicture}[baseline=-3pt,&gt;=stealth]
-          \node at (0,0) {$\bvm \veci \amp \vecj \amp \fbox{\veck} \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm 2&amp;-1\\3&amp;2\evm\veck = 7\veck$};
+          \node at (0,0) {$\bvm \veci \amp \vecj \amp \boxed{\veck} \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm 2&amp;-1\\3&amp;2\evm\veck = 7\veck$};
           \draw[thin] (-0.85,.6) -- (-0.85, -.6);
           \draw[thin] (-2.3,.4) -- (-.6,.4);
         \end{tikzpicture}
@@ -719,7 +719,7 @@
               <li>
                 <p>
                   Find the area of the parallelogram defined by the vectors
-                  <m>\vecu = \bbm  2\\1\ra</m> and <m>\vecv = \la 1\\3\ebm</m>.
+                  <m>\vecu = \bbm  2\\1\ebm</m> and <m>\vecv = \bbm 1\\3\ebm</m>.
                 </p>
               </li>
 
@@ -934,18 +934,8 @@
         </statement>
         <solution>
           <p>
-            We found the area of this triangle in <xref ref="ex_abc4"/>
-            to be <m>1.5</m> using integration.
-            There we discussed the fact that finding the area of a triangle can be inconvenient using the
-            <q><m>\frac12bh</m></q>
-            formula as one has to compute the height,
-            which generally involves finding angles, etc.
-            Using a cross product is much more direct.
-          </p>
-
-          <p>
             We can choose any two sides of the triangle to use to form vectors;
-            we choose <m>\overrightarrow{AB} = \bbm  1\\1\ra</m> and <m>\overrightarrow{AC}=\la 2\\-1\ebm</m>.
+            we choose <m>\overrightarrow{AB} = \bbm  1\\1\ebm</m> and <m>\overrightarrow{AC}=\bbm 2\\-1\ebm</m>.
             As in the previous example,
             we will rewrite these vectors with a third component of 0 so that we can apply the cross product.
             The area of the triangle is
@@ -1220,7 +1210,7 @@
       </example>
 
       <p>
-        Let's take another look at how <xref ref="eq-crossp2" text="local">Equation</xref> 
+        Let's take another look at how <xref ref="eq_crossp2" text="local">Equation</xref> 
         is computed in terms of our formulas for the dot and cross products. 
         With <m>\vec u = \bbm  u_1\\ u_2\\ u_3\ebm, \vec v = \bbm  v_1\\ v_2\\ v_3\ebm</m>, 
         and <m>\vec w = \bbm  w_1\\ w_2\\ w_3\ebm</m>, we have
@@ -1370,11 +1360,11 @@
                   We start by determining vectors for the force and lever arm.
                   Since the lever arm makes a
                   <m>45^\circ</m> angle with the horizontal and is 2ft long,
-                  we can state that <m>\vec \ell = 2\bbm  \cos(45^\circ) \\\sin(45^\circ) \ra = \la \sqrt2\\\sqrt2\ebm</m>.
+                  we can state that <m>\vec \ell = 2\bbm  \cos(45^\circ) \\\sin(45^\circ) \ebm = \bbm \sqrt2\\\sqrt2\ebm</m>.
 
                   Since the force vector is perpendicular to the lever arm (as seen in the left hand side of <xref ref="fig_crossp7"/>),
                   we can conclude it is making an angle of <m>-45^\circ</m> with the horizontal.
-                  As it has a magnitude of 10lb, we can state <m>\vec F = 10\bbm  \cos(-45^\circ)\\ \sin(-45^\circ)\ra = \la 5\sqrt2\\-5\sqrt2\ebm</m>.
+                  As it has a magnitude of 10lb, we can state <m>\vec F = 10\bbm  \cos(-45^\circ)\\ \sin(-45^\circ)\ebm = \bbm 5\sqrt2\\-5\sqrt2\ebm</m>.
 
                   Using <xref ref="eq_crossp3">Equation</xref> to find the torque requires a cross product. We again let the third component of each vector be 0  and compute the cross product:
                   <md>
@@ -1401,7 +1391,7 @@
                   <m>-15^\circ</m> angle with the horizontal.
                   Thus
                   <md>
-                    <mrow>\vec F = 10\bbm  \cos-15^\circ\\\sin-15^\circ\ra \amp = \la \frac{5(1+\sqrt3)}{\sqrt2}\\\frac{5(-1+\sqrt3)}{\sqrt2}\ebm</mrow>
+                    <mrow>\vec F = 10\bbm  \cos-15^\circ\\\sin-15^\circ\ebm \amp = \bbm \frac{5(1+\sqrt3)}{\sqrt2}\\\frac{5(-1+\sqrt3)}{\sqrt2}\ebm</mrow>
                     <mrow>\amp \approx \bbm  9.659\\-2.588\ebm</mrow>
                   </md>.
                   We again make the third component 0 and take the cross product to find the torque:

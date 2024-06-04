@@ -205,7 +205,7 @@
   <p>
     We convert the above linear system into an augmented matrix and find the reduced row echelon form: 
     <me>
-      \bam{3}1 \amp 1 \amp 1\amp 2\\1\amp -1\amp 2\amp -3\\2\amp 0\amp 1\amp 1\eam \quad\overrightarrow{\text{rref}}\quad \bam{3}1\amp 0\amp 0\amp 1\\0\amp 1\amp 0\amp 2\\0\amp 0\amp 1\amp -1\eam
+      \left[\begin{array}{ccc|c}1 \amp 1 \amp 1\amp 2\\1\amp -1\amp 2\amp -3\\2\amp 0\amp 1\amp 1\end{array}\right] \quad\overrightarrow{\text{rref}}\quad \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 1\\0\amp 1\amp 0\amp 2\\0\amp 0\amp 1\amp -1\end{array}\right]
     </me>.
     This tells us that <m>x_1=1</m>, <m>x_2=2</m> and <m>x_3 = -1</m>, so 
     <me>
@@ -236,7 +236,7 @@
         The solution is rather straightforward, even though we did a lot of work before to find the answer. 
         Form the augmented matrix <m>\bbm \tta\amp \vb\ebm</m> and interpret its reduced row echelon form.
         <me>
-          \bam{3} 1 \amp 2 \amp 3\amp 5\\-1\amp 2\amp 1\amp -1\\1\amp 1\amp 0\amp 2\eam\quad\overrightarrow{\text{rref}}\quad \bam{3}1\amp 0\amp 0\amp 2\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 1\eam
+          \left[\begin{array}{ccc|c} 1 \amp 2 \amp 3\amp 5\\-1\amp 2\amp 1\amp -1\\1\amp 1\amp 0\amp 2\end{array}\right]\quad\overrightarrow{\text{rref}}\quad \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 2\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 1\end{array}\right]
         </me>.
       </p>
 
@@ -312,7 +312,7 @@
       <p>
         To solve this system, put the augmented matrix into reduced row echelon form, which we do below.
         <me>
-          \bam{2} 1 \amp 2 \amp 0\\2\amp 4\amp 0\eam \quad \arref \quad \bam{2} 1\amp 2\amp 0\\0\amp 0\amp 0\eam
+          \left[\begin{array}{cc|c} 1 \amp 2 \amp 0\\2\amp 4\amp 0\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c} 1\amp 2\amp 0\\0\amp 0\amp 0\end{array}\right]
         </me>
       </p>
       
@@ -344,11 +344,11 @@
         </me>.
         For convenience, if we set 
         <me>
-          \vv = \bbm -2\\1\ebm
+          \vvv = \bbm -2\\1\ebm
         </me>,
         then our solution can be simply written as 
         <me>
-          \vx = t\vv
+          \vx = t\vvv
         </me>.
       </p>
 
@@ -369,7 +369,7 @@
         We should check our work; multiply each of the above vectors by <m>\tta</m> to see if we indeed get <m>\zero</m>. 
         Or, we can save ourselves some time and check the general solution. We have
         <me>
-          A\vx = A(t\vv) = t(A\vv) = t\bbm 1 \amp 2\\2 \amp 4\ebm \bbm -2\\1\ebm = t\bbm 0\\0\ebm = \bbm 0\\0\ebm
+          A\vx = A(t\vvv) = t(A\vvv) = t\bbm 1 \amp 2\\2 \amp 4\ebm \bbm -2\\1\ebm = t\bbm 0\\0\ebm = \bbm 0\\0\ebm
         </me>
         for <em>every</em> value of <m>t</m>.
       </p>
@@ -384,8 +384,8 @@
         <me>
           \vx = x_2\bbm-2\\1\ebm
         </me>.
-        This means that any scalar multiple of the vector <m>\vv = \bbm -2\\1\ebm</m> is a solution; 
-        we know how to sketch the scalar multiples of <m>\vv</m>. This is done in <xref ref="fig-vect_sol_101"/>. 
+        This means that any scalar multiple of the vector <m>\vvv = \bbm -2\\1\ebm</m> is a solution; 
+        we know how to sketch the scalar multiples of <m>\vvv</m>. This is done in <xref ref="fig-vect_sol_101"/>. 
       </p>
       
       <figure xml:id="fig-vect_sol_101">
@@ -398,7 +398,7 @@
             \drawxlines{-4.5}{4.5}{-4,...,4};
             \drawylines{-3.5}{3.5}{-3,...,3};
             \draw [&lt;-&gt;](-4,2)--(4,-2);
-            \draw [-&gt;,thick] (0,0)--(-2,1) node [above] {$\vv$};
+            \draw [-&gt;,thick] (0,0)--(-2,1) node [above] {$\vvv$};
               
             \end{tikzpicture}
           </latex-image>
@@ -406,7 +406,7 @@
       </figure>
 
       <p>
-        Here vector <m>\vv</m> is drawn as well as the line that goes through the origin in the direction of <m>\vv</m>. 
+        Here vector <m>\vvv</m> is drawn as well as the line that goes through the origin in the direction of <m>\vvv</m>. 
         Any vector along this line is a solution. So in some sense, we can say that the solution to <m>\tta\vx=\zero</m> is <em>a line</em>. 
       </p>      
     </solution>
@@ -443,7 +443,7 @@
   </p>
 
   <p>
-    Notice that the line <m>\vx =t\vv</m> in the solution of <xref ref="ex_vector_solution_101"/> above passes through the origin. 
+    Notice that the line <m>\vx =t\vvv</m> in the solution of <xref ref="ex_vector_solution_101"/> above passes through the origin. 
     This is an important characteristic of homogeneous systems: 
     since <m>A\vec 0 = \vec 0</m> for any matrix <m>A</m>, we always have (at least) the solution <m>\vx = \vec 0</m>. 
     (We'll have more to say about this below.)
@@ -465,7 +465,7 @@
         We proceed exactly as we did in <xref ref="ex_vector_solution_101"/>, 
         by forming the proper augmented matrix and putting it into reduced row echelon form, which we do below. 
         <me>
-          \bam{2} 2 \amp -3 \amp 0\\-2 \amp  3\amp 0\eam \quad \arref \quad \bam{2} 1 \amp  -3/2 \amp  0 \\0\amp 0\amp 0\eam
+          \left[\begin{array}{cc|c} 2 \amp -3 \amp 0\\-2 \amp  3\amp 0\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c} 1 \amp  -3/2 \amp  0 \\0\amp 0\amp 0\end{array}\right]
         </me>
       </p>
 
@@ -481,11 +481,11 @@
         </me>.
         If we set 
         <me>
-          \vv = \bbm 3/2\\1\ebm
+          \vvv = \bbm 3/2\\1\ebm
         </me>,
         then our solution can be written as 
         <me>
-          \left\{t\vv \,|\, t\in\R \text{ and } \vv = \bbm 3/2\\1\ebm\right\}
+          \left\{t\vvv \,|\, t\in\R \text{ and } \vvv = \bbm 3/2\\1\ebm\right\}
         </me>.
       </p>
 
@@ -501,7 +501,7 @@
         <me>
           \vx = t\bbm 3/2 \\1\ebm = t\left(\frac{1}{2}\bbm 3\\2\ebm \right) = \frac{t}{2}\bbm 3\\2\ebm = s\bbm 3\\2\ebm = s\vec w
         </me>,
-        where <m>\vec w = 2\vv</m>.
+        where <m>\vec w = 2\vvv</m>.
       </p>
 
       <p>
@@ -519,7 +519,7 @@
             \drawxlines{-3.5}{6}{-3,...,6};
             \drawylines{-2.5}{4.5}{-2,...,4};
             \draw [&lt;-&gt;](-3,-2)--(6,4);
-            \draw [-&gt;,thick] (0,0)--(1.5,1) node [above] {$\vv$};
+            \draw [-&gt;,thick] (0,0)--(1.5,1) node [above] {$\vvv$};
               
             \end{tikzpicture}
           </latex-image>
@@ -529,8 +529,8 @@
   </example>
 
   <p>
-    In the last two examples, we saw that the general solution could be written in the form <m>\vx = t\vv</m> 
-    for a vector <m>\vv</m> such that <m>A\vv =\vec 0</m>. Such vectors are known as the <term>basic solutions</term> 
+    In the last two examples, we saw that the general solution could be written in the form <m>\vx = t\vvv</m> 
+    for a vector <m>\vvv</m> such that <m>A\vvv =\vec 0</m>. Such vectors are known as the <term>basic solutions</term> 
     to a  homogeneous linear system.
   </p>
 
@@ -575,8 +575,8 @@
       <p>        
         As usual, to find the basic solutions, we set up the augmented matrix of the system and reduce:
         <me>
-          \bam{4}1\amp -2\amp 0\amp 4\amp 0\\3\amp -1\amp 5\amp 2\amp 0\\-2\amp -6\amp -10\amp 12\amp 0\eam \quad \arref \quad
-         \bam{4}1\amp 0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp -2\amp 0\\0\amp 0\amp 0\amp 0\amp 0\eam
+          \left[\begin{array}{cccc|c}1\amp -2\amp 0\amp 4\amp 0\\3\amp -1\amp 5\amp 2\amp 0\\-2\amp -6\amp -10\amp 12\amp 0\end{array}\right] \quad \arref \quad
+         \left[\begin{array}{cccc|c}1\amp 0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp -2\amp 0\\0\amp 0\amp 0\amp 0\amp 0\end{array}\right]
         </me>.
       </p>
 
@@ -592,9 +592,9 @@
         <me>
           \vx = \bbm x_1\\x_2\\x_3\\x_4\ebm = \bbm -2s\\-s+2t\\s\\t\ebm = s\bbm -2\\-1\\1\\0\ebm + t\bbm 0\\2\\0\\1\ebm
         </me>.
-        From the above, we see that the general solution can be written as <m>\vx = s\vv +t\vec{w}</m>, where 
+        From the above, we see that the general solution can be written as <m>\vx = s\vvv +t\vec{w}</m>, where 
         <me>
-          \vv = \bbm -2\\-1\\1\\0\ebm \quad \text{ and } \quad \vec{w} = \bbm 0\\2\\0\\1\ebm
+          \vvv = \bbm -2\\-1\\1\\0\ebm \quad \text{ and } \quad \vec{w} = \bbm 0\\2\\0\\1\ebm
         </me>
         are the basic solutions to <m>A\vx = \vec 0</m>. 
       </p>
@@ -626,7 +626,7 @@
       <p>
         Our methodology is the same as before; we form the augmented matrix and put it into reduced row echelon form.
         <me>
-          \bam{2} 1 \amp 2 \amp 3\\2\amp 4\amp 6\eam \quad \arref \quad \bam{2} 1\amp 2\amp 3\\0\amp 0\amp 0\eam
+          \left[\begin{array}{cc|c} 1 \amp 2 \amp 3\\2\amp 4\amp 6\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c} 1\amp 2\amp 3\\0\amp 0\amp 0\end{array}\right]
         </me>
       </p>
 
@@ -659,11 +659,11 @@
         Once again, let's give names to the different component vectors of this solution 
         (we are getting near the explanation of why we are doing this). Let 
         <me>
-          \vec{x}_p = \bbm 3\\0\ebm \quad \text{and} \quad \vv = \bbm-2\\1\ebm
+          \vec{x}_p = \bbm 3\\0\ebm \quad \text{and} \quad \vvv = \bbm-2\\1\ebm
         </me>.
         We can then write our solution in the form 
         <me>
-          \vx = \vec{x}_p + t\vv
+          \vx = \vec{x}_p + t\vvv
         </me>.
       </p>
 
@@ -682,9 +682,9 @@
 
       <p>
         Each vector in the solution can be written as the sum of two vectors: 
-        <m>\vec{x}_p</m> and a multiple of <m>\vv</m>. In <xref ref="fig-vect_sol_103"/>, 
-        <m>\vec{x}_p</m> is graphed and <m>\vv</m> is graphed with its origin starting at the tip of <m>\vec{x}_p</m>. 
-        Finally, a line is drawn in the direction of <m>\vv</m> from the tip of <m>\vec{x}_p</m>; 
+        <m>\vec{x}_p</m> and a multiple of <m>\vvv</m>. In <xref ref="fig-vect_sol_103"/>, 
+        <m>\vec{x}_p</m> is graphed and <m>\vvv</m> is graphed with its origin starting at the tip of <m>\vec{x}_p</m>. 
+        Finally, a line is drawn in the direction of <m>\vvv</m> from the tip of <m>\vec{x}_p</m>; 
         any vector pointing to any point on this line is a solution to <m>\ttaxb</m>.
       </p>
 
@@ -692,14 +692,14 @@
         <caption>The solution, as a line, to <m>\protect\tta\protect\vx=\protect\vb</m> in <xref ref="ex_vect_sol_103"/></caption>
         <image>
           <shortdescription>A line in the plane through (3,0) with slope -0.5. A vector points from the origin to (3,0), and a vector v points from (3,0) to (3/2,1).</shortdescription>
-          <latex-image label="fig-vect-sol-103">
+          <latex-image label="img-vect-sol-103">
             \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
 
             \drawxlines{-4.5}{4.5}{-4,...,4};
             \drawylines{-2.5}{5.5}{-2,...,5};
             \draw [&lt;-&gt;](5,-1)--(-5,4);
             \draw [-&gt;,thick] (0,0)--(3,0) node [below] {$\vec{x}_p$};
-            \draw [-&gt;,thick] (3,0) -- (1,1) node [above] {$\vv$};
+            \draw [-&gt;,thick] (3,0) -- (1,1) node [above] {$\vvv$};
               
             \end{tikzpicture}
           </latex-image>
@@ -789,13 +789,13 @@
     </me>.
     The solution to the first system of equations, <m>\ttaxo</m>, is 
     <me>
-      \vx = t\bbm-2\\1\ebm = t\vv
+      \vx = t\bbm-2\\1\ebm = t\vvv
     </me>
     and the solution to the second set of equations, <m>\ttaxb</m>, is 
     <me>
-      \vx = \bbm 3\\0\ebm + t\bbm-2\\1\ebm = \vec{x}_p+t\vv,
+      \vx = \bbm 3\\0\ebm + t\bbm-2\\1\ebm = \vec{x}_p+t\vvv,
     </me>
-    for all <m>t\in\R</m>, where <m>\vec{x}_p = \bbm 3\\0\ebm</m> and <m>\vv = \bbm -2\\1\ebm</m>.
+    for all <m>t\in\R</m>, where <m>\vec{x}_p = \bbm 3\\0\ebm</m> and <m>\vvv = \bbm -2\\1\ebm</m>.
   </p>
 
   <p>
@@ -805,10 +805,10 @@
     </me>,
     so <m>\vec{x}_p</m> is a solution. 
     (The subscript <m>p</m> of <q><m>\vec{x}_p</m></q> is used to denote that this vector is a <term>particular</term> solution: 
-    see <xref ref="def-particular"/>.) What about the general solution <m>\vec x = \vec{x}_p+t\vv</m>? 
-    Recalling that <m>A\vv=\zero</m>, we have
+    see <xref ref="def-particular"/>.) What about the general solution <m>\vec x = \vec{x}_p+t\vvv</m>? 
+    Recalling that <m>A\vvv=\zero</m>, we have
     <md>
-      <mrow>A\vx \amp  = A(\vec{x}_p+t\vec v) = A\vec{x}_p + t(A\vv)</mrow>
+      <mrow>A\vx \amp  = A(\vec{x}_p+t\vec v) = A\vec{x}_p + t(A\vvv)</mrow>
       <mrow> \amp  = \vec{b}+t(\vec 0) = \vec{b}</mrow>
     </md>,
     for any value of <m>t</m>, so there are infinitely many solutions to our system, one for each <m>t\in \R</m>. 
@@ -818,18 +818,18 @@
 
   <p>
     So we wonder: does this mean that <m>\tta\vx = \vb</m> will have infinitely many solutions? 
-    After all, if <m>\vec{x}_p</m> and <m>\vec{x}_p+\vv</m> are both solutions, don't we have infinitely many solutions?
+    After all, if <m>\vec{x}_p</m> and <m>\vec{x}_p+\vvv</m> are both solutions, don't we have infinitely many solutions?
   </p>
 
   <p>
-    No. If <m>\tta\vx = \zero</m> has exactly one solution, then <m>\vv = \zero</m>, 
-    and <m>\vec{x}_p = \vec{x}_p +\vv</m>; we only have one solution.
+    No. If <m>\tta\vx = \zero</m> has exactly one solution, then <m>\vvv = \zero</m>, 
+    and <m>\vec{x}_p = \vec{x}_p +\vvv</m>; we only have one solution.
   </p>
 
   <p>
     So here is the culmination of all of our fun that started a few pages back. 
-    If <m>\vv</m> is a solution to <m>\tta\vx=\zero</m> and <m>\vec{x}_p</m> is a solution to <m>\tta\vx=\vb</m>, 
-    then <m>\vec{x}_p+\vv</m> is also a solution to <m>\tta\vx=\vb</m>. 
+    If <m>\vvv</m> is a solution to <m>\tta\vx=\zero</m> and <m>\vec{x}_p</m> is a solution to <m>\tta\vx=\vb</m>, 
+    then <m>\vec{x}_p+\vvv</m> is also a solution to <m>\tta\vx=\vb</m>. 
     If <m>\tta\vx=\zero</m> has infinitely many solutions, so does <m>\tta\vx = \vb</m>; 
     if <m>\tta\vx=\zero</m> has only one solution, so does <m>\tta\vx = \vb</m>. 
     This culminating idea is of course important enough to be stated again.
@@ -976,7 +976,7 @@
       <p>
         To solve the system, we put the associated augmented matrix into reduced row echelon form and interpret the results.
         <me>
-          \bam{5}1 \amp 2 \amp -3\amp 2\amp 7\amp 2\\3\amp 4\amp 5\amp 2\amp 3\amp -4\eam\quad \arref \quad \bam{5}1\amp 0\amp 11\amp -2\amp -11\amp -8\\0\amp 1\amp -7\amp 2\amp 9\amp 5\eam
+          \left[\begin{array}{ccccc|c}1 \amp 2 \amp -3\amp 2\amp 7\amp 2\\3\amp 4\amp 5\amp 2\amp 3\amp -4\end{array}\right]\quad \arref \quad \left[\begin{array}{ccccc|c}1\amp 0\amp 11\amp -2\amp -11\amp -8\\0\amp 1\amp -7\amp 2\amp 9\amp 5\end{array}\right]
         </me>
         <md>
           <mrow>x_1 \amp =-8-11r+2s+11t</mrow> 
@@ -1000,11 +1000,11 @@
 
       <p>
         So <m>\vec{x}_p</m> is a particular solution; <m>\tta\vxp = \vb</m>. 
-        (Multiply it out to verify that this is true.) The other vectors, <m>\vu</m>, <m>\vv</m> and <m>\vec{w}</m>, 
+        (Multiply it out to verify that this is true.) The other vectors, <m>\vu</m>, <m>\vvv</m> and <m>\vec{w}</m>, 
         that are multiplied by our free variables <m>x_3=r</m>, <m>x_4=s</m> and <m>x_5=t</m>, 
         are each solutions to the homogeneous equations, <m>\tta\vx=\zero</m>. 
         Any linear combination of these three vectors, <ie/>, 
-        any vector found by choosing values for <m>r</m>, <m>s</m> and <m>t</m> in <m>r\vu+s\vv+t\vec{w}</m>
+        any vector found by choosing values for <m>r</m>, <m>s</m> and <m>t</m> in <m>r\vu+s\vvv+t\vec{w}</m>
         is a solution to <m>\tta\vx=\zero</m>.
       </p>
     </solution>
@@ -1076,7 +1076,7 @@
       <p>
         To solve <m>\ttaxb</m>, we put the appropriate augmented matrix into reduced row echelon form and interpret the results.
         <me>
-          \bam{2}1 \amp 1 \amp 1\\2\amp 2\amp 1\eam \quad \arref \quad \bam{2}1\amp 1\amp 0\\0\amp 0\amp 1\eam
+          \left[\begin{array}{cc|c}1 \amp 1 \amp 1\\2\amp 2\amp 1\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c}1\amp 1\amp 0\\0\amp 0\amp 1\end{array}\right]
         </me>
       </p>
 
@@ -1090,8 +1090,8 @@
         <p>
           As previously noted, the fact that <m>\ttaxb</m> has no solution in <xref ref="ex_vector_solution_7"/> 
           simply indicates the fact that <m>\vec{b}</m> is not in the column space of <m>A</m>. Since the rank of <m>A</m> is equal to one, 
-          we know that <m>\operatorname{col}(A)</m> is spanned by the single vector <m>\vv = \bbm 1\\2\ebm</m>. 
-          Thus, we can only expect <m>\ttaxb</m> to have a solution if <m>\vb</m> is a scalar multiple of <m>\vv</m>.
+          we know that <m>\operatorname{col}(A)</m> is spanned by the single vector <m>\vvv = \bbm 1\\2\ebm</m>. 
+          Thus, we can only expect <m>\ttaxb</m> to have a solution if <m>\vb</m> is a scalar multiple of <m>\vvv</m>.
         </p>
       </aside> 
 
@@ -1159,9 +1159,9 @@
     
       <introduction>
         <p>
-          A matrix <m>\tta</m> and vectors <m>\vb</m>, <m>\vu</m> and <m>\vv</m> are given. 
-          Verify that <m>\vu</m> and <m>\vv</m> are both solutions to the equation <m>\ttaxb</m>; 
-          that is, show that <m>\tta\vu=\tta\vv=\vb</m>.
+          A matrix <m>\tta</m> and vectors <m>\vb</m>, <m>\vu</m> and <m>\vvv</m> are given. 
+          Verify that <m>\vu</m> and <m>\vvv</m> are both solutions to the equation <m>\ttaxb</m>; 
+          that is, show that <m>\tta\vu=\tta\vvv=\vb</m>.
         </p>
       </introduction>
     
@@ -1171,12 +1171,12 @@
             <m>\tta = \bbm 1 \amp -2\   -3 \amp 6 \ebm </m>,       
             <m>\vb=\bbm 0\\   0 \ebm </m>, 
             <m>\vu = \bbm 2\\ 1 \ebm</m>, 
-            <m>\vv = \bbm -10\\ -5 \ebm</m> 
+            <m>\vvv = \bbm -10\\ -5 \ebm</m> 
           </p>
         </statement>
         <answer>
           <p>
-            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+            Multiply <m>\tta\vu</m> and <m>\tta\vvv</m> to verify.
           </p>
         </answer>
       </exercise>
@@ -1187,12 +1187,12 @@
             <m>\tta = \bbm 1 \amp 0\   2 \amp 0 \ebm </m>,       
             <m>\vb=\bbm 0\\   0 \ebm </m>, 
             <m>\vu = \bbm 0\\ -1 \ebm</m>, 
-            <m>\vv = \bbm 0\\ 59 \ebm </m>
+            <m>\vvv = \bbm 0\\ 59 \ebm </m>
           </p>
         </statement>
         <answer>
           <p>
-            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+            Multiply <m>\tta\vu</m> and <m>\tta\vvv</m> to verify.
           </p>
         </answer>
       </exercise>
@@ -1202,12 +1202,12 @@
           <p>
             <m>\tta = \bbm 1 \amp 0\   2 \amp 0 \ebm </m>, 
             <m>\vb=\bbm -3\\   -6 \ebm </m>, 
-            <m>\vu = \bbm -3\\ -1 \ebm</m>, <m>\vv = \bbm -3\\ 59 \ebm </m>
+            <m>\vu = \bbm -3\\ -1 \ebm</m>, <m>\vvv = \bbm -3\\ 59 \ebm </m>
           </p>
         </statement>
         <answer>
           <p>
-            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+            Multiply <m>\tta\vu</m> and <m>\tta\vvv</m> to verify.
           </p>
         </answer>
       </exercise>
@@ -1217,12 +1217,12 @@
           <p>
             <m>\tta = \bbm 1 \amp -2\   -3 \amp 6 \ebm </m>,       
             <m>\vb=\bbm 2\\   -6 \ebm </m>, 
-            <m>\vu = \bbm 0\\ -1 \ebm</m>, <m>\vv = \bbm 2\\ 0 \ebm</m> 
+            <m>\vu = \bbm 0\\ -1 \ebm</m>, <m>\vvv = \bbm 2\\ 0 \ebm</m> 
           </p>
         </statement>
         <answer>
           <p>
-            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+            Multiply <m>\tta\vu</m> and <m>\tta\vvv</m> to verify.
           </p>
         </answer>
       </exercise>
@@ -1233,12 +1233,12 @@
             <m>\tta = \bbm 0  \amp  -3  \amp  -1 &amp; -3 \    -4 &amp; 2 &amp; -3 &amp; 5 \ebm </m>, 
             <m>\vb=\bbm 0\\   0 \ebm </m>, 
             <m>\vu = \bbm 11 \\ 4 \\ -12 \\ 0 \ebm</m>,         
-            <m>\vv = \bbm 9\\ -12\\ 0 \\ 12 \ebm </m>
+            <m>\vvv = \bbm 9\\ -12\\ 0 \\ 12 \ebm </m>
           </p>
         </statement>
         <answer>
           <p>
-            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+            Multiply <m>\tta\vu</m> and <m>\tta\vvv</m> to verify.
           </p>
         </answer>
       </exercise>
@@ -1249,12 +1249,12 @@
             <m>\tta = \bbm 0  \amp  -3  \amp  -1 &amp; -3 \    -4 &amp; 2 &amp; -3 &amp; 5 \ebm </m>, 
             <m>\vb=\bbm 48\\   36 \ebm </m>, 
             <m>\vu = \bbm -17 \\ -16 \\ 0 \\ 0 \ebm</m>, 
-            <m>\vv = \bbm -8\\ -28\\ 0 \\ 12 \ebm </m>
+            <m>\vvv = \bbm -8\\ -28\\ 0 \\ 12 \ebm </m>
           </p>
         </statement>
         <answer>
           <p>
-            Multiply <m>\tta\vu</m> and <m>\tta\vv</m> to verify.
+            Multiply <m>\tta\vu</m> and <m>\tta\vvv</m> to verify.
           </p>
         </answer>
       </exercise>    
@@ -1264,8 +1264,8 @@
     
       <introduction>
         <p>
-          A matrix <m>\tta</m> and vectors <m>\vb</m>, <m>\vu</m> and <m>\vv</m> are given. 
-          Verify that <m>\tta\vu=\zero</m>, <m>\tta\vv=\vb</m> and <m>\tta(\vu+\vv)=\vb</m>.
+          A matrix <m>\tta</m> and vectors <m>\vb</m>, <m>\vu</m> and <m>\vvv</m> are given. 
+          Verify that <m>\tta\vu=\zero</m>, <m>\tta\vvv=\vb</m> and <m>\tta(\vu+\vvv)=\vb</m>.
         </p>
       </introduction>
     
@@ -1275,12 +1275,12 @@
             <m>\tta = \bbm 2 \amp -2 \amp -1 \    -1&amp;1&amp;-1\\    -2&amp;2&amp;-1 \ebm </m>, 
             <m>\vb=\bbm 1\\   1 \\    1 \ebm </m>, 
             <m>\vu = \bbm 1 \\ 1 \\ 0  \ebm</m>, 
-            <m>\vv = \bbm 1\\ 1 \\ -1  \ebm </m>
+            <m>\vvv = \bbm 1\\ 1 \\ -1  \ebm </m>
           </p>
         </statement>
         <answer>
           <p>
-            Multiply <m>\tta\vu</m>, <m>\tta\vv</m> and <m>\tta(\vu+\vv)</m> to verify.
+            Multiply <m>\tta\vu</m>, <m>\tta\vvv</m> and <m>\tta(\vu+\vvv)</m> to verify.
           </p>
         </answer>
       </exercise>
@@ -1291,12 +1291,12 @@
             <m>\tta = \bbm 1  \amp  -1  \amp  3 \    3&amp;-3&amp;-3\\    -1&amp;1&amp;1 \ebm </m>, 
             <m>\vb=\bbm -1\\    -3 \\    1 \ebm </m>, 
             <m>\vu = \bbm 2 \\ 2 \\ 0  \ebm</m>, 
-            <m>\vv = \bbm 2\\ 3 \\ 0  \ebm </m>
+            <m>\vvv = \bbm 2\\ 3 \\ 0  \ebm </m>
           </p>
         </statement>
         <answer>
           <p>
-            Multiply <m>\tta\vu</m>, <m>\tta\vv</m> and <m>\tta(\vu+\vv)</m> to verify.
+            Multiply <m>\tta\vu</m>, <m>\tta\vvv</m> and <m>\tta(\vu+\vvv)</m> to verify.
           </p>
         </answer>
       </exercise>
@@ -1307,12 +1307,12 @@
             <m>\tta = \bbm 2  \amp  0  \amp  0 \  0&amp;1&amp;-3\\  3&amp;1&amp;-3 \ebm </m>, 
             <m>\vb=\bbm 2\\    -4 \\    -1 \ebm </m>, 
             <m>\vu = \bbm 0 \\ 6 \\ 2  \ebm</m>, 
-            <m>\vv = \bbm 1\\ -1 \\ 1  \ebm </m>
+            <m>\vvv = \bbm 1\\ -1 \\ 1  \ebm </m>
           </p>
         </statement>
         <answer>
           <p>
-            Multiply <m>\tta\vu</m>, <m>\tta\vv</m> and <m>\tta(\vu+\vv)</m> to verify.
+            Multiply <m>\tta\vu</m>, <m>\tta\vvv</m> and <m>\tta(\vu+\vvv)</m> to verify.
           </p>
         </answer>
       </exercise>
@@ -1584,7 +1584,7 @@
         </statement>
         <answer>
           <p>
-            <m>\vx = x_2\bbm -2\\1\ebm = x_2\vv</m>
+            <m>\vx = x_2\bbm -2\\1\ebm = x_2\vvv</m>
           </p>
 
           <image>
@@ -1594,7 +1594,7 @@
               \drawxlines{-4.5}{4.5}{-4,...,4};
               \drawylines{-2.5}{2.5}{-2,...,2};
               \draw [&lt;-&gt;](-4,2)--(4,-2);
-              \draw [-&gt;,thick] (0,0)--(-2,1) node [above] {$\vv$};
+              \draw [-&gt;,thick] (0,0)--(-2,1) node [above] {$\vvv$};
               \end{tikzpicture}
             </latex-image>
           </image>
@@ -1609,7 +1609,7 @@
         </statement>
         <answer>
           <p>
-            <m>\vx = \bbm 0.5\\0\ebm + x_2\bbm 2.5\\1\ebm = \vec{x}_{p} + x_2\vv</m>
+            <m>\vx = \bbm 0.5\\0\ebm + x_2\bbm 2.5\\1\ebm = \vec{x}_{p} + x_2\vvv</m>
           </p>
 
           <image>
@@ -1620,7 +1620,7 @@
               \drawylines{-2.5}{2.5}{-2,...,2};
               \draw [&lt;-&gt;](-4,-1.8)--(4,1.4);
               \draw [-&gt;,thick] (0,0)--(0.5,0) node [below] {$\vec{x}_{p}$};
-              \draw [-&gt;,thick] (0.5,0)--(3,1) node [above] {$\vv$};
+              \draw [-&gt;,thick] (0.5,0)--(3,1) node [above] {$\vvv$};
               \end{tikzpicture}
             </latex-image>
           </image>
@@ -1635,7 +1635,7 @@
         </statement>
         <answer>
           <p>
-            <m>\vx = \bbm -3\\0\ebm + x_2\bbm -2\\1\ebm = \vec{x}_{p} + x_2\vv</m>
+            <m>\vx = \bbm -3\\0\ebm + x_2\bbm -2\\1\ebm = \vec{x}_{p} + x_2\vvv</m>
           </p>
 
           <image>
@@ -1646,7 +1646,7 @@
               \drawylines{-4.5}{2.5}{-4,...,2};
               \draw [&lt;-&gt;](-4,.5)--(4,-3.5);
               \draw [-&gt;,thick] (0,0)--(-3,0) node [below] {$\vec{x}_{p}$};
-              \draw [-&gt;,thick] (-3,0)--(-5,1) node [above] {$\vv$};
+              \draw [-&gt;,thick] (-3,0)--(-5,1) node [above] {$\vvv$};
                 
               \end{tikzpicture}
             </latex-image>
@@ -1662,7 +1662,7 @@
         </statement>
         <answer>
           <p>
-            <m>\vx = x_2\bbm 2.5\\1\ebm = x_2\vv</m>
+            <m>\vx = x_2\bbm 2.5\\1\ebm = x_2\vvv</m>
           </p>
 
           <image>
@@ -1672,9 +1672,7 @@
               \drawxlines{-4.5}{4.5}{-4,...,4};
               \drawylines{-2.5}{2.5}{-2,...,2};
               \draw [&lt;-&gt;](-4,-1.6)--(4,1.6);
-              \draw [-&gt;,thick] (0,0)--(2.5,1) node [above] {$\vv$};
-              \end{tikzpicture}
-                
+              \draw [-&gt;,thick] (0,0)--(2.5,1) node [above] {$\vvv$};
               \end{tikzpicture}
             </latex-image>
           </image>
