@@ -4,8 +4,8 @@
 
     <!-- Relative path, relative to "main" source file -->
     <source>
-        <directories external="../assets" generated="../generated-assets"/>
-        <version include="color asy-web"/>
+        <directories external="../assets" generated="../generated-assets-colprint"/>
+        <version include="color asy-colour"/>
     </source>
 
     <webwork server="https://webwork-dev.uleth.ca" course="apex-main"/>

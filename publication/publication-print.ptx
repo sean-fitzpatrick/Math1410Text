@@ -4,8 +4,8 @@
 
     <!-- Relative path, relative to "main" source file -->
     <source>
-        <directories external="../assets" generated="../generated-assets"/>
-        <version include="color asy-web"/>
+        <directories external="../assets" generated="../generated-assets-print"/>
+        <version include="print"/>
     </source>
 
     <webwork server="https://webwork-dev.uleth.ca" course="apex-main"/>
@@ -27,8 +27,8 @@
         <!-- <css toc="crc" banner="crc" navbar="crc" shell="crc"/> -->
     </html>
     <!-- PDF-Specific Options -->
-    <latex print="no" sides="one">
-      <asymptote links="yes"/>
+    <latex print="yes" sides="two" pageref="no">
+      <asymptote links="no"/>
       <page>
         <geometry>inner=1in,textheight=9in,textwidth=320pt,marginparwidth=150pt,marginparsep=20pt,bottom=1in,footskip=29pt</geometry>
       </page>
