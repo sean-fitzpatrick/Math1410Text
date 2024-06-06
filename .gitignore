@@ -97,3 +97,6 @@ GitHub.sublime-settings
 
 # Don't track codechat config (will be generated automatically)
 codechat_config.yaml
+
+.github/
+.devcontainer.json
