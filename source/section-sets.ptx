@@ -6,22 +6,22 @@
     <title>Set</title>
     <statement>
       <p>
-        A <term>set</term><idx><h>set </h><h> definition of</h></idx> is a well-defined collection 
-        of objects which are called the <q>elements</q> of the set.  
-        Here, <q>well-defined</q> means that it is possible to determine if something belongs to the collection or not, without prejudice. 
+        A <term>set</term><idx><h>set </h><h> definition of</h></idx> is a well-defined collection
+        of objects which are called the <q>elements</q> of the set.
+        Here, <q>well-defined</q> means that it is possible to determine if something belongs to the collection or not, without prejudice.
       </p>
     </statement>
   </definition>
 
   <p>
-    For example, the collection of letters that make up the word <q>pronghorns</q> is well-defined and is a set, 
-    but the collection of the worst math teachers in the world is <em>not</em> well-defined, and so is <em>not</em> a set.  
+    For example, the collection of letters that make up the word <q>pronghorns</q> is well-defined and is a set,
+    but the collection of the worst math teachers in the world is <em>not</em> well-defined, and so is <em>not</em> a set.
     In general, there are three ways to describe sets.
   </p>
 
   <aside>
     <p>
-      One thing that student evaluations teach us is that any given Mathematics instructor can be simultaneously 
+      One thing that student evaluations teach us is that any given Mathematics instructor can be simultaneously
       the best and worst teacher ever, depending on who is completing the evaluation.
     </p>
   </aside>
@@ -37,13 +37,13 @@
         </li>
         <li>
           <p>
-            <em>The Roster Method:</em>  Begin with a left brace <q>{</q>, list each element of the set <em>only once</em> 
+            <em>The Roster Method:</em>  Begin with a left brace <q>{</q>, list each element of the set <em>only once</em>
             and then end with a right brace <q>}</q>.<idx><h>set </h><h> roster method</h></idx>
           </p>
         </li>
         <li>
           <p>
-            <em>The Set-Builder Method:</em> A combination of the verbal and roster methods using a <q>dummy variable</q> 
+            <em>The Set-Builder Method:</em> A combination of the verbal and roster methods using a <q>dummy variable</q>
             such as <m>x</m>.<idx><h>set </h><h> set-builder notation</h></idx><idx><h>set-builder notation</h></idx>
           </p>
         </li>
@@ -52,23 +52,23 @@
   </insight>
 
   <p>
-    For example, let <m>S</m> be the set described <em>verbally</em> as the set of letters that make up the word <q>pronghorns</q>.  
-    A  <term>roster</term> description of <m>S</m> would be  <m>\left\{ p, r, o, n, g, h, s \right\}</m>. 
-    Note that we listed <q>r</q>, <q>o</q>, and <q>n</q> only once, even though they appear twice in <q>pronghorns.</q>  
-    Also, the <em>order</em> of the elements doesn't matter, so <m>\left\{ o, n, p, r, g, s, h \right\}</m> 
-    is also a roster description of <m>S</m>.   A <term>set-builder</term> description of <m>S</m> is: 
+    For example, let <m>S</m> be the set described <em>verbally</em> as the set of letters that make up the word <q>pronghorns</q>.
+    A  <term>roster</term> description of <m>S</m> would be  <m>\left\{ p, r, o, n, g, h, s \right\}</m>.
+    Note that we listed <q>r</q>, <q>o</q>, and <q>n</q> only once, even though they appear twice in <q>pronghorns.</q>
+    Also, the <em>order</em> of the elements doesn't matter, so <m>\left\{ o, n, p, r, g, s, h \right\}</m>
+    is also a roster description of <m>S</m>.   A <term>set-builder</term> description of <m>S</m> is:
     <me>
-      \{ x \, | \, x \text{ is a letter in the word ``pronghorns''}\} 
+      \{ x \, | \, x \text{ is a letter in the word ``pronghorns''}\}
     </me>.
   </p>
 
   <p>
-    The way to read this is: <q>The set of elements <m>x</m> <em>such that</em> <m>x</m> is a letter in the word <sq>pronghorns.</sq></q>  
-    We define to sets to be equal if they have exactly the same elements, and denote this using the familiar equals sign <q><m>=</m></q>. 
+    The way to read this is: <q>The set of elements <m>x</m> <em>such that</em> <m>x</m> is a letter in the word <sq>pronghorns.</sq></q>
+    We define to sets to be equal if they have exactly the same elements, and denote this using the familiar equals sign <q><m>=</m></q>.
     Thus, we may write
     <m>S = \left\{  p, r, o, n, g, h, s  \right\}</m> or  <m>S = \{ x \, | \, x \text{ is a letter in the word ``pronghorns''.}\}</m>.
-    Clearly <m>r</m> is an element of <m>S</m> and <m>q</m> is not an element <m>S</m>.  
-    We express these sentiments mathematically by writing  <m>r \in S</m> and <m>q \notin S</m>. 
+    Clearly <m>r</m> is an element of <m>S</m> and <m>q</m> is not an element <m>S</m>.
+    We express these sentiments mathematically by writing  <m>r \in S</m> and <m>q \notin S</m>.
   </p>
 
   <p>
@@ -104,20 +104,20 @@
 
   <aside>
     <p>
-      The notation <m>x\in A</m> can be read as <q><m>x</m> is in <m>A</m></q>, 
-      or <q><m>x</m> is an element of <m>A</m></q>, or <q><m>x</m> belongs to <m>A</m></q>, 
+      The notation <m>x\in A</m> can be read as <q><m>x</m> is in <m>A</m></q>,
+      or <q><m>x</m> is an element of <m>A</m></q>, or <q><m>x</m> belongs to <m>A</m></q>,
       with similar readings for <m>x\notin A</m>.
     </p>
   </aside>
 
   <p>
-    Now let's consider the set 
+    Now let's consider the set
     <me>
       C =  \{ x \, | \, x \text{ is a consonant in the word ``pronghorns'}\}
     </me>.
-    A roster description of <m>C</m> is  <m>C = \{ p, r, n, g, h, s\}</m>.  
-    Note that by construction, every element of <m>C</m> is also in <m>S</m>.  
-    We express this relationship by stating that the set <m>C</m> is a <term>subset</term> of the set <m>S</m>, 
+    A roster description of <m>C</m> is  <m>C = \{ p, r, n, g, h, s\}</m>.
+    Note that by construction, every element of <m>C</m> is also in <m>S</m>.
+    We express this relationship by stating that the set <m>C</m> is a <term>subset</term> of the set <m>S</m>,
     which is written in symbols as <m>C \subseteq S</m>.  The more formal definition is given below.
   </p>
 
@@ -125,28 +125,28 @@
     <title>Subset</title>
     <statement>
       <p>
-        Given sets <m>A</m> and <m>B</m>, we say that the set <m>A</m> is a <term>subset</term> 
-        of the set <m>B</m> and write <q><m>A \subseteq B</m></q> if every element in <m>A</m> is also an element of <m>B</m>.  
+        Given sets <m>A</m> and <m>B</m>, we say that the set <m>A</m> is a <term>subset</term>
+        of the set <m>B</m> and write <q><m>A \subseteq B</m></q> if every element in <m>A</m> is also an element of <m>B</m>.
         <idx><h>subset </h><h> definition of</h></idx>
       </p>
     </statement>
   </definition>
 
   <p>
-    Note that in our example above <m>C \subseteq S</m>, but not vice-versa, 
-    since <m>o \in S</m> but <m>o \notin C</m>.  
-    Additionally, the set of vowels <m>V = \{ a, e, i, o, u\}</m>, 
-    while it does have an element in common with <m>S</m>, is not a subset of <m>S</m>. 
-    (As an added note,  <m>S</m> is not a subset of <m>V</m>, either.)  
-    We could, however, <em>build</em> a set which contains both <m>S</m> and <m>V</m> 
-    as subsets by gathering all of the elements in both <m>S</m> and <m>V</m> together into a single set, 
-    say <m>U = \{ p, r, o, n, g, h, s, a, e, i, u\}</m>.   Then <m>S \subseteq U</m> and <m>V \subseteq U</m>.  
-    The set <m>U</m> we have built is called the <term>union</term> of the sets <m>S</m> and <m>V</m> and is denoted <m>S \cup V</m>.    
-    Furthermore, <m>S</m> and <m>V</m> aren't completely <em>different</em> sets since they both contain the letter <q>o.</q> 
-    (Since the word <q>different</q> could be ambiguous, mathematicians use the word <em>disjoint</em> 
-    to refer to two sets that have no elements in common.) 
-    The <term>intersection</term> of two sets is the set of elements (if any) the two sets have in common. 
-    In this case, the intersection of <m>S</m> and <m>V</m> is <m>\{ o\}</m>, written <m>S \cap V = \{ o \}</m>.  
+    Note that in our example above <m>C \subseteq S</m>, but not vice-versa,
+    since <m>o \in S</m> but <m>o \notin C</m>.
+    Additionally, the set of vowels <m>V = \{ a, e, i, o, u\}</m>,
+    while it does have an element in common with <m>S</m>, is not a subset of <m>S</m>.
+    (As an added note,  <m>S</m> is not a subset of <m>V</m>, either.)
+    We could, however, <em>build</em> a set which contains both <m>S</m> and <m>V</m>
+    as subsets by gathering all of the elements in both <m>S</m> and <m>V</m> together into a single set,
+    say <m>U = \{ p, r, o, n, g, h, s, a, e, i, u\}</m>.   Then <m>S \subseteq U</m> and <m>V \subseteq U</m>.
+    The set <m>U</m> we have built is called the <term>union</term> of the sets <m>S</m> and <m>V</m> and is denoted <m>S \cup V</m>.
+    Furthermore, <m>S</m> and <m>V</m> aren't completely <em>different</em> sets since they both contain the letter <q>o.</q>
+    (Since the word <q>different</q> could be ambiguous, mathematicians use the word <em>disjoint</em>
+    to refer to two sets that have no elements in common.)
+    The <term>intersection</term> of two sets is the set of elements (if any) the two sets have in common.
+    In this case, the intersection of <m>S</m> and <m>V</m> is <m>\{ o\}</m>, written <m>S \cap V = \{ o \}</m>.
     We formalize these ideas below.
   </p>
 
@@ -158,15 +158,15 @@
         <ul>
           <li>
             <p>
-              The <term>intersection</term>of <m>A</m> and <m>B</m> is 
+              The <term>intersection</term> of <m>A</m> and <m>B</m> is
               <m>A \cap B = \{ x \, | \, x \in A \, \text{and} \,\, x \in B \}</m>.
               <idx><h>set </h><h> intersection</h></idx>
-              <idx><h>intersection of two sets</h></idx> 
+              <idx><h>intersection of two sets</h></idx>
             </p>
           </li>
           <li>
             <p>
-              The <term>union</term> of <m>A</m> and <m>B</m> is 
+              The <term>union</term> of <m>A</m> and <m>B</m> is
               <m>A \cup B = \{ x \, | \, x \in A \, \text{or} \,\, x \in B \, \, \text{(or both)} \}</m>.
               <idx><h>set </h><h> union</h></idx><idx><h>union of two sets</h></idx>
             </p>
@@ -177,17 +177,17 @@
   </definition>
 
   <p>
-    The key words in <xref ref="intersectionunion"/> to focus on are the conjunctions:  
-    <q>intersection</q> corresponds to <q>and</q> meaning the elements have to be in <em>both</em> sets to be in the intersection, 
-    whereas <q>union</q> corresponds to <q>or</q> meaning the elements have to be in one set, 
+    The key words in <xref ref="intersectionunion"/> to focus on are the conjunctions:
+    <q>intersection</q> corresponds to <q>and</q> meaning the elements have to be in <em>both</em> sets to be in the intersection,
+    whereas <q>union</q> corresponds to <q>or</q> meaning the elements have to be in one set,
     or the other set (or both).  In other words, to belong to the union of two sets an element must belong to <em>at least one</em> of them.
   </p>
 
   <p>
-    Returning to the sets <m>C</m> and <m>V</m>  above, 
-    <m>C \cup V = \{ p, r, n, g, h, s, a, e, i, o, u\}</m>. 
-    When it comes to their intersection, however, we run into a bit of notational awkwardness since <m>C</m> and <m>V</m> 
-    have no elements in common.  While we could write <m>C \cap V = \{ \}</m>, 
+    Returning to the sets <m>C</m> and <m>V</m>  above,
+    <m>C \cup V = \{ p, r, n, g, h, s, a, e, i, o, u\}</m>.
+    When it comes to their intersection, however, we run into a bit of notational awkwardness since <m>C</m> and <m>V</m>
+    have no elements in common.  While we could write <m>C \cap V = \{ \}</m>,
     this sort of thing happens often enough that we give the set with no elements a name.
   </p>
 
@@ -195,7 +195,7 @@
     <title>Empty set</title>
     <statement>
       <p>
-        The <term>Empty Set</term> <m>\emptyset</m> is the set which contains no elements.  That is, 
+        The <term>Empty Set</term> <m>\emptyset</m> is the set which contains no elements.  That is,
         <me>
           \emptyset=\{ \}=\{x\,|\, x \neq x\}
         </me>.
@@ -205,25 +205,25 @@
   </definition>
 
   <p>
-    As promised, the empty set is the set containing no elements since no matter what <q><m>x</m></q> is, 
-    <q><m>x = x</m>.</q>  Like the number <q><m>0</m>,</q>  the empty set plays a vital role in mathematics. 
+    As promised, the empty set is the set containing no elements since no matter what <q><m>x</m></q> is,
+    <q><m>x = x</m>.</q>  Like the number <q><m>0</m>,</q>  the empty set plays a vital role in mathematics.
     We introduce it here more as a symbol of convenience as opposed to a contrivance.
   </p>
 
   <aside>
     <p>
-      The full extent of the empty set's role will not be explored in this text, 
-      but it is of fundamental importance in Set Theory. 
-      In fact, the empty set can be used to generate numbers <ndash/>  mathematicians can create something from nothing! 
+      The full extent of the empty set's role will not be explored in this text,
+      but it is of fundamental importance in Set Theory.
+      In fact, the empty set can be used to generate numbers <ndash/>  mathematicians can create something from nothing!
       If you're interested, read about the <url href="https://en.wikipedia.org/wiki/Natural_number\#von_Neumann_construction" visual="en.wikipedia.org/wiki/Natural_number\#von_Neumann_construction">von Neumann construction of the natural numbers</url>.
     </p>
   </aside>
 
   <p>
-    Using this new bit of notation, we have for the sets <m>C</m> and <m>V</m> above that <m>C \cap V = \emptyset</m>.    
-    A nice way to visualize relationships between sets and set operations is to draw a  
+    Using this new bit of notation, we have for the sets <m>C</m> and <m>V</m> above that <m>C \cap V = \emptyset</m>.
+    A nice way to visualize relationships between sets and set operations is to draw a
     <url href="https://en.wikipedia.org/wiki/Venn_diagram" visual="en.wikipedia.org/wiki/Venn_diagram"><term>Venn Diagram</term></url>
-    <idx><h>diagram </h><h> Venn Diagram</h></idx><idx><h>Venn Diagram</h></idx>.  
+    <idx><h>diagram </h><h> Venn Diagram</h></idx><idx><h>Venn Diagram</h></idx>.
     A Venn Diagram for the sets <m>S</m>, <m>C</m> and <m>V</m> is drawn in <xref ref="venndiagram"/>.
   </p>
 
@@ -238,7 +238,7 @@
                 (-1,0) circle (0.9) (-1.2,1.2) node [text=black,right] {$C$};
           \node at (-1,0) {p r n g h s};
           \node at (1,0) {o};
-          \node at (2,0) {a e i u};
+          \node at (3,0) {a e i u};
           \draw (-3,-3) rectangle (5,3) node [text=black, below left] {$U$};
         \end{tikzpicture}
       </latex-image>
@@ -246,31 +246,31 @@
   </figure>
 
   <p>
-    In <xref ref="venndiagram"/> we have three circles <ndash/> one for each of the sets <m>C</m>, <m>S</m> and <m>V</m>.  
-    We visualize the area enclosed by each of these circles as the elements of each set.  
-    Here, we've spelled out the elements for definitiveness.  
-    Notice that the circle representing the set <m>C</m> is completely inside the circle representing <m>S</m>.  
-    This is a geometric way of  showing that <m>C \subseteq S</m>.  
-    Also, notice that the circles representing <m>S</m> and <m>V</m> overlap on the letter <q>o</q>.  
-    This common region is how we visualize <m>S \cap V</m>.  Notice that since <m>C \cap V = \emptyset</m>, 
-    the circles which represent <m>C</m> and <m>V</m> have no overlap whatsoever.  
+    In <xref ref="venndiagram"/> we have three circles <ndash/> one for each of the sets <m>C</m>, <m>S</m> and <m>V</m>.
+    We visualize the area enclosed by each of these circles as the elements of each set.
+    Here, we've spelled out the elements for definitiveness.
+    Notice that the circle representing the set <m>C</m> is completely inside the circle representing <m>S</m>.
+    This is a geometric way of  showing that <m>C \subseteq S</m>.
+    Also, notice that the circles representing <m>S</m> and <m>V</m> overlap on the letter <q>o</q>.
+    This common region is how we visualize <m>S \cap V</m>.  Notice that since <m>C \cap V = \emptyset</m>,
+    the circles which represent <m>C</m> and <m>V</m> have no overlap whatsoever.
   </p>
 
   <p>
-    All of these circles lie in a rectangle labelled <m>U</m> (for <q>universal</q> set).  
-    A universal set contains all of the elements under discussion, 
-    so it could always be taken as the union of all of the sets in question, or an even larger set.  
-    In this case, we could take <m>U = S \cup V</m> or <m>U</m> as the set of letters in the entire alphabet.    
-    The usual triptych of Venn Diagrams indicating generic sets <m>A</m> and  <m>B</m> along with <m>A \cap B</m> 
+    All of these circles lie in a rectangle labelled <m>U</m> (for <q>universal</q> set).
+    A universal set contains all of the elements under discussion,
+    so it could always be taken as the union of all of the sets in question, or an even larger set.
+    In this case, we could take <m>U = S \cup V</m> or <m>U</m> as the set of letters in the entire alphabet.
+    The usual triptych of Venn Diagrams indicating generic sets <m>A</m> and  <m>B</m> along with <m>A \cap B</m>
     and <m>A \cup B</m> is given in <xref ref="fig-intunion"/>.
   </p>
 
   <p>
-    (The reader may well wonder if there is an ultimate universal set which contains <em>everything</em>.  
-    The short answer is <q>no</q>. Our definition of a set turns out to be overly simplistic, 
-    but correcting this takes us well beyond the confines of this course. 
-    If you want the longer answer, you can begin by reading about 
-    <url href="https://en.wikipedia.org/wiki/Russell's_paradox" visual="en.wikipedia.org/wiki/Russell's_paradox">Russell's Paradox</url> 
+    (The reader may well wonder if there is an ultimate universal set which contains <em>everything</em>.
+    The short answer is <q>no</q>. Our definition of a set turns out to be overly simplistic,
+    but correcting this takes us well beyond the confines of this course.
+    If you want the longer answer, you can begin by reading about
+    <url href="https://en.wikipedia.org/wiki/Russell's_paradox" visual="en.wikipedia.org/wiki/Russell's_paradox">Russell's Paradox</url>
     on Wikipedia.)
   </p>
 
@@ -307,7 +307,7 @@
       <image>
         <shortdescription>Venn diagram showing union of A and B, with both circle shaded</shortdescription>
         <latex-image label="img-venn4">
-          \begin{tikzpicture}
+          \begin{tikzpicture}[fill=lightgray]
             \fill (0,0) circle (2) (0,-2) node [text=black,below] {$A$}
                   (2,0) circle (2) (2,-2) node [text=black,below] {$B$};
             \draw (0,0) circle (2) (0,-2) node [text=black,below] {$A$}
@@ -322,9 +322,9 @@
   </figure>
 
   <p>
-    In the next section, we will review the algebraic properties of the real number system. 
+    In the next section, we will review the algebraic properties of the real number system.
     Other properties of the real numbers (such as the order property that allows us to picture the set of real numbers as a <q>number line</q>)
-    are essential to Calculus, but not that important for Linear Algebra, so we will leave it to other courses 
+    are essential to Calculus, but not that important for Linear Algebra, so we will leave it to other courses
     to handle the discussion of these topics.
   </p>
 

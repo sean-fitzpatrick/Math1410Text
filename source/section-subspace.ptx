@@ -3,17 +3,17 @@
   <title>Subspaces of <m>\mathbb{R}^n</m></title>
 
   <p>
-    One of the things we noted in <xref ref="ex_spanRn"/> was that since <m>\vec{w}</m> 
-    belonged to <m>\operatorname{span}\{\vec{u},\vec{v}\}</m>, 
-    adding <m>\vec{w}</m> to any vector in <m>\operatorname{span}\{\vec{u},\vec{v}\}</m> 
-    resulted in another vector in <m>\operatorname{span}\{\vec{u},\vec{v}\}</m>. 
+    One of the things we noted in <xref ref="ex_spanRn"/> was that since <m>\vec{w}</m>
+    belonged to <m>\operatorname{span}\{\vec{u},\vec{v}\}</m>,
+    adding <m>\vec{w}</m> to any vector in <m>\operatorname{span}\{\vec{u},\vec{v}\}</m>
+    resulted in another vector in <m>\operatorname{span}\{\vec{u},\vec{v}\}</m>.
     This leads to the notion of a <term>subspace</term>, another one of the key concepts in linear algebra.
   </p>
 
   <p>
-    What sets subspaces apart from other subsets of <m>\mathbb{R}^n</m> 
-    is the requirement that all of the properties listed in <xref ref="thm-Rn_properties"/> 
-    remain valid when applied to vectors from that subspace. We will not prove it here, 
+    What sets subspaces apart from other subsets of <m>\mathbb{R}^n</m>
+    is the requirement that all of the properties listed in <xref ref="thm-Rn_properties"/>
+    remain valid when applied to vectors from that subspace. We will not prove it here,
     but it suffices that the subspace be <em>closed</em> under the operations of addition and scalar multiplication.
   </p>
 
@@ -22,9 +22,9 @@
     <statement>
 
       <p>
-        <idx><h>subspace</h></idx> 
+        <idx><h>subspace</h></idx>
 
-        A non-empty subset <m>V\subseteq \mathbb{R}^n</m> is called a <term>subspace</term>of <m>\mathbb{R}^n</m>, 
+        A non-empty subset <m>V\subseteq \mathbb{R}^n</m> is called a <term>subspace</term>of <m>\mathbb{R}^n</m>,
         provided that the following conditions hold:
         <ol>
           <li>
@@ -44,31 +44,31 @@
 
   <aside>
     <p>
-      Another way of phrasing <xref ref="def-subspace"/> is to say that <m>V</m> is a subspace if any 
-      linear combination of vectors in <m>V</m> is another vector in <m>V</m>; that is, 
+      Another way of phrasing <xref ref="def-subspace"/> is to say that <m>V</m> is a subspace if any
+      linear combination of vectors in <m>V</m> is another vector in <m>V</m>; that is,
       <m>V</m> is closed under taking linear combinations.
     </p>
 
     <p>
-      A subspace of <m>\mathbb{R}^n</m> is a subset that looks like a copy of <m>\mathbb{R}^m</m>, where <m>m\leq n</m>. 
-      The visual examples you should keep in mind are lines (which look like copies of <m>\mathbb{R}</m>) 
-      and planes (which look like copies of <m>\mathbb{R}^2</m>) in <m>\mathbb{R}^3</m>. 
+      A subspace of <m>\mathbb{R}^n</m> is a subset that looks like a copy of <m>\mathbb{R}^m</m>, where <m>m\leq n</m>.
+      The visual examples you should keep in mind are lines (which look like copies of <m>\mathbb{R}</m>)
+      and planes (which look like copies of <m>\mathbb{R}^2</m>) in <m>\mathbb{R}^3</m>.
       However, not all lines and planes will do: as we will see, only those lines and planes that pass through the origin form subspaces.
     </p>
-  </aside> 
+  </aside>
 
   <p>
-    It follows from <xref ref="def-subspace"/> that any linear combination of vectors in a subspace <m>V</m> 
-    is again an element of that subspace. One other important consequence of <xref ref="def-subspace"/> must be noted here: 
-    since any subspace <m>V</m> is closed under scalar multiplication by <em>any</em> scalar, 
-    and since <m>0\cdot\vec v = \vec 0</m> for any vector <m>\vec v</m>, <em>every subspace contains the zero vector</em>. 
+    It follows from <xref ref="def-subspace"/> that any linear combination of vectors in a subspace <m>V</m>
+    is again an element of that subspace. One other important consequence of <xref ref="def-subspace"/> must be noted here:
+    since any subspace <m>V</m> is closed under scalar multiplication by <em>any</em> scalar,
+    and since <m>0\cdot\vec v = \vec 0</m> for any vector <m>\vec v</m>, <em>every subspace contains the zero vector</em>.
     This often provides an easy test when we want to rule out the possibility that a subset is a subspace.
   </p>
 
   <example xml:id="ex_subspace1">
     <title>Identifying subspaces</title>
     <statement>
- 
+
     <p>
       Determine which of the following subsets of <m>\mathbb{R}^3</m> are subspaces:
       <ol>
@@ -82,7 +82,7 @@
             <m>S = \left\{\left.\bbm x\\4x\\3\ebm \, \right| \, x\in \mathbb{R}\right\}</m>
           </p>
         </li>
-      </ol>      
+      </ol>
     </p>
     </statement>
     <solution>
@@ -90,15 +90,15 @@
         <ol>
           <li>
             <p>
-              From our work in <xref ref="sec-planes"/>, we notice right away that the set <m>R</m> 
-              describes a plane with normal vector given by <m>\vec n = \bbm 2\\-4\\3\ebm</m>. 
-              Moreover, this particular plane passes through the origin, since <m>2(0)-4(0)+3(0)=0</m>, 
+              From our work in <xref ref="sec-planes"/>, we notice right away that the set <m>R</m>
+              describes a plane with normal vector given by <m>\vec n = \bbm 2\\-4\\3\ebm</m>.
+              Moreover, this particular plane passes through the origin, since <m>2(0)-4(0)+3(0)=0</m>,
               telling us that <m>\vec 0 \in R</m>.
             </p>
-        
+
             <p>
-              It turns out that any plane through the origin is a subspace, and <m>R</m> is no exception, 
-              but let's verify this directly using <xref ref="def-subspace"/>. Suppose 
+              It turns out that any plane through the origin is a subspace, and <m>R</m> is no exception,
+              but let's verify this directly using <xref ref="def-subspace"/>. Suppose
               <me>
                 \vec u = \bbm u_1\\u_2\\u_3\ebm \quad \text{ and } \quad \vec v = \bbm v_1\\v_2\\v_3\ebm
               </me>
@@ -117,11 +117,11 @@
               verifying that <m>c\vec u \in R</m>. Since <m>R</m> is closed under both addition and scalar multiplication, it is a subspace.
             </p>
           </li>
-        
-        
+
+
           <li>
             <p>
-              For the subset <m>S</m>, we immediately notice that the third component must always equal 3; 
+              For the subset <m>S</m>, we immediately notice that the third component must always equal 3;
               therefore, it is impossible for the zero vector to belong to <m>S</m>, and thus <m>S</m> is not a subspace.
             </p>
           </li>
@@ -137,7 +137,7 @@
   <example xml:id="ex_subspace2">
     <title>Identifying subspaces</title>
     <statement>
- 
+
       <p>
         Determine which of the following subsets of <m>\mathbb{R}^3</m> are subspaces:
         <ol>
@@ -159,88 +159,88 @@
         <ol>
           <li>
             <p>
-              Suppose we have two vectors <m>\vec v = \bbm 3a-2b\\a+b\\a-4b\ebm</m> 
+              Suppose we have two vectors <m>\vec v = \bbm 3a-2b\\a+b\\a-4b\ebm</m>
               and <m>\vec w = \bbm 3c-2d\\c+d\\a-4b\ebm</m> in the subset <m>T</m>. Then we find
               <md>
                 <mrow>\vec v + \vec w \amp = \bbm 3a-2b\\a+b\\a-4b\ebm + \bbm 3c-2d\\c+d\\a-4b\ebm = \bbm (3a-2b)+(3c-2d)\\(a+b)+(c+d)\\(a-4b)+(c-4d)\ebm</mrow>
                 <mrow>  \amp  = \bbm 3(a+c)-2(b+d)\\(a+c)+(b+d)\\(a+c)-4(b+d)\ebm</mrow>
               </md>.
-              Since <m>a+c</m> and <m>b+d</m> are again real numbers, we see that <m>\vec v+\vec w</m> 
+              Since <m>a+c</m> and <m>b+d</m> are again real numbers, we see that <m>\vec v+\vec w</m>
               fits the definition of <m>T</m>, so <m>\vec v+\vec w\in T</m>.
             </p>
-        
+
             <p>
               Next, if <m>k\in \mathbb{R}</m> is a scalar, we have
               <me>
                 k\vec v = k\bbm 3a-2b\\a+b\\a-4b\ebm = \bbm k(3a-2b)\\k(a+b)\\k(a-4b)\ebm = \bbm 3(ka)-2(kb)\\(ka)+(kb)\\(ka)-4(kb)\ebm,
               </me>
-              which again fits the patter for vectors in <m>T</m>, so <m>k\vec v\in T</m>. 
+              which again fits the patter for vectors in <m>T</m>, so <m>k\vec v\in T</m>.
               From <xref ref="def-subspace"/>, we can conclude that <m>T</m> is a subspace.
             </p>
           </li>
-        
+
           <li>
               <p>
-                You probably recall from your high school mathematics that a function such as <m>f(x)=ax+b</m> 
-                is considered <em>linear</em>, since its graph is a straight line. 
-                Functions like <m>f(x)=x^2</m> are considered non-linear, since their graphs are curved. 
-                One of the morals a student does well to learn quickly in <em>linear</em> 
-                algebra is that any expressions involving non-linear functions of any variables present 
+                You probably recall from your high school mathematics that a function such as <m>f(x)=ax+b</m>
+                is considered <em>linear</em>, since its graph is a straight line.
+                Functions like <m>f(x)=x^2</m> are considered non-linear, since their graphs are curved.
+                One of the morals a student does well to learn quickly in <em>linear</em>
+                algebra is that any expressions involving non-linear functions of any variables present
                 are not going to play well with the rules of linear algebra.
               </p>
 
               <p>
-                For the subset <m>U</m>, the expressions <m>3xy</m> and <m>x^2</m> 
-                tip us off that we are probably not dealing with a subspace here. 
+                For the subset <m>U</m>, the expressions <m>3xy</m> and <m>x^2</m>
+                tip us off that we are probably not dealing with a subspace here.
                 The easiest way to make sure of this is to check the rules in <xref ref="def-subspace"/> using <em>specific</em> vectors.
               </p>
-              
+
               <aside>
                 <p>
-                  <alert>Note:</alert> When we want to show that a subset is a subspace, 
-                  we have to verify that <xref ref="def-subspace"/> is satisfied for <em>all</em> 
-                  possible vectors in that set. Since we generally have infinitely many vectors to deal with, 
+                  <alert>Note:</alert> When we want to show that a subset is a subspace,
+                  we have to verify that <xref ref="def-subspace"/> is satisfied for <em>all</em>
+                  possible vectors in that set. Since we generally have infinitely many vectors to deal with,
                   our verification is going to require us to give a general argument, using variables instead of numbers.
                 </p>
 
                 <p>
-                  On the other hand, if we want to show that a subset is <em>not</em> a subspace, 
-                  we just have to show that <xref ref="def-subspace"/> fails for one or two 
-                  <em>specific</em> vectors. A choice of vector(s) for which the definition fails is called 
-                  a <term>counterexample</term>. When constructing a counterexample it's a good idea to choose 
+                  On the other hand, if we want to show that a subset is <em>not</em> a subspace,
+                  we just have to show that <xref ref="def-subspace"/> fails for one or two
+                  <em>specific</em> vectors. A choice of vector(s) for which the definition fails is called
+                  a <term>counterexample</term>. When constructing a counterexample it's a good idea to choose
                   small numbers to keep the arithmetic simple.
                 </p>
-              </aside> 
-              
+              </aside>
+
               <p>
                 If we let <m>x=1</m> and <m>y=2</m> in the definition of the set <m>U</m>, we get the vector
                 <me>
                     \vec v = \bbm 1+2\\3(1)(2)\\1^2\ebm = \bbm 3\\6\\1\ebm
                 </me>.
               </p>
-              
+
               <p>
                 Now consider the vector <m>4\vec v</m>. We have
                 <me>
                     4\vec v = 4\bbm 3\\6\\1\ebm = \bbm 12\\6\\4\ebm
                 </me>.
               </p>
-              
+
               <p>
-                Looking at the definition of the set <m>U</m>, we know that if <m>4\vec v\in U</m>, 
-                then the third component of <m>\vec v</m> tells us <m>x^2=4</m>, so <m>x=\pm 2</m>. 
+                Looking at the definition of the set <m>U</m>, we know that if <m>4\vec v\in U</m>,
+                then the third component of <m>\vec v</m> tells us <m>x^2=4</m>, so <m>x=\pm 2</m>.
                 Now, let's look at the other two components. If <m>x=2</m>, we must have
                 <me>
                     2+y = 12 \text{ and } 3(2)(y) = 6
                 </me>.
               </p>
-              
+
               <p>
-                The first equation tells us that <m>y=10</m>, while the second requires <m>y=1</m>. 
-                Since <m>10\neq 1</m>, this is impossible. Similarly, if <m>x=-2</m>, 
-                then we would have to have <m>y=14</m> looking at the first component, 
-                and <m>y=-1</m> from the second. Since this is again impossible, 
-                it must be the case that <m>4\vec v\notin U</m>. 
+                The first equation tells us that <m>y=10</m>, while the second requires <m>y=1</m>.
+                Since <m>10\neq 1</m>, this is impossible. Similarly, if <m>x=-2</m>,
+                then we would have to have <m>y=14</m> looking at the first component,
+                and <m>y=-1</m> from the second. Since this is again impossible,
+                it must be the case that <m>4\vec v\notin U</m>.
                 Since <m>U</m> is not closed under scalar multiplication, <m>U</m> is not a subspace.
               </p>
           </li>
@@ -256,7 +256,7 @@
   <example xml:id="ex_subspace3">
     <title>Identifying subspaces</title>
     <statement>
- 
+
       <p>
         Determine which of the following subsets of <m>\mathbb{R}^3</m> are subspaces:
         <ol>
@@ -270,7 +270,7 @@
               <m>W = \left\{\left.\bbm 2u+v\\v+4\\u-2\ebm \, \right| \, u,v\in \mathbb{R}\right\}</m>
             </p>
           </li>
-        </ol>        
+        </ol>
       </p>
     </statement>
     <solution>
@@ -278,10 +278,10 @@
         <ol>
           <li>
             <p>
-              The expressions <m>v+4</m> and <m>u-3</m> in the definition of <m>V</m> 
-              look like the sort of linear functions we see in high school, 
-              but we need to keep in mind that in linear algebra the zero vector has an important 
-              role in making sure the algebra works properly. In Linear Algebra, among all functions of the form <m>f(x)=mx+b</m>, 
+              The expressions <m>v+4</m> and <m>u-3</m> in the definition of <m>V</m>
+              look like the sort of linear functions we see in high school,
+              but we need to keep in mind that in linear algebra the zero vector has an important
+              role in making sure the algebra works properly. In Linear Algebra, among all functions of the form <m>f(x)=mx+b</m>,
               only those with <m>b=0</m> are considered <q>linear</q>: these are the functions whose graphs are lines through the origin.
             </p>
 
@@ -290,17 +290,17 @@
               <me>
                 \bbm u+2v\\v+4\\u-2\ebm = \bbm 0\\0\\0\ebm
               </me>,
-              then clearly we need <m>v=-4</m> and <m>u=2</m> from the second and third components, 
-              but <m>2+2(-4) = -6\neq 0</m>, so there is no way to obtain the zero vector as an element of <m>V</m>, 
+              then clearly we need <m>v=-4</m> and <m>u=2</m> from the second and third components,
+              but <m>2+2(-4) = -6\neq 0</m>, so there is no way to obtain the zero vector as an element of <m>V</m>,
               telling us that <m>V</m> is not a subspace.
-            </p>          
-          </li>        
-          
+            </p>
+          </li>
+
           <li>
             <p>
-              The subset <m>W</m> looks a lot like the subset <m>V</m>, 
-              so our instinct is probably telling us that <m>W</m> is not a subspace, either. 
-              To know for sure, the first thing we might check is whether or not <m>\vec 0 \in W</m>. 
+              The subset <m>W</m> looks a lot like the subset <m>V</m>,
+              so our instinct is probably telling us that <m>W</m> is not a subspace, either.
+              To know for sure, the first thing we might check is whether or not <m>\vec 0 \in W</m>.
               In this case, we see that <m>\vec 0</m> is indeed in there. Setting <m>u=2</m> and <m>v=-4</m>, we get the vector
               <me>
                 \bbm 2(2)+(-4)\\-4+4\\2-2\ebm = \bbm 0\\0\\0\ebm = \vec 0,
@@ -317,26 +317,26 @@
                   \vec w = \bbm 2(0)+1\\1+4\\0-2\ebm = \bbm 1\\5\\-2\ebm \in W
               </me>.
             </p>
-            
+
             <p>
               We now check to see whether or not <m>\vec v + \vec w \in W</m>. We have
               <me>
                   \vec v + \vec w = \bbm 2\\4\\-1\ebm + \bbm 1\\5\\-2\ebm = \bbm 3\\9\\-3\ebm
               </me>.
             </p>
-            
+
             <p>
-              If this is an element of <m>W</m>, then we must have <m>v+4=9</m> for some <m>v\in\mathbb{R}</m> 
-              (looking at the second component) and <m>u-2=-3</m> for some <m>u\in \mathbb{R}</m> 
-              (looking at the third component), so <m>u=-1</m> and <m>v=5</m>. 
-              Putting these values into the first component, we need to have <m>2(-1)+5=3</m>, 
-              which is true! Does this mean <m>W</m> is a subspace? 
+              If this is an element of <m>W</m>, then we must have <m>v+4=9</m> for some <m>v\in\mathbb{R}</m>
+              (looking at the second component) and <m>u-2=-3</m> for some <m>u\in \mathbb{R}</m>
+              (looking at the third component), so <m>u=-1</m> and <m>v=5</m>.
+              Putting these values into the first component, we need to have <m>2(-1)+5=3</m>,
+              which is true! Does this mean <m>W</m> is a subspace?
               Not so fast: we only checked addition for one pair of vectors, and we haven't checked scalar multiplication.
             </p>
-            
+
             <p>
-              If we try a few more examples (the reader is encouraged to do so), 
-              we find that things keep working out, so we begin to suspect that maybe <m>W</m> really is a subspace. 
+              If we try a few more examples (the reader is encouraged to do so),
+              we find that things keep working out, so we begin to suspect that maybe <m>W</m> really is a subspace.
               The only way to know for sure is to attempt to verify <xref ref="def-subspace"/> with a general proof. Suppose
               <me>
                 \vec v = \bbm 2a+b\\b+4\\a-2\ebm \text{ and } \vec w = \bbm 2c+d\\d+4\\c-2\ebm
@@ -346,14 +346,14 @@
                 \vec v + \vec w = \bbm 2(a+c)+(b+d)\\ (b+d)+8\\(a+c)-4\ebm
               </me>,
               which certainly doesn't look like an element of <m>W</m>; the constants are all wrong!
-              We have an 8 in the second component instead of a 4, and a <m>-4</m> in the third component instead of a <m>-2</m>. 
+              We have an 8 in the second component instead of a 4, and a <m>-4</m> in the third component instead of a <m>-2</m>.
               (This is why constant terms in the definition of a subset are generally problematic.)
             </p>
-            
+
             <p>
-              However, with a bit of sleight of hand, things are not as bad as they seem. 
-              Let's write the second component as <m>(b+d+4)+4</m>, and the third as <m>(a+c-2)-2</m>, 
-              and let <m>v=b+d+4</m>, and <m>u=a+c-2</m>. If <m>\vec v + \vec w</m> is an element of <m>W</m>, 
+              However, with a bit of sleight of hand, things are not as bad as they seem.
+              Let's write the second component as <m>(b+d+4)+4</m>, and the third as <m>(a+c-2)-2</m>,
+              and let <m>v=b+d+4</m>, and <m>u=a+c-2</m>. If <m>\vec v + \vec w</m> is an element of <m>W</m>,
               then we're going to need
               <me>
                 2(a+c)+(b+d) = 2u+v
@@ -363,7 +363,7 @@
                   2u+v = 2(a+c-2)+(b+d+4) = 2(a+c)-4+(b+d)+4 = 2(a+c)+(b+d)
               </me>.
             </p>
-          
+
             <p>
               The extra constants cancel, so addition works! Similarly, we find
               <md>
@@ -379,22 +379,22 @@
             </p>
 
             <p>
-              Whew! That wasn't so straightforward. Could we have made our lives a little bit easier? 
+              Whew! That wasn't so straightforward. Could we have made our lives a little bit easier?
               (The answer to this rhetorical question is almost always yes.)
             </p>
-            
+
             <p>
-              We know that the potential trouble here came from the constant terms, 
-              so one option we have is to try burying them. Given the element 
+              We know that the potential trouble here came from the constant terms,
+              so one option we have is to try burying them. Given the element
               <me>
                 \vec v = \bbm 2u+v\\v+4\\u-2\ebm \in W
               </me>,
-              we're under no obligation to stick with the variables <m>u</m> and <m>v</m>. 
+              we're under no obligation to stick with the variables <m>u</m> and <m>v</m>.
               Let's try to simplify a bit: if we let <m>x = u-2</m> (so <m>u=x+2</m>) and <m>y = v+4</m> (so <m>v=y-4</m>), then
               <me>
                 2u+v = 2(x+2)+(y-4) = 2x+4+y-4 = 2x+y
               </me>,
-              and thus we can write <m>\vec v = \bbm 2x+y\\y\\x\ebm</m>, with no more constant terms. 
+              and thus we can write <m>\vec v = \bbm 2x+y\\y\\x\ebm</m>, with no more constant terms.
               In this form it's much easier to verify that <m>W</m> is a subspace.
             </p>
           </li>
@@ -404,7 +404,7 @@
   </example>
 
   <p>
-    Let's take a second look at the subspaces <m>T</m> and <m>W</m> from <xref ref="ex_subspace2"/> and <xref ref="ex_subspace3"/>. 
+    Let's take a second look at the subspaces <m>T</m> and <m>W</m> from <xref ref="ex_subspace2"/> and <xref ref="ex_subspace3"/>.
     Given an element <m>\vec v = \bbm 3a-2b\\a+b\\a-4b\ebm</m> of <m>T</m>, we note that
     <me>
       \vec v = \bbm 3a-2b\\a+b\\a-4b\ebm = \bbm 3a\\a\\a\ebm + \bbm -2b\\b\\-4b\ebm = a\bbm 3\\1\\1\ebm + b\bbm -2\\1\\-4\ebm
@@ -416,7 +416,7 @@
   </p>
 
   <p>
-    Similarly, if we write <m>\vec w = \bbm 2x+y\\y\\x\ebm\in W</m> 
+    Similarly, if we write <m>\vec w = \bbm 2x+y\\y\\x\ebm\in W</m>
     for an arbitrary element of <m>W</m> (using our change of variables), we have
     <me>
       \vec w = \bbm 2x\\0\\x\ebm + \bbm y\\y\\0\ebm = x\bbm 2\\0\\1\ebm + y\bbm 1\\1\\0\ebm
@@ -428,7 +428,7 @@
   </p>
 
   <p>
-    In fact, although we will not prove it in this textbook, <em>every</em> subspace of <m>\mathbb{R}^n</m> 
+    In fact, although we will not prove it in this textbook, <em>every</em> subspace of <m>\mathbb{R}^n</m>
     can be written as the span of some finite set of vectors.
     We can, however, prove that every span is a subspace.
   </p>
@@ -439,7 +439,7 @@
       <p>
         <idx><h>subspace </h><h> span</h></idx>
 
-        Let <m>\vec{v}_1,\vec{v}_2,\ldots, \vec{v}_k</m> be vectors in <m>\mathbb{R}^n</m>. 
+        Let <m>\vec{v}_1,\vec{v}_2,\ldots, \vec{v}_k</m> be vectors in <m>\mathbb{R}^n</m>.
         Then <m>V=\operatorname{span}\{\vec{v}_1, \vec{v}_2,\ldots, \vec{v}_k\}</m> is a subspace of <m>\mathbb{R}^n</m>.
       </p>
     </statement>
@@ -457,42 +457,42 @@
       <mrow>\amp  = (a_1\vec{v}_1+b_1\vec{v}_1)+(a_2\vec{v}_2+b_2\vec{v}_2)+\cdots + (a_k\vec{v}_k+b_k\vec{v}_k)</mrow>
       <mrow>\amp  = (a_1+b_1)\vec{v}_1+(a_2+b_2)\vec{v}_2 + \cdots + (a_k+b_k)\vec{v}_k</mrow>
     </md>,
-    so that <m>\vec a + \vec b</m> can be written as a linear combination of the vectors <m>\vec{v}_i</m> 
+    so that <m>\vec a + \vec b</m> can be written as a linear combination of the vectors <m>\vec{v}_i</m>
     and therefore belongs to <m>V</m>.
   </p>
 
   <p>
-    Similarly, for any scalar <m>c</m>, we have  
+    Similarly, for any scalar <m>c</m>, we have
     <md>
       <mrow>c\vec a \amp  = c(a_1\vec{v}_1+a_2\vec{v}_2+\cdots + a_k\vec{v}_k)</mrow>
       <mrow> \amp  = (ca_1)\vec{v}_1+(ca_2)\vec{v}_2+\cdots (ca_k)\vec{v}_k</mrow>
     </md>,
-    so that <m>c\vec a</m> is an element of <m>V</m> as well. 
+    so that <m>c\vec a</m> is an element of <m>V</m> as well.
     Thus, by <xref ref="def-subspace"/>, we know that <m>V</m> is a subspace of <m>\mathbb{R}^n</m>.
   </p>
 
   <p>
-    We conclude with a discussion of how <xref ref="thm-subspan"/> 
-    and the concept of linear independence allows us to give a complete description of the possible subspaces of <m>\mathbb{R}^n</m>. 
+    We conclude with a discussion of how <xref ref="thm-subspan"/>
+    and the concept of linear independence allows us to give a complete description of the possible subspaces of <m>\mathbb{R}^n</m>.
     To begin with, we have the simplest possible subspace, the <term>trivial subspace</term>
     <me>
         V_0 = \{\vec 0\}
     </me>.
-    <idx><h>subspace </h><h> trivial</h></idx> 
+    <idx><h>subspace </h><h> trivial</h></idx>
   </p>
 
   <aside>
     <p>
-      The trivial subspace appears at first glance to be an exception to the rule that <q>every subspace is a span</q>, 
-      but we can consider it to be the span of the zero vector. In more advanced textbooks where the concept of a basis is discussed, 
-      the trivial subspace is often considered to be the <q>span</q> of the empty set. 
+      The trivial subspace appears at first glance to be an exception to the rule that <q>every subspace is a span</q>,
+      but we can consider it to be the span of the zero vector. In more advanced textbooks where the concept of a basis is discussed,
+      the trivial subspace is often considered to be the <q>span</q> of the empty set.
       Since the empty set contains zero vectors, the trivial subspace is said to be zero-dimensional.
     </p>
   </aside>
 
   <p>
-    If a subspace <m>V</m> has at least one non-zero vector, let's say <m>\vec v\in V</m>, 
-    then by definition it must contain every scalar multiple of that vector. 
+    If a subspace <m>V</m> has at least one non-zero vector, let's say <m>\vec v\in V</m>,
+    then by definition it must contain every scalar multiple of that vector.
     Thus, the next simplest type of subspace is given as the span of a single, non-zero vector:
     <me>
         V_1 = \{t\vec v \, | \, t\in\mathbb{R} \text{ and } \vec v \neq \vec 0\}
@@ -500,38 +500,38 @@
   </p>
 
   <p>
-    Of course, there are infinitely many possibilities for <m>\vec v</m>, 
-    but each choice of <m>\vec v\neq \vec 0</m> leads to a subspace that looks and acts <q>the same</q>. 
+    Of course, there are infinitely many possibilities for <m>\vec v</m>,
+    but each choice of <m>\vec v\neq \vec 0</m> leads to a subspace that looks and acts <q>the same</q>.
     As discussed earlier, we can picture a subspace of this type as a line through the origin.
   </p>
 
   <p>
-    Next, we could consider a subspace <m>V_2 = \operatorname{span}\{\vec v, \vec w\}</m>, 
-    with <m>\vec v, \vec w \neq \vec 0</m>. There are two possibilities. 
-    One is that <m>\vec v</m> and <m>\vec w</m> are parallel, so that the set <m>\{\vec v,\vec w\}</m> is linearly dependent. 
+    Next, we could consider a subspace <m>V_2 = \operatorname{span}\{\vec v, \vec w\}</m>,
+    with <m>\vec v, \vec w \neq \vec 0</m>. There are two possibilities.
+    One is that <m>\vec v</m> and <m>\vec w</m> are parallel, so that the set <m>\{\vec v,\vec w\}</m> is linearly dependent.
     In this case we can write <m>\vec w = k\vec v</m> for some scalar <m>k</m>, and for any scalars <m>a</m> and <m>b</m>,
     <me>
       a\vec v+b\vec w = a\vec v + b(k\vec v) = (a+bk)\vec v,
     </me>
-    so our subspace <m>V_2</m> is really of the same type as <m>V_1</m>. 
-    If, however, the vectors <m>\vec v</m> and <m>\vec w</m> are linearly independent, 
-    then adding the vector <m>\vec w</m> gives us a second direction to work with, 
-    and <m>V_2</m> becomes an object that is strictly larger than <m>V_1</m>. 
+    so our subspace <m>V_2</m> is really of the same type as <m>V_1</m>.
+    If, however, the vectors <m>\vec v</m> and <m>\vec w</m> are linearly independent,
+    then adding the vector <m>\vec w</m> gives us a second direction to work with,
+    and <m>V_2</m> becomes an object that is strictly larger than <m>V_1</m>.
     In this case, the visualization is that of a <em>plane</em> through the origin.
   </p>
 
   <p>
-    Depending on the size of <m>n</m>, this argument continues. 
-    If we add a third vector <m>\vec u</m> that is already in the span of <m>\vec v</m> and <m>\vec w</m>, 
-    then the set <m>\{\vec u, \vec v,\vec w\}</m> is linearly dependent, 
-    and the span of this set is the same as what we already had. 
-    If, however, <m>\vec u \notin\operatorname{span}\{\vec v, \vec w\}</m>, 
+    Depending on the size of <m>n</m>, this argument continues.
+    If we add a third vector <m>\vec u</m> that is already in the span of <m>\vec v</m> and <m>\vec w</m>,
+    then the set <m>\{\vec u, \vec v,\vec w\}</m> is linearly dependent,
+    and the span of this set is the same as what we already had.
+    If, however, <m>\vec u \notin\operatorname{span}\{\vec v, \vec w\}</m>,
     then <m>\{\vec u, \vec v,\vec w\}</m> is linearly independent, and
     <me>
       V_3 = \operatorname{span}\{\vec u, \vec v, \vec w\}
     </me>
     is a strictly larger subspace than <m>\operatorname{span}\{\vec v, \vec w\}</m>.
-    We could then look for a fourth vector, and so on. However, in the familiar case of <m>\mathbb{R}^3</m>, 
+    We could then look for a fourth vector, and so on. However, in the familiar case of <m>\mathbb{R}^3</m>,
     the process stops at 3.
   </p>
 
@@ -565,7 +565,7 @@
             where the vectors <m>\vec v, \vec w</m> are linearly independent. (Two dimensional)
           </p>
         </li>
-        
+
         <li>
           <p>
             The complete space <m>V_3 = \mathbb{R}^3</m>. (Three dimensional)
@@ -576,9 +576,9 @@
   </insight>
 
   <p>
-    Notice the reference to dimension in <xref ref="idea-R3subspace"/>. 
-    In <m>\mathbb{R}^3</m>, we can rely on our intuitive (geometric) understanding of the concept of dimension. 
-    A complete understanding of the concept of dimension will have to wait until a second course in linear algebra; 
+    Notice the reference to dimension in <xref ref="idea-R3subspace"/>.
+    In <m>\mathbb{R}^3</m>, we can rely on our intuitive (geometric) understanding of the concept of dimension.
+    A complete understanding of the concept of dimension will have to wait until a second course in linear algebra;
     however, using the concepts in this section, we can make the following definition.
   </p>
 
@@ -588,15 +588,15 @@
       <p>
         <idx><h>dimension</h></idx>
 
-        The <term>dimension</term> of a subspace <m>V\subseteq \mathbb{R}^n</m> is the <em>smallest</em> 
+        The <term>dimension</term> of a subspace <m>V\subseteq \mathbb{R}^n</m> is the <em>smallest</em>
         number of vectors needed to span <m>V</m>.
       </p>
     </statement>
   </definition>
 
   <p>
-    One could also define dimension as the <em>largest</em> number of linearly independent vectors one can choose from a subspace. 
-    If <m>B=\{\vec{v}_1, \ldots, \vec{v}_k\}</m> is a set of vectors in a subspace <m>V</m> such that 
+    One could also define dimension as the <em>largest</em> number of linearly independent vectors one can choose from a subspace.
+    If <m>B=\{\vec{v}_1, \ldots, \vec{v}_k\}</m> is a set of vectors in a subspace <m>V</m> such that
     <ol>
       <li>
         <p>
@@ -609,23 +609,23 @@
         </p>
       </li>
     </ol>
-    then we say <m>B</m> is a <term>basis</term><idx><h>basis</h></idx> for <m>V</m>. 
-    For example, the set <m>\{\veci, \vecj, \veck\}</m> is a basis for <m>\mathbb{R}^3</m>. 
-    There are many possible bases for a subspace, 
-    but one can prove that the number of vectors in any basis is the same. 
+    then we say <m>B</m> is a <term>basis</term><idx><h>basis</h></idx> for <m>V</m>.
+    For example, the set <m>\{\veci, \vecj, \veck\}</m> is a basis for <m>\mathbb{R}^3</m>.
+    There are many possible bases for a subspace,
+    but one can prove that the number of vectors in any basis is the same.
     Once this fact is established, we could alternatively define dimension as the number of vectors in any basis.
   </p>
 
   <exercises>
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
-          Determine if the given subset of <m>\mathbb{R}^2</m> is a subspace. 
+          Determine if the given subset of <m>\mathbb{R}^2</m> is a subspace.
           Support your conclusion with a proof or counterexample.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -647,7 +647,7 @@
         </statement>
         <answer>
           <p>
-            Subspace. In fact, <m>T=\mathbb{R}^2</m>: given any vector <m>\bbm a\\b\ebm \in \mathbb{R}^2</m>, 
+            Subspace. In fact, <m>T=\mathbb{R}^2</m>: given any vector <m>\bbm a\\b\ebm \in \mathbb{R}^2</m>,
             if we let <m>x=\frac{a+b}{2}</m> and <m>y=\frac{a-b}{2}</m>, then <m>\bbm x+y\\x-y\ebm = \bbm a\\b\ebm</m>.
           </p>
         </answer>
@@ -661,7 +661,7 @@
         </statement>
         <answer>
           <p>
-            Subspace. If <m>y=2x</m>, we have 
+            Subspace. If <m>y=2x</m>, we have
             <me>
               \bbm x\\y\ebm = \bbm x\\2x\ebm = x\bbm 1\\2\ebm,
             </me>

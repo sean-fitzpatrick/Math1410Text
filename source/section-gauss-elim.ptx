@@ -3,7 +3,7 @@
   <title>Elementary Row Operations and Gaussian Elimination</title>
 
   <p>
-    In our examples thus far, we have essentially used just three types of manipulations in order to find solutions to our systems of equations. 
+    In our examples thus far, we have essentially used just three types of manipulations in order to find solutions to our systems of equations.
     These three manipulations are:
     <ol>
       <li>
@@ -25,16 +25,16 @@
   </p>
 
   <p>
-    We saw earlier how we could write all the information of a system of equations in a matrix, 
-    so it makes sense that we can perform similar operations on matrices (as we have done before). 
-    Again, simply replace the word <q>equation</q> above with the word <q>row.</q> 
+    We saw earlier how we could write all the information of a system of equations in a matrix,
+    so it makes sense that we can perform similar operations on matrices (as we have done before).
+    Again, simply replace the word <q>equation</q> above with the word <q>row.</q>
   </p>
-  
+
   <p>
-    We didn't justify our ability to  manipulate our equations in the above three ways; 
-    it seems rather obvious that we should be able to do that. In that sense, these operations are <q>elementary.</q> 
-    These operations are <em>elementary</em> in another sense; they are <em>fundamental</em> <mdash/> 
-    they form the basis for much of what we will do in matrix algebra. 
+    We didn't justify our ability to  manipulate our equations in the above three ways;
+    it seems rather obvious that we should be able to do that. In that sense, these operations are <q>elementary.</q>
+    These operations are <em>elementary</em> in another sense; they are <em>fundamental</em> <mdash/>
+    they form the basis for much of what we will do in matrix algebra.
     Since these operations are so important, we list them again here in the context of matrices.
   </p>
 
@@ -63,8 +63,8 @@
   </insight>
 
   <p>
-    Given any system of linear equations, we can find a solution (if one exists) by using these three row operations. 
-    Elementary row operations give us a new linear system, but the solution to the new system is the same as the old. 
+    Given any system of linear equations, we can find a solution (if one exists) by using these three row operations.
+    Elementary row operations give us a new linear system, but the solution to the new system is the same as the old.
     We can use these operations as much as we want and not change the solution. This brings to mind two good questions:
   </p>
 
@@ -84,17 +84,17 @@
   </p>
 
   <p>
-    We'll answer the first question first. Most of the time (unless one prefers obfuscation to clarification) 
-    we will want to take our original matrix and, using the elementary row operations, 
-    put it into something called <term>reduced row echelon form</term>. This is our <q>destination,</q> 
-    for this form allows us to readily identify whether or not a solution exists, and in the case that it does, what that solution is. 
+    We'll answer the first question first. Most of the time (unless one prefers obfuscation to clarification)
+    we will want to take our original matrix and, using the elementary row operations,
+    put it into something called <term>reduced row echelon form</term>. This is our <q>destination,</q>
+    for this form allows us to readily identify whether or not a solution exists, and in the case that it does, what that solution is.
   </p>
 
   <p>
-    In the previous section, when we manipulated matrices to find solutions, we were unwittingly putting the matrix into reduced row echelon form. 
-    However, not all solutions come in such a simple manner as we've seen so far. 
-    Putting a matrix into reduced row echelon form helps us identify all types of solutions. 
-    We'll explore the topic of understanding what the reduced row echelon form of a matrix tells us in the following sections; 
+    In the previous section, when we manipulated matrices to find solutions, we were unwittingly putting the matrix into reduced row echelon form.
+    However, not all solutions come in such a simple manner as we've seen so far.
+    Putting a matrix into reduced row echelon form helps us identify all types of solutions.
+    We'll explore the topic of understanding what the reduced row echelon form of a matrix tells us in the following sections;
     in this section we focus on finding it.
   </p>
 
@@ -140,7 +140,7 @@
   <example xml:id="ex_rref">
     <title>Determining if a matrix is in reduced row echelon form</title>
     <statement>
- 
+
       <p>
         Which of the following matrices is in reduced row echelon form?
         <ol cols="2" marker="(a)">
@@ -196,52 +196,52 @@
     </statement>
     <solution>
       <p>
-        The matrices in (a), (b), (c), (d) and (g) are all in reduced row echelon form. 
+        The matrices in (a), (b), (c), (d) and (g) are all in reduced row echelon form.
         Check to see that each satisfies the necessary conditions. If your instincts were wrong on some of these, correct your thinking accordingly.
       </p>
 
       <p>
-        The matrix in (e) is not in reduced row echelon form since the row of all zeros is not at the bottom. 
-        The matrix in (f) is not in reduced row echelon form since the first nonzero entries in rows 2 and 3 are not 1. 
-        Finally, the matrix in (h) is not in reduced row echelon form since the first entry in column 2 is not zero; 
-        the second 1 in column 2 is a leading one, hence all other entries in that column should be 0. 
+        The matrix in (e) is not in reduced row echelon form since the row of all zeros is not at the bottom.
+        The matrix in (f) is not in reduced row echelon form since the first nonzero entries in rows 2 and 3 are not 1.
+        Finally, the matrix in (h) is not in reduced row echelon form since the first entry in column 2 is not zero;
+        the second 1 in column 2 is a leading one, hence all other entries in that column should be 0.
       </p>
 
       <p>
-        We end this example with a preview of what we'll learn in the future. 
-        Consider the matrix in (b). If this matrix came from the augmented matrix of a system of linear equations, 
-        then we can readily recognize that the solution of the system is <m>x_1=1</m> and <m>x_2=2</m>. 
-        Again, in previous examples, when we found the solution to a linear system, 
+        We end this example with a preview of what we'll learn in the future.
+        Consider the matrix in (b). If this matrix came from the augmented matrix of a system of linear equations,
+        then we can readily recognize that the solution of the system is <m>x_1=1</m> and <m>x_2=2</m>.
+        Again, in previous examples, when we found the solution to a linear system,
         we were unwittingly putting our matrices into reduced row echelon form.
       </p>
     </solution>
   </example>
 
   <p>
-    We began this section discussing how we can manipulate the entries in a matrix with elementary row operations. 
-    This led to two questions, <q>Where do we go?</q> and <q>How do we get there quickly?</q> 
-    We've just answered the first question: most of the time we are <q>going to</q> reduced row echelon form. 
+    We began this section discussing how we can manipulate the entries in a matrix with elementary row operations.
+    This led to two questions, <q>Where do we go?</q> and <q>How do we get there quickly?</q>
+    We've just answered the first question: most of the time we are <q>going to</q> reduced row echelon form.
     We now address the second question.
   </p>
 
   <p>
-    There is no one <q>right</q> way of using these operations to transform a matrix into reduced row echelon form. 
-    However, there is a general technique that works very well in that it is very efficient (so we don't waste time on unnecessary steps). 
+    There is no one <q>right</q> way of using these operations to transform a matrix into reduced row echelon form.
+    However, there is a general technique that works very well in that it is very efficient (so we don't waste time on unnecessary steps).
     This technique is called <em>Gaussian elimination</em>.
     It is named in honour of the great mathematician Karl Friedrich Gauss.
-    <idx><h>Gaussian elimination</h></idx> 
+    <idx><h>Gaussian elimination</h></idx>
   </p>
 
   <p>
-    While this technique isn't very difficult to use, 
-    it is one of those things that is easier understood by watching it being used than explained as a series of steps. 
+    While this technique isn't very difficult to use,
+    it is one of those things that is easier understood by watching it being used than explained as a series of steps.
     With this in mind, we will go through one more example highlighting important steps and then we'll explain the procedure in detail.
   </p>
 
   <example xml:id="ex_gaussian_elimination">
     <title>Using row operations to simplify an augmented matrix</title>
     <statement>
- 
+
       <p>
         Put the augmented matrix of the following system of linear equations into reduced row echelon form.
         <me>
@@ -264,47 +264,46 @@
       <p>
         Our next step is to change the entry in the box to a 1. To do this, let's multiply row 1 by <m>-\frac13</m>.
         <md>
-          <mrow>-\frac13R_1\rightarrow R_1 \amp \amp \amp \left[\begin{array}{ccc|c}1\amp 1\amp -3\amp -4\\ 2\amp 2\amp -4\amp -2\\0\amp -2\amp -4\amp -8\end{array}\right]</mrow>
+          <mrow>-\frac13R_1\rightarrow R_1 \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}1\amp 1\amp -3\amp -4\\ 2\amp 2\amp -4\amp -2\\0\amp -2\amp -4\amp -8\end{array}\right]</mrow>
         </md>.
       </p>
 
       <p>
-        We have now created a <em>leading 1</em>; that is, the first entry in the first row is a 1. 
+        We have now created a <em>leading 1</em>; that is, the first entry in the first row is a 1.
         Our next step is to put zeros under this 1. To do this, we'll use the elementary row operation given below.
         <md>
-          <mrow>-2R_1+R_2\rightarrow R_2 \amp \amp \amp \left[\begin{array}{ccc|c}1\amp 1\amp -3\amp -4\\ 0\amp \boxed{0}\amp 2\amp 6\\0\amp -2\amp -4\amp -8\end{array}\right]</mrow>
+          <mrow>-2R_1+R_2\rightarrow R_2 \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}1\amp 1\amp -3\amp -4\\ 0\amp \boxed{0}\amp 2\amp 6\\0\amp -2\amp -4\amp -8\end{array}\right]</mrow>
         </md>.
       </p>
 
       <p>
-        Once this is accomplished, we shift our focus from the leading one down one row, and to the right one column, 
-        to the position that is boxed. We again want to put a 1 in this position. We can use any elementary row operations, 
-        but we need to restrict ourselves to using only the second row and any rows below it. 
+        Once this is accomplished, we shift our focus from the leading one down one row, and to the right one column,
+        to the position that is boxed. We again want to put a 1 in this position. We can use any elementary row operations,
+        but we need to restrict ourselves to using only the second row and any rows below it.
         Probably the simplest thing we can do is interchange rows 2 and 3, and then scale the new second row so that there is a 1 in the desired position.
         <md>
-          <mrow>R_2\leftrightarrow R_3 \amp \amp \amp \left[\begin{array}{ccc|c}1\amp 1\amp -3\amp -4\\0\amp \boxed{-2}\amp -4\amp -8 \\0\amp 0\amp 2\amp 6\end{array}\right]</mrow>
-          <mrow>-\frac12R_2\rightarrow R_2 \amp \amp \amp \left[\begin{array}{ccc|c}1\amp 1\amp -3\amp -4\\0\amp 1\amp 2\amp 4 \\0\amp 0\amp \boxed{2}\amp 6\end{array}\right]</mrow>
+          <mrow>R_2\leftrightarrow R_3 \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}1\amp 1\amp -3\amp -4\\0\amp \boxed{-2}\amp -4\amp -8 \\0\amp 0\amp 2\amp 6\end{array}\right]</mrow>
+          <mrow>-\frac12R_2\rightarrow R_2 \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}1\amp 1\amp -3\amp -4\\0\amp 1\amp 2\amp 4 \\0\amp 0\amp \boxed{2}\amp 6\end{array}\right]</mrow>
         </md>.
       </p>
 
       <p>
-        We have now created another leading 1, this time in the second row. 
-        Our next desire is to put zeros  underneath it, but this has already been accomplished by our previous steps. 
-        Therefore we again shift our attention to the right one column and down one row, 
+        We have now created another leading 1, this time in the second row.
+        Our next desire is to put zeros  underneath it, but this has already been accomplished by our previous steps.
+        Therefore we again shift our attention to the right one column and down one row,
         to the next position put in the box. We want that to be a 1. A simple scaling will accomplish this.
         <md>
-          <mrow>\frac12R_3\rightarrow R_3 \amp \amp \amp \left[\begin{array}{ccc|c}1\amp 1\amp -3\amp -4\\0\amp 1\amp 2\amp 4 \\0\amp 0\amp 1\amp 3\end{array}\right]</mrow>
+          <mrow>\frac12R_3\rightarrow R_3 \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}1\amp 1\amp -3\amp -4\\0\amp 1\amp 2\amp 4 \\0\amp 0\amp 1\amp 3\end{array}\right]</mrow>
         </md>
       </p>
 
       <p>
-        This ends what we will refer to as the <em>forward steps</em>. 
-        Our next task is to use the elementary row operations and go back and put zeros above our leading 1s. 
+        This ends what we will refer to as the <em>forward steps</em>.
+        Our next task is to use the elementary row operations and go back and put zeros above our leading 1s.
         This is referred to as the <em>backward steps</em>. These steps are given below.
         <md>
-          <mrow> 3R_3+R_1\rightarrow R_1\amp \amp \amp </mrow>
-          <mrow>-2R_3+R_2\rightarrow R_2\amp \amp \amp \left[\begin{array}{ccc|c}1\amp 1\amp 0\amp 5\\0\amp 1\amp 0\amp -2 \\0\amp 0\amp 1\amp 3\end{array}\right]</mrow>
-          <mrow>-R_2+R_1\rightarrow R_1 \amp \amp \amp \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 7\\0\amp 1\amp 0\amp -2 \\0\amp 0\amp 1\amp 3\end{array}\right]</mrow>
+          <mrow>\begin{matrix}3R_3+R_1\rightarrow R_1\\-2R_3+R_2\rightarrow R_2\end{matrix}\amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}1\amp 1\amp 0\amp 5\\0\amp 1\amp 0\amp -2 \\0\amp 0\amp 1\amp 3\end{array}\right]</mrow>
+          <mrow>-R_2+R_1\rightarrow R_1 \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 7\\0\amp 1\amp 0\amp -2 \\0\amp 0\amp 1\amp 3\end{array}\right]</mrow>
         </md>.
         It is now easy to read off the solution as <m>x_1 = 7</m>, <m>x_2 = -2</m> and <m>x_3 = 3</m>.
       </p>
@@ -313,20 +312,20 @@
 
   <aside>
     <p>
-      Technically, Gaussian elimination consists only of the <q>forward steps</q>; 
-      including the <q>backwards steps</q> results in an algorithm known as <em>Gauss-Jordan elimination</em>. 
-      In Gaussian elimination, instead of the backward steps, one uses <term>back substitution</term>. 
-      At the end of the forward steps, we can immediately read off <m>x_3 = 3</m> from the third row. 
-      The second row corresponds to the equation <m>x_2+2x_3=4</m>, and plugging in <m>x_3=3</m> to this equation, 
-      we get <m>x_2+6=4</m>, so <m>x_2=-2</m>. Finally, the first row gives the equation <m>x_1+x_2-3x_3=-4</m>, 
-      and plugging in <m>x_2=-2</m> and <m>x_3=3</m>, we get <m>x_1-2-9=-4</m>, so <m>x_1=7</m>. 
-      Using back substitution is slightly more efficient than including the backward steps, 
+      Technically, Gaussian elimination consists only of the <q>forward steps</q>;
+      including the <q>backwards steps</q> results in an algorithm known as <em>Gauss-Jordan elimination</em>.
+      In Gaussian elimination, instead of the backward steps, one uses <term>back substitution</term>.
+      At the end of the forward steps, we can immediately read off <m>x_3 = 3</m> from the third row.
+      The second row corresponds to the equation <m>x_2+2x_3=4</m>, and plugging in <m>x_3=3</m> to this equation,
+      we get <m>x_2+6=4</m>, so <m>x_2=-2</m>. Finally, the first row gives the equation <m>x_1+x_2-3x_3=-4</m>,
+      and plugging in <m>x_2=-2</m> and <m>x_3=3</m>, we get <m>x_1-2-9=-4</m>, so <m>x_1=7</m>.
+      Using back substitution is slightly more efficient than including the backward steps,
       but once we get to examples with free parameters, you'll probably find that it's easier to go all the way to reduced row-echelon form.
     </p>
   </aside>
 
   <p>
-    We now formally explain the procedure used to find the solution above. 
+    We now formally explain the procedure used to find the solution above.
     As you read through the procedure, follow along with the example above so that the explanation makes more sense.
     <dl>
       <li>
@@ -341,7 +340,7 @@
             </li>
             <li>
               <p>
-                If the entry in the row and column that we are considering is zero, interchange rows with a row below the current row so that that entry is nonzero. If all entries below are zero, we are done with this column; start again at step 1. 
+                If the entry in the row and column that we are considering is zero, interchange rows with a row below the current row so that that entry is nonzero. If all entries below are zero, we are done with this column; start again at step 1.
               </p>
             </li>
             <li>
@@ -389,8 +388,8 @@
         </p>
 
         <p>
-          Note that this means we have just put a matrix into row echelon form. 
-          The next steps finish the conversion into <em>reduced</em> row echelon form. 
+          Note that this means we have just put a matrix into row echelon form.
+          The next steps finish the conversion into <em>reduced</em> row echelon form.
           These next steps are referred to as the <em>backward</em> steps. These are much easier to state.
         </p>
       </li>
@@ -404,17 +403,17 @@
                 Starting from the right and working left, use Elementary Row Operation 1 repeatedly to put zeros above each leading 1.
               </p>
             </li>
-          </ol>            
+          </ol>
         </p>
       </li>
     </dl>
   </p>
 
   <p>
-    The basic method of Gaussian elimination is this: 
-    create leading ones and then use elementary row operations to put zeros above and below these leading ones. 
-    We can do this in any order we please, but by following the <q>Forward Steps</q> and <q>Backward Steps,</q> 
-    we make use of the presence of zeros to make the overall computations easier. 
+    The basic method of Gaussian elimination is this:
+    create leading ones and then use elementary row operations to put zeros above and below these leading ones.
+    We can do this in any order we please, but by following the <q>Forward Steps</q> and <q>Backward Steps,</q>
+    we make use of the presence of zeros to make the overall computations easier.
     This method is very efficient, so it gets its own name (which we've already been using).
   </p>
 
@@ -423,7 +422,7 @@
     <statement>
       <p>
         <idx><h>Gaussian elimination</h></idx>
-        <term>Gaussian elimination</term> is the technique for finding the reduced row echelon form of a matrix using the above procedure. 
+        <term>Gaussian elimination</term> is the technique for finding the reduced row echelon form of a matrix using the above procedure.
         It can be abbreviated to:
         <ol>
           <li>
@@ -457,11 +456,11 @@
 
   <aside>
     <p>
-      In <xref ref="ex_rref_2"/>, we create our first leading 1 by multiplying Row 1 by <m>-\frac{1}{2}</m>. 
-      On a computer, this is the most efficient option, and it's a good choice in this example, since every entry in Row 1 is even, 
-      so no fractions are introduced. Most people like to avoid fractions if they can, 
-      and in some cases that's impossible with this type of row operation. 
-      The other option we could have tried here is adding Row 3 to Row 1: since <m>-2+3 = 1</m>, 
+      In <xref ref="ex_rref_2"/>, we create our first leading 1 by multiplying Row 1 by <m>-\frac{1}{2}</m>.
+      On a computer, this is the most efficient option, and it's a good choice in this example, since every entry in Row 1 is even,
+      so no fractions are introduced. Most people like to avoid fractions if they can,
+      and in some cases that's impossible with this type of row operation.
+      The other option we could have tried here is adding Row 3 to Row 1: since <m>-2+3 = 1</m>,
       the row operation <m>R_1\to R_1+R_3</m> also would have created a leading 1 for us.
     </p>
   </aside>
@@ -470,7 +469,7 @@
     <title>Using Gaussian elimination</title>
     <statement>
       <p>
-        Use Gaussian elimination to put the matrix <m>\tta</m> into reduced row echelon form, where  
+        Use Gaussian elimination to put the matrix <m>\tta</m> into reduced row echelon form, where
         <me>
           \tta = \bbm-2 \amp -4 \amp -2\amp -10\amp 0\\2\amp 4\amp 1\amp 9\amp -2\\3\amp 6\amp 1\amp 13\amp -4\ebm
         </me>.
@@ -478,38 +477,37 @@
     </statement>
     <solution>
       <p>
-        We start by wanting to make the entry in the first column and first row a 1 (a leading 1). 
-        To do this we'll scale the first row by a factor of <m>-\frac12</m>. 
+        We start by wanting to make the entry in the first column and first row a 1 (a leading 1).
+        To do this we'll scale the first row by a factor of <m>-\frac12</m>.
         <md>
-          <mrow>-\frac12R_1\rightarrow R_1 \amp \amp \amp \bbm 1\amp 2\amp 1\amp 5\amp 0\\2\amp 4\amp 1\amp 9\amp -2\\3\amp 6\amp 1\amp 13\amp -4\ebm</mrow>
+          <mrow>-\frac12R_1\rightarrow R_1 \amp \quad \amp \quad \amp \bbm 1\amp 2\amp 1\amp 5\amp 0\\2\amp 4\amp 1\amp 9\amp -2\\3\amp 6\amp 1\amp 13\amp -4\ebm</mrow>
         </md>
       </p>
 
       <p>
-        Next we need to put zeros in the column below this newly formed leading 1. 
+        Next we need to put zeros in the column below this newly formed leading 1.
         <md>
-          <mrow>-2R_1+R_2\rightarrow R_2 \amp \amp \amp </mrow>
-          <mrow>-3R_1+R_3\rightarrow R_3 \amp \amp \amp \bbm 1\amp 2\amp 1\amp 5\amp 0\\0\amp \boxed{0}\amp -1\amp -1\amp -2\\0\amp 0\amp -2\amp -2\amp -4\ebm</mrow>
+          <mrow>\begin{matrix}-2R_1+R_2\rightarrow R_2\\-3R_1+R_3\rightarrow R_3\end{matrix} \amp \quad \amp \quad \amp \bbm 1\amp 2\amp 1\amp 5\amp 0\\0\amp \boxed{0}\amp -1\amp -1\amp -2\\0\amp 0\amp -2\amp -2\amp -4\ebm</mrow>
         </md>
       </p>
 
       <p>
-        Our attention now shifts to the right one column and down one row to the position indicated by the box. 
-        We want to put a 1 in that position. Our only options are to either scale the current row or to interchange rows with a row below it. 
+        Our attention now shifts to the right one column and down one row to the position indicated by the box.
+        We want to put a 1 in that position. Our only options are to either scale the current row or to interchange rows with a row below it.
         However, in this case neither of these options will accomplish our goal. Therefore, we shift our attention to the right one more column.
       </p>
 
       <p>
-        We want to put a <m>1</m> where there is a <m>-1</m>. 
+        We want to put a <m>1</m> where there is a <m>-1</m>.
         A simple scaling will accomplish this; once done, we will put a 0 underneath this leading one.
         <md>
-          <mrow> -R_2\rightarrow R_2\amp \amp \amp \bbm 1\amp 2\amp 1\amp 5\amp 0\\0\amp 0\amp 1\amp 1\amp 2\\0\amp 0\amp -2\amp -2\amp -4\ebm</mrow>
-          <mrow> 2R_2+R_3\rightarrow R_3\amp \amp \amp \bbm 1\amp 2\amp 1\amp 5\amp 0\\0\amp 0\amp 1\amp 1\amp 2\\0\amp 0\amp 0\amp \boxed{0}\amp 0\ebm</mrow>
+          <mrow> -R_2\rightarrow R_2\amp \quad \amp \quad \amp \bbm 1\amp 2\amp 1\amp 5\amp 0\\0\amp 0\amp 1\amp 1\amp 2\\0\amp 0\amp -2\amp -2\amp -4\ebm</mrow>
+          <mrow> 2R_2+R_3\rightarrow R_3\amp \quad \amp \quad \amp \bbm 1\amp 2\amp 1\amp 5\amp 0\\0\amp 0\amp 1\amp 1\amp 2\\0\amp 0\amp 0\amp \boxed{0}\amp 0\ebm</mrow>
         </md>
       </p>
 
       <p>
-        Our attention now shifts over one more column and down one row to the position indicated by the box; 
+        Our attention now shifts over one more column and down one row to the position indicated by the box;
         we wish to make this a 1. Of course, there is no way to do this, so we are done with the forward steps.
       </p>
 
@@ -527,7 +525,7 @@
     <title>Gaussian elimination, again</title>
     <statement>
       <p>
-        Put the matrix 
+        Put the matrix
         <me>
           \bbm 1 \amp 2 \amp 1\amp 3\\2\amp 1\amp 1\amp 1\\3\amp 3\amp 2\amp 1\ebm
         </me>
@@ -538,19 +536,18 @@
       <p>
         Here we will show all steps without explaining each one.
         <md>
-          <mrow>-2R_1+R_2\rightarrow R_2 \amp \amp \amp \bbm 1\amp 2\amp 1\amp 3\\0\amp -3\amp -1\amp -5\\0\amp -3\amp -1\amp -8\ebm</mrow>
-          <mrow>-\frac13R_2\rightarrow R_2 \amp \bbm 1\amp 2\amp 1\amp 3\\0\amp 1\amp 1/3\amp 5/3\\0\amp -3\amp -1\amp -8\ebm</mrow>
-          <mrow> 3R_2+R_3\rightarrow R_3 \amp \amp \amp \bbm 1\amp 2\amp 1\amp 3\\0\amp 1\amp 1/3\amp 5/3\\0\amp 0\amp 0\amp -3\ebm</mrow>
-          <mrow>-\frac13R_3\rightarrow R_3 \amp \amp \amp \bbm 1\amp 2\amp 1\amp 3\\0\amp 1\amp 1/3\amp 5/3\\0\amp 0\amp 0\amp 1\ebm</mrow>
-          <mrow>-3R_3+R_1\rightarrow R_1 \amp \amp \amp </mrow>
-          <mrow>-\frac53R_3+R_2\rightarrow R_2 \amp \amp \amp \bbm 1\amp 2\amp 1\amp 0\\0\amp 1\amp 1/3\amp 0\\0\amp 0\amp 0\amp 1\ebm</mrow>
-          <mrow>-2R_2+R_1\rightarrow R_1 \amp \amp \amp \bbm 1\amp 0\amp 1/3\amp 0\\0\amp 1\amp 1/3\amp 0\\0\amp 0\amp 0\amp 1\ebm</mrow>
+          <mrow>-2R_1+R_2\rightarrow R_2 \amp \quad \amp \quad \amp \bbm 1\amp 2\amp 1\amp 3\\0\amp -3\amp -1\amp -5\\0\amp -3\amp -1\amp -8\ebm</mrow>
+          <mrow>-\frac13R_2\rightarrow R_2 \amp \quad \amp \quad \amp \bbm 1\amp 2\amp 1\amp 3\\0\amp 1\amp 1/3\amp 5/3\\0\amp -3\amp -1\amp -8\ebm</mrow>
+          <mrow> 3R_2+R_3\rightarrow R_3 \amp \quad \amp \quad \amp \bbm 1\amp 2\amp 1\amp 3\\0\amp 1\amp 1/3\amp 5/3\\0\amp 0\amp 0\amp -3\ebm</mrow>
+          <mrow>-\frac13R_3\rightarrow R_3 \amp \quad \amp \quad \amp \bbm 1\amp 2\amp 1\amp 3\\0\amp 1\amp 1/3\amp 5/3\\0\amp 0\amp 0\amp 1\ebm</mrow>
+          <mrow>\begin{matrix}-3R_3+R_1\rightarrow R_1\\-\frac53R_3+R_2\rightarrow R_2\end{matrix} \amp \quad \amp \quad \amp \bbm 1\amp 2\amp 1\amp 0\\0\amp 1\amp 1/3\amp 0\\0\amp 0\amp 0\amp 1\ebm</mrow>
+          <mrow>-2R_2+R_1\rightarrow R_1 \amp \quad \amp \quad \amp \bbm 1\amp 0\amp 1/3\amp 0\\0\amp 1\amp 1/3\amp 0\\0\amp 0\amp 0\amp 1\ebm</mrow>
         </md>.
       </p>
 
       <p>
-        The last matrix in the above example is in reduced row echelon form. 
-        If one thinks of the original matrix as representing the augmented matrix of a system of linear equations, 
+        The last matrix in the above example is in reduced row echelon form.
+        If one thinks of the original matrix as representing the augmented matrix of a system of linear equations,
         this final result is interesting. What does it mean to have a leading one in the last column? We'll figure this out in the next section.
       </p>
     </solution>
@@ -559,9 +556,9 @@
   <example xml:id="ex_back_substitution">
     <title>Using back substitution</title>
     <statement>
- 
+
       <p>
-        Put the matrix <m>\tta</m> into reduced row echelon form, where  
+        Put the matrix <m>\tta</m> into reduced row echelon form, where
         <me>
           \tta = \bbm 2 \amp 1 \amp -1\amp 4\\1\amp -1\amp 2\amp 12\\2\amp 2\amp -1\amp 9\\ \ebm
         </me>.
@@ -571,12 +568,11 @@
       <p>
         We'll again show the steps without explanation, although we will stop at the end of the forward steps and make a comment.
         <md>
-          <mrow>\frac12R_1\rightarrow R_1 \amp \amp \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\1\amp -1\amp 2\amp 12\\2\amp 2\amp -1\amp 9\\\ebm</mrow>
-          <mrow>-R_1+R_2\rightarrow R_2 \amp \amp \amp </mrow>
-          <mrow> -2R_1+R_3\rightarrow R_3b\amp \amp \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\0\amp -3/2\amp 5/2\amp 10\\0\amp 1\amp 0\amp 5\\\ebm</mrow>
-          <mrow> -\frac23R_2\rightarrow R_2 \amp \amp \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\0\amp 1\amp -5/3\amp -20/3\\0\amp 1\amp 0\amp 5\\ \ebm</mrow>
-          <mrow> -R_2+R_3\rightarrow R_3 \amp \amp \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\0\amp 1\amp -5/3\amp -20/3\\0\amp 0\amp 5/3\amp 35/3\\ \ebm</mrow>
-          <mrow>\frac35R_3\rightarrow R_3 \amp \amp \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\0\amp 1\amp -5/3\amp -20/3\\0\amp 0\amp 1\amp 7\\ \ebm </mrow>
+          <mrow>\frac12R_1\rightarrow R_1 \amp \quad \amp \quad \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\1\amp -1\amp 2\amp 12\\2\amp 2\amp -1\amp 9\\\ebm</mrow>
+          <mrow>\begin{matrix}-R_1+R_2\rightarrow R_2\\ -2R_1+R_3\rightarrow R_3\end{matrix}\amp \quad \amp \quad \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\0\amp -3/2\amp 5/2\amp 10\\0\amp 1\amp 0\amp 5\\\ebm</mrow>
+          <mrow> -\frac23R_2\rightarrow R_2 \amp \quad \amp \quad \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\0\amp 1\amp -5/3\amp -20/3\\0\amp 1\amp 0\amp 5\\ \ebm</mrow>
+          <mrow> -R_2+R_3\rightarrow R_3 \amp \quad \amp \quad \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\0\amp 1\amp -5/3\amp -20/3\\0\amp 0\amp 5/3\amp 35/3\\ \ebm</mrow>
+          <mrow>\frac35R_3\rightarrow R_3 \amp \quad \amp \quad \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\0\amp 1\amp -5/3\amp -20/3\\0\amp 0\amp 1\amp 7\\ \ebm </mrow>
         </md>.
       </p>
 
@@ -592,7 +588,7 @@
       </p>
 
       <p>
-        Since we know that <m>x_3 = 7</m>, the second equation turns into 
+        Since we know that <m>x_3 = 7</m>, the second equation turns into
         <me>
           x_2 - (5/3)(7) = -20/3
         </me>,
@@ -600,7 +596,7 @@
       </p>
 
       <p>
-        Finally, knowing values for <m>x_2</m> and <m>x_3</m> lets us substitute in the first equation and find 
+        Finally, knowing values for <m>x_2</m> and <m>x_3</m> lets us substitute in the first equation and find
         <me>
           x_1 +(1/2)(5)-(1/2)(7) = 2
         </me>,
@@ -608,63 +604,62 @@
       </p>
 
       <p>
-        This process of substituting known values back into other equations is called <em>back substitution.</em> 
-        This process is essentially what happens when we perform the backward steps of Gaussian elimination. 
+        This process of substituting known values back into other equations is called <em>back substitution.</em>
+        This process is essentially what happens when we perform the backward steps of Gaussian elimination.
         We make note of this below as we finish out finding the reduced row echelon form of our matrix.
         <md>
-          <mrow> \frac53R_3+R_2\rightarrow R_2 \amp \amp \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\0\amp 1\amp 0\amp 5\\0\amp 0\amp 1\amp 7\\ \ebm</mrow>
-          <mrow>(\text{knowing } x_3=7 \text{ allows us to find } x_2 = 5)\amp \amp \amp </mrow>
-          <mrow>\frac12R_3+R_1\rightarrow R_1 \amp \amp \amp </mrow>
-          <mrow>-\frac12R_2+R_1\rightarrow R_1 \amp \amp \amp \bbm 1\amp 0\amp 0\amp 3\\0\amp 1\amp 0\amp 5\\0\amp 0\amp 1\amp 7\\ \ebm</mrow>
-          <mrow>(\text{knowing } x_2=5 \text{ and } x_3=7 \text{ allows us to find } x_1 = 3) \amp \amp \amp </mrow>
+          <mrow> \frac53R_3+R_2\rightarrow R_2 \amp \quad \amp \quad \amp \bbm 1\amp 1/2\amp -1/2\amp 2\\0\amp 1\amp 0\amp 5\\0\amp 0\amp 1\amp 7\\ \ebm</mrow>
+          <intertext>(knowing <m>x_3=7</m> allows us to find <m>x_2 = 5</m>)</intertext>
+          <mrow>\begin{matrix}\frac12R_3+R_1\rightarrow R_1\\-\frac12R_2+R_1\rightarrow R_1\end{matrix} \amp \quad \amp \quad \amp \bbm 1\amp 0\amp 0\amp 3\\0\amp 1\amp 0\amp 5\\0\amp 0\amp 1\amp 7\\ \ebm</mrow>
+          <intertext>(knowing <m>x_2=5</m> and <m>x_3=7</m> allows us to find <m>x_1 = 3</m>)</intertext>
         </md>
       </p>
 
       <p>
-        We did our operations slightly <q>out of order</q> in that we didn't put the zeros above our leading 1 in the third column in the same step, 
+        We did our operations slightly <q>out of order</q> in that we didn't put the zeros above our leading 1 in the third column in the same step,
         highlighting how back substitution works.
       </p>
     </solution>
   </example>
 
   <p>
-    In all of our practice, we've only encountered systems of linear equations with exactly one solution. 
-    Is this always going to be the case? Could we ever have systems with more than one solution? 
-    If so, how many solutions could there be? Could we have systems without a solution? 
+    In all of our practice, we've only encountered systems of linear equations with exactly one solution.
+    Is this always going to be the case? Could we ever have systems with more than one solution?
+    If so, how many solutions could there be? Could we have systems without a solution?
     These are some of the questions we'll address in the next section.
   </p>
 
   <exercises>
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           State whether or not the given matrices are in reduced row echelon form. If it is not, state why.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
             <ol>
               <li>
                 <p>
-                  <m>\bbm 1&amp;0\\0&amp;1\\ \ebm</m>
+                  <m>\bbm 1\amp 0\\0\amp 1\\ \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\bbm 0&amp;1\\1&amp;0\\ \ebm</m>
+                  <m>\bbm 0\amp 1\\1\amp 0\\ \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\bbm 1&amp;1\\1&amp;1\\ \ebm</m>
+                  <m>\bbm 1\amp 1\\1\amp 1\\ \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\bbm 1&amp;0&amp;1\\0&amp;1&amp;2\\ \ebm</m>
+                  <m>\bbm 1\amp 0\amp 1\\0\amp 1\amp 2\\ \ebm</m>
                 </p>
               </li>
             </ol>
@@ -697,29 +692,29 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
             <ol>
               <li>
                 <p>
-                      <m>\bbm 1&amp;0&amp;0\\0&amp;0&amp;1\\ \ebm</m>
+                      <m>\bbm 1\amp 0\amp 0\\0\amp 0\amp 1\\ \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                      <m>\bbm 1&amp;0&amp;1\\0&amp;1&amp;1\\ \ebm</m>
+                      <m>\bbm 1\amp 0\amp 1\\0\amp 1\amp 1\\ \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                      <m>\bbm 0&amp;0&amp;0\\1&amp;0&amp;0\\ \ebm</m>
+                      <m>\bbm 0\amp 0\amp 0\\1\amp 0\amp 0\\ \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                      <m>\bbm 0&amp;0&amp;0\\0&amp;0&amp;0\\ \ebm</m>
+                      <m>\bbm 0\amp 0\amp 0\\0\amp 0\amp 0\\ \ebm</m>
                 </p>
               </li>
             </ol>
@@ -752,29 +747,29 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
             <ol>
               <li>
                 <p>
-                      <m>\bbm 1&amp;1&amp;1\\0&amp;1&amp;1\\0&amp;0&amp;1\\ \ebm</m>
+                      <m>\bbm 1\amp 1\amp 1\\0\amp 1\amp 1\\0\amp 0\amp 1\\ \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                      <m>\bbm 1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;0 \ebm</m>
+                      <m>\bbm 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 0 \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                      <m>\bbm 1&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;0&amp;0 \ebm</m>
+                      <m>\bbm 1\amp 0\amp 0\\0\amp 0\amp 1\\0\amp 0\amp 0 \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                      <m>\bbm 1&amp;0&amp;0&amp;-5\\0&amp;1&amp;0&amp;7\\0&amp;0&amp;1&amp;3 \ebm</m>
+                      <m>\bbm 1\amp 0\amp 0\amp -5\\0\amp 1\amp 0\amp 7\\0\amp 0\amp 1\amp 3 \ebm</m>
                 </p>
               </li>
             </ol>
@@ -803,33 +798,33 @@
                       yes
                 </p>
               </li>
-            </ol>        
+            </ol>
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
             <ol>
               <li>
                 <p>
-                  <m>\bbm 2&amp;0&amp;0&amp;2\\0&amp;2&amp;0&amp;2\\0&amp;0&amp;2&amp;2\\ \ebm</m>
+                  <m>\bbm 2\amp 0\amp 0\amp 2\\0\amp 2\amp 0\amp 2\\0\amp 0\amp 2\amp 2\\ \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\bbm 0&amp;1&amp;0&amp;0\\0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;0 \ebm</m>
+                  <m>\bbm 0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 0\\0\amp 0\amp 0\amp 0 \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\bbm 0&amp;0&amp;1&amp;-5\\0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0 \ebm</m>
+                  <m>\bbm 0\amp 0\amp 1\amp -5\\0\amp 0\amp 0\amp 0\\0\amp 0\amp 0\amp 0 \ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\bbm 1&amp;1&amp;0&amp;0&amp;1&amp;1\\0&amp;0&amp;1&amp;0&amp;1&amp;1\\0&amp;0&amp;0&amp;1&amp;0&amp;0 \ebm</m>
+                  <m>\bbm 1\amp 1\amp 0\amp 0\amp 1\amp 1\\0\amp 0\amp 1\amp 0\amp 1\amp 1\\0\amp 0\amp 0\amp 1\amp 0\amp 0 \ebm</m>
                 </p>
               </li>
             </ol>
@@ -865,13 +860,13 @@
     </exercisegroup>
 
     <exercisegroup>
-    
+
       <introduction>
         <p>
           Use Gaussian Elimination to put the given matrix into reduced row echelon form.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -880,20 +875,20 @@
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 0\0 \amp 1\\ \ebm</m>
+            <m>\bbm 1 \amp 0\\0 \amp 1\\ \ebm</m>
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
-            <m>\bbm 2 \amp -2\3 \amp -2\\ \ebm</m>
+            <m>\bbm 2 \amp -2\\3 \amp -2\\ \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 0\0 \amp 1\\ \ebm</m>
+            <m>\bbm 1 \amp 0\\0 \amp 1\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -906,7 +901,7 @@
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 3\0 \amp 0\\ \ebm</m>
+            <m>\bbm 1 \amp 3\\0 \amp 0\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -914,51 +909,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm -5 \amp 7\10 \amp 14\\ \ebm</m>
+            <m>\bbm -5 \amp 7\\10 \amp 14\\ \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp -7/5\0 \amp 0\\ \ebm</m>
-          </p>
-        </answer>
-      </exercise>
-      
-      <exercise>
-        <statement>
-          <p>
-            <m>\bbm -1 \amp 1 \amp 4\-2&amp;1&amp;1 \ebm</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            <m>\bbm 1 \amp 0 \amp 3\0&amp;1&amp;7\\ \ebm</m>
-          </p>
-        </answer>
-      </exercise>
-      
-      <exercise>
-        <statement>
-          <p>
-            <m>\bbm 7 \amp 2 \amp 3\3&amp;1&amp;2 \ebm</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            <m>\bbm 1 \amp 0 \amp -1\0&amp;1&amp;5\\ \ebm</m>
-          </p>
-        </answer>
-      </exercise>
-      
-      <exercise>
-        <statement>
-          <p>
-            <m>\bbm 3 \amp -3 \amp 6\-1&amp;1&amp;-2 \ebm</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            <m>\bbm 1 \amp -1 \amp 2\0&amp;0&amp;0\\ \ebm</m>
+            <m>\bbm 1 \amp -7/5\\0 \amp 0\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -966,12 +922,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 4 \amp 5 \amp -6\-12&amp;-15&amp;18 \ebm</m>
+            <m>\bbm -1 \amp 1 \amp 4\-2\amp 1\amp 1 \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp \frac54 \amp -\frac32\0&amp;0&amp;0\\ \ebm</m>
+            <m>\bbm 1 \amp 0 \amp 3\\0\amp 1\amp 7\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -979,12 +935,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm -2 \amp -4 \amp -8\-2&amp;-3&amp;-5\\ 2&amp;3&amp;6\\ \ebm</m>
+            <m>\bbm 7 \amp 2 \amp 3\\3\amp 1\amp 2 \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 0 \amp 0\0&amp;1&amp;0\\0&amp;0&amp;1\\ \ebm</m>
+            <m>\bbm 1 \amp 0 \amp -1\\0\amp 1\amp 5\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -992,12 +948,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 2 \amp 1 \amp 1\1&amp;1&amp;1\\2&amp;1&amp;2\\ \ebm</m>
+            <m>\bbm 3 \amp -3 \amp 6\-1\amp 1\amp -2 \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 0 \amp 0\0&amp;1&amp;0\\0&amp;0&amp;1\\ \ebm</m>
+            <m>\bbm 1 \amp -1 \amp 2\\0\amp 0\amp 0\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1005,12 +961,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 1 \amp 2 \amp 1\1&amp;3&amp;1\\-1&amp;-3&amp;0\\ \ebm</m>
+            <m>\bbm 4 \amp 5 \amp -6\-12\amp -15\amp 18 \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 0 \amp 0\0&amp;1&amp;0\\0&amp;0&amp;1\\ \ebm</m>
+            <m>\bbm 1 \amp \frac54 \amp -\frac32\\0\amp 0\amp 0\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1018,12 +974,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 1 \amp 2 \amp 3\0&amp;4&amp;5\\1&amp;6&amp;9\\ \ebm</m>
+            <m>\bbm -2 \amp -4 \amp -8\-2\amp -3\amp -5\\ 2\amp 3\amp 6\\ \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 0 \amp 0\0&amp;1&amp;0\\0&amp;0&amp;1\\ \ebm</m>
+            <m>\bbm 1 \amp 0 \amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1031,12 +987,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 1 \amp 1 \amp 1&amp;2\2&amp;-1&amp;-1&amp;1\\-1&amp;1&amp;1&amp;0\\ \ebm</m>
+            <m>\bbm 2 \amp 1 \amp 1\\1\amp 1\amp 1\\2\amp 1\amp 2\\ \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 0 \amp 0&amp;1\0&amp;1&amp;1&amp;1\\0&amp;0&amp;0&amp;0\\ \ebm</m>
+            <m>\bbm 1 \amp 0 \amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1044,12 +1000,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 2 \amp -1 \amp 1&amp;5\3&amp;1&amp;6&amp;-1\\3&amp;0&amp;5&amp;0\\ \ebm</m>
+            <m>\bbm 1 \amp 2 \amp 1\\1\amp 3\amp 1\\-1\amp -3\amp 0\\ \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 0 \amp 0&amp;5\0&amp;1&amp;0&amp;2\\0&amp;0&amp;1&amp;-3\\ \ebm</m>
+            <m>\bbm 1 \amp 0 \amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1057,12 +1013,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 1 \amp 1 \amp -1&amp;7\2&amp;1&amp;0&amp;10\\3&amp;2&amp;-1&amp;17\\ \ebm</m>
+            <m>\bbm 1 \amp 2 \amp 3\\0\amp 4\amp 5\\1\amp 6\amp 9\\ \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 0 \amp 1&amp;3\0&amp;1&amp;-2&amp;4\\0&amp;0&amp;0&amp;0\\ \ebm</m>
+            <m>\bbm 1 \amp 0 \amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1070,12 +1026,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 4 \amp 1 \amp 8&amp;15\1&amp;1&amp;2&amp;7\\3&amp;1&amp;5&amp;11\\ \ebm</m>
+            <m>\bbm 1 \amp 1 \amp 1\amp 2\\2\amp -1\amp -1\amp 1\\-1\amp 1\amp 1\amp 0\\ \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 0 \amp 3&amp;4\0&amp;1&amp;-1&amp;3\\0&amp;0&amp;0&amp;0\\ \ebm</m>
+            <m>\bbm 1 \amp 0 \amp 0\amp 1\\0\amp 1\amp 1\amp 1\\0\amp 0\amp 0\amp 0\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1083,12 +1039,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 2 \amp 2 \amp 1&amp;3&amp;1&amp;4\1&amp;1&amp;1&amp;3&amp;1&amp;4\\ \ebm</m>
+            <m>\bbm 2 \amp -1 \amp 1\amp 5\\3\amp 1\amp 6\amp -1\\3\amp 0\amp 5\amp 0\\ \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp 1 \amp 0&amp;0&amp;0&amp;0\0&amp;0&amp;1&amp;3&amp;1&amp;4\\ \ebm</m>
+            <m>\bbm 1 \amp 0 \amp 0\amp 5\\0\amp 1\amp 0\amp 2\\0\amp 0\amp 1\amp -3\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1096,16 +1052,55 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 1 \amp -1 \amp 3&amp;1&amp;-2&amp;9\2&amp;-2&amp;6&amp;1&amp;-2&amp;13 \ebm</m>
+            <m>\bbm 1 \amp 1 \amp -1\amp 7\\2\amp 1\amp 0\amp 10\\3\amp 2\amp -1\amp 17\\ \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\bbm 1 \amp -1 \amp 3&amp;0&amp;0&amp;4\0&amp;0&amp;0&amp;1&amp;-2&amp;5\\ \ebm</m>
+            <m>\bbm 1 \amp 0 \amp 1\amp 3\\0\amp 1\amp -2\amp 4\\0\amp 0\amp 0\amp 0\\ \ebm</m>
           </p>
         </answer>
       </exercise>
-    
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 4 \amp 1 \amp 8\amp 15\\1\amp 1\amp 2\amp 7\\3\amp 1\amp 5\amp 11\\ \ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm 1 \amp 0 \amp 3\amp 4\\0\amp 1\amp -1\amp 3\\0\amp 0\amp 0\amp 0\\ \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 2 \amp 2 \amp 1\amp 3\amp 1\amp 4\\1\amp 1\amp 1\amp 3\amp 1\amp 4\\ \ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm 1 \amp 1 \amp 0\amp 0\amp 0\amp 0\\0\amp 0\amp 1\amp 3\amp 1\amp 4\\ \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>\bbm 1 \amp -1 \amp 3\amp 1\amp -2\amp 9\\2\amp -2\amp 6\amp 1\amp -2\amp 13 \ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\bbm 1 \amp -1 \amp 3\amp 0\amp 0\amp 4\\0\amp 0\amp 0\amp 1\amp -2\amp 5\\ \ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
     </exercisegroup>
   </exercises>
 

@@ -3,12 +3,12 @@
   <title>Operations on Matrices</title>
   <introduction>
     <p>
-      In <xref ref="chapter-algebra"/> we learned about matrix arithmetic: 
-      adding, subtracting, and multiplying matrices, finding inverses, and multiplying by scalars. 
+      In <xref ref="chapter-algebra"/> we learned about matrix arithmetic:
+      adding, subtracting, and multiplying matrices, finding inverses, and multiplying by scalars.
       In this chapter we learn about some operations that we perform <em>on</em> matrices.
-       We can think of them as functions: you input a matrix, and you get something back. 
-       One of these operations, the transpose, will return another matrix. 
-       With the other operations, the trace and the determinant, we input matrices and get numbers in return, 
+       We can think of them as functions: you input a matrix, and you get something back.
+       One of these operations, the transpose, will return another matrix.
+       With the other operations, the trace and the determinant, we input matrices and get numbers in return,
        an idea that is different than what we have seen before.
     </p>
   </introduction>

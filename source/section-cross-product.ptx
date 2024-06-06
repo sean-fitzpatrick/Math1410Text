@@ -121,9 +121,9 @@
     </example>
 
     <p>
-      We now introduce a method for computing the cross-product that is easier to remember, 
-      and has the added benefit of allowing us to preview <term>determinants</term>, 
-      which we will return to in earnest in <xref ref="sec-determinant_1"/>. 
+      We now introduce a method for computing the cross-product that is easier to remember,
+      and has the added benefit of allowing us to preview <term>determinants</term>,
+      which we will return to in earnest in <xref ref="sec-determinant_1"/>.
     </p>
 
     <p>
@@ -135,8 +135,8 @@
     </p>
 
     <p>
-      Most people find it easiest to remember this in terms of the two <em>diagonals</em> of the array: 
-      we take the product of the two numbers on the <em>main diagonal</em> (top-left to bottom-right), 
+      Most people find it easiest to remember this in terms of the two <em>diagonals</em> of the array:
+      we take the product of the two numbers on the <em>main diagonal</em> (top-left to bottom-right),
       and subtract the product of the two numbers on the other diagonal.
     </p>
 
@@ -158,22 +158,22 @@
         <mrow xml:id="eq-crossdet"> \crossp uv \amp = \bvm u_2 \amp u_3\\v_2 \amp v_3\evm \veci - \bvm u_1 \amp u_3\\v_1 \amp v_3\evm\vecj + \bvm u_1 \amp u_2\\v_1 \amp v_2\evm\veck</mrow>
         <mrow> \amp = (u_2v_3-u_3v_2)\veci-(u_3v_1-u_1v_3)\vecj + (u_1v_2-u_2v_1)\veck</mrow>
       </mdn>,
-      as before. Now, this might not seem like much of an improvement over the previous formula, 
-      so we take things one step further. First, we form a <m>3\times 3</m> array as shown below. 
+      as before. Now, this might not seem like much of an improvement over the previous formula,
+      so we take things one step further. First, we form a <m>3\times 3</m> array as shown below.
       <me>
-        \bvm \veci \amp \vecj \amp \veck\\u_1 &amp; u_2 &amp;u_3\\v_1&amp;v_2&amp;v_3\evm
+        \bvm \veci \amp \vecj \amp \veck\\u_1 \amp  u_2 \amp u_3\\v_1\amp v_2\amp v_3\evm
       </me>.
-      The first row comprises the standard unit vectors <m>\vec i</m>, <m>\vec j</m>, and <m>\vec k</m>. 
-      The second and third rows are the vectors <m>\vec u</m> and <m>\vec v</m>, respectively. 
-      Next, we <em>expand</em> our <m>3\times 3</m> array as a vector, 
-      where the coefficient of each standard unit vector is given by the <m>2\times 2</m> 
-      determinant that's left over when we delete the row and column containing that unit vector. 
+      The first row comprises the standard unit vectors <m>\vec i</m>, <m>\vec j</m>, and <m>\vec k</m>.
+      The second and third rows are the vectors <m>\vec u</m> and <m>\vec v</m>, respectively.
+      Next, we <em>expand</em> our <m>3\times 3</m> array as a vector,
+      where the coefficient of each standard unit vector is given by the <m>2\times 2</m>
+      determinant that's left over when we delete the row and column containing that unit vector.
     </p>
 
     <p>
       For example, if we use <m>\vec u</m> and <m>\vec v</m> from <xref ref="ex_crossp1"/>, we obtain the array
       <me>
-        \bvm \veci \amp \vecj \amp \veck\\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm
+        \bvm \veci \amp \vecj \amp \veck\\  2\amp -1\amp 4\\3\amp 2\amp 5\evm
       </me>.
       The expansion process used to obtain the coefficients of <m>\veci, \vecj, \veck</m> looks like the following:
     </p>
@@ -182,7 +182,7 @@
       <shortdescription>Crossing out the row and column containing the unit vector i, and writing the resulting 2x2 determinant.</shortdescription>
       <latex-image label="img-crossp-det33a">
         \begin{tikzpicture}[baseline=-3pt,&gt;=stealth]
-          \node at (0,0) {$\bvm \boxed{\veci} \amp \vecj \amp \veck \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm -1&amp;4\\2&amp;5\evm\veci = -13\veci$};
+          \node at (0,0) {$\bvm \boxed{\veci} \amp \vecj \amp \veck \\  2\amp -1\amp 4\\3\amp 2\amp 5\evm\longrightarrow \bvm -1\amp 4\\2\amp 5\evm\veci = -13\veci$};
           \draw[thin] (-2.3,.6) -- (-2.3, -.6);
           \draw[thin] (-2.5,.4) -- (-.8,.4);
         \end{tikzpicture}
@@ -193,7 +193,7 @@
       <shortdescription>Crossing out the row and column containing the unit vector j, and writing the resulting 2x2 determinant.</shortdescription>
       <latex-image label="img-crossp-det33b">
         \begin{tikzpicture}[baseline=-3pt,&gt;=stealth]
-          \node at (0,0) {$\bvm \veci \amp \boxed{\vecj} \amp \veck \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm 2&amp;4\\3&amp;5\evm\vecj = -2\vecj$};
+          \node at (0,0) {$\bvm \veci \amp \boxed{\vecj} \amp \veck \\  2\amp -1\amp 4\\3\amp 2\amp 5\evm\longrightarrow \bvm 2\amp 4\\3\amp 5\evm\vecj = -2\vecj$};
           \draw[thin] (-1.45,.6) -- (-1.45, -.6);
           \draw[thin] (-2.3,.4) -- (-.6,.4);
         \end{tikzpicture}
@@ -204,7 +204,7 @@
       <shortdescription>Crossing out the row and column containing the unit vector k, and writing the resulting 2x2 determinant.</shortdescription>
       <latex-image label="img-crossp-det33c">
         \begin{tikzpicture}[baseline=-3pt,&gt;=stealth]
-          \node at (0,0) {$\bvm \veci \amp \vecj \amp \boxed{\veck} \\  2&amp;-1&amp;4\\3&amp;2&amp;5\evm\longrightarrow \bvm 2&amp;-1\\3&amp;2\evm\veck = 7\veck$};
+          \node at (0,0) {$\bvm \veci \amp \vecj \amp \boxed{\veck} \\  2\amp -1\amp 4\\3\amp 2\amp 5\evm\longrightarrow \bvm 2\amp -1\\3\amp 2\evm\veck = 7\veck$};
           \draw[thin] (-0.85,.6) -- (-0.85, -.6);
           \draw[thin] (-2.3,.4) -- (-.6,.4);
         \end{tikzpicture}
@@ -213,12 +213,12 @@
 
     <p>
       There is one more important detail to note: notice in <xref ref="eq-crossdet" text="local">Equation</xref>
-      that there is a <alert>minus sign</alert> in front of the coefficient of the unit vector <m>\vecj</m>. 
-      We need to make sure that the signs in front of each <m>2\times 2</m> determinant follow this <m>+,\,-,\,+</m> 
-      pattern when we expand our array as a vector. For the vectors <m>\vec u</m> and <m>\vec v</m> in <xref ref="ex_crossp1"/>, 
+      that there is a <alert>minus sign</alert> in front of the coefficient of the unit vector <m>\vecj</m>.
+      We need to make sure that the signs in front of each <m>2\times 2</m> determinant follow this <m>+,\,-,\,+</m>
+      pattern when we expand our array as a vector. For the vectors <m>\vec u</m> and <m>\vec v</m> in <xref ref="ex_crossp1"/>,
       we end up with the following:
       <md>
-        <mrow> \crossp uv \amp = \bvm \veci \amp \vecj \amp \veck \\ 2&amp;-1&amp;4\\3&amp;2&amp;5\evm  = \bvm -1&amp;4\\2&amp;5\evm\veci - \bvm 2&amp;4\\3&amp;5\evm\vecj + \bvm 2&amp;-1\\3&amp;2\evm\veck</mrow>
+        <mrow> \crossp uv \amp = \bvm \veci \amp \vecj \amp \veck \\ 2\amp -1\amp 4\\3\amp 2\amp 5\evm  = \bvm -1\amp 4\\2\amp 5\evm\veci - \bvm 2\amp 4\\3\amp 5\evm\vecj + \bvm 2\amp -1\\3\amp 2\evm\veck</mrow>
         <mrow> \amp = -13\veci - (-2)\vecj + 7\veck = \bbm  -13\\ 2\\ 7\ebm</mrow>
       </md>,
       as before. The method will become more clear with a bit of practice.
@@ -226,17 +226,17 @@
 
     <aside>
       <p>
-        <alert>Note:</alert> If the minus sign in front of the <m>\vecj</m> coefficient seems out of place to you, 
-        it might help to imagine wrapping our <m>3\times 3</m> array around a cylinder (like the label on a tin can). 
-        If we read from left to right, <em>beginning in the <m>\vecj</m> column</em>, 
-        then we should place the <m>\veck</m> column first, followed by the <m>\veci</m> column. 
-        For the vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <xref ref="ex_crossp1"/>, 
+        <alert>Note:</alert> If the minus sign in front of the <m>\vecj</m> coefficient seems out of place to you,
+        it might help to imagine wrapping our <m>3\times 3</m> array around a cylinder (like the label on a tin can).
+        If we read from left to right, <em>beginning in the <m>\vecj</m> column</em>,
+        then we should place the <m>\veck</m> column first, followed by the <m>\veci</m> column.
+        For the vectors <m>\vec{u}</m> and <m>\vec{v}</m> in <xref ref="ex_crossp1"/>,
         this would result in the coefficient <m>\bvm 4 \amp 2\\5 \amp 2\evm = 2</m> for the <m>\vecj</m> component,
-        which has the correct sign. 
-        However, since our habit is to read starting from the far left, 
+        which has the correct sign.
+        However, since our habit is to read starting from the far left,
         we tend to write the <m>\veci</m> column first, and then introduce the minus sign to compensate.
       </p>
-    </aside> 
+    </aside>
 
     <example xml:id="ex_crossp2">
       <title>Computing a cross product</title>
@@ -251,7 +251,7 @@
           To compute <m>\crossp uv</m>,
           we form the <m>3\times 3</m> array as prescribed above, and expand it into a vector.
           <md>
-            <mrow>\crossp uv  \amp = \bvm \veci  \amp  \vecj &amp; \veck 1&amp; 3&amp; 6\\ -1&amp; 2&amp; 1\evm = \bvm 3&amp; 6\\2 &amp;1\evm \veci - \bvm 1 &amp; 6\\ -1&amp; 1\evm\vecj +\bvm 1&amp; 3\\ -1 &amp; 2\evm\veck</mrow>
+            <mrow>\crossp uv  \amp = \bvm \veci  \amp  \vecj \amp  \veck 1\amp  3\amp  6\\ -1\amp  2\amp  1\evm = \bvm 3\amp  6\\2 \amp 1\evm \veci - \bvm 1 \amp  6\\ -1\amp  1\evm\vecj +\bvm 1\amp  3\\ -1 \amp  2\evm\veck</mrow>
 		        <mrow> \amp = (3(1)-6(2))\veci -(1(1)-6(-1))\vecj + (1(2)-3(-1))\veck</mrow>
             <mrow> \amp  = -9\veci-7\vecj+5\veck = \bbm  -9\\ -7\\ 5\ebm</mrow>
           </md>.
@@ -262,9 +262,9 @@
           we switch the second and third rows of the above matrix,
           then expand as before:
           <md>
-            <mrow>\crossp vu  \amp  = \bvm \veci  \amp  \vecj&amp; \veck\\ -1 &amp; 2&amp; 1\\ 1&amp; 3&amp; 6\evm = \bvm 2 &amp;1\\3 &amp;6\evm\veci - \bvm -1&amp; 1\\ 1&amp; 6\evm\vecj + \bvm -1&amp; 2\\ 1 &amp;3\evm\veck</mrow>
-		        <mrow> &amp; = (2(6)-1(3))\veci-((-1)(6)-1(1))\vecj + ((-1)(3)-2(1))\veck</mrow>
-		        <mrow> &amp; = 9\veci+7\vecj -5\veck = \bbm  9\\ 7\\ -5\ebm = -\crossp uv</mrow>
+            <mrow>\crossp vu  \amp  = \bvm \veci  \amp  \vecj\amp  \veck\\ -1 \amp  2\amp  1\\ 1\amp  3\amp  6\evm = \bvm 2 \amp 1\\3 \amp 6\evm\veci - \bvm -1\amp  1\\ 1\amp  6\evm\vecj + \bvm -1\amp  2\\ 1 \amp 3\evm\veck</mrow>
+		        <mrow> \amp  = (2(6)-1(3))\veci-((-1)(6)-1(1))\vecj + ((-1)(3)-2(1))\veck</mrow>
+		        <mrow> \amp  = 9\veci+7\vecj -5\veck = \bbm  9\\ 7\\ -5\ebm = -\crossp uv</mrow>
           </md>.
         </p>
 
@@ -650,7 +650,7 @@
                   A parallelogram with a horizontal base is shown.
                   The base is labeled with the quantity <m>b</m>.
                   A dashed line is drawn from the top-left vertex of the parallelogram to the base;
-                  this line is perpendicular to the base, 
+                  this line is perpendicular to the base,
                   and its length is equal to the height of the parallelogram,
                   which is labeled <m>h</m>.
                 </p>
@@ -903,7 +903,7 @@
               <description>
                 <p>
                   The triangle for this problem is sketched in the first quadrant of the plane.
-                  The vertices are labeled, with <m>A</m> at <m>(1,2)</m>, 
+                  The vertices are labeled, with <m>A</m> at <m>(1,2)</m>,
                   <m>B</m> at <m>(2,3)</m>, and <m>C</m> at <m>(3,1)</m>.
                 </p>
               </description>
@@ -1210,30 +1210,30 @@
       </example>
 
       <p>
-        Let's take another look at how <xref ref="eq_crossp2" text="local">Equation</xref> 
-        is computed in terms of our formulas for the dot and cross products. 
-        With <m>\vec u = \bbm  u_1\\ u_2\\ u_3\ebm, \vec v = \bbm  v_1\\ v_2\\ v_3\ebm</m>, 
+        Let's take another look at how <xref ref="eq_crossp2" text="local">Equation</xref>
+        is computed in terms of our formulas for the dot and cross products.
+        With <m>\vec u = \bbm  u_1\\ u_2\\ u_3\ebm, \vec v = \bbm  v_1\\ v_2\\ v_3\ebm</m>,
         and <m>\vec w = \bbm  w_1\\ w_2\\ w_3\ebm</m>, we have
         <md>
-          <mrow>\vec{u}\boldsymbol{\cdot}(\crossp vw)\amp = \bbm  u_1\\ u_2\\ u_3\ebm \boldsymbol{\cdot}\left\bbm  \bvm v_2  \amp  v_3\\w_2 \amp w_3\evm\\ -\bvm v_1 &amp; v_3\\ w_1 &amp; w_3\evm\\ \bvm v_1 &amp; v_2\\ w_1 &amp; w_2\evm\right\ebm</mrow>
-          <mrow> \amp = u_1\bvm v_2  \amp  v_3\\w_2 \amp w_3\evm - u_2\bvm v_1 &amp; v_3\\ w_1 &amp; w_3\evm + u_3\bvm v_1 &amp; v_2\\ w_1 &amp; w_2\evm</mrow>
+          <mrow>\vec{u}\boldsymbol{\cdot}(\crossp vw)\amp = \bbm  u_1\\ u_2\\ u_3\ebm \boldsymbol{\cdot}\bbm  \bvm v_2  \amp  v_3\\w_2 \amp w_3\evm\\ -\bvm v_1 \amp  v_3\\ w_1 \amp  w_3\evm\\ \bvm v_1 \amp  v_2\\ w_1 \amp  w_2\evm\ebm</mrow>
+          <mrow> \amp = u_1\bvm v_2  \amp  v_3\\w_2 \amp w_3\evm - u_2\bvm v_1 \amp  v_3\\ w_1 \amp  w_3\evm + u_3\bvm v_1 \amp  v_2\\ w_1 \amp  w_2\evm</mrow>
         </md>.
       </p>
 
       <p>
         Compare this with our determinant formula for computing the cross product,
         <me>
-          \crossp vw = \bvm \veci  \amp  \vecj  \amp  \veck\\ v_1 &amp; v_2 &amp; v_3\\ w_1 &amp; w_2 &amp; w_3\evm = \bvm v_2 &amp; v_3\\w_2&amp;w_3\evm\veci - \bvm v_1 &amp; v_3\\ w_1 &amp; w_3\evm\vecj + \bvm v_1 &amp; v_2\\ w_1 &amp; w_2\evm\veck
+          \crossp vw = \bvm \veci  \amp  \vecj  \amp  \veck\\ v_1 \amp  v_2 \amp  v_3\\ w_1 \amp  w_2 \amp  w_3\evm = \bvm v_2 \amp  v_3\\w_2\amp w_3\evm\veci - \bvm v_1 \amp  v_3\\ w_1 \amp  w_3\evm\vecj + \bvm v_1 \amp  v_2\\ w_1 \amp  w_2\evm\veck
         </me>.
-        If we replace the unit vectors <m>\veci, \vecj, veck</m> in the above equation with the components of <m>\vec{u}</m>, 
+        If we replace the unit vectors <m>\veci, \vecj, veck</m> in the above equation with the components of <m>\vec{u}</m>,
         we arrive at our first instance of a <m>3\times 3</m> <term>determinant</term>, along with a method for computing such an object:
         <me>
-          \bvm u_1  \amp  u_2  \amp  u_3\\ v_1 &amp; v_2 &amp; v_3\\ w_1 &amp; w_2 &amp; w_3\evm = u_1 \bvm v_2 &amp; v_3\\ w_2 &amp; w_3\evm - u_2\bvm v_1 &amp; v_3\\ w_1 &amp; w_3\evm + u_3\bvm v_1 &amp; v_2\\ w_1 &amp; w_2\evm = \vec u\boldsymbol{\cdot}(\crossp vw)
+          \bvm u_1  \amp  u_2  \amp  u_3\\ v_1 \amp  v_2 \amp  v_3\\ w_1 \amp  w_2 \amp  w_3\evm = u_1 \bvm v_2 \amp  v_3\\ w_2 \amp  w_3\evm - u_2\bvm v_1 \amp  v_3\\ w_1 \amp  w_3\evm + u_3\bvm v_1 \amp  v_2\\ w_1 \amp  w_2\evm = \vec u\boldsymbol{\cdot}(\crossp vw)
         </me>.
       </p>
 
       <p>
-        We will return to our study of determinants in <xref ref="sec-determinant_1"/>, 
+        We will return to our study of determinants in <xref ref="sec-determinant_1"/>,
         where we will learn techniques for efficiently computing determinants of any size.
       </p>
     </paragraphs>

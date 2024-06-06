@@ -3,10 +3,10 @@
   <title>The Matrix Trace</title>
 
   <p>
-    In the previous section, we learned about an operation we can peform on matrices, namely the transpose. 
-    Given a matrix <m>\tta</m>, we can <q>find the transpose of <m>\tta</m>,</q> which is another matrix. 
-    In this section we learn about a new operation called the <em>trace</em>. 
-    It is a different type of operation than the transpose. Given a matrix <m>\tta</m>, 
+    In the previous section, we learned about an operation we can peform on matrices, namely the transpose.
+    Given a matrix <m>\tta</m>, we can <q>find the transpose of <m>\tta</m>,</q> which is another matrix.
+    In this section we learn about a new operation called the <em>trace</em>.
+    It is a different type of operation than the transpose. Given a matrix <m>\tta</m>,
     we can <q>find the trace of <m>\tta</m>,</q> which is not a matrix but rather a number. We formally define it here.
   </p>
 
@@ -15,8 +15,8 @@
     <statement>
       <p>
         <idx><h>trace</h><h>definition</h></idx>
-        
-        Let <m>\tta</m> be an <m>n\times n</m> matrix. The <term>trace of \tta</term>, 
+
+        Let <m>\tta</m> be an <m>n\times n</m> matrix. The <term>trace of <m>\tta</m></term>,
         denoted <m>\tr(\tta)</m>, is the sum of the diagonal elements of <m>\tta</m>. That is,
         <me>
           \tr(\tta) = a_{11}+a_{22}+\cdots+a_{nn}
@@ -32,9 +32,9 @@
   <example xml:id="ex_trace_1">
     <title>Computing the trace of a matrix</title>
     <statement>
- 
+
       <p>
-        Find the trace of <m>\tta</m>, <m>\ttb</m>, <m>\ttc</m> and \tti<m>_4</m>, where 
+        Find the trace of <m>\tta</m>, <m>\ttb</m>, <m>\ttc</m> and <m>\tti_4</m>, where
         <me>
           \tta = \bbm 1 \amp 2\\3 \amp 4\ebm,\ \ttb = \bbm 1\amp 2\amp 0\\3\amp 8\amp 1\\-2\amp 7\amp -5\ebm \ \text{and}\ \ttc=\bbm 1\amp 2\amp 3\\4\amp 5\amp 6\ebm
         </me>.
@@ -50,7 +50,7 @@
       </p>
 
       <p>
-        The matrix <m>\ttc</m> is not a square matrix, and our definition states that we must start with a square matrix. 
+        The matrix <m>\ttc</m> is not a square matrix, and our definition states that we must start with a square matrix.
         Therefore <m>\tr(\ttc)</m> is not defined.
       </p>
 
@@ -61,17 +61,17 @@
   </example>
 
   <p>
-    Now that we have defined the trace of a matrix, we should think like mathematicians and ask some questions. 
-    The first questions that should pop into our minds should be along the lines of 
-    <q>How does the trace work with other matrix operations?</q> 
-    (Recall that we asked a similar question once we learned about the transpose.) 
-    We should think about how the trace works with matrix addition, scalar multiplication, 
+    Now that we have defined the trace of a matrix, we should think like mathematicians and ask some questions.
+    The first questions that should pop into our minds should be along the lines of
+    <q>How does the trace work with other matrix operations?</q>
+    (Recall that we asked a similar question once we learned about the transpose.)
+    We should think about how the trace works with matrix addition, scalar multiplication,
     matrix multiplication, matrix inverses, and the transpose.
   </p>
 
   <p>
-    We'll give a theorem that will formally tell us what is true in a moment, 
-    but first let's play with two sample matrices and see if we can see what will happen. Let 
+    We'll give a theorem that will formally tell us what is true in a moment,
+    but first let's play with two sample matrices and see if we can see what will happen. Let
     <me>
       \tta = \bbm 2 \amp 1 \amp 3\\2\amp 0\amp -1\\3\amp -1\amp 3\ebm \ \text{and} \ \ttb = \bbm 2\amp 0\amp 1\\-1\amp 2\amp 0\\0\amp 2\amp -1\ebm
     </me>.
@@ -88,13 +88,13 @@
   </p>
 
   <p>
-    How does the trace work with scalar multiplication? If we multiply <m>\tta</m> by 4, 
-    then the diagonal elements will be 8, 0 and 12, so <m>\tr(4\tta) = 20</m>. 
+    How does the trace work with scalar multiplication? If we multiply <m>\tta</m> by 4,
+    then the diagonal elements will be 8, 0 and 12, so <m>\tr(4\tta) = 20</m>.
     Is it a coincidence that this is 4 times the trace of <m>\tta</m>?
   </p>
 
   <p>
-    Let's move on to matrix multiplication. 
+    Let's move on to matrix multiplication.
     How will the trace of <m>\tta\ttb</m> relate to the traces of <m>\tta</m> and <m>\ttb</m>? Let's see:
     <md>
       <mrow>\tr(\tta\ttb) \amp =\tr\left(\bbm 2\amp 1\amp 3\\2\amp 0\amp -1\\3\amp -1\amp 3\ebm \bbm 2\amp 0\amp 1\\-1\amp 2\amp 0\\0\amp 2\amp -1\ebm\right)</mrow>
@@ -104,7 +104,7 @@
   </p>
 
   <p>
-    It isn't exactly clear what the relationship is among <m>\tr(\tta)</m>, <m>\tr(\ttb)</m> and <m>\tr(\tta\ttb)</m>. 
+    It isn't exactly clear what the relationship is among <m>\tr(\tta)</m>, <m>\tr(\ttb)</m> and <m>\tr(\tta\ttb)</m>.
     Before moving on, let's find <m>\tr(\ttb\tta)</m>:
     <md>
     <mrow>\tr(\ttb\tta)  \amp = \tr\left(\bbm 2 \amp 0\amp 1\\-1\amp 2\amp 0\\0\amp 2\amp -1\ebm\bbm 2\amp 1\amp 3\\2\amp 0\amp -1\\3\amp -1\amp 3\ebm\right)</mrow>
@@ -118,7 +118,7 @@
   </p>
 
   <p>
-    How are the traces of <m>\tta</m> and <m>\ttai</m> related? We compute <m>\ttai</m> and find that 
+    How are the traces of <m>\tta</m> and <m>\ttai</m> related? We compute <m>\ttai</m> and find that
     <me>
       \ttai = \bbm 1/17  \amp  6/17  \amp  1/17\\9/17 \amp  3/17 \amp  -8/17\\ 2/17 \amp  -5/17 \amp  2/17 \ebm
     </me>.
@@ -127,42 +127,42 @@
 
   <aside>
     <p>
-      his example brings to light many interesting ideas that we'll flesh out just a little bit here. 
+      This example brings to light many interesting ideas that we'll flesh out just a little bit here.
       <ol>
         <li>
           <p>
-            Notice that the elements of <m>\tta</m> are <m>1</m>, <m>-2</m>,  <m>1</m> and <m>1</m>. 
+            Notice that the elements of <m>\tta</m> are <m>1</m>, <m>-2</m>,  <m>1</m> and <m>1</m>.
             Add the squares of these numbers: <m>1^2 + (-2)^2 + 1^2 + 1^2  = 7 = \tr(\ttat\tta)</m>.
           </p>
 
           <p>
-            Notice that the elements of <m>\ttb</m> are <m>6</m>, <m>7</m>, <m>11</m> and <m>-4</m>. 
+            Notice that the elements of <m>\ttb</m> are <m>6</m>, <m>7</m>, <m>11</m> and <m>-4</m>.
             Add the squares of these numbers: <m>6^2 + 7^2 + 11^2 + (-4)^2 = 222 =\tr(\ttbt\ttb)</m>.
           </p>
 
           <p>
-            Can you see why this is true? When looking at multiplying <m>\ttat\tta</m>, 
+            Can you see why this is true? When looking at multiplying <m>\ttat\tta</m>,
             focus only on where the elements on the diagonal come from since they are the only ones that matter when taking the trace.
           </p>
         </li>
-              
+
         <li>
           <p>
-            You can confirm on your own that regardless of the dimensions of <m>\tta</m>, 
-            <m>\tr(\ttat\tta) = \tr(\tta\ttat)</m>. To see why this is true, consider the previous point. 
+            You can confirm on your own that regardless of the dimensions of <m>\tta</m>,
+            <m>\tr(\ttat\tta) = \tr(\tta\ttat)</m>. To see why this is true, consider the previous point.
             (Recall also that \ttat<m>\tta</m> and \tta<m>\ttat</m> are always square, regardless of the dimensions of <m>\tta</m>.)
           </p>
         </li>
 
         <li>
           <p>
-            Mathematicians are actually more interested in <m>\sqrt{\tr(\ttat\tta)}</m> than just <m>\tr(\ttat\tta)</m>. 
-            The reason for this is a bit complicated; the short answer is that <q>it works better.</q> 
-            The reason <q>it works better</q> is related to the Pythagorean Theorem, all of all things. 
-            If we know that the legs of a right triangle have length <m>a</m> and <m>b</m>, 
-            we are more interested in <m>\sqrt{a^2+b^2}</m> than just <m>a^2+b^2</m>. 
-            Of course, this explanation raises more questions than it answers; 
-            our goal here is just to whet your appetite and get you to do some more reading. 
+            Mathematicians are actually more interested in <m>\sqrt{\tr(\ttat\tta)}</m> than just <m>\tr(\ttat\tta)</m>.
+            The reason for this is a bit complicated; the short answer is that <q>it works better.</q>
+            The reason <q>it works better</q> is related to the Pythagorean Theorem, all of all things.
+            If we know that the legs of a right triangle have length <m>a</m> and <m>b</m>,
+            we are more interested in <m>\sqrt{a^2+b^2}</m> than just <m>a^2+b^2</m>.
+            Of course, this explanation raises more questions than it answers;
+            our goal here is just to whet your appetite and get you to do some more reading.
             A Numerical Linear Algebra book would be a good place to start.
           </p>
         </li>
@@ -171,8 +171,8 @@
   </aside>
 
   <p>
-    Finally, let's see how the trace is related to the transpose. We actually don't have to formally compute anything. 
-    Recall from the previous section that the diagonals of <m>\tta</m> and <m>\ttat</m> are identical; 
+    Finally, let's see how the trace is related to the transpose. We actually don't have to formally compute anything.
+    Recall from the previous section that the diagonals of <m>\tta</m> and <m>\ttat</m> are identical;
     therefore, <m>\tr(\tta) = \tr(\ttat)</m>. That, we know for sure, isn't a coincidence.
   </p>
 
@@ -199,22 +199,22 @@
   </theorem>
 
   <p>
-    One of the key things to note here is what this theorem does <em>not</em> say. 
-    It says nothing about how the trace relates to matrix multiplication; 
-    that is, we can't figure out what <m>\tr(\tta\ttb)</m> is just by knowing what <m>\tr(\tta)</m> and <m>\tr(\ttb)</m> are. 
+    One of the key things to note here is what this theorem does <em>not</em> say.
+    It says nothing about how the trace relates to matrix multiplication;
+    that is, we can't figure out what <m>\tr(\tta\ttb)</m> is just by knowing what <m>\tr(\tta)</m> and <m>\tr(\ttb)</m> are.
     The theorem also says nothing about how the trace relates to inverses.
-    The reason for the silence in these areas is that there simply is not a relationship. 
+    The reason for the silence in these areas is that there simply is not a relationship.
   </p>
 
 <p>
-  We end this section by again wondering why anyone would care about the trace of matrix. 
-  One reason mathematicians are interested in it is that it can give a measurement of the <q>size</q> of a matrix. 
+  We end this section by again wondering why anyone would care about the trace of matrix.
+  One reason mathematicians are interested in it is that it can give a measurement of the <q>size</q> of a matrix.
 </p>
 
   <aside>
     <p>
-      There are many different measurements of a matrix size. 
-      In this text, we just refer to its dimensions. Some measurements of size refer the magnitude of the elements in the matrix. 
+      There are many different measurements of a matrix size.
+      In this text, we just refer to its dimensions. Some measurements of size refer the magnitude of the elements in the matrix.
       The next section describes yet another measurement of matrix size.
     </p>
   </aside>
@@ -227,8 +227,8 @@
   </p>
 
   <p>
-    These matrices have the same trace, yet <m>\ttb</m> clearly has bigger elements in it. 
-    So how can we use the trace to determine a <q>size</q> of these matrices? 
+    These matrices have the same trace, yet <m>\ttb</m> clearly has bigger elements in it.
+    So how can we use the trace to determine a <q>size</q> of these matrices?
     We can consider <m>\tr(\ttat\tta)</m> and <m>\tr(\ttbt\ttb)</m>.
     <md>
       <mrow>\tr(\ttat\tta) \amp = \tr\left(\bbm 1\amp 1\\-2\amp 1\ebm\bbm 1\amp -2\\1\amp 1\ebm\right)</mrow>
@@ -241,19 +241,19 @@
   </p>
 
   <p>
-    Our concern is not how to interpret what this <q>size</q> measurement means, 
+    Our concern is not how to interpret what this <q>size</q> measurement means,
     but rather to demonstrate that the trace (along with the transpose) can be used to give (perhaps useful) information about a matrix.
   </p>
 
   <exercises>
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Find the trace of the given matrix.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -266,8 +266,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -280,8 +280,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -294,8 +294,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -308,8 +308,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -322,8 +322,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -336,8 +336,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -350,8 +350,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -364,8 +364,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -378,8 +378,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -392,9 +392,9 @@
           </p>
         </answer>
       </exercise>
-      
-      
-      
+
+
+
       <exercise>
         <statement>
           <p>
@@ -407,12 +407,12 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
-            <m>\bbm -6\amp 0\\  -10\amp 9\bbm</m>
+            <m>\bbm -6\amp 0\\  -10\amp 9\ebm</m>
           </p>
         </statement>
         <answer>
@@ -421,8 +421,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -435,8 +435,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -449,8 +449,8 @@
           </p>
         </answer>
       </exercise>
-      
-      
+
+
       <exercise>
         <statement>
           <p>
@@ -466,7 +466,7 @@
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Verify <xref ref="thm-trace"/> by:
@@ -476,7 +476,7 @@
           </ol>
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -493,7 +493,7 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
@@ -510,7 +510,7 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
@@ -527,7 +527,7 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
@@ -544,7 +544,7 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
   </exercises>
 </section>

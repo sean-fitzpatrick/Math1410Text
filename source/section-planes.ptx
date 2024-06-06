@@ -455,20 +455,20 @@
     </aside>
 
     <p>
-      The two previous examples hint at an alternative method for describing a plane in <m>\R^3</m>: 
-      instead of providing a single direction orthogonal to the plane (given by the normal vector), 
-      we can give two directions that are <em>parallel</em> to the plane, 
-      such as the vectors <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{PR}</m> 
-      in <xref ref="fig_planes1"/>, or the direction vectors <m>\vec{d}_1</m> and <m>\vec{d}_2</m> 
+      The two previous examples hint at an alternative method for describing a plane in <m>\R^3</m>:
+      instead of providing a single direction orthogonal to the plane (given by the normal vector),
+      we can give two directions that are <em>parallel</em> to the plane,
+      such as the vectors <m>\overrightarrow{PQ}</m> and <m>\overrightarrow{PR}</m>
+      in <xref ref="fig_planes1"/>, or the direction vectors <m>\vec{d}_1</m> and <m>\vec{d}_2</m>
       to the lines in <xref ref="fig_planes2"/>.
     </p>
 
     <p>
-      Suppose <m>(x,y,z)</m> is a point on the plane <m>5x+4y-7z=7</m> from <xref ref="ex_planes2"/>. 
-      We can treat the point <m>(-1,3,0)</m> where the lines <m>\vec\ell_1</m> and <m>\vec\ell_2</m> 
-      intersect as our point of reference on the plane. From this point, we can reach the point <m>(x,y,z)</m> 
-      by first travelling some distance in the direction of <m>\vec{d}_1</m> (parallel to <m>\vec\ell_1</m>), 
-      and then some distance in the direction of <m>\vec{d}_2</m> (parallel to <m>\vec\ell_2</m>). 
+      Suppose <m>(x,y,z)</m> is a point on the plane <m>5x+4y-7z=7</m> from <xref ref="ex_planes2"/>.
+      We can treat the point <m>(-1,3,0)</m> where the lines <m>\vec\ell_1</m> and <m>\vec\ell_2</m>
+      intersect as our point of reference on the plane. From this point, we can reach the point <m>(x,y,z)</m>
+      by first travelling some distance in the direction of <m>\vec{d}_1</m> (parallel to <m>\vec\ell_1</m>),
+      and then some distance in the direction of <m>\vec{d}_2</m> (parallel to <m>\vec\ell_2</m>).
       We can express this mathematically as follows:
       <mdn>
         <mrow xml:id="eq-planes2a"> \bbm  x\\y\\z\ebm \amp = \bbm  -1\\ 3\\ 0\ebm + s\vec{d}_1+t\vec{d}_2</mrow>
@@ -477,15 +477,15 @@
     </p>
 
     <p>
-      <xref ref="eq-planes2a" text="local">Equation</xref> can be viewed as a two-dimensional analogue of the 
-      vector equation of a line given in the previous section. 
-      It tells us that to get from the origin <m>(0,0,0)</m> to the point <m>(x,y,z)</m> on the plane, 
-      we should first travel to the point <m>(-1,3,0)</m> on the plane, 
-      and then move parallel to the lines <m>\vec\ell_1</m> and <m>\vec\ell_2</m> until we reach our point. 
-      This vector equation for a plane is not particularly useful in Science or Engineering applications, 
-      but it is useful mathematically. In particular, if we wanted to describe a two-dimensional plane in <m>\R^4</m> 
-      (or any higher-dimensional space), we would have to resort to this method. 
-      (Keeping this method for describing a plane in mind will also help us to access some geometric intuition when 
+      <xref ref="eq-planes2a" text="local">Equation</xref> can be viewed as a two-dimensional analogue of the
+      vector equation of a line given in the previous section.
+      It tells us that to get from the origin <m>(0,0,0)</m> to the point <m>(x,y,z)</m> on the plane,
+      we should first travel to the point <m>(-1,3,0)</m> on the plane,
+      and then move parallel to the lines <m>\vec\ell_1</m> and <m>\vec\ell_2</m> until we reach our point.
+      This vector equation for a plane is not particularly useful in Science or Engineering applications,
+      but it is useful mathematically. In particular, if we wanted to describe a two-dimensional plane in <m>\R^4</m>
+      (or any higher-dimensional space), we would have to resort to this method.
+      (Keeping this method for describing a plane in mind will also help us to access some geometric intuition when
       we discuss span and linear independence later in the text.)
     </p>
 
@@ -881,19 +881,19 @@
     <aside>
       <p>
         <alert>Note:</alert> <xref ref="eq_plane_dist" text="local">Equation</xref>
-        is useful as it does more than just give the distance between a point and a plane. 
-        We will see how it allows us to find several other distances as well: 
+        is useful as it does more than just give the distance between a point and a plane.
+        We will see how it allows us to find several other distances as well:
         the distance between parallel planes and the distance from a line to a plane.
       </p>
 
       <p>
-        However, as with the distance problems in the previous section, 
-        learning to follow the steps in <xref ref="idea-distance_method"/> will pay off more in the long run than memorizing a formula. 
-        Here, our key steps are to draw a diagram such as <xref ref="fig_planes_dist"/>, 
-        which doesn't need to be accurate, but does need to contain all the information needed to construct 
+        However, as with the distance problems in the previous section,
+        learning to follow the steps in <xref ref="idea-distance_method"/> will pay off more in the long run than memorizing a formula.
+        Here, our key steps are to draw a diagram such as <xref ref="fig_planes_dist"/>,
+        which doesn't need to be accurate, but does need to contain all the information needed to construct
         the projection whose length gives us the desired distance.
       </p>
-    </aside> 
+    </aside>
 
     <figure xml:id="vid-vectors-planes-distance" component="video">
       <caption>Video introduction to <xref ref="subsec_planes_distances"/></caption>
@@ -1006,7 +1006,7 @@
           h = \frac{\abs{\vec n\cdot \overrightarrow{PQ}}}{\vnorm n}
         </me>,
         where <m>P</m> is any point in the plane.
-           
+
       </p>
     </insight> -->
 
@@ -1050,10 +1050,10 @@
     </example>
 
     <p>
-      Although it was not requested in <xref ref="ex_planes6"/>, 
-      note that we can also find the point <m>R</m> on the plane that is closest to <m>Q</m>. 
-      The desired point must be such that <m>\overrightarrow{RQ} = \operatorname{proj}_{\vec n}\overrightarrow{PQ}</m>. 
-      Since we know the point <m>Q</m> and the vector <m>\overrightarrow{RQ}</m>, we can find the point <m>R</m>: 
+      Although it was not requested in <xref ref="ex_planes6"/>,
+      note that we can also find the point <m>R</m> on the plane that is closest to <m>Q</m>.
+      The desired point must be such that <m>\overrightarrow{RQ} = \operatorname{proj}_{\vec n}\overrightarrow{PQ}</m>.
+      Since we know the point <m>Q</m> and the vector <m>\overrightarrow{RQ}</m>, we can find the point <m>R</m>:
       since <m>\overrightarrow{RQ} = \overrightarrow{OQ}-\overrightarrow{OR}</m>, we find that
       <md>
         <mrow> \overrightarrow{OR} \amp = \overrightarrow{OQ}-\overrightarrow{RQ}</mrow>
@@ -1063,7 +1063,7 @@
     </p>
 
     <p>
-      The desired point <m>R</m> thus has coordinates <m>\left(\dfrac{102}{65}, \dfrac{135}{65}, \dfrac{176}{65}\right)</m>. 
+      The desired point <m>R</m> thus has coordinates <m>\left(\dfrac{102}{65}, \dfrac{135}{65}, \dfrac{176}{65}\right)</m>.
       To make sure that we haven't made any mistakes, let's make sure that this point is indeed on the plane. We have
       <me>
         2\left(\frac{102}{65}\right)-5\left(\frac{135}{65}\right)+6\left(\frac{176}{65}\right) = \frac{1}{65}(204-675+1056) = \frac{585}{65}=9
@@ -1079,29 +1079,29 @@
           <me>
             \vec\ell(t) = \bbm  3\\ 2\\ -4\ebm + t\bbm  3\\ 1\\ -1\ebm
           </me>,
-          and let <m>p</m> be the plane with equation <m>x-2y+z=4</m>. 
+          and let <m>p</m> be the plane with equation <m>x-2y+z=4</m>.
           Verify that the line <m>\ell</m> is parallel to the plane <m>p</m>, and find the distance between them.
         </p>
       </statement>
       <solution>
         <p>
-          From the vector equation for <m>\ell</m> we have the direction vector <m>\vec{d} = \bbm  3\\ 1\\ -1\ebm</m>, 
+          From the vector equation for <m>\ell</m> we have the direction vector <m>\vec{d} = \bbm  3\\ 1\\ -1\ebm</m>,
           and from the equation for <m>p</m> we can read off the normal vector <m>\vec{n} = \bbm  1\\ -2\\ 1\ebm</m>. Since
           <me>
             \dotp dn = 3(1)+1(-2)-1(1) = 0
           </me>,
-          we know that <m>\vec{d}</m> is orthogonal to <m>\vec{n}</m>, and thus <m>\ell</m> is parallel to <m>p</m>. 
-          To find the distance from <m>\ell</m> to <m>p</m>, we first choose a point on each object. 
-          From the vector equation for <m>\ell</m> we have the point <m>P=(2,0,-4)</m>, 
+          we know that <m>\vec{d}</m> is orthogonal to <m>\vec{n}</m>, and thus <m>\ell</m> is parallel to <m>p</m>.
+          To find the distance from <m>\ell</m> to <m>p</m>, we first choose a point on each object.
+          From the vector equation for <m>\ell</m> we have the point <m>P=(2,0,-4)</m>,
           and setting <m>y=z=0</m> in the equation for <m>p</m>, we get <m>x=4</m> and the point <m>Q=(4,0,0)</m>.
         </p>
 
         <p>
-          From these two points we can construct the vector 
+          From these two points we can construct the vector
           <me>
             \vec v = \overrightarrow{PQ} = \bbm  1\\ -2\\ 4\ebm
           </me>
-          which begins on <m>\ell</m> and ends on <m>p</m>. 
+          which begins on <m>\ell</m> and ends on <m>p</m>.
           The distance from <m>\ell</m> to <m>p</m> is then given by the normal component of <m>\vec{v}</m>: we have
           <me>
             h = \norm{\operatorname{proj}_{\vec{n}}\vec{v}} = \frac{\abs{\dotp nv}}{\norm{\vec{n}}} = \frac{9}{6} = \frac{3}{2}
@@ -1111,9 +1111,9 @@
     </example>
 
     <p>
-      In the previous section we used <xref ref="eq-skewlinesdist" text="local">Equation</xref> 
-      to find the shortest distance between a pair of skew lines. Although we provided some discussion of how this formula was obtained, 
-      it's once again the case that memorizing such a formula is not as effective as understanding the process that leads to it. 
+      In the previous section we used <xref ref="eq-skewlinesdist" text="local">Equation</xref>
+      to find the shortest distance between a pair of skew lines. Although we provided some discussion of how this formula was obtained,
+      it's once again the case that memorizing such a formula is not as effective as understanding the process that leads to it.
       In the next example, we repeat <xref ref="ex_lines5"/>, but this time we try to understand the problem using planes.
     </p>
 
@@ -1121,7 +1121,7 @@
     <example xml:id="ex_planes8">
       <title>Distance between skew lines</title>
       <statement>
-    
+
         <p>
           Find the distance between the skew lines
           <md>
@@ -1133,30 +1133,30 @@
       <solution>
         <p>
           We already found the distance between these two lines in <xref ref="ex_lines5"/> using <xref ref="eq-skewlinesdist" text="local">Equation</xref>
-          Supposing that we forgot this formula, how would we proceed? The key is to realize that whenever we have a pair of skew lines, 
-          we also have a pair of parallel planes, each of which contains one of the lines. 
-          To see this, we first compute the cross product of the direction vectors 
+          Supposing that we forgot this formula, how would we proceed? The key is to realize that whenever we have a pair of skew lines,
+          we also have a pair of parallel planes, each of which contains one of the lines.
+          To see this, we first compute the cross product of the direction vectors
           <m>\vec{d}_1 = \bbm  3\\ -1\\ 1\ebm</m> and <m>\vec{d}_2 = \bbm  4\\ 1\\ 2\ebm</m> for the two lines. We find
           <me>
             \vec{n} = \vec{d}_1\times\vec{d}_2 =  \bbm  -3\\ -2\\ 7\ebm
           </me>,
-          which is the same as the cross product we computed in <xref ref="ex_lines5"/>. 
-          Since <m>\vec{n}</m> is orthogonal to <m>\vec{d}_1</m>, 
-          the plane through the point <m>(1,2,0)</m> with normal vector <m>\vec{n}</m> contains the line <m>\ell_1</m>. 
-          Similarly, the plane through <m>(-2,3,5)</m> with normal vector <m>\vec{n}</m> contains <m>\ell_2</m>. 
+          which is the same as the cross product we computed in <xref ref="ex_lines5"/>.
+          Since <m>\vec{n}</m> is orthogonal to <m>\vec{d}_1</m>,
+          the plane through the point <m>(1,2,0)</m> with normal vector <m>\vec{n}</m> contains the line <m>\ell_1</m>.
+          Similarly, the plane through <m>(-2,3,5)</m> with normal vector <m>\vec{n}</m> contains <m>\ell_2</m>.
           We now have our parallel planes.
         </p>
 
         <p>
-          The next step is to realize that at this point, the problem is no different from the one we solved in <xref ref="ex_planes6"/>: 
-          the distance from <m>\ell_1</m> to <m>\ell_2</m> is the same as the distance between the parallel planes, 
+          The next step is to realize that at this point, the problem is no different from the one we solved in <xref ref="ex_planes6"/>:
+          the distance from <m>\ell_1</m> to <m>\ell_2</m> is the same as the distance between the parallel planes,
           and the distance between parallel planes is equal to the distance between the first plane, and any point on the second plane.
         </p>
 
         <p>
-          By definition, the point <m>P_1 = (1,2,0)</m> on <m>\ell_1</m> lies on the first plane, 
-          and the point <m>P_2 = (-2, 3, 5)</m> on <m>\ell_2</m> lies on the second plane. 
-          We compute the vector <m>\overrightarrow{P_1P_2} = \bbm  -3\\ 1\\ 5\ebm</m>, 
+          By definition, the point <m>P_1 = (1,2,0)</m> on <m>\ell_1</m> lies on the first plane,
+          and the point <m>P_2 = (-2, 3, 5)</m> on <m>\ell_2</m> lies on the second plane.
+          We compute the vector <m>\overrightarrow{P_1P_2} = \bbm  -3\\ 1\\ 5\ebm</m>,
           and then find the projection of this vector onto <m>\vec{n}</m>, as in <xref ref="ex_planes6"/>. We have
           <md>
             <mrow> \operatorname{proj}_{\vec n}\overrightarrow{P_1P_2}\amp = \left(\frac{\overrightarrow{P_1P_2}\boldsymbol{\cdot}\vec n}{\norm{\vec n}^2}\right)\vec n</mrow>
@@ -2431,7 +2431,7 @@
         <!-- </webwork> -->
       </exercise>
 
-      
+
     </subexercises>
   </exercises>
 </section>

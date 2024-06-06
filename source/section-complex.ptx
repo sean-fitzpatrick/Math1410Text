@@ -88,7 +88,7 @@
         <idx><h>complex number </h><h> definition of</h></idx>
         A <term>complex number</term> is a number of the form <m>a+bi</m>,
         where <m>a</m> and <m>b</m> are real numbers and <m>i</m> is the imaginary unit.
-        The set of complex numbers is denoted <m>\C</m>.
+        The set of complex numbers is denoted <m>\mathbb{C}</m>.
       </p>
     </statement>
   </definition>
@@ -579,8 +579,8 @@
 
           <li>
             <p>
-              Since we have three terms, and the exponent on one term (<q><m>4</m></q> on <m>t^4</m>) 
-              is exactly twice the exponent on the other (<q><m>2</m></q> on <m>t^2</m>), we have a <q>Quadratic in Disguise</q>.  
+              Since we have three terms, and the exponent on one term (<q><m>4</m></q> on <m>t^4</m>)
+              is exactly twice the exponent on the other (<q><m>2</m></q> on <m>t^2</m>), we have a <q>Quadratic in Disguise</q>.
               We proceed accordingly.
               <md>
                 <mrow>2t^4  \amp  =  9t^2 + 5  </mrow>
@@ -595,18 +595,18 @@
               <me>
                 t = \pm \sqrt{-\dfrac{1}{2}} = \pm i \sqrt{\dfrac{1}{2}} = \pm i \dfrac{\sqrt{1}}{\sqrt{2}} = \pm i \dfrac{1}{\sqrt{2}} = \pm \dfrac{i \sqrt{2}}{2}
               </me>,
-              where we have rationalized the denominator per convention.  
-              From <m>t^2 = 5</m>, we get <m>t = \pm \sqrt{5}</m>. 
-              In total, we have four complex solutions - two real: <m>t = \pm \sqrt{5}</m> 
+              where we have rationalized the denominator per convention.
+              From <m>t^2 = 5</m>, we get <m>t = \pm \sqrt{5}</m>.
+              In total, we have four complex solutions - two real: <m>t = \pm \sqrt{5}</m>
               and two non-real: <m>t = \pm \frac{i \sqrt{2}}{2}</m>.
             </p>
           </li>
 
           <li>
             <p>
-              To find  the <em>real</em> solutions to  <m>z^3 + 1 = 0</m>, 
-              we can subtract the <m>1</m> from both sides and extract cube roots: 
-              <m>z^3 = -1</m>, so <m>z  = \sqrt[3]{-1} = -1</m>.  
+              To find  the <em>real</em> solutions to  <m>z^3 + 1 = 0</m>,
+              we can subtract the <m>1</m> from both sides and extract cube roots:
+              <m>z^3 = -1</m>, so <m>z  = \sqrt[3]{-1} = -1</m>.
               It turns out there are two more non-real complex number solutions to this equation.  To get at these, we factor:
               <md>
                 <mrow>z ^ 3 + 1  \amp  =  0  </mrow>
@@ -620,8 +620,8 @@
               <me>
                 z = \dfrac{-(-1) \pm \sqrt{(-1)^2 - 4(1)(1)}}{2(1)} = \dfrac{1 \pm \sqrt{-3}}{2} = \dfrac{1 \pm i\sqrt{3}}{2}
               </me>.
-              Thus we get <em>three</em> solutions to <m>z^3 + 1 = 0</m> - one real: <m>z = -1</m> 
-              and two non-real: <m>z =  \frac{1 \pm i\sqrt{3}}{2}</m>.  
+              Thus we get <em>three</em> solutions to <m>z^3 + 1 = 0</m> - one real: <m>z = -1</m>
+              and two non-real: <m>z =  \frac{1 \pm i\sqrt{3}}{2}</m>.
               As always, the reader is encouraged to test their algebraic mettle and check these solutions.
             </p>
           </li>
@@ -631,9 +631,9 @@
   </example>
 
   <p>
-    It is no coincidence that the non-real solutions to the equations in <xref ref="complexsolnsreviewex"/> 
-    appear in  complex conjugate pairs. Any time we use the Quadratic Formula to solve an equation with <em>real</em> coefficients, 
-    the answers will form a  complex conjugate pair owing to the <m>\pm</m> in the Quadratic Formula.  
+    It is no coincidence that the non-real solutions to the equations in <xref ref="complexsolnsreviewex"/>
+    appear in  complex conjugate pairs. Any time we use the Quadratic Formula to solve an equation with <em>real</em> coefficients,
+    the answers will form a  complex conjugate pair owing to the <m>\pm</m> in the Quadratic Formula.
     This is stated formally in the following theorem.
   </p>
 
@@ -641,7 +641,7 @@
     <title>Discriminant Theorem</title>
     <statement>
       <p>
-        Given a Quadratic Equation <m>AX^2 + BX + C = 0</m>, where <m>A</m>, <m>B</m> and <m>C</m> are real numbers, 
+        Given a Quadratic Equation <m>AX^2 + BX + C = 0</m>, where <m>A</m>, <m>B</m> and <m>C</m> are real numbers,
         let <m>D = B^2 - 4AC</m> be the discriminant.
         <ul>
 
@@ -657,7 +657,7 @@
             </p>
 
             <p>
-              Note:  <q>Repeated</q> here comes from the fact that <q>both</q> 
+              Note:  <q>Repeated</q> here comes from the fact that <q>both</q>
               solutions <m>\frac{-B \pm 0}{2A}</m> reduce to <m>-\frac{B}{2A}</m>.
             </p>
           </li>
@@ -673,15 +673,15 @@
   </theorem>
 
   <p>
-    <xref ref="discriminanttheoremcomplexversion"/> tells us that if ever we obtain non-real zeros to a quadratic function with 
-    real coefficients, the zeros  will be a complex conjugate pair. (Do you see why?)  
-    Next, we note that in <xref ref="complexzeroex1"/>, part 6, we found <m>(x-[1+2i])(x-[1-2i])=x^2-2x+5</m>.  
-    This demonstrates that the factor theorem holds even for non-real zeros, i.e,  <m>x=1+2i</m> is a zero of <m>f(x)=x^2-2x+5</m>, 
-    and, sure enough, <m>(x-[1+2i])</m> is a factor of <m>f(x)</m>.  
-    It turns out that polynomial division works the same way for all complex numbers, real and non-real alike, 
-    so the Factor and Remainder Theorems hold as well.  But how do we know if a general polynomial has any complex zeros at all?  
-    We have many examples of polynomials with no real zeros.  Can there be polynomials with no zeros whatsoever? 
-    The answer to that last question is <q>No.</q> and the theorem which provides that answer is 
+    <xref ref="discriminanttheoremcomplexversion"/> tells us that if ever we obtain non-real zeros to a quadratic function with
+    real coefficients, the zeros  will be a complex conjugate pair. (Do you see why?)
+    Next, we note that in <xref ref="complexzeroex1"/>, part 6, we found <m>(x-[1+2i])(x-[1-2i])=x^2-2x+5</m>.
+    This demonstrates that the factor theorem holds even for non-real zeros, i.e,  <m>x=1+2i</m> is a zero of <m>f(x)=x^2-2x+5</m>,
+    and, sure enough, <m>(x-[1+2i])</m> is a factor of <m>f(x)</m>.
+    It turns out that polynomial division works the same way for all complex numbers, real and non-real alike,
+    so the Factor and Remainder Theorems hold as well.  But how do we know if a general polynomial has any complex zeros at all?
+    We have many examples of polynomials with no real zeros.  Can there be polynomials with no zeros whatsoever?
+    The answer to that last question is <q>No.</q> and the theorem which provides that answer is
     The Fundamental Theorem of Algebra.
   </p>
 
@@ -689,50 +689,50 @@
     <title>The Fundamental Theorem of Algebra</title>
     <statement>
       <p>
-        <idx><h>Fundamental Theorem of Algebra</h></idx> 
-        <idx><h>theorem </h><h> Fundamental Theorem of Algebra</h></idx>  
-        If <m>f</m> is a polynomial function with complex number coefficients of degree <m>n \geq 1</m>, 
+        <idx><h>Fundamental Theorem of Algebra</h></idx>
+        <idx><h>theorem </h><h> Fundamental Theorem of Algebra</h></idx>
+        If <m>f</m> is a polynomial function with complex number coefficients of degree <m>n \geq 1</m>,
         then <m>f</m> has at least one complex zero.
       </p>
     </statement>
   </theorem>
 
   <p>
-    The Fundamental Theorem of Algebra is an example of an <q>existence</q> theorem in mathematics.  
-    It  guarantees the existence of at least one zero, but gives us no algorithm to use in finding it.  
-    It took mathematicians literally hundreds of years to prove the theorem in its full generality, 
-    and some of that history can be found by looking up the Fundamental Theorem on 
+    The Fundamental Theorem of Algebra is an example of an <q>existence</q> theorem in mathematics.
+    It  guarantees the existence of at least one zero, but gives us no algorithm to use in finding it.
+    It took mathematicians literally hundreds of years to prove the theorem in its full generality,
+    and some of that history can be found by looking up the Fundamental Theorem on
     <url href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra" visual="en.wikipedia.org/wiki/Fundamental_theorem_of_algebra">Wikipedia</url>.  Note that the Fundamental Theorem of Algebra  applies to not only polynomial functions with real coefficients, but to those with complex number coefficients as well.
   </p>
 
   <p>
-    The Fundamental Theorem of Algebra has since been proved many times, using many different methods, by many mathematicians. 
-    There are probably very few, if any, results in mathematics with the variety of proofs this result has. 
-    Unfortunately, none of the proofs can be understood within the realm of this text, but if the reader is sufficiently interested, 
+    The Fundamental Theorem of Algebra has since been proved many times, using many different methods, by many mathematicians.
+    There are probably very few, if any, results in mathematics with the variety of proofs this result has.
+    Unfortunately, none of the proofs can be understood within the realm of this text, but if the reader is sufficiently interested,
     a collection of proofs can be found at <url href="https://www.cut-the-knot.org/fta/analytic.shtml" visual="www.cut-the-knot.org/fta/analytic.shtml"/>
   </p>
 
   <p>
-    Suppose  <m>f</m> is a polynomial of degree <m>n \geq 1</m>.  
-    The Fundamental Theorem of Algebra guarantees us at least one complex zero, <m>z_{1}</m>, 
-    and as such, the Factor Theorem guarantees that <m>f(x)</m> factors as <m>f(x) = \left(x - z_{1}\right) q_{1}(x)</m> 
-    for a polynomial function <m>q_{1}</m>,  of degree exactly <m>n-1</m>.  
-    If <m>n-1 \geq 1</m>, then the Fundamental Theorem of Algebra guarantees a complex zero of <m>q_{1}</m> as well, say <m>z_{2}</m>, 
-    so then the Factor Theorem gives us <m>q_{1}(x) = \left(x - z_{2}\right) q_{2}(x)</m>, 
-    and hence <m>f(x) = \left(x - z_{1}\right) \left(x - z_{2}\right) q_{2}(x)</m>.  
-    We can continue this process exactly <m>n</m> times, at which point our quotient polynomial 
+    Suppose  <m>f</m> is a polynomial of degree <m>n \geq 1</m>.
+    The Fundamental Theorem of Algebra guarantees us at least one complex zero, <m>z_{1}</m>,
+    and as such, the Factor Theorem guarantees that <m>f(x)</m> factors as <m>f(x) = \left(x - z_{1}\right) q_{1}(x)</m>
+    for a polynomial function <m>q_{1}</m>,  of degree exactly <m>n-1</m>.
+    If <m>n-1 \geq 1</m>, then the Fundamental Theorem of Algebra guarantees a complex zero of <m>q_{1}</m> as well, say <m>z_{2}</m>,
+    so then the Factor Theorem gives us <m>q_{1}(x) = \left(x - z_{2}\right) q_{2}(x)</m>,
+    and hence <m>f(x) = \left(x - z_{1}\right) \left(x - z_{2}\right) q_{2}(x)</m>.
+    We can continue this process exactly <m>n</m> times, at which point our quotient polynomial
     <m>q_{n}</m> has degree <m>0</m> so it's a constant.  This argument gives us the following factorization theorem.
   </p>
 
   <theorem xml:id="complexfactorization">
     <title>Complex Factorization Theorem</title>
     <statement>
-      <p> 
-        Suppose <m>f</m> is a polynomial function with complex number coefficients.  
-        If the degree of <m>f</m> is <m>n</m> and <m>n \geq 1</m>, then  <m>f</m> has exactly <m>n</m> complex zeros, counting multiplicity.  
-        If <m>z_{1}</m>, <m>z_{2}</m>, \ldots, <m>z_{k}</m> are the distinct zeros of <m>f</m>, 
-        with multiplicities <m>m_{1}</m>, <m>m_{2}</m>, \ldots, <m>m_{k}</m>, respectively, 
-        then <m>f(x) = a\left(x - z_{1}  \right)^{m_{1}}\left(x - z_{2}  \right)^{m_{2}} \cdots \left(x - z_{k}  \right)^{m_{k}}</m>. 
+      <p>
+        Suppose <m>f</m> is a polynomial function with complex number coefficients.
+        If the degree of <m>f</m> is <m>n</m> and <m>n \geq 1</m>, then  <m>f</m> has exactly <m>n</m> complex zeros, counting multiplicity.
+        If <m>z_{1}</m>, <m>z_{2}</m>, \ldots, <m>z_{k}</m> are the distinct zeros of <m>f</m>,
+        with multiplicities <m>m_{1}</m>, <m>m_{2}</m>, \ldots, <m>m_{k}</m>, respectively,
+        then <m>f(x) = a\left(x - z_{1}  \right)^{m_{1}}\left(x - z_{2}  \right)^{m_{2}} \cdots \left(x - z_{k}  \right)^{m_{k}}</m>.
         <idx><h>Complex Factorization Theorem</h></idx>
         <idx><h>factorization </h><h> over the complex numbers</h></idx>
       </p>
@@ -741,7 +741,7 @@
 
   <exercises>
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Use the given complex numbers <m>z</m> and <m>w</m> to find and simplify the following:
@@ -795,7 +795,7 @@
           </ul>
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -1278,7 +1278,7 @@
           </p>
         </answer>
       </exercise>
-    
+
       <exercise>
         <statement>
           <p>
@@ -1294,55 +1294,55 @@
                   <m>z+w = -2i\sqrt{3}</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>zw = -4</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>z^2 = -2-2i\sqrt{3}</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\frac{1}{z} = \frac{1}{4} + \frac{\sqrt{3}}{4} \,i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\frac{z}{w} = \frac{1}{2} + \frac{\sqrt{3}}{2} \,i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\frac{w}{z} = \frac{1}{2} - \frac{\sqrt{3}}{2} \,i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\overline{z} = 1+i\sqrt{3}</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>z\overline{z} = 4</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>(\overline{z})^2 = -2+2i\sqrt{3}</m>
                 </p>
               </li>
-            
+
             </ul>
           </p>
         </answer>
@@ -1363,55 +1363,55 @@
                   <m>z+w = i\sqrt{3}</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>zw = -1</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>z^2 = -\frac{1}{2} + \frac{\sqrt{3}}{2} \,i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\frac{1}{z} = \frac{1}{2} - \frac{\sqrt{3}}{2} \, i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\frac{z}{w} = \frac{1}{2} - \frac{\sqrt{3}}{2} \, i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\frac{w}{z} = \frac{1}{2} + \frac{\sqrt{3}}{2} \, i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\overline{z} = \frac{1}{2} - \frac{\sqrt{3}}{2} \, i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>z\overline{z} = 1</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>(\overline{z})^2 = -\frac{1}{2} - \frac{\sqrt{3}}{2} \, i</m>
                 </p>
               </li>
-            
+
             </ul>
           </p>
         </answer>
@@ -1432,55 +1432,55 @@
                   <m>z + w = -\sqrt{2}</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>zw = 1</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>z^2 =-i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\frac{1}{z} = -\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} \, i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\frac{z}{w} = -i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\frac{w}{z} = i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>\overline{z} = -\frac{\sqrt{2}}{2} - \frac{\sqrt{2}}{2} \, i</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>z\overline{z} = 1</m>
                 </p>
               </li>
-            
+
               <li>
                 <p>
                   <m>(\overline{z})^2 = i</m>
                 </p>
               </li>
-            
+
             </ul>
           </p>
         </answer>
@@ -1488,13 +1488,13 @@
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Simplify the given quantity.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -1592,19 +1592,19 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
-          We know that <m>i^{2} = -1</m> which means <m>i^{3} = i^{2} \cdot i = (-1) \cdot i = -i</m> 
-          and <m>i^{4} = i^{2} \cdot i^{2} = (-1)(-1) = 1</m>. 
+          We know that <m>i^{2} = -1</m> which means <m>i^{3} = i^{2} \cdot i = (-1) \cdot i = -i</m>
+          and <m>i^{4} = i^{2} \cdot i^{2} = (-1)(-1) = 1</m>.
           Use this information to simplify the given power of <m>i</m>.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -1708,17 +1708,17 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Find all complex solutions.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -1727,7 +1727,7 @@
         </statement>
         <answer>
           <p>
-            <m>x = \dfrac{2 \pm i\sqrt{14}}{3}</m> 
+            <m>x = \dfrac{2 \pm i\sqrt{14}}{3}</m>
           </p>
         </answer>
       </exercise>
@@ -1779,7 +1779,7 @@
         </statement>
         <answer>
           <p>
-            <m>y = \pm \dfrac{3i \sqrt{2}}{2}</m> 
+            <m>y = \pm \dfrac{3i \sqrt{2}}{2}</m>
           </p>
         </answer>
       </exercise>
@@ -1787,7 +1787,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\dfrac{x^3}{2x-1} = \dfrac{x}{3}</m> 
+            <m>\dfrac{x^3}{2x-1} = \dfrac{x}{3}</m>
           </p>
         </statement>
         <answer>
@@ -1834,10 +1834,10 @@
             <m>z = \pm 2, \pm 2i</m>
           </p>
         </answer>
-      </exercise>      
-    
+      </exercise>
+
     </exercisegroup>
-    
+
     <exercise>
       <statement>
         <p>

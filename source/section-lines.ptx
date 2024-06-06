@@ -111,7 +111,7 @@
     </figure>
 
     <p>
-      The figure illustrates how every point on the line can be obtained by starting with <m>\vec p</m> 
+      The figure illustrates how every point on the line can be obtained by starting with <m>\vec p</m>
       and moving a certain distance in the direction of <m>\vec d</m>.
       That is, we can define the line as a function of <m>t</m>:
       <men xml:id="eq_lines1">
@@ -608,7 +608,7 @@
 
               <p>
                 Through each of the two points, a line is drawn.
-                The line through <m>P_1</m> has a direction vector <m>\vec{d}_1</m> 
+                The line through <m>P_1</m> has a direction vector <m>\vec{d}_1</m>
                 that points in a different direction from that of the direction vector <m>\vec{d}_2</m> of the line through <m>P_2</m>,
                 so the lines are not parallel. It also appears from the figure that the lines do not intersect.
               </p>
@@ -926,7 +926,7 @@
       <image width="33%">
         <shortdescription>A line through a point P, with direction d. Near the line is a point Q, whose distance to the line is shown as the height h of a triangle.</shortdescription>
         <description>
-          <p>          
+          <p>
             A generic line is shown, without coordinates.
             On the line is a point <m>P</m> and a direction vector <m>\vec{d}</m>.
             Near the line is a point <m>Q</m>.
@@ -965,8 +965,8 @@
 
     <example xml:id="ex_lines4">
       <title>Finding the distance from a point to a line</title>
-      <statement>     
-       <p>    
+      <statement>
+       <p>
          Find the distance from the point <m>Q=(1,1,3)</m> to the line <m>\vec\ell(t) = \bbm  1\\-1\\1\ebm+t\bbm  2\\3\\1\ebm.</m>
         </p>
      </statement>
@@ -989,16 +989,16 @@
         </me>.
         Now, if <m>R=(x_1,y_1,z_1)</m>, we know that <m>\overrightarrow{PR} = \bbm x_1-1\\x_2-(-1)\\x_3-1\ebm</m>,
         since <m>P=(1,-1,1)</m>. This gives us <m>\bbm x_1-1\\x_2-(-1)\\x_3-1\ebm=\frac47\bbm 2\\3\\1\ebm</m>,
-        so <m>x_1 = 1+\frac87 = \frac{15}{7}</m>, <m>x_2 = -1+\frac{12}{7}=\frac57</m>, 
+        so <m>x_1 = 1+\frac87 = \frac{15}{7}</m>, <m>x_2 = -1+\frac{12}{7}=\frac57</m>,
         and <m>x_3 = 1+\frac47 = \frac{11}{7}</m>. Therefore,
         <me>
-          R = \left(\frac{15}{7},\frac{5}{7},\frac{11}{7})
+          R = \left(\frac{15}{7},\frac{5}{7},\frac{11}{7}\right)
         </me>
         is the point on the line that is closest to <m>Q</m>.
       </p>
 
       <p>
-        The desired distance is therefore the distance from <m>Q</m> to <m>R</m>, 
+        The desired distance is therefore the distance from <m>Q</m> to <m>R</m>,
         which can be found using the distance formula:
         <md>
           <mrow>h \amp = \sqrt{\left(1-\frac{15}{7}\right)^2+\left(1-\frac{5}{7}\right)^2+\left(3-\frac{11}{7}^2\right)}</mrow>
@@ -1016,9 +1016,9 @@
 
     <insight xml:id="idea-distance_method">
       <title>Steps for solving shortest distance problems</title>
-      <p>    
-        Suppose you are asked to find the distance between two objects, 
-        or to determine an object (such as a point) that is closest to a given object (a line or plane). 
+      <p>
+        Suppose you are asked to find the distance between two objects,
+        or to determine an object (such as a point) that is closest to a given object (a line or plane).
         Your solution to the problem should always include the following steps:
         <ol>
           <li>
@@ -1047,11 +1047,11 @@
 
     <aside>
       <p>
-        <alert>Note:</alert> We can't overemphasize the fact that the diagram referred to in <xref ref="idea-distance_method"/> 
-        <em>does not have to be accurate</em> with respect to the coordinates and directions involved. 
-        It simply has to be capable of representing the information in the problem. 
-        Note that in <xref ref="fig-linedistsetup"/> in <xref ref="ex_lines4a"/> we've drawn a line, 
-        some points, and some vectors that represent the problem, without reference to a coordinate system. 
+        <alert>Note:</alert> We can't overemphasize the fact that the diagram referred to in <xref ref="idea-distance_method"/>
+        <em>does not have to be accurate</em> with respect to the coordinates and directions involved.
+        It simply has to be capable of representing the information in the problem.
+        Note that in <xref ref="fig-linedistsetup"/> in <xref ref="ex_lines4a"/> we've drawn a line,
+        some points, and some vectors that represent the problem, without reference to a coordinate system.
         The goal is to provide enough detail to allow us to set up the problem.
       </p>
     </aside>
@@ -1060,15 +1060,15 @@
       <title>Finding the closest point on a line</title>
       <statement>
         <p>
-          Find the distance from the point <m>Q=(1,3,-2)</m> to the line <m>\vec\ell</m> 
-          that passes through the point <m>P=(2,0,-1)</m> in the direction of <m>\vec d = \bbm  1\\-1\\0\ebm</m>, 
+          Find the distance from the point <m>Q=(1,3,-2)</m> to the line <m>\vec\ell</m>
+          that passes through the point <m>P=(2,0,-1)</m> in the direction of <m>\vec d = \bbm  1\\-1\\0\ebm</m>,
           and find the point <m>R</m> on <m>\vec\ell</m> that is closest to <m>Q</m>.
         </p>
       </statement>
       <solution>
         <p>
-          We're given a point <m>P</m> on the line, along with a direction vector <m>\vec d</m>, 
-          and a point <m>Q</m> not on the line. We seek the point <m>R</m> on the line that is closest to <m>Q</m>, 
+          We're given a point <m>P</m> on the line, along with a direction vector <m>\vec d</m>,
+          and a point <m>Q</m> not on the line. We seek the point <m>R</m> on the line that is closest to <m>Q</m>,
           as well as the distance from <m>Q</m> to <m>R</m>. We begin by diagramming the information in <xref ref="fig-linedistsetup"/>.
         </p>
 
@@ -1109,22 +1109,22 @@
           <me>
             \overrightarrow{PQ}=\bbm  1-2\\ 3-0\\ -2-(-1)\ebm = \bbm  -1\\ 3\\ -1\ebm
           </me>.
-          We begin by finding the point <m>R</m> on the line that is closest to <m>Q</m>. 
-          From our diagram, we can see that the vector <m>\overrightarrow{PR}</m> from <m>P</m> to <m>R</m> 
+          We begin by finding the point <m>R</m> on the line that is closest to <m>Q</m>.
+          From our diagram, we can see that the vector <m>\overrightarrow{PR}</m> from <m>P</m> to <m>R</m>
           is equal to the projection of <m>\overrightarrow{PQ}</m> onto the distance vector <m>\vec{d}</m>:
           <me>
-            \overrightarrow{PR}=\operatorname{proj}_{\vec{d}}\overrightarrow{PQ}= 
+            \overrightarrow{PR}=\operatorname{proj}_{\vec{d}}\overrightarrow{PQ}=
             \left(\frac{\bbm  -1\\3\\-1\ebm\boldsymbol{\cdot}\bbm  1\\-1\\0\ebm}{\bbm  1\\-1\\0\ebm\boldsymbol{\cdot}\bbm  1\\-1\\0\ebm}\right)\bbm  1\\-1\\0\ebm = \bbm  -2\\2\\0\ebm
-          </me>.          
+          </me>.
         </p>
 
         <p>
-          Now, we need to pause and take care that we don't make a very common mistake: 
-          the vector <m>\overrightarrow{PR}</m> does \textbf{not} give the coordinates of the point <m>R</m>. 
-          Instead, <m>\overrightarrow{PR}</m> tells us how to get <em>from</em> the point <m>P</m> <em>to</em> the point <m>R</m>. 
-          Letting <m>O</m> denote the origin, we can write <m>\overrightarrow{OP}</m> and <m>\overrightarrow{OR}</m> 
-          for the position vectors of <m>P</m> and <m>R</m>, respectively. 
-          Since <m>\overrightarrow{PR} = \overrightarrow{OR}-\overrightarrow{OP}</m> using the <q>tip minus tail</q> 
+          Now, we need to pause and take care that we don't make a very common mistake:
+          the vector <m>\overrightarrow{PR}</m> does \textbf{not} give the coordinates of the point <m>R</m>.
+          Instead, <m>\overrightarrow{PR}</m> tells us how to get <em>from</em> the point <m>P</m> <em>to</em> the point <m>R</m>.
+          Letting <m>O</m> denote the origin, we can write <m>\overrightarrow{OP}</m> and <m>\overrightarrow{OR}</m>
+          for the position vectors of <m>P</m> and <m>R</m>, respectively.
+          Since <m>\overrightarrow{PR} = \overrightarrow{OR}-\overrightarrow{OP}</m> using the <q>tip minus tail</q>
           rule for computing the vector between two points, we have
           <me>
             \overrightarrow{OR} = \overrightarrow{OP}+\overrightarrow{PR} = \bbm  2\\ 0\\ -1\ebm + \bbm  -2\\ 2\\ 0\ebm = \bbm  0\\ 2\\ -1\ebm
@@ -1132,7 +1132,7 @@
         </p>
 
         <p>
-          Thus, we have <m>R=(0,2,-1)</m> as the point on the line closest to the point <m>Q</m>. 
+          Thus, we have <m>R=(0,2,-1)</m> as the point on the line closest to the point <m>Q</m>.
           We can now find the distance from <m>Q</m> to the line using the distance formula:
           <me>
             D= \sqrt{(1-0)^2+(3-2)^2+(-2-(-1))^2} = \sqrt{3}
@@ -1140,9 +1140,9 @@
         </p>
 
         <p>
-          An alternative way of computing the distance is to make use of the orthogonal decomposition in 
-          <xref ref="idea_orthog_proj"/>. By definition of the distance from a point to a line, 
-          we know that the vector <m>\overrightarrow{RQ}</m> must be orthogonal to the line, 
+          An alternative way of computing the distance is to make use of the orthogonal decomposition in
+          <xref ref="idea_orthog_proj"/>. By definition of the distance from a point to a line,
+          we know that the vector <m>\overrightarrow{RQ}</m> must be orthogonal to the line,
           and thus to the direction vector <m>\vec{d}</m>. Using <xref ref="idea_orthog_proj"/>, we have that
           <me>
             \overrightarrow{RQ}= \overrightarrow{PQ}-\overrightarrow{PR} = \bbm  -1\\ 3\\ -1\ebm - \bbm  -2\\ 2\\ 0\ebm = \bbm  -1\\ 1\\ 1\ebm
@@ -1185,7 +1185,7 @@
           <p>
             The vector <m>\overrightarrow{P_1P_2}</m> is shown pointing from the first line to the second.
             Also shown is the cross product <m>\vec{c}=\vec{d}_1\times\vec{d}_2</m>;
-            this vector is perpendicular to both lines. 
+            this vector is perpendicular to both lines.
             The distance <m>h</m> between the lines is shown as a segment parallel to <m>\vec c</m>.
           </p>
         </description>
@@ -1414,11 +1414,11 @@
     </example>
 
     <p>
-      Once again, we do not recommend attempting to memorize <xref ref="eq-skewlinesdist" text="local">Equation</xref>. 
-      Unless you somehow find yourself at a point in your life where you need to find the distances between a whole lot of pairs of skew lines, 
-      you will be better served by learning the skills required to set up and think through a problem 
-      than you will be by memorizing a formula to plug numbers into. In the case of skew lines, 
-      the key observation is that if we take the vector between <em>any</em> pair of points, one on each line, 
+      Once again, we do not recommend attempting to memorize <xref ref="eq-skewlinesdist" text="local">Equation</xref>.
+      Unless you somehow find yourself at a point in your life where you need to find the distances between a whole lot of pairs of skew lines,
+      you will be better served by learning the skills required to set up and think through a problem
+      than you will be by memorizing a formula to plug numbers into. In the case of skew lines,
+      the key observation is that if we take the vector between <em>any</em> pair of points, one on each line,
       and project it onto the vector <m>\vec c = \vec{d}_1\times\vec{d}_2</m>, the length of the resulting vector is the distance we seek.
     </p>
 
@@ -1429,10 +1429,10 @@
     <example xml:id="ex_lines7">
       <title>Finding the closest points on skew lines</title>
       <statement>
-    
+
         <p>
-          Find the points <m>R_1</m> on <m>\vec\ell_1</m> and <m>R_2</m> on <m>\vec\ell_2</m>, 
-          where <m>\vec\ell_1</m> and <m>\vec\ell_2</m> are the lines from <xref ref="ex_lines5"/>, 
+          Find the points <m>R_1</m> on <m>\vec\ell_1</m> and <m>R_2</m> on <m>\vec\ell_2</m>,
+          where <m>\vec\ell_1</m> and <m>\vec\ell_2</m> are the lines from <xref ref="ex_lines5"/>,
           such that the distance from <m>R_1</m> to <m>R_2</m> is a minimum.
         </p>
       </statement>
@@ -1445,7 +1445,7 @@
           and similarly,
           <men xml:id="eq-skewpoint2">
             R_2 = (-2+4s, 3+s, 5+2s), \quad \text{ for some real number } s
-          </men>.          
+          </men>.
         </p>
 
         <p>
@@ -1457,8 +1457,8 @@
         </p>
 
         <p>
-          We know that the line segment <m>\overline{R_1R_2}</m> must be perpendicular to both <m>\vec\ell_1</m> and <m>\vec\ell_2</m> 
-          in order to minimize the distance, so the vector <m>\overrightarrow{R_1R_2}</m> must be orthogonal to both <m>\vec{d}_1</m> and 
+          We know that the line segment <m>\overline{R_1R_2}</m> must be perpendicular to both <m>\vec\ell_1</m> and <m>\vec\ell_2</m>
+          in order to minimize the distance, so the vector <m>\overrightarrow{R_1R_2}</m> must be orthogonal to both <m>\vec{d}_1</m> and
           <m>\vec{d}_2</m>. Thus,
           <md>
             <mrow> 0 = \vec{d}_1\boldsymbol{\cdot}\overrightarrow{R_1R_2} \amp = 3(-3+4s-3t)-1(1+s+t)+1(5+2s-t) </mrow>
@@ -1471,31 +1471,31 @@
         <p>
           We end up having to solve a <em>system</em> of two linear equations in the two variables, <m>s</m> and <m>t</m>, given by
           <me>
-            begin{array}{ccccc}
+            \begin{array}{ccccc}
               13s \amp - \amp 11t \amp = \amp 5\\
               21s \amp - \amp 13t \amp = \amp 1
             \end{array}
           </me>.
-          You probably had to solve such systems in high school. One option is to solve graphically, 
-          by plotting the lines given by each equation, and seeing where they intersect. 
+          You probably had to solve such systems in high school. One option is to solve graphically,
+          by plotting the lines given by each equation, and seeing where they intersect.
           However, this method has little hope of providing an accurate answer. Instead, we try a little algebra.
         </p>
 
         <p>
           Multiplying the first equation by 21 and the second by 13 gives us the equations <m>273s-231t=105</m> and <m>273s-169t=13</m>, respectively.
-          Subtracting the second equation from the first, we have <m>-62t = 92</m>, so <m>t=-\frac{92}{62}=-\frac{46}{31}</m>. 
-          Plugging this value back into any of the previous equations gives us <m>s=-\frac{351}{403}=-\frac{27}{31}</m>. 
-          (We didn't promise that the numbers would work out nicely!) 
+          Subtracting the second equation from the first, we have <m>-62t = 92</m>, so <m>t=-\frac{92}{62}=-\frac{46}{31}</m>.
+          Plugging this value back into any of the previous equations gives us <m>s=-\frac{351}{403}=-\frac{27}{31}</m>.
+          (We didn't promise that the numbers would work out nicely!)
           Plugging these values back into equations <xref ref="eq-skewpoint1"/> and <xref ref="eq-skewpoint2"/>, we find
           <me>
             R_1 = \left(-\frac{107}{31}, \frac{108}{31}, -\frac{46}{31}\right) \quad \text{ and } \quad R_2 = \left(-\frac{170}{31}, \frac{66}{31}, \frac{101}{31}\right)
-          </me>.          
+          </me>.
         </p>
 
         <p>
           Our vector <m>\overrightarrow{R_1R_2}</m> is then given by
           <me>
-            \overrightarrow{R_1R_2} = \left\bbm  -\frac{63}{31}\\ -\frac{42}{31}\\ \frac{147}{31}\right\ebm = \frac{1}{31}\bbm  -63\\ -42\\ 147\ebm
+            \overrightarrow{R_1R_2} = \bbm  -\frac{63}{31}\\ -\frac{42}{31}\\ \frac{147}{31}\ebm = \frac{1}{31}\bbm  -63\\ -42\\ 147\ebm
           </me>,
           and the distance between the two lines is given by
           <me>
@@ -1507,9 +1507,9 @@
     </example>
 
     <p>
-      <xref ref="ex_lines7"/> required us to solve a system of two linear equations in two unknowns <m>s</m> and <m>t</m>. 
-      Although this involved some messy fractions, the algebra involved was fairly straightforward. 
-      In many real life problems it is necessary to be able to solve systems involving hundreds or even thousands of equations and variables. 
+      <xref ref="ex_lines7"/> required us to solve a system of two linear equations in two unknowns <m>s</m> and <m>t</m>.
+      Although this involved some messy fractions, the algebra involved was fairly straightforward.
+      In many real life problems it is necessary to be able to solve systems involving hundreds or even thousands of equations and variables.
       We will begin our study of how to systematically solve such systems in the next chapter.
     </p>
 

@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section xml:id="sec-solve_axb" label="sec-solve_axb">
   <title>Solving Matrix Equations <m>\tta\ttx=\ttb</m></title>
-  
+
   <p>
-    We concluded the last chapter with a discussion about solving numerical equations like <m>ax=b</m> for <m>x</m>. 
-    We have seen how to solve equations of the form <m>\ttaxb</m> by identifying them as systems of linear equations. 
+    We concluded the last chapter with a discussion about solving numerical equations like <m>ax=b</m> for <m>x</m>.
+    We have seen how to solve equations of the form <m>\ttaxb</m> by identifying them as systems of linear equations.
     In this section we will learn how to solve the general matrix equation <m>\tta\ttx=\ttb</m> for <m>\ttx</m>.
   </p>
 
   <p>
-    We will start by considering the best case scenario when solving <m>\ttaxb</m>; 
-    that is, when <m>\tta</m> is square and we have exactly one solution. 
-    For instance, suppose we want to solve <m>\ttaxb</m> where 
+    We will start by considering the best case scenario when solving <m>\ttaxb</m>;
+    that is, when <m>\tta</m> is square and we have exactly one solution.
+    For instance, suppose we want to solve <m>\ttaxb</m> where
     <me>
       \tta = \bbm 1 \amp 1\\2 \amp 1\ebm \quad \text{and} \quad \vb = \bbm 0\\1\ebm
     </me>.
-    We know how to solve this; put the appropriate matrix into reduced row echelon form and interpret the result. 
+    We know how to solve this; put the appropriate matrix into reduced row echelon form and interpret the result.
     <me>
       \bbm 1 \amp 1 \amp 0\\2\amp 1\amp 1\ebm \quad \arref \quad \bbm 1\amp 0\amp 1\\0\amp 1\amp -1\ebm
     </me>
-    We read from this that 
+    We read from this that
     <me>
       \vx = \bbm 1\\-1\ebm
     </me>.
   </p>
 
   <p>
-    Written in a more general form,  we found our solution by forming the augmented matrix 
+    Written in a more general form,  we found our solution by forming the augmented matrix
     <me>
       \bbm\tta  \amp  \vb\ebm
     </me>
-    and interpreting its reduced row echelon form: 
+    and interpreting its reduced row echelon form:
     <me>
       \bbm\tta  \amp  \vb\ebm \quad \arref \quad \bbm\tti \amp  \vx \ebm
     </me>.
-    Notice that when the reduced row echelon form of <m>\tta</m> is the identity matrix <m>\tti</m> we have exactly one solution. 
+    Notice that when the reduced row echelon form of <m>\tta</m> is the identity matrix <m>\tti</m> we have exactly one solution.
     This, again, is the best case scenario.
   </p>
 
   <p>
-    We apply the same general technique to solving the matrix equation <m>\tta\ttx=\ttb</m> for <m>\ttx</m>. 
-    We'll assume that <m>\tta</m> is a square matrix (<m>\ttb</m> need not be) and we'll form the augmented matrix 
+    We apply the same general technique to solving the matrix equation <m>\tta\ttx=\ttb</m> for <m>\ttx</m>.
+    We'll assume that <m>\tta</m> is a square matrix (<m>\ttb</m> need not be) and we'll form the augmented matrix
     <me>
       \bbm\tta \amp \ttb\ebm
     </me>.
@@ -51,8 +51,8 @@
   </p>
 
   <p>
-    As long as the reduced row echelon form of <m>\tta</m> is the identity matrix, 
-    this technique works great. After a few examples, we'll discuss why this technique works, 
+    As long as the reduced row echelon form of <m>\tta</m> is the identity matrix,
+    this technique works great. After a few examples, we'll discuss why this technique works,
     and we'll also talk just a little bit about what happens when the reduced row echelon form of <m>\tta</m> is not the identity matrix.
   </p>
 
@@ -63,9 +63,9 @@
   <example xml:id="ex_axb_1">
     <title>Solving a matrix equation</title>
     <statement>
- 
+
       <p>
-        Solve the matrix equation <m>\tta\ttx=\ttb</m> where 
+        Solve the matrix equation <m>\tta\ttx=\ttb</m> where
         <me>
           \tta = \bbm 1 \amp -1\\ 5 \amp 3\ebm\quad \text{and} \quad \ttb = \bbm -8\amp -13\amp 1\\32\amp -17\amp 21\ebm
         </me>.
@@ -73,16 +73,16 @@
     </statement>
     <solution>
       <p>
-        To solve <m>\tta\ttx=\ttb</m> for <m>\ttx</m>, we form the proper augmented matrix, 
+        To solve <m>\tta\ttx=\ttb</m> for <m>\ttx</m>, we form the proper augmented matrix,
         put it into reduced row echelon form, and interpret the result.
         <me>
-          \bbm 1\amp -1\amp -8\amp -13\amp 1\\5\amp 3\amp 32\amp -17\amp 21\ebm\quad \arref \quad 
+          \bbm 1\amp -1\amp -8\amp -13\amp 1\\5\amp 3\amp 32\amp -17\amp 21\ebm\quad \arref \quad
           \bbm 1\amp 0\amp 1\amp -7\amp 3\\0\amp 1\amp 9\amp 6\amp 2\ebm
         </me>
       </p>
 
       <p>
-        We read from the reduced row echelon form of the matrix that 
+        We read from the reduced row echelon form of the matrix that
         <me>
           \ttx = \bbm 1 \amp -7 \amp 3\\9\amp 6\amp 2\ebm
         </me>.
@@ -95,9 +95,9 @@
   <example xml:id="ex_axb_2">
     <title>Another matrix equation</title>
     <statement>
- 
+
       <p>
-        Solve the matrix equation <m>\tta\ttx = \ttb</m> where 
+        Solve the matrix equation <m>\tta\ttx = \ttb</m> where
         <me>
           \tta = \bbm 1 \amp 0 \amp 2\\0\amp -1\amp -2\\2\amp -1\amp 0\ebm \quad\text{and}\quad \ttb = \bbm-1\amp 2\\2\amp -6\\2\amp -4\ebm
         </me>.
@@ -105,7 +105,7 @@
     </statement>
     <solution>
       <p>
-        To solve, let's again form the augmented matrix 
+        To solve, let's again form the augmented matrix
         <me>
           \bbm \tta  \amp  \ttb\ebm
         </me>,
@@ -116,7 +116,7 @@
       </p>
 
       <p>
-        We see from this that 
+        We see from this that
         <me>
           \ttx = \bbm 1 \amp 0\\0 \amp 4\\-1\amp 1\ebm
         </me>.
@@ -125,14 +125,14 @@
   </example>
 
   <p>
-    Why does this work? To see the answer, let's define five matrices. 
+    Why does this work? To see the answer, let's define five matrices.
     <me>
       \tta = \bbm 1 \amp 2\\3 \amp 4\ebm, \ \ \vu =\bbm 1\\1\ebm, \ \ \vvv =\bbm-1\\1\ebm, \ \ \vw = \bbm 5\\6\ebm \ \ \text{and} \ \ \ttx = \bbm 1\amp -1\amp 5\\1\amp 1\amp 6\ebm
     </me>.
   </p>
 
   <p>
-    Notice that <m>\vu</m>, <m>\vvv</m> and <m>\vw</m> are the first, second and third columns of <m>\ttx</m>, respectively. 
+    Notice that <m>\vu</m>, <m>\vvv</m> and <m>\vw</m> are the first, second and third columns of <m>\ttx</m>, respectively.
     Now consider this list of matrix products: <m>\tta\vu</m>, <m>\tta\vvv</m>, <m>\tta\vw</m> and <m>\tta\ttx</m>.
     <md>
       <mrow>\tta\vu \amp = \bbm 1\amp 2\\3\amp 4\ebm\bbm 1\\1\ebm</mrow>
@@ -147,21 +147,21 @@
   </p>
 
   <p>
-    So again note that the columns of <m>\ttx</m> are <m>\vu</m>, <m>\vvv</m>, and <m>\vw</m>; that is, we can write 
+    So again note that the columns of <m>\ttx</m> are <m>\vu</m>, <m>\vvv</m>, and <m>\vw</m>; that is, we can write
     <me>
       \ttx = \bbm\vu  \amp  \vvv\amp \vw \ebm
     </me>.
-    Notice also that the columns of <m>\tta\ttx</m> are <m>\tta\vu</m>, <m>\tta\vvv</m> and <m>\tta\vw</m>, respectively. 
-    Thus we can write 
+    Notice also that the columns of <m>\tta\ttx</m> are <m>\tta\vu</m>, <m>\tta\vvv</m> and <m>\tta\vw</m>, respectively.
+    Thus we can write
     <md>
       <mrow>\tta\ttx \amp = \tta\bbm\vu \amp  \vvv\amp \vw \ebm</mrow>
       <mrow>    \amp =\bbm \tta\vu \amp  \tta\vvv \amp  \tta\vw \ebm</mrow>
       <mrow>    \amp =\bbm \bbm 3\\7\ebm \amp  \bbm 1\\1\ebm \amp  \bbm 17\\39\ebm \ebm </mrow>
       <mrow>    \amp =\bbm 3\amp 1\amp 17\\7\amp 1\amp 39\ebm</mrow>
     </md>.
-    This is exactly the same sort of thing we did in <xref ref="sec-solving_systems"/> 
-    when we had several vectors and we wanted to determine whether or not each of them belonged to a given span. 
-    Rather than perform the same set of row operations for each vector separately, we can do them all together. 
+    This is exactly the same sort of thing we did in <xref ref="sec-solving_systems"/>
+    when we had several vectors and we wanted to determine whether or not each of them belonged to a given span.
+    Rather than perform the same set of row operations for each vector separately, we can do them all together.
     (See the discussion following <xref ref="ex_span1"/>.)
   </p>
 
@@ -176,10 +176,10 @@
   </blockquote>
 
   <p>
-    How does this help us solve the matrix equation <m>\tta\ttx=\ttb</m> for <m>\ttx</m>? 
-    Assume that <m>\tta</m> is a square matrix (that forces <m>\ttx</m> and <m>\ttb</m> to be the same size). 
-    We'll let <m>\vec{x}_{1},\vec{x}_{2}, \cdots \vec{x}_{n}</m> denote the columns of the (unknown) matrix <m>\ttx</m>, 
-    and we'll let <m>\vec{b}_{1},\vec{b}_{2}, \cdots \vec{b}_{n}</m> denote the columns of <m>\ttb</m>. 
+    How does this help us solve the matrix equation <m>\tta\ttx=\ttb</m> for <m>\ttx</m>?
+    Assume that <m>\tta</m> is a square matrix (that forces <m>\ttx</m> and <m>\ttb</m> to be the same size).
+    We'll let <m>\vec{x}_{1},\vec{x}_{2}, \cdots \vec{x}_{n}</m> denote the columns of the (unknown) matrix <m>\ttx</m>,
+    and we'll let <m>\vec{b}_{1},\vec{b}_{2}, \cdots \vec{b}_{n}</m> denote the columns of <m>\ttb</m>.
     We want to solve <m>\tta\ttx = \ttb</m> for <m>\ttx</m>. That is, we want <m>\ttx</m> where
     <mdn>
       <mrow>\tta\ttx \amp = \ttb</mrow>
@@ -189,7 +189,7 @@
   </p>
 
   <p>
-    If the matrix on the left hand side is equal to the matrix on the right, 
+    If the matrix on the left hand side is equal to the matrix on the right,
     then their respective columns must be equal. This means we need to solve <m>n</m> equations:
     <md>
       <mrow>\tta\vec{x}_{1} \amp  = \vec{b}_{1}</mrow>
@@ -200,26 +200,26 @@
   </p>
 
   <p>
-    We already know how to do this; this is what we learned in the previous section. 
-    Let's do this in a concrete example. In our above work we defined matrices <m>\tta</m> and <m>\ttx</m>, 
-    and looked at the product <m>\tta\ttx</m>. Let's call the product <m>\ttb</m>; that is, set <m>\ttb = \tta\ttx</m>. 
-    Now, let's pretend that we don't know what <m>\ttx</m> is, and let's try to find the matrix <m>\ttx</m> 
-    that satisfies the equation <m>\tta\ttx=\ttb</m>. As a refresher, recall that 
+    We already know how to do this; this is what we learned in the previous section.
+    Let's do this in a concrete example. In our above work we defined matrices <m>\tta</m> and <m>\ttx</m>,
+    and looked at the product <m>\tta\ttx</m>. Let's call the product <m>\ttb</m>; that is, set <m>\ttb = \tta\ttx</m>.
+    Now, let's pretend that we don't know what <m>\ttx</m> is, and let's try to find the matrix <m>\ttx</m>
+    that satisfies the equation <m>\tta\ttx=\ttb</m>. As a refresher, recall that
     <me>
       \tta = \bbm 1 \amp 2\\3 \amp 4\ebm \quad \text{and} \quad \ttb = \bbm 3\amp 1\amp 17\\7\amp 1\amp 39\ebm
     </me>.
   </p>
 
   <p>
-    Since <m>\tta</m> is a <m>2\times 2</m> matrix and <m>\ttb</m> is a <m>2\times 3</m> matrix, 
-    what dimensions must <m>\ttx</m> be in the equation <m>\tta\ttx=\ttb</m>? 
-    The number of rows of <m>\ttx</m> must match the number of columns of <m>\tta</m>; 
-    the number of columns of <m>\ttx</m> must match the number of columns of <m>\ttb</m>. 
+    Since <m>\tta</m> is a <m>2\times 2</m> matrix and <m>\ttb</m> is a <m>2\times 3</m> matrix,
+    what dimensions must <m>\ttx</m> be in the equation <m>\tta\ttx=\ttb</m>?
+    The number of rows of <m>\ttx</m> must match the number of columns of <m>\tta</m>;
+    the number of columns of <m>\ttx</m> must match the number of columns of <m>\ttb</m>.
     Therefore we know that <m>\ttx</m> must be a <m>2\times 3</m> matrix.
   </p>
 
   <p>
-    We'll call the three columns of <m>\ttx</m> <m>\vec{x}_{1}</m>, <m>\vec{x}_{2}</m> and <m>\vec{x}_{3}</m>. 
+    We'll call the three columns of <m>\ttx</m> <m>\vec{x}_{1}</m>, <m>\vec{x}_{2}</m> and <m>\vec{x}_{3}</m>.
     Our previous explanation tells us that if <m>\tta\ttx = \ttb</m>, then:
     <md>
       <mrow>\tta\ttx \amp  = \ttb</mrow>
@@ -235,22 +235,22 @@
   </p>
 
   <p>
-    To find <m>\vec{x}_{1}</m>, we form the proper augmented matrix and put it into reduced row echelon form and interpret the results. 
+    To find <m>\vec{x}_{1}</m>, we form the proper augmented matrix and put it into reduced row echelon form and interpret the results.
     <me>
       \bbm 1 \amp 2 \amp 3\\3\amp 4\amp 7\ebm \quad \arref \quad \bbm 1\amp 0\amp 1\\0\amp 1\amp 1\ebm
     </me>
-    This shows us that 
+    This shows us that
     <me>
       \vec{x}_{1} = \bbm 1\\1\ebm
     </me>.
   </p>
 
   <p>
-    To find <m>\vec{x}_{2}</m>, we again form an augmented matrix and interpret its reduced row echelon form. 
+    To find <m>\vec{x}_{2}</m>, we again form an augmented matrix and interpret its reduced row echelon form.
     <me>
       \bbm 1 \amp 2 \amp 1\\3\amp 4\amp 1\ebm \quad \arref \quad \bbm 1\amp 0\amp -1\\0\amp 1\amp 1\ebm
     </me>.
-    Thus 
+    Thus
     <me>
       \vec{x}_{2} = \bbm-1\\1\ebm
     </me>,
@@ -258,28 +258,28 @@
   </p>
 
   <p>
-    Before continuing on in this manner to find <m>\vec{x}_{3}</m>, we should stop and think. 
-    If the matrix vector equation <m>\ttaxb</m> is consistent, then the steps involved in putting 
+    Before continuing on in this manner to find <m>\vec{x}_{3}</m>, we should stop and think.
+    If the matrix vector equation <m>\ttaxb</m> is consistent, then the steps involved in putting
     <me>
       \bbm\tta  \amp  \vb\ebm
     </me>
-    into reduced row echelon form depend only on <m>\tta</m>; it does not matter what  is. So when we put the two matrices 
+    into reduced row echelon form depend only on <m>\tta</m>; it does not matter what  is. So when we put the two matrices
     <me>
       \bbm 1 \amp 2 \amp 3\\3\amp 4\amp 7\ebm \quad \text{and} \quad \bbm 1\amp 2\amp 1\\3\amp 4\amp 1\ebm
     </me>
-    from above into reduced row echelon form, we performed exactly the same steps! 
+    from above into reduced row echelon form, we performed exactly the same steps!
     (In fact, those steps are: <m>-3R_1+R_2\rightarrow R_2</m>; <m>-\frac12R_2\rightarrow R_2</m>; <m>-2R_2+R_1\rightarrow R_1</m>.)
   </p>
 
   <p>
-    This is just as we noted after <xref ref="ex_span1"/>. 
-    Instead of solving for each column of <m>\ttx</m> separately, 
-    performing the same steps to put the necessary matrices into reduced row echelon form three different times, 
-    why don't we just do it all at once? (Unless you enjoy doing unnecessary work.) Instead of individually putting 
+    This is just as we noted after <xref ref="ex_span1"/>.
+    Instead of solving for each column of <m>\ttx</m> separately,
+    performing the same steps to put the necessary matrices into reduced row echelon form three different times,
+    why don't we just do it all at once? (Unless you enjoy doing unnecessary work.) Instead of individually putting
     <me>
       \bbm 1 \amp 2 \amp 3\\3\amp 4\amp 7\ebm, \quad \bbm 1\amp 2\amp 1\\3\amp 4\amp 1\ebm \quad \text{and} \quad \bbm 1\amp 2\amp 17\\3\amp 4\amp 39\ebm
     </me>
-    into reduced row echelon form, let's just put 
+    into reduced row echelon form, let's just put
     <me>
       \bbm 1 \amp 2 \amp 3\amp 1\amp 17\\3\amp 4\amp 7\amp 1\amp 39\ebm
     </me>
@@ -290,36 +290,36 @@
   </p>
 
   <p>
-    By looking at the last three columns, we see <m>\ttx</m>: 
+    By looking at the last three columns, we see <m>\ttx</m>:
     <me>
       \ttx = \bbm 1 \amp -1 \amp 5\\1\amp 1\amp 6\ebm
     </me>.
   </p>
 
   <p>
-    In each of the examples we've considered so far, 
-    the reduced row echelon form <m>R</m> of the matrix <m>A</m> was equal to the <m>n\times n</m> identity matrix: <m>R=I</m>. 
-    It follows from <xref ref="def-rank"/> in <xref ref="sec-vector_solutions"/> that for an <m>n\times n</m> matrix <m>A</m>, 
-    we have <m>R=I</m> if and only if the rank of <m>A</m> is equal to <m>n</m>. 
-    At this point we should recall <xref ref="thm-rank_and_sols"/> from <xref ref="sec-vector_solutions"/>, 
-    and the discussion that followed. One of the things <xref ref="thm-rank_and_sols"/> 
-    tells us is that if <m>A</m> is an <m>n\times n</m> matrix and <m>\operatorname{rank}(A)=n</m>, 
-    then the equation <m>A\vec{x}=\vec{b}</m> is <term>guaranteed</term> to have a unique solution, 
+    In each of the examples we've considered so far,
+    the reduced row echelon form <m>R</m> of the matrix <m>A</m> was equal to the <m>n\times n</m> identity matrix: <m>R=I</m>.
+    It follows from <xref ref="def-rank"/> in <xref ref="sec-vector_solutions"/> that for an <m>n\times n</m> matrix <m>A</m>,
+    we have <m>R=I</m> if and only if the rank of <m>A</m> is equal to <m>n</m>.
+    At this point we should recall <xref ref="thm-rank_and_sols"/> from <xref ref="sec-vector_solutions"/>,
+    and the discussion that followed. One of the things <xref ref="thm-rank_and_sols"/>
+    tells us is that if <m>A</m> is an <m>n\times n</m> matrix and <m>\operatorname{rank}(A)=n</m>,
+    then the equation <m>A\vec{x}=\vec{b}</m> is <term>guaranteed</term> to have a unique solution,
     no matter what the vector <m>\vec{b}</m> is.
   </p>
 
   <p>
-    But what if <m>\operatorname{rank}(A)\lt n</m>? 
-    In this case, the reduced row echelon form of <m>A</m> is an <m>n\times n</m> matrix <m>R</m> 
-    with at least row of zeros on the bottom. 
-    Our experience with solving systems of the form <m>\ttaxb</m> tells us that in this case, 
+    But what if <m>\operatorname{rank}(A)\lt n</m>?
+    In this case, the reduced row echelon form of <m>A</m> is an <m>n\times n</m> matrix <m>R</m>
+    with at least row of zeros on the bottom.
+    Our experience with solving systems of the form <m>\ttaxb</m> tells us that in this case,
     the matrix equation <m>AX=B</m> may have infinitely many solutions, or no solution at all. Let us consider an example.
   </p>
 
   <example xml:id="ex_AXB_subrank">
     <title>Solving <m>AX=B</m> when <m>\operatorname{rank}(A)\lt n</m></title>
     <statement>
- 
+
       <p>
         Solve the matrix equations <m>AX=B</m> and <m>AX=C</m>, where
         <me>
@@ -334,10 +334,10 @@
           \bbm A\amp B\ebm = \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 1\amp 2\amp 0\\-2\amp 3\amp 4\amp 1\amp 1\amp 3\\0\amp 6\amp -4\amp 6\amp 3\amp 0\end{array}\right] \quad \to \quad
           \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 1\amp 2\amp 0\\0\amp 3\amp -2\amp 3\amp 5\amp 3\\0\amp 0\amp 0\amp 0\amp -7\amp -6\end{array}\right]
         </me>.
-        We stopped before reaching the reduced row echelon form, but there's no reason to continue: 
-        we already have a row of zeros on the left-hand side of the augmented matrix, 
-        and two non-zero entries in that same row, on the right. 
-        What this tells us is that it will be impossible to solve for the second and third columns of <m>X</m>; 
+        We stopped before reaching the reduced row echelon form, but there's no reason to continue:
+        we already have a row of zeros on the left-hand side of the augmented matrix,
+        and two non-zero entries in that same row, on the right.
+        What this tells us is that it will be impossible to solve for the second and third columns of <m>X</m>;
         thus, there is no solution in this case.
       </p>
 
@@ -347,13 +347,13 @@
           \bbm A\amp C\ebm = \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 4\amp -2\amp -3\\-2\amp 3\amp 4\amp -6\amp 5\amp 7\\0\amp 6\amp -4\amp 4\amp 2\amp 2\end{array}\right] \quad \arref \quad
           \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 4\amp -2\amp 3\\0\amp 1\amp -2/3\amp 2/3\amp 1/3\amp 1/3\\0\amp 0\amp 0\amp 0\amp 0\amp 0\end{array}\right]
         </me>.
-        In this case, we <em>are</em> able to solve for each column of <m>X</m>, 
-        but in each case there are infinitely many possibilities: 
+        In this case, we <em>are</em> able to solve for each column of <m>X</m>,
+        but in each case there are infinitely many possibilities:
         we find <m>X = \bbm \vec{x}_1\amp \vec{x}_2\amp \vec{x}_3\ebm</m>, where
         <me>
           \vec{x}_1 = \bbm 4+3r\\ \frac{2}{3}+\frac{2}{3}r\\r\ebm, \vec{x}_2 = \bbm -2+3s\\ \frac{1}{3}+\frac{2}{3}s\\s\ebm, \vec{x}_3 = \bbm -3+3t\\ \frac{1}{3}+\frac{2}{3}t\\ t\ebm,
         </me>
-        for parameters <m>r, s, t</m>. Any choice of values for each of these parameters provides us with a solution. 
+        for parameters <m>r, s, t</m>. Any choice of values for each of these parameters provides us with a solution.
         For simple example, we can set all three parameters equal to zero, giving us
         <me>
           X = \bbm 4 \amp -2 \amp -3\\2/3\amp 1/3\amp 1/3\\0\amp 0\amp 0\ebm
@@ -365,28 +365,28 @@
 
   <p>
     In the previous example, we saw that the equation <m>AX=B</m> had no solution, while we were able to solve <m>AX=C</m>.
-    How do we know which of these will be the case? Let's go back to <xref ref="eq-AXB" text="local">Equation</xref> above. 
-    From this equation, we can see that each column of <m>B</m> is of the form <m>\vec{b}_i = A\vec{x}_i</m> 
-    for some vector <m>\vec{x}_i</m>. Now recall from <xref ref="sec-Rn"/> 
-    that the set of vectors of the form <m>A\vx</m> is precisely the column space of <m>A</m>. 
+    How do we know which of these will be the case? Let's go back to <xref ref="eq-AXB" text="local">Equation</xref> above.
+    From this equation, we can see that each column of <m>B</m> is of the form <m>\vec{b}_i = A\vec{x}_i</m>
+    for some vector <m>\vec{x}_i</m>. Now recall from <xref ref="sec-Rn"/>
+    that the set of vectors of the form <m>A\vx</m> is precisely the column space of <m>A</m>.
     In the case of the matrix <m>C</m>, we can check that if we write
     <me>
       A = \bbm \vec{a}_1 \amp \vec{a}_2\amp \vec{a}_3\ebm \text{ and } C = \bbm \vec{c}_1 \amp  \vec{c}_2 \amp  \vec{c}_3\ebm
     </me>,
-    then <m>\vec{c}_1 = \vec{a}_1-\vec{a}_2</m>, <m>\vec{c}_2 = \vec{a}_1+\vec{a}_2+\vec{a}_3</m>, and <m>\vec{c}_3 = \vec{a}_2+\vec{a}_3</m>. 
-    Thus, all three columns of <m>C</m> are linear combinations of the columns of <m>A</m>, 
+    then <m>\vec{c}_1 = \vec{a}_1-\vec{a}_2</m>, <m>\vec{c}_2 = \vec{a}_1+\vec{a}_2+\vec{a}_3</m>, and <m>\vec{c}_3 = \vec{a}_2+\vec{a}_3</m>.
+    Thus, all three columns of <m>C</m> are linear combinations of the columns of <m>A</m>,
     which is what allowed us to find a solution to <m>AX=C</m> even though the rank of <m>A</m> was less than <m>n</m>.
   </p>
 
   <p>
-    Now that we've justified the technique we've been using in this section to solve <m>\tta\ttx=\ttb</m> for <m>\ttx</m>, 
+    Now that we've justified the technique we've been using in this section to solve <m>\tta\ttx=\ttb</m> for <m>\ttx</m>,
     we reinforce its importance by restating it as a Key Idea.
   </p>
 
   <insight xml:id="idea-solve_AXB">
     <title>Solving <m>\tta\ttx=\ttb</m></title>
       <p>
-        Let <m>\tta</m> be an <m>n\times n</m> matrix, where the reduced row echelon form of <m>\tta</m> is <m>\tti</m>. 
+        Let <m>\tta</m> be an <m>n\times n</m> matrix, where the reduced row echelon form of <m>\tta</m> is <m>\tti</m>.
         To solve the matrix equation <m>\tta\ttx=\ttb</m> for <m>\ttx</m>,
 	      <ol>
 	     		<li>
@@ -396,19 +396,19 @@
           </li>
 	  		  <li>
             <p>
-              Put this matrix into reduced row echelon form. 
+              Put this matrix into reduced row echelon form.
               <ol>
                 <li>
                   <p>
-                    If it is of the form <m>\bbm \tti  \amp  C \ebm</m>, 
+                    If it is of the form <m>\bbm \tti  \amp  C \ebm</m>,
                     for some matrix <m>C</m> that appears in the columns where <m>\ttb</m> once was, then <m>C=X</m>.
                   </p>
                 </li>
                 <li>
                   <p>
-                    If it is of the form <m>\bbm R  \amp  C\ebm</m>, 
-                    where the matrix <m>R</m> (the reduced row echelon form of <m>A</m>) has one or more rows of zeros, 
-                    then there will be either no solution or infinitely many solutions, 
+                    If it is of the form <m>\bbm R  \amp  C\ebm</m>,
+                    where the matrix <m>R</m> (the reduced row echelon form of <m>A</m>) has one or more rows of zeros,
+                    then there will be either no solution or infinitely many solutions,
                     depending on whether or not the columns of <m>B</m> belong to the column space of <m>A</m>.
                   </p>
                 </li>
@@ -418,37 +418,37 @@
 	      </ol>
       </p>
     </insight>
-	
+
     <p>
-      These simple steps cause us to ask certain questions. One of these we asked (and answered) above: 
-      What if <m>\tta</m> does not have maximum rank, so that the reduced row echelon form of <m>A</m> is not equal to <m>I</m>? 
-      Second, we specify above that <m>\tta</m> should be a square matrix. 
-      What happens if <m>\tta</m> isn't square? Is a solution still possible? 
-      If you study what happens in <xref ref="ex_AXB_subrank"/> carefully, you can probably guess that a similar argument applies, 
+      These simple steps cause us to ask certain questions. One of these we asked (and answered) above:
+      What if <m>\tta</m> does not have maximum rank, so that the reduced row echelon form of <m>A</m> is not equal to <m>I</m>?
+      Second, we specify above that <m>\tta</m> should be a square matrix.
+      What happens if <m>\tta</m> isn't square? Is a solution still possible?
+      If you study what happens in <xref ref="ex_AXB_subrank"/> carefully, you can probably guess that a similar argument applies,
       by applying the ideas of <xref ref="sec-vector_solutions"/> to each column of <m>B</m> individually.
     </p>
 
     <p>
-      These questions are good to ask, and we leave it to the reader to discover their answers. 
-      Instead of tackling these questions, we instead tackle the problem of <q>Why do we care about solving <m>\tta\ttx=\ttb</m>?</q> 
-      The simple answer is that, for now, we only care about the special case when <m>\ttb=\tti</m>. 
-      By solving <m>\tta\ttx = \tti</m> for <m>\ttx</m>, we find a matrix <m>\ttx</m> that, when multiplied by <m>\tta</m>, 
+      These questions are good to ask, and we leave it to the reader to discover their answers.
+      Instead of tackling these questions, we instead tackle the problem of <q>Why do we care about solving <m>\tta\ttx=\ttb</m>?</q>
+      The simple answer is that, for now, we only care about the special case when <m>\ttb=\tti</m>.
+      By solving <m>\tta\ttx = \tti</m> for <m>\ttx</m>, we find a matrix <m>\ttx</m> that, when multiplied by <m>\tta</m>,
       gives the identity <m>\tti</m>. That will be very useful.
     </p>
 
     <exercises>
       <exercisegroup cols="2">
-      
+
         <introduction>
           <p>
             Matrices <m>\tta</m> and <m>\ttb</m> are given. Solve the matrix equation <m>\tta\ttx=\ttb</m>.
           </p>
         </introduction>
-      
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm -3 \amp -6 \    4 \amp 0 \ebm </m>, 
+              <m>\tta = \bbm -3 \amp -6 \    4 \amp 0 \ebm </m>,
               <m>\ttb=\bbm 48\amp -30\\    0\amp -8  \ebm </m>
             </p>
           </statement>
@@ -458,11 +458,11 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm 0 \amp -2 \amp 1 \    0\amp 2\amp 2 \\    1\amp 2\amp -3\ebm </m>, 
+              <m>\tta = \bbm 0 \amp -2 \amp 1 \    0\amp 2\amp 2 \\    1\amp 2\amp -3\ebm </m>,
               <m>\ttb=\tti_3 </m>
             </p>
           </statement>
@@ -472,11 +472,11 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm -4 \amp 1 \    -1 \amp -2 \ebm </m>, 
+              <m>\tta = \bbm -4 \amp 1 \    -1 \amp -2 \ebm </m>,
               <m>\ttb=\bbm -2\amp -10\amp 19\\    13\amp 2\amp -2 \ebm </m>
             </p>
           </statement>
@@ -486,11 +486,11 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm 1 \amp -3 \    -3 \amp 6 \ebm </m>, 
+              <m>\tta = \bbm 1 \amp -3 \    -3 \amp 6 \ebm </m>,
               <m>\ttb=\bbm 12\amp -10\\    -27 \amp  27  \ebm </m>
             </p>
           </statement>
@@ -500,11 +500,11 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm -1 \amp -2 \    -2 \amp -3 \ebm </m>, 
+              <m>\tta = \bbm -1 \amp -2 \    -2 \amp -3 \ebm </m>,
               <m>\ttb=\bbm 13\amp 4\amp 7\\    22\amp 5\amp 12  \ebm </m>
             </p>
           </statement>
@@ -514,11 +514,11 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm 3 \amp 3 \    6 \amp 4 \ebm </m>, 
+              <m>\tta = \bbm 3 \amp 3 \    6 \amp 4 \ebm </m>,
               <m>\ttb=\bbm 15\amp -39\\    16\amp -66  \ebm </m>
             </p>
           </statement>
@@ -528,7 +528,7 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
@@ -542,11 +542,11 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm 2 \amp 2 \    3 \amp 1  \ebm </m>, 
+              <m>\tta = \bbm 2 \amp 2 \    3 \amp 1  \ebm </m>,
               <m>\ttb=\tti_2 </m>
             </p>
           </statement>
@@ -556,11 +556,11 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm -2 \amp 0 \amp 4 \    -5\amp -4\amp 5 \\    -3\amp 5\amp -3\ebm </m>, 
+              <m>\tta = \bbm -2 \amp 0 \amp 4 \    -5\amp -4\amp 5 \\    -3\amp 5\amp -3\ebm </m>,
               <m>\ttb=\bbm -18\amp 2\amp -14\\    -38\amp 18\amp -13 \\    10\amp 2\amp -18  \ebm </m>
             </p>
           </statement>
@@ -570,11 +570,11 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm -5 \amp -4 \amp -1 \    8\amp -2\amp -3 \\    6\amp 1\amp -8\ebm </m>, 
+              <m>\tta = \bbm -5 \amp -4 \amp -1 \    8\amp -2\amp -3 \\    6\amp 1\amp -8\ebm </m>,
               <m>\ttb=\bbm -21\amp -8\amp -19\\    65\amp -11\amp -10 \\    75 \amp  -51\amp 33  \ebm </m>
             </p>
           </statement>
@@ -584,11 +584,11 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm -3 \amp 3 \amp -2 \    1\amp -3\amp 2 \\    -1\amp -1\amp 2\ebm </m>, 
+              <m>\tta = \bbm -3 \amp 3 \amp -2 \    1\amp -3\amp 2 \\    -1\amp -1\amp 2\ebm </m>,
               <m>\ttb=\tti_3 </m>
             </p>
           </statement>
@@ -598,11 +598,11 @@
             </p>
           </answer>
         </exercise>
-        
+
         <exercise>
           <statement>
             <p>
-              <m>\tta = \bbm 1 \amp 0 \    3 \amp -1  \ebm </m>, 
+              <m>\tta = \bbm 1 \amp 0 \    3 \amp -1  \ebm </m>,
               <m>\ttb=\tti_2 </m>
             </p>
           </statement>

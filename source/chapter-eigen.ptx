@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-ops" label="chapter-ops">
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="chapter-eigen" label="chapter-eigen">
   <title>Operations on Matrices</title>
   <introduction>
     <p>
-      We have often explored new ideas in Linear Algebra by making connections to our previous algebraic experience. 
-      Adding two numbers, <m>x+y</m>, led us to adding vectors <m>\vx+\vy</m> and adding matrices <m>\tta+\ttb</m>. 
-      We explored multiplication, which then led us to solving the matrix equation <m>\ttaxb</m>, 
-      which was reminiscent of solving the algebra equation <m>ax=b</m>. 
+      We have often explored new ideas in Linear Algebra by making connections to our previous algebraic experience.
+      Adding two numbers, <m>x+y</m>, led us to adding vectors <m>\vx+\vy</m> and adding matrices <m>\tta+\ttb</m>.
+      We explored multiplication, which then led us to solving the matrix equation <m>\ttaxb</m>,
+      which was reminiscent of solving the algebra equation <m>ax=b</m>.
     </p>
 
     <p>
-      This chapter is motivated by another analogy. Consider: when we multiply an unknown number <m>x</m> by another number such as 5, 
-      what do we know about the result? Unless, <m>x=0</m>, we know that in some sense <m>5x</m> 
-      will be <q>5 times bigger than <m>x</m>.</q> Applying this to vectors, 
-      we would readily agree that <m>5\vx</m> gives a vector that is <q>5 times bigger than <m>\vx</m></q>; 
-      we know from <xref ref="thm-vecscale"/> that <m>\norm{5\vx}  = 5\norm{\vx}</m>.
+      This chapter is motivated by another analogy. Consider: when we multiply an unknown number <m>x</m> by another number such as 5,
+      what do we know about the result? Unless, <m>x=0</m>, we know that in some sense <m>5x</m>
+      will be <q>5 times bigger than <m>x</m>.</q> Applying this to vectors,
+      we would readily agree that <m>5\vx</m> gives a vector that is <q>5 times bigger than <m>\vx</m></q>;
+      we know from <xref ref="thm_norm_prop" text="local">Part</xref> of <xref ref="thm_vector_properties"/>
+      that <m>\norm{5\vx}  = 5\norm{\vx}</m>.
     </p>
 
     <aside>
       <p>
-        Eigenvalues and eigenvectors are frequently encountered in the context of <q>characteristic directions</q> 
-        for linear transformations. Before continuing with this section, 
-        the reader might find it useful to take a look at the list of linear transformations of the Cartesian 
+        Eigenvalues and eigenvectors are frequently encountered in the context of <q>characteristic directions</q>
+        for linear transformations. Before continuing with this section,
+        the reader might find it useful to take a look at the list of linear transformations of the Cartesian
         plane in <xref ref="page-plane_transformations"/>.
-        For each of the transformations listed, see if you can predict which vectors will be transformed into scalar multiples of themselves: 
-        for which <m>\vx\in\R^2</m> is <m>T(\vx) = k\vx</m>? (We'll answer this later in the section.) 
-        This question leads to the idea of <em>invariant subspaces</em> for a linear transformation <m>T:\R^n\to \R^n</m>. 
-        These are subspaces <m>V\subseteq \R^n</m> such that <m>T(\vx)\in V</m> for each <m>\vx\in V</m>. 
+        For each of the transformations listed, see if you can predict which vectors will be transformed into scalar multiples of themselves:
+        for which <m>\vx\in\R^2</m> is <m>T(\vx) = k\vx</m>? (We'll answer this later in the section.)
+        This question leads to the idea of <em>invariant subspaces</em> for a linear transformation <m>T:\R^n\to \R^n</m>.
+        These are subspaces <m>V\subseteq \R^n</m> such that <m>T(\vx)\in V</m> for each <m>\vx\in V</m>.
         Such subspaces are of great importance in many areas of Mathematics and Physics.
       </p>
     </aside>
 
     <p>
-      Within the linear algebra context, though, we have two types of multiplication: 
-      scalar and matrix multiplication. What happens to <m>\vx</m> when we multiply it by a matrix <m>\tta</m>? 
-      Our first response is likely along the lines of <q>You just get another vector. 
+      Within the linear algebra context, though, we have two types of multiplication:
+      scalar and matrix multiplication. What happens to <m>\vx</m> when we multiply it by a matrix <m>\tta</m>?
+      Our first response is likely along the lines of <q>You just get another vector.
       There is no definable relationship.</q> We might wonder
-      if there is ever the case where a matrix<ndash/>vector multiplication is very similar to a scalar<ndash/>vector multiplication. 
-      That is, do we ever have the case where <m>\tta\vx = a\vx</m>, where <m>a</m> is some scalar? 
+      if there is ever the case where a matrix<ndash/>vector multiplication is very similar to a scalar<ndash/>vector multiplication.
+      That is, do we ever have the case where <m>\tta\vx = a\vx</m>, where <m>a</m> is some scalar?
       That is the motivating question of this chapter.
     </p>
   </introduction>

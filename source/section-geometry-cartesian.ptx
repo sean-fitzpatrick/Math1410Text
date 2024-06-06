@@ -4,56 +4,56 @@
 
 	<introduction>
 		<p>
-			We already looked at the basics of graphing vectors, and the arithmetic of multiplying matrices. 
-			In this section and the next, we will return to the geometric interpretation of vectors given in <xref ref="chapter-vectors"/>. 
-			Our goal in doing so is to obtain a visual understanding of the definition of matrix multiplication given in 
-			<xref ref="sec-matrix_multiplication"/>. Although the algebraic definition of matrix multiplication appears strange at first, 
-			we'll see that our definition of matrix multiplication allows us to use matrices to define <term>functions</term> 
-			that transform one vector into another, just as the functions you're familiar with from high school or Calculus 
+			We already looked at the basics of graphing vectors, and the arithmetic of multiplying matrices.
+			In this section and the next, we will return to the geometric interpretation of vectors given in <xref ref="chapter-vectors"/>.
+			Our goal in doing so is to obtain a visual understanding of the definition of matrix multiplication given in
+			<xref ref="sec-matrix_multiplication"/>. Although the algebraic definition of matrix multiplication appears strange at first,
+			we'll see that our definition of matrix multiplication allows us to use matrices to define <term>functions</term>
+			that transform one vector into another, just as the functions you're familiar with from high school or Calculus
 			transform one number into another. We can then visualize matrices and matrix multiplication in terms of their effect on vectors.
 		</p>
 
 		<p>
-			Given an <m>m\times n</m> matrix <m>A</m> we can define a function <m>T</m> 
-			that takes an <m>n\times 1</m> column vector <m>\vec x\in \mathbb{R}^n</m> as input, 
+			Given an <m>m\times n</m> matrix <m>A</m> we can define a function <m>T</m>
+			that takes an <m>n\times 1</m> column vector <m>\vec x\in \mathbb{R}^n</m> as input,
 			and produces an <m>m\times 1</m> column vector <m>\vec y\in \mathbb{R}^m</m> as output, according to the relationship
 			<me>
 				\vec y = T(\vec x) = A\vec x
 			</me>.
-			Such a function is known as a <term>matrix transformation</term>; 
+			Such a function is known as a <term>matrix transformation</term>;
 			it is an example of a more general class of functions between vector spaces known as <term>linear transformations</term>.
 			<idx><h>matrix transformation</h></idx>
 			<idx><h>transformation </h><h> matrix</h></idx>
 		</p>
 
 		<p>
-			The graphical representation of vectors allows us to visualize matrix transformations (at least, in lower dimensions). 
-			This visualization plays a key role in applications such as computer graphics. 
-			We'll also see that the desire to define functions via matrix multiplication provides some 
+			The graphical representation of vectors allows us to visualize matrix transformations (at least, in lower dimensions).
+			This visualization plays a key role in applications such as computer graphics.
+			We'll also see that the desire to define functions via matrix multiplication provides some
 			justification for defining matrix multiplication the way we do.
 		</p>
 	</introduction>
-	
+
 	<subsection>
 		<title>Matrix <ndash/> Vector Multiplication</title>
-		
+
 		<p>
-			To simplify the discussion, and to make it easier for us to picture what's going on, 
-			we'll restrict ourselves (for now) to vectors in <m>\mathbb{R}^2</m>. 
-			We want to visualize the result of multiplying a vector by a matrix. 
-			In order to multiply a 2D vector by a matrix and get a 2D vector back, 
+			To simplify the discussion, and to make it easier for us to picture what's going on,
+			we'll restrict ourselves (for now) to vectors in <m>\mathbb{R}^2</m>.
+			We want to visualize the result of multiplying a vector by a matrix.
+			In order to multiply a 2D vector by a matrix and get a 2D vector back,
 			our matrix must be a square, <m>2\times 2</m> matrix.
 		</p>
 
 		<aside>
 			<p>
-				We can multiply a <m>3\times 2</m> matrix by a 2D vector and get a 3D vector back, 
+				We can multiply a <m>3\times 2</m> matrix by a 2D vector and get a 3D vector back,
 				and this gives very interesting results. See <xref ref="sec-lin_trans"/>.
 			</p>
 		</aside>
 
 		<p>
-			We'll start with an example. Given a matrix <m>\tta</m> and several vectors, 
+			We'll start with an example. Given a matrix <m>\tta</m> and several vectors,
 			we'll graph the vectors before and after they've been multiplied by <m>\tta</m> and see what we learn.
 		</p>
 
@@ -70,7 +70,7 @@
 			</statement>
 			<solution>
 				<p>
-					It is straightforward to compute: 
+					It is straightforward to compute:
 					<me>
 						\tta\vx = \bbm 5\\5\ebm,\quad \tta\vy = \bbm 3\\1\ebm, \quad \text{ and } \quad \tta\vz = \bbm -1\\3\ebm
 					</me>.
@@ -91,7 +91,7 @@
 							\draw [-&gt;] (0,0)--(5,5) node [above right] {$\tta\vx$};
 							\draw [-&gt;] (0,0)--(3,1) node [right] {$\tta\vy$};
 							\draw [-&gt;] (0,0)--(-1,3) node [above] {$\tta\vz$};
-								
+
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -100,43 +100,43 @@
 		</example>
 
 		<p>
-			There are several things to notice. When each vector is multiplied by <m>\tta</m>, 
-			the result is a vector with a different length (in this example, always longer), 
-			and in two of the cases (for <m>\vy</m> and \vz), the resulting vector points in a different direction. 
+			There are several things to notice. When each vector is multiplied by <m>\tta</m>,
+			the result is a vector with a different length (in this example, always longer),
+			and in two of the cases (for <m>\vy</m> and \vz), the resulting vector points in a different direction.
 		</p>
-		
+
 		<p>
-			This isn't surprising. In the previous section we learned about matrix multiplication, 
-			which is a strange and seemingly unpredictable operation. Would you expect to see some sort of 
-			immediately recognizable pattern appear from multiplying a matrix and a vector? 
-			(This is a rhetorical question; the expected answer is <q>No.</q>) 
-			In fact, the surprising thing from the example is that <m>\vx</m> and <m>\tta\vx</m> 
-			point in the same direction! Why does the direction of <m>\vx</m> not change after multiplication by <m>\tta</m>? 
+			This isn't surprising. In the previous section we learned about matrix multiplication,
+			which is a strange and seemingly unpredictable operation. Would you expect to see some sort of
+			immediately recognizable pattern appear from multiplying a matrix and a vector?
+			(This is a rhetorical question; the expected answer is <q>No.</q>)
+			In fact, the surprising thing from the example is that <m>\vx</m> and <m>\tta\vx</m>
+			point in the same direction! Why does the direction of <m>\vx</m> not change after multiplication by <m>\tta</m>?
 			(We'll answer this in <xref ref="sec-eigen"/> when we learn about something called <q>eigenvectors.</q>)
 		</p>
-		
+
 		<p>
-			Different matrices act on vectors in different ways. 
-			(That's one reason we call them <q>different.</q>) Some always increase the length of a vector through  multiplication, 
-			others always decrease the length, others increase the length of some vectors and decrease the length of others, 
-			and others still don't change the length at all. 
-			A similar statement can be made about how matrices affect the direction of vectors through multiplication: 
-			some change every vector's direction, some change <q>most</q> vector's direction but leave some the same, 
+			Different matrices act on vectors in different ways.
+			(That's one reason we call them <q>different.</q>) Some always increase the length of a vector through  multiplication,
+			others always decrease the length, others increase the length of some vectors and decrease the length of others,
+			and others still don't change the length at all.
+			A similar statement can be made about how matrices affect the direction of vectors through multiplication:
+			some change every vector's direction, some change <q>most</q> vector's direction but leave some the same,
 			and others still don't change the direction of any vector.
 		</p>
-		
+
 		<p>
-			How do we set about studying how matrix multiplication affects vectors? 
-			We could just create lots of different matrices and lots of different vectors, multiply, 
-			then graph, but this would be a lot of work with very little useful result. 
-			It would be too hard to find a pattern of behaviour in this. 
+			How do we set about studying how matrix multiplication affects vectors?
+			We could just create lots of different matrices and lots of different vectors, multiply,
+			then graph, but this would be a lot of work with very little useful result.
+			It would be too hard to find a pattern of behaviour in this.
 			(Remember, that's what mathematicians do. We look for patterns.)
 		</p>
-		
+
 		<p>
-			Instead, we'll begin by using a technique we've employed often in the past. 
-			We have a <q>new</q> operation; let's explore how it behaves with <q>old</q> operations. 
-			Specifically, we know how to sketch vector addition. 
+			Instead, we'll begin by using a technique we've employed often in the past.
+			We have a <q>new</q> operation; let's explore how it behaves with <q>old</q> operations.
+			Specifically, we know how to sketch vector addition.
 			What happens when we throw matrix multiplication into the mix? Let's try an example.
 		</p>
 
@@ -144,27 +144,27 @@
 			<title>Combining addition and matrix multiplication</title>
 			<statement>
 				<p>
-					Let <m>\tta</m> be a matrix and <m>\vx</m> and <m>\vy</m> be vectors as given below. 
+					Let <m>\tta</m> be a matrix and <m>\vx</m> and <m>\vy</m> be vectors as given below.
 					<me>
 							\tta = \bbm 1  \amp  1\\1 \amp 2\ebm, \quad \vx = \bbm 2\\1\ebm, \quad \vy = \bbm -1\\1\ebm
 					</me>.
 				</p>
-				
+
 				<p>
-					Sketch <m>\vx+\vy</m>, \tta\vx, \tta\vy, and <m>\tta(\vx+\vy)</m>.
+					Sketch <m>\vx+\vy</m>, <m>\tta\vx</m>, <m>\tta\vy</m>, and <m>\tta(\vx+\vy)</m>.
 				</p>
 			</statement>
 			<solution>
 				<p>
-					It is pretty straightforward to compute: 
+					It is pretty straightforward to compute:
 					<me>
 						\vx+\vy = \bbm 1\\2\ebm;\quad \tta\vx = \bbm 3\\4\ebm; \quad \tta\vy = \bbm 0\\1\ebm,\quad \tta(\vx+\vy) = \bbm 3\\5\ebm
 					</me>.
 				</p>
 
 				<p>
-					In <xref ref="fig-mv_2"/>, 
-					we have graphed the above vectors and have included dashed gray vectors to highlight the additive nature of 
+					In <xref ref="fig-mv_2"/>,
+					we have graphed the above vectors and have included dashed gray vectors to highlight the additive nature of
 					<m>\vx+\vy</m> and <m>\tta(\vx+\vy)</m>. Does anything strike you as interesting?
 				</p>
 
@@ -184,35 +184,35 @@
 							\draw [-&gt;] (0,0)--(0,1) node [above left] {$\tta\vy$};
 							\draw [-&gt;,gray,dashed] (3,4) -- (3,5);
 							\draw [-&gt;] (0,0)--(3,5) node [above] {$\tta(\vx+\vy)$};
-								
+
 							\end{tikzpicture}
 						</latex-image>
 					</image>
 				</figure>
 
 				<p>
-					Let's not focus on things which don't matter right now: 
-					let's not focus on how long certain vectors became, 
-					nor necessarily how their direction changed. 
+					Let's not focus on things which don't matter right now:
+					let's not focus on how long certain vectors became,
+					nor necessarily how their direction changed.
 					Rather, think about how matrix multiplication interacted with the vector addition.
 				</p>
-				
+
 				<p>
-					In some sense, we started with three vectors,<m>\vx</m>,<m>\vy</m>, and <m>\vx+\vy</m>. 
-					This last vector is special; it is the sum of the previous two. 
-					Now, multiply all three by <m>\tta</m>. What happens? We get three new vectors, 
-					but the significant thing is this: the last vector is still the sum of the previous two! 
+					In some sense, we started with three vectors,<m>\vx</m>,<m>\vy</m>, and <m>\vx+\vy</m>.
+					This last vector is special; it is the sum of the previous two.
+					Now, multiply all three by <m>\tta</m>. What happens? We get three new vectors,
+					but the significant thing is this: the last vector is still the sum of the previous two!
 					(We emphasize this by drawing dotted vectors to represent part of the Parallelogram Law.)
 				</p>
-				
+
 				<p>
-					Of course, we knew this already: we already knew that <m>\tta\vx + \tta\vy = \tta(\vx+\vy)</m>, 
-					for this is just the Distributive Property of matrix multiplication given in <xref ref="thm-matrix_multiplication"/>. 
+					Of course, we knew this already: we already knew that <m>\tta\vx + \tta\vy = \tta(\vx+\vy)</m>,
+					for this is just the Distributive Property of matrix multiplication given in <xref ref="thm-matrix_multiplication"/>.
 					However, now we get to see this graphically.
-				</p>				
+				</p>
 			</solution>
 		</example>
-			
+
 		<p>
 			Let's do one more example.
 		</p>
@@ -226,14 +226,14 @@
 							\tta = \bbm 1 \amp -1\\1 \amp -1\ebm,  \quad \vx = \bbm 1\\1\ebm, \quad \vy = \bbm-1\\1\ebm, \quad \vz = \bbm 4\\1\ebm
 					</me>
 				</p>
-				
+
 				<p>
 					Graph<m>\vx</m>, <m>\vy</m> and <m>\vz</m>, as well as <m>\tta\vx</m>, <m>\tta\vy</m> and <m>\tta\vz</m>.
 				</p>
 			</statement>
 			<solution>
 				<p>
-					It is straightforward to compute: 
+					It is straightforward to compute:
 					<me>
 							\tta\vx = \bbm 0\\0\ebm,\quad \tta\vy = \bbm -2\\-2\ebm, \quad \text{ and } \quad \tta\vz = \bbm 3\\3\ebm
 					</me>.
@@ -258,72 +258,72 @@
 							\draw (0,0) node [below right] {$\tta\vx$};
 							\draw [-&gt;] (0,0)--(-2,-2) node [below left] {$\tta\vy$};
 							\draw [-&gt;] (0,0)--(3,3) node [above] {$\tta\vz$};
-								
+
 							\end{tikzpicture}
 						</latex-image>
 					</image>
 				</figure>
 
 				<p>
-					These results are interesting. While we won't explore them in great detail here, 
-					notice how <m>\vx</m> got sent to the zero vector. 
-					Notice also that <m>\tta\vx</m>, <m>\tta\vy</m> and <m>\tta\vz</m> are all in a line (as well as <m>\vx</m>!). 
-					Why is that? Are <m>\vx</m>, <m>\vy</m> and <m>\vz</m> just special vectors, 
+					These results are interesting. While we won't explore them in great detail here,
+					notice how <m>\vx</m> got sent to the zero vector.
+					Notice also that <m>\tta\vx</m>, <m>\tta\vy</m> and <m>\tta\vz</m> are all in a line (as well as <m>\vx</m>!).
+					Why is that? Are <m>\vx</m>, <m>\vy</m> and <m>\vz</m> just special vectors,
 					or would any other vector get sent to the same line when multiplied by <m>\tta</m>? (Don't just sit there, try it out!)
-				</p>				
+				</p>
 			</solution>
 		</example>
 	</subsection>
 
 	<subsection>
 		<title>Transformations of the Cartesian Plane</title>
-		
+
 		<p>
-			We studied in <xref ref="chapter-vectors"/> 
-			how to visualize vectors and how the matrix arithmetic operations of addition 
-			and scalar multiplication can be graphically represented for vectors. In the discussion above, 
-			we limited our visual understanding of matrix  multiplication to graphing a vector, 
-			multiplying it by a matrix, then graphing the resulting vector. 
-			In rest of this section we'll explore these multiplication ideas in greater depth. 
-			Instead of multiplying individual vectors by a matrix <m>\tta</m>, 
-			we'll study what happens when we multiply <em>every</em> vector in the Cartesian plans by <m>\tta</m>. 
+			We studied in <xref ref="chapter-vectors"/>
+			how to visualize vectors and how the matrix arithmetic operations of addition
+			and scalar multiplication can be graphically represented for vectors. In the discussion above,
+			we limited our visual understanding of matrix  multiplication to graphing a vector,
+			multiplying it by a matrix, then graphing the resulting vector.
+			In rest of this section we'll explore these multiplication ideas in greater depth.
+			Instead of multiplying individual vectors by a matrix <m>\tta</m>,
+			we'll study what happens when we multiply <em>every</em> vector in the Cartesian plans by <m>\tta</m>.
 			(No, we won't do them one by one.)
-		</p>
-		
-		<p>
-			Because of the Distributive Property, as illustrated in <xref ref="ex_mv_2"/>, 
-			we know that the Cartesian plane will be <em>transformed</em> in a very nice, predictable way. 
-			Straight lines will be transformed into other straight lines (and they won't become curvy, or jagged, or broken). 
-			Curved lines will be transformed into other curved lines (perhaps the curve will become <q>straight,</q> 
-			but it won't become jagged or broken).
-		</p>
-		
-		<p>
-			<xref ref="ex_mv_2"/> has very significant implications. 
-			We usually think of the Cartesian plane as a set of points; 
-			we can adjust this thought just slightly and think of it as a set of vectors that point to each of these points. 
-			What happens to the Cartesian plane if we multiply <em>every vector</em> in the plane by the same matrix <m>\tta</m>? 
 		</p>
 
 		<p>
-			Checking every single vector in the plane isn't practical, 
-			so we have to look for other ways to visualize the effects of matrix multiplication. 
-			One way of studying how the whole Cartesian plane is affected by multiplication by a matrix <m>\tta</m> 
-			is to study how the <em>unit square</em> is affected. 
-			The unit square is the square with corners at the points <m>(0,0)</m>, <m>(1,0)</m>, <m>(1,1)</m>, and <m>(0,1)</m>. 
-			Each corner can be represented by the vector that points to it; multiply each of these vectors by <m>\tta</m> 
-			and we can get an idea of how <m>\tta</m> affects the whole Cartesian plane. 
+			Because of the Distributive Property, as illustrated in <xref ref="ex_mv_2"/>,
+			we know that the Cartesian plane will be <em>transformed</em> in a very nice, predictable way.
+			Straight lines will be transformed into other straight lines (and they won't become curvy, or jagged, or broken).
+			Curved lines will be transformed into other curved lines (perhaps the curve will become <q>straight,</q>
+			but it won't become jagged or broken).
 		</p>
-		
+
+		<p>
+			<xref ref="ex_mv_2"/> has very significant implications.
+			We usually think of the Cartesian plane as a set of points;
+			we can adjust this thought just slightly and think of it as a set of vectors that point to each of these points.
+			What happens to the Cartesian plane if we multiply <em>every vector</em> in the plane by the same matrix <m>\tta</m>?
+		</p>
+
+		<p>
+			Checking every single vector in the plane isn't practical,
+			so we have to look for other ways to visualize the effects of matrix multiplication.
+			One way of studying how the whole Cartesian plane is affected by multiplication by a matrix <m>\tta</m>
+			is to study how the <em>unit square</em> is affected.
+			The unit square is the square with corners at the points <m>(0,0)</m>, <m>(1,0)</m>, <m>(1,1)</m>, and <m>(0,1)</m>.
+			Each corner can be represented by the vector that points to it; multiply each of these vectors by <m>\tta</m>
+			and we can get an idea of how <m>\tta</m> affects the whole Cartesian plane.
+		</p>
+
 		<p>
 			Let's try an example.
 		</p>
-		
+
 		<example xml:id="ex_mv_3">
 			<title>Visualizing a matrix transformation using vectors</title>
 			<statement>
 				<p>
-					Plot the vectors of the unit square before and after they have been multiplied by <m>\tta</m>, where 
+					Plot the vectors of the unit square before and after they have been multiplied by <m>\tta</m>, where
 					<me>
 							\tta = \bbm 1 \amp 4\\2 \amp 3\ebm
 					</me>.
@@ -331,45 +331,45 @@
 			</statement>
 			<solution>
 				<p>
-					The four corners of the unit square can be represented by the vectors 
+					The four corners of the unit square can be represented by the vectors
 					<me>
 						\bbm 0\\0\ebm, \quad \bbm 1\\0\ebm,\quad \bbm 1\\1\ebm,\quad \bbm 0\\1\ebm
 					</me>.
 				</p>
 				<p>
-					Multiplying each by <m>\tta</m> gives the vectors 
+					Multiplying each by <m>\tta</m> gives the vectors
 					<me>
 							\bbm 0\\0\ebm,\quad \bbm 1\\2\ebm,\quad\bbm 5\\5\ebm,\quad \bbm 4\\3\ebm
 					</me>,
-					respectively. 
+					respectively.
 				</p>
 
 				<p>
-					(Hint: one way of using your calculator to do this for you quickly is to make a <m>2\times 4</m> 
-					matrix whose columns are each of these vectors. In this case, create a matrix 
+					(Hint: one way of using your calculator to do this for you quickly is to make a <m>2\times 4</m>
+					matrix whose columns are each of these vectors. In this case, create a matrix
 					<me>
 						\ttb = \bbm 0 \amp 1 \amp 1\amp 0\\0\amp 0\amp 1\amp 1\ebm
 					</me>.
-					Then multiply <m>\ttb</m> by <m>\tta</m> and read off the transformed vectors from the respective columns: 
+					Then multiply <m>\ttb</m> by <m>\tta</m> and read off the transformed vectors from the respective columns:
 					<me>
 							\tta\ttb = \bbm 0 \amp 1 \amp 5\amp 4\\0\amp 2\amp 5\amp 3\ebm
 					</me>.
 				</p>
 
 				<p>
-					This saves time, especially if you do a similar procedure for multiple matrices <m>\tta</m>. 
-					Of course, we can save more time by skipping the first column; since it is the column of zeros, 
+					This saves time, especially if you do a similar procedure for multiple matrices <m>\tta</m>.
+					Of course, we can save more time by skipping the first column; since it is the column of zeros,
 					it will stay the column of zeros after multiplication by <m>\tta</m>.)
 				</p>
-				
+
 				<p>
-					The unit square and its transformation are graphed in <xref ref="fig-mv_3"/>, 
-					where the shaped vertices correspond to each other across the two graphs. 
-					Note how the square got turned into some sort of quadrilateral (it's actually a parallelogram). 
-					A really interesting thing is how the triangular and square vertices seem to have changed places <mdash/> 
-					it is as though the square, in addition to being stretched out of shape, was flipped. 
+					The unit square and its transformation are graphed in <xref ref="fig-mv_3"/>,
+					where the shaped vertices correspond to each other across the two graphs.
+					Note how the square got turned into some sort of quadrilateral (it's actually a parallelogram).
+					A really interesting thing is how the triangular and square vertices seem to have changed places <mdash/>
+					it is as though the square, in addition to being stretched out of shape, was flipped.
 				</p>
-				
+
 				<figure xml:id="fig-mv_3">
 					<caption>Transforming the unit square by matrix multiplication in <xref ref="ex_mv_3"/></caption>
 					<sidebyside widths="47% 47%" margins="auto">
@@ -396,16 +396,16 @@
 								\unitsquare[cm={1,2,4,3,(0,0)},very thick];
 								\end{tikzpicture}
 							</latex-image>
-						</image>							
+						</image>
 					</sidebyside>
 				</figure>
 
 				<p>
-					To stress how <q>straight lines get transformed to straight lines,</q> 
-					consider <xref ref="fig-mv_3b"/>. 
-					Here, the unit square has some additional points drawn on it which correspond to the shaded dots on the transformed parallelogram. 
-					Note how relative distances are also preserved; 
-					the dot halfway between the black and square dots is transformed to a position along the line, 
+					To stress how <q>straight lines get transformed to straight lines,</q>
+					consider <xref ref="fig-mv_3b"/>.
+					Here, the unit square has some additional points drawn on it which correspond to the shaded dots on the transformed parallelogram.
+					Note how relative distances are also preserved;
+					the dot halfway between the black and square dots is transformed to a position along the line,
 					halfway between the black and square dots.
 				</p>
 
@@ -456,7 +456,7 @@
 			<title>Visualizing a matrix transformation using a region</title>
 			<statement>
 				<p>
-					Plot the transformed unit square after it has been transformed by <m>\tta</m>, where 
+					Plot the transformed unit square after it has been transformed by <m>\tta</m>, where
 					<me>
 							\tta = \bbm 0 \amp -1\\1 \amp 0\ebm
 					</me>.
@@ -485,7 +485,7 @@
 								\drawxlines{-1.5}{1.5}{-1,1};
 								\drawylines{-1}{1.5}{1};
 								\node[below] at (1,-0.1) {1};
-								\node[left] at (0,1) {1};	
+								\node[left] at (0,1) {1};
 								\unitsquare[very thick];
 								\end{tikzpicture}
 							</latex-image>
@@ -505,24 +505,24 @@
 				</figure>
 
 				<p>
-					Make note of how the square moved. It did not simply <q>slide</q> to the left; 
-					(mathematically, that is called a <term>translation</term>) nor did it <q>flip</q> across the <m>y</m> axis. 
-					Rather, it was <term>rotated</term> counterclockwise about the origin <m>90^\circ</m>. 
+					Make note of how the square moved. It did not simply <q>slide</q> to the left;
+					(mathematically, that is called a <term>translation</term>) nor did it <q>flip</q> across the <m>y</m> axis.
+					Rather, it was <term>rotated</term> counterclockwise about the origin <m>90^\circ</m>.
 					In a rotation, the shape of an object does not change; in our example, the square remained a square of the same size.
-				</p>				
+				</p>
 			</solution>
 		</example>
 
 		<p>
-			We have broached the topic of how the Cartesian plane can be transformed via multiplication by a 
-			<m>2\times 2</m> matrix <m>\tta</m>. We have seen a few examples so far, 
-			and our intuition as to how the plane is changed has been informed only by seeing how the unit square changes. 
+			We have broached the topic of how the Cartesian plane can be transformed via multiplication by a
+			<m>2\times 2</m> matrix <m>\tta</m>. We have seen a few examples so far,
+			and our intuition as to how the plane is changed has been informed only by seeing how the unit square changes.
 			Let's explore this further by investigating two questions:
 			<ol>
 				<li>
 					<p>
-						Suppose we want to transform the Cartesian plane in a known way 
-						(for instance, we may want to rotate the plane counterclockwise <m>180^\circ</m>). 
+						Suppose we want to transform the Cartesian plane in a known way
+						(for instance, we may want to rotate the plane counterclockwise <m>180^\circ</m>).
 						How do we find the matrix (if one even exists) which performs this transformation?
 					</p>
 				</li>
@@ -537,10 +537,10 @@
 		<p>
 			These questions are closely related, and as we answer one, we will help answer the other.
 		</p>
-		
+
 		<p>
-			To get started with the first question, look back at <xref ref="ex_mv_3"/> and <xref ref="ex_mv_4"/> 
-			and consider again how the unit square was transformed. 
+			To get started with the first question, look back at <xref ref="ex_mv_3"/> and <xref ref="ex_mv_4"/>
+			and consider again how the unit square was transformed.
 			In particular, is there any correlation between where the vertices ended up and the matrix <m>\tta</m>?
 		</p>
 
@@ -549,26 +549,26 @@
 			<ol>
 				<li>
 					<p>
-						The zero vector (<m>\zero</m>, the <q>black</q> corner) never moved. That makes sense, though; <m>\tta\zero = \zero</m>. 
+						The zero vector (<m>\zero</m>, the <q>black</q> corner) never moved. That makes sense, though; <m>\tta\zero = \zero</m>.
 					</p>
 				</li>
 				<li>
 					<p>
-						The <q>square</q> corner, i.e., the corner corresponding to the vector <m>\bbm 1\\0\ebm</m>, 
+						The <q>square</q> corner, i.e., the corner corresponding to the vector <m>\bbm 1\\0\ebm</m>,
 						is always transformed to the vector in the first column of <m>\tta</m>!
 					</p>
 				</li>
 				<li>
 					<p>
-						Likewise, the <q>triangular</q> corner, <ie/>, the corner corresponding to the vector <m>\bbm 0\\1\ebm</m>, 
-						is always transformed to the vector in the second column of <m>\tta</m>! 
+						Likewise, the <q>triangular</q> corner, <ie/>, the corner corresponding to the vector <m>\bbm 0\\1\ebm</m>,
+						is always transformed to the vector in the second column of <m>\tta</m>!
 						(This is less of a surprise, given the result of the previous point.)
 					</p>
 				</li>
 				<li>
 					<p>
-						The <q>white dot</q> corner is always transformed to the <em>sum</em> of the two column vectors of <m>\tta</m>. 
-						(This observation is a bit more obscure than the first three.  
+						The <q>white dot</q> corner is always transformed to the <em>sum</em> of the two column vectors of <m>\tta</m>.
+						(This observation is a bit more obscure than the first three.
 						It follows from the fact that this corner of the unit square is the <q>sum</q> of the other two nonzero corners.)
 					</p>
 				</li>
@@ -576,14 +576,14 @@
 		</p>
 
 		<p>
-			Let's now take the time to understand these four points. 
-			The first point should be clear; <m>\zero</m> will always be transformed to <m>\zero</m> via matrix multiplication. 
-			(Hence the hint in the middle of <xref ref="ex_mv_3"/>, 
+			Let's now take the time to understand these four points.
+			The first point should be clear; <m>\zero</m> will always be transformed to <m>\zero</m> via matrix multiplication.
+			(Hence the hint in the middle of <xref ref="ex_mv_3"/>,
 			where we are told that we can ignore entering in the column of zeros in the matrix <m>\ttb</m>.)
 		</p>
-		
+
 		<p>
-			We can understand the second and third points simultaneously. Let 
+			We can understand the second and third points simultaneously. Let
 			<me>
 					\tta = \bbm a \amp b\\c \amp d\ebm, \quad \veone = \bbm 1\\0\ebm \quad \text{ and } \quad \vetwo = \bbm 0\\1\ebm
 			</me>.
@@ -598,66 +598,66 @@
 				<mrow> 					\amp = \bbm b\\d\ebm</mrow>
 			</md>.
 		</p>
-		
+
 		<p>
-			So by mere mechanics of matrix multiplication, 
-			the square corner <m>\veone</m> is transformed to the first column of <m>\tta</m>, 
-			and the triangular corner <m>\vetwo</m> is transformed to the second column of <m>\tta</m>. 
-			A similar argument demonstrates why the white dot corner is transformed to the sum of the columns of <m>\tta</m>. 
-			(Another way of looking at all of this is to consider what <m>\tta\cdot\tti</m> is: of course, it is just <m>\tta</m>. 
+			So by mere mechanics of matrix multiplication,
+			the square corner <m>\veone</m> is transformed to the first column of <m>\tta</m>,
+			and the triangular corner <m>\vetwo</m> is transformed to the second column of <m>\tta</m>.
+			A similar argument demonstrates why the white dot corner is transformed to the sum of the columns of <m>\tta</m>.
+			(Another way of looking at all of this is to consider what <m>\tta\cdot\tti</m> is: of course, it is just <m>\tta</m>.
 			What are the columns of <m>\tti</m>? Just <m>\veone</m> and <m>\vetwo</m>.)
 		</p>
-		
+
 		<p>
-			Revisit now the question <q>How do we find the matrix that performs a given transformation on the Cartesian plane?</q> 
-			The answer follows from what we just did. 
-			Think about the given transformation and how it would transform the corners of the unit square. 
-			Make the first column of <m>\tta</m> the vector where <m>\veone</m> goes, 
+			Revisit now the question <q>How do we find the matrix that performs a given transformation on the Cartesian plane?</q>
+			The answer follows from what we just did.
+			Think about the given transformation and how it would transform the corners of the unit square.
+			Make the first column of <m>\tta</m> the vector where <m>\veone</m> goes,
 			and make the second column of <m>\tta</m> the vector where <m>\vetwo</m> goes.
 		</p>
-		
+
 		<p>
 			Let's practice this in the context of an example.
 		</p>
-		
+
 		<example xml:id="ex_transf_1">
 			<title>Determining a matrix transformation</title>
 			<statement>
 				<p>
-					Find the matrix <m>\tta</m> that flips the Cartesian plane about the <m>x</m> 
+					Find the matrix <m>\tta</m> that flips the Cartesian plane about the <m>x</m>
 					axis and then stretches the plane horizontally by a factor of two.
 				</p>
 			</statement>
 			<solution>
 				<p>
-					We first consider <m>\veone = \bbm 1\\0\ebm</m>. 
-					Where does this corner go to under the given transformation? 
-					Flipping the plane across the <m>x</m> axis does not change <m>\veone</m> at all; 
-					stretching the plane sends <m>\veone</m> to <m>\bbm 2\\0\ebm</m>. 
+					We first consider <m>\veone = \bbm 1\\0\ebm</m>.
+					Where does this corner go to under the given transformation?
+					Flipping the plane across the <m>x</m> axis does not change <m>\veone</m> at all;
+					stretching the plane sends <m>\veone</m> to <m>\bbm 2\\0\ebm</m>.
 					Therefore, the first column of <m>\tta</m> is <m>\bbm 2\\0\ebm</m>.
 				</p>
 
 				<p>
-					Now consider <m>\vetwo = \bbm 0\\1\ebm</m>. Flipping the plane about the <m>x</m> axis sends <m>\vetwo</m> to the vector <m>\bbm 0\\-1\ebm</m>; subsequently stretching the plane horizontally does not affect this vector. Therefore the second column of <m>\tta</m> is <m>\bbm 0\\-1\ebm</m>. 
+					Now consider <m>\vetwo = \bbm 0\\1\ebm</m>. Flipping the plane about the <m>x</m> axis sends <m>\vetwo</m> to the vector <m>\bbm 0\\-1\ebm</m>; subsequently stretching the plane horizontally does not affect this vector. Therefore the second column of <m>\tta</m> is <m>\bbm 0\\-1\ebm</m>.
 				</p>
-				
+
 				<p>
-					Putting this together gives 
+					Putting this together gives
 					<me>
 							\tta = \bbm 2 \amp 0\\0 \amp -1\ebm
 					</me>.
 				</p>
-				
+
 				<p>
-					To help visualize this, consider <xref ref="fig-transf_1"/> 
-					where a shape is transformed under this matrix. 
-					Notice how it is turned upside down and is stretched horizontally by a factor of two. 
+					To help visualize this, consider <xref ref="fig-transf_1"/>
+					where a shape is transformed under this matrix.
+					Notice how it is turned upside down and is stretched horizontally by a factor of two.
 					(The gridlines are given as a visual aid.)
 				</p>
 
 				<figure xml:id="fig-transf_1">
 					<caption>Transforming the Cartesian plane in <xref ref="ex_transf_1"/></caption>
-					<sidebyside widths="47% 47%" margins="auto">
+					<sidebyside widths="40% 55%" margins="auto" valign="bottom">
 						<image>
 							<shortdescription>Overlapping letters V, M, and I are plotted on a Cartesian grid.</shortdescription>
 							<latex-image label="img-transf-1a">
@@ -686,17 +686,17 @@
 		</example>
 
 		<p>
-			A while ago we asked two questions. 
-			The first was <q>How do we find the matrix that performs a given transformation?</q> 
-			We have just answered that question (although we will do more to explore it in the future). 
-			The second question was <q>How does knowing how the unit square is transformed really 
-				help us understand how the entire plane is transformed?</q> 
+			A while ago we asked two questions.
+			The first was <q>How do we find the matrix that performs a given transformation?</q>
+			We have just answered that question (although we will do more to explore it in the future).
+			The second question was <q>How does knowing how the unit square is transformed really
+				help us understand how the entire plane is transformed?</q>
 		</p>
-		
+
 		<p>
-			Consider <xref ref="fig-trans"/> where the unit square 
-			(with vertices marked with shapes as before) is shown transformed under an unknown matrix. 
-			How does this help us understand how the whole Cartesian plane is transformed? 
+			Consider <xref ref="fig-trans"/> where the unit square
+			(with vertices marked with shapes as before) is shown transformed under an unknown matrix.
+			How does this help us understand how the whole Cartesian plane is transformed?
 			For instance, how can we use this picture to figure out how the point <m>(2,3)</m> will be transformed?
 		</p>
 
@@ -715,25 +715,25 @@
 		</figure>
 
 		<p>
-			There are two ways to consider the solution to this question. 
-			First, we know now how to compute the transformation matrix; 
-			the new position of <m>\veone</m> is the first column of <m>\tta</m>, 
-			and the new position of <m>\vetwo</m> is the second column of <m>\tta</m>. 
-			Therefore, by looking at the figure, we can deduce that 
+			There are two ways to consider the solution to this question.
+			First, we know now how to compute the transformation matrix;
+			the new position of <m>\veone</m> is the first column of <m>\tta</m>,
+			and the new position of <m>\vetwo</m> is the second column of <m>\tta</m>.
+			Therefore, by looking at the figure, we can deduce that
 			<me>
 				\tta = \bbm 1  \amp  -1\\ 1 \amp 2\ebm
 			</me>.
 		</p>
-		
+
 		<p>
-			To find where the point <m>(2,3)</m> is sent, simply multiply 
+			To find where the point <m>(2,3)</m> is sent, simply multiply
 			<me>
 				\bbm 1  \amp  -1\\ 1 \amp 2\ebm\bbm 2\\3\ebm = \bbm-1\\8\ebm
 			</me>.
 		</p>
 
 		<p>
-			There is another way of doing this which isn't as computational <mdash/> 
+			There is another way of doing this which isn't as computational <mdash/>
 			it doesn't involve computing the transformation matrix. Consider the following equalities:
 			<md>
 				<mrow>\bbm 2\\3\ebm 	\amp = \bbm 2\\0\ebm + \bbm 0\\3\ebm</mrow>
@@ -741,13 +741,13 @@
 				<mrow>									\amp = 2\veone + 3\vetwo</mrow>
 			</md>
 		</p>
-		
+
 		<p>
-			This last equality states something that is somewhat obvious: 
-			to arrive at the vector <m>\bbm 2\\3\ebm</m>, 
-			ne needs to go <m>2</m> units in the <m>\veone</m> direction and <m>3</m> units in the <m>\vetwo</m> direction. 
-			To find where the point <m>(2,3)</m> is transformed, 
-			one needs to go <m>2</m> units in the <em>new</em> <m>\veone</m> direction and 
+			This last equality states something that is somewhat obvious:
+			to arrive at the vector <m>\bbm 2\\3\ebm</m>,
+			ne needs to go <m>2</m> units in the <m>\veone</m> direction and <m>3</m> units in the <m>\vetwo</m> direction.
+			To find where the point <m>(2,3)</m> is transformed,
+			one needs to go <m>2</m> units in the <em>new</em> <m>\veone</m> direction and
 			<m>3</m> units in the <em>new</em> <m>\vetwo</m> direction. This is demonstrated in <xref ref="fig-trans2"/>.
 		</p>
 
@@ -768,10 +768,10 @@
 		</figure>
 
 		<p>
-			We are coming to grips with how matrix transformations work. 
-			We asked two basic questions: <q>How do we find the matrix for a given transformation?</q> 
-			and <q>How do we understand the transformation without the matrix?</q>, 
-			and we've answered each accompanied by one example. 
+			We are coming to grips with how matrix transformations work.
+			We asked two basic questions: <q>How do we find the matrix for a given transformation?</q>
+			and <q>How do we understand the transformation without the matrix?</q>,
+			and we've answered each accompanied by one example.
 			Let's do another example that demonstrates both techniques at once.
 		</p>
 
@@ -779,44 +779,44 @@
 			<title>Determining and analyzing a matrix transformation</title>
 			<statement>
 				<p>
-					First, find the matrix <m>\tta</m> that transforms the Cartesian plane by stretching 
-					it vertically by a factor of <m>1.5</m>, then stretches it horizontally by a factor of <m>0.5</m>, 
-					then rotates it clockwise about the origin <m>90^\circ</m>. 
+					First, find the matrix <m>\tta</m> that transforms the Cartesian plane by stretching
+					it vertically by a factor of <m>1.5</m>, then stretches it horizontally by a factor of <m>0.5</m>,
+					then rotates it clockwise about the origin <m>90^\circ</m>.
 					Secondly, using the new locations of <m>\veone</m> and <m>\vetwo</m>, find the transformed location of the point <m>(-1,2)</m>.
 				</p>
 			</statement>
 			<solution>
 				<p>
-					To find <m>\tta</m>, first consider the new location of <m>\veone</m>. 
-					Stretching the plane vertically does not affect <m>\veone</m>; 
-					stretching the plane horizontally by a factor of <m>0.5</m> changes \veone to <m>\bbm 1/2\\0\ebm</m>, 
-					and then rotating it <m>90^\circ</m> about the origin moves it to <m>\bbm 0\\-1/2\ebm</m>. 
-					This is the first column of <m>\tta</m>. 
+					To find <m>\tta</m>, first consider the new location of <m>\veone</m>.
+					Stretching the plane vertically does not affect <m>\veone</m>;
+					stretching the plane horizontally by a factor of <m>0.5</m> changes \veone to <m>\bbm 1/2\\0\ebm</m>,
+					and then rotating it <m>90^\circ</m> about the origin moves it to <m>\bbm 0\\-1/2\ebm</m>.
+					This is the first column of <m>\tta</m>.
 				</p>
 
 				<p>
-					Now consider the new location of <m>\vetwo</m>. 
-					Stretching the plane vertically changes it to <m>\bbm 0\\ 3/2\ebm</m>; 
-					stretching horizontally does not affect it, and rotating <m>90^\circ</m> moves it to <m>\bbm 3/2\\0\ebm</m>. 
-					This is then the second column of <m>\tta</m>. This gives 
+					Now consider the new location of <m>\vetwo</m>.
+					Stretching the plane vertically changes it to <m>\bbm 0\\ 3/2\ebm</m>;
+					stretching horizontally does not affect it, and rotating <m>90^\circ</m> moves it to <m>\bbm 3/2\\0\ebm</m>.
+					This is then the second column of <m>\tta</m>. This gives
 					<me>
 						\tta = \bbm 0  \amp  3/2 \\ -1/2  \amp  0 \ebm
 					</me>.
 				</p>
-				
+
 				<p>
-					Where does the point <m>(-1,2)</m> get sent to? 
-					The corresponding vector <m>\bbm-1\\2\ebm</m> is found by going <m>-1</m> units in the <m>\veone</m> 
-					direction and <m>2</m> units in the <m>\vetwo</m> direction. 
-					Therefore, the transformation will send the vector to <m>-1</m> units in the new <m>\veone</m> 
-					direction and <m>2</m> units in the new <m>\vetwo</m> direction. 
+					Where does the point <m>(-1,2)</m> get sent to?
+					The corresponding vector <m>\bbm-1\\2\ebm</m> is found by going <m>-1</m> units in the <m>\veone</m>
+					direction and <m>2</m> units in the <m>\vetwo</m> direction.
+					Therefore, the transformation will send the vector to <m>-1</m> units in the new <m>\veone</m>
+					direction and <m>2</m> units in the new <m>\vetwo</m> direction.
 					This is sketched in <xref ref="fig-transf_2_1"/>, along with the transformed unit square.
-					 We can also check this multiplicatively: 
+					 We can also check this multiplicatively:
 					<me>
 						\bbm 0  \amp  3/2 \\ -1/2  \amp  0 \ebm \bbm-1\\2\ebm = \bbm 3\\1/2\ebm
 					</me>.
 				</p>
-				
+
 				<p>
 					<xref ref="fig-transf_2_2"/> shows the effects of the transformation on another shape.
 				</p>
@@ -839,7 +839,7 @@
 
 				<figure xml:id="fig-transf_2_2">
 					<caption>Transforming the Cartesian plane in <xref ref="ex_transf_2"/></caption>
-					<sidebyside widths="47% 47%" margins="auto">
+					<sidebyside widths="40% 55%" margins="auto" valign="bottom">
 						<image>
 							<shortdescription>The VMI logo, centred at the origin in the Cartesian plane.</shortdescription>
 							<latex-image label="img-transf-2-2a">
@@ -869,31 +869,31 @@
 		</example>
 
 		<p>
-			Right now we are focusing on transforming the Cartesian plane <mdash/> we are making 2D transformations. 
-			Knowing how to do this provides a foundation for transforming 3D space, which, among other things, 
-			is very important when producing 3D computer graphics. Basic shapes can be drawn and then rotated, 
-			stretched, and/or moved to other regions of space. This also allows for things like <q>moving the camera view.</q> 
-			Of course, algebraically, there is nothing stopping us from working with transformations of vectors in 
+			Right now we are focusing on transforming the Cartesian plane <mdash/> we are making 2D transformations.
+			Knowing how to do this provides a foundation for transforming 3D space, which, among other things,
+			is very important when producing 3D computer graphics. Basic shapes can be drawn and then rotated,
+			stretched, and/or moved to other regions of space. This also allows for things like <q>moving the camera view.</q>
+			Of course, algebraically, there is nothing stopping us from working with transformations of vectors in
 			<m>\mathbb{R}^n</m> for <em>any</em> value of <m>n</m>. The limitation to two and three dimensions is strictly one of visualization.
 		</p>
-		
+
 		<p>
-			What kinds of transformations are possible? We have already seen some of the things that are possible: 
-			rotations, stretches, and flips. We have also mentioned some things that are not possible. 
-			For instance, we stated that straight lines always get transformed to straight lines. 
+			What kinds of transformations are possible? We have already seen some of the things that are possible:
+			rotations, stretches, and flips. We have also mentioned some things that are not possible.
+			For instance, we stated that straight lines always get transformed to straight lines.
 			Therefore, we cannot transform the unit square into a circle using a matrix.
 		</p>
-		
+
 		<p>
-			Let's look at some common transformations of the Cartesian plane and the matrices that perform these operations. 
-			In the following figures, a transformation matrix will be given alongside a picture of the transformed unit square. 
+			Let's look at some common transformations of the Cartesian plane and the matrices that perform these operations.
+			In the following figures, a transformation matrix will be given alongside a picture of the transformed unit square.
 			(The original unit square is drawn lightly as well to serve as a reference.)
 		</p>
 	</subsection>
 
 	<subsection xml:id="page-plane_transformations">
 		<title>2D Matrix Transformations</title>
-		
+
 		<sbsgroup widths="47% 47%">
 			<sidebyside>
 				<p>
@@ -912,7 +912,7 @@
 						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
 						\unitsquare[thick,cm={1.5,0,0,1,(0,0)}];
 						\node [above] at (C) {$(k,1)$};
-							
+
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -935,7 +935,7 @@
 						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
 						\unitsquare[thick,cm={1,0,0,1.5,(0,0)}];
 						\node [above] at (C) {$(1,k)$};
-							
+
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -957,7 +957,7 @@
 						\drawylines{-1}{2.5}{1,2};
 						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
 						\unitsquare[thick,cm={1,0,1.5,1,(0,0)}];
-						\node [above] at (D) {$(k,1)$};							
+						\node [above] at (D) {$(k,1)$};
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -980,7 +980,7 @@
 						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
 						\unitsquare[thick,cm={1,1.5,0,1,(0,0)}];
 						\node [right] at (B) {$(k,1)$};
-							
+
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -999,9 +999,9 @@
 					<latex-image label="img-2dmt-5">
 						\begin{tikzpicture}[&gt;=latex]
 						\drawxlines{-1.5}{1.5}{1,-1};
-						\drawylines{-1.5}{1.5}{1,-1};		
+						\drawylines{-1.5}{1.5}{1,-1};
 						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquare[thick,cm={-1,0,0,1,(0,0)}];							
+						\unitsquare[thick,cm={-1,0,0,1,(0,0)}];
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -1020,12 +1020,12 @@
 					<latex-image label="img-2dmt-6">
 						\begin{tikzpicture}[&gt;=latex]
 						\drawxlines{-1.5}{1.5}{1,-1};
-								\drawylines{-1.5}{1.5}{1,-1};	
+								\drawylines{-1.5}{1.5}{1,-1};
 								\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-								\unitsquare[thick,cm={1,0,0,-1,(0,0)}];							
+								\unitsquare[thick,cm={1,0,0,-1,(0,0)}];
 						\end{tikzpicture}
 					</latex-image>
-					
+
 				</image>
 			</sidebyside>
 
@@ -1042,10 +1042,10 @@
 					<latex-image label="img-2dmt-7">
 						\begin{tikzpicture}[&gt;=latex]
 						\drawxlines{-1.5}{1.5}{1,-1};
-						\drawylines{-1.5}{1.5}{1,-1};	
+						\drawylines{-1.5}{1.5}{1,-1};
 						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
 						\draw [very thin,gray,dashed] (-1,-1) -- (1.5,1.5);
-						\unitsquare[thick,cm={0,1,1,0,(0,0)}];							
+						\unitsquare[thick,cm={0,1,1,0,(0,0)}];
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -1064,11 +1064,11 @@
 					<latex-image label="img-2dmt-8">
 						\begin{tikzpicture}[&gt;=latex]
 						\drawxlines{-1.5}{1.5}{1,-1};
-						\drawylines{-.5}{2.5}{1,2};	
+						\drawylines{-.5}{2.5}{1,2};
 						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
 						\unitsquare[thick,cm={0.5,0.866,-0.866,0.5,(0,0)}];
 						\draw [-&gt;] (.5,0) arc (0:58:0.5cm) ;
-						\path (.7,0) arc (0:30:.7) node {$\theta$};							
+						\path (.7,0) arc (0:30:.7) node {$\theta$};
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -1088,19 +1088,19 @@
 					<latex-image label="img-2dmt-9">
 						\begin{tikzpicture}[&gt;=latex]
 						\drawxlines{-1.5}{1.5}{1,-1};
-						\drawylines{-1.5}{1.5}{1,-1};	
+						\drawylines{-1.5}{1.5}{1,-1};
 						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
 						\unitsquarewithoutarrows[thick,cm={1,0,0,0,(0,0)}];
 						\end{tikzpicture}
 					</latex-image>
-					
+
 				</image>
 			</sidebyside>
 
 			<sidebyside>
 				<p>
 					<term>Projection</term> onto the <m>y</m> axis.
-					(Note how the square is <q>squashed</q> over onto the <m>y</m>-axis.)					
+					(Note how the square is <q>squashed</q> over onto the <m>y</m>-axis.)
 					<me>
 						\bbm 0 \amp 0\\0 \amp 1  \ebm
 					</me>
@@ -1111,9 +1111,9 @@
 					<latex-image label="img-2dmt-10">
 						\begin{tikzpicture}[&gt;=latex]
 						\drawxlines{-1.5}{1.5}{1,-1};
-						\drawylines{-1.5}{1.5}{1,-1};	
+						\drawylines{-1.5}{1.5}{1,-1};
 						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquarewithoutarrows[thick,cm={0,0,0,1,(0,0)}];							
+						\unitsquarewithoutarrows[thick,cm={0,0,0,1,(0,0)}];
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -1127,7 +1127,7 @@
 		<example xml:id="ex_transf_3">
 			<title>Determining the matrix of a transformation</title>
 			<statement>
-	
+
 				<p>
 					Find the matrix <m>\tta</m> that transforms the Cartesian plane by performing the following operations in order:
 					<ol cols="2">
@@ -1156,75 +1156,75 @@
 			</statement>
 			<solution>
 				<p>
-					Wow! We already know how to do this <mdash/> sort of. 
-					We know we can find the columns of <m>\tta</m> by tracing where <m>\veone</m> and <m>\vetwo</m> end up, 
-					but this also seems difficult. There is so much that is going on. 
+					Wow! We already know how to do this <mdash/> sort of.
+					We know we can find the columns of <m>\tta</m> by tracing where <m>\veone</m> and <m>\vetwo</m> end up,
+					but this also seems difficult. There is so much that is going on.
 					Fortunately, we can accomplish what we need without much difficulty by being systematic.
 				</p>
 
 				<p>
-					First, let's perform the vertical shear. The matrix that performs this is 
+					First, let's perform the vertical shear. The matrix that performs this is
 					<me>
 							\tta_1 = \bbm 1 \amp 0\\0.5 \amp 1\ebm
 					</me>.
 				</p>
-				
+
 				<p>
-					After that, we want to rotate everything clockwise by <m>30^\circ</m>. To do this, we use 
+					After that, we want to rotate everything clockwise by <m>30^\circ</m>. To do this, we use
 					<me>
 							\tta_2 = \bbm \cos 30^\circ  \amp  -\sin 30^\circ\\ \sin 30^\circ  \amp  \cos 30^\circ \ebm = \bbm \sqrt{3}/2 \amp  -1/2 \\ 1/2 \amp  \sqrt{3}/2\ebm
 					</me>.
 				</p>
-				
+
 				<p>
-					In order to do both of these operations, in order, we multiply <m>\tta_2\tta_1</m>. 
+					In order to do both of these operations, in order, we multiply <m>\tta_2\tta_1</m>.
 				</p>
-				
+
 				<aside>
 					<p>
-						<alert>Note:</alert> recall from <xref ref="sec-matrix_multiplication"/> 
-						that matrix multiplication is <em>not</em> commutative. 
-						Since <m>A_1A_2\neq A_2A_1</m> in general, 
-						we should expect that the transformation <m>A_2(A_1\vec x) = (A_2A_1)\vec x</m> 
-						is not the same as the transformation <m>A_1(A_2\vec x) = (A_1A_2)\vec x</m>. 
-						Interpreted as transformations of the plane, this makes sense visually: 
-						for example, in most cases, a reflection followed by a rotation will not produce the same result as performing the rotation first, 
-						followed by the reflection. 
+						<alert>Note:</alert> recall from <xref ref="sec-matrix_multiplication"/>
+						that matrix multiplication is <em>not</em> commutative.
+						Since <m>A_1A_2\neq A_2A_1</m> in general,
+						we should expect that the transformation <m>A_2(A_1\vec x) = (A_2A_1)\vec x</m>
+						is not the same as the transformation <m>A_1(A_2\vec x) = (A_1A_2)\vec x</m>.
+						Interpreted as transformations of the plane, this makes sense visually:
+						for example, in most cases, a reflection followed by a rotation will not produce the same result as performing the rotation first,
+						followed by the reflection.
 						The reader is encouraged to experiment with a few examples to see what happens when the order is reversed.
 					</p>
 
 					<p>
-						To perform the final two operations, we note that 
+						To perform the final two operations, we note that
 						<me>
 								\tta_3 = \bbm 2 \amp 0\\0 \amp 1\ebm \quad \text{ and } \quad \tta_4 = \bbm 0\amp 1 \\ 1\amp 0\ebm
 						</me>
-						perform the horizontal stretch and diagonal reflection, respectively. 
-						Thus to perform all of the operations <q>at once,</q> we need to multiply by 
-						<md> 
+						perform the horizontal stretch and diagonal reflection, respectively.
+						Thus to perform all of the operations <q>at once,</q> we need to multiply by
+						<md>
 							<mrow>\tta \amp = \tta_4\tta_3\tta_2\tta_1</mrow>
 							<mrow>			\amp  = \bbm 0\amp 1 \\ 1\amp 0\ebm\bbm 2\amp 0\\0\amp 1\ebm\bbm \sqrt{3}/2 \amp  -1/2 \\ 1/2 \amp  \sqrt{3}/2\ebm\bbm 1\amp 0\\0.5\amp 1\ebm</mrow>
 							<mrow>			\amp  = \bbm (\sqrt{3}+2)/4 \amp  \sqrt{3}/2 \\ (2\sqrt{3}-1)/2 \amp  -1\ebm</mrow>
 							<mrow>			\amp  \approx \bbm 0.933 \amp  0.866\\ 1.232 \amp  -1 \ebm</mrow>
 						</md>.
-					</p>				
+					</p>
 				</aside>
 
 				<p>
-					Let's consider this closely. Suppose I want to know where a vector <m>\vx</m> ends up. 
+					Let's consider this closely. Suppose I want to know where a vector <m>\vx</m> ends up.
 					We claim we can find the answer by multiplying <m>\tta\vx</m>. Why does this work? Consider:
 					<md>
 						<mrow>\tta\vx \amp = \tta_4\tta_3\tta_2\tta_1\vx \amp \amp</mrow>
 						<mrow>				\amp = \tta_4\tta_3\tta_2(\tta_1\vx) \amp  \amp \text{(performs the vertical shear)}</mrow>
-						<mrow>				\amp = \tta_4\tta_3(\tta_2\vx_1) \amp  \amp \text{(performs the rotation)}</mrow>
-						<mrow>				\amp = \tta_4(\tta_3\vx_2) \amp  \amp \text{(performs the horizontal stretch)}</mrow>
-						<mrow>				\amp = \tta_4\vx_3 \amp  \amp \text{(performs the diagonal reflection)}</mrow>
-						<mrow>				\amp = \vx_4 \amp  \amp \text{(the result of transforming } \vx)</mrow>
+						<mrow>				\amp = \tta_4\tta_3(\tta_2\vx[1]) \amp  \amp \text{(performs the rotation)}</mrow>
+						<mrow>				\amp = \tta_4(\tta_3\vx[2]) \amp  \amp \text{(performs the horizontal stretch)}</mrow>
+						<mrow>				\amp = \tta_4\vx[3] \amp  \amp \text{(performs the diagonal reflection)}</mrow>
+						<mrow>				\amp = \vx[4] \amp  \amp \text{(the result of transforming } \vx)</mrow>
 					</md>
 				</p>
 
 				<p>
-					Most readers are not able to visualize exactly what the given list of operations does to the Cartesian plane. 
-					In <xref ref="fig-trans_3_1"/> we sketch the transformed unit square; 
+					Most readers are not able to visualize exactly what the given list of operations does to the Cartesian plane.
+					In <xref ref="fig-trans_3_1"/> we sketch the transformed unit square;
 					in <xref ref="fig-trans_3_2"/> we sketch a shape and its transformation.
 				</p>
 
@@ -1237,7 +1237,7 @@
 							\drawxlines{-.5}{2.5}{1,2};
 							\drawylines{-1.5}{1.5}{-1,1};
 							\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-							\unitsquare[thick,cm={0.933,1.232,0.866,-1,(0,0)}];							
+							\unitsquare[thick,cm={0.933,1.232,0.866,-1,(0,0)}];
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -1255,7 +1255,7 @@
 								\draw [&lt;-&gt;] (0,-3.5) -- (0,3.5);
 								\vmispider[very thick];
 								\end{tikzpicture}
-							</latex-image>						
+							</latex-image>
 						</image>
 
 						<image>
@@ -1268,7 +1268,7 @@
 								\vmispider[very thick,cm={0.933,1.232,0.866,-1,(0,0)}];
 								\end{tikzpicture}
 							</latex-image>
-							
+
 						</image>
 					</sidebyside>
 				</figure>
@@ -1276,26 +1276,26 @@
 		</example>
 
 		<p>
-			Once we know what matrices perform the basic transformations, 
-			(or know where to find them) performing complex transformations on the Cartesian plane really isn't that <m>\ldots</m> complex. 
-			It boils down to multiplying by a series of matrices. 
+			Once we know what matrices perform the basic transformations,
+			(or know where to find them) performing complex transformations on the Cartesian plane really isn't that <m>\ldots</m> complex.
+			It boils down to multiplying by a series of matrices.
 		</p>
 
 		<p>
-			We've shown many examples of transformations that we can do, and we've mentioned just a few that we can't <mdash/> for instance, 
-			we can't turn a square into a circle. Why not? Why is it that straight lines get sent to straight lines? 
+			We've shown many examples of transformations that we can do, and we've mentioned just a few that we can't <mdash/> for instance,
+			we can't turn a square into a circle. Why not? Why is it that straight lines get sent to straight lines?
 		</p>
 
 		<p>
-			All these questions require us to think like mathematicians <mdash/> we are being asked to study the 
-			<em>properties</em> of an object we just learned about and their connections to things we've already learned. 
+			All these questions require us to think like mathematicians <mdash/> we are being asked to study the
+			<em>properties</em> of an object we just learned about and their connections to things we've already learned.
 			We'll do all this (and more!) in the following section.
 		</p>
 	</subsection>
 
 	<exercises>
 		<exercisegroup cols="2">
-		
+
 			<introduction>
 				<p>
 					A matrix <m>\tta</m> is given. Sketch<m>\vx</m>, <m>\vy</m>, <m>\tta\vx</m>, and <m>\tta\vy</m> on the same Cartesian axes, where
@@ -1304,7 +1304,7 @@
 					</me>.
 				</p>
 			</introduction>
-		
+
 			<exercise>
 				<statement>
 					<p>
@@ -1321,7 +1321,7 @@
 							\draw[thick,-&gt;] (0,0) -- (1,1) node [right] {$\vx$};
 							\draw[thick,-&gt;] (0,0) -- (-1,2) node [above] {$\vy$};
 							\draw[thick,-&gt;] (0,0) -- (0,5) node [right] {$\tta\vx$};
-							\draw[thick,-&gt;] (0,0) -- (-3,4) node [above] {$\tta\vy$};								
+							\draw[thick,-&gt;] (0,0) -- (-3,4) node [above] {$\tta\vy$};
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -1344,7 +1344,7 @@
 							\draw[thick,-&gt;] (0,0) -- (1,1) node [right] {$\vx$};
 							\draw[thick,-&gt;] (0,0) -- (-1,2) node [above] {$\vy$};
 							\draw[thick,-&gt;] (0,0) -- (2,2) node [right] {$\tta\vx$};
-							\draw[thick,-&gt;] (0,0) -- (-2,7) node [above] {$\tta\vy$};								
+							\draw[thick,-&gt;] (0,0) -- (-2,7) node [above] {$\tta\vy$};
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -1358,7 +1358,7 @@
 					</p>
 				</statement>
 				<answer>
-					<image>
+					<image width="50%">
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex3">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)}]
@@ -1367,7 +1367,7 @@
 							\draw[thick,-&gt;] (0,0) -- (1,1) node [right] {$\vx$};
 							\draw[thick,-&gt;] (0,0) -- (-1,2) node [above] {$\vy$};
 							\draw[thick,-&gt;] (0,0) -- (2,2) node [right] {$\tta\vx$};
-							\draw[thick,-&gt;] (0,0) -- (1,1) node [above] {$\tta\vy$};								
+							\draw[thick,-&gt;] (0,0) -- (1,1) node [above] {$\tta\vy$};
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -1381,7 +1381,7 @@
 					</p>
 				</statement>
 				<answer>
-					<image>
+					<image width="50%">
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex4">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)}]
@@ -1390,7 +1390,7 @@
 							\draw[thick,-&gt;] (0,0) -- (1,1) node [right] {$\vx$};
 							\draw[thick,-&gt;] (0,0) -- (-1,2) node [above] {$\vy$};
 							\draw[thick,-&gt;] (0,0) -- (3,-3) node [right] {$\tta\vx$};
-							\draw[thick,-&gt;] (0,0) -- (3,-3) node [below] {$\tta\vy$};								
+							\draw[thick,-&gt;] (0,0) -- (3,-3) node [below] {$\tta\vy$};
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -1399,16 +1399,16 @@
 		</exercisegroup>
 
 		<exercisegroup cols="2">
-		
+
 			<introduction>
 				<p>
 					A sketch of transformed unit square is given. Find the matrix <m>\tta</m> that performs this transformation.
 				</p>
 			</introduction>
-		
+
 			<exercise>
 				<statement>
-					<image>
+					<image width="50%">
 						<shortdescription></shortdescription>
 						<latex-image label="img-03-05-ex5">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)},baseline=10pt]
@@ -1416,7 +1416,7 @@
 							\drawylines{-1}{7.5}{1,...,7};
 							\node at (1,-.1) [below] {$1$};
 							\node at (0,1) [left] {$1$};
-							\unitsquare[thick,cm={1,3,2,4,(0,0)}];								
+							\unitsquare[thick,cm={1,3,2,4,(0,0)}];
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -1430,7 +1430,7 @@
 
 			<exercise>
 				<statement>
-					<image>
+					<image width="50%">
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex6">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)},baseline=10pt]
@@ -1438,10 +1438,10 @@
 							\drawylines{-1}{3.5}{1,...,3};
 							\node at (1,-.1) [below] {$1$};
 							\node at (0,1) [left] {$1$};
-							\unitsquare[thick,cm={-1,1,2,2,(0,0)}];								
+							\unitsquare[thick,cm={-1,1,2,2,(0,0)}];
 							\end{tikzpicture}
 						</latex-image>
-						
+
 					</image>
 				</statement>
 				<answer>
@@ -1453,7 +1453,7 @@
 
 			<exercise>
 				<statement>
-					<image>
+					<image width="50%">
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex7">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)},baseline=10pt]
@@ -1461,7 +1461,7 @@
 							\drawylines{-1}{3.5}{1,...,3};
 							\node at (1,-.1) [below] {$1$};
 							\node at (0,1) [left] {$1$};
-							\unitsquare[thick,cm={1,1,2,2,(0,0)}];								
+							\unitsquare[thick,cm={1,1,2,2,(0,0)}];
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -1472,10 +1472,10 @@
 					</p>
 				</answer>
 			</exercise>
-		
+
 			<exercise>
 				<statement>
-					<image>
+					<image width="50%">
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex8">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)},baseline=10pt]
@@ -1483,10 +1483,10 @@
 							\drawylines{-1}{1.5}{1};
 							\node at (1,-.1) [below] {$1$};
 							\node at (0,1) [left] {$1$};
-							\unitsquare[thick,cm={2,0,-1,0,(0,0)}];								
+							\unitsquare[thick,cm={2,0,-1,0,(0,0)}];
 							\end{tikzpicture}
 						</latex-image>
-						
+
 					</image>
 				</statement>
 				<answer>
@@ -1498,15 +1498,15 @@
 		</exercisegroup>
 
 		<exercisegroup cols="2">
-		
+
 			<introduction>
 				<p>
-					A list of transformations is given. 
-					Find the matrix <m>\tta</m> that performs those transformations, 
+					A list of transformations is given.
+					Find the matrix <m>\tta</m> that performs those transformations,
 					in order, on the Cartesian plane.
 				</p>
 			</introduction>
-		
+
 			<exercise>
 				<statement>
 					<p>
@@ -1529,7 +1529,7 @@
 						<ol>
 							<li>horizontal shear by a factor of 2</li>
 							<li>vertical shear by a factor of 2</li>
-							
+
 						</ol>
 					</p>
 				</statement>
@@ -1546,7 +1546,7 @@
 						<ol>
 							<li>horizontal stretch by a factor of 3</li>
 							<li>reflection across the line <m>y=x</m></li>
-							
+
 						</ol>
 					</p>
 				</statement>
@@ -1563,7 +1563,7 @@
 						<ol>
 							<li>counterclockwise rotation by an angle of <m>45^\circ</m></li>
 							<li>vertical stretch by a factor of <m>1/2</m></li>
-							
+
 						</ol>
 					</p>
 				</statement>
@@ -1610,15 +1610,15 @@
 		</exercisegroup>
 
 		<exercisegroup cols="2">
-		
+
 			<introduction>
 				<p>
-					Two sets of transformations are given. 
-					Sketch the transformed unit square under each set of transformations. 
+					Two sets of transformations are given.
+					Sketch the transformed unit square under each set of transformations.
 					Are the transformations the same? Explain why/why not.
 				</p>
 			</introduction>
-		
+
 			<exercise>
 				<statement>
 					<p>
@@ -1646,8 +1646,8 @@
 				</statement>
 				<answer>
 					<p>
-						No, these are different. The first produces a transformation matrix <m>\bbm 0 \amp  1\\ 2 \amp 0\ebm</m>, 
-						while the second produces <m>\bbm 1 \amp  0 \\ 0 \amp  2\ebm</m>. 
+						No, these are different. The first produces a transformation matrix <m>\bbm 0 \amp  1\\ 2 \amp 0\ebm</m>,
+						while the second produces <m>\bbm 1 \amp  0 \\ 0 \amp  2\ebm</m>.
 					</p>
 				</answer>
 			</exercise>
@@ -1683,7 +1683,7 @@
 					</p>
 				</answer>
 			</exercise>
-		
+
 		</exercisegroup>
 	</exercises>
 

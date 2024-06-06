@@ -3,8 +3,8 @@
   <title>Introduction to Cartesian Coordinates in Space</title>
   <introduction>
     <p>
-      We reviewed the two-dimensional Cartesian Plane in <xref ref="CartesianPlane"/>. 
-      This is the familiar background on which much of your high school mathematics played out, 
+      We reviewed the two-dimensional Cartesian Plane in <xref ref="CartesianPlane"/>.
+      This is the familiar background on which much of your high school mathematics played out,
       and it provides the setting for the Calculus of one variable encountered in an introductory calculus course.
     </p>
 
@@ -816,7 +816,7 @@
             </solution>
         <!-- </webwork> -->
       </exercise>
-      
+
       <exercisegroup cols="2" xml:id="exset-space-coordinates-region">
 
         <introduction>

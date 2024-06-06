@@ -4,21 +4,21 @@
 
   <introduction>
     <p>
-      So far in this chapter, we have restricted our attention to vectors in two or three dimensions, 
-      where we are able to visualize things geometrically. 
-      Something that you may have noticed is that the algebraic rules for the addition and scalar multiplication vectors 
+      So far in this chapter, we have restricted our attention to vectors in two or three dimensions,
+      where we are able to visualize things geometrically.
+      Something that you may have noticed is that the algebraic rules for the addition and scalar multiplication vectors
       are the same in both dimensions.
     </p>
 
     <p>
-      In this section, we consider this algebra of vectors abstractly, 
-      which will allow us to move beyond three dimensions to vectors with an arbitrary number of components. 
+      In this section, we consider this algebra of vectors abstractly,
+      which will allow us to move beyond three dimensions to vectors with an arbitrary number of components.
     </p>
-    
+
     <p>
-      Despite the fact that we cannot easily visualize them, higher-dimensional vectors frequently arise in 
-      applications where there are many variables involved. 
-      The fact that the rules of algebra remain the same mean that we can continue to manipulate these objects, 
+      Despite the fact that we cannot easily visualize them, higher-dimensional vectors frequently arise in
+      applications where there are many variables involved.
+      The fact that the rules of algebra remain the same mean that we can continue to manipulate these objects,
       even though we can no longer picture them.
     </p>
   </introduction>
@@ -27,18 +27,18 @@
     <title>The vector space <m>\R^n</m></title>
 
     <p>
-      For each positive integer <m>n</m>, a column vector <m>\vec{x}</m> is formed by arranging <m>n</m> 
-      real numbers <m>x_1, x_2, \ldots, x_n</m> into a column <m>\vec{x} = \bbm x_1\\x_2\\\vdots \\x_n\ebm</m>. 
-      In <xref ref="chapter-algebra"/> we will see that this is a special type of <em>matrix</em>; 
-      for now, we can think of a column vector as an alternative to the notation <m>\bbm  x_1\\x_2\\\ldots, x_n\ebm</m> 
+      For each positive integer <m>n</m>, a column vector <m>\vec{x}</m> is formed by arranging <m>n</m>
+      real numbers <m>x_1, x_2, \ldots, x_n</m> into a column <m>\vec{x} = \bbm x_1\\x_2\\\vdots \\x_n\ebm</m>.
+      In <xref ref="chapter-algebra"/> we will see that this is a special type of <em>matrix</em>;
+      for now, we can think of a column vector as an alternative to the notation <m>\bbm  x_1\\x_2\\\ldots, x_n\ebm</m>
       encountered earlier in this chapter. In particular, we still refer to the numbers <m>x_1,x_2,\ldots, x_n</m> in <m>\vec{x}</m>
-      as the <term>components</term> of <m>\vec{x}</m>, 
-      and we define addition and scalar multiplication of column vectors in terms of their components, 
-      as we did for vectors in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m>. 
-    </p> 
+      as the <term>components</term> of <m>\vec{x}</m>,
+      and we define addition and scalar multiplication of column vectors in terms of their components,
+      as we did for vectors in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m>.
+    </p>
 
     <p>
-      That is, given vectors <m>\vec{x} = \bbm x_1\\x_2\\\vdots\\x_n\ebm</m> and <m>\vec{y} = \bbm y_1\\y_2\\\vdots \\y_n\ebm</m>, 
+      That is, given vectors <m>\vec{x} = \bbm x_1\\x_2\\\vdots\\x_n\ebm</m> and <m>\vec{y} = \bbm y_1\\y_2\\\vdots \\y_n\ebm</m>,
       and a scalar <m>c</m>, we define
       <me>
         \vec{x}+\vec{y} = \bbm x_1\\x_2\\\vdots\\x_n\ebm + \bbm y_1\\y_2\\\vdots \\y_n\ebm = \bbm x_1+y_1\\x_2+y_2\\\vdots \\x_n+y_n\ebm
@@ -46,12 +46,12 @@
       and
       <me>
         c\vec{x} = c\bbm x_1\\x_2\\\vdots\\x_n\ebm = \bbm cx_1\\cx_2\\\vdots\\cx_n\ebm
-      </me>.    
+      </me>.
     </p>
 
     <p>
       With these operations, the set of all <m>n\times 1</m> column vectors provides an example of what is known as a <term>vector space</term>.
-      <idx><h>vector space</h></idx> 
+      <idx><h>vector space</h></idx>
     </p>
 
     <definition xml:id="def-spaceRn">
@@ -68,24 +68,24 @@
     </definition>
 
     <p>
-      As with the vectors in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m> we encountered in <xref ref="chapter-vectors"/>, 
-      we allow the notation <m>\mathbb{R}^n</m> to represent both the <em>space</em> of points <m>(x_1,x_2, \ldots, x_n)</m>, 
-      and the set of vectors defined within that space. 
-      Since we can identify any point <m>P</m> with the position vector <m>\overrightarrow{OP}</m>, 
+      As with the vectors in <m>\mathbb{R}^2</m> and <m>\mathbb{R}^3</m> we encountered in <xref ref="chapter-vectors"/>,
+      we allow the notation <m>\mathbb{R}^n</m> to represent both the <em>space</em> of points <m>(x_1,x_2, \ldots, x_n)</m>,
+      and the set of vectors defined within that space.
+      Since we can identify any point <m>P</m> with the position vector <m>\overrightarrow{OP}</m>,
       the difference between viewing <m>\mathbb{R}^n</m> as a set of points or as a set of vectors is primarily one of perspective.
     </p>
 
     <p>
-      When <m>n\geq 4</m> we can no longer visualize vectors in <m>\mathbb{R}^n</m> as we did in <xref ref="chapter-vectors"/>, 
-      but we can handle them algebraically exactly as we did before, and we can extend the definitions of <xref ref="chapter-vectors"/> 
+      When <m>n\geq 4</m> we can no longer visualize vectors in <m>\mathbb{R}^n</m> as we did in <xref ref="chapter-vectors"/>,
+      but we can handle them algebraically exactly as we did before, and we can extend the definitions of <xref ref="chapter-vectors"/>
       to apply to vectors in <m>\mathbb{R}^n</m>.
     </p>
 
     <p>
-      In particular, we can define the <term>length</term> of a vector 
+      In particular, we can define the <term>length</term> of a vector
       <me>
         \vec{x}=\bbm x_1\\x_2\\ \vdots\\ x_n\ebm\in\mathbb{R}^n
-      </me> 
+      </me>
       by
       <me>
         \norm{\vec{x}} = \sqrt{x_1^2+x_2^2+\cdots +x_n^2}
@@ -97,14 +97,14 @@
     </p>
 
     <p>
-      Having defined the dot product, we can still declare two vectors <m>\vec x</m> and <m>\vec y</m> to be orthogonal if <m>\dotp xy = 0</m>, 
+      Having defined the dot product, we can still declare two vectors <m>\vec x</m> and <m>\vec y</m> to be orthogonal if <m>\dotp xy = 0</m>,
       and define the angle between two vectors by requiring that the identity
       <me>
         \dotp xy = \norm{\vec{x}}\norm{\vec{y}}\cos\theta
       </me>
-      remain valid. Using these definitions, along with <xref ref="thm-addition_properties"/>, 
-      we can see that all of the properties of vector operations given in <xref ref="thm_vector_properties"/> 
-      remain valid in <m>\mathbb{R}^n</m>.        
+      remain valid. Using these definitions, along with <xref ref="thm-addition_properties"/>,
+      we can see that all of the properties of vector operations given in <xref ref="thm_vector_properties"/>
+      remain valid in <m>\mathbb{R}^n</m>.
     </p>
 
     <theorem xml:id="thm-Rn_properties">
@@ -170,34 +170,34 @@
 
     <aside>
       <p>
-        Vector spaces are defined in general to be sets on which one can define addition and scalar multiplication 
+        Vector spaces are defined in general to be sets on which one can define addition and scalar multiplication
         satisfying the algebraic properties given in <xref ref="thm-Rn_properties"/>.
-        Examples of vector spaces other than <m>\R^n</m> include the space of <m>m\times n</m> matrices 
-        (each choice of <m>m</m> and <m>n</m> gives a different space), and the space of all polynomial functions of a real variable. 
+        Examples of vector spaces other than <m>\R^n</m> include the space of <m>m\times n</m> matrices
+        (each choice of <m>m</m> and <m>n</m> gives a different space), and the space of all polynomial functions of a real variable.
       </p>
     </aside>
 
     <p>
-      Then ten properties listed in <xref ref="thm-Rn_properties"/> are known as the <term>vector space axioms</term>. 
-      Any set of objects satisfying these axioms is known as a <term>vector space</term>. 
-      There are many interesting examples of vector spaces other than <m>\mathbb{R}^n</m>, but we will not study vector spaces in general in this text. 
+      Then ten properties listed in <xref ref="thm-Rn_properties"/> are known as the <term>vector space axioms</term>.
+      Any set of objects satisfying these axioms is known as a <term>vector space</term>.
+      There are many interesting examples of vector spaces other than <m>\mathbb{R}^n</m>, but we will not study vector spaces in general in this text.
     </p>
   </subsection>
 
   <subsection>
     <title>Linear combinations and span</title>
-    
+
     <p>
-      One of the key insights of linear algebra is that a space such as <m>\mathbb{R}^n</m>, 
-      which contains infinitely many objects, can be generated using the operations of addition and scalar multiplication 
-      from a finite set of basic objects. We saw in <xref ref="chapter-vectors"/>, for example, 
-      that every vector in <m>\mathbb{R}^3</m> can be written in terms of just three basic unit vectors 
+      One of the key insights of linear algebra is that a space such as <m>\mathbb{R}^n</m>,
+      which contains infinitely many objects, can be generated using the operations of addition and scalar multiplication
+      from a finite set of basic objects. We saw in <xref ref="chapter-vectors"/>, for example,
+      that every vector in <m>\mathbb{R}^3</m> can be written in terms of just three basic unit vectors
       <m>\veci</m>, <m>\vecj</m>, and <m>\veck</m>.
     </p>
 
     <p>
-      Since addition and scalar multiplication are the main operations of linear algebra, 
-      it's not too surprising (if a little unimaginative) that any combination of these operations is called a <term>linear combination</term>. 
+      Since addition and scalar multiplication are the main operations of linear algebra,
+      it's not too surprising (if a little unimaginative) that any combination of these operations is called a <term>linear combination</term>.
     </p>
 
     <definition xml:id="def-linear_comb_Rn">
@@ -208,18 +208,18 @@
           <me>
             c_1\vec{v}_1+c_2\vec{v_2}+\cdots + c_k\vec{v}_k
           </me>,
-          where <m>c_1,c_2\,\ldots, c_k\in \mathbb{R}</m> are scalars, 
+          where <m>c_1,c_2\,\ldots, c_k\in \mathbb{R}</m> are scalars,
           and <m>\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k\in\mathbb{R}^n</m> are vectors.
         </p>
       </statement>
     </definition>
-    
+
     <example xml:id="ex_lincombRn">
       <title>Forming linear combinations</title>
       <statement>
-    
-        <p>  
-          Let <m>\vec{u} = \bbm 2\\-1\\3\ebm, \vec{v} = \bbm -4\\ 6\\ 3\ebm, \vec{w} = \bbm 2\\3\\12\ebm</m> 
+
+        <p>
+          Let <m>\vec{u} = \bbm 2\\-1\\3\ebm, \vec{v} = \bbm -4\\ 6\\ 3\ebm, \vec{w} = \bbm 2\\3\\12\ebm</m>
           be vectors in <m>\mathbb{R}^3</m>. Form the following linear combinations:
           <ol>
             <li>
@@ -250,8 +250,8 @@
           <ol>
             <li>
               <p>
-                To simplify the linear combination, we first take care of the scalar multiplication, 
-                and then perform the addition. (We choose to interpret this expression as <m>3\vec{u}+(-4)\vec{w}</m>, 
+                To simplify the linear combination, we first take care of the scalar multiplication,
+                and then perform the addition. (We choose to interpret this expression as <m>3\vec{u}+(-4)\vec{w}</m>,
                 and multiply by <m>-4</m> in the first step, and add in the second step, rather than multiplying by 4 and then subtracting.)
                 <me>
                   3\vec{u}-4\vec{w}  = 3\bbm 2\\-1\\3\ebm -4\bbm 2\\3\\12\ebm
@@ -260,7 +260,7 @@
                 </me>.
               </p>
             </li>
-          
+
             <li>
               <p>
                 We proceed as with the previous problem, this time performing the scalar multiplication of <m>\vec{w}</m> by <m>-2</m> in our heads:
@@ -268,18 +268,18 @@
                   \vec{u}+\vec{v}-2\vec{w}  = \bbm 2\\-1\\3\ebm + \bbm -4\\6\\3\ebm + \bbm -4\\-6\\-24\ebm = \bbm -6\\-1\\-18\ebm
                 </me>.
               </p>
-            </li>      
-          
+            </li>
+
             <li>
               <p>
                 We find
                 <me>
-                  7\vec{u}+3\vec{v} = 7\bbm 2\\-1\\3\ebm+3\bbm -4\\6\\3\ebm = 
+                  7\vec{u}+3\vec{v} = 7\bbm 2\\-1\\3\ebm+3\bbm -4\\6\\3\ebm =
                   \bbm 14\\-7\\21\ebm+\bbm -12\\18\\9\ebm = \bbm 2\\11\\30\ebm
                 </me>.
               </p>
             </li>
-          
+
             <li>
               <p>
                 For our last example, we compute
@@ -288,18 +288,18 @@
                 </me>.
               </p>
             </li>
-          
+
           </ol>
         </p>
       </solution>
     </example>
-    
+
     <p>
-      Notice that in the last example above, our linear combination works out to be the zero vector. 
-      Let's think about this geometrically for a second: using the <q>tip-to-tail</q> 
-      method for adding vectors and beginning with the tail of <m>3\vec{u}</m> at the origin, 
-      if we add the vector <m>\vec{v}</m> at the tip of <m>3\vec{u}</m>, and then subtract <m>\vec{w}</m>, 
-      we end up back at the origin. The vectors <m>3\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m> must therefore lie in the same plane, 
+      Notice that in the last example above, our linear combination works out to be the zero vector.
+      Let's think about this geometrically for a second: using the <q>tip-to-tail</q>
+      method for adding vectors and beginning with the tail of <m>3\vec{u}</m> at the origin,
+      if we add the vector <m>\vec{v}</m> at the tip of <m>3\vec{u}</m>, and then subtract <m>\vec{w}</m>,
+      we end up back at the origin. The vectors <m>3\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m> must therefore lie in the same plane,
       since they form three sides of a triangle, as depicted in <xref ref="fig-lindeptriangle"/>.
     </p>
 
@@ -323,23 +323,23 @@
       <me>
         \vec{w} = 3\vec{u}+\vec{v}
       </me>.
-      What this tells us is that when we're being asked to form linear combinations of the vectors 
-      <m>\vec{u}, \vec{v}</m>, and <m>\vec{w}</m> in <xref ref="ex_lincombRn"/>, then vector <m>\vec{w}</m> is redundant. 
+      What this tells us is that when we're being asked to form linear combinations of the vectors
+      <m>\vec{u}, \vec{v}</m>, and <m>\vec{w}</m> in <xref ref="ex_lincombRn"/>, then vector <m>\vec{w}</m> is redundant.
       Suppose the vector <m>\vec{x}</m> is an arbitrary linear combination of these vectors; that is,
       <me>
         \vec{x} = a\vec{u}+b\vec{v}+c\vec{w}
       </me>
       for some scalars <m>a,b,c</m>. If we plug in <m>\vec{w} = 3\vec{u}+\vec{v}</m>, then we get
       <md>
-        <mrow>\vec{x} &amp;= a\vec{u}+b\vec{v}+c(3\vec{u}+\vec{v})</mrow>
-        <mrow> &amp; = a\vec{u}+b\vec{v}+3c\vec{u}+c\vec{v} \quad \text{ (distribute the scalar)}</mrow>
-        <mrow> &amp; = (a+3c)\vec{u} + (b+c)\vec{v} \quad \text{ (collect terms)}</mrow>
+        <mrow>\vec{x} \amp = a\vec{u}+b\vec{v}+c(3\vec{u}+\vec{v})</mrow>
+        <mrow> \amp  = a\vec{u}+b\vec{v}+3c\vec{u}+c\vec{v} \quad \text{ (distribute the scalar)}</mrow>
+        <mrow> \amp  = (a+3c)\vec{u} + (b+c)\vec{v} \quad \text{ (collect terms)}</mrow>
       </md>.
       Thus, <m>\vec{x}</m> has been written in terms of <m>\vec{u}</m> and <m>\vec{v}</m> only.
     </p>
 
     <p>
-      These ideas come up frequently enough in Linear Algebra that they have associated terminology. 
+      These ideas come up frequently enough in Linear Algebra that they have associated terminology.
       The definitions that follow seem innocent enough, but their importance to the theory of Linear Algebra cannot be understated.
     </p>
 
@@ -347,8 +347,8 @@
       <title>The span of a set of vectors</title>
       <statement>
         <p>
-          Let <m>A = \{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k\}</m> be a set of vectors in <m>\mathbb{R}^n</m>. 
-          The <term>span</term><idx><h>span</h></idx> of the vectors in <m>A</m>, denoted <m>\operatorname{span}(A)</m>, 
+          Let <m>A = \{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k\}</m> be a set of vectors in <m>\mathbb{R}^n</m>.
+          The <term>span</term><idx><h>span</h></idx> of the vectors in <m>A</m>, denoted <m>\operatorname{span}(A)</m>,
           is the set <m>S</m> of all possible linear combinations of the vectors in <m>A</m>. That is,
           <me>
             S = \operatorname{span}(A) = \{c_1\vec{v}_1+c_2\vec{v}_2+\cdots + c_k\vec{v}_k \,|\, c_1, c_2, \ldots, c_k \in \mathbb{R}\}
@@ -361,7 +361,7 @@
     <example xml:id="ex_spanRn">
       <title>Describing spans in <m>\mathbb{R}^3</m></title>
       <statement>
-     
+
         <p>
           Let <m>\vec{u}, \vec{v}, \vec{w}</m> be as in <xref ref="ex_lincombRn"/>. Describe the following spans:
           <ol>
@@ -396,32 +396,32 @@
               </p>
 
               <p>
-                If we think back to <xref ref="sec-lines"/>, we can do a bit better with our description. 
+                If we think back to <xref ref="sec-lines"/>, we can do a bit better with our description.
                 The set <m>\operatorname{span}\{\vec{u}\}</m> consists of all vectors <m>\bbm x\\y\\z\ebm</m> such that
                 <me>
                   \bbm x\\y\\z\ebm = t\bbm 2\\-1\\3\ebm = \bbm 0\\0\\0\ebm + t\bbm 2\\-1\\3\ebm
                 </me>,
-                which we recognize as the equation of a line through the origin in <m>\mathbb{R}^3</m> 
+                which we recognize as the equation of a line through the origin in <m>\mathbb{R}^3</m>
                 in the direction of the vector <m>\vec{u}</m>.
               </p>
             </li>
-           
+
             <li>
               <p>
                 Again, as a set we can write
                 <me>
                   \operatorname{span}\{\vec{u},\vec{v}\} = \left\{\left.s\bbm 2\\-1\\3\ebm+t\bbm -4\\6\\3\ebm \, \right| \, s,t\in \mathbb{R}\right\}
                 </me>,
-                so <m>\operatorname{span}\{\vec{u},\vec{v}\}</m> consists of all vectors of the form <m>\bbm 2s-4t\\-s+6t\\3s+3t\ebm</m>, 
-                where <m>s</m> and <m>t</m> can be any real numbers. 
+                so <m>\operatorname{span}\{\vec{u},\vec{v}\}</m> consists of all vectors of the form <m>\bbm 2s-4t\\-s+6t\\3s+3t\ebm</m>,
+                where <m>s</m> and <m>t</m> can be any real numbers.
                 Again, with a bit of thought, we can come up with a geometric description of this set. Consider an arbitrary vector
                 <me>
                   \vec{x} = s\vec{u}+t\vec{v} \in \operatorname{span}\{\vec{u},\vec{v}\}
                 </me>.
-                Any such vector can be obtained by moving some distance (measured by the scalar <m>s</m>) in the direction of <m>\vec{u}</m>, 
-                and then moving another distance (measured by the scalar <m>t</m>) in the direction of <m>\vec{v}</m>. 
-                We now have two directions in which to move, and if we haven't forgotten what we learned in <xref ref="sec-planes"/>, 
-                this probably reminds us of the description of a plane.                
+                Any such vector can be obtained by moving some distance (measured by the scalar <m>s</m>) in the direction of <m>\vec{u}</m>,
+                and then moving another distance (measured by the scalar <m>t</m>) in the direction of <m>\vec{v}</m>.
+                We now have two directions in which to move, and if we haven't forgotten what we learned in <xref ref="sec-planes"/>,
+                this probably reminds us of the description of a plane.
               </p>
 
               <p>
@@ -429,7 +429,7 @@
                 <me>
                   \vec{n} = \vec{u}\times\vec{v} = \bbm -21\\-18\\8\ebm
                 </me>,
-                which we know is orthogonal to both <m>\vec{u}</m> and <m>\vec{v}</m>. 
+                which we know is orthogonal to both <m>\vec{u}</m> and <m>\vec{v}</m>.
                 It follows from the properties of the dot product that for any other vector <m>\vec{x}=s\vec{u}+t\vec{v}</m> we have
                 <me>
                   \dotp nx = \vec{n}\boldsymbol{\cdot}(s\vec{u}+t\vec{v}) = s(\dotp ns) + t(\dotp nv) = s(0)+t(0)=0
@@ -441,40 +441,40 @@
                 which is the equation of a plane through the origin.
               </p>
             </li>
-          
+
             <li>
               <p>
-                In the discussion following <xref ref="ex_lincombRn"/> we saw that any vector that can be written as a linear combination of 
-                <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m> can be written as a linear combination of 
-                <m>\vec{u}</m> and <m>\vec{v}</m> alone. Thus, the span of <m>\vec{u}, \vec{v}</m>,  and <m>\vec{w}</m> 
+                In the discussion following <xref ref="ex_lincombRn"/> we saw that any vector that can be written as a linear combination of
+                <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m> can be written as a linear combination of
+                <m>\vec{u}</m> and <m>\vec{v}</m> alone. Thus, the span of <m>\vec{u}, \vec{v}</m>,  and <m>\vec{w}</m>
                 doesn't contain anything we didn't already have in the span of <m>\vec{u}</m> and <m>\vec{v}</m>; that is,
                 <me>
                   \operatorname{span}\{\vec{u},\vec{v},\vec{w}\}=\operatorname{span}\{\vec{u},\vec{v}\}
                 </me>.
               </p>
             </li>
-          
+
           </ol>
-         
+
         </p>
       </solution>
      </example>
 
      <aside>
       <p>
-        For any plane through the origin, the sum of two vectors that lie in that plane 
-        (or indeed, any linear combination of vectors in the plane) is again a vector in that plane. 
+        For any plane through the origin, the sum of two vectors that lie in that plane
+        (or indeed, any linear combination of vectors in the plane) is again a vector in that plane.
         We'll see shortly that this is the distinguishing characteristic of any <em>subspace</em> of <m>\mathbb{R}^n</m>.
       </p>
-    </aside> 
-  
+    </aside>
+
     <example xml:id="ex_spanRn2">
       <title>Determining membership in a span</title>
       <statement>
-     
+
         <p>
-          Given the vectors <m>\vec{u} = \bbm 2\\-1\\1\ebm</m>, <m>\vec{v} = \bbm 3\\2\\5\ebm</m>, 
-          and <m>\vec{w} = \bbm -2\\5\\3\ebm</m>, determine whether or not the following vectors belong to 
+          Given the vectors <m>\vec{u} = \bbm 2\\-1\\1\ebm</m>, <m>\vec{v} = \bbm 3\\2\\5\ebm</m>,
+          and <m>\vec{w} = \bbm -2\\5\\3\ebm</m>, determine whether or not the following vectors belong to
           <m>\operatorname{span}\{\vec{u},\vec{v},\vec{w}\}</m>:
           <ol cols="2">
             <li>
@@ -492,8 +492,8 @@
       </statement>
       <solution>
         <p>
-          We do not yet have a general technique for solving problems of this type. 
-          Notice that the question <q>Does <m>\vec{x}</m> belong to the span of <m>\{\vec{u},\vec{v},\vec{w}\}</m>?</q> 
+          We do not yet have a general technique for solving problems of this type.
+          Notice that the question <q>Does <m>\vec{x}</m> belong to the span of <m>\{\vec{u},\vec{v},\vec{w}\}</m>?</q>
           is equivalent to the question, <lq/>Do there exist scalars <m>a,b,c</m> such that
           <me>
             a\vec{u}+b\vec{v}+c\vec{w}=\vec{x}
@@ -505,36 +505,36 @@
           By definition of the equality of vectors, this amounts to the system of equations
           <me>\arraycolsep=2pt
             \begin{array}{ccccccc}
-            2a&amp;+&amp;3b&amp;-&amp;2c&amp;=&amp;3\\
-            -a&amp;+&amp;2b&amp;+&amp;5c&amp;=&amp;6\\
-            a&amp;+&amp;5b&amp;+&amp;3c&amp;=&amp;9
+            2a\amp +\amp 3b\amp -\amp 2c\amp =\amp 3\\
+            -a\amp +\amp 2b\amp +\amp 5c\amp =\amp 6\\
+            a\amp +\amp 5b\amp +\amp 3c\amp =\amp 9
             \end{array}
           </me>.
         </p>
 
         <p>
-          We will develop systematic techniques for solving such systems in the next chapter. 
-          Until then, is there anything we can say? 
-          The very astute reader might notice that the vectors <m>\vec{u},\vec{v}, \vec{w}</m> all have something in common: 
-          their third component is the sum of the first two: 
-          <m>1=2+(-1)</m> for <m>\vec{u}</m>, <m>5=3+2</m> for <m>\vec{v}</m>, and <m>3=-2+5</m> for <m>\vec{w}</m>. 
+          We will develop systematic techniques for solving such systems in the next chapter.
+          Until then, is there anything we can say?
+          The very astute reader might notice that the vectors <m>\vec{u},\vec{v}, \vec{w}</m> all have something in common:
+          their third component is the sum of the first two:
+          <m>1=2+(-1)</m> for <m>\vec{u}</m>, <m>5=3+2</m> for <m>\vec{v}</m>, and <m>3=-2+5</m> for <m>\vec{w}</m>.
           Thus, all three vectors are of the form <m>\bbm x\\y\\x+y\ebm</m>. Now, notice what happens if we combine two such vectors:
           <me>
             s\bbm a\\b\\a+b\ebm+t\bbm c\\d\\c+d\ebm = \bbm sa+tc\\sb+td\\s(a+b)+t(c+d)\ebm = \bbm sa+tc\\sb+td\\(sa+tc)+(sb+td)\ebm,
           </me>
           which is another vector of the same form. The same will be true for combinations of three or more such vectors.
         </p>
-        
+
         <p>
-          For the vector <m>\vec{x}</m>, we check that <m>3+6=9</m>, so <m>\vec{x}</m> has the correct form, 
-          and indeed (with a bit of <q>guess and check</q> work), we find that <m>a=b=c=1</m> works, 
+          For the vector <m>\vec{x}</m>, we check that <m>3+6=9</m>, so <m>\vec{x}</m> has the correct form,
+          and indeed (with a bit of <q>guess and check</q> work), we find that <m>a=b=c=1</m> works,
           since <m>\vec{u}+\vec{v}+\vec{w}=\vec{x}</m>. Thus, we can conclude that
           <me>
             \vec{x}\in\operatorname{span}\{\vec{u},\vec{v},\vec{w}\}
           </me>.
-          For the vector <m>\vec{y}</m>, we add the first two components, getting <m>4+1=5\neq -3</m>. 
+          For the vector <m>\vec{y}</m>, we add the first two components, getting <m>4+1=5\neq -3</m>.
           Since the third component is not the sum of the first two, there is no way that <m>\vec{y}</m>
-          could belong to the span of <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m>.    
+          could belong to the span of <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m>.
         </p>
       </solution>
     </example>
@@ -542,10 +542,10 @@
 
   <subsection>
     <title>Linear independence</title>
-    
+
     <p>
-      Notice in <xref ref="ex_spanRn"/> that the span did not change when we added the vector <m>\vec{w}</m> to the set of spanning vectors. 
-      This was probably not too surprising, since we saw that <m>\vec{w} = 3\vec{u}+\vec{v}</m>, 
+      Notice in <xref ref="ex_spanRn"/> that the span did not change when we added the vector <m>\vec{w}</m> to the set of spanning vectors.
+      This was probably not too surprising, since we saw that <m>\vec{w} = 3\vec{u}+\vec{v}</m>,
       meaning that <m>\vec{w}</m> is a linear combination of <m>\vec{u}</m> and <m>\vec{v}</m>, and thus,
       <me>
         \vec{w}\in\operatorname{span}\{\vec{u},\vec{v}\}
@@ -553,21 +553,21 @@
     </p>
 
     <p>
-      We don't get anything new when we include the vector <m>\vec{w}</m> since it lies in the plane spanned by 
-      <m>\vec{u}</m> and <m>\vec{v}</m>. We say that the vector <m>\vec{w}</m> <em>depends</em> on <m>\vec{u}</m> and <m>\vec{v}</m>, 
-      in the same way that the total of a sum depends on the numbers being added. 
-      Since this dependence is defined in terms of linear combinations, 
+      We don't get anything new when we include the vector <m>\vec{w}</m> since it lies in the plane spanned by
+      <m>\vec{u}</m> and <m>\vec{v}</m>. We say that the vector <m>\vec{w}</m> <em>depends</em> on <m>\vec{u}</m> and <m>\vec{v}</m>,
+      in the same way that the total of a sum depends on the numbers being added.
+      Since this dependence is defined in terms of linear combinations,
       we say that the vectors <m>\vec{u},\vec{v},\vec{w}</m> are <term>linearly dependent</term>.
       <idx><h>linearly dependent</h></idx>
-      <idx><h>dependent </h><h> linear</h></idx> 
+      <idx><h>dependent </h><h> linear</h></idx>
     </p>
 
     <p>
-      In general, a set of vectors <m>\vec{v}_1,\vec{v}_2\ldots, \vec{v}_k</m> 
-      is linearly dependent of one of the vectors can be written as a linear combination of the others. 
+      In general, a set of vectors <m>\vec{v}_1,\vec{v}_2\ldots, \vec{v}_k</m>
+      is linearly dependent of one of the vectors can be written as a linear combination of the others.
       If this is impossible, we say that the vectors are <term>linearly independent</term>.
       <idx><h>linearly independent</h></idx>
-      <idx><h>independent </h><h> linear</h></idx> 
+      <idx><h>independent </h><h> linear</h></idx>
     </p>
 
     <p>
@@ -576,15 +576,15 @@
 
     <aside>
       <p>
-        For reasons that become apparent as soon as one begins a discussion of basis and dimension 
-        (something we won't really cover in this text), we must consider any set containing the zero vector to be  linearly dependent. 
+        For reasons that become apparent as soon as one begins a discussion of basis and dimension
+        (something we won't really cover in this text), we must consider any set containing the zero vector to be  linearly dependent.
         If we use <xref ref="eq-linearindep" text="local">Equation</xref>
-        to define linear independence, this is included in the definition: if (for example) <m>\vec{v}_1=\vec{0}</m>, 
-        then we can let <m>c_1</m> be any real number we want, and <m>c_1\vec{v}_1=\vec{0}</m>, 
+        to define linear independence, this is included in the definition: if (for example) <m>\vec{v}_1=\vec{0}</m>,
+        then we can let <m>c_1</m> be any real number we want, and <m>c_1\vec{v}_1=\vec{0}</m>,
         so it is possible to find a linear combination where not all of the scalars are zero.
       </p>
-    </aside> 
-    
+    </aside>
+
     <definition xml:id="def-linearindepRn">
       <title>Linear dependence</title>
       <statement>
@@ -593,74 +593,74 @@
           <me>
             A = \{\vec{v}_1,\vec{v}_2,\ldots, \vec{v}_k\}
           </me>
-          in <m>\mathbb{R}^n</m> is <term>linearly dependent</term> if <m>\vec{0}\in A</m>, 
-          or if one of the vectors <m>\vec{v}_i</m> in <m>A</m> can be written as a linear combination of the other vectors in <m>A</m>. 
+          in <m>\mathbb{R}^n</m> is <term>linearly dependent</term> if <m>\vec{0}\in A</m>,
+          or if one of the vectors <m>\vec{v}_i</m> in <m>A</m> can be written as a linear combination of the other vectors in <m>A</m>.
           If the set <m>A</m> is not linearly dependent, we say that it is <term>linearly independent</term>.
         </p>
       </statement>
     </definition>
-    
+
     <example xml:id="ex_linindepRn">
       <title>Determining linear independence</title>
       <statement>
-     
+
         <p>
           Determine whether or not following sets of vectors are linearly independent:
           <ol>
             <li>
               <p>
-                The vectors <m>\vec{u} = \bbm 2\\-1\\1\ebm</m>, <m>\vec{v} = \bbm 3\\2\\5\ebm</m>, 
+                The vectors <m>\vec{u} = \bbm 2\\-1\\1\ebm</m>, <m>\vec{v} = \bbm 3\\2\\5\ebm</m>,
                 and <m>\vec{w} = \bbm -2\\5\\3\ebm</m> from <xref ref="ex_spanRn2"/>.
               </p>
             </li>
             <li>
               <p>
-                The vectors 
+                The vectors
                 <me>
                   \vec{x} = \bbm 2\\-1\\0\ebm, \vec{y} = \bbm -2\\3\\1\ebm, \quad \text{ and } \quad \vec{z} = \bbm 1\\1\\0\ebm
                 </me>.
               </p>
             </li>
-          
+
           </ol>
         </p>
       </statement>
       <solution>
         <p>
-          Like problems involving span, a general approach to answering questions like these about linear independence 
-          will have to wait until we develop methods for solving systems of equations in the next chapter. 
+          Like problems involving span, a general approach to answering questions like these about linear independence
+          will have to wait until we develop methods for solving systems of equations in the next chapter.
           However, for these two sets of vectors, we can reason our way to an answer.
           <ol>
             <li>
               <p>
-                Here, we noticed that all three vectors satisfy the condition <m>z=x+y</m>, 
-                if we label their respective components as <m>x</m>, <m>y</m>, and <m>z</m>. 
-                But this condition is simply the equation of a plane; namely, <m>x+y-z=0</m>. 
-                Intuition tells us that any plane can be written as the span of <em>two</em> vectors, 
-                so we can expect that any one of the three vectors can be written in terms of the other two, and indeed, 
+                Here, we noticed that all three vectors satisfy the condition <m>z=x+y</m>,
+                if we label their respective components as <m>x</m>, <m>y</m>, and <m>z</m>.
+                But this condition is simply the equation of a plane; namely, <m>x+y-z=0</m>.
+                Intuition tells us that any plane can be written as the span of <em>two</em> vectors,
+                so we can expect that any one of the three vectors can be written in terms of the other two, and indeed,
                 this is the case. With a bit of guesswork (or by asking a computer), we can determine that
                 <me>
                   \vec{w} = -\frac{19}{7}\vec{u}+\frac{8}{7}\vec{v}
                 </me>,
-                showing that <m>\vec{w}</m> can be written as a linear combination of <m>\vec{u}</m> and <m>\vec{v}</m>, 
+                showing that <m>\vec{w}</m> can be written as a linear combination of <m>\vec{u}</m> and <m>\vec{v}</m>,
                 and thus, that our vectors are linearly dependent.
               </p>
             </li>
 
             <li>
               <p>
-                Here, we make the useful observation that two of our three vectors have zero as their third component. 
-                Since <m>\vec{x}</m> and <m>\vec{z}</m> have third component zero, 
-                it is impossible for <m>\vec{y}</m> to be written as a linear combination of <m>\vec{x}</m> and <m>\vec{z}</m>, 
-                since any such linear combination would still have a zero in the third component. 
-                To see that <m>\vec{x}</m> cannot be written in terms of <m>\vec{y}</m> and <m>\vec{z}</m>, 
+                Here, we make the useful observation that two of our three vectors have zero as their third component.
+                Since <m>\vec{x}</m> and <m>\vec{z}</m> have third component zero,
+                it is impossible for <m>\vec{y}</m> to be written as a linear combination of <m>\vec{x}</m> and <m>\vec{z}</m>,
+                since any such linear combination would still have a zero in the third component.
+                To see that <m>\vec{x}</m> cannot be written in terms of <m>\vec{y}</m> and <m>\vec{z}</m>,
                 notice that for any <m>a</m> and <m>b</m>,
                 <me>
                   a\vec{y}+b\vec{z} = \bbm -2a+b\\3a+b\\a\ebm
                 </me>.
-                If this is to equal <m>\vec{x}</m>, then we must have <m>a=0</m>, giving us <m>\vec{x}=b\vec{z}</m>, 
-                but it's clear that <m>\vec{x}</m> is not a scalar multiple of <m>\vec{z}</m>. 
-                A similar argument shows that <m>\vec{z}</m> cannot be written in terms of <m>\vec{x}</m> and <m>\vec{y}</m>, 
+                If this is to equal <m>\vec{x}</m>, then we must have <m>a=0</m>, giving us <m>\vec{x}=b\vec{z}</m>,
+                but it's clear that <m>\vec{x}</m> is not a scalar multiple of <m>\vec{z}</m>.
+                A similar argument shows that <m>\vec{z}</m> cannot be written in terms of <m>\vec{x}</m> and <m>\vec{y}</m>,
                 and thus our vectors are linearly independent.
               </p>
             </li>
@@ -668,7 +668,7 @@
         </p>
       </solution>
     </example>
-    
+
     <p>
       Another way to characterize linear independence is as follows: suppose we have a linear combination equal to the zero vector:
       <men xml:id="eq-linearindep">
@@ -677,24 +677,24 @@
     </p>
 
     <p>
-      This is always possible of course, since we can simply set each of the scalars equal to zero. 
-      The condition of linear independence tells us that if our vectors are independent, 
-      then this is the <em>only</em> way to obtain a linear combination equal to the zero vector. 
+      This is always possible of course, since we can simply set each of the scalars equal to zero.
+      The condition of linear independence tells us that if our vectors are independent,
+      then this is the <em>only</em> way to obtain a linear combination equal to the zero vector.
     </p>
 
     <p>
       To see why this rule works, suppose we can choose our scalars in <xref ref="eq-linearindep" text="local">Equation</xref>
-      so that at least one of them is non-zero. For simplicity, let's say <m>c_1\neq 0</m>. 
+      so that at least one of them is non-zero. For simplicity, let's say <m>c_1\neq 0</m>.
       Then we can rewrite <xref ref="eq-linearindep" text="local">Equation</xref> as
       <me>
         c_1\vec{v}_1 = -c_2\vec{v}_2-\cdots - c_k\vec{v}_k
       </me>,
-      and since <m>c_1\neq 0</m>, we can divide both sides by <m>c_1</m>, 
+      and since <m>c_1\neq 0</m>, we can divide both sides by <m>c_1</m>,
       and we've written <m>\vec{v}_1</m> as a linear combination of the remaining vectors.
     </p>
 
     <p>
-      For example, from <xref ref="ex_linindepRn"/> we can conclude (with a bit of rearranging) 
+      For example, from <xref ref="ex_linindepRn"/> we can conclude (with a bit of rearranging)
       that the vectors <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m> satisfy the relationship
       <me>
         19\vec{u}-8\vec{v}+7\vec{w} = \vec{0}
@@ -702,8 +702,8 @@
     </p>
 
     <p>
-      Linear independence can be a difficult concept at first, but in three dimensions we can use 
-      <xref ref="eq-linearindep" text="local">Equation</xref> to provide a visual interpretation on a case-by-case basis. 
+      Linear independence can be a difficult concept at first, but in three dimensions we can use
+      <xref ref="eq-linearindep" text="local">Equation</xref> to provide a visual interpretation on a case-by-case basis.
     </p>
 
     <insight xml:id="idea-indepvect">
@@ -715,19 +715,19 @@
               Any set <m>\{\vec{u}\}</m> containing a single vector in <m>\mathbb{R}^3</m> is linearly dependent if <m>\vec{u}=\vec{0}</m>, and independent otherwise. (Here \eqref{eq-linearindep} becomes <m>c\vec{u}=\vec{0}</m>. If <m>\vec{u}\neq\vec{0}</m>, the only solution is to take <m>c=0</m>.)
             </p>
           </li>
-        
+
           <li>
             <p>
               Any set <m>\{\vec{u},\vec{v}\}</m> containing two non-zero vectors in <m>\mathbb{R}^3</m> is linearly dependent if <m>\vec{u}</m> is parallel to <m>\vec{v}</m>, and independent otherwise. (In other words, two <em>dependent</em> vectors lie on the same line. Two independent vectors span a plane.)
             </p>
           </li>
-        
+
           <li>
             <p>
               Any set <m>\{\vec{u},\vec{v},\vec{w}\}</m> of three non-zero vectors in <m>\mathbb{R}^3</m> is linearly dependent if all three vectors lie in the same plane, and independent otherwise.
             </p>
           </li>
-        
+
           <li>
             <p>
               Any set of four or more vectors in <m>\mathbb{R}^3</m> is automatically linearly dependent.
@@ -740,15 +740,15 @@
     <aside>
       <p>
         At this point in the text, we're not in a position to prove that any set of four vectors in <m>\mathbb{R}^3</m>
-        (or more generally, <m>k</m> vectors in <m>\mathbb{R}^n</m>, where <m>k\gt n</m>) is automatically independent. 
-        However, we'll soon see in <xref ref="chapter-linear"/> that in this case, 
-        the test for independence given by <xref ref="eq-linearindep" text="local">Equation</xref> results in a <q>homogeneous</q> 
+        (or more generally, <m>k</m> vectors in <m>\mathbb{R}^n</m>, where <m>k\gt n</m>) is automatically independent.
+        However, we'll soon see in <xref ref="chapter-linear"/> that in this case,
+        the test for independence given by <xref ref="eq-linearindep" text="local">Equation</xref> results in a <q>homogeneous</q>
         system of linear equations with more variables than equations, and that such a system is guaranteed to have non-trivial solutions.
       </p>
     </aside>
 
     <p>
-      This section introduced several new ideas. Some, like linear combinations, are straightforward. 
+      This section introduced several new ideas. Some, like linear combinations, are straightforward.
       Others, like span and linear independence, take some getting used to. There remain two very obvious questions to address:
       <ol>
         <li>
@@ -765,15 +765,15 @@
     </p>
 
     <p>
-      It turns out that both questions lead to <term>systems of linear equations</term>. 
-      As we saw in <xref ref="ex_spanRn2"/>, we are currently unable to systematically solve such problems.  
-      In Chapters <xref ref="chapter-linear"/> and <xref ref="chapter-algebra"/> 
-      we will develop the techniques needed to systematically solve such systems, 
+      It turns out that both questions lead to <term>systems of linear equations</term>.
+      As we saw in <xref ref="ex_spanRn2"/>, we are currently unable to systematically solve such problems.
+      In Chapters <xref ref="chapter-linear"/> and <xref ref="chapter-algebra"/>
+      we will develop the techniques needed to systematically solve such systems,
       at which point we will be able to easily answer questions about linear independence and span.
     </p>
 
     <p>
-      To see how such systems arise, suppose we want to know whether or not the vector 
+      To see how such systems arise, suppose we want to know whether or not the vector
       <m>\vec w = \bbm 2\\-1\\3\\0\ebm \in\mathbb{R}^4</m> belongs to the set
       <m>V = \operatorname{span}\{\vec{v}_1, \vec{v}_2, \vec{v}_3\}</m>, where
       <me>
@@ -782,56 +782,56 @@
     </p>
 
     <p>
-      By definition, <m>V</m> is the set of all possible linear combinations of the vectors <m>\vec{v}_1, \vec{v}_2, \vec{v}_3</m>, 
-      so saying that <m>\vec w \in V</m> is the same as saying that we can write <m>\vec w</m> as a linear combination of these vectors. 
+      By definition, <m>V</m> is the set of all possible linear combinations of the vectors <m>\vec{v}_1, \vec{v}_2, \vec{v}_3</m>,
+      so saying that <m>\vec w \in V</m> is the same as saying that we can write <m>\vec w</m> as a linear combination of these vectors.
       Thus, what we want to know is whether or not there exist scalars <m>x_1, x_2, x_3</m> such that
       <me>
         \vec w = x_1\vec{v}_1 + x_2\vec{v}_2 + x_3\vec{v}_3
       </me>.
       Substituting in the values for our vectors, this gives
       <me>
-        x_1\bbm 0\\2\\-1\\4\ebm + x_2\bbm 3\\1\\0\\-4\ebm + x_3\bbm -3\\6\\7\\2\ebm  = 
+        x_1\bbm 0\\2\\-1\\4\ebm + x_2\bbm 3\\1\\0\\-4\ebm + x_3\bbm -3\\6\\7\\2\ebm  =
         \bbm 3x_2-3x_3\\2x_1+x_2+6x_3\\-x_1+7x_3\\4x_1-4x_2+2x_3\ebm = \bbm 2\\-1\\3\\0\ebm
       </me>.
     </p>
 
     <p>
-      Since two vectors are equal if and only if each component is equal, 
+      Since two vectors are equal if and only if each component is equal,
       the above vector equation leads to the following system of four equations:
       <me>\arraycolsep=2pt
         \begin{array}{ccccccc}
         \amp   \amp 3x_2 \amp-\amp3x_3 \amp= \amp2\\
-        2x_1&amp;+&amp;x_2&amp;+&amp;6x_3&amp;=&amp;-1\\
-        -x_1&amp; &amp; &amp;+&amp;7x_3&amp;=&amp;3\\
-        4x_1&amp;-&amp;4x_2&amp;+&amp;2x_3&amp;=&amp;0
+        2x_1\amp +\amp x_2\amp +\amp 6x_3\amp =\amp -1\\
+        -x_1\amp  \amp  \amp +\amp 7x_3\amp =\amp 3\\
+        4x_1\amp -\amp 4x_2\amp +\amp 2x_3\amp =\amp 0
         \end{array}
       </me>.
-      Thus, the question <q>Is the vector <m>\vec w</m> an element of <m>V</m>?</q> 
-      is equivalent to the question <q>Is there a solution to the above system of equations?</q> 
+      Thus, the question <q>Is the vector <m>\vec w</m> an element of <m>V</m>?</q>
+      is equivalent to the question <q>Is there a solution to the above system of equations?</q>
     </p>
 
     <p>
-      Questions about linear independence are similar, but not quite the same. 
-      With the above example involving span, what we wanted to know is <q>Does a solution exist?</q> 
-      With linear independence, it is not whether a solution exists that is in doubt, but whether or not that solution is <em>unique</em>. 
-      For example, suppose we wanted to know if the vectors in our span example above are linearly independent. 
+      Questions about linear independence are similar, but not quite the same.
+      With the above example involving span, what we wanted to know is <q>Does a solution exist?</q>
+      With linear independence, it is not whether a solution exists that is in doubt, but whether or not that solution is <em>unique</em>.
+      For example, suppose we wanted to know if the vectors in our span example above are linearly independent.
       We would start with the vector equation
       <me>
         x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 = \vec 0
       </me>,
-      and ask whether or not there are any solutions other than <m>x_1=x_2=x_3=0</m>. 
+      and ask whether or not there are any solutions other than <m>x_1=x_2=x_3=0</m>.
     </p>
 
     <p>
-      This vector equation leads to a system just like the one above, 
-      except that the numbers to the right of the <m>=</m> signs would all be zeros. 
+      This vector equation leads to a system just like the one above,
+      except that the numbers to the right of the <m>=</m> signs would all be zeros.
       The techniques needed to answer these and other questions will be developed beginning in <xref ref="chapter-linear"/>.
     </p>
   </subsection>
-  
+
   <exercises>
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Simplify the given linear combinations, where
@@ -840,7 +840,7 @@
           </me>.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -892,11 +892,11 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Calculate the given quantity, where
@@ -905,7 +905,7 @@
           </me>.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -957,18 +957,18 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercisegroup>
-    
+
       <introduction>
         <p>
-          Determine if the given statement is true or false. 
+          Determine if the given statement is true or false.
           Give a proof for any true statements, and give a counterexample for any false statements.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -1033,7 +1033,7 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
   </exercises>
 </section>

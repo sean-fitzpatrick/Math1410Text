@@ -4,10 +4,10 @@
 
   <introduction>
     <p>
-      In the previous sections we have learned about the determinant, 
-      but we haven't given a really good reason <em>why</em> we would want to compute it.  
-      This section shows two applications of the determinant:  
-      solving systems of linear equations and computing the inverse of a matrix. 
+      In the previous sections we have learned about the determinant,
+      but we haven't given a really good reason <em>why</em> we would want to compute it.
+      This section shows two applications of the determinant:
+      solving systems of linear equations and computing the inverse of a matrix.
     </p>
   </introduction>
 
@@ -19,13 +19,13 @@
       <statement>
         <p>
           <idx><h>Cramer's Rule</h></idx>
-    
-          Let <m>\tta</m> be an <m>n\times n</m> matrix with <m>\det(A)\neq 0</m> 
-          and let  be an <m>n\times 1</m> column vector. Then the linear system 
+
+          Let <m>\tta</m> be an <m>n\times n</m> matrix with <m>\det(A)\neq 0</m>
+          and let  be an <m>n\times 1</m> column vector. Then the linear system
           <me>
             \ttaxb
           </me>
-          has solution 
+          has solution
           <me>
             x_i = \frac{\det(\tta_i(\vb))}{\det(A)}
           </me>,
@@ -36,27 +36,27 @@
 
     <aside>
       <p>
-        The closest we came to motivating the determinant is that if <m>\det(A) =0</m>, 
+        The closest we came to motivating the determinant is that if <m>\det(A) =0</m>,
         then we know that <m>\tta</m> is not invertible. But it seems that there may be easier ways to check.
       </p>
 
       <p>
-        It is interesting to note that despite the presentation given here, 
-        determinants actually pre-date the modern usage of matrices by more than a century. 
-        <url href="https://en.wikipedia.org/wiki/Cramer's_rule" visual="en.wikipedia.org/wiki/Cramer's_rule">Cramer's rule</url> 
-        was published by Cramer in 1750, and the term 
-        <url href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" visual="en.wikipedia.org/wiki/Matrix_(mathematics)">Matrix</url> 
-        was introduced by James Joseph Sylvester in 1850. 
-        (Even then, Sylvester's description of matrices was in terms of minors <mdash/> that's right, determinants.) 
+        It is interesting to note that despite the presentation given here,
+        determinants actually pre-date the modern usage of matrices by more than a century.
+        <url href="https://en.wikipedia.org/wiki/Cramer's_rule" visual="en.wikipedia.org/wiki/Cramer's_rule">Cramer's rule</url>
+        was published by Cramer in 1750, and the term
+        <url href="https://en.wikipedia.org/wiki/Matrix_(mathematics)" visual="en.wikipedia.org/wiki/Matrix_(mathematics)">Matrix</url>
+        was introduced by James Joseph Sylvester in 1850.
+        (Even then, Sylvester's description of matrices was in terms of minors <mdash/> that's right, determinants.)
         The interested reader is encouraged to read up on the history of the subject. (Wikipedia is not a bad place to start.)
       </p>
     </aside>
-    
+
     <example xml:id="ex_cramer_1">
       <title>Using Cramer's Rule</title>
       <statement>
         <p>
-          Use Cramer's Rule to solve the linear system <m>\ttaxb</m> where 
+          Use Cramer's Rule to solve the linear system <m>\ttaxb</m> where
           <me>
             \tta = \bbm 1 \amp 5 \amp -3\\1\amp 4\amp 2\\2\amp -1\amp 0 \ebm \ \text{ and }\ \vb = \bbm-36\\-11\\7\ebm
           </me>.
@@ -64,22 +64,22 @@
       </statement>
       <solution>
         <p>
-          We first compute the determinant of <m>\tta</m> to see if we can apply Cramer's Rule. 
+          We first compute the determinant of <m>\tta</m> to see if we can apply Cramer's Rule.
           <me>
             \det(A) = \bvm 1 \amp 5 \amp -3\\1\amp 4\amp 2\\2\amp -1\amp 0\evm  = 49
           </me>.
         </p>
 
         <p>
-          Since <m>\det(A)\neq 0</m>, we can apply Cramer's Rule. 
-          Following <xref ref="thm-cramers_rule"/>, we compute <m>\det(\tta_1(\vb))</m>, <m>\det(\tta_2(\vb))</m> and <m>\det(\tta_3(\vb))</m>. 
+          Since <m>\det(A)\neq 0</m>, we can apply Cramer's Rule.
+          Following <xref ref="thm-cramers_rule"/>, we compute <m>\det(\tta_1(\vb))</m>, <m>\det(\tta_2(\vb))</m> and <m>\det(\tta_3(\vb))</m>.
         </p>
 
         <p>
           <me>
             \det(\tta_1(\vb)) = \bvm  \mathbf{-36} \amp 5 \amp -3\\ \mathbf{-11}\amp 4\amp 2\\ \mathbf{7}\amp -1\amp 0 \evm  = 49
           </me>.
-          (We used a bold font to show where  replaced the first column of <m>\tta</m>.) 
+          (We used a bold font to show where  replaced the first column of <m>\tta</m>.)
           <md>
             <mrow>\det(\tta_2(\vb)) \amp = \bvm  1\amp  \mathbf{-36}\amp -3\\1\amp \mathbf{-11}\amp 2\\2\amp \mathbf{7}\amp 0\evm  = -245</mrow>
             <mrow>\det(\tta_3(\vb)) \amp = \bvm   1\amp 5\amp \mathbf{-36}\\1\amp 4\amp \mathbf{-11}\\2\amp -1\amp  \mathbf{7}\evm  = 196</mrow>
@@ -96,7 +96,7 @@
         </p>
 
         <p>
-          Therefore 
+          Therefore
           <me>
             \vx = \bbm x_1\\x_2\\x_3\ebm = \bbm 1\\-5\\4\ebm
           </me>.
@@ -108,7 +108,7 @@
       <title>Using Cramer's Rule</title>
       <statement>
         <p>
-          Use Cramer's Rule to solve the linear system <m>\ttaxb</m> where 
+          Use Cramer's Rule to solve the linear system <m>\ttaxb</m> where
           <me>
             \tta = \bbm 1 \amp 2\\3 \amp 4\ebm \ \text{ and } \ \vb = \bbm -1\\1\ebm
           </me>.
@@ -116,7 +116,7 @@
       </statement>
       <solution>
         <p>
-          The determinant of <m>\tta</m> is <m>-2</m>, so we can apply Cramer's Rule. 
+          The determinant of <m>\tta</m> is <m>-2</m>, so we can apply Cramer's Rule.
           <md>
             <mrow>\det(\tta_1(\vb)) \amp = \bvm  \mathbf{-1} \amp  2\\ \mathbf{1} \amp  4\evm  = -6</mrow>
             <mrow>\det(\tta_2(\vb)) \amp = \bvm  1 \amp  \mathbf{-1}\\ 3 \amp  \mathbf{1} \evm  = 4</mrow>
@@ -124,12 +124,12 @@
         </p>
 
         <p>
-          Therefore 
+          Therefore
           <md>
             <mrow>x_1 \amp = \frac{\det(\tta_1(\vb))}{\det(A)} = \frac{-6}{-2} = 3</mrow>
             <mrow>x_2 \amp = \frac{\det(\tta_2(\vb))}{\det(A)} = \frac{4}{-2} = -2</mrow>
           </md>,
-          and 
+          and
           <me>
             \vx = \bbm x_1\\x_2\ebm = \bbm 3\\-2\ebm
           </me>.
@@ -138,48 +138,48 @@
     </example>
 
     <p>
-      We learned in <xref ref="sec-determinant_properties"/> 
-      that when considering a linear system <m>\ttaxb</m> where <m>\tta</m> is square, 
-      if <m>\det(A)\neq 0</m> then <m>\tta</m> is invertible and <m>\ttaxb</m> has exactly one solution. 
-      We also stated in <xref ref="idea-solutions_invert"/> that if <m>\det(A) = 0</m>, 
-      then <m>\tta</m> is not invertible and so therefore either <m>\ttaxb</m> has no solution or infinitely many solutions. 
-      Our method of figuring out which of these cases applied was to form the augmented matrix <m>\bbm \tta \amp  \vb \ebm</m>, 
+      We learned in <xref ref="sec-determinant_properties"/>
+      that when considering a linear system <m>\ttaxb</m> where <m>\tta</m> is square,
+      if <m>\det(A)\neq 0</m> then <m>\tta</m> is invertible and <m>\ttaxb</m> has exactly one solution.
+      We also stated in <xref ref="idea-solutions_invert"/> that if <m>\det(A) = 0</m>,
+      then <m>\tta</m> is not invertible and so therefore either <m>\ttaxb</m> has no solution or infinitely many solutions.
+      Our method of figuring out which of these cases applied was to form the augmented matrix <m>\bbm \tta \amp  \vb \ebm</m>,
       put it into reduced row echelon form, and then interpret the results.
     </p>
 
     <p>
       Cramer's Rule specifies that <m>\det(A)\neq 0</m> (so we are guaranteed a solution).
-      When <m>\det(A)=0</m> we are not able to discern whether infinitely many solutions or no solution exists for a given vector<m>\vb</m>. 
+      When <m>\det(A)=0</m> we are not able to discern whether infinitely many solutions or no solution exists for a given vector<m>\vb</m>.
       Cramer's Rule is only applicable to the case when exactly one solution exists.
     </p>
 
     <p>
-      We end this section with a practical consideration. 
-      We have mentioned before that finding determinants is a computationally intensive operation. 
-      To solve a linear system with 3 equations and 3 unknowns, we need to compute 4 determinants. 
-      Just think: with 10 equations and 10 unknowns, we'd need to compute 11 really hard determinants of <m>10\times 10</m> matrices! 
+      We end this section with a practical consideration.
+      We have mentioned before that finding determinants is a computationally intensive operation.
+      To solve a linear system with 3 equations and 3 unknowns, we need to compute 4 determinants.
+      Just think: with 10 equations and 10 unknowns, we'd need to compute 11 really hard determinants of <m>10\times 10</m> matrices!
       That is a lot of work!
     </p>
 
     <p>
-      The upshot of this is that Cramer's Rule makes for a poor choice in solving numerical linear systems. 
+      The upshot of this is that Cramer's Rule makes for a poor choice in solving numerical linear systems.
       It simply is not done in practice; it is hard to beat Gaussian elimination.
     </p>
 
     <aside>
       <p>
-        A version of Cramer's Rule is often taught in introductory differential equations courses, 
-        as it can be used to find solutions to certain linear differential equations. 
-        In this situation, the entries of the matrices are functions, not numbers, 
-        and hence computing determinants is easier than using Gaussian elimination. 
+        A version of Cramer's Rule is often taught in introductory differential equations courses,
+        as it can be used to find solutions to certain linear differential equations.
+        In this situation, the entries of the matrices are functions, not numbers,
+        and hence computing determinants is easier than using Gaussian elimination.
         Again, though, as the matrices get large, other solution methods are resorted to.
       </p>
     </aside>
 
     <p>
-      So why include it? <em>Because its truth is amazing.</em> 
-      The determinant is a very strange operation; it produces a number in a very odd way. 
-      It should seem incredible to the reader that by manipulating determinants in a particular way, we can solve linear systems.  
+      So why include it? <em>Because its truth is amazing.</em>
+      The determinant is a very strange operation; it produces a number in a very odd way.
+      It should seem incredible to the reader that by manipulating determinants in a particular way, we can solve linear systems.
     </p>
   </subsection>
 
@@ -187,19 +187,19 @@
     <title>The Adjugate Formula</title>
 
     <p>
-      Recall that <xref ref="thm-2by2"/> in <xref ref="sec-inverses"/> 
-      gave us a <q>shortcut</q> for computing the inverse of a <m>2\times 2</m> matrix <m>A=\bbm a\amp b\\c\amp d\ebm</m>: 
+      Recall that <xref ref="thm-2by2"/> in <xref ref="sec-inverses"/>
+      gave us a <q>shortcut</q> for computing the inverse of a <m>2\times 2</m> matrix <m>A=\bbm a\amp b\\c\amp d\ebm</m>:
       as long as <m>\det(A)\neq 0</m>, we have
       <me>
         A^{-1} = \frac{1}{\det(A)}\bbm d \amp -b\\-c \amp a\ebm
       </me>.
-      This result can be easily verified by checking that <m>AA^{-1}=I_2</m> as required. 
-      The reader may have wondered if there is a similar formula for <m>A^{-1}</m> for a general <m>n\times n</m> matrix <m>A</m>, 
-      and whether or not such a formula would still constitute a <q>shortcut</q>. 
-      The results here are mixed. Yes, there's a formula, and we will present it shortly. 
-      However, as with Cramer's rule, it is <em>not</em> a shortcut. 
-      The reasons are the same as those we just mentioned for Cramer's rule: 
-      as long as we're dealing with a matrix whose entries are numbers, 
+      This result can be easily verified by checking that <m>AA^{-1}=I_2</m> as required.
+      The reader may have wondered if there is a similar formula for <m>A^{-1}</m> for a general <m>n\times n</m> matrix <m>A</m>,
+      and whether or not such a formula would still constitute a <q>shortcut</q>.
+      The results here are mixed. Yes, there's a formula, and we will present it shortly.
+      However, as with Cramer's rule, it is <em>not</em> a shortcut.
+      The reasons are the same as those we just mentioned for Cramer's rule:
+      as long as we're dealing with a matrix whose entries are numbers,
       computing the inverse using row operations is vastly more efficient.
     </p>
 
@@ -211,7 +211,7 @@
       <title>The adjugate of a matrix</title>
       <statement>
         <p>
-          Let <m>A</m> be an <m>n\times n</m> matrix. 
+          Let <m>A</m> be an <m>n\times n</m> matrix.
           <ul>
             <li>
               <p>
@@ -225,14 +225,14 @@
                 <idx><h>cofactor</h><h>matrix</h></idx>
               </p>
             </li>
-          
+
             <li>
               <p>
                 The <term>adjugate</term> of <m>A</m> is the <m>n\times n</m> matrix
                 <me>
                   \operatorname{adj}(A) = (\operatorname{cof}(A))^T = [C_{ij}]^T
                 </me>.
-      
+
                 <idx><h>adjugate</h></idx>
                 <idx><h>matrix</h><h>adjugate</h></idx>
               </p>
@@ -243,7 +243,7 @@
     </definition>
 
     <p>
-      Thus to obtain the matrix of cofactors for <m>A</m>, we replace each entry of <m>A</m> by the corresponding cofactor. 
+      Thus to obtain the matrix of cofactors for <m>A</m>, we replace each entry of <m>A</m> by the corresponding cofactor.
       Taking the transpose of this matrix produces the adjugate of <m>A</m>.
     </p>
 
@@ -259,21 +259,21 @@
     </p>
 
     <p>
-      Notice that the indices for <m>\operatorname{adj}(A)</m> are reversed, since we took the transpose of the cofactor matrix. 
+      Notice that the indices for <m>\operatorname{adj}(A)</m> are reversed, since we took the transpose of the cofactor matrix.
       What is the <m>(i,j)</m> entry of this product? Consider first the case where <m>i=j</m>. We find that the <m>(i,i)</m>-entry is
       <me>
         a_{i1}C_{i1}+a_{i2}C_{i2}+\cdots + a_{in}C_{in}
       </me>.
-      But this is just the cofactor expansion of <m>\det(A)</m> along the <m>i^{\text{th}}</m> row! 
-      Thus, the <m>(i,i)</m> entry of <m>A\cdot \operatorname{adj}(A)</m> is simply <m>\det(A)</m>. 
+      But this is just the cofactor expansion of <m>\det(A)</m> along the <m>i^{\text{th}}</m> row!
+      Thus, the <m>(i,i)</m> entry of <m>A\cdot \operatorname{adj}(A)</m> is simply <m>\det(A)</m>.
       This tells us what the diagonal is. What about the off-diagonal entries?
     </p>
 
     <aside>
       <p>
         Here we see exactly why we want to take the transpose in our definition of <m>\operatorname{adj}(A)</m>:
-        when we multiply matrices, we multiply rows times columns, 
-        and taking the transpose ensures that each column of <m>\operatorname{adj}(A)</m> 
+        when we multiply matrices, we multiply rows times columns,
+        and taking the transpose ensures that each column of <m>\operatorname{adj}(A)</m>
         is the corresponding row of <m>\operatorname{cof}(A)</m>.
       </p>
     </aside>
@@ -283,12 +283,12 @@
       <me>
         a_{i1}C_{j1}+a_{i2}C_{j2}+\cdots + a_{in}C_{jn}
       </me>.
-      This is no longer a cofactor expansion for the determinant of <m>A</m>, 
-      since we're taking entries from one row of <m>A</m>, and cofactors from another. 
-      This is, however, a cofactor expansion for the determinant of the matrix <m>B</m> 
-      that we obtain if we replace Row <m>j</m> of <m>A</m> with another copy of Row <m>i</m>. 
-      (Take a moment to think about why this is true.) But this means that the matrix <m>B</m> has two identical rows, 
-      and using <xref ref="thm-determinant_row_operations"/>, we can see that we must have <m>\det(B)=0</m>. 
+      This is no longer a cofactor expansion for the determinant of <m>A</m>,
+      since we're taking entries from one row of <m>A</m>, and cofactors from another.
+      This is, however, a cofactor expansion for the determinant of the matrix <m>B</m>
+      that we obtain if we replace Row <m>j</m> of <m>A</m> with another copy of Row <m>i</m>.
+      (Take a moment to think about why this is true.) But this means that the matrix <m>B</m> has two identical rows,
+      and using <xref ref="thm-determinant_row_operations"/>, we can see that we must have <m>\det(B)=0</m>.
       This means that all of the off-diagonal entries of our product are zero! We have
       <me>
         A\cdot \operatorname{adj}(A) = \bbm \det(A) \amp  0 \amp \cdots \amp  0\\
@@ -299,13 +299,13 @@
     </p>
 
     <p>
-      Now, we know that <m>A</m> is invertible if and only if <m>\det(A)\neq 0</m>, 
-      and as long as <m>\det(A)\neq 0</m>, we can multiply both sides of the above equation by <m>\dfrac{1}{\det(A)}</m>. 
+      Now, we know that <m>A</m> is invertible if and only if <m>\det(A)\neq 0</m>,
+      and as long as <m>\det(A)\neq 0</m>, we can multiply both sides of the above equation by <m>\dfrac{1}{\det(A)}</m>.
       With a bit of rearranging, we find
       <me>
         A\cdot \left(\frac{1}{\det(A)}\operatorname{adj}(A)\right) = I_n
       </me>.
-      But we know that if we can find <em>any</em> matrix <m>B</m> such that <m>AB=I_n</m>, 
+      But we know that if we can find <em>any</em> matrix <m>B</m> such that <m>AB=I_n</m>,
       then <m>B</m> is necessarily the inverse of <m>A</m>. We have established the following theorem.
     </p>
 
@@ -323,25 +323,25 @@
 
     <aside>
       <p>
-        Notice that <xref ref="thm-2by2"/> is a special case of <xref ref="thm-adjugate"/>. 
-        The cofactors of a <m>2\times 2</m> matrix are simply numbers, 
-        and it's easy to check that the adjugate of <m>A=\bbm a\amp b\\c\amp d\ebm</m> is 
+        Notice that <xref ref="thm-2by2"/> is a special case of <xref ref="thm-adjugate"/>.
+        The cofactors of a <m>2\times 2</m> matrix are simply numbers,
+        and it's easy to check that the adjugate of <m>A=\bbm a\amp b\\c\amp d\ebm</m> is
         <m>\operatorname{adj}(A) = \bbm d \amp  -b\\-c\amp a\ebm</m>.
       </p>
     </aside>
 
     <p>
-      Let us repeat our words of caution from the beginning of this discussion. 
-      Just because we have a formula for the inverse does not mean we need to use it! 
-      Consider the case of a <m>5\times 5</m> matrix (remember that this is a relatively small matrix by practical standards). 
-      Would you want to use <xref ref="thm-adjugate"/> to compute the inverse? What would this require? 
-      Well, we'd need to compute <m>\det(A)</m>, since that appears in the formula, 
-      so there's already a <m>5\times 5</m> determinant to deal with. 
-      But don't forget what <m>\operatorname{adj}(A)</m> is: a matrix of cofactors. 
-      In this case, <m>\operatorname{adj}(A)</m> would consist of <em>twenty-five</em> 
-      different <m>4\times 4</m> determinants that would all need to be computed. 
-      What do you think would be less work? Computing one <m>5\times 5</m> determinant and 25 <m>4\times 4</m> determinants, 
-      or using row operations? Now consider doing this for <m>10\times 10</m>, or <m>100\times 100</m> matrices. 
+      Let us repeat our words of caution from the beginning of this discussion.
+      Just because we have a formula for the inverse does not mean we need to use it!
+      Consider the case of a <m>5\times 5</m> matrix (remember that this is a relatively small matrix by practical standards).
+      Would you want to use <xref ref="thm-adjugate"/> to compute the inverse? What would this require?
+      Well, we'd need to compute <m>\det(A)</m>, since that appears in the formula,
+      so there's already a <m>5\times 5</m> determinant to deal with.
+      But don't forget what <m>\operatorname{adj}(A)</m> is: a matrix of cofactors.
+      In this case, <m>\operatorname{adj}(A)</m> would consist of <em>twenty-five</em>
+      different <m>4\times 4</m> determinants that would all need to be computed.
+      What do you think would be less work? Computing one <m>5\times 5</m> determinant and 25 <m>4\times 4</m> determinants,
+      or using row operations? Now consider doing this for <m>10\times 10</m>, or <m>100\times 100</m> matrices.
       Sometimes the first method is also the best!
     </p>
 
@@ -376,12 +376,12 @@
 
         <aside>
           <p>
-            <alert>Caution:</alert> The entries of <m>\operatorname{adj}(A)</m> are the cofactors <m>C_{ij}</m>, 
+            <alert>Caution:</alert> The entries of <m>\operatorname{adj}(A)</m> are the cofactors <m>C_{ij}</m>,
             and <em>not</em> the products <m>a_{ij}C_{ij}</m> that appear in the cofactor expansion theorem.
           </p>
         </aside>
 
-        <p>          
+        <p>
           Next, we set about computing all nine cofactors of <m>A</m>. We have
           <md>
             <mrow>C_{11} \amp  = (+1)\begin{vmatrix}0\amp -2\\5\amp -3\end{vmatrix} = 10</mrow>
@@ -405,23 +405,23 @@
           <me>
             A^{-1} = \frac{1}{\det(A)}\operatorname{adj}(A) = \frac{1}{70}\bbm 10 \amp 12 \amp 2\\10\amp -9\amp 16\\20\amp -11\amp 4\ebm = \bbm 1/7\amp 6/35\amp 1/35\\1/7\amp -9/70\amp 8/35\\2/7\amp -11/70\amp 2/35\ebm
           </me>.
-          The reader should verify that <m>AA^{-1}=I</m> to make sure that we haven't made any mistakes. 
+          The reader should verify that <m>AA^{-1}=I</m> to make sure that we haven't made any mistakes.
           (The author made two mistakes that were caught doing this verification!)
         </p>
       </solution>
     </example>
 
     <p>
-      In the next chapter we'll see another use for the determinant. 
-      Meanwhile, try to develop a deeper appreciation of math: 
-      odd, complicated things that seem completely unrelated often are intricately tied together. 
+      In the next chapter we'll see another use for the determinant.
+      Meanwhile, try to develop a deeper appreciation of math:
+      odd, complicated things that seem completely unrelated often are intricately tied together.
       Mathematicians see these connections and describe them as <q>beautiful.</q>
     </p>
   </subsection>
 
   <exercises>
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Matrices <m>\tta</m> and <m>\vb</m> are given.
@@ -433,15 +433,15 @@
             </li>
             <li>
               <p>
-                Use Cramer's Rule to solve <m>\ttaxb</m>. 
-                If Cramer's Rule cannot be used to find the solution, 
+                Use Cramer's Rule to solve <m>\ttaxb</m>.
+                If Cramer's Rule cannot be used to find the solution,
                 then state whether or not a solution exists.
               </p>
             </li>
           </ol>
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -495,7 +495,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 1 \amp 0 \amp -10\  4\amp -3\amp -10\\  -9\amp 6\amp -2\ebm</m>,      
+            <m>\tta = \bbm 1 \amp 0 \amp -10\  4\amp -3\amp -10\\  -9\amp 6\amp -2\ebm</m>,
             <m>\vb = \bbm -40\\  -94 \\  132\ebm</m>.
           </p>
         </statement>
@@ -520,7 +520,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -6 \amp -7 \amp -7\  5\amp 4\amp 1\\  5\amp 4\amp 8\ebm </m>,      
+            <m>\tta = \bbm -6 \amp -7 \amp -7\  5\amp 4\amp 1\\  5\amp 4\amp 8\ebm </m>,
             <m>\vb = \bbm 58\\  -35\\  -49\ebm</m>.
           </p>
         </statement>
@@ -587,7 +587,7 @@
                   <m>\vx = \bbm -3\\  -1\ebm</m>
                 </p>
               </li>
-             
+
              </ol>
           </p>
         </answer>
@@ -744,22 +744,22 @@
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Use <xref ref="thm-adjugate"/> to compute the inverse of <m>A</m>, if it exists.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 2 \amp -1 \amp 4\3\amp -5\amp 7\\0\amp 3\amp -2\ebm</m>
+            <m>A = \bbm 2 \amp -1 \amp 4\\3\amp -5\amp 7\\0\amp 3\amp -2\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>A^{-1} = \frac{1}{8}\bbm -11 \amp 10 \amp 13\6\amp -4\amp -2\\9\amp -6\amp -7\ebm</m>
+            <m>A^{-1} = \frac{1}{8}\bbm -11 \amp 10 \amp 13\\6\amp -4\amp -2\\9\amp -6\amp -7\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -767,12 +767,12 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 3 \amp 2 \amp -5\1\amp 0\amp -1\\7\amp 4\amp 2\ebm</m>
+            <m>A = \bbm 3 \amp 2 \amp -5\\1\amp 0\amp -1\\7\amp 4\amp 2\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>A^{-1} = \frac{1}{26}\bbm -4 \amp 24 \amp 2\9\amp -41\amp 2\\-4\amp -2\amp 2\ebm</m>
+            <m>A^{-1} = \frac{1}{26}\bbm -4 \amp 24 \amp 2\\9\amp -41\amp 2\\-4\amp -2\amp 2\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -793,7 +793,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 5 \amp 2 \amp 0\0\amp -2\amp 3\\5\amp -2\amp 6\ebm</m>
+            <m>A = \bbm 5 \amp 2 \amp 0\\0\amp -2\amp 3\\5\amp -2\amp 6\ebm</m>
           </p>
         </statement>
         <answer>
@@ -806,12 +806,12 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 1 \amp -4 \amp 3\amp 2\5\amp 0\amp -3\amp 6\\2\amp -3\amp 1\amp 4\\7\amp 2\amp -5\amp 1\ebm</m>
+            <m>A = \bbm 1 \amp -4 \amp 3\amp 2\\5\amp 0\amp -3\amp 6\\2\amp -3\amp 1\amp 4\\7\amp 2\amp -5\amp 1\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>A^{-1} = \frac{1}{10}\bbm 9 \amp 5 \amp -12\amp 0\15\amp 13\amp -26\amp -4\\19\amp 13\amp -28\amp -4\\2\amp 4\amp -4\amp -2\ebm</m>
+            <m>A^{-1} = \frac{1}{10}\bbm 9 \amp 5 \amp -12\amp 0\\15\amp 13\amp -26\amp -4\\19\amp 13\amp -28\amp -4\\2\amp 4\amp -4\amp -2\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -819,7 +819,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 3 \amp 1 \amp 0\amp -1\6\amp 4\amp 2\amp 0\\-3\amp -1\amp -5\amp 2\\1\amp 0\amp -1\amp 4\ebm</m>
+            <m>A = \bbm 3 \amp 1 \amp 0\amp -1\\6\amp 4\amp 2\amp 0\\-3\amp -1\amp -5\amp 2\\1\amp 0\amp -1\amp 4\ebm</m>
           </p>
         </statement>
         <answer>
@@ -828,7 +828,7 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
   </exercises>
 </section>

@@ -3,39 +3,39 @@
   <title>Systems of Linear Equations</title>
   <introduction>
     <p>
-      In <xref ref="sec-Rn"/>, we encountered the concepts of <em>span</em> and <em>linear independence</em>, 
-      and saw that these lead naturally to certain systems of equations. %, the <em>column space</em> of a matrix, 
-      and the <em>null space</em> of a matrix. 
+      In <xref ref="sec-Rn"/>, we encountered the concepts of <em>span</em> and <em>linear independence</em>,
+      and saw that these lead naturally to certain systems of equations. %, the <em>column space</em> of a matrix,
+      and the <em>null space</em> of a matrix.
     </p>
 
     <p>
-      In each case we were able to explain the concept, but unable to compute any examples, 
+      In each case we were able to explain the concept, but unable to compute any examples,
       since we lacked the machinery for solving the systems of equations that arose.
     </p>
 
     <aside>
       <p>
-        <xref ref="chapter-vectors"/> also presented us with a few situations where the ability to solve systems of equations would have come in handy, 
-        such as the derivation of the cross product formula, and when we wanted to compute the point of intersection of two lines, 
+        <xref ref="chapter-vectors"/> also presented us with a few situations where the ability to solve systems of equations would have come in handy,
+        such as the derivation of the cross product formula, and when we wanted to compute the point of intersection of two lines,
         or the line of intersection of two planes.
       </p>
     </aside>
 
     <p>
-      You have probably encountered simple systems of linear equations in high school; 
-      you can might be able to remember solving systems of equations where you had two or three equations in two or three unknowns, 
-      and you tried to find the value of the unknowns. 
+      You have probably encountered simple systems of linear equations in high school;
+      you can might be able to remember solving systems of equations where you had two or three equations in two or three unknowns,
+      and you tried to find the value of the unknowns.
       In this chapter we will uncover some of the fundamental principles guiding the solution to such problems.
     </p>
 
     <p>
-      Solving such systems was a bit time consuming, but not terribly difficult. 
-      So why bother? We bother because, in addition to the theoretical applications mentioned above, 
-      there are many, many, <em>many</em> practical applications where systems of linear equations arise, 
-      from business and finance to engineering to computer graphics to understanding more mathematics. 
-      And not only are there many applications of systems of linear equations, 
-      on most occasions where these systems arise we are using far more than three variables. 
-      (Engineering applications, for instance, often require thousands of variables.) 
+      Solving such systems was a bit time consuming, but not terribly difficult.
+      So why bother? We bother because, in addition to the theoretical applications mentioned above,
+      there are many, many, <em>many</em> practical applications where systems of linear equations arise,
+      from business and finance to engineering to computer graphics to understanding more mathematics.
+      And not only are there many applications of systems of linear equations,
+      on most occasions where these systems arise we are using far more than three variables.
+      (Engineering applications, for instance, often require thousands of variables.)
       So getting a good understanding of how to solve these systems effectively is important.
     </p>
   </introduction>

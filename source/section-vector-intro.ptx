@@ -293,7 +293,7 @@
             </p>
             <figure xml:id="fig_vect1">
               <caption>Graphing vectors in <xref ref="ex_vect1"/></caption>
-              <sidebyside widths="47% 47%" margins="0%">
+              <sidebyside widths="47% 47%" margins="0%" valign="bottom">
                 <figure xml:id="fig_vect1a">
                   <caption/>
                 <!-- START figures/fig_vectintro3.tex -->
@@ -1545,7 +1545,7 @@
     </solution>
   </example>
 
-  
+
   <p>
     The algebra we have applied to vectors is already demonstrating itself to be very useful.
     There are two more fundamental operations we can perform with vectors,
@@ -1763,7 +1763,7 @@
                     <var name="$stan" width="10"/>
                   </p>
                 </statement>
-               
+
               </task>
           </webwork>
         </exercise>

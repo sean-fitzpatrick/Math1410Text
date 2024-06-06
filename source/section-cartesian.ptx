@@ -3,8 +3,8 @@
   <title>The Cartesian Coordinate Plane</title>
 
   <p>
-    As a warm-up for the discussions of vectors and three-dimensional geometry yet to come, 
-    we will make a quick review of the <term>Cartesian Coordinate Plane</term>. 
+    As a warm-up for the discussions of vectors and three-dimensional geometry yet to come,
+    we will make a quick review of the <term>Cartesian Coordinate Plane</term>.
     Imagine two real number lines crossing at a right angle at <m>0</m> as shown in <xref ref="fig-cartplane"/>.
     <idx><h>Cartesian coordinate plane</h></idx>
   </p>
@@ -34,50 +34,50 @@
   </figure>
 
   <p>
-    The horizontal number line is usually called the <m>\mathbf{x}</m> <term>axis</term> 
-    while the vertical number line is usually called the <m>\mathbf{y}</m> <term>axis</term>.  
-    As with the usual number line, we imagine these axes extending off indefinitely in both directions.   
+    The horizontal number line is usually called the <m>\mathbf{x}</m> <term>axis</term>
+    while the vertical number line is usually called the <m>\mathbf{y}</m> <term>axis</term>.
+    As with the usual number line, we imagine these axes extending off indefinitely in both directions.
     Having two number lines allows us to locate the positions of points off of the number lines as well as points on the lines themselves.
-    <idx><h><m>x</m>-axis</h></idx>  
+    <idx><h><m>x</m>-axis</h></idx>
     <idx><h><m>y</m>-axis</h></idx>
   </p>
 
   <aside>
     <p>
-      Usually extending off  towards infinity is indicated by arrows, but here, 
+      Usually extending off  towards infinity is indicated by arrows, but here,
       the arrows are used to indicate the <em>direction</em> of increasing values of <m>x</m> and <m>y</m>.
     </p>
 
     <p>
-      The names of the coordinates can vary depending on the context of the application.  
-      If, for example, the horizontal axis represented time we might choose to call it the <m>t</m>-axis.  
+      The names of the coordinates can vary depending on the context of the application.
+      If, for example, the horizontal axis represented time we might choose to call it the <m>t</m>-axis.
       The first number in the ordered pair would then be the <m>t</m>-coordinate.
     </p>
   </aside>
 
   <p>
-    For example, consider the point <m>P</m> in <xref ref="fig-cartesian2"/>.  
-    To use the numbers on the axes to label this point, 
-    we imagine dropping a vertical line from the <m>x</m>-axis to <m>P</m> and extending a horizontal line from the <m>y</m>-axis to <m>P</m>.  
-    This process is sometimes called <q>projecting</q> the point <m>P</m> to the <m>x</m> (respectively <m>y</m>) axis.  
-    We then describe the point <m>P</m> using the <term>ordered pair</term> <m>(2,-4)</m>.  
-    The first number in the ordered pair is called the <term>abscissa</term> or <m>\mathbf{x}</m> <term>coordinate</term> 
-    and the second is called the <term>ordinate</term> or <m>\mathbf{y}</m> <term>coordinate</term>.  
-    Taken together, the ordered pair <m>(2,-4)</m> comprise the <term>Cartesian coordinates</term> of the point <m>P</m>. 
-    In practice, the distinction between a point and its coordinates is blurred; 
-    for example, we often speak of <q>the point <m>(2,-4)</m>.</q>  
-    We can think of <m>(2,-4)</m> as instructions on how to reach <m>P</m> from the <term>origin</term> 
-    <m>(0, 0)</m> by moving <m>2</m> units to the right and <m>4</m> units downwards.  
-    Notice that the order in the ordered pair is important <mdash/> if we wish to plot the point <m>(-4,2)</m>, 
+    For example, consider the point <m>P</m> in <xref ref="fig-cartesian2"/>.
+    To use the numbers on the axes to label this point,
+    we imagine dropping a vertical line from the <m>x</m>-axis to <m>P</m> and extending a horizontal line from the <m>y</m>-axis to <m>P</m>.
+    This process is sometimes called <q>projecting</q> the point <m>P</m> to the <m>x</m> (respectively <m>y</m>) axis.
+    We then describe the point <m>P</m> using the <term>ordered pair</term> <m>(2,-4)</m>.
+    The first number in the ordered pair is called the <term>abscissa</term> or <m>\mathbf{x}</m> <term>coordinate</term>
+    and the second is called the <term>ordinate</term> or <m>\mathbf{y}</m> <term>coordinate</term>.
+    Taken together, the ordered pair <m>(2,-4)</m> comprise the <term>Cartesian coordinates</term> of the point <m>P</m>.
+    In practice, the distinction between a point and its coordinates is blurred;
+    for example, we often speak of <q>the point <m>(2,-4)</m>.</q>
+    We can think of <m>(2,-4)</m> as instructions on how to reach <m>P</m> from the <term>origin</term>
+    <m>(0, 0)</m> by moving <m>2</m> units to the right and <m>4</m> units downwards.
+    Notice that the order in the ordered pair is important <mdash/> if we wish to plot the point <m>(-4,2)</m>,
     we would move to the left <m>4</m> units from the origin and then move upwards <m>2</m> units, as below on the right.
     <idx><h>ordered pair</h></idx>
     <idx><h>abscissa</h></idx>
     <idx><h><m>x</m>-coordinate</h></idx>
-    <idx><h>ordinate</h></idx> 
+    <idx><h>ordinate</h></idx>
     <idx><h><m>y</m>-coordinate</h></idx>
     <idx><h>coordinates </h><h> Cartesian</h></idx>
     <idx><h>Cartesian coordinates</h></idx>
-    <idx><h>origin</h></idx> 
+    <idx><h>origin</h></idx>
   </p>
 
   <figure xml:id="fig-cartesian2">
@@ -125,8 +125,8 @@
   </figure>
 
   <p>
-    When we speak of the Cartesian Coordinate Plane, 
-    we mean the set of all possible ordered pairs <m>(x,y)</m> as <m>x</m> and <m>y</m> take values from the real numbers.  
+    When we speak of the Cartesian Coordinate Plane,
+    we mean the set of all possible ordered pairs <m>(x,y)</m> as <m>x</m> and <m>y</m> take values from the real numbers.
     Below is a summary of important facts about Cartesian coordinates.
   </p>
 
@@ -165,15 +165,15 @@
     <title>Plotting points in the Cartesian Plane</title>
     <statement>
       <p>
-        Plot the following points: <m>A(5,8)</m>, <m>B\left(-\frac{5}{2}, 3\right)</m>, 
+        Plot the following points: <m>A(5,8)</m>, <m>B\left(-\frac{5}{2}, 3\right)</m>,
         <m>C(-5.8, -3)</m>, <m>D(4.5, -1)</m>, <m>E(5,0)</m>, <m>F(0,5)</m>, <m>G(-7,0)</m>, <m>H(0, -9)</m>, <m>O(0,0)</m>.
       </p>
     </statement>
     <solution>
       <p>
-        To plot these points, we start at the origin and move to the right if the <m>x</m> coordinate is positive; 
-        to the left if it is negative.   Next, we move up if the <m>y</m> coordinate is positive or down if it is negative.  
-        If the <m>x</m>-coordinate is <m>0</m>, we start at the origin and move along the <m>y</m>-axis only.  
+        To plot these points, we start at the origin and move to the right if the <m>x</m> coordinate is positive;
+        to the left if it is negative.   Next, we move up if the <m>y</m> coordinate is positive or down if it is negative.
+        If the <m>x</m>-coordinate is <m>0</m>, we start at the origin and move along the <m>y</m>-axis only.
         If the  <m>y</m>-coordinate is <m>0</m> we move along the <m>x</m>-axis only.
       </p>
 
@@ -207,9 +207,9 @@
   </example>
 
   <p>
-    The axes divide the plane into four regions called <term>quadrants</term>.  
+    The axes divide the plane into four regions called <term>quadrants</term>.
     They are labelled with Roman numerals and proceed counterclockwise around the plane: see <xref ref="quadrant"/>.
-    <idx><h>quadrants</h></idx>  
+    <idx><h>quadrants</h></idx>
   </p>
 
   <figure xml:id="quadrant">
@@ -235,26 +235,26 @@
   </figure>
 
   <p>
-    For example, <m>(1,2)</m> lies in Quadrant I, <m>(-1,2)</m> in Quadrant II, 
-    <m>(-1,-2)</m> in Quadrant III and <m>(1,-2)</m> in Quadrant IV.  
-    If a point other than the origin happens to lie on the axes, 
-    we typically refer to that point as lying on the positive or negative <m>x</m> axis (if <m>y = 0</m>) 
-    or on the positive or negative <m>y</m> axis (if <m>x = 0</m>).  
-    For example, <m>(0,4)</m> lies on the positive <m>y</m> axis whereas <m>(-117,0)</m> lies on the negative <m>x</m> axis.  
+    For example, <m>(1,2)</m> lies in Quadrant I, <m>(-1,2)</m> in Quadrant II,
+    <m>(-1,-2)</m> in Quadrant III and <m>(1,-2)</m> in Quadrant IV.
+    If a point other than the origin happens to lie on the axes,
+    we typically refer to that point as lying on the positive or negative <m>x</m> axis (if <m>y = 0</m>)
+    or on the positive or negative <m>y</m> axis (if <m>x = 0</m>).
+    For example, <m>(0,4)</m> lies on the positive <m>y</m> axis whereas <m>(-117,0)</m> lies on the negative <m>x</m> axis.
     Such points do not belong to any of the four quadrants.
   </p>
 
   <paragraphs>
     <title>Distance in the Plane</title>
-    
+
     <p>
-      Another important concept in Geometry is the notion of length.  
-      If we are going to unite Algebra and Geometry using the Cartesian Plane, 
-      then we need to develop an algebraic understanding of what distance in the plane means.  
-      Suppose we have two points, <m>P\left(x_{0}, y_{0}\right)</m> and <m>Q\left(x_{1}, y_{1}\right),</m> in the plane. 
+      Another important concept in Geometry is the notion of length.
+      If we are going to unite Algebra and Geometry using the Cartesian Plane,
+      then we need to develop an algebraic understanding of what distance in the plane means.
+      Suppose we have two points, <m>P\left(x_{0}, y_{0}\right)</m> and <m>Q\left(x_{1}, y_{1}\right),</m> in the plane.
       By the <term>distance</term> <m>d</m>  between <m>P</m> and <m>Q</m>, we mean the length of the line segment joining <m>P</m> with <m>Q</m>.
-      (Remember, given any two distinct points in the plane, there is a unique line containing both points.)  
-      Our goal now is to create an algebraic formula to compute the distance between these two points. 
+      (Remember, given any two distinct points in the plane, there is a unique line containing both points.)
+      Our goal now is to create an algebraic formula to compute the distance between these two points.
       Consider the generic situation in <xref ref="fig-cartdista"/>.
       <idx><h>distance </h><h> definition</h></idx>
     </p>
@@ -295,9 +295,9 @@
     </figure>
 
     <p>
-      With a little more imagination, we can envision a right triangle whose hypotenuse has length <m>d</m> as drawn in <xref ref="fig-cartdistb"/>.  
-      From the latter figure, we see that the lengths of the legs of the triangle are 
-      <m>\left\lvert x_{1} - x_{0}\right\rvert</m> and <m>\left\lvert y_{1} - y_{0}\right\rvert</m> so the 
+      With a little more imagination, we can envision a right triangle whose hypotenuse has length <m>d</m> as drawn in <xref ref="fig-cartdistb"/>.
+      From the latter figure, we see that the lengths of the legs of the triangle are
+      <m>\left\lvert x_{1} - x_{0}\right\rvert</m> and <m>\left\lvert y_{1} - y_{0}\right\rvert</m> so the
       <url href="https://en.wikipedia.org/wiki/Pythagorean_Theorem" visual="en.wikipedia.org/wiki/Pythagorean_Theorem">Pythagorean Theorem</url>
       gives us
       <md>
@@ -305,47 +305,47 @@
         <mrow> \left(x_{1} - x_{0}\right)^2 + \left(y_{1} - y_{0}\right)^2 \amp = d^2</mrow>
       </md>.
     </p>
- 
+
     <aside>
       <p>
         Recall that the <term>absolute value</term> of a real number <m>a</m>, denoted by <m>\abs{a}</m>,
-        measures the distance of <m>a</m> from the origin. Since we never want a negative distance, 
-        this means <m>\abs{a}=a</m> if <m>a\geq 0</m>, while if <m>a\lt 0</m>, <m>\abs{a}=-a</m>. 
-        For example, <m>\abs{4}=4</m>, and <m>\abs{-7} = -(-7)= 7</m>. 
+        measures the distance of <m>a</m> from the origin. Since we never want a negative distance,
+        this means <m>\abs{a}=a</m> if <m>a\geq 0</m>, while if <m>a\lt 0</m>, <m>\abs{a}=-a</m>.
+        For example, <m>\abs{4}=4</m>, and <m>\abs{-7} = -(-7)= 7</m>.
         Given two real numbers <m>a</m> and <m>b</m>, <m>\abs{a-b}</m> measures the distance between them.
         <idx><h>absolute value</h></idx>
       </p>
     </aside>
 
     <p>
-      (Since the square of a number is always positive, we can drop the absolute value signs.) 
-      By extracting the square root of both sides of the second equation and using the fact that distance is never negative, 
+      (Since the square of a number is always positive, we can drop the absolute value signs.)
+      By extracting the square root of both sides of the second equation and using the fact that distance is never negative,
       we get the following result.
     </p>
 
     <insight xml:id="distanceformula">
       <title>The Distance Formula</title>
       <p>
-        <idx><h>distance </h><h> distance formula</h></idx>  
-        The distance <m>d</m> between the points <m>P\left(x_{0}, y_{0}\right)</m> and <m>Q\left(x_{1}, y_{1}\right)</m> is: 
+        <idx><h>distance </h><h> distance formula</h></idx>
+        The distance <m>d</m> between the points <m>P\left(x_{0}, y_{0}\right)</m> and <m>Q\left(x_{1}, y_{1}\right)</m> is:
         <men xml:id="eq-distanceformula">
-          d = \sqrt{ \left(x_{1} - x_{0}\right)^2 + \left(y_{1} - y_{0}\right)^2} 
+          d = \sqrt{ \left(x_{1} - x_{0}\right)^2 + \left(y_{1} - y_{0}\right)^2}
         </men>.
       </p>
     </insight>
 
     <p>
-      It is not always the case that the points <m>P</m> and <m>Q</m> lend themselves to constructing such a triangle.  
-      If the points <m>P</m> and <m>Q</m> are arranged vertically or horizontally, or describe the exact same point, 
-      we cannot use the above geometric argument to derive the distance formula.  
-      It is left to the reader in Exercise <xref ref="distanceothercases"/> to verify <xref ref="eq-distanceformula" text="local">Equation</xref> for these cases.      
+      It is not always the case that the points <m>P</m> and <m>Q</m> lend themselves to constructing such a triangle.
+      If the points <m>P</m> and <m>Q</m> are arranged vertically or horizontally, or describe the exact same point,
+      we cannot use the above geometric argument to derive the distance formula.
+      It is left to the reader in Exercise <xref ref="distanceothercases"/> to verify <xref ref="eq-distanceformula" text="local">Equation</xref> for these cases.
     </p>
 
     <example xml:id="ex_twoptdist">
       <title>Distance between two points</title>
       <statement>
         <p>
-          Find and simplify the distance between <m>P(-2,3)</m> and  <m>Q(1,-3)</m>.  
+          Find and simplify the distance between <m>P(-2,3)</m> and  <m>Q(1,-3)</m>.
         </p>
       </statement>
       <solution>
@@ -357,7 +357,7 @@
             <mrow> \amp =  \sqrt{9 + 36}</mrow>
             <mrow> \amp =  3 \sqrt{5}</mrow>
           </md>,
-          so the distance is <m>3 \sqrt{5}</m>. 
+          so the distance is <m>3 \sqrt{5}</m>.
         </p>
       </solution>
     </example>
@@ -365,19 +365,19 @@
     <example xml:id="ex_pointwithdist">
       <title>Finding points at a given distance</title>
       <statement>
-    
+
         <p>
           Find all of the points with <m>x</m>-coordinate <m>1</m> which are <m>4</m> units from the point <m>(3,2)</m>.
         </p>
       </statement>
       <solution>
         <p>
-          We shall soon see that the points we wish to find are on the line <m>x=1</m>, 
-          but for now we'll just view them as points of the form <m>(1,y)</m>.  
+          We shall soon see that the points we wish to find are on the line <m>x=1</m>,
+          but for now we'll just view them as points of the form <m>(1,y)</m>.
         </p>
 
         <p>
-          We require that the distance from <m>(3,2)</m> to <m>(1,y)</m> be <m>4</m>.  
+          We require that the distance from <m>(3,2)</m> to <m>(1,y)</m> be <m>4</m>.
           The Distance Formula, <xref ref="eq-distanceformula" text="local">Equation</xref>, yields
           <md>
             <mrow>d \amp =  \sqrt{\left(x_{1}-x_{0}\right)^2+\left(y_{1}-y_{0}\right)^2} </mrow>
@@ -393,7 +393,7 @@
         </p>
 
         <p>
-          We obtain two answers:  <m>(1, 2 + 2 \sqrt{3})</m> and <m>(1, 2-2 \sqrt{3}).</m>  
+          We obtain two answers:  <m>(1, 2 + 2 \sqrt{3})</m> and <m>(1, 2-2 \sqrt{3}).</m>
           The reader is encouraged to think about why there are two answers.
         </p>
 
@@ -423,10 +423,10 @@
     </example>
 
     <p>
-      Related to finding the distance between two points is the problem of finding the <term>midpoint</term> of the line segment connecting two points.  
-      Given two points, <m>P\left(x_{0}, y_{0}\right)</m> and <m>Q\left(x_{1}, y_{1}\right)</m>, 
-      the <term>midpoint</term> <m>M</m>  of <m>P</m> and <m>Q</m> is defined to be the point on the line segment connecting 
-      <m>P</m> and <m>Q</m> whose distance from <m>P</m> is equal to its distance from  <m>Q</m>.  
+      Related to finding the distance between two points is the problem of finding the <term>midpoint</term> of the line segment connecting two points.
+      Given two points, <m>P\left(x_{0}, y_{0}\right)</m> and <m>Q\left(x_{1}, y_{1}\right)</m>,
+      the <term>midpoint</term> <m>M</m>  of <m>P</m> and <m>Q</m> is defined to be the point on the line segment connecting
+      <m>P</m> and <m>Q</m> whose distance from <m>P</m> is equal to its distance from  <m>Q</m>.
       <idx><h>midpoint </h><h> definition of</h></idx>
     </p>
 
@@ -446,7 +446,7 @@
     </figure>
 
     <p>
-      If we think of reaching <m>M</m> by going <q>halfway over</q> and <q>halfway up</q> we get the following formula. 
+      If we think of reaching <m>M</m> by going <q>halfway over</q> and <q>halfway up</q> we get the following formula.
     </p>
 
     <insight xml:id="midpointformula">
@@ -461,21 +461,21 @@
     </insight>
 
     <p>
-      If we let <m>d</m> denote the distance between <m>P</m> and <m>Q</m>, 
-      we leave it as <xref ref="verifymidpointformula"/> to show that the distance between <m>P</m> and <m>M</m> is <m>d/2</m>, 
-      which is the same as the distance between <m>M</m> and <m>Q</m>.  
+      If we let <m>d</m> denote the distance between <m>P</m> and <m>Q</m>,
+      we leave it as <xref ref="verifymidpointformula"/> to show that the distance between <m>P</m> and <m>M</m> is <m>d/2</m>,
+      which is the same as the distance between <m>M</m> and <m>Q</m>.
       This suffices to show that <xref ref="midpointformula"/> gives the coordinates of the midpoint.
     </p>
 
     <example xml:id="ex_findmidpoint">
       <title>Finding the midpoint of a line segment</title>
-      
+
       <statement>
         <p>
           Find the midpoint of the line segment connecting <m>P(-2,3)</m> and  <m>Q(1,-3)</m>.
         </p>
       </statement>
-      
+
       <solution>
         <p>
           Using <xref ref="midpointformula" text="title"/>, we have
@@ -495,13 +495,13 @@
 
     <example xml:id="inversemidpointex1">
       <title>An abstract midpoint problem</title>
-      
+
       <statement>
         <p>
           If <m>a \neq b</m>, prove that the line <m>y = x</m> equally divides the line segment with endpoints <m>(a,b)</m> and <m>(b,a)</m>.
         </p>
       </statement>
-      
+
       <solution>
         <p>
           To prove the claim, we use <xref ref="midpointformula" text="title"/> to find the midpoint.
@@ -509,7 +509,7 @@
             <mrow>M \amp  =  \left( \dfrac{a+b}{2},  \dfrac{b+a}{2} \right)</mrow>
             <mrow> \amp  =  \left( \dfrac{a+b}{2},  \dfrac{a+b}{2} \right)</mrow>
           </md>.
-          Since the <m>x</m> and <m>y</m> coordinates of this point are the same, 
+          Since the <m>x</m> and <m>y</m> coordinates of this point are the same,
           we find that the midpoint lies on the line <m>y=x</m>, as required.
         </p>
       </solution>
@@ -520,9 +520,9 @@
     <exercise xml:id="cartexerciseone">
       <statement>
         <p>
-          Plot and label the points <m>A(-3, -7)</m>,  <m>B(1.3, -2)</m>,  <m>C(\pi, \sqrt{10})</m>,  
-          <m>D(0, 8)</m>,  <m>E(-5.5, 0)</m>,  <m>F(-8, 4)</m>, <m>G(9.2, -7.8)</m> and <m>H(7, 5)</m> 
-          in the Cartesian Coordinate Plane given below. 
+          Plot and label the points <m>A(-3, -7)</m>,  <m>B(1.3, -2)</m>,  <m>C(\pi, \sqrt{10})</m>,
+          <m>D(0, 8)</m>,  <m>E(-5.5, 0)</m>,  <m>F(-8, 4)</m>, <m>G(9.2, -7.8)</m> and <m>H(7, 5)</m>
+          in the Cartesian Coordinate Plane given below.
         </p>
 
         <image width="47%">
@@ -542,8 +542,8 @@
       </statement>
       <answer>
         <p>
-          The required points <m>A(-3, -7)</m>, <m>B(1.3, -2)</m>, <m>C(\pi, \sqrt{10})</m>, <m>D(0, 8)</m>, 
-          <m>E(-5.5, 0)</m>, <m>F(-8, 4)</m>, <m>G(9.2, -7.8)</m>, and <m>H(7, 5)</m> are plotted in the Cartesian Coordinate Plane below. 
+          The required points <m>A(-3, -7)</m>, <m>B(1.3, -2)</m>, <m>C(\pi, \sqrt{10})</m>, <m>D(0, 8)</m>,
+          <m>E(-5.5, 0)</m>, <m>F(-8, 4)</m>, <m>G(9.2, -7.8)</m>, and <m>H(7, 5)</m> are plotted in the Cartesian Coordinate Plane below.
         </p>
 
         <image width="47%">
@@ -573,13 +573,13 @@
     </exercise>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Find the distance <m>d</m> between the points and the midpoint <m>M</m> of the line segment which connects them.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -592,7 +592,7 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
@@ -609,7 +609,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\left( \dfrac{1}{2}, 4\right)</m>, <m>\left(\dfrac{3}{2}, -1\right)</m> 
+            <m>\left( \dfrac{1}{2}, 4\right)</m>, <m>\left(\dfrac{3}{2}, -1\right)</m>
           </p>
         </statement>
         <answer>
@@ -622,7 +622,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\left(- \dfrac{2}{3}, \dfrac{3}{2} \right)</m>, <m>\left(\dfrac{7}{3}, 2\right)</m> 
+            <m>\left(- \dfrac{2}{3}, \dfrac{3}{2} \right)</m>, <m>\left(\dfrac{7}{3}, 2\right)</m>
           </p>
         </statement>
         <answer>
@@ -640,7 +640,7 @@
         </statement>
         <answer>
           <p>
-            <m>d = \sqrt{74}</m>, <m>M = \left(\frac{13}{10}, -\frac{13}{10} \right)</m> 
+            <m>d = \sqrt{74}</m>, <m>M = \left(\frac{13}{10}, -\frac{13}{10} \right)</m>
           </p>
         </answer>
       </exercise>
@@ -683,7 +683,7 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercise>
@@ -756,15 +756,15 @@
         <p>
           Verify <xref ref="distanceformula" text="title"/> for the cases when:
           <ol>
-          
+
             <li>
               <p>
-                The points are arranged vertically.  (Hint: Use <m>P(a, y_{\mbox{\tiny</m>0<m>}})</m> and <m>Q(a, y_{\mbox{\tiny</m>1<m>}})</m>.)
+                The points are arranged vertically.  (Hint: Use <m>P(a, y_0)</m> and <m>Q(a, y_1)</m>.)
               </p>
             </li>
             <li>
               <p>
-                The points are arranged horizontally. (Hint: Use <m>P(x_{\mbox{\tiny</m>0<m>}}, b)</m> and <m>Q(x_{\mbox{\tiny</m>1<m>}}, b)</m>.)
+                The points are arranged horizontally. (Hint: Use <m>P(x_0, b)</m> and <m>Q(x_1, b)</m>.)
               </p>
             </li>
             <li>
@@ -772,7 +772,7 @@
                 The points are actually the same point. (You shouldn't need a hint for this one.)
               </p>
             </li>
-          
+
           </ol>
         </p>
       </statement>
@@ -781,8 +781,8 @@
     <exercise xml:id="verifymidpointformula">
       <statement>
         <p>
-          Verify the Midpoint Formula by showing the distance between 
-          <m>P(x_1, y_1)</m> and <m>M</m> and the distance between <m>M</m> and 
+          Verify the Midpoint Formula by showing the distance between
+          <m>P(x_1, y_1)</m> and <m>M</m> and the distance between <m>M</m> and
           <m>Q(x_2, y_2)</m> are both half of the distance between <m>P</m> and <m>Q</m>.
         </p>
       </statement>
@@ -802,11 +802,11 @@
         </statement>
         <solution>
           <p>
-            The distance from <m>A</m> to <m>B</m> is <m>|AB| = \sqrt{13}</m>, 
-            the distance from <m>A</m> to <m>C</m> is <m>|AC| = \sqrt{52}</m>, 
-            and the distance from <m>B</m> to <m>C</m> is <m>|BC| = \sqrt{65}</m>.  
-            Since <m>\left(\sqrt{13}\right)^2 + \left( \sqrt{52} \right)^2 = \left( \sqrt{65} \right)^2</m>, 
-            we are guaranteed by the <url href="https://en.wikipedia.org/wiki/Pythagorean_theorem\#Converse" visual="en.wikipedia.org/wiki/Pythagorean_theorem\#Converse">converse of the Pythagorean Theorem</url> 
+            The distance from <m>A</m> to <m>B</m> is <m>|AB| = \sqrt{13}</m>,
+            the distance from <m>A</m> to <m>C</m> is <m>|AC| = \sqrt{52}</m>,
+            and the distance from <m>B</m> to <m>C</m> is <m>|BC| = \sqrt{65}</m>.
+            Since <m>\left(\sqrt{13}\right)^2 + \left( \sqrt{52} \right)^2 = \left( \sqrt{65} \right)^2</m>,
+            we are guaranteed by the <url href="https://en.wikipedia.org/wiki/Pythagorean_theorem\#Converse" visual="en.wikipedia.org/wiki/Pythagorean_theorem\#Converse">converse of the Pythagorean Theorem</url>
             that the triangle is a right triangle.
           </p>
         </solution>
@@ -836,11 +836,11 @@
     <exercise xml:id="orderedtripleexercise">
       <statement>
         <p>
-          The world is not flat. (There are those who disagree with this statement.  
-          Look them up on the Internet some time when you're bored.)  
-          Thus the Cartesian Plane cannot possibly be the end of the story.  
-          Discuss with your classmates how you would extend Cartesian Coordinates to represent the three dimensional world.  
-          What would the Distance and Midpoint formulas look like, assuming those concepts make sense at all?    
+          The world is not flat. (There are those who disagree with this statement.
+          Look them up on the Internet some time when you're bored.)
+          Thus the Cartesian Plane cannot possibly be the end of the story.
+          Discuss with your classmates how you would extend Cartesian Coordinates to represent the three dimensional world.
+          What would the Distance and Midpoint formulas look like, assuming those concepts make sense at all?
         </p>
       </statement>
     </exercise>

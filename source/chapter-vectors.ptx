@@ -14,14 +14,14 @@
 
     <aside>
       <p>
-        Until the last section of this chapter we'll restrict ourselves to vectors in two and three dimensions 
+        Until the last section of this chapter we'll restrict ourselves to vectors in two and three dimensions
         so that we're able to understand things visually. However, we'll also see that the <em>algebraic</em>
-        behaviour of vectors is the same in <em>any</em> dimension, including dimension four or greater. 
-        The only thing that changes is the number of coordinates involved. 
+        behaviour of vectors is the same in <em>any</em> dimension, including dimension four or greater.
+        The only thing that changes is the number of coordinates involved.
         This is one of the great powers of mathematics: we are aided by our visual imagination, but not limited by it.
       </p>
-    </aside> 
-    
+    </aside>
+
     <p>
       This chapter begins with moving our mathematics out of the plane and into <q>space.</q> That is,
       we begin to think mathematically not only in two dimensions,

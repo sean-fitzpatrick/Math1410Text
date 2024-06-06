@@ -37,29 +37,29 @@
         </editor>
         <date><today/></date>
       </titlepage>
-      
+
       <colophon label="colophon">
-        
+
         <credit>
           <role>Source for Chapter 1</role>
           <entity><em>Precalculus</em>, by Stitz and Zeager</entity>
         </credit>
-        
+
         <credit>
           <role>Source for Chapter 2</role>
           <entity><em>APEX Calculus</em>, by Greg Hartman</entity>
         </credit>
-        
+
         <credit>
           <role>Primary text source</role>
           <entity><em>Fundamentals of Matrix Algebra</em>, by Greg Hartman</entity>
         </credit>
-        
+
         <credit>
           <role>Author for supplmental material</role>
           <entity>Sean Fitzpatrick</entity>
         </credit>
-        
+
         <copyright>
           <year>2024</year>
           <holder>Authors as indicated above</holder>
@@ -76,6 +76,7 @@
     <xi:include href="./chapter-linear.ptx"/>
     <xi:include href="./chapter-algebra.ptx"/>
     <xi:include href="./chapter-transformations.ptx"/>
+    <xi:include href="./chapter-operations.ptx"/>
     <xi:include href="./chapter-eigen.ptx"/>
 
     <backmatter label="backmatter">

@@ -3,9 +3,9 @@
   <title>The Real and Complex Numbers</title>
   <introduction>
     <p>
-      We begin with some basic set theory terminology that may pop up from time to time, 
-      followed by a reminder on the rules for arithmetic with real numbers, 
-      and a tour of the Cartesian coordinate plane. 
+      We begin with some basic set theory terminology that may pop up from time to time,
+      followed by a reminder on the rules for arithmetic with real numbers,
+      and a tour of the Cartesian coordinate plane.
       Students who are already comfortable with these topics can feel free to jump ahead to <xref ref="CmpNums"/>,
       where we introduce the complex numbers.
     </p>

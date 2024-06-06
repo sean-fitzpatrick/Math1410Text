@@ -9,39 +9,39 @@
   <example xml:id="ex_by_hand">
     <title>Counting marbles in a jar</title>
     <statement>
-  
+
       <p>
-        Suppose a jar contains red, blue and green marbles. 
-        You are told that there are a total of 30 marbles in the jar; 
-        there are twice as many red marbles as green ones; 
-        the number of blue marbles is the same as the sum of the red and green marbles. 
+        Suppose a jar contains red, blue and green marbles.
+        You are told that there are a total of 30 marbles in the jar;
+        there are twice as many red marbles as green ones;
+        the number of blue marbles is the same as the sum of the red and green marbles.
         How many marbles of each colour are there?
       </p>
     </statement>
     <solution>
       <p>
-        We could attempt to solve this with some trial and error, 
-        and we'd probably get the correct answer without too much work. 
-        However, this won't lend itself towards learning a good technique for solving larger problems, 
+        We could attempt to solve this with some trial and error,
+        and we'd probably get the correct answer without too much work.
+        However, this won't lend itself towards learning a good technique for solving larger problems,
         so let's be more mathematical about it.
       </p>
 
       <p>
-        Let's let <m>r</m> represent the number of red marbles, and let <m>b</m> and <m>g</m> 
-        denote the number of blue and green marbles, respectively. 
-        We can use the given statements about the marbles in the jar to create some equations. 
+        Let's let <m>r</m> represent the number of red marbles, and let <m>b</m> and <m>g</m>
+        denote the number of blue and green marbles, respectively.
+        We can use the given statements about the marbles in the jar to create some equations.
       </p>
 
       <p>
-        Since we know there are 30 marbles in the jar, we know that 
+        Since we know there are 30 marbles in the jar, we know that
         <men xml:id="eq-rbg30">
           r+b+g=30
         </men> .
-        Also, we are told that there are twice as many red marbles as green ones, so we know that 
+        Also, we are told that there are twice as many red marbles as green ones, so we know that
         <men xml:id="eq-r2g">
           r=2g
-        </men>. 
-        Finally, we know that the number of blue marbles is the same as the sum of the red and green marbles, 
+        </men>.
+        Finally, we know that the number of blue marbles is the same as the sum of the red and green marbles,
         so we have
         <men xml:id="eq-brg">
           b = r+g
@@ -49,17 +49,17 @@
       </p>
 
       <p>
-        From this stage, there isn't one <q>right</q> way of proceeding. 
-        Rather, there are many ways to use this information to find the solution. 
-        One way is to combine ideas from equations <xref ref="eq-r2g"/> and <xref ref="eq-brg"/>; 
-        in <xref ref="eq-brg"/> replace <m>r</m> with <m>2g</m>. 
-        This gives us 
+        From this stage, there isn't one <q>right</q> way of proceeding.
+        Rather, there are many ways to use this information to find the solution.
+        One way is to combine ideas from equations <xref ref="eq-r2g"/> and <xref ref="eq-brg"/>;
+        in <xref ref="eq-brg"/> replace <m>r</m> with <m>2g</m>.
+        This gives us
         <men xml:id="eq-b3g">
           b = 2g+g = 3g
         </men>.
-        We can then combine equations <xref ref="eq-rbg30"/>, <xref ref="eq-r2g"/> and <xref ref="eq-b3g"/> 
-        by replacing <m>r</m> in <xref ref="eq-rbg30"/> with <m>2g</m> as we did before, 
-        and replacing <m>b</m> with <m>3g</m> to get 
+        We can then combine equations <xref ref="eq-rbg30"/>, <xref ref="eq-r2g"/> and <xref ref="eq-b3g"/>
+        by replacing <m>r</m> in <xref ref="eq-rbg30"/> with <m>2g</m> as we did before,
+        and replacing <m>b</m> with <m>3g</m> to get
         <mdn>
           <mrow>r+b+g \amp= 30</mrow>
           <mrow>2g + 3g+g \amp=30</mrow>
@@ -69,19 +69,19 @@
       </p>
 
       <p>
-        We can now use equation <xref ref="eq-g5"/> to find <m>r</m> and <m>b</m>; 
+        We can now use equation <xref ref="eq-g5"/> to find <m>r</m> and <m>b</m>;
         we know from <xref ref="eq-r2g"/> that <m>r = 2g = 10</m> and then since <m>r+b+g = 30</m>, we easily find that <m>b = 15</m>.
       </p>
     </solution>
   </example>
 
   <p>
-    Mathematicians often see solutions to given problems and then ask <q>What if<m>\ldots</m>?</q> 
-    It's an annoying habit that we would do well to develop <mdash/> we should learn to think like a mathematician. 
-    What are the right kinds of <q>what if</q> questions to ask? 
-    Here's another annoying habit of mathematicians: they often ask <q>wrong</q> questions. 
-    That is, they often ask questions and find that the answer isn't particularly interesting. 
-    But asking enough questions often leads to some good <q>right</q> questions. 
+    Mathematicians often see solutions to given problems and then ask <q>What if<m>\ldots</m>?</q>
+    It's an annoying habit that we would do well to develop <mdash/> we should learn to think like a mathematician.
+    What are the right kinds of <q>what if</q> questions to ask?
+    Here's another annoying habit of mathematicians: they often ask <q>wrong</q> questions.
+    That is, they often ask questions and find that the answer isn't particularly interesting.
+    But asking enough questions often leads to some good <q>right</q> questions.
     So don't be afraid of doing something <q>wrong;</q> we mathematicians do it all the time.
   </p>
 
@@ -95,28 +95,28 @@
       </li>
 			<li>
         <p>
-          What if we had 60 balls at the start instead of 30? 
+          What if we had 60 balls at the start instead of 30?
         </p>
       </li>
-		</ol>    
+		</ol>
   </p>
-	
+
   <p>
-    Let's look at the first question. Would the solution to our problem change if we called the red balls <m>q</m>? 
-    Of course not. At the end, we'd find that <m>q = 10</m>, and we would know that this meant that we had 10 red balls. 
+    Let's look at the first question. Would the solution to our problem change if we called the red balls <m>q</m>?
+    Of course not. At the end, we'd find that <m>q = 10</m>, and we would know that this meant that we had 10 red balls.
   </p>
 
 
   <aside>
     <p>
-      Here's another <q>What if?</q> question: what if we had a total of 20 marbles in the jar? 
-      Could we still solve the problem? Chances are that you can still work out a solution to the system, 
+      Here's another <q>What if?</q> question: what if we had a total of 20 marbles in the jar?
+      Could we still solve the problem? Chances are that you can still work out a solution to the system,
       but what does it mean? (In this case it's probably safe to assume that it doesn't make physical sense to deal with fractions of a marble.)
     </p>
   </aside>
 
   <p>
-    Now let's look at the second question. Suppose we had 60 balls, but the other relationships stayed the same. 
+    Now let's look at the second question. Suppose we had 60 balls, but the other relationships stayed the same.
     How would the situation and solution change? Let's compare the <q>original</q> equations to the <q>new</q> equations.
   </p>
 
@@ -136,28 +136,28 @@
   </tabular>
 
   <p>
-    By examining these equations, we see that nothing has changed except the first equation. 
-    It isn't too much of a stretch of the imagination to see that we would solve this new problem exactly the same way that we solved the original one, 
+    By examining these equations, we see that nothing has changed except the first equation.
+    It isn't too much of a stretch of the imagination to see that we would solve this new problem exactly the same way that we solved the original one,
     except that we'd have twice as many of each type of ball.
   </p>
 
   <p>
-    A conclusion from answering these two questions is this: it doesn't matter what we call our variables, 
-    and while changing constants in the equations changes the solution, 
+    A conclusion from answering these two questions is this: it doesn't matter what we call our variables,
+    and while changing constants in the equations changes the solution,
     they don't really change the <em>method</em> of how we solve these equations.
   </p>
 
   <p>
-    In fact, it is a great discovery to realize that all we care about are the <em>constants</em> 
-    and the <em>coefficients</em> of the equations. By systematically handling these, 
-    we can solve any set of linear equations in a very nice way. Before we go on, we must first define what a linear equation is. 
+    In fact, it is a great discovery to realize that all we care about are the <em>constants</em>
+    and the <em>coefficients</em> of the equations. By systematically handling these,
+    we can solve any set of linear equations in a very nice way. Before we go on, we must first define what a linear equation is.
   </p>
 
   <definition xml:id="def-lin_eq">
     <title>Linear Equation</title>
     <statement>
       <p>
-        A <term>linear equation</term> is an equation that can be written in the form 
+        A <term>linear equation</term> is an equation that can be written in the form
         <me>
           a_1x_1+a_2x_2+\cdots+a_nx_n = c
         </me>
@@ -169,7 +169,7 @@
       </p>
 
       <p>
-        A <em>solution</em> to a system of linear equations is a set of values for the variables <m>x_i</m> 
+        A <em>solution</em> to a system of linear equations is a set of values for the variables <m>x_i</m>
         such that each equation in the system is satisfied.
         <idx><h>linear equation</h></idx>
         <idx><h>system of linear equations</h><h>definition</h></idx>
@@ -180,7 +180,7 @@
   </definition>
 
   <p>
-    So in <xref ref="ex_by_hand"/>, when we answered <q>how many marbles of each colour are there?</q> 
+    So in <xref ref="ex_by_hand"/>, when we answered <q>how many marbles of each colour are there?</q>
     we were also answering <q>find a solution to a certain system of linear equations.</q>
   </p>
 
@@ -193,19 +193,19 @@
       <mrow>\sqrt{7}r+\pi s +\frac{3t}{5} \amp = \cos(45^\circ)</mrow>
     </md>.
   </p>
-  
+
   <p>
-    Notice that the coefficients and constants can be fractions and irrational numbers 
-    (like <m>\pi</m>, <m>\sqrt[3]{-10}</m> and <m>\cos(45^\circ)</m>). 
-    The variables only come in the form of <m>a_ix_i</m>; that is, just one variable multiplied by a coefficient. 
-    (Note that <m>\frac{3t}{5} = \frac35 t</m>, just a variable multiplied by a coefficient.) 
-    Also, it doesn't really matter what side of the equation we put the variables and the constants, 
-    although most of the time we write them with the variables on the left and the constants on the right. 
+    Notice that the coefficients and constants can be fractions and irrational numbers
+    (like <m>\pi</m>, <m>\sqrt[3]{-10}</m> and <m>\cos(45^\circ)</m>).
+    The variables only come in the form of <m>a_ix_i</m>; that is, just one variable multiplied by a coefficient.
+    (Note that <m>\frac{3t}{5} = \frac35 t</m>, just a variable multiplied by a coefficient.)
+    Also, it doesn't really matter what side of the equation we put the variables and the constants,
+    although most of the time we write them with the variables on the left and the constants on the right.
   </p>
 
   <p>
-    We would not regard the above collection of equations to constitute a system of equations, 
-    since each equation uses differently named variables. An example of a system of linear equations is 
+    We would not regard the above collection of equations to constitute a system of equations,
+    since each equation uses differently named variables. An example of a system of linear equations is
     <md>
       <mrow>x_1-x_2+x_3+x_4 \amp=1</mrow>
       <mrow>2x_1+3x_2+x_4 \amp= 25</mrow>
@@ -214,10 +214,10 @@
   </p>
 
   <p>
-    It is important to notice that not all equations used all of the variables 
-    (it is more accurate to say that the coefficients can be 0, 
-    so the last equation could have been written as <m>0x_1+x_2+x_3+0x_4 = 10</m>). 
-    Also, just because we have four unknowns does not mean we have to have four equations. 
+    It is important to notice that not all equations used all of the variables
+    (it is more accurate to say that the coefficients can be 0,
+    so the last equation could have been written as <m>0x_1+x_2+x_3+0x_4 = 10</m>).
+    Also, just because we have four unknowns does not mean we have to have four equations.
     We could have had fewer, even just one, and we could have had more.
   </p>
 
@@ -233,28 +233,28 @@
   </p>
 
   <p>
-    The first example is not a linear equation since the variables <m>x</m> and <m>y</m> are multiplied together. 
-    The second is not a linear equation because the variables are raised to powers other than 1; 
-    that is also a problem in the third equation (remember that <m>1/x = x^{-1}</m> and <m>\sqrt{x} = x^{1/2}</m>). 
-    Our variables cannot be the argument of function like <m>\sin</m>, <m>\cos</m> or <m>\ln</m>, nor can our variables be raised as an exponent. 
+    The first example is not a linear equation since the variables <m>x</m> and <m>y</m> are multiplied together.
+    The second is not a linear equation because the variables are raised to powers other than 1;
+    that is also a problem in the third equation (remember that <m>1/x = x^{-1}</m> and <m>\sqrt{x} = x^{1/2}</m>).
+    Our variables cannot be the argument of function like <m>\sin</m>, <m>\cos</m> or <m>\ln</m>, nor can our variables be raised as an exponent.
   </p>
 
   <p>
-    At this stage, we have yet to discuss how to efficiently find a solution to a system of linear equations. 
-    That is a goal for the upcoming sections. Right now we focus on identifying linear equations. 
-    It is also useful to <q>limber</q> up by solving a few systems of equations using any method we have at 
+    At this stage, we have yet to discuss how to efficiently find a solution to a system of linear equations.
+    That is a goal for the upcoming sections. Right now we focus on identifying linear equations.
+    It is also useful to <q>limber</q> up by solving a few systems of equations using any method we have at
     hand to refresh our memory about the basic process.
   </p>
 
   <exercises>
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           State whether or not the equation is linear.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -384,17 +384,17 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Solve the system of linear equations.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -460,15 +460,15 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercise>
       <statement>
         <p>
-          A jar contains 100 marbles. We know there are twice as many green marbles as red; 
-          that the number of blue and yellow marbles together is the same as the number of green; 
-          and that three times the number of yellow marbles together with the red marbles gives the same numbers as the blue marbles. 
+          A jar contains 100 marbles. We know there are twice as many green marbles as red;
+          that the number of blue and yellow marbles together is the same as the number of green;
+          and that three times the number of yellow marbles together with the red marbles gives the same numbers as the blue marbles.
           How many of each color of marble are in the jar?
         </p>
       </statement>
@@ -482,8 +482,8 @@
     <exercise>
       <statement>
         <p>
-          A farmer looks out his window at his chickens and pigs. 
-          He tells his daughter that he sees 62 heads and 190 legs. 
+          A farmer looks out his window at his chickens and pigs.
+          He tells his daughter that he sees 62 heads and 190 legs.
           How many chickens and pigs does the farmer have?
         </p>
       </statement>
@@ -497,7 +497,7 @@
     <exercise>
       <statement>
         <p>
-          A lady buys 20 trinkets at a yard sale. The cost of each trinket is either $0.30 or $0.65. 
+          A lady buys 20 trinkets at a yard sale. The cost of each trinket is either $0.30 or $0.65.
           If she spends $8.80, how many of each type of trinket does she buy?
         </p>
       </statement>

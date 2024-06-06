@@ -3,33 +3,33 @@
   <title>The Matrix Inverse</title>
 
   <p>
-    Once again we visit the old algebra equation, <m>ax=b</m>. How do we solve for <m>x</m>? We know that, as long as <m>a\neq 0</m>, 
+    Once again we visit the old algebra equation, <m>ax=b</m>. How do we solve for <m>x</m>? We know that, as long as <m>a\neq 0</m>,
     <me>
       x = \frac{b}{a}, \ \text{or, stated in another way,} \ x = a^{-1}b
     </me>.
   </p>
 
   <p>
-    What is <m>a^{-1}</m>? It is the number that, when multiplied by <m>a</m>, returns 1. That is, 
+    What is <m>a^{-1}</m>? It is the number that, when multiplied by <m>a</m>, returns 1. That is,
     <me>
       a^{-1}a = 1
     </me>.
   </p>
 
   <p>
-    Let us now think in terms of matrices. 
-    We have learned of the identity matrix <m>\tti</m> that <q>acts like the number 1.</q> 
-    That is, if <m>\tta</m> is a square matrix, then 
+    Let us now think in terms of matrices.
+    We have learned of the identity matrix <m>\tti</m> that <q>acts like the number 1.</q>
+    That is, if <m>\tta</m> is a square matrix, then
     <me>
       \tti\tta = \tta\tti = \tta
     </me>.
-    If we had a matrix, which we'll call <m>\ttai</m>, where <m>\ttai\tta=\tti</m>, 
-    then by analogy to our algebra example above it seems like we might be able to solve the linear system 
-    <m>\ttaxb</m> for <m>\vx</m> by multiplying both sides of the equation by <m>\ttai</m>. That is, perhaps 
+    If we had a matrix, which we'll call <m>\ttai</m>, where <m>\ttai\tta=\tti</m>,
+    then by analogy to our algebra example above it seems like we might be able to solve the linear system
+    <m>\ttaxb</m> for <m>\vx</m> by multiplying both sides of the equation by <m>\ttai</m>. That is, perhaps
     <me>
       \vx = \ttai\vb
     </me>.
-    There is no guarantee that such a matrix is going to exist for an arbitrary <m>n\times n</m> matrix <m>A</m>, 
+    There is no guarantee that such a matrix is going to exist for an arbitrary <m>n\times n</m> matrix <m>A</m>,
     but if it does, we say that <m>A</m> is <em>invertible</em>.
   </p>
 
@@ -50,21 +50,21 @@
   </definition>
 
   <p>
-    Of course, there is a lot of speculation here. 
-    We don't know in general that such a matrix like <m>\ttai</m> exists. 
-    (And if it does, whether that matrix is <em>unique</em>, 
-    despite the use of the definite article in stating that <m>X</m> is <q>the</q> inverse of <m>A</m>.) 
-    However, we do know how to solve the matrix equation <m>\tta\ttx = \ttb</m>, 
-    so we can use that technique to solve the equation <m>\tta\ttx = \tti</m> for <m>\ttx</m>. 
+    Of course, there is a lot of speculation here.
+    We don't know in general that such a matrix like <m>\ttai</m> exists.
+    (And if it does, whether that matrix is <em>unique</em>,
+    despite the use of the definite article in stating that <m>X</m> is <q>the</q> inverse of <m>A</m>.)
+    However, we do know how to solve the matrix equation <m>\tta\ttx = \ttb</m>,
+    so we can use that technique to solve the equation <m>\tta\ttx = \tti</m> for <m>\ttx</m>.
     This seems like it will get us close to what we want. Let's practice this once and then study our results.
   </p>
 
   <example xml:id="ex_inverse_1">
     <title>Solving <m>\tta\ttx=\tti</m></title>
     <statement>
- 
+
       <p>
-        Let 
+        Let
         <me>
           \tta = \bbm 2 \amp 1\\1 \amp 1\ebm
         </me>.
@@ -73,15 +73,15 @@
     </statement>
     <solution>
       <p>
-        We know how to solve this from the previous section: we form the proper augmented matrix, 
+        We know how to solve this from the previous section: we form the proper augmented matrix,
         put it into reduced row echelon form and interpret the results.
         <me>
           \bbm 2 \amp 1 \amp 1\amp 0\\1\amp 1\amp 0\amp 1\ebm \quad \arref \quad \bbm 1\amp 0\amp 1\amp -1\\0\amp 1\amp -1\amp 2\ebm
-        </me>        
+        </me>
       </p>
 
       <p>
-        We read from our matrix that 
+        We read from our matrix that
         <me>
           \ttx = \bbm 1 \amp -1\\-1 \amp 2\ebm
         </me>.
@@ -97,24 +97,24 @@
   </example>
 
   <p>
-    Looking at our previous example, we are tempted to jump in and call the matrix <m>\ttx</m> that we found <q><m>\ttai</m>.</q> 
-    However, there are two obstacles in the way of us doing this. 
+    Looking at our previous example, we are tempted to jump in and call the matrix <m>\ttx</m> that we found <q><m>\ttai</m>.</q>
+    However, there are two obstacles in the way of us doing this.
   </p>
 
   <p>
-    First, we know that in general <m>\tta\ttb \neq \ttb\tta</m>. 
+    First, we know that in general <m>\tta\ttb \neq \ttb\tta</m>.
     So while we found that <m>\tta\ttx = \tti</m>, we can't automatically assume that <m>\ttx\tta=\tti</m>.
   </p>
 
   <p>
-    Secondly, we have seen examples of matrices where <m>\tta\ttb = \tta\ttc</m>, but <m>\ttb\neq\ttc</m>. 
-    So just because <m>\tta\ttx = \tti</m>, it is possible that another matrix <m>\tty</m> exists where <m>\tta\tty = \tti</m>. 
+    Secondly, we have seen examples of matrices where <m>\tta\ttb = \tta\ttc</m>, but <m>\ttb\neq\ttc</m>.
+    So just because <m>\tta\ttx = \tti</m>, it is possible that another matrix <m>\tty</m> exists where <m>\tta\tty = \tti</m>.
     If this is the case, using the notation <m>\ttai</m> would be misleading, since it could refer to more than one matrix.
   </p>
 
   <p>
-    These obstacles that we face are not insurmountable. 
-    The first obstacle was that we know that <m>\tta\ttx=\tti</m> but didn't know that <m>\ttx\tta=\tti</m>. 
+    These obstacles that we face are not insurmountable.
+    The first obstacle was that we know that <m>\tta\ttx=\tti</m> but didn't know that <m>\ttx\tta=\tti</m>.
     That's easy enough to check, though. Let's look at <m>\tta</m> and <m>\ttx</m> from our previous example.
     <md>
       <mrow>\ttx\tta \amp = \bbm 1\amp -1\\-1\amp 2\ebm\bbm 2\amp 1\\1\amp 1\ebm</mrow>
@@ -124,10 +124,10 @@
   </p>
 
   <p>
-    Perhaps this first obstacle isn't much of an obstacle after all. 
-    Of course, we only have one example where it worked, so this doesn't mean that it always works. 
-    We have good news, though: it always does work. The only <q>bad</q> news is that this is a bit harder to prove. 
-    For now, we will state it as theorem, but the proof will have to wait until later: 
+    Perhaps this first obstacle isn't much of an obstacle after all.
+    Of course, we only have one example where it worked, so this doesn't mean that it always works.
+    We have good news, though: it always does work. The only <q>bad</q> news is that this is a bit harder to prove.
+    For now, we will state it as theorem, but the proof will have to wait until later:
     see the proof of <xref ref="thm-IMT"/>.
   </p>
 
@@ -135,18 +135,18 @@
     <title>Special Commuting Matrix Products</title>
     <statement>
       <p>
-        Let <m>\tta</m> be an <m>n\times n</m> matrix. 
+        Let <m>\tta</m> be an <m>n\times n</m> matrix.
         <ol>
         <li>
           <p>
-              If there is a matrix <m>\ttx</m> such that <m>\tta\ttx=\tti_n</m>, then <m>\ttx\tta=\tti_n</m>. 
+              If there is a matrix <m>\ttx</m> such that <m>\tta\ttx=\tti_n</m>, then <m>\ttx\tta=\tti_n</m>.
           </p>
         </li>
         <li>
           <p>
-              If there is a matrix <m>\ttx</m> such that <m>\ttx\tta=\tti_n</m>, then <m>\tta\ttx=\tti_n</m>. 
+              If there is a matrix <m>\ttx</m> such that <m>\ttx\tta=\tti_n</m>, then <m>\tta\ttx=\tti_n</m>.
           </p>
-        </li> 
+        </li>
        </ol>
       </p>
     </statement>
@@ -154,27 +154,27 @@
 
   <aside>
     <p>
-      <alert>Note:</alert> <xref ref="thm-inverse1"/> only applies to <em>square</em> matrices. 
-      If <m>A</m> is an <m>m\times n</m> matrix, with <m>m\neq n</m>, 
-      it is sometimes possible to find an <m>n\times m</m> matrix <m>B</m> such that <m>AB=I_m</m> 
-      (in this case <m>B</m> is called a <q>right inverse</q> for <m>A</m>), 
-      or an <m>n\times m</m> matrix <m>C</m> such that <m>CA = I_n</m> (a <q>left inverse</q> for <m>A</m>). 
-      However, the only case where <m>A</m> has both a left <em>and</em> a right inverse is when <m>m=n</m>, in which case <m>B=C</m>. 
+      <alert>Note:</alert> <xref ref="thm-inverse1"/> only applies to <em>square</em> matrices.
+      If <m>A</m> is an <m>m\times n</m> matrix, with <m>m\neq n</m>,
+      it is sometimes possible to find an <m>n\times m</m> matrix <m>B</m> such that <m>AB=I_m</m>
+      (in this case <m>B</m> is called a <q>right inverse</q> for <m>A</m>),
+      or an <m>n\times m</m> matrix <m>C</m> such that <m>CA = I_n</m> (a <q>left inverse</q> for <m>A</m>).
+      However, the only case where <m>A</m> has both a left <em>and</em> a right inverse is when <m>m=n</m>, in which case <m>B=C</m>.
       If <m>m\lt n</m>, only a right inverse is possible, while if <m>m\gt n</m>, only a left inverse is possible.
     </p>
-  </aside> 
+  </aside>
 
   <p>
-    The second obstacle is easier to address. 
-    We want to know if another matrix <m>\tty</m> exists where <m>\tta\tty = \tti =\tty\tta</m>. 
-    Let's suppose that it does. Consider the expression <m>\ttx\tta\tty</m>. 
-    Since matrix multiplication is associative, we can group this any way we choose. 
-    We could group this as <m>(\ttx\tta)\tty</m>; this results in 
+    The second obstacle is easier to address.
+    We want to know if another matrix <m>\tty</m> exists where <m>\tta\tty = \tti =\tty\tta</m>.
+    Let's suppose that it does. Consider the expression <m>\ttx\tta\tty</m>.
+    Since matrix multiplication is associative, we can group this any way we choose.
+    We could group this as <m>(\ttx\tta)\tty</m>; this results in
     <md>
       <mrow>(\ttx\tta)\tty	\amp = \tti\tty</mrow>
       <mrow>              \amp = \tty</mrow>
     </md>.
-    We could also group <m>\ttx\tta\tty</m> as <m>\ttx(\tta\tty)</m>. This tells us 
+    We could also group <m>\ttx\tta\tty</m> as <m>\ttx(\tta\tty)</m>. This tells us
     <md>
       <mrow>\ttx(\tta\tty) \amp = \ttx\tti</mrow>
       <mrow>  \amp = \ttx</mrow>
@@ -182,8 +182,8 @@
   </p>
 
   <p>
-    Combining the two ideas above, we see that <m>\ttx = \ttx\tta\tty = \tty</m>; that is, <m>\ttx=\tty</m>. 
-    We conclude that there is only one matrix <m>\ttx</m> where <m>\ttx\tta = \tti = \tta\ttx</m>. 
+    Combining the two ideas above, we see that <m>\ttx = \ttx\tta\tty = \tty</m>; that is, <m>\ttx=\tty</m>.
+    We conclude that there is only one matrix <m>\ttx</m> where <m>\ttx\tta = \tti = \tta\ttx</m>.
     (Even if we think we have two, we can do the above exercise and see that we really just have one.)
   </p>
 
@@ -197,69 +197,69 @@
       <p>
         <idx><h>inverse</h><h>uniqueness</h></idx>
 
-        Let <m>\tta</m> be an <m>n\times n</m> matrix and let <m>\ttx</m> be a matrix where <m>\tta\ttx = \tti_n</m>. 
-        Then <m>\ttx</m> is unique; it is the only matrix that satisfies this equation. 
+        Let <m>\tta</m> be an <m>n\times n</m> matrix and let <m>\ttx</m> be a matrix where <m>\tta\ttx = \tti_n</m>.
+        Then <m>\ttx</m> is unique; it is the only matrix that satisfies this equation.
         In other words, if <m>A</m> is an <m>n\times n</m> matrix and <m>AX = AY = I_n</m>, then <m>X=Y = A^{-1}</m>.
       </p>
     </statement>
   </theorem>
 
   <p>
-    Thus, we were justified in <xref ref="def-inverse"/> in calling <m>A^{-1}</m> <q>the</q> inverse of <m>A</m> 
-    (rather than merely <q>an</q> inverse). <xref ref="thm-inverse_unique"/> is incredibly important in practice. 
-    It tells us that if we are able to establish that <em>either</em> <m>AX=I_n</m> or <m>XA = I_n</m> for some matrix <m>X</m>, 
-    then we can immediately conclude two things: first, that <m>A</m> is invertible, and second, that <m>A=A^{-1}</m>. 
+    Thus, we were justified in <xref ref="def-inverse"/> in calling <m>A^{-1}</m> <q>the</q> inverse of <m>A</m>
+    (rather than merely <q>an</q> inverse). <xref ref="thm-inverse_unique"/> is incredibly important in practice.
+    It tells us that if we are able to establish that <em>either</em> <m>AX=I_n</m> or <m>XA = I_n</m> for some matrix <m>X</m>,
+    then we can immediately conclude two things: first, that <m>A</m> is invertible, and second, that <m>A=A^{-1}</m>.
     We put this observation to use in the next example.
   </p>
 
   <example xml:id="ex_using_uniqueness">
     <title>Using Theorems <xref ref="thm-inverse1"/> and <xref ref="thm-inverse_unique"/></title>
     <statement>
- 
+
       <p>
-        Suppose <m>A</m> is an <m>n\times n</m> matrix such that <m>A^5 = I_n</m>. 
+        Suppose <m>A</m> is an <m>n\times n</m> matrix such that <m>A^5 = I_n</m>.
         Prove that <m>A</m> is invertible, and find an expression for <m>A^{-1}</m>.
       </p>
     </statement>
     <solution>
       <p>
-        Using <xref ref="thm-inverse_unique"/>, we can quickly kill two birds with one stone. 
+        Using <xref ref="thm-inverse_unique"/>, we can quickly kill two birds with one stone.
         Using properties of exponents (and the fact that <m>5=1+4</m>), we have
         <me>
           A^5 = A\cdot (A\cdot A\cdot A\cdot A) = A(A^4) = I_n
         </me>.
-        Thus, if we set <m>X=A^4</m>, then <m>AX = I_n</m>, 
-        so by Theorems <xref ref="thm-inverse1"/> and <xref ref="thm-inverse_unique"/>, 
+        Thus, if we set <m>X=A^4</m>, then <m>AX = I_n</m>,
+        so by Theorems <xref ref="thm-inverse1"/> and <xref ref="thm-inverse_unique"/>,
         <m>A</m> is invertible, and <m>A^{-1} = A^4</m>.
       </p>
     </solution>
   </example>
 
   <p>
-    At this point, it is natural to wonder which <m>n\times n</m> matrices will be invertible. 
-    Will any non-zero matrix do? (No.) Are such matrices a rare occurrence? (No.) 
-    As we proceed through this chapter and the next, 
-    we will see that there are many different conditions one can place on an <m>n\times n</m> 
-    matrix that are equivalent to the statement <q>The matrix <m>A</m> is invertible.</q> 
+    At this point, it is natural to wonder which <m>n\times n</m> matrices will be invertible.
+    Will any non-zero matrix do? (No.) Are such matrices a rare occurrence? (No.)
+    As we proceed through this chapter and the next,
+    we will see that there are many different conditions one can place on an <m>n\times n</m>
+    matrix that are equivalent to the statement <q>The matrix <m>A</m> is invertible.</q>
     Before we begin our attempt to answer this question in general, let's look at a particular example.
   </p>
 
   <example xml:id="ex_inverse_2">
     <title>A non-invertible matrix</title>
     <statement>
- 
+
       <p>
         Find the inverse of <m>\tta = \bbm 1\amp 2\\2\amp 4\ebm</m>.
       </p>
     </statement>
     <solution>
       <p>
-        By solving the equation <m>\tta\ttx = \tti</m> for <m>\ttx</m> will give us the inverse of <m>\tta</m>. 
-        Forming the appropriate augmented matrix and finding its reduced row echelon form gives us 
+        By solving the equation <m>\tta\ttx = \tti</m> for <m>\ttx</m> will give us the inverse of <m>\tta</m>.
+        Forming the appropriate augmented matrix and finding its reduced row echelon form gives us
         <me>
           \bbm 1 \amp 2 \amp 1\amp 0\\2\amp 4\amp 0\amp 1\ebm \quad \arref \quad \bbm 1\amp 2\amp 0\amp 1/2\\0\amp 0\amp 1\amp -1/2\ebm
         </me>
-        Yikes! We were expecting to find that the reduced row echelon form of this matrix would look like 
+        Yikes! We were expecting to find that the reduced row echelon form of this matrix would look like
         <me>
           \bbm\tti  \amp  \ttai\ebm
         </me>.
@@ -270,30 +270,30 @@
 
   <aside xml:id="footnote-special">
     <p>
-      <xref ref="ex_inverse_2"/> shows that not all square matrices (or even non-zero square matrices) are invertible, 
-      hence <xref ref="def-inverse"/> is necessary: why bother calling <m>\tta</m> <q>invertible</q> if every square matrix is? 
+      <xref ref="ex_inverse_2"/> shows that not all square matrices (or even non-zero square matrices) are invertible,
+      hence <xref ref="def-inverse"/> is necessary: why bother calling <m>\tta</m> <q>invertible</q> if every square matrix is?
       If everyone is special, then no one is. Then again, everyone <em>is</em> special.}
     </p>
-  </aside> 
+  </aside>
 
   <p>
-    We have just seen that not all matrices are invertible. 
-    The attentive reader might have been able to spot the source of the trouble in the previous example: 
-    notice that the second row of <m>A</m> is a multiple of the first, 
-    so that the row operation <m>R_2-2R_1\to R_2</m> created a row of zeros. 
-    Can you think what sort of condition would signal trouble for a general <m>n\times n</m> matrix? 
-    Here, we need to think back to our discussions of the various theoretical concepts we've encountered, 
+    We have just seen that not all matrices are invertible.
+    The attentive reader might have been able to spot the source of the trouble in the previous example:
+    notice that the second row of <m>A</m> is a multiple of the first,
+    so that the row operation <m>R_2-2R_1\to R_2</m> created a row of zeros.
+    Can you think what sort of condition would signal trouble for a general <m>n\times n</m> matrix?
+    Here, we need to think back to our discussions of the various theoretical concepts we've encountered,
     such as rank, span, linear independence, and so on. Let us think of the rows of <m>A</m> as row vectors.
   </p>
-  
+
   <p>
-    The elementary row operations that we perform on a matrix either rearrange these vectors, 
-    or create new vectors that are linear combinations of the old ones. 
-    The only way we end up with a row of zeros in the reduced row echelon form of <m>A</m> 
-    is if one of the rows of <m>A</m> can be written as a linear combination of the others; 
-    that is, if the rows of <m>A</m> are <em>linearly dependent</em>. 
-    We also know that if there is a row of zeros in the reduced row echelon form of <m>A</m>, 
-    then not every row contains a leading 1. 
+    The elementary row operations that we perform on a matrix either rearrange these vectors,
+    or create new vectors that are linear combinations of the old ones.
+    The only way we end up with a row of zeros in the reduced row echelon form of <m>A</m>
+    is if one of the rows of <m>A</m> can be written as a linear combination of the others;
+    that is, if the rows of <m>A</m> are <em>linearly dependent</em>.
+    We also know that if there is a row of zeros in the reduced row echelon form of <m>A</m>,
+    then not every row contains a leading 1.
     Recalling that the rank of <m>A</m> is equal to the number of leading 1s in the reduced row echelon form of <m>A</m>,
     we have the following:
   </p>
@@ -331,60 +331,62 @@
 
   <aside>
     <p>
-      Here's a useful exercise for the reader to consider: 
-      can you prove in general that for a <m>2\times 2</m> matrix <m>A</m>, 
-      if one row of <m>A</m> is a multiple of the other, then the same is true of the columns? 
-      (We can see that this is the case in <xref ref="ex_inverse_2"/>.) 
-      A fundamental theorem in linear algebra states that for a general <m>m\times n</m> matrix, 
-      the number of linearly independent rows is equal to the number of linearly independent columns. 
-      The proof of this fact is rather technical, so we have not included it in this book. 
-      However, the rough idea is to follow the leading 1s: in the reduced row echelon form of <m>A</m>, 
-      each leading 1 occupies both a row and a column, and the rows (or columns) 
+      Here's a useful exercise for the reader to consider:
+      can you prove in general that for a <m>2\times 2</m> matrix <m>A</m>,
+      if one row of <m>A</m> is a multiple of the other, then the same is true of the columns?
+      (We can see that this is the case in <xref ref="ex_inverse_2"/>.)
+      A fundamental theorem in linear algebra states that for a general <m>m\times n</m> matrix,
+      the number of linearly independent rows is equal to the number of linearly independent columns.
+    </p>
+    <p>
+      The proof of this fact is rather technical, so we have not included it in this book.
+      However, the rough idea is to follow the leading 1s: in the reduced row echelon form of <m>A</m>,
+      each leading 1 occupies both a row and a column, and the rows (or columns)
       that end up with leading 1s are the ones that are linearly independent.
     </p>
   </aside>
 
   <p>
-    The claim that <q>the following statements are equivalent</q> in <xref ref="thm-rank_and_inverse"/> 
-    means that as soon as we know that one of the statements on the list is true, 
-    we can immediately conclude that the others are true as well. This is also the case if we know one of the statements is false. 
-    For example, if we know that <m>\operatorname{rank}(A)\lt n</m>, 
-    then we can immediately conclude that <m>A</m> will not be invertible. 
+    The claim that <q>the following statements are equivalent</q> in <xref ref="thm-rank_and_inverse"/>
+    means that as soon as we know that one of the statements on the list is true,
+    we can immediately conclude that the others are true as well. This is also the case if we know one of the statements is false.
+    For example, if we know that <m>\operatorname{rank}(A)\lt n</m>,
+    then we can immediately conclude that <m>A</m> will not be invertible.
   </p>
 
   <p>
-    Let's sum up what we've learned so far. We've discovered that if a matrix has an inverse, it has only one. 
-    Therefore, we gave that special matrix a name, <q><em>the</em> inverse.</q> 
+    Let's sum up what we've learned so far. We've discovered that if a matrix has an inverse, it has only one.
+    Therefore, we gave that special matrix a name, <q><em>the</em> inverse.</q>
     Finally, we describe the most general way to find the inverse of a matrix, and a way to tell if it does not have one.
   </p>
 
   <insight xml:id="idea-finding_inverses">
-    <title>Finding \ttai</title>
+    <title>Finding <m>\ttai</m></title>
     <p>
       <idx><h>inverse</h><h>computing</h></idx>
       <idx><h>matrix</h><h>inverse</h></idx>
 
-      Let <m>\tta</m> be an <m>n \times n</m> matrix. To find <m>\ttai</m>, put the augmented matrix 
+      Let <m>\tta</m> be an <m>n \times n</m> matrix. To find <m>\ttai</m>, put the augmented matrix
       <me>
         \bbm \tta  \amp  \tti_n \ebm
       </me>
-      into reduced row echelon form. If the result is of the form 
+      into reduced row echelon form. If the result is of the form
       <me>
         \bbm I_n  \amp  \ttx \ebm,
       </me>
-      then <m>\ttai = \ttx</m>. If not, (that is, if the first <m>n</m> columns of the reduced row echelon form are not <m>\tti_n</m>), 
+      then <m>\ttai = \ttx</m>. If not, (that is, if the first <m>n</m> columns of the reduced row echelon form are not <m>\tti_n</m>),
       then <m>\tta</m> is not invertible.
     </p>
   </insight>
 
   <p>
-    Let's try again. 
+    Let's try again.
   </p>
 
   <example xml:id="ex_inverse_3">
     <title>Computing the inverse of a matrix</title>
     <statement>
- 
+
       <p>
         Find the inverse, if it exists, of <m>\tta = \bbm 1\amp 1\amp -1\\1\amp -1\amp 1\\1\amp 2\amp 3\ebm</m>.
       </p>
@@ -398,7 +400,7 @@
       </p>
 
       <p>
-        We have a solution, so 
+        We have a solution, so
         <me>
           \ttai = \bbm 1/2 \amp 1/2 \amp 0\\1/5\amp -2/5\amp 1/5\\-3/10\amp 1/10\amp 1/5\ebm
         </me>.
@@ -408,8 +410,8 @@
   </example>
 
   <p>
-    In general, given a matrix <m>\tta</m>, to find <m>\ttai</m> we need to form the augmented matrix 
-    <m>\bbm\tta\amp \tti \ebm</m> and put it into reduced row echelon form and interpret the result. 
+    In general, given a matrix <m>\tta</m>, to find <m>\ttai</m> we need to form the augmented matrix
+    <m>\bbm\tta\amp \tti \ebm</m> and put it into reduced row echelon form and interpret the result.
     In the case of a <m>2\times 2</m> matrix, though, there is a shortcut. We give the shortcut in terms of a theorem.
   </p>
 
@@ -417,7 +419,7 @@
     <title>The Inverse of a 2<m>\times</m>2 Matrix</title>
     <statement>
       <p>
-        Let 
+        Let
         <me>
           \tta = \bbm a \amp b\\c \amp d\ebm
         </me>.
@@ -425,7 +427,7 @@
       </p>
 
       <p>
-        If <m>ad-bc \neq 0</m>, then 
+        If <m>ad-bc \neq 0</m>, then
         <me>
           \ttai = \frac{1}{ad-bc}\bbm d \amp -b\\-c \amp a\ebm
         </me>.
@@ -434,7 +436,7 @@
   </theorem>
 
   <p>
-    We can't divide by 0, so if <m>ad-bc=0</m>, we don't have an inverse. Recall <xref ref="ex_inverse_2"/>, where 
+    We can't divide by 0, so if <m>ad-bc=0</m>, we don't have an inverse. Recall <xref ref="ex_inverse_2"/>, where
     <me>
       \tta = \bbm 1 \amp 2\\2 \amp 4\ebm
     </me>.
@@ -447,25 +449,25 @@
 
   <aside>
     <p>
-      We don't prove <xref ref="thm-2by2"/>here, but it really isn't hard to do. Put the matrix 
+      We don't prove <xref ref="thm-2by2"/>here, but it really isn't hard to do. Put the matrix
       <me>
         \bbm a \amp b \amp 1\amp 0\\c\amp d\amp 0\amp 1\ebm
       </me>
-      into reduced row echelon form and you'll discover the result of the theorem. 
-      Alternatively, multiply <m>\tta</m> by what we propose is the inverse and see that we indeed get <m>\tti</m>. 
-      It turns out that <xref ref="thm-2by2"/> is a special case of a general formula for the inverse of a matrix in terms of 
+      into reduced row echelon form and you'll discover the result of the theorem.
+      Alternatively, multiply <m>\tta</m> by what we propose is the inverse and see that we indeed get <m>\tti</m>.
+      It turns out that <xref ref="thm-2by2"/> is a special case of a general formula for the inverse of a matrix in terms of
       <em>determinants</em>. We will discuss determinants in the next chapter.
-      While useful in certain theoretical situations, the determinant formula for the inverse is only a shortcut in the <m>2\times 2</m> case. 
+      While useful in certain theoretical situations, the determinant formula for the inverse is only a shortcut in the <m>2\times 2</m> case.
       For larger matrices, the method given in this section is computationally much faster.
     </p>
-  </aside> 
+  </aside>
 
   <example xml:id="ex_inverse_4">
     <title>Computing a <m>2\times 2</m> inverse using <xref ref="thm-2by2"/></title>
     <statement>
- 
+
       <p>
-        Use <xref ref="thm-2by2"/> to find the inverse of 
+        Use <xref ref="thm-2by2"/> to find the inverse of
         <me>
           \tta = \bbm 3  \amp  2\\-1  \amp  9\ebm
         </me>
@@ -474,15 +476,15 @@
     </statement>
     <solution>
       <p>
-        Since <m>ad-bc = 29 \neq 0</m>, <m>\ttai</m> exists. By <xref ref="thm-2by2"/>, 
-        <md> 
+        Since <m>ad-bc = 29 \neq 0</m>, <m>\ttai</m> exists. By <xref ref="thm-2by2"/>,
+        <md>
           <mrow>\ttai \amp = \frac{1}{3(9)-2(-1)}\bbm 9\amp -2\\1\amp 3\ebm</mrow>
           <mrow>\amp = \frac{1}{29}\bbm 9\amp -2\\1\amp 3\ebm</mrow>
         </md>.
       </p>
 
       <p>
-        We can leave our answer in this form, or we could <q>simplify</q> it as 
+        We can leave our answer in this form, or we could <q>simplify</q> it as
         <me>
           \ttai = \frac{1}{29}\bbm 9 \amp -2\\1 \amp 3\ebm = \bbm 9/29 \amp  -2/29\\1/29 \amp  3/29\ebm
         </me>.
@@ -491,11 +493,11 @@
   </example>
 
   <p>
-    We started this section out by speculating that just as we solved algebraic equations of the form 
-    <m>ax=b</m> by computing <m>x = a^{-1}b</m>, 
-    we might be able to solve matrix equations of the form <m>\ttaxb</m> by computing <m>\vx = \ttai\vb</m>. 
+    We started this section out by speculating that just as we solved algebraic equations of the form
+    <m>ax=b</m> by computing <m>x = a^{-1}b</m>,
+    we might be able to solve matrix equations of the form <m>\ttaxb</m> by computing <m>\vx = \ttai\vb</m>.
     If <m>\ttai</m> does exist, then we <em>can</em> solve the equation <m>\ttaxb</m> this way. Consider:
-    <md> 
+    <md>
       <mrow>\tta \vx \amp = \vb \amp  \amp  \text{ (original equation)}</mrow>
       <mrow>\ttai\tta\vx \amp = \ttai\vb \amp  \amp \text{ (multiply both sides on the left by } \ttai)</mrow>
       <mrow>\tti\vx \amp = \ttai\vb \amp  \amp \text{ (since } \ttai\tta=\tti)</mrow>
@@ -504,18 +506,18 @@
   </p>
 
   <p>
-    Let's step back and think about this for a moment. 
-    The only thing we know about the equation <m>\ttaxb</m> is that <m>\tta</m> is invertible. 
-    We also know that solutions to <m>\ttaxb</m> come in three forms: 
-    exactly one solution, infinitely many solutions, and no solution. 
-    We just showed that if <m>\tta</m> is invertible, then <m>\ttaxb</m> has <em>at least</em> one solution. 
+    Let's step back and think about this for a moment.
+    The only thing we know about the equation <m>\ttaxb</m> is that <m>\tta</m> is invertible.
+    We also know that solutions to <m>\ttaxb</m> come in three forms:
+    exactly one solution, infinitely many solutions, and no solution.
+    We just showed that if <m>\tta</m> is invertible, then <m>\ttaxb</m> has <em>at least</em> one solution.
     We showed that by setting <m>\vx</m> equal to  \ttai\vb, we have a solution. Is it possible that more solutions exist?
   </p>
 
   <p>
-    No. Suppose we are told that a known vector <m>\vvv</m> is a solution to the equation <m>\ttaxb</m>; 
+    No. Suppose we are told that a known vector <m>\vvv</m> is a solution to the equation <m>\ttaxb</m>;
     that is, we know that <m>\tta\vvv=\vb</m>. We can repeat the above steps:
-    <md> 
+    <md>
       <mrow>\tta\vvv \amp =\vb</mrow>
       <mrow>\ttai\tta\vvv  \amp =\ttai\vb </mrow>
       <mrow>\tti\vvv  \amp = \ttai\vb </mrow>
@@ -524,18 +526,18 @@
   </p>
 
   <p>
-    This shows that <em>all</em> solutions to <m>\ttaxb</m> are exactly <m>\vx = \ttai\vb</m> when <m>\tta</m> is invertible. 
+    This shows that <em>all</em> solutions to <m>\ttaxb</m> are exactly <m>\vx = \ttai\vb</m> when <m>\tta</m> is invertible.
     We have just proved the following theorem.
   </p>
 
   <theorem xml:id="thm-inverse_solution">
-    <title>Invertible Matrices and Solutions to \ttaxb</title>
+    <title>Invertible Matrices and Solutions to <m>\ttaxb</m></title>
     <statement>
       <p>
         <idx><h>solution</h><h>unique</h></idx>
-  
-        Let <m>\tta</m> be an invertible <m>n\times n</m> matrix, and let  be any <m>n\times 1</m> column vector. 
-        Then the equation <m>\ttaxb</m> has exactly one solution, namely 
+
+        Let <m>\tta</m> be an invertible <m>n\times n</m> matrix, and let  be any <m>n\times 1</m> column vector.
+        Then the equation <m>\ttaxb</m> has exactly one solution, namely
         <me>
           \vx = \ttai\vb
         </me>.
@@ -545,27 +547,27 @@
 
   <aside>
     <p>
-      A <em>corollary</em>is an idea that follows directly from a theorem; 
+      A <em>corollary</em>is an idea that follows directly from a theorem;
       typically, all the hard work is done in proving the theorem, and any resulting corollaries are easy consequences.
     </p>
   </aside>
 
   <p>
-    A corollary to this theorem is: If <m>\tta</m> is not invertible, then <m>\ttaxb</m> does not have exactly one solution. 
-    It may have infinitely many solutions and it may have no solution, 
-    and we would need to examine the reduced row echelon form of the augmented matrix 
+    A corollary to this theorem is: If <m>\tta</m> is not invertible, then <m>\ttaxb</m> does not have exactly one solution.
+    It may have infinitely many solutions and it may have no solution,
+    and we would need to examine the reduced row echelon form of the augmented matrix
     <m>\bbm \tta \amp  \vb \ebm</m> to see which case applies.
   </p>
-  
+
   <p>
     We demonstrate our theorem with an example.
   </p>
 
   <aside>
     <p>
-      The method employed in <xref ref="ex_inverse_solution_1"/> is useful in theory, but not in practice: 
-      the amount of work required to solve a system this way is significantly greater than the amount of work involved in Gaussian Elimination. 
-      The only scenario where you should consider using the inverse to solve a system (aside from being asked to do so on a test!) 
+      The method employed in <xref ref="ex_inverse_solution_1"/> is useful in theory, but not in practice:
+      the amount of work required to solve a system this way is significantly greater than the amount of work involved in Gaussian Elimination.
+      The only scenario where you should consider using the inverse to solve a system (aside from being asked to do so on a test!)
       is when there are <em>several</em> systems you need to solve that all have the same coefficient matrix.
     </p>
   </aside>
@@ -573,71 +575,71 @@
   <example xml:id="ex_inverse_solution_1">
     <title>Using a matrix inverse to solve a system</title>
     <statement>
-  
+
       <p>
-        Solve <m>\ttaxb</m> by computing <m>\vx = \ttai\vb</m>, where 
+        Solve <m>\ttaxb</m> by computing <m>\vx = \ttai\vb</m>, where
         <me>
-        \tta = \bmx 1\amp 0\amp -3\\  -3\amp -4\amp 10
-        \\  4\amp -5\amp -11\ebm\ \text{ and }\ \vb = \bmx -15\\   57 \\  -46\ebm
+        \tta = \bbm 1\amp 0\amp -3\\  -3\amp -4\amp 10
+        \\  4\amp -5\amp -11\ebm\ \text{ and }\ \vb = \bbm -15\\   57 \\  -46\ebm
         </me>.
       </p>
     </statement>
     <solution>
       <p>
-        Without showing our steps, we compute 
+        Without showing our steps, we compute
         <me>
-        \ttai = \bmx 94\amp 15\amp -12\\  
-                      7\amp 1\amp -1\\  
+        \ttai = \bbm 94\amp 15\amp -12\\
+                      7\amp 1\amp -1\\
                     31\amp 5\amp -4\ebm
         </me>.
-        We then find the solution to <m>\ttaxb</m> by computing <m>\ttai\vb</m>: 
-        <md> 
+        We then find the solution to <m>\ttaxb</m> by computing <m>\ttai\vb</m>:
+        <md>
           <mrow>\vx \amp =\ttai\vb</mrow>
-          <mrow> \amp = \bmx 94 \amp 15\amp -12\\
+          <mrow> \amp = \bbm 94 \amp 15\amp -12\\
                               7\amp 1\amp -1\\
-                              31\amp 5\amp -4\ebm \bmx -15\\   57 \\  -46\ebm </mrow>
-          <mrow> \amp = \bmx -3   -2\\    4\ebm</mrow>
+                              31\amp 5\amp -4\ebm \bbm -15\\   57 \\  -46\ebm </mrow>
+          <mrow> \amp = \bbm -3   -2\\    4\ebm</mrow>
         </md>.
       </p>
 
       <p>
-        We can easily check our answer: 
+        We can easily check our answer:
         <me>
-        \bmx 1\amp 0\amp -3\\  -3\amp -4\amp 10
-        \\  4\amp -5\amp -11\ebm\bmx -3\\   -2\\    4\ebm = \bmx -15\\   57 \\  -46\ebm
+        \bbm 1\amp 0\amp -3\\  -3\amp -4\amp 10
+        \\  4\amp -5\amp -11\ebm\bbm -3\\   -2\\    4\ebm = \bbm -15\\   57 \\  -46\ebm
         </me>.
       </p>
     </solution>
   </example>
 
   <p>
-    Knowing a matrix is invertible is incredibly useful. Among many other reasons, if you know <m>\tta</m> is invertible, 
-    then you know for sure that <m>\ttaxb</m> has a solution (as we just stated in <xref ref="thm-inverse_solution"/>). 
-    In the next section we'll demonstrate many different properties of invertible matrices, 
+    Knowing a matrix is invertible is incredibly useful. Among many other reasons, if you know <m>\tta</m> is invertible,
+    then you know for sure that <m>\ttaxb</m> has a solution (as we just stated in <xref ref="thm-inverse_solution"/>).
+    In the next section we'll demonstrate many different properties of invertible matrices,
     including stating several different ways in which we know that a matrix is invertible.
   </p>
 
   <aside>
     <p>
-      As odd as it may sound, <em>knowing</em> a matrix is invertible is useful; 
+      As odd as it may sound, <em>knowing</em> a matrix is invertible is useful;
       actually computing the inverse isn't. This is discussed at the end of the next section.
     </p>
-  </aside> 
+  </aside>
 
   <exercises>
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           A matrix <m>\tta</m> is given. Find <m>\ttai</m> using <xref ref="thm-2by2"/>, if it exists.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
             <m>\bbm 1\amp 5\\  -5\amp -24\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -650,7 +652,7 @@
         <statement>
           <p>
             <m>\bbm 1\amp -4\\  1\amp -3\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -663,7 +665,7 @@
         <statement>
           <p>
             <m>\bbm 3\amp 0\\  0\amp 7\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -676,7 +678,7 @@
         <statement>
           <p>
             <m>\bbm 2\amp 5\\  3\amp 4\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -688,7 +690,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 1 \amp -3\  -2 \amp 6\ebm</m> 
+            <m>\bbm 1 \amp -3\  -2 \amp 6\ebm</m>
           </p>
         </statement>
         <answer>
@@ -703,7 +705,7 @@
         <statement>
           <p>
             <m>\bbm 3\amp 7\\  2\amp 4\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -716,7 +718,7 @@
         <statement>
           <p>
             <m>\bbm 1\amp 0\\  0\amp 1\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -729,7 +731,7 @@
         <statement>
           <p>
             <m>\bbm 0\amp 1\\  1\amp 0\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -737,22 +739,22 @@
           </p>
         </solution>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercisegroup>
-    
+
       <introduction>
         <p>
           A matrix <m>\tta</m> is given. Find <m>\ttai</m> using <xref ref="idea-finding_inverses"/>, if it exists.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
             <m>\bbm -2\amp 3\\  1\amp 5\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -765,7 +767,7 @@
         <statement>
           <p>
             <m>\bbm -5\amp -2\\  9\amp 2\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -778,7 +780,7 @@
         <statement>
           <p>
             <m>\bbm 1\amp 2\\  3\amp 4\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -790,7 +792,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 5 \amp 7\  5/3 \amp  7/3\ebm</m> 
+            <m>\bbm 5 \amp 7\  5/3 \amp  7/3\ebm</m>
           </p>
         </statement>
         <answer>
@@ -804,7 +806,7 @@
         <statement>
           <p>
             <m>\bbm 25\amp -10\amp -4\\  -18\amp 7\amp 3\\  -6\amp 2\amp 1\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -812,12 +814,12 @@
           </p>
         </solution>
       </exercise>
-          
+
       <exercise>
         <statement>
           <p>
             <m>\bbm 1\amp 0\amp 0\\  4\amp 1\amp -7\\  20\amp 7\amp -48\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -830,7 +832,7 @@
         <statement>
           <p>
             <m>\bbm -4\amp 1\amp 5\\  -5\amp 1\amp 9\\  -10\amp 2\amp 19\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -843,7 +845,7 @@
         <statement>
           <p>
             <m>\bbm 1\amp -5\amp 0\\  -2\amp 15\amp 4\\  4\amp -19\amp 1\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -856,7 +858,7 @@
         <statement>
           <p>
             <m>\bbm 25\amp -8\amp 0\\  -78\amp 25\amp 0\\  48\amp -15\amp 1\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -869,7 +871,7 @@
         <statement>
           <p>
             <m>\bbm 1\amp 0\amp 0\\  7\amp 5\amp 8\\  -2\amp -2\amp -3\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -882,7 +884,7 @@
         <statement>
           <p>
             <m>\bbm 0\amp 0\amp 1\\  1\amp 0\amp 0\\  0\amp 1\amp 0\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -895,7 +897,7 @@
         <statement>
           <p>
             <m>\bbm 0\amp 1\amp 0\\  1\amp 0\amp 0\\  0\amp 0\amp 1\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -907,7 +909,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 2 \amp 3 \amp 4\  -3\amp 6\amp 9\\  -1\amp 9\amp 13\ebm</m> 
+            <m>\bbm 2 \amp 3 \amp 4\  -3\amp 6\amp 9\\  -1\amp 9\amp 13\ebm</m>
           </p>
         </statement>
         <answer>
@@ -920,7 +922,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 5 \amp -1 \amp 0\  7\amp 7\amp 1\\  -2\amp -8\amp -1\ebm</m> 
+            <m>\bbm 5 \amp -1 \amp 0\  7\amp 7\amp 1\\  -2\amp -8\amp -1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -934,7 +936,7 @@
         <statement>
           <p>
             <m> \bbm 1\amp 0\amp 0\amp 0\\  -19\amp -9\amp 0\amp 4\\  33\amp 4\amp 1\amp -7\\  4\amp 2\amp 0\amp -1\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -947,7 +949,7 @@
         <statement>
           <p>
             <m>\bbm 1\amp 0\amp 0\amp 0\\  27\amp 1\amp 0\amp 4\\  18\amp 0\amp 1\amp 4\\  4\amp 0\amp 0\amp 1\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -960,7 +962,7 @@
         <statement>
           <p>
             <m>\bbm -15\amp 45\amp -3\amp 4\\  55\amp -164\amp 15\amp -15\\  -215\amp 640\amp -62\amp 59\\  -4\amp 12\amp 0\amp 1\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -973,7 +975,7 @@
         <statement>
           <p>
             <m>\bbm 1\amp 0\amp 2\amp 8\\  0\amp 1\amp 0\amp 0\\  0\amp -4\amp -29\amp -110\\  0\amp -3\amp -5\amp -19\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -986,7 +988,7 @@
         <statement>
           <p>
             <m>\bbm 0\amp 0\amp 1\amp 0\\  0\amp 0\amp 0\amp 1\\  1\amp 0\amp 0\amp 0\\  0\amp 1\amp 0\amp 0\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -999,7 +1001,7 @@
         <statement>
           <p>
             <m>\bbm 1\amp 0\amp 0\amp 0\\  0\amp 2\amp 0\amp 0\\  0\amp 0\amp 3\amp 0\\  0\amp 0\amp 0\amp -4\ebm </m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -1010,18 +1012,18 @@
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           A matrix <m>\tta</m> and a vector  are given. Solve the equation <m>\ttaxb</m> using <xref ref="thm-inverse_solution"/>.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
             <m>\tta = \bbm 1\amp 2\amp 12\\  0\amp 1\amp 6\\  -3\amp 0\amp 1\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -1034,7 +1036,7 @@
         <statement>
           <p>
             <m>\tta = \bbm 1\amp 0\amp -3\\  8\amp -2\amp -13\\  12\amp -3\amp -20\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -1047,7 +1049,7 @@
         <statement>
           <p>
             <m>\tta = \bbm 5\amp 0\amp -2\\  -8\amp 1\amp 5\\  -2\amp 0\amp 1\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -1060,7 +1062,7 @@
         <statement>
           <p>
             <m>\tta = \bbm 1\amp -6\amp 0\\  0\amp 1\amp 0\\  2\amp -8\amp 1\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -1086,7 +1088,7 @@
         <statement>
           <p>
             <m>\tta = \bbm 1\amp -4\\  4\amp -15\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -1099,7 +1101,7 @@
         <statement>
           <p>
             <m>\tta = \bbm 9\amp 70\\  -4\amp -31\ebm</m>
-          </p> 
+          </p>
       </statement>
         <solution>
           <p>
@@ -1111,7 +1113,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 10 \amp -57\  3 \amp -17\ebm</m>, <m>\vb =\bbm -14\\  -4\ebm</m> 
+            <m>\tta = \bbm 10 \amp -57\  3 \amp -17\ebm</m>, <m>\vb =\bbm -14\\  -4\ebm</m>
           </p>
         </statement>
         <answer>

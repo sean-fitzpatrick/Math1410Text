@@ -3,8 +3,8 @@
   <title>Using Matrices To Solve Systems of Linear Equations</title>
 
   <p>
-    In <xref ref="sec-intro"/> we solved a linear system using familiar techniques. 
-    Later, we commented that in the linear equations we formed, the most important information was the coefficients and the constants; 
+    In <xref ref="sec-intro"/> we solved a linear system using familiar techniques.
+    Later, we commented that in the linear equations we formed, the most important information was the coefficients and the constants;
     the names of the variables really didn't matter. In <xref ref="ex_by_hand"/> we had the following three equations:
     <md>
       <mrow>r+b+g\amp =30</mrow>
@@ -14,7 +14,7 @@
   </p>
 
   <p>
-    Let's rewrite these equations so that all variables are on the left of the equal sign and all constants are on the right. 
+    Let's rewrite these equations so that all variables are on the left of the equal sign and all constants are on the right.
     Also, for a bit more consistency, let's list the variables in alphabetical order in each equation. Therefore we can write the equations as
     <men xml:id="eq-before_matrix">
       \begin{array}{ccccccc}
@@ -26,8 +26,8 @@
   </p>
 
   <p>
-    As we mentioned before, there isn't just one <q>right</q> way of finding the solution to this system of equations. 
-    Here is another way to do it, a way that is a bit different from our method in <xref ref="sec-intro"/>. 
+    As we mentioned before, there isn't just one <q>right</q> way of finding the solution to this system of equations.
+    Here is another way to do it, a way that is a bit different from our method in <xref ref="sec-intro"/>.
   </p>
 
   <p>
@@ -38,13 +38,13 @@
       b\amp +\amp g\amp +\amp r\amp =\amp 30\\
          \amp -  \amp 2g\amp +\amp r\amp =\amp 0\\
         \amp  \amp 2g\amp +\amp 2r\amp =\amp 30
-      \end{array}      
+      \end{array}
     </me>.
     A nice feature of this is that the only equation with a <m>b</m> in it is the first equation.
   </p>
 
   <p>
-    Now let's multiply the second equation by <m>-\frac12</m>. This gives 
+    Now let's multiply the second equation by <m>-\frac12</m>. This gives
     <me>
       \begin{array}{ccccccc}
       b\amp +\amp g\amp +\amp r\amp =\amp 30\\
@@ -56,20 +56,20 @@
 
   <aside>
     <p>
-      <alert>Note:</alert> when we multiplied the second equation by <m>-\frac{1}{2}</m> in our third step, 
-      we were proceeding according to a well-known algorithm (which we will soon explain) 
-      that is especially efficient when implemented on a computer. We should point out, however, 
-      that since humans tend to be less happy about working with fractions than computers, 
-      we might reasonably decide that our third step should be to first add the second equation to the third, 
+      <alert>Note:</alert> when we multiplied the second equation by <m>-\frac{1}{2}</m> in our third step,
+      we were proceeding according to a well-known algorithm (which we will soon explain)
+      that is especially efficient when implemented on a computer. We should point out, however,
+      that since humans tend to be less happy about working with fractions than computers,
+      we might reasonably decide that our third step should be to first add the second equation to the third,
       so that the <m>2g</m> in the third equation is cancelled by the <m>-2g</m> in the second.
     </p>
   </aside>
 
   <p>
-    Let's now do two steps in a row; our goal is to get rid of the <m>g</m>'s in the first and third equations. 
-    In order to remove the <m>g</m> in the first equation, let's multiply the second equation by <m>-1</m> 
-    and add that to the first equation, replacing the first equation with that sum. To remove the <m>g</m> in the third equation, 
-    let's multiply the second equation by <m>-2</m> and add that to the third equation, replacing the third equation. 
+    Let's now do two steps in a row; our goal is to get rid of the <m>g</m>'s in the first and third equations.
+    In order to remove the <m>g</m> in the first equation, let's multiply the second equation by <m>-1</m>
+    and add that to the first equation, replacing the first equation with that sum. To remove the <m>g</m> in the third equation,
+    let's multiply the second equation by <m>-2</m> and add that to the third equation, replacing the third equation.
     Our new system of equations now becomes
     <me>
       \begin{array}{ccccccc}
@@ -92,32 +92,32 @@
   </p>
 
   <p>
-    Now let's get rid of the <m>r</m>'s in the first and second equation. 
-    To remove the <m>r</m> in the first equation, let's multiply the third equation by <m>-\frac32</m> 
-    and add the result to the first equation, replacing the first equation with that sum. 
-    To remove the <m>r</m> in the second equation, we can multiply the third equation by <m>\frac12</m> 
+    Now let's get rid of the <m>r</m>'s in the first and second equation.
+    To remove the <m>r</m> in the first equation, let's multiply the third equation by <m>-\frac32</m>
+    and add the result to the first equation, replacing the first equation with that sum.
+    To remove the <m>r</m> in the second equation, we can multiply the third equation by <m>\frac12</m>
     and add that to the second equation, replacing the second equation with that sum. This gives us:
     <me>
       \begin{array}{ccccccc}
       b \amp  \amp  \amp  \amp \amp =\amp 15\\
          \amp    \amp g \amp  \amp \amp =\amp 5\\
         \amp   \amp  \amp \amp r\amp =\amp 10
-      \end{array}      
+      \end{array}
     </me>.
-    Clearly we have discovered the same result as when we solved this problem in <xref ref="sec-intro"/>. 
+    Clearly we have discovered the same result as when we solved this problem in <xref ref="sec-intro"/>.
   </p>
 
   <p>
-    Now again revisit the idea that all that really matters are the coefficients and the constants. 
-    There is nothing special about the letters <m>b</m>, <m>g</m> and <m>r</m>; we could have used <m>x</m>, 
-    <m>y</m> and <m>z</m> or <m>x_1</m>, <m>x_2</m> and <m>x_3</m>. And even then, since we wrote our equations so carefully, 
+    Now again revisit the idea that all that really matters are the coefficients and the constants.
+    There is nothing special about the letters <m>b</m>, <m>g</m> and <m>r</m>; we could have used <m>x</m>,
+    <m>y</m> and <m>z</m> or <m>x_1</m>, <m>x_2</m> and <m>x_3</m>. And even then, since we wrote our equations so carefully,
     we really didn't need to write the variable names at all as long as we put things <q>in the right place.</q>
   </p>
 
 
   <p>
-    Let's look again at our system of equations in <xref ref="eq-before_matrix" text="local">Equation</xref> 
-    and write the coefficients and the constants in a rectangular array. 
+    Let's look again at our system of equations in <xref ref="eq-before_matrix" text="local">Equation</xref>
+    and write the coefficients and the constants in a rectangular array.
     This time we won't ignore the zeros, but rather write them out.
     <me>
       \begin{array}{ccccccc}
@@ -135,24 +135,24 @@
   </p>
 
   <p>
-    The mathematical object we have created on the right is called a <term> matrix</term>. 
-    We will give a formal mathematical definition in <xref ref="chapter-algebra"/>, 
-    where we will see that matrices are interesting objects in their own right, with numerous interesting properties and applications.  
-    For now we can think of a matrix simply as a rectangular table of numbers that allows us to keep track of certain information; 
-    namely, the constants that define our system of linear equations. Note that each row in our matrix represents one of the equations, 
-    while each column (except for the last) represents a variable.  We will often want to distinguish between the 
-    <term>coefficient matrix</term><idx><h>matrix </h><h> of coefficients</h></idx> of a system; that is, 
-    the matrix containing the coefficients (the numbers in front of the variables) of a system of linear equations, 
-    and the matrix that also includes the column of constants, as above. When we include the constants, 
+    The mathematical object we have created on the right is called a <term> matrix</term>.
+    We will give a formal mathematical definition in <xref ref="chapter-algebra"/>,
+    where we will see that matrices are interesting objects in their own right, with numerous interesting properties and applications.
+    For now we can think of a matrix simply as a rectangular table of numbers that allows us to keep track of certain information;
+    namely, the constants that define our system of linear equations. Note that each row in our matrix represents one of the equations,
+    while each column (except for the last) represents a variable.  We will often want to distinguish between the
+    <term>coefficient matrix</term><idx><h>matrix </h><h> of coefficients</h></idx> of a system; that is,
+    the matrix containing the coefficients (the numbers in front of the variables) of a system of linear equations,
+    and the matrix that also includes the column of constants, as above. When we include the constants,
     we refer to the resulting matrix as an <em>augmented matrix</em>.
     <idx><h>augmented matrix</h></idx>
     <idx><h>matrix</h><h>augmented</h></idx>
   </p>
 
   <p>
-    It is common (but not mandatory) to place a vertical line separating the final column of an augmented matrix 
-    (containing the constants) from the other columns (containing the coefficients). 
-    One advantage of doing so is that we can quickly recognize that we're dealing with an augmented matrix rather than a coefficient matrix. 
+    It is common (but not mandatory) to place a vertical line separating the final column of an augmented matrix
+    (containing the constants) from the other columns (containing the coefficients).
+    One advantage of doing so is that we can quickly recognize that we're dealing with an augmented matrix rather than a coefficient matrix.
     For example, the augmented matrix for the system <xref ref="eq-before_matrix" text="local">Equation</xref> would be written as seen below on the right:
   </p>
 
@@ -179,34 +179,34 @@
       </tabular>
     </sidebyside>
   </figure>
-  
+
   <p>
-    We can use augmented matrices to find solutions to linear equations by using essentially the same steps we used above. 
-    Every time we used the word <q>equation</q> above, substitute the word <q>row,</q> as we show below. 
-    The comments explain how we get from the current set of equations (or matrix) to the one on the next line. 
+    We can use augmented matrices to find solutions to linear equations by using essentially the same steps we used above.
+    Every time we used the word <q>equation</q> above, substitute the word <q>row,</q> as we show below.
+    The comments explain how we get from the current set of equations (or matrix) to the one on the next line.
   </p>
 
   <p>
-    Let us look back at the steps we used to solve the system of equations at the beginning of this section. 
-    Clearly, the order in which we right down our equations does not affect the solution; 
-    in terms of our matrix, this means we can rearrange the rows as we please. 
+    Let us look back at the steps we used to solve the system of equations at the beginning of this section.
+    Clearly, the order in which we right down our equations does not affect the solution;
+    in terms of our matrix, this means we can rearrange the rows as we please.
     Note, however, that we <em>cannot</em> rearrange the columns. To do so would mix up our variables, causing us to lose track of our system.
   </p>
 
   <p>
-    In addition to changing the order of our equations, we also saw that we can multiply both sides of any equation by a constant, 
-    and we can add a multiple of one equation to another. These three manipulations are known as the 
-    <term>elementary operations</term> used to solve a system of linear equations. 
+    In addition to changing the order of our equations, we also saw that we can multiply both sides of any equation by a constant,
+    and we can add a multiple of one equation to another. These three manipulations are known as the
+    <term>elementary operations</term> used to solve a system of linear equations.
     We will see that with these three elementary operations, we can determine the solution (if any) to any linear system.
     <idx><h>elementary operation</h></idx>
   </p>
 
   <p>
-    Each of these elementary operations corresponds to an operation performed on the corresponding augmented matrix known as an 
-    <term>elementary row operation</term>. 
-    We use a shorthand notation to describe these matrix operations; 
-    let <m>R_1</m>, <m>R_2</m> represent <q>row 1</q> and <q>row 2,</q> respectively. 
-    We can write <q>add row 1 to row 3, and replace row 3 with that sum</q> as <q><m>R_1+R_3\to R_3</m>.</q> 
+    Each of these elementary operations corresponds to an operation performed on the corresponding augmented matrix known as an
+    <term>elementary row operation</term>.
+    We use a shorthand notation to describe these matrix operations;
+    let <m>R_1</m>, <m>R_2</m> represent <q>row 1</q> and <q>row 2,</q> respectively.
+    We can write <q>add row 1 to row 3, and replace row 3 with that sum</q> as <q><m>R_1+R_3\to R_3</m>.</q>
     The expression <q><m>R_1 \leftrightarrow R_2</m></q> means <q>interchange row 1 and row 2.</q>
     <idx><h>elementary row operation</h></idx>
   </p>
@@ -218,57 +218,67 @@
             \amp -  \amp 2g\amp +\amp r\amp =\amp 0\\
         -b\amp +\amp g\amp +\amp r\amp =\amp 0
         \end{array}
-        \amp \left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 30\\ 0\amp -2\amp 1\amp 0\\-1\amp 1\amp 1\amp 0\end{array}\right]</mrow>
-      <mrow>\begin{matrix}\text{Replace equation 3 with the}\\ \text{sum of equations 1 and 3}\end{matrix}
-        \amp \begin{matrix}\text{Replace row 3 with the}\\ \text{sum of rows 1 and 3.}\\ (R_1+R_3\to R_3)\end{matrix}</mrow>
-      <mrow> \begin{array}{ccccccc}
+        \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 30\\ 0\amp -2\amp 1\amp 0\\-1\amp 1\amp 1\amp 0\end{array}\right]</mrow>
+      <mrow> \amp </mrow>
+      <mrow>\scriptstyle{\begin{matrix}\text{Replace equation 3 with the}\\ \text{sum of equations 1 and 3}\end{matrix}}
+        \amp \quad \amp \quad \amp \scriptstyle{\begin{matrix}\text{Replace row 3 with the}\\ \text{sum of rows 1 and 3.}\\ (R_1+R_3\to R_3)\end{matrix}}</mrow>
+      <mrow> \amp </mrow>
+      <mrow>\displaystyle \begin{array}{ccccccc}
         b\amp +\amp g\amp +\amp r\amp =\amp 30\\
           \amp -  \amp 2g\amp +\amp r\amp =\amp 0\\
           \amp  \amp 2g\amp +\amp 2r\amp =\amp 30
         \end{array}
-        \amp \left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 30\\ 0\amp -2\amp 1\amp 0\\0\amp 2\amp 2\amp 30\end{array}\right]</mrow>
-      <mrow>\text{Multiply equation 2 by } -\frac12 
-        \amp \begin{matrix}\text{Multiply row 2 by } -\frac12\\ (-\frac12R_2\to R_2)\end{matrix}</mrow> 
-      <mrow>\begin{array}{ccccccc}
+        \amp \quad \amp \quad \amp\left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 30\\ 0\amp -2\amp 1\amp 0\\0\amp 2\amp 2\amp 30\end{array}\right]</mrow>
+      <mrow> \amp </mrow>
+      <mrow>\text{Multiply equation 2 by } -\frac12
+        \amp \quad \amp \quad \amp \scriptstyle{\begin{matrix}\text{Multiply row 2 by } -\frac12\\ (-\frac12R_2\to R_2)\end{matrix}}</mrow>
+      <mrow> \amp </mrow>
+      <mrow>\displaystyle\begin{array}{ccccccc}
         b\amp +\amp g\amp +\amp r\amp =\amp 30\\
             \amp   \amp g\amp +\amp -1/2r\amp =\amp 0\\
           \amp  \amp 2g\amp +\amp 2r\amp =\amp 30
         \end{array}
-          \amp \left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 30\\ 0\amp 1\amp -\frac12\amp 0\\0\amp 2\amp 2\amp 30\end{array}\right]</mrow>
-      <mrow>\begin{matrix}\text{Replace equation 1 with the}\\ \text{sum of } -1 \text{ times equation } 2 \\ \text{plus equation 1;}\\
-          \text{Replace equation 3 with the}\\ \text{ sum of } -2 \text{ times equation } 2\\ \text{plus equation 3}\end{matrix} 
-          \amp \begin{matrix}\text{Replace row 1 with the sum of}\\ -1 \text{ times row 2 plus row 1}\\(-R_2+R_1\rightarrow R_1)\\
-          \text{Replace row 3 with the sum of}\\ -2 \text{ times row 2 plus row 3}\\(-2R_2+R_3\rightarrow R_3)\end{matrix}</mrow>
-      <mrow>\begin{array}{ccccccc}
+          \amp \quad \amp \quad \amp\left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 30\\ 0\amp 1\amp -\frac12\amp 0\\0\amp 2\amp 2\amp 30\end{array}\right]</mrow>
+      <mrow> \amp </mrow>
+      <mrow>\scriptstyle{\begin{matrix}\text{Replace equation 1 with the}\\ \text{sum of } -1 \text{ times equation } 2 \\ \text{plus equation 1;}\\
+          \text{Replace equation 3 with the}\\ \text{ sum of } -2 \text{ times equation } 2\\ \text{plus equation 3}\end{matrix}}
+          \amp \quad \amp \quad \amp \scriptstyle{\begin{matrix}\text{Replace row 1 with the sum of}\\ -1 \text{ times row 2 plus row 1}\\(-R_2+R_1\rightarrow R_1)\\
+          \text{Replace row 3 with the sum of}\\ -2 \text{ times row 2 plus row 3}\\(-2R_2+R_3\rightarrow R_3)\end{matrix}}</mrow>
+      <mrow> \amp </mrow>
+      <mrow>\displaystyle\begin{array}{ccccccc}
         b\amp + \amp  \amp \amp 3/2r\amp =\amp 30\\
           \amp    \amp g\amp -\amp 1/2r\amp =\amp 0\\
           \amp   \amp  \amp \amp 3r\amp =\amp 30
         \end{array}
-          \amp \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp 30\\0\amp 1\amp -\frac12\amp 0\\0\amp 0\amp 3\amp 30\end{array}\right]</mrow>
-      <mrow> \text{Multiply equation 3 by } \frac13\amp \begin{matrix}\text{Multiply row 3 by } \frac13\\(\frac13R_3\rightarrow R_3)\end{matrix}</mrow>
-      <mrow>\begin{array}{ccccccc}
+          \amp \quad \amp \quad \amp\left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp 30\\0\amp 1\amp -\frac12\amp 0\\0\amp 0\amp 3\amp 30\end{array}\right]</mrow>
+      <mrow> \amp </mrow>
+      <mrow> \text{Multiply equation 3 by } \frac13 \amp \quad \amp \quad \amp \scriptstyle{\begin{matrix}\text{Multiply row 3 by } \frac13\\(\frac13R_3\rightarrow R_3)\end{matrix}}</mrow>
+      <mrow> \amp </mrow>
+      <mrow>\displaystyle\begin{array}{ccccccc}
         b\amp + \amp  \amp \amp 3/2r\amp =\amp 30\\
           \amp    \amp g\amp -\amp 1/2r\amp =\amp 0\\
           \amp   \amp  \amp \amp r\amp =\amp 10
         \end{array}
-          \amp \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp 30\\0\amp 1\amp -\frac12\amp 0\\0\amp 0\amp 1\amp 10\end{array}\right]</mrow>
-      <mrow>\begin{matrix}\text{Replace equation 2 with the}\\ \text{sum of } \frac12 \text{ times equation 3}\\ \text{plus equation 2;}\\
-        \text{Replace equation 1 with the}\\ \text{sum of } -\frac32 \text{ times equation 3}\\ \text{plus equation 1}\end{matrix} 
-        \amp \begin{matrix}\text{Replace row 2 with the sum}\\ \text{of } \frac12 \text{ times row 3 plus row 2}\\(\frac12R_3+R_2\rightarrow R_2)\\
-        \text{Replace row 1 with the sum}\\ \text{of } -\frac32 \text{ times row 3 plus row 1}\\(-\frac32R_3+R_1\rightarrow R_1)\end{matrix}</mrow>
-      <mrow>\begin{array}{ccccccc}
+          \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp 30\\0\amp 1\amp -\frac12\amp 0\\0\amp 0\amp 1\amp 10\end{array}\right]</mrow>
+      <mrow> \amp </mrow>
+      <mrow>\scriptstyle{\begin{matrix}\text{Replace equation 2 with the}\\ \text{sum of } \frac12 \text{ times equation 3}\\ \text{plus equation 2;}\\
+        \text{Replace equation 1 with the}\\ \text{sum of } -\frac32 \text{ times equation 3}\\ \text{plus equation 1}\end{matrix}}
+        \amp \quad \amp \quad \amp \scriptstyle{\begin{matrix}\text{Replace row 2 with the sum}\\ \text{of } \frac12 \text{ times row 3 plus row 2}\\(\frac12R_3+R_2\rightarrow R_2)\\
+        \text{Replace row 1 with the sum}\\ \text{of } -\frac32 \text{ times row 3 plus row 1}\\(-\frac32R_3+R_1\rightarrow R_1)\end{matrix}}</mrow>
+      <mrow> \amp </mrow>
+      <mrow>\displaystyle\begin{array}{ccccccc}
         b \amp  \amp  \amp  \amp \amp =\amp 15\\
           \amp    \amp g \amp  \amp \amp =\amp 5\\
           \amp   \amp  \amp \amp r\amp =\amp 10
-        \end{array} \amp \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 15\\0\amp 1\amp 0\amp 5\\0\amp 0\amp 1\amp 10\end{array}\right]</mrow>
+        \end{array} \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 15\\0\amp 1\amp 0\amp 5\\0\amp 0\amp 1\amp 10\end{array}\right]</mrow>
     </md>
   </p>
 
 
   <p>
-    The final matrix contains the same solution information as we have on the left in the form of equations. 
-    Recall that the first column of our matrices held the coefficients of the <m>b</m> variable; 
-    the second and third columns held the coefficients of the <m>g</m> and <m>r</m> variables, respectively. 
+    The final matrix contains the same solution information as we have on the left in the form of equations.
+    Recall that the first column of our matrices held the coefficients of the <m>b</m> variable;
+    the second and third columns held the coefficients of the <m>g</m> and <m>r</m> variables, respectively.
     Therefore, the first row of the matrix can be interpreted as <q><m>b+0g+0r=15</m>,</q> or more concisely, <q><m>b=15</m>.</q>
   </p>
 
@@ -279,7 +289,7 @@
   <example xml:id="ex_eq_mat">
     <title>Solving a system using augmented matrices</title>
     <statement>
-  
+
       <p>
         Find a solution to the following system of linear equations by simultaneously manipulating the equations and the corresponding augmented matrices.
         <me>
@@ -293,10 +303,10 @@
     </statement>
     <solution>
       <p>
-        We'll first convert this system of equations into a matrix, 
-        then we'll proceed by manipulating the system of equations (and hence the matrix) to find a solution. 
-        Again, there is not just one <q>right</q> way of proceeding; we'll choose a method that is pretty efficient, 
-        but other methods certainly exist (and may be <q>better</q>!). 
+        We'll first convert this system of equations into a matrix,
+        then we'll proceed by manipulating the system of equations (and hence the matrix) to find a solution.
+        Again, there is not just one <q>right</q> way of proceeding; we'll choose a method that is pretty efficient,
+        but other methods certainly exist (and may be <q>better</q>!).
         The method use here, though, is a good one, and it is the method that we will be learning in the future.
       </p>
 
@@ -306,12 +316,12 @@
 
       <p>
         <md>
-          <mrow>\text{Original system of equations} \amp \text{Corresponding matrix}</mrow>
+          <mrow>\text{Original system of equations} \amp \quad \amp \quad \amp \text{Corresponding matrix}</mrow>
           <mrow>\begin{array}{ccccccc}
             x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
             2x_1\amp +\amp 2x_2\amp +\amp x_3\amp =\amp 0\\
             -1x_1\amp +\amp x_2\amp -\amp 2x_3\amp =\amp 2
-            \end{array} \amp \left[\begin{array}{ccc|c}
+            \end{array} \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}
             1\amp 1\amp 1\amp 0\\ 2\amp 2\amp 1\amp 0\\ -1\amp 1\amp -2\amp 2\\
             \end{array}\right]</mrow>
         </md>
@@ -323,73 +333,80 @@
 
       <p>
         <md>
-          <mrow>\begin{matrix}\text{Replace equation 2 with the}\\ \text{sum of} -2 \text{ times equation 1}\\ \text{plus equation 2;}\\
-             \text{Replace equation 3 with}\\ \text{the sum of equation 1}\\ \text{ and equation 3}\end{matrix}
-             \amp \begin{matrix}\text{Replace row 2 with the sum of}\\ -2 \text{ times row 1 plus row 2}\\(-2R_1+R_2\rightarrow R_2)\\
-            \text{Replace row 3 with the sum of}\\ \text{row 1 and row 3}\\(R_1+R_3\rightarrow R_3)\end{matrix}</mrow>
-          <mrow>\begin{array}{ccccccc}
+          <mrow>\scriptstyle{\begin{matrix}\text{Replace equation 2 with the}\\ \text{sum of} -2 \text{ times equation 1}\\ \text{plus equation 2;}\\
+             \text{Replace equation 3 with}\\ \text{the sum of equation 1}\\ \text{ and equation 3}\end{matrix}}
+             \amp \quad \amp \quad \amp \scriptstyle{\begin{matrix}\text{Replace row 2 with the sum of}\\ -2 \text{ times row 1 plus row 2}\\(-2R_1+R_2\rightarrow R_2)\\
+            \text{Replace row 3 with the sum of}\\ \text{row 1 and row 3}\\(R_1+R_3\rightarrow R_3)\end{matrix}}</mrow>
+          <mrow>\displaystyle\begin{array}{ccccccc}
             x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
                 \amp    \amp     \amp \amp -x_3\amp =\amp 0\\
                 \amp  \amp 2x_2\amp -\amp x_3\amp =\amp 2
-            \end{array} \amp \left[\begin{array}{ccc|c}
+            \end{array} \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}
             1\amp 1\amp 1\amp 0\\ 0\amp 0\amp -1\amp 0\\ 0\amp 2\amp -1\amp 2\\
             \end{array}\right]</mrow>
         </md>
       </p>
 
- 
+
       <p>
-        Notice that the second equation no longer contains <m>x_2</m>. 
-        We'll exchange the order of the equations so that we can follow the convention 
-        of solving for the second variable in the second equation. 
+        Notice that the second equation no longer contains <m>x_2</m>.
+        We'll exchange the order of the equations so that we can follow the convention
+        of solving for the second variable in the second equation.
       </p>
 
       <p>
         <md>
-          <mrow>\text{Interchange equations 2 and 3} \amp \begin{matrix}\text{Interchange rows 2 and 3}\\(R_2\leftrightarrow R_3)\end{matrix}</mrow>
-          <mrow>\begin{array}{ccccccc}
+          <mrow>\text{Interchange equations 2 and 3} \amp \quad \amp \quad \amp \scriptstyle{\begin{matrix}\text{Interchange rows 2 and 3}\\(R_2\leftrightarrow R_3)\end{matrix}}</mrow>
+          <mrow>\displaystyle\begin{array}{ccccccc}
             x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
                 \amp    \amp 2x_2\amp -\amp x_3\amp =\amp 2\\
                 \amp   \amp    \amp \amp -x_3\amp =\amp 0
-            \end{array} \amp \left[\begin{array}{ccc|c}
+            \end{array} \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}
             1\amp 1\amp 1\amp 0\\ 0\amp 2\amp -1\amp 2\\ 0\amp 0\amp -1\amp 0\\
             \end{array}\right]</mrow>
-          <mrow>\text{Multiply equation 2 by } \frac12 \amp \begin{matrix}\text{Multiply row 2 by } \frac12\\(\frac12 R_2\rightarrow R_2)\end{matrix}</mrow>
-          <mrow>\begin{array}{ccccccc}
+          <mrow> \amp </mrow>
+          <mrow>\text{Multiply equation 2 by } \frac12 \amp \quad \amp \quad \amp \scriptstyle\begin{matrix}\text{Multiply row 2 by } \frac12\\(\frac12 R_2\rightarrow R_2)\end{matrix}</mrow>
+        </md>
+        <md>
+          <mrow>\displaystyle\begin{array}{ccccccc}
             x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
                 \amp    \amp x_2\amp -\amp \frac12x_3\amp =\amp 1\\
                 \amp   \amp    \amp \amp -x_3\amp =\amp 0
-            \end{array} \amp \left[\begin{array}{ccc|c}
+            \end{array} \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}
             1\amp 1\amp 1\amp 0\\ 0\amp 1\amp -\frac12\amp 1\\ 0\amp 0\amp -1\amp 0\\
             \end{array}\right]</mrow>
-            <mrow>\text{ Multiply equation 3 by} -1\amp \begin{matrix}\text{ Multiply row 3 by } -1\\(-1 R_3\rightarrow R_3)\end{matrix}</mrow>
-            <mrow>\begin{array}{ccccccc}
-              x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
-                  \amp    \amp x_2\amp -\amp \frac12x_3\amp =\amp 1\\
-                  \amp   \amp    \amp \amp x_3\amp =\amp 0
-              \end{array} \amp \left[\begin{array}{ccc|c}
-              1\amp 1\amp 1\amp 0\\ 0\amp 1\amp -\frac12\amp 1\\ 0\amp 0\amp 1\amp 0\\
-              \end{array}\right]</mrow>
+          <mrow> \amp </mrow>
+          <mrow>\text{ Multiply equation 3 by} -1\amp \quad \amp \quad \amp \scriptstyle{\begin{matrix}\text{ Multiply row 3 by } -1\\(-1 R_3\rightarrow R_3)\end{matrix}}</mrow>
+        </md>
+        <md>
+          <mrow>\displaystyle\begin{array}{ccccccc}
+            x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
+                \amp    \amp x_2\amp -\amp \frac12x_3\amp =\amp 1\\
+                \amp   \amp    \amp \amp x_3\amp =\amp 0
+            \end{array} \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}
+            1\amp 1\amp 1\amp 0\\ 0\amp 1\amp -\frac12\amp 1\\ 0\amp 0\amp 1\amp 0\\
+            \end{array}\right]</mrow>
         </md>
       </p>
 
       <p>
-        Notice that the last equation (and also the last row of the matrix) show that <m>x_3=0</m>. 
-        Knowing this would allow us to simply eliminate the <m>x_3</m> from the first two equations. 
+        Notice that the last equation (and also the last row of the matrix) show that <m>x_3=0</m>.
+        Knowing this would allow us to simply eliminate the <m>x_3</m> from the first two equations.
         However, we will formally do this by manipulating the equations (and rows) as we have previously.
       </p>
 
       <p>
         <md>
-          <mrow>\begin{matrix}\text{Replace equation 1 with the}\\ \text{sum of } -1 \text{ times equation 3}\\ \text{plus equation 1;}\\
-            \text{Replace equation 2 with the}\\ \text{sum of } \frac12 \text{ times equation 3} \\ \text{plus equation 2}\end{matrix}
-            \amp \begin{matrix}\text{Replace row 1 with the sum of}\\ -1 \text{ times row 3 plus row 1}\\(-R_3+R_1\rightarrow R_1)\\
-            \text{Replace row 2 with the sum of}\\ \frac12 \text{  times row 3 plus row 2}\\(\frac12R_3+R_2\rightarrow R_2)\end{matrix}</mrow>
-          <mrow>\begin{array}{ccccccc}
+          <mrow>\scriptstyle{\begin{matrix}\text{Replace equation 1 with the}\\ \text{sum of } -1 \text{ times equation 3}\\ \text{plus equation 1;}\\
+            \text{Replace equation 2 with the}\\ \text{sum of } \frac12 \text{ times equation 3} \\ \text{plus equation 2}\end{matrix}}
+            \amp \quad \amp \quad \amp \scriptstyle\scriptstyle{\begin{matrix}\text{Replace row 1 with the sum of}\\ -1 \text{ times row 3 plus row 1}\\(-R_3+R_1\rightarrow R_1)\\
+            \text{Replace row 2 with the sum of}\\ \frac12 \text{  times row 3 plus row 2}\\(\frac12R_3+R_2\rightarrow R_2)\end{matrix}}</mrow>
+          <mrow> \amp </mrow>
+          <mrow>\displaystyle\begin{array}{ccccccc}
             x_1\amp +\amp x_2\amp \amp \amp =\amp 0\\
                 \amp    \amp x_2\amp \amp \amp =\amp 1\\
                 \amp   \amp    \amp \amp x_3\amp =\amp 0
-            \end{array} \amp \left[\begin{array}{ccc|c}
+            \end{array} \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}
             1\amp 1\amp 0\amp 0\\ 0\amp 1\amp 0\amp 1\\ 0\amp 0\amp 1\amp 0\\
             \end{array}\right]</mrow>
         </md>
@@ -401,20 +418,21 @@
 
       <p>
         <md>
-          <mrow>\begin{matrix}\text{Replace equation 1 with the}\\ \text{sum of} -1 \text{ times equation 2}\\ \text{plus equation 1}\end{matrix}
-            \amp \begim{matrix}\text{Replace row 1 with the sum of}\\ -1 \text{ times row 2 plus row 1}\\(-R_2+R_1\rightarrow R_1)\end{matrix}</mrow>
-          <mrow>\begin{array}{ccccccc}
+          <mrow>\scriptstyle{\begin{matrix}\text{Replace equation 1 with the}\\ \text{sum of} -1 \text{ times equation 2}\\ \text{plus equation 1}\end{matrix}}
+            \amp \quad \amp \quad \amp \scriptstyle{\begin{matrix}\text{Replace row 1 with the sum of}\\ -1 \text{ times row 2 plus row 1}\\(-R_2+R_1\rightarrow R_1)\end{matrix}}</mrow>
+          <mrow> \amp </mrow>
+          <mrow>\displaystyle\begin{array}{ccccccc}
             x_1 \amp  \amp   \amp \amp \amp =\amp -1\\
                 \amp    \amp x_2\amp \amp \amp =\amp 1\\
                 \amp   \amp    \amp \amp x_3\amp =\amp 0
-            \end{array} \amp \left[\begin{array}{ccc|c}
+            \end{array} \amp \quad \amp \quad \amp \left[\begin{array}{ccc|c}
             1\amp 0\amp 0\amp -1\\ 0\amp 1\amp 0\amp 1\\ 0\amp 0\amp 1\amp 0\\
             \end{array}\right]</mrow>
         </md>
       </p>
 
       <p>
-        Obviously the equations on the left tell us that <m>x_1 = -1</m>, <m>x_2 = 1</m> and <m>x_3=0</m>, 
+        Obviously the equations on the left tell us that <m>x_1 = -1</m>, <m>x_2 = 1</m> and <m>x_3=0</m>,
         and notice how the matrix on the right tells us the same information.
       </p>
     </solution>
@@ -422,13 +440,13 @@
 
   <exercises>
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Convert the system of equations into an augmented matrix.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -466,7 +484,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\begin{array}{rl} 
+            <m>\begin{array}{rl}
               x_1 +3x_2-4x_3 + 5x_4 =\amp 17 \\
               -x_1+4x_3+8x_4 =\amp 1\\
               2x_1+3x_2+4x_3+5x_4=\amp 6
@@ -483,7 +501,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\begin{array}{rl} 
+            <m>\begin{array}{rl}
               3x_1 -2x_2=\amp 4 \\
               2x_1 =\amp 3\\
               -x_1+9x_2=\amp 8\\
@@ -497,17 +515,17 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Convert the given augmented matrix into a system of linear equations. Use the variables <m>x_1</m>, <m>x_2</m>, <etc/>
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -524,7 +542,7 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
@@ -541,7 +559,7 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
@@ -558,7 +576,7 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
@@ -579,7 +597,7 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
@@ -600,7 +618,7 @@
           </p>
         </answer>
       </exercise>
-      
+
       <exercise>
         <statement>
           <p>
@@ -622,16 +640,16 @@
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
-          Perform the given row operations on <m>\tta</m>, where 
+          Perform the given row operations on <m>\tta</m>, where
           <me>
             \tta = \bbm 2\amp -1\amp 7\\0\amp 4\amp -2\\5\amp 0\amp 3\ebm
           </me>.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -692,7 +710,7 @@
         </statement>
         <answer>
           <p>
-            <m>\bmx{ccc} 2\amp -1\amp 7\\0\amp 2\amp -1\\5\amp 0\amp 3\\ \emx</m>
+            <m>\bbm 2\amp -1\amp 7\\0\amp 2\amp -1\\5\amp 0\amp 3\\ \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -709,11 +727,11 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           A matrix <m>\tta</m> is given below:
@@ -723,7 +741,7 @@
           For the given matrix <m>\ttb</m>, give the row operation that transforms <m>\tta</m> into <m>\ttb</m>.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -788,18 +806,18 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
-          Rewrite the system of equations in matrix form. 
+          Rewrite the system of equations in matrix form.
           Find the solution to the linear system by simultaneously manipulating the equations and the matrix.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -897,7 +915,7 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
   </exercises>
 

@@ -3,12 +3,12 @@
   <title>Matrix Multiplication</title>
 
   <p>
-    In the previous section we found that the definition of matrix addition was very intuitive, 
-    and we ended that section discussing the fact that eventually we'd like to know what it means to multiply matrices together. 
+    In the previous section we found that the definition of matrix addition was very intuitive,
+    and we ended that section discussing the fact that eventually we'd like to know what it means to multiply matrices together.
   </p>
 
   <p>
-    In the spirit of the last section, take another wild stab: what do you think 
+    In the spirit of the last section, take another wild stab: what do you think
     <me>
       \bbm 1 \amp 2\\3 \amp 4\ebm \times \bbm 1\amp -1\\2\amp 2\ebm
     </me>
@@ -16,31 +16,31 @@
   </p>
 
   <p>
-    You are likely to have guessed 
+    You are likely to have guessed
     <me>
       \bbm 1 \amp -2\\6 \amp 8\ebm
     </me>
-    but this is, in fact, <em>not</em> right. 
-    (You <em>could</em> define multiplication this way; you'll even find that it satisfies plenty of nice properties. 
-    Unfortunately, nice properties don't make up for the fact that this definition just isn't useful.) The actual answer is  
+    but this is, in fact, <em>not</em> right.
+    (You <em>could</em> define multiplication this way; you'll even find that it satisfies plenty of nice properties.
+    Unfortunately, nice properties don't make up for the fact that this definition just isn't useful.) The actual answer is
     <me>
       \bbm 5 \amp 3\\11 \amp 5\ebm
     </me>.
   </p>
 
   <p>
-    If you can look at this one example and suddenly understand exactly how matrix multiplication works, 
-    then you are probably smarter than the author. While matrix multiplication isn't hard, 
+    If you can look at this one example and suddenly understand exactly how matrix multiplication works,
+    then you are probably smarter than the author. While matrix multiplication isn't hard,
     it isn't nearly as intuitive as matrix addition is.
   </p>
 
   <p>
-    To further muddy the waters (before we clear them), consider 
+    To further muddy the waters (before we clear them), consider
     <me>
       \bbm 1 \amp 2\\3 \amp 4\ebm \times \bbm 1\amp -1\amp 0\\2\amp 2\amp -1\ebm
     </me>.
-    Our experience from the last section would lend us to believe that this is not defined, 
-    but our confidence is probably a bit shaken by now. In fact, this multiplication <em>is</em> defined, and it is 
+    Our experience from the last section would lend us to believe that this is not defined,
+    but our confidence is probably a bit shaken by now. In fact, this multiplication <em>is</em> defined, and it is
     <me>
       \bbm 5 \amp 3 \amp -2\\11\amp 5\amp -4\ebm
     </me>.
@@ -48,10 +48,10 @@
   </p>
 
   <p>
-    Before diving in to the general definition of matrix multiplication, 
-    let's start simple, with row and column vectors. 
-    Recall from <xref ref="def-rcvect"/> in <xref ref="sec-matrix-arithmetic"/> 
-    that a <term>row vector</term> is a <m>1\times n</m> matrix of the form 
+    Before diving in to the general definition of matrix multiplication,
+    let's start simple, with row and column vectors.
+    Recall from <xref ref="def-rcvect"/> in <xref ref="sec-matrix-arithmetic"/>
+    that a <term>row vector</term> is a <m>1\times n</m> matrix of the form
     <m>\vec a = \bbm a_1 \amp  a_2 \amp  \cdots \amp  a_n\ebm</m>,
     and a <term>column vector</term> is an <m>m\times 1</m> matrix of the form
     <m>\vec{b} = \bbm b_1\\b_2\\\vdots \\ b_m\ebm</m>.
@@ -59,23 +59,23 @@
 
   <aside>
     <p>
-      In this text, row vectors are only used in this section when we discuss matrix multiplication, 
-      whereas we'll make extensive use of column vectors. 
-      Other texts make great use of row vectors, but little use of column vectors. 
-      It is a matter of preference and tradition: <q>most</q> texts use column vectors more. 
-      In some more advanced textbooks, row vectors are considered to be <q>dual</q> to column vectors. 
-      Abstractly, a <term>dual vector</term> is an object that eats a vector and spits out a number. 
-      Here, we see that the way a row vector eats a column vector and produces a number is via multiplication. 
+      In this text, row vectors are only used in this section when we discuss matrix multiplication,
+      whereas we'll make extensive use of column vectors.
+      Other texts make great use of row vectors, but little use of column vectors.
+      It is a matter of preference and tradition: <q>most</q> texts use column vectors more.
+      In some more advanced textbooks, row vectors are considered to be <q>dual</q> to column vectors.
+      Abstractly, a <term>dual vector</term> is an object that eats a vector and spits out a number.
+      Here, we see that the way a row vector eats a column vector and produces a number is via multiplication.
     </p>
-  </aside> 
+  </aside>
 
   <definition xml:id="def-vector_multiply">
     <title>Multiplying a row vector by a column vector</title>
     <statement>
       <p>
-        Let <m>\vu</m> be an <m>1\times n</m> row vector with entries <m>u_1, u_2, \cdots, u_n</m> 
-        and let <m>\vvv</m> be an <m>n\times 1</m> column vector with entries <m>v_1, v_2, \cdots, v_n</m>. 
-        The <term>product of <m>\vu</m> and \vvv</term>, denoted <m>\dotp uv</m> or <m>\vu\vvv</m>, is 
+        Let <m>\vu</m> be an <m>1\times n</m> row vector with entries <m>u_1, u_2, \cdots, u_n</m>
+        and let <m>\vvv</m> be an <m>n\times 1</m> column vector with entries <m>v_1, v_2, \cdots, v_n</m>.
+        The <term>product of <m>\vu</m> and \vvv</term>, denoted <m>\dotp uv</m> or <m>\vu\vvv</m>, is
         <me>
           \vu\vvv = \sum_{i=1}^n  u_iv_i = u_1v_1 + u_2v_2 + \cdots + u_nv_n
         </me>.
@@ -84,19 +84,19 @@
   </definition>
 
   <p>
-    Notice that this is essentially the same as the definition of the <term>dot product</term> 
+    Notice that this is essentially the same as the definition of the <term>dot product</term>
     given at the beginning of <xref ref="sec-Rn"/>.
     There are two key points to notice about the product defined in <xref ref="def-vector_multiply"/>:
     <ol>
       <li>
         <p>
-          In order for the product <m>\vu\vvv</m> to be defined, 
+          In order for the product <m>\vu\vvv</m> to be defined,
           <m>\vu</m> and <m>\vvv</m> need to have the <em>same number of entries</em>.
         </p>
       </li>
       <li>
         <p>
-          To multiply <m>\vu</m> and <m>\vvv</m>, we <em>multiply the corresponding entries</em>, 
+          To multiply <m>\vu</m> and <m>\vvv</m>, we <em>multiply the corresponding entries</em>,
           and then <alert>add up</alert> the resulting values.
         </p>
       </li>
@@ -106,13 +106,13 @@
   <example xml:id="ex_vector_multiplication">
     <title>Multiplying row and column vectors</title>
     <statement>
- 
+
       <p>
-        Let 
+        Let
         <me>
           \vu = \bbm 1 \amp 2 \amp 3\ebm,\ \vvv = \bbm 2\amp 0\amp 1\amp -1\ebm,\ \vx = \bbm-2\\4\\3\ebm,\ \vy = \bbm 1\\2\\5\\0\ebm
         </me>.
-        Find the following products. 
+        Find the following products.
         <ol cols="3">
           <li><m>\vu\vx</m></li>
           <li><m>\vvv\vy</m></li>
@@ -129,22 +129,22 @@
           <li><m>\vvv\vy = \bbm 2\amp 0\amp 1\amp -1\ebm\bbm 1\\2\\5\\0\ebm = 2(1)+0(2)+1(5)-1(0) = 7</m></li>
           <li>
             <p>
-              <m>\vu\vy</m> is not defined; <xref ref="def-vector_multiply"/> 
-              specifies that in order to multiply a row vector and column vector, 
-              they must have the same number of entries. 
+              <m>\vu\vy</m> is not defined; <xref ref="def-vector_multiply"/>
+              specifies that in order to multiply a row vector and column vector,
+              they must have the same number of entries.
             </p>
           </li>
           <li>
             <p>
-              <m>\vu\vvv</m> is not defined; we only know how to multipy row vectors by column vectors. 
+              <m>\vu\vvv</m> is not defined; we only know how to multipy row vectors by column vectors.
               We haven't defined how to multiply two row vectors (in general, it can't be done).
             </p>
           </li>
           <li>
             <p>
-              The product <m>\vx\vu</m> <em>is</em> defined, but we don't know how to do it yet. 
-              Right now, we only know how to multiply a row vector times a column vector; 
-              we don't know how to multiply a column vector times a row vector. 
+              The product <m>\vx\vu</m> <em>is</em> defined, but we don't know how to do it yet.
+              Right now, we only know how to multiply a row vector times a column vector;
+              we don't know how to multiply a column vector times a row vector.
               (That's right: <m>\vu\vx \neq \vx\vu!</m>)
             </p>
           </li>
@@ -154,7 +154,7 @@
   </example>
 
   <p>
-    Now that we understand how to multiply a row vector by a column vector, we are ready to define matrix multiplication. 
+    Now that we understand how to multiply a row vector by a column vector, we are ready to define matrix multiplication.
   </p>
 
   <definition xml:id="def-matrix_multiply">
@@ -163,52 +163,52 @@
       <p>
         <idx><h>matrix</h><h>multiplication</h></idx>
 
-        Let <m>\tta</m> be an <m>m\times r</m> matrix, and let <m>\ttb</m> be an <m>r\times n</m> matrix. 
-        The <term>matrix product of <m>\tta</m> and \ttb</term>, denoted <m>\tta\cdot\ttb</m>, 
-        or simply <m>\tta\ttb</m>, is the <m>m\times n</m> matrix <m>\ttm</m> whose entry in the 
-        <m>i</m>th row and <m>j</m>th column is the product of the <m>i</m>th row of 
+        Let <m>\tta</m> be an <m>m\times r</m> matrix, and let <m>\ttb</m> be an <m>r\times n</m> matrix.
+        The <term>matrix product of <m>\tta</m> and \ttb</term>, denoted <m>\tta\cdot\ttb</m>,
+        or simply <m>\tta\ttb</m>, is the <m>m\times n</m> matrix <m>\ttm</m> whose entry in the
+        <m>i</m>th row and <m>j</m>th column is the product of the <m>i</m>th row of
         <m>\tta</m> and the <m>j</m>th column of <m>\ttb</m>.
       </p>
     </statement>
   </definition>
 
   <p>
-    It may help to illustrate it in this way. 
-    Let matrix <m>\tta</m> have rows <m>\vec{a}_{1}</m>, <m>\vec{a}_{2}</m>, <m>\cdots</m>, <m>\vec{a}_{m}</m> 
-    and let <m>\ttb</m> have columns  <m>\vec{b}_{1}</m>, <m>\vec{b}_{2}</m>, <m>\cdots</m>, <m>\vec{b}_{n}</m>. 
-    Thus <m>\tta</m> looks like 
+    It may help to illustrate it in this way.
+    Let matrix <m>\tta</m> have rows <m>\vec{a}_{1}</m>, <m>\vec{a}_{2}</m>, <m>\cdots</m>, <m>\vec{a}_{m}</m>
+    and let <m>\ttb</m> have columns  <m>\vec{b}_{1}</m>, <m>\vec{b}_{2}</m>, <m>\cdots</m>, <m>\vec{b}_{n}</m>.
+    Thus <m>\tta</m> looks like
     <me>
       \bbm- \amp \vec{a}_{1} \amp -\\-\amp \vec{a}_{2}\amp -\\ \amp  \vdots \amp  \\ -\amp \vec{a}_{m}\amp -\ebm
     </me>,
-    where the <q><m>-</m></q> symbols just serve as reminders that the <m>\vec{a}_{i}</m> represent rows, 
-    and <m>\ttb</m> looks like 
+    where the <q><m>-</m></q> symbols just serve as reminders that the <m>\vec{a}_{i}</m> represent rows,
+    and <m>\ttb</m> looks like
     <me>
       \bbm|\amp |\amp  \amp |\\\vec{b}_{1}\amp \vec{b}_{2}\amp \cdots\amp \vec{b}_{n}\\|\amp |\amp  \amp |\ebm
     </me>,
-    where again, the <q><m>|</m></q> symbols just remind us that the <m>\vec{b}_{i}</m> represent column vectors. Then 
+    where again, the <q><m>|</m></q> symbols just remind us that the <m>\vec{b}_{i}</m> represent column vectors. Then
     <me>
       \tta\ttb = \bbm\vec{a}_{1}\vec{b}_{1}  \amp  \vec{a}_{1}\vec{b}_{2}  \amp  \cdots \amp  \vec{a}_{1}\vec{b}_{n}\\ \vec{a}_{2}\vec{b}_{1} \amp  \vec{a}_{2}\vec{b}_{2} \amp  \cdots \amp  \vec{a}_{2}\vec{b}_{n}\\ \vdots \amp  \vdots \amp  \ddots \amp  \vdots \\ \vec{a}_{m}\vec{b}_{1} \amp  \vec{a}_{m}\vec{b}_{2} \amp  \cdots \amp  \vec{a}_{m}\vec{b}_{n}\ebm
     </me>.
   </p>
 
   <p>
-    Two quick notes about this definition. First, notice that in order to multiply <m>\tta</m> and <m>\ttb</m>, 
-    the number of <em>columns</em> of <m>\tta</m> must be the same as the number of <em>rows</em> of <m>\ttb</m> 
-    (we refer to these as the <q>inner dimensions</q>). 
-    Secondly, the resulting matrix has the same number of <em>rows</em> as <m>\tta</m> 
+    Two quick notes about this definition. First, notice that in order to multiply <m>\tta</m> and <m>\ttb</m>,
+    the number of <em>columns</em> of <m>\tta</m> must be the same as the number of <em>rows</em> of <m>\ttb</m>
+    (we refer to these as the <q>inner dimensions</q>).
+    Secondly, the resulting matrix has the same number of <em>rows</em> as <m>\tta</m>
     and the same number of <em>columns</em> as <m>\ttb</m> (we refer to these as the <q>outer dimensions</q>).
     <me>
       \overbrace{(m\times\hspace{-38pt} \underbrace{r) \times (r}_\text{these inner dimensions must match}\hspace{-38pt}\times n)}^\text{final dimensions are the outer dimensions}
     </me>
-    Of course, this will make much more sense when we see an example. 
+    Of course, this will make much more sense when we see an example.
   </p>
 
   <example xml:id="ex_matrix_multiply_1">
     <title>A more general matrix product</title>
     <statement>
- 
+
       <p>
-        Revisit the matrix product we saw at the beginning of this section; multiply 
+        Revisit the matrix product we saw at the beginning of this section; multiply
         <me>
           \bbm 1 \amp 2\\3 \amp 4\ebm\bbm 1\amp -1\amp 0\\2\amp 2\amp -1\ebm
         </me>.
@@ -216,11 +216,11 @@
     </statement>
     <solution>
       <p>
-        Let's call our first matrix <m>\tta</m> and the second <m>\ttb</m>. 
-        We should first check to see that we can actually perform this multiplication. 
-        Matrix <m>\tta</m> is <m>2\times 2</m> and <m>\ttb</m> is <m>2\times 3</m>. 
-        The <q>inner</q> dimensions match up, so we can compute the product; the <q>outer</q> 
-        dimensions tell us that the product will be <m>2\times 3</m>. Let 
+        Let's call our first matrix <m>\tta</m> and the second <m>\ttb</m>.
+        We should first check to see that we can actually perform this multiplication.
+        Matrix <m>\tta</m> is <m>2\times 2</m> and <m>\ttb</m> is <m>2\times 3</m>.
+        The <q>inner</q> dimensions match up, so we can compute the product; the <q>outer</q>
+        dimensions tell us that the product will be <m>2\times 3</m>. Let
         <me>
           \tta\ttb = \bbm m_{11}  \amp  m_{12}  \amp  m_{13}\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
         </me>.
@@ -228,31 +228,31 @@
       </p>
 
       <p>
-        The entry <m>m_{11}</m> is in the first row and first column; 
-        therefore to find its value, we need to multiply the first row of <m>\tta</m> by the first column of <m>\ttb</m>. Thus 
+        The entry <m>m_{11}</m> is in the first row and first column;
+        therefore to find its value, we need to multiply the first row of <m>\tta</m> by the first column of <m>\ttb</m>. Thus
         <me>
           m_{11} = \bbm 1 \amp 2\ebm\bbm 1\\2\ebm = 1(1)+2(2) = 5
         </me>.
-        So now we know that 
+        So now we know that
         <me>
           \tta\ttb = \bbm 5  \amp  m_{12}  \amp  m_{13}\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
         </me>.
-        Finishing out the first row, we have 
+        Finishing out the first row, we have
         <me>
           m_{12} = \bbm 1 \amp 2\ebm\bbm-1\\2\ebm = 1(-1)+2(2) = 3
         </me>
-        using the first row of <m>\tta</m> and the second column of <m>\ttb</m>, and 
+        using the first row of <m>\tta</m> and the second column of <m>\ttb</m>, and
         <me>
           m_{13} = \bbm 1 \amp 2\ebm\bbm 0\\-1\ebm = 1(0)+2(-1) = -2
         </me>
-        using the first row of <m>\tta</m> and the third column of <m>\ttb</m>. Thus we have 
+        using the first row of <m>\tta</m> and the third column of <m>\ttb</m>. Thus we have
         <me>
           \tta\ttb = \bbm 5  \amp  3  \amp  -2\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
         </me>.
       </p>
 
       <p>
-        To compute the second row of <m>\tta\ttb</m>, we multiply with the second row of <m>\tta</m>. We find 
+        To compute the second row of <m>\tta\ttb</m>, we multiply with the second row of <m>\tta</m>. We find
         <md>
           <mrow>m_{21} \amp = \bbm 3\amp 4\ebm\bbm 1\\2\ebm = 11,</mrow>
           <mrow>m_{22} \amp = \bbm 3\amp 4\ebm\bbm-1\\2\ebm = 5, \text{ and}</mrow>
@@ -265,13 +265,13 @@
       </p>
     </solution>
   </example>
-  
+
   <example xml:id="ex_matrix_multiply_2">
     <title>Multiplying matrices</title>
     <statement>
- 
+
       <p>
-        Multiply 
+        Multiply
         <me>
           \bbm 1 \amp -1\\5 \amp 2\\-2\amp 3\ebm\bbm 1\amp 1\amp 1\amp 1\\2\amp 6\amp 7\amp 9\ebm
         </me>.
@@ -279,17 +279,17 @@
     </statement>
     <solution>
       <p>
-        Let's first check to make sure this product is defined. 
-        Again calling the first matrix <m>\tta</m> and the second <m>\ttb</m>, 
-        we see that <m>\tta</m> is a <m>3\times 2</m> matrix and <m>\ttb</m> is a <m>2\times4</m> matrix; 
-        the inner dimensions match so the product is defined, and the product will be a <m>3\times 4</m> matrix, 
+        Let's first check to make sure this product is defined.
+        Again calling the first matrix <m>\tta</m> and the second <m>\ttb</m>,
+        we see that <m>\tta</m> is a <m>3\times 2</m> matrix and <m>\ttb</m> is a <m>2\times4</m> matrix;
+        the inner dimensions match so the product is defined, and the product will be a <m>3\times 4</m> matrix,
         <me>
           \tta\ttb = \bbm m_{11} \amp m_{12} \amp m_{13}\amp m_{14}\\ m_{21}\amp m_{22}\amp m_{23}\amp m_{24}\\m_{31}\amp m_{32}\amp m_{33}\amp m_{34}\ebm
         </me>.
       </p>
 
       <p>
-        We will demonstrate how to compute some of the entries, then give the final answer. 
+        We will demonstrate how to compute some of the entries, then give the final answer.
         The reader can fill in the details of how each entry was computed.
         <md>
           <mrow>m_{11} \amp = \bbm 1\amp -1\ebm\bbm 1\\2\ebm = -1</mrow>
@@ -302,11 +302,11 @@
       </p>
 
       <p>
-        So far, we've computed this much of <m>\tta\ttb</m>: 
+        So far, we've computed this much of <m>\tta\ttb</m>:
         <me>
           \tta\ttb = \bbm-1 \amp m_{12} \amp -6\amp m_{14}\\ m_{21}\amp m_{22}\amp 19\amp 23\\m_{31}\amp 16\amp m_{33}\amp 25\ebm
         </me>.
-        The final product is 
+        The final product is
         <me>
           \tta\ttb = \bbm-1 \amp -5 \amp -6\amp -8\\ 9\amp 17\amp 19\amp 23\\4\amp 16\amp 19\amp 25\ebm
         </me>.
@@ -317,9 +317,9 @@
   <example xml:id="ex_matrix_multiply_3">
     <title>An undefined product</title>
     <statement>
- 
+
       <p>
-        Multiply, if possible, 
+        Multiply, if possible,
         <me>
           \bbm 2 \amp 3 \amp 4\\9\amp 8\amp 7\ebm\bbm 3\amp 6\\5\amp -1\ebm
         </me>.
@@ -327,9 +327,9 @@
     </statement>
     <solution>
       <p>
-        Again, we'll call the first matrix <m>\tta</m> and the second <m>\ttb</m>. 
-        Checking the dimensions of each matrix, we see that <m>\tta</m> is a <m>2\times 3</m> matrix, 
-        whereas <m>\ttb</m> is a <m>2\times2</m> matrix. The inner dimensions do not match, 
+        Again, we'll call the first matrix <m>\tta</m> and the second <m>\ttb</m>.
+        Checking the dimensions of each matrix, we see that <m>\tta</m> is a <m>2\times 3</m> matrix,
+        whereas <m>\ttb</m> is a <m>2\times2</m> matrix. The inner dimensions do not match,
         therefore this multiplication is not defined.
       </p>
     </solution>
@@ -340,7 +340,7 @@
     <statement>
 
       <p>
-        In <xref ref="ex_vector_multiplication"/>, we were told that the product <m>\vx\vu</m> was defined, where 
+        In <xref ref="ex_vector_multiplication"/>, we were told that the product <m>\vx\vu</m> was defined, where
         <me>
           \vx =\bbm-2\\4\\3\ebm \quad \text{and} \quad \vu = \bbm 1 \amp 2\amp 3\ebm
         </me>,
@@ -349,48 +349,48 @@
     </statement>
     <solution>
       <p>
-        Again, we  need to check to make sure the dimensions work correctly 
-        (remember that even though we are referring to <m>\vu</m> and <m>\vx</m> as vectors, they are, in fact, just matrices). 
+        Again, we  need to check to make sure the dimensions work correctly
+        (remember that even though we are referring to <m>\vu</m> and <m>\vx</m> as vectors, they are, in fact, just matrices).
       </p>
 
       <p>
-        The column vector <m>\vx</m> has dimensions <m>3\times1</m>, 
-        whereas the row vector <m>\vu</m> has dimensions <m>1\times 3</m>. 
-        Since the inner dimensions match, the matrix product is defined; 
-        the outer dimensions tell us that the product will be a <m>3\times3</m> matrix, as shown below: 
+        The column vector <m>\vx</m> has dimensions <m>3\times1</m>,
+        whereas the row vector <m>\vu</m> has dimensions <m>1\times 3</m>.
+        Since the inner dimensions match, the matrix product is defined;
+        the outer dimensions tell us that the product will be a <m>3\times3</m> matrix, as shown below:
         <me>
           \vx\vu = \bbm m_{11} \amp m_{12} \amp m_{13}\\ m_{21}\amp m_{22}\amp m_{23}\\m_{31}\amp m_{32}\amp m_{33}\ebm
         </me>.
       </p>
 
       <p>
-        To compute the entry <m>m_{11}</m>, we multiply the first row of <m>\vx</m> by the first column of <m>\vu</m>. 
-        What is the first row of <m>\vx</m>? Simply the number <m>-2</m>. 
-        What is the first column of <m>\vu</m>? Just the number 1. Thus <m>m_{11} = -2</m>. 
+        To compute the entry <m>m_{11}</m>, we multiply the first row of <m>\vx</m> by the first column of <m>\vu</m>.
+        What is the first row of <m>\vx</m>? Simply the number <m>-2</m>.
+        What is the first column of <m>\vu</m>? Just the number 1. Thus <m>m_{11} = -2</m>.
         (This does seem odd, but through checking, you can see that we are indeed following the rules.)
       </p>
 
       <p>
-        What about the entry <m>m_{12}</m>? Again, we multiply the first row of <m>\vx</m> by the first column of <m>\vu</m>; 
+        What about the entry <m>m_{12}</m>? Again, we multiply the first row of <m>\vx</m> by the first column of <m>\vu</m>;
         that is, we multiply <m>-2(2)</m>. So <m>m_{12} = -4</m>.
       </p>
 
       <p>
-        What about <m>m_{23}</m>? Multiply the second row of <m>\vx</m> by the third column of <m>\vu</m>; 
-        multiply <m>4(3)</m>, so <m>m_{23} = 12</m>. 
+        What about <m>m_{23}</m>? Multiply the second row of <m>\vx</m> by the third column of <m>\vu</m>;
+        multiply <m>4(3)</m>, so <m>m_{23} = 12</m>.
       </p>
 
       <p>
-        One final example: <m>m_{31}</m> comes from multiplying the third row of<m>\vx</m>, 
+        One final example: <m>m_{31}</m> comes from multiplying the third row of<m>\vx</m>,
         which is 3, by the first column of <m>\vu</m>, which is 1. Therefore <m>m_{31} = 3</m>.
       </p>
 
       <p>
-        So far we have computed 
+        So far we have computed
         <me>
           \vx\vu = \bbm-2 \amp -4 \amp m_{13}\\ m_{21}\amp m_{22}\amp 12\\3\amp m_{32}\amp m_{33}\ebm
         </me>.
-        After performing all 9 multiplications, we find 
+        After performing all 9 multiplications, we find
         <me>
           \vx\vu = \bbm-2 \amp -4 \amp -6\\ 4\amp 8\amp 12\\3\amp 6\amp 9\ebm
         </me>.
@@ -399,19 +399,19 @@
   </example>
 
   <p>
-    In this last example, we saw a <q>nonstandard</q> multiplication (at least, it felt nonstandard). 
-    Studying the entries of this matrix, it seems that there are several different patterns that can be seen amongst the entries. 
-    (Remember that mathematicians like to look for patterns. 
+    In this last example, we saw a <q>nonstandard</q> multiplication (at least, it felt nonstandard).
+    Studying the entries of this matrix, it seems that there are several different patterns that can be seen amongst the entries.
+    (Remember that mathematicians like to look for patterns.
     Also remember that we often guess wrong at first; don't be scared and try to identify some patterns.)
   </p>
 
   <p>
-    In <xref ref="sec-matrix-arithmetic"/>, we identified the zero matrix <m>\tto</m> 
-    that had a nice property in relation to matrix addition (<ie/>, <m>\tta+\tto = \tta</m> for any matrix <m>\tta</m>). 
-    In the following example we'll identify a matrix that works well with multiplication as well as some multiplicative properties. 
-    For instance, we've learned how <m>1\cdot\tta = \tta</m>; is there a <em>matrix</em> that acts like the number 1? 
-    That is, can we find a matrix <m>\ttx</m> where <m>\ttx\cdot\tta=\tta</m>? 
-    (We made a guess in <xref ref="sec-matrix-arithmetic"/> that maybe a matrix of all 1s would work, 
+    In <xref ref="sec-matrix-arithmetic"/>, we identified the zero matrix <m>\tto</m>
+    that had a nice property in relation to matrix addition (<ie/>, <m>\tta+\tto = \tta</m> for any matrix <m>\tta</m>).
+    In the following example we'll identify a matrix that works well with multiplication as well as some multiplicative properties.
+    For instance, we've learned how <m>1\cdot\tta = \tta</m>; is there a <em>matrix</em> that acts like the number 1?
+    That is, can we find a matrix <m>\ttx</m> where <m>\ttx\cdot\tta=\tta</m>?
+    (We made a guess in <xref ref="sec-matrix-arithmetic"/> that maybe a matrix of all 1s would work,
     but you can probably already see that this guess is doomed to failure.)
   </p>
 
@@ -421,7 +421,7 @@
     <statement>
 
       <p>
-        Let 
+        Let
         <md>
           <mrow>\tta \amp = \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm, \amp  \ttb \amp = \bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm</mrow>
           <mrow>\ttc \amp = \bbm 1\amp 0\amp 2\\2\amp 1\amp 0\\0\amp 2\amp 1\ebm, \amp  \tti \amp = \bbm 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\ebm</mrow>
@@ -453,8 +453,8 @@
           <li><m>\tti\tta = \eyethree\bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm = \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm</m></li>
           <li>
             <p>
-              We haven't formally defined what <m>\tti^2</m> means, 
-              but we could probably make the reasonable guess that <m>\tti^2=\tti\cdot\tti </m>. 
+              We haven't formally defined what <m>\tti^2</m> means,
+              but we could probably make the reasonable guess that <m>\tti^2=\tti\cdot\tti </m>.
               Thus
               <me>
                 \tti^2 = \eyethree\eyethree = \eyethree
@@ -469,34 +469,34 @@
   </example>
 
   <p>
-    This example is simply chock full of interesting ideas; it is almost hard to think about where to start. 
+    This example is simply chock full of interesting ideas; it is almost hard to think about where to start.
     <dl>
       <li>
         <title>Interesting Idea #1</title>
         <p>
-          Notice that in our example, <m>\tta\ttb \neq \ttb\tta</m>! 
-          When dealing with numbers, we were used to the idea that <m>ab = ba</m>. 
-          With matrices, multiplication is <em>not</em> commutative. 
+          Notice that in our example, <m>\tta\ttb \neq \ttb\tta</m>!
+          When dealing with numbers, we were used to the idea that <m>ab = ba</m>.
+          With matrices, multiplication is <em>not</em> commutative.
           (Of course, we can find special situations where it does work. In general, though, it doesn't.)
         </p>
       </li>
       <li>
         <title>Interesting Idea #2</title>
         <p>
-          Right before this example we wondered if there was a matrix that <q>acted like the number 1,</q> 
-          and guessed it may be a matrix of all 1s. 
-          However, we found out that such a matrix does not work in that way; 
-          in our example, <m>\tta\ttb \neq \tta</m>. We did find that <m>\tta\tti = \tti\tta = \tta</m>. 
-          There is a Multiplicative Identity; it just isn't what we thought it would be. 
+          Right before this example we wondered if there was a matrix that <q>acted like the number 1,</q>
+          and guessed it may be a matrix of all 1s.
+          However, we found out that such a matrix does not work in that way;
+          in our example, <m>\tta\ttb \neq \tta</m>. We did find that <m>\tta\tti = \tti\tta = \tta</m>.
+          There is a Multiplicative Identity; it just isn't what we thought it would be.
           And just as <m>1^2 = 1</m>, <m>\tti^2 = \tti</m>.
         </p>
       </li>
       <li>
         <title>Interesting Idea #3</title>
         <p>
-          When dealing with numbers, we are very familiar with the notion that <q>If <m>ax = bx</m>, 
-            then <m>a=b</m>.</q> (As long as <m>x\neq 0</m>.) 
-            Notice that, in our example, <m>\ttb\ttb = \ttb\ttc</m>, yet <m>\ttb\neq\ttc</m>. 
+          When dealing with numbers, we are very familiar with the notion that <q>If <m>ax = bx</m>,
+            then <m>a=b</m>.</q> (As long as <m>x\neq 0</m>.)
+            Notice that, in our example, <m>\ttb\ttb = \ttb\ttc</m>, yet <m>\ttb\neq\ttc</m>.
             In general, just because <m>\tta\ttx = \ttb\ttx</m>, we <em>cannot</em> conclude that <m>\tta =\ttb</m>.
         </p>
       </li>
@@ -504,19 +504,19 @@
   </p>
 
   <p>
-    Matrix multiplication is turning out to be a very strange operation. 
-    We are very used to multiplying numbers, and we know a bunch of properties that hold when using this type of multiplication. 
-    When multiplying matrices, though, we probably find ourselves asking two questions, 
-    <q>What <em>does</em> work?</q> and <q>What <em>doesn't</em> work?</q> 
+    Matrix multiplication is turning out to be a very strange operation.
+    We are very used to multiplying numbers, and we know a bunch of properties that hold when using this type of multiplication.
+    When multiplying matrices, though, we probably find ourselves asking two questions,
+    <q>What <em>does</em> work?</q> and <q>What <em>doesn't</em> work?</q>
     We'll answer these questions; first we'll do an example that demonstrates some of the things that do work.
   </p>
 
   <example xml:id="ex_dist_and_assoc">
     <title>Exploring properties of matrix multiplication</title>
     <statement>
- 
+
       <p>
-        Let 
+        Let
         <me>
           \tta = \bbm 1 \amp 2\\3 \amp 4\ebm,\quad \ttb = \bbm 1\amp 1\\1\amp -1\ebm \quad \text{and} \quad \ttc=\bbm 2\amp 1\\1\amp 2\ebm
         </me>.
@@ -531,7 +531,7 @@
     </statement>
     <solution>
       <p>
-        We'll compute each of these without showing all the intermediate steps. 
+        We'll compute each of these without showing all the intermediate steps.
         Keep in mind order of operations: things that appear inside of parentheses are computed first.
         <ol>
           <li>
@@ -543,7 +543,7 @@
               </md>
             </p>
           </li>
-                  
+
           <li>
             <p>
               <md>
@@ -553,7 +553,7 @@
               </md>
             </p>
           </li>
-          
+
           <li>
             <p>
               <md>
@@ -563,7 +563,7 @@
               </md>
             </p>
           </li>
-                  
+
           <li>
             <p>
               <md>
@@ -573,42 +573,42 @@
               </md>
             </p>
           </li>
-        </ol>          
+        </ol>
       </p>
     </solution>
   </example>
 
   <p>
-    In looking at our example, we should notice two things. 
-    First, it looks like the <q>distributive property</q> holds; 
-    that is, <m>\tta(\ttb+\ttc) = \tta\ttb + \tta\ttc</m>. 
-    This is nice as many algebraic techniques we have learned about in the past 
-    (when doing <q>ordinary algebra</q>) will still work. 
-    Secondly, it looks like the <q>associative property</q> holds; that is, <m>\tta(\ttb\ttc) = (\tta\ttb)\ttc</m>. 
-    This is nice, for it tells us that when we are multiplying several matrices together, 
+    In looking at our example, we should notice two things.
+    First, it looks like the <q>distributive property</q> holds;
+    that is, <m>\tta(\ttb+\ttc) = \tta\ttb + \tta\ttc</m>.
+    This is nice as many algebraic techniques we have learned about in the past
+    (when doing <q>ordinary algebra</q>) will still work.
+    Secondly, it looks like the <q>associative property</q> holds; that is, <m>\tta(\ttb\ttc) = (\tta\ttb)\ttc</m>.
+    This is nice, for it tells us that when we are multiplying several matrices together,
     we don't have to be particularly careful in what order we multiply certain pairs of matrices together.
   </p>
 
   <aside>
     <p>
-      Be careful: in computing <m>\tta\ttb\ttc</m> together, 
-      we can first multiply <m>\tta\ttb</m> or <m>\ttb\ttc</m>, 
+      Be careful: in computing <m>\tta\ttb\ttc</m> together,
+      we can first multiply <m>\tta\ttb</m> or <m>\ttb\ttc</m>,
       but we cannot change the <em>order</em>
-      in which these matrices appear. We cannot multiply <m>\ttb\tta</m> or <m>\tta\ttc</m>, for instance.						
+      in which these matrices appear. We cannot multiply <m>\ttb\tta</m> or <m>\tta\ttc</m>, for instance.
     </p>
-  </aside> 
+  </aside>
 
   <p>
     In leading to an important theorem, let's define a matrix we saw in an earlier example.
   </p>
-  
+
   <aside>
     <p>
-      <xref ref="def-identity"/> uses a term we won't define until <xref ref="def-diagonal"/>: <em>diagonal</em>. 
-      In short, a <q>diagonal matrix</q> is one in which the only nonzero entries are the <q>diagonal entries.</q> 
+      <xref ref="def-identity"/> uses a term we won't define until <xref ref="def-diagonal"/>: <em>diagonal</em>.
+      In short, a <q>diagonal matrix</q> is one in which the only nonzero entries are the <q>diagonal entries.</q>
       The examples given here and in the exercises should suffice until we meet the full definition later.
     </p>
-  </aside> 
+  </aside>
 
   <definition xml:id="def-identity">
     <title>Identity Matrix</title>
@@ -617,32 +617,32 @@
         <idx><h>identity matrix</h></idx>
         <idx><h>matrix</h><h>identity matrix</h></idx>
 
-        The <m>n\times n</m> matrix with 1s on the diagonal and zeros elsewhere is the 
-        <term><m>n\times n</m> identity matrix</term>, denoted <m>\tti_n</m>. 
+        The <m>n\times n</m> matrix with 1s on the diagonal and zeros elsewhere is the
+        <term><m>n\times n</m> identity matrix</term>, denoted <m>\tti_n</m>.
         When the context makes the dimension of the identity clear, the subscript is generally omitted.
       </p>
     </statement>
   </definition>
 
   <p>
-    Note that while the zero matrix can come in all different shapes and sizes, 
-    the identity matrix is always a square matrix. We show a few identity matrices below. 
+    Note that while the zero matrix can come in all different shapes and sizes,
+    the identity matrix is always a square matrix. We show a few identity matrices below.
     <me>
       \tti_2= \eyetwo ,\quad \tti_3 = \eyethree , \quad \tti_4 = \eyefour
     </me>.
   </p>
 
   <p>
-    In our examples above, we have seen examples of things that do and do not work. 
-    We should be careful about what examples <em>prove</em>, though. 
-    If someone were to claim that <m>\tta\ttb = \ttb\tta</m> is always true, 
-    one would only need to show them one example where they were false, and we would know the person was wrong. 
-    However, if someone claims that <m>\tta(\ttb+\ttc) = \tta\ttb+\tta\ttc</m> is always true, 
-    we can't prove this with just one example. We need something more powerful; we need a true proof. 
+    In our examples above, we have seen examples of things that do and do not work.
+    We should be careful about what examples <em>prove</em>, though.
+    If someone were to claim that <m>\tta\ttb = \ttb\tta</m> is always true,
+    one would only need to show them one example where they were false, and we would know the person was wrong.
+    However, if someone claims that <m>\tta(\ttb+\ttc) = \tta\ttb+\tta\ttc</m> is always true,
+    we can't prove this with just one example. We need something more powerful; we need a true proof.
   </p>
 
   <p>
-    In this text, we forgo most proofs. The reader should know, though, that when we state something in a theorem, 
+    In this text, we forgo most proofs. The reader should know, though, that when we state something in a theorem,
     there is a proof that backs up what we state. Our justification comes from something stronger than just examples.
   </p>
 
@@ -656,13 +656,13 @@
       <p>
         <idx><h>matrix</h><h>multiplication!properties</h></idx>
 
-        Let <m>\tta</m>, <m>\ttb</m> and <m>\ttc</m> be matrices whose sizes are such that the following operations make sense, 
+        Let <m>\tta</m>, <m>\ttb</m> and <m>\ttc</m> be matrices whose sizes are such that the following operations make sense,
         and let <m>k</m> be a scalar. The following equalities hold:
         <ol>
           <li><m>\tta(\ttb\ttc) = (\tta\ttb)\ttc</m> (Associative Property)</li>
           <li xml:id="thm-mat_mult_dist">
             <p>
-              <m>\tta(\ttb+\ttc) = \tta\ttb + \tta\ttc</m> and 
+              <m>\tta(\ttb+\ttc) = \tta\ttb + \tta\ttc</m> and
               <m>(\ttb+\ttc)\tta = \ttb\tta + \ttc\tta</m> (Distributive Property)
             </p>
           </li>
@@ -674,25 +674,25 @@
   </theorem>
 
   <p>
-    The above box contains some very good news, and probably some very surprising news. 
-    Matrix multiplication probably seems to us like a very odd operation, 
-    so we probably wouldn't have been surprised if we were told that <m>\tta(\ttb\ttc)\neq(\tta\ttb)\ttc</m>. 
+    The above box contains some very good news, and probably some very surprising news.
+    Matrix multiplication probably seems to us like a very odd operation,
+    so we probably wouldn't have been surprised if we were told that <m>\tta(\ttb\ttc)\neq(\tta\ttb)\ttc</m>.
     It is a very nice thing that the Associative Property does hold.
   </p>
 
   <p>
-    As we near the end of this section, we raise one more issue of notation. 
-    We define <m>\tta^0 = \tti</m>. If <m>n</m> is a positive integer, we define 
+    As we near the end of this section, we raise one more issue of notation.
+    We define <m>\tta^0 = \tti</m>. If <m>n</m> is a positive integer, we define
     <me>
       \tta^n = \underbrace{\tta\cdot\tta\cdot \ \cdots\ \cdot\tta}_{n \text{ times}}
     </me>.
   </p>
 
   <p>
-    With numbers, we are used to <m>a^{-n} = \frac{1}{a^n}</m>. 
-    Do negative exponents work with matrices, too? The answer is yes, sort of. 
-    We'll have to be careful, and we'll cover the topic in detail once we define the inverse of a matrix. 
-    For now, though, we recognize the fact that <m>\tta^{-1} \neq \frac{1}{\tta}</m>, 
+    With numbers, we are used to <m>a^{-n} = \frac{1}{a^n}</m>.
+    Do negative exponents work with matrices, too? The answer is yes, sort of.
+    We'll have to be careful, and we'll cover the topic in detail once we define the inverse of a matrix.
+    For now, though, we recognize the fact that <m>\tta^{-1} \neq \frac{1}{\tta}</m>,
     for <m>\frac{1}{\tta}</m> makes no sense; we don't know how to <q>divide</q> by a matrix.
   </p>
 
@@ -708,12 +708,12 @@
   </aside>
 
   <p>
-    We end this section with a reminder of some of the things that do not work with matrix multiplication. 
+    We end this section with a reminder of some of the things that do not work with matrix multiplication.
     The good news is that there are really only two things on this list.
     <ol>
       <li>
         <p>
-          Matrix multiplication is not commutative; that is, <m>\tta\ttb \neq \ttb\tta</m>. 
+          Matrix multiplication is not commutative; that is, <m>\tta\ttb \neq \ttb\tta</m>.
         </p>
       </li>
       <li>
@@ -725,11 +725,11 @@
   </p>
 
   <p>
-    The bad news is that these ideas pop up in many places where we don't expect them. For instance, we are used to 
+    The bad news is that these ideas pop up in many places where we don't expect them. For instance, we are used to
     <me>
       (a+b)^2 = a^2+2ab+b^2
     </me>.
-    What about <m>(\tta+\ttb)^2</m>? All we'll say here is that 
+    What about <m>(\tta+\ttb)^2</m>? All we'll say here is that
     <me>
       (\tta+\ttb)^2 \neq \tta^2+2\tta\ttb+\ttb^2;
     </me>
@@ -743,11 +743,11 @@
           Row and column vectors <m>\vu</m> and <m>\vvv</m> are given. Find the product <m>\vu\vvv</m>, where possible.
         </p>
       </introduction>
-        
+
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 1 \amp -4\ebm \quad \vvv = \bbm -2\5\ebm</m>
+            <m>\vu = \bbm 1 \amp -4\ebm \quad \vvv = \bbm -2\\5\ebm</m>
           </p>
         </statement>
         <answer>
@@ -773,7 +773,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 1 \amp -1\ebm \quad \vvv = \bbm 3\3\ebm</m>
+            <m>\vu = \bbm 1 \amp -1\ebm \quad \vvv = \bbm 3\\3\ebm</m>
           </p>
         </statement>
         <answer>
@@ -786,7 +786,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 0.6 \amp 0.8\ebm \quad \vvv = \bbm 0.6\0.8\ebm</m>
+            <m>\vu = \bbm 0.6 \amp 0.8\ebm \quad \vvv = \bbm 0.6\\0.8\ebm</m>
           </p>
         </statement>
         <answer>
@@ -799,7 +799,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 1 \amp 2 \amp -1\ebm \ \vvv = \bbm 2\1\\-1\ebm</m>
+            <m>\vu = \bbm 1 \amp 2 \amp -1\ebm \ \vvv = \bbm 2\\1\\-1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -812,7 +812,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 3 \amp 2 \amp -2\ebm \ \vvv = \bbm -1\0\\9\ebm</m>
+            <m>\vu = \bbm 3 \amp 2 \amp -2\ebm \ \vvv = \bbm -1\\0\\9\ebm</m>
           </p>
         </statement>
         <answer>
@@ -825,7 +825,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 8 \amp -4 \amp 3\ebm \ \vvv = \bbm 2\4\\5\ebm</m>
+            <m>\vu = \bbm 8 \amp -4 \amp 3\ebm \ \vvv = \bbm 2\\4\\5\ebm</m>
           </p>
         </statement>
         <answer>
@@ -851,7 +851,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 1 \amp 2\amp 3\amp 4\ebm</m>     
+            <m>\vu = \bbm 1 \amp 2\amp 3\amp 4\ebm</m>
             <m>\vvv = \bbm 1\\-1\\1\\-1\ebm</m>
           </p>
         </statement>
@@ -865,7 +865,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 6 \amp 2\amp -1\amp 2\ebm</m>    
+            <m>\vu = \bbm 6 \amp 2\amp -1\amp 2\ebm</m>
             <m>\vvv = \bbm 3\\2\\9\\5\ebm</m>
           </p>
         </statement>
@@ -879,7 +879,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 1 \amp 2 \amp 3\ebm \quad \vvv = \bbm 3\2\ebm</m>
+            <m>\vu = \bbm 1 \amp 2 \amp 3\ebm \quad \vvv = \bbm 3\\2\ebm</m>
           </p>
         </statement>
         <answer>
@@ -892,7 +892,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 2 \amp -5\ebm \quad \vvv = \bbm 1\1\\1\ebm</m>
+            <m>\vu = \bbm 2 \amp -5\ebm \quad \vvv = \bbm 1\\1\\1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -904,26 +904,26 @@
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           Matrices <m>\tta</m> and <m>\ttb</m> are defined.
           <ol marker="(a)">
             <li>
-              <p>	
-                Give the dimensions of <m>\tta</m> and <m>\ttb</m>. 
+              <p>
+                Give the dimensions of <m>\tta</m> and <m>\ttb</m>.
                 If the dimensions properly match, give the dimensions of <m>\tta\ttb</m> and <m>\ttb\tta</m>.
               </p>
             </li>
             <li>
-              <p> 
+              <p>
                 Find the products <m>\tta\ttb</m> and <m>\ttb\tta</m>, if possible.
               </p>
             </li>
           </ol>
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -992,7 +992,7 @@
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb =\bbm 10\amp -18\amp 11\\-45\amp 24\amp -21\\-15\amp 12\amp -9\ebm</m>, <m>\ttb\tta = \bbm 52 \amp  -21\\45\amp -27\ebm</m> 
+            <m>\tta\ttb =\bbm 10\amp -18\amp 11\\-45\amp 24\amp -21\\-15\amp 12\amp -9\ebm</m>, <m>\ttb\tta = \bbm 52 \amp  -21\\45\amp -27\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1004,7 +1004,7 @@
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb =\bbm-32\amp 34\amp -24\\-32\amp 38\amp -8\\-16\amp 21\amp 4\ebm</m>,          
+            <m>\tta\ttb =\bbm-32\amp 34\amp -24\\-32\amp 38\amp -8\\-16\amp 21\amp 4\ebm</m>,
             <m>\ttb\tta = \bbm 22\amp -14\\-4\amp -12\ebm</m>
           </p>
         </answer>
@@ -1013,7 +1013,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -5\amp 2\\  -5\amp -2\\-5\amp -4\ebm</m>, 
+            <m>\tta = \bbm -5\amp 2\\  -5\amp -2\\-5\amp -4\ebm</m>,
             <m>\ttb = \bbm 0\amp -5\amp 6\\  -5\amp -3\amp -1\ebm</m>
           </p>
         </statement>
@@ -1024,7 +1024,7 @@
           </p>
         </answer>
       </exercise>
-         
+
       <exercise>
         <statement>
           <p>
@@ -1039,7 +1039,7 @@
           </p>
         </answer>
       </exercise>
-         
+
       <exercise>
         <statement>
           <p>
@@ -1069,7 +1069,7 @@
           </p>
         </answer>
       </exercise>
-       
+
       <exercise>
         <statement>
           <p>
@@ -1125,18 +1125,18 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
-          A <em>diagonal</em> matrix <m>\ttd</m> and a matrix <m>\tta</m> are given. 
+          A <em>diagonal</em> matrix <m>\ttd</m> and a matrix <m>\tta</m> are given.
           Find the products <m>\ttd\tta</m> and <m>\tta\ttd</m>, where possible.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -1187,7 +1187,7 @@
           </p>
         </statement>
         <answer>
-          <p>      
+          <p>
             <m>\ttd\tta= \bbm 4\amp -6\\  4\amp -6\ebm</m>,
             <m>\tta\ttd =  \bbm 4\amp 8\\  -3\amp -6\ebm</m>
           </p>
@@ -1202,7 +1202,7 @@
           </p>
         </statement>
         <answer>
-          <p>      
+          <p>
             <m>\ttd\tta= \bbm d_1a\amp d_1b\\  d_2c\amp d_2d\ebm</m>,
             <m>\tta\ttd =  \bbm d_1a\amp d_2b\\  d_1c\amp d_2d\ebm</m>
           </p>
@@ -1217,7 +1217,7 @@
           </p>
         </statement>
         <answer>
-          <p>      
+          <p>
             <m>\ttd\tta= \bbm d_1a\amp d_1b\amp d_1c\\  d_2d\amp d_2e\amp d_2f\\  d_3g\amp d_3h\amp d_3i\ebm</m>,
             <m>\tta\ttd =  \bbm d_1a\amp d_2b\amp d_3c\\  d_1d\amp d_2e\amp d_3f\\  d_1g\amp d_2h\amp d_3i\ebm</m>
           </p>
@@ -1226,13 +1226,13 @@
     </exercisegroup>
 
     <exercisegroup cols="2">
-    
+
       <introduction>
         <p>
           A matrix <m>\tta</m> and a vector <m>\vx</m> are given. Find the product <m>\tta\vx</m>.
         </p>
       </introduction>
-    
+
       <exercise>
         <statement>
           <p>
@@ -1256,7 +1256,7 @@
         </statement>
         <answer>
           <p>
-            <m>\tta\vx= \bbm -6\\  11\end {array} \hskip -3pt\right]</m>
+            <m>\tta\vx= \bbm -6\\  11\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1316,7 +1316,7 @@
           </p>
         </answer>
       </exercise>
-    
+
     </exercisegroup>
 
     <exercise>
@@ -1327,7 +1327,7 @@
       </statement>
       <answer>
         <p>
-          <m>\tta^2 = \bbm 1 \amp 0\0 \amp 1\ebm</m>; <m>\tta^3 = \bbm 0\amp 1\\1\amp 0\ebm</m>
+          <m>\tta^2 = \bbm 1 \amp 0\\0 \amp 1\ebm</m>; <m>\tta^3 = \bbm 0\amp 1\\1\amp 0\ebm</m>
         </p>
       </answer>
     </exercise>
@@ -1335,12 +1335,12 @@
     <exercise>
       <statement>
         <p>
-          Let <m>\tta = \bbm 2 \amp 0\0 \amp 3\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
+          Let <m>\tta = \bbm 2 \amp 0\\0 \amp 3\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
         </p>
       </statement>
       <answer>
         <p>
-          <m>\tta^2 = \bbm 4 \amp 0\0 \amp 9\ebm</m>; <m>\tta^3 = \bbm 8\amp 0\\0\amp 27\ebm</m>
+          <m>\tta^2 = \bbm 4 \amp 0\\0 \amp 9\ebm</m>; <m>\tta^3 = \bbm 8\amp 0\\0\amp 27\ebm</m>
         </p>
       </answer>
     </exercise>
@@ -1348,12 +1348,12 @@
     <exercise>
       <statement>
         <p>
-          Let <m>\tta = \bbm -1 \amp 0 \amp 0\0\amp 3\amp 0\\0\amp 0\amp 5\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
+          Let <m>\tta = \bbm -1 \amp 0 \amp 0\\0\amp 3\amp 0\\0\amp 0\amp 5\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
         </p>
       </statement>
       <answer>
         <p>
-          <m>\tta^2 = \bbm 1 \amp 0 \amp 0\0\amp 9\amp 0\\0\amp 0\amp 25\ebm</m>; <m>\tta^3 = \bbm -1\amp 0\amp 0\\0\amp 27\amp 0\\0\amp 0\amp 125\ebm</m>
+          <m>\tta^2 = \bbm 1 \amp 0 \amp 0\\0\amp 9\amp 0\\0\amp 0\amp 25\ebm</m>; <m>\tta^3 = \bbm -1\amp 0\amp 0\\0\amp 27\amp 0\\0\amp 0\amp 125\ebm</m>
         </p>
       </answer>
     </exercise>
@@ -1361,12 +1361,12 @@
     <exercise>
       <statement>
         <p>
-          Let <m>\tta = \bbm 0 \amp 1 \amp 0\0\amp 0\amp 1\\1\amp 0\amp 0\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
+          Let <m>\tta = \bbm 0 \amp 1 \amp 0\\0\amp 0\amp 1\\1\amp 0\amp 0\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
         </p>
       </statement>
       <answer>
         <p>
-          <m>\tta^2 = \bbm 0 \amp 0 \amp 1\1\amp 0\amp 0\\0\amp 1\amp 0\ebm</m>; <m>\tta^3 = \bbm 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\ebm</m>
+          <m>\tta^2 = \bbm 0 \amp 0 \amp 1\\1\amp 0\amp 0\\0\amp 1\amp 0\ebm</m>; <m>\tta^3 = \bbm 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\ebm</m>
         </p>
       </answer>
     </exercise>
@@ -1374,12 +1374,12 @@
     <exercise>
       <statement>
         <p>
-          Let <m>\tta = \bbm 0 \amp 0 \amp 1\0\amp 0\amp 0\\0\amp 1\amp 0\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
+          Let <m>\tta = \bbm 0 \amp 0 \amp 1\\0\amp 0\amp 0\\0\amp 1\amp 0\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
         </p>
       </statement>
       <answer>
         <p>
-          <m>\tta^2 = \bbm 0 \amp 1 \amp 0\0\amp 0\amp 0\\0\amp 0\amp 0\ebm</m>; <m>\tta^3 = \bbm 0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm</m>
+          <m>\tta^2 = \bbm 0 \amp 1 \amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm</m>; <m>\tta^3 = \bbm 0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm</m>
         </p>
       </answer>
     </exercise>
@@ -1391,7 +1391,7 @@
           <ol>
             <li>
               <p>
-                Let <m>\tta = \bbm 5\amp 3\\  -3\amp -2\ebm</m> and let <m>\ttb = \bbm -5 \amp -5\  -2 \amp 1\ebm</m>. 
+                Let <m>\tta = \bbm 5\amp 3\\  -3\amp -2\ebm</m> and let <m>\ttb = \bbm -5 \amp -5\  -2 \amp 1\ebm</m>.
                 Compute <m>\tta+\ttb</m>.
               </p>
             </li>
@@ -1412,7 +1412,7 @@
             </li>
             <li>
               <p>
-                Carefully expand the expression 
+                Carefully expand the expression
                 <me>
                   (\tta+\ttb)^2 = (\tta+\ttb)(\tta+\ttb)
                 </me>
@@ -1432,7 +1432,7 @@
             </li>
             <li>
               <p>
-                <m>$\bbm 10\amp 2\\  5\amp 11\ebm</m>
+                <m>\bbm 10\amp 2\\  5\amp 11\ebm</m>
               </p>
             </li>
             <li>
