@@ -7,6 +7,8 @@ output
 
 # don't track assets generated from source
 generated-assets
+generated-assets-colprint
+generated-assets-print
 
 # don't track the executables.ptx file
 executables.ptx
