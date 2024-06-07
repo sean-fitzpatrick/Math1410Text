@@ -681,212 +681,151 @@
   </subsection>
 
   <exercises>
-    <subexercises xml:id="TaC-space-coordinates">
-      <title>Terms and Concepts</title>
+    <exercise label="ex-space-coordinates-distance">
+      <webwork xml:id="webwork-ex-space-coordinates-distance">
+          <pg-code>
+            Context("Point");
+            $A=Point("(1,4,2)");
+            $B=Point("(2,6,3)");
+            $C=Point("(4,3,1)");
+            $AB=$B-$A;
+            $BC=$C-$B;
+            $CA=$A-$C;
+            @ABcoords=$AB-&gt;value;
+            @BCcoords=$BC-&gt;value;
+            @CAcoords=$CA-&gt;value;
+            Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0);
+            $magAB=Formula("sqrt(($ABcoords[0])^2+($ABcoords[1])^2+($ABcoords[2])^2)");
+            $magBC=Formula("sqrt(($BCcoords[0])^2+($BCcoords[1])^2+($BCcoords[2])^2)");
+            $magCA=Formula("sqrt(($CAcoords[0])^2+($CAcoords[1])^2+($CAcoords[2])^2)");
+            ($a,$b,$c)=num_sort($magAB,$magBC,$magCA);
+            $dodonot=(($a)**2+($b)**2==($c)**2)?'do':'do not';
+            $yn=PopUp(['?','do','do not'],$dodonot);
+          </pg-code>
 
-      <exercise label="TaC-space-coordinates-1">
-        <!-- <webwork xml:id="webwork-TaC-space-coordinates-1">
+          <statement>
+            <p>
+              The points <m>A=(1,4,2)</m>,
+              <m>B=(2,6,3)</m> and <m>C=(4,3,1)</m> form a triangle in space.
+              Find the distances between each pair of points and determine if the triangle is a right triangle.
+            </p>
+
+            <p>
+              <m>\left\lVert\overline{AB}\right\rVert=</m><var name="$magAB" width="10"/>
+            </p>
+
+            <p>
+              <m>\left\lVert\overline{BC}\right\rVert=</m><var name="$magBC" width="10"/>
+            </p>
+
+            <p>
+              <m>\left\lVert\overline{CA}\right\rVert=</m><var name="$magCA" width="10"/>
+            </p>
+
+            <p>
+              The three points <var name="$yn" form="popup"/> form a right triangle.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>\norm{\overline{AB}} = \sqrt{6}</m>;
+              <m>\norm{\overline{BC}} = \sqrt{17}</m>;
+              <m>\norm{\overline{AC}} = \sqrt{11}</m>.
+              Yes, it is a right triangle as <m>\norm{\overline{AB}}^2+\norm{\overline{AC}}^2=\norm{\overline{BC}}^2</m>.
+            </p>
+          </solution>
+      </webwork>
+    </exercise>
+
+    <exercise label="ex-space-coordinates-quadrilateral">
+      <!-- <webwork xml:id="webwork-ex-space-coordinates-quadrilateral">
+          <pg-code>
+          </pg-code> -->
+          <statement>
+            <p>
+              The points <m>A=(1,1,3)</m>, <m>B=(3,2,7)</m>,
+              <m>C=(2,0,8)</m> and <m>D = (0,-1,4)</m> form a quadrilateral <m>ABCD</m> in space.
+              Is this a parallelogram?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Yes, as opposite sides have equal length.
+              <m>\norm{\overline{AB}} = \sqrt{21}=\norm{\overline{CD}}</m>;
+              <m>\norm{\overline{BC}} = \sqrt{6}=\norm{\overline{AD}}</m>.
+            </p>
+          </solution>
+      <!-- </webwork> -->
+    </exercise>
+
+    <exercisegroup cols="2" xml:id="exset-space-coordinates-region">
+
+      <introduction>
+        <p>
+          In the following exercises,
+          describe the region in space defined by the inequalities.
+        </p>
+      </introduction>
+
+      <exercise label="ex-space-coordinates-region-2">
+        <webwork xml:id="webwork-ex-space-coordinates-region-2">
             <pg-code>
-            </pg-code> -->
-            <statement>
-              <p>
-                Axes drawn in space must conform to the <fillin/> <fillin/> rule.
-              </p>
-            </statement>
-            <answer>
-              <p>
-                right hand
-              </p>
-            </answer>
-        <!-- </webwork> -->
-      </exercise>
-
-      <exercise label="TaC-space-coordinates-2">
-        <webwork xml:id="webwork-TaC-space-coordinates-2">
-            <!-- <pg-macros><macro-file>contextArbitraryString.pl</macro-file></pg-macros> -->
-
-            <pg-code>
-              Context("ArbitraryString");
-              $line=Compute("line");
-              $plane=Compute("plane");
-              $lineevaluator=$line-&gt;cmp(checker =&gt; sub {
-                my ($correct,$student,$ans) = @_;
-                $correct = $correct-&gt;value;
-                $student = $student-&gt;value;
-                $student =~ s/^~~W+|~~W+$//g;
-                return uc($correct) eq uc($student);
-              });
-              $planeevaluator=$plane-&gt;cmp(checker =&gt; sub {
-                my ($correct,$student,$ans) = @_;
-                $correct = $correct-&gt;value;
-                $student = $student-&gt;value;
-                $student =~ s/^~~W+|~~W+$//g;
-                return uc($correct) eq uc($student);
-              });
             </pg-code>
 
             <statement>
               <p>
-                In the plane,
-                the equation <m>x=2</m> defines a <var name="$line" evaluator="$lineevaluator" width="10"/>;
-              </p>
-
-              <p>
-                in space, <m>x=2</m> defines a <var name="$plane" evaluator="$planeevaluator" width="10"/>.
-              </p>
-            </statement>
-        </webwork>
-      </exercise>
-    </subexercises>
-    <subexercises>
-      <title>Problems</title>
-      <exercise label="ex-space-coordinates-distance">
-        <webwork xml:id="webwork-ex-space-coordinates-distance">
-            <pg-code>
-              Context("Point");
-              $A=Point("(1,4,2)");
-              $B=Point("(2,6,3)");
-              $C=Point("(4,3,1)");
-              $AB=$B-$A;
-              $BC=$C-$B;
-              $CA=$A-$C;
-              @ABcoords=$AB-&gt;value;
-              @BCcoords=$BC-&gt;value;
-              @CAcoords=$CA-&gt;value;
-              Context()-&gt;flags-&gt;set(reduceConstantFunctions=&gt;0);
-              $magAB=Formula("sqrt(($ABcoords[0])^2+($ABcoords[1])^2+($ABcoords[2])^2)");
-              $magBC=Formula("sqrt(($BCcoords[0])^2+($BCcoords[1])^2+($BCcoords[2])^2)");
-              $magCA=Formula("sqrt(($CAcoords[0])^2+($CAcoords[1])^2+($CAcoords[2])^2)");
-              ($a,$b,$c)=num_sort($magAB,$magBC,$magCA);
-              $dodonot=(($a)**2+($b)**2==($c)**2)?'do':'do not';
-              $yn=PopUp(['?','do','do not'],$dodonot);
-            </pg-code>
-
-            <statement>
-              <p>
-                The points <m>A=(1,4,2)</m>,
-                <m>B=(2,6,3)</m> and <m>C=(4,3,1)</m> form a triangle in space.
-                Find the distances between each pair of points and determine if the triangle is a right triangle.
-              </p>
-
-              <p>
-                <m>\left\lVert\overline{AB}\right\rVert=</m><var name="$magAB" width="10"/>
-              </p>
-
-              <p>
-                <m>\left\lVert\overline{BC}\right\rVert=</m><var name="$magBC" width="10"/>
-              </p>
-
-              <p>
-                <m>\left\lVert\overline{CA}\right\rVert=</m><var name="$magCA" width="10"/>
-              </p>
-
-              <p>
-                The three points <var name="$yn" form="popup"/> form a right triangle.
+                <m>0\leq x\leq 3</m>
               </p>
             </statement>
             <solution>
               <p>
-                <m>\norm{\overline{AB}} = \sqrt{6}</m>;
-                <m>\norm{\overline{BC}} = \sqrt{17}</m>;
-                <m>\norm{\overline{AC}} = \sqrt{11}</m>.
-                Yes, it is a right triangle as <m>\norm{\overline{AB}}^2+\norm{\overline{AC}}^2=\norm{\overline{BC}}^2</m>.
+                Region bounded between the planes <m>x=0</m>
+                (the <m>y-z</m> coordinate plane)
+                and <m>x=3</m>.
               </p>
             </solution>
         </webwork>
       </exercise>
 
-      <exercise label="ex-space-coordinates-quadrilateral">
-        <!-- <webwork xml:id="webwork-ex-space-coordinates-quadrilateral">
+      <exercise label="ex-space-coordinates-region-3">
+        <!-- <webwork xml:id="webwork-ex-space-coordinates-region-3">
             <pg-code>
             </pg-code> -->
             <statement>
               <p>
-                The points <m>A=(1,1,3)</m>, <m>B=(3,2,7)</m>,
-                <m>C=(2,0,8)</m> and <m>D = (0,-1,4)</m> form a quadrilateral <m>ABCD</m> in space.
-                Is this a parallelogram?
+                <m>x\geq 0,\ y\geq0, \ z\geq0</m>
               </p>
             </statement>
             <solution>
               <p>
-                Yes, as opposite sides have equal length.
-                <m>\norm{\overline{AB}} = \sqrt{21}=\norm{\overline{CD}}</m>;
-                <m>\norm{\overline{BC}} = \sqrt{6}=\norm{\overline{AD}}</m>.
+                The first octant of space;
+                all points <m>(x,y,z)</m> where each of <m>x</m>,
+                <m>y</m> and <m>z</m> are positive.
+                (Analogous to the first quadrant in the plane.)
               </p>
             </solution>
         <!-- </webwork> -->
       </exercise>
 
-      <exercisegroup cols="2" xml:id="exset-space-coordinates-region">
-
-        <introduction>
-          <p>
-            In the following exercises,
-            describe the region in space defined by the inequalities.
-          </p>
-        </introduction>
-
-        <exercise label="ex-space-coordinates-region-2">
-          <webwork xml:id="webwork-ex-space-coordinates-region-2">
-              <pg-code>
-              </pg-code>
-
-              <statement>
-                <p>
-                  <m>0\leq x\leq 3</m>
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Region bounded between the planes <m>x=0</m>
-                  (the <m>y-z</m> coordinate plane)
-                  and <m>x=3</m>.
-                </p>
-              </solution>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-space-coordinates-region-3">
-          <!-- <webwork xml:id="webwork-ex-space-coordinates-region-3">
-              <pg-code>
-              </pg-code> -->
-              <statement>
-                <p>
-                  <m>x\geq 0,\ y\geq0, \ z\geq0</m>
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  The first octant of space;
-                  all points <m>(x,y,z)</m> where each of <m>x</m>,
-                  <m>y</m> and <m>z</m> are positive.
-                  (Analogous to the first quadrant in the plane.)
-                </p>
-              </solution>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-space-coordinates-region-4">
-          <!-- <webwork xml:id="webwork-ex-space-coordinates-region-4">
-              <pg-code>
-              </pg-code> -->
-              <statement>
-                <p>
-                  <m>y\geq 3</m>
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  All points in space where the <m>y</m> value is greater than 3;
-                  viewing space as often depicted in this text,
-                  this is the region <q>to the right</q>
-                  of the plane <m>y=3</m> (which is parallel to the <m>x-z</m> coordinate plane.)
-                </p>
-              </solution>
-          <!-- </webwork> -->
-        </exercise>
-
-      </exercisegroup>
-    </subexercises>
+      <exercise label="ex-space-coordinates-region-4">
+        <!-- <webwork xml:id="webwork-ex-space-coordinates-region-4">
+            <pg-code>
+            </pg-code> -->
+            <statement>
+              <p>
+                <m>y\geq 3</m>
+              </p>
+            </statement>
+            <solution>
+              <p>
+                All points in space where the <m>y</m> value is greater than 3;
+                viewing space as often depicted in this text,
+                this is the region <q>to the right</q>
+                of the plane <m>y=3</m> (which is parallel to the <m>x-z</m> coordinate plane.)
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+    </exercisegroup>
   </exercises>
 </section>

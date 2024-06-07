@@ -1724,1209 +1724,1132 @@
   </subsection>
 
   <exercises>
-    <subexercises xml:id="TaC-dot-product">
-      <title>Terms and Concepts</title>
-      <exercise label="TaC-dot-product-1">
-        <!--<webwork xml:id="webwork-TaC-dot-product-1">
+    <exercisegroup cols="2" xml:id="exset-dot-product-compute">
+
+      <introduction>
+        <p>
+          In the following exercises, find the dot product of the given vectors.
+        </p>
+      </introduction>
+
+      <exercise label="ex-dot-product-compute-1">
+        <webwork xml:id="webwork-ex-dot-product-compute-1">
+            <pg-code>
+              Context("LimitedNumeric");
+              $dot=Real("-22");
+            </pg-code>
+
+            <statement>
+              <p>
+                <m>\vec u = \bbm  2\\-4\ebm</m>\\ <m>\vec v = \bbm 3,7\ebm</m>
+              </p>
+
+              <p>
+                <m>\vec u \cdot\vec v=</m><var name="$dot" width="5"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-dot-product-compute-2">
+        <webwork xml:id="webwork-ex-dot-product-compute-2">
+            <pg-code>
+              Context("LimitedNumeric");
+              $dot=Real("33");
+            </pg-code>
+
+            <statement>
+              <p>
+                <m>\vec u = \bbm  5\\3\ebm</m>\\ <m>\vec v = \bbm 6,1\ebm</m>
+              </p>
+
+              <p>
+                <m>\vec u \cdot\vec v=</m><var name="$dot" width="5"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-dot-product-compute-3">
+        <webwork xml:id="webwork-ex-dot-product-compute-3">
+            <pg-code>
+              Context("LimitedNumeric");
+              $dot=Real("3");
+            </pg-code>
+
+            <statement>
+              <p>
+                <m>\vec u = \bbm  1\\-1\\2\ebm</m>,
+                <m>\vec v = \bbm  2\\5\\3\ebm</m>
+              </p>
+
+              <p>
+                <m>\vec u \cdot\vec v=</m><var name="$dot" width="5"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-dot-product-compute-4">
+        <webwork xml:id="webwork-ex-dot-product-compute-4">
+            <pg-code>
+              Context("LimitedNumeric");
+              $dot=Real("0");
+            </pg-code>
+
+            <statement>
+              <p>
+                <m>\vec u = \bbm  3\\5\\-1\ebm</m>,
+                <m>\vec v = \bbm  4\\-1\\7\ebm</m>
+              </p>
+
+              <p>
+                <m>\vec u \cdot\vec v=</m><var name="$dot" width="5"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-dot-product-compute-5">
+        <!--<webwork xml:id="webwork-ex-dot-product-compute-5">
             <pg-code>
             </pg-code> -->
             <statement>
               <p>
-                The dot product of two vectors is a <fillin/>, not a vector.
+                <m>\vec u = \bbm  1\\1\ebm</m>\\ <m>\vec v = \bbm 1,2,3\ebm</m>
               </p>
             </statement>
             <answer>
               <p>
-                Scalar
+                not defined
               </p>
             </answer>
         <!-- </webwork> -->
       </exercise>
 
-      <exercise label="TaC-dot-product-2">
-        <!--<webwork xml:id="webwork-TaC-dot-product-2">
+      <exercise label="ex-dot-product-compute-6">
+        <webwork xml:id="webwork-ex-dot-product-compute-6">
             <pg-code>
-            </pg-code> -->
+              Context("LimitedNumeric");
+              $dot=Real("0");
+            </pg-code>
+
             <statement>
               <p>
-                How are the concepts of the dot product and vector magnitude related?
+                <m>\vec u = \bbm  1\\2\\3\ebm</m>,
+                <m>\vec v = \bbm  0\\0\\0\ebm</m>
+              </p>
+
+              <p>
+                <m>\vec u \cdot\vec v=</m><var name="$dot" width="5"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+    </exercisegroup>
+
+    <exercise label="ex-dot-product-distributive-check">
+      <!--<webwork xml:id="webwork-ex-dot-product-distributive-check">
+          <pg-code>
+          </pg-code> -->
+          <statement>
+            <p>
+              Create your own vectors <m>\vec u</m>,
+              <m>\vec v</m> and <m>\vec w</m> in
+              <m>\mathbb{R}^2</m> and show that <m>\vec u\cdot (\vec v+\vec w) = \vec u\cdot \vec v + \vec u\cdot \vec w</m>.
+            </p>
+          </statement>
+          <answer>
+            <p>
+              Answers will vary.
+            </p>
+          </answer>
+      <!-- </webwork> -->
+    </exercise>
+
+    <exercise label="ex-dot-product-scalar-check">
+      <!--<webwork xml:id="webwork-ex-dot-product-scalar-check">
+          <pg-code>
+          </pg-code> -->
+          <statement>
+            <p>
+              Create your own vectors <m>\vec u</m> and <m>\vec v</m> in
+              <m>\mathbb{R}^3</m> and scalar <m>c</m> and show that <m>c(\vec u\cdot \vec v) = \vec u\cdot (c\vec v)</m>.
+            </p>
+          </statement>
+          <answer>
+            <p>
+              Answers will vary.
+            </p>
+          </answer>
+      <!-- </webwork> -->
+    </exercise>
+
+    <exercisegroup cols="2" xml:id="exset-dot-product-angle">
+
+      <introduction>
+        <p>
+          In the following exercises,
+          find the measure of the angle between the two vectors in both radians and degrees.
+        </p>
+      </introduction>
+
+      <exercise label="ex-dot-product-angle-1">
+        <webwork xml:id="webwork-ex-dot-product-angle-1">
+            <pg-code>
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $theta=Formula("arccos(3/sqrt(10))");
+            </pg-code>
+
+            <statement>
+              <p>
+                The angle between <m>\vec u = \bbm  1\\1\ebm</m> and
+                <m>\vec v = \bbm  1\\2\ebm</m> is <var name="$theta" width="10"/>.
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-dot-product-angle-2">
+        <webwork xml:id="webwork-ex-dot-product-angle-2">
+            <pg-code>
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $theta=Formula("arccos(-1/sqrt(170))");
+            </pg-code>
+
+            <statement>
+              <p>
+                The angle between <m>\vec u = \bbm  -2\\1\ebm</m> and
+                <m>\vec v = \bbm  3\\5\ebm</m> is <var name="$theta" width="10"/>.
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-dot-product-angle-3">
+        <webwork xml:id="webwork-ex-dot-product-angle-3">
+            <pg-code>
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $theta=Formula("pi/4");
+            </pg-code>
+
+            <statement>
+              <p>
+                The angle between <m>\vec u = \bbm  8\\1\\-4\ebm</m> and
+                <m>\vec v = \bbm  2\\2\\0\ebm</m> is <var name="$theta" width="10"/>.
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-dot-product-angle-4">
+        <webwork xml:id="webwork-ex-dot-product-angle-4">
+            <pg-code>
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $theta=Formula("pi/2");
+            </pg-code>
+
+            <statement>
+              <p>
+                The angle between <m>\vec u = \bbm  1\\7\\2\ebm</m> and
+                <m>\vec v = \bbm  4\\-2\\5\ebm</m> is <var name="$theta" width="10"/>.
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+    </exercisegroup>
+    <exercisegroup cols="2" xml:id="Exset-dot-product-find-orthogonal">
+
+      <introduction>
+        <p>
+          In the following exercises, a vector <m>\vec v</m> is given.
+          Give two vectors that are orthogonal to <m>\vec v</m>.
+        </p>
+      </introduction>
+
+      <exercise label="ex-dot-product-find-orthogonal-1">
+        <webwork xml:id="webwork-ex-dot-product-find-orthogonal-1">
+            <pg-code>
+              Context("Vector");
+              $v=Vector("&lt;4,7&gt;");
+              $u=Vector("&lt;-7,4&gt;");
+              $w=Vector("&lt;14,-8&gt;");
+              $multians = MultiAnswer($u,$v)-&gt;with(
+                  singleResult =&gt; 0,
+                  checker =&gt; sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0&gt;")));
+                      $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0&gt;")) and ($s1 != $s2));
+                      return ~~@ret;
+                    }
+                );
+            </pg-code>
+
+            <statement>
+              <p>
+                Find two nonzero vectors orthogonal to <m>\vec v = \bbm  4\\7\ebm</m>.
+              </p>
+
+              <p>
+                <var name="$multians" width="10"/> and <var name="$multians" width="10"/>
               </p>
             </statement>
             <solution>
               <p>
-                The magnitude of a vectors is the square root of the dot product of a vector with itself; that is,
-                <m>\norm{\vec v} = \sqrt{\vec v\cdot \vec v}</m>.
+                Answers will vary; two possible answers are
+                <m>\bbm  -7\\4\ebm</m> and <m>\bbm 14\\-8\ebm</m>.
               </p>
             </solution>
-        <!-- </webwork> -->
+        </webwork>
       </exercise>
 
-      <exercise label="TaC-dot-product-3">
-        <!--<webwork xml:id="webwork-TaC-dot-product-3">
+      <exercise label="ex-dot-product-find-orthogonal-2">
+        <webwork xml:id="webwork-ex-dot-product-find-orthogonal-2">
             <pg-code>
-            </pg-code> -->
+              Context("Vector");
+              $v=Vector("&lt;-3,5&gt;");
+              $u=Vector("&lt;5,3&gt;");
+              $w=Vector("&lt;-15,-9&gt;");
+              $multians = MultiAnswer($u,$v)-&gt;with(
+                  singleResult =&gt; 0,
+                  checker =&gt; sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0&gt;")));
+                      $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0&gt;")) and ($s1 != $s2));
+                      return ~~@ret;
+                    }
+                );
+            </pg-code>
+
             <statement>
               <p>
-                How can one quickly tell if the angle between two vectors is acute or obtuse?
+                Find two nonzero vectors orthogonal to <m>\vec v = \bbm  -3\\5\ebm</m>.
+              </p>
+
+              <p>
+                <var name="$multians" width="10"/> and <var name="$multians" width="10"/>
               </p>
             </statement>
             <solution>
               <p>
-                By considering the sign of the dot product of the two vectors.
-                If the dot product is positive, the angle is acute;
-                if the dot product is negative, the angle is obtuse.
+                Answers will vary; two possible answers are
+                <m>\bbm  5\\3\ebm</m> and <m>\bbm -15\\-9\ebm</m>.
               </p>
             </solution>
-        <!-- </webwork> -->
+        </webwork>
       </exercise>
 
-      <exercise label="TaC-dot-product-4">
-        <!--<webwork xml:id="webwork-TaC-dot-product-4">
+      <exercise label="ex-dot-product-find-orthogonal-3">
+        <webwork xml:id="webwork-ex-dot-product-find-orthogonal-3">
             <pg-code>
-            </pg-code> -->
+              Context("Vector");
+              $v=Vector("&lt;1,1,1&gt;");
+              $u=Vector("&lt;1,0,-1&gt;");
+              $w=Vector("&lt;4,5,-9&gt;");
+              $multians = MultiAnswer($u,$v)-&gt;with(
+                  singleResult =&gt; 0,
+                  checker =&gt; sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0&gt;")));
+                      $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0&gt;")) and ($s1 != $s2));
+                      return ~~@ret;
+                    }
+                );
+            </pg-code>
+
             <statement>
               <p>
-                Give a synonym for <q>orthogonal.</q>
+                Find two nonzero vectors orthogonal to <m>\vec v = \bbm  1\\1\\1\ebm</m>.
+              </p>
+
+              <p>
+                <var name="$multians" width="10"/> and <var name="$multians" width="10"/>
               </p>
             </statement>
-            <answer>
+            <solution>
               <p>
-                <q>Perpendicular</q> is one answer.
+                Answers will vary; two possible answers are
+                <m>\bbm  1\\0\\-1\ebm</m> and <m>\bbm  4\\5\\-9\ebm</m>.
               </p>
-            </answer>
-        <!-- </webwork> -->
+            </solution>
+        </webwork>
       </exercise>
 
-    </subexercises>
-    <subexercises>
-      <title>Problems</title>
-      <exercisegroup cols="2" xml:id="exset-dot-product-compute">
-
-        <introduction>
-          <p>
-            In the following exercises, find the dot product of the given vectors.
-          </p>
-        </introduction>
-
-        <exercise label="ex-dot-product-compute-1">
-          <webwork xml:id="webwork-ex-dot-product-compute-1">
-              <pg-code>
-                Context("LimitedNumeric");
-                $dot=Real("-22");
-              </pg-code>
-
-              <statement>
-                <p>
-                  <m>\vec u = \bbm  2\\-4\ebm</m>\\ <m>\vec v = \bbm 3,7\ebm</m>
-                </p>
-
-                <p>
-                  <m>\vec u \cdot\vec v=</m><var name="$dot" width="5"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-dot-product-compute-2">
-          <webwork xml:id="webwork-ex-dot-product-compute-2">
-              <pg-code>
-                Context("LimitedNumeric");
-                $dot=Real("33");
-              </pg-code>
-
-              <statement>
-                <p>
-                  <m>\vec u = \bbm  5\\3\ebm</m>\\ <m>\vec v = \bbm 6,1\ebm</m>
-                </p>
-
-                <p>
-                  <m>\vec u \cdot\vec v=</m><var name="$dot" width="5"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-dot-product-compute-3">
-          <webwork xml:id="webwork-ex-dot-product-compute-3">
-              <pg-code>
-                Context("LimitedNumeric");
-                $dot=Real("3");
-              </pg-code>
-
-              <statement>
-                <p>
-                  <m>\vec u = \bbm  1\\-1\\2\ebm</m>,
-                  <m>\vec v = \bbm  2\\5\\3\ebm</m>
-                </p>
-
-                <p>
-                  <m>\vec u \cdot\vec v=</m><var name="$dot" width="5"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-dot-product-compute-4">
-          <webwork xml:id="webwork-ex-dot-product-compute-4">
-              <pg-code>
-                Context("LimitedNumeric");
-                $dot=Real("0");
-              </pg-code>
-
-              <statement>
-                <p>
-                  <m>\vec u = \bbm  3\\5\\-1\ebm</m>,
-                  <m>\vec v = \bbm  4\\-1\\7\ebm</m>
-                </p>
-
-                <p>
-                  <m>\vec u \cdot\vec v=</m><var name="$dot" width="5"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-dot-product-compute-5">
-          <!--<webwork xml:id="webwork-ex-dot-product-compute-5">
-              <pg-code>
-              </pg-code> -->
-              <statement>
-                <p>
-                  <m>\vec u = \bbm  1\\1\ebm</m>\\ <m>\vec v = \bbm 1,2,3\ebm</m>
-                </p>
-              </statement>
-              <answer>
-                <p>
-                  not defined
-                </p>
-              </answer>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-dot-product-compute-6">
-          <webwork xml:id="webwork-ex-dot-product-compute-6">
-              <pg-code>
-                Context("LimitedNumeric");
-                $dot=Real("0");
-              </pg-code>
-
-              <statement>
-                <p>
-                  <m>\vec u = \bbm  1\\2\\3\ebm</m>,
-                  <m>\vec v = \bbm  0\\0\\0\ebm</m>
-                </p>
-
-                <p>
-                  <m>\vec u \cdot\vec v=</m><var name="$dot" width="5"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-      </exercisegroup>
-
-      <exercise label="ex-dot-product-distributive-check">
-        <!--<webwork xml:id="webwork-ex-dot-product-distributive-check">
+      <exercise label="ex-dot-product-find-orthogonal-4">
+        <webwork xml:id="webwork-ex-dot-product-find-orthogonal-4">
             <pg-code>
-            </pg-code> -->
+              Context("Vector");
+              $v=Vector("&lt;1,-2,3&gt;");
+              $u=Vector("&lt;2,1,0&gt;");
+              $w=Vector("&lt;1,1,1/3&gt;");
+              $multians = MultiAnswer($u,$v)-&gt;with(
+                  singleResult =&gt; 0,
+                  checker =&gt; sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0&gt;")));
+                      $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0&gt;")) and ($s1 != $s2));
+                      return ~~@ret;
+                    }
+                );
+            </pg-code>
+
             <statement>
               <p>
-                Create your own vectors <m>\vec u</m>,
-                <m>\vec v</m> and <m>\vec w</m> in
-                <m>\mathbb{R}^2</m> and show that <m>\vec u\cdot (\vec v+\vec w) = \vec u\cdot \vec v + \vec u\cdot \vec w</m>.
+                Find two nonzero vectors orthogonal to <m>\vec v = \bbm  1\\-2\\3\ebm</m>.
+              </p>
+
+              <p>
+                <var name="$multians" width="10"/> and <var name="$multians" width="10"/>
               </p>
             </statement>
-            <answer>
+            <solution>
               <p>
-                Answers will vary.
+                Answers will vary; two possible answers are
+                <m>\bbm  2\\1\\0\ebm</m> and <m>\bbm  1\\1\\1/3\ebm</m>.
               </p>
-            </answer>
-        <!-- </webwork> -->
+            </solution>
+        </webwork>
       </exercise>
 
-      <exercise label="ex-dot-product-scalar-check">
-        <!--<webwork xml:id="webwork-ex-dot-product-scalar-check">
+    </exercisegroup>
+    <exercisegroup cols="2" xml:id="exset-dot-product-projection">
+
+      <introduction>
+        <p>
+          In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given.
+          Find <m>\proj uv</m>,
+          the orthogonal projection of <m>\vec u</m> onto <m>\vec v</m>,
+          and sketch all three vectors with the same initial point.
+        </p>
+      </introduction>
+
+      <exercise xml:id="ex_10_03_ex_21" label="ex-dot-product-projection-1">
+        <webwork xml:id="webwork-ex-dot-product-projection-1">
             <pg-code>
-            </pg-code> -->
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;1,2&gt;");
+              $v=Vector("&lt;-1,3&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
+            </pg-code>
+
             <statement>
               <p>
-                Create your own vectors <m>\vec u</m> and <m>\vec v</m> in
-                <m>\mathbb{R}^3</m> and scalar <m>c</m> and show that <m>c(\vec u\cdot \vec v) = \vec u\cdot (c\vec v)</m>.
+                If <m>\vec u = \bbm  1\\2\ebm</m> and <m>\vec v = \bbm -1\\3\ebm</m>,
+                then <m>\proj uv=</m><var name="$projuv" width="15"/>.
+              </p>
+
+              <p>
+                Sketch all three vectors on the same axes.
               </p>
             </statement>
-            <answer>
-              <p>
-                Answers will vary.
-              </p>
-            </answer>
-        <!-- </webwork> -->
+        </webwork>
       </exercise>
 
-      <exercisegroup cols="2" xml:id="exset-dot-product-angle">
+      <exercise label="ex-dot-product-projection-2">
+        <webwork xml:id="webwork-ex-dot-product-projection-2">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;5,5&gt;");
+              $v=Vector("&lt;1,3&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
+            </pg-code>
 
-        <introduction>
-          <p>
-            In the following exercises,
-            find the measure of the angle between the two vectors in both radians and degrees.
-          </p>
-        </introduction>
+            <statement>
+              <p>
+                If <m>\vec u = \bbm  5\\5\ebm</m> and <m>\vec v = \bbm 1\\3\ebm</m>,
+                then <m>\proj uv=</m><var name="$projuv" width="15"/>.
+              </p>
 
-        <exercise label="ex-dot-product-angle-1">
-          <webwork xml:id="webwork-ex-dot-product-angle-1">
-              <pg-code>
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $theta=Formula("arccos(3/sqrt(10))");
-              </pg-code>
+              <p>
+                Sketch all three vectors on the same axes.
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
 
-              <statement>
-                <p>
-                  The angle between <m>\vec u = \bbm  1\\1\ebm</m> and
-                  <m>\vec v = \bbm  1\\2\ebm</m> is <var name="$theta" width="10"/>.
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
+      <exercise label="ex-dot-product-projection-3">
+        <webwork xml:id="webwork-ex-dot-product-projection-3">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;-3,2&gt;");
+              $v=Vector("&lt;1,1&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
+            </pg-code>
 
-        <exercise label="ex-dot-product-angle-2">
-          <webwork xml:id="webwork-ex-dot-product-angle-2">
-              <pg-code>
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $theta=Formula("arccos(-1/sqrt(170))");
-              </pg-code>
+            <statement>
+              <p>
+                If <m>\vec u = \bbm  -3\\2\ebm</m> and <m>\vec v = \bbm 1\\1\ebm</m>,
+                then <m>\proj uv=</m><var name="$projuv" width="15"/>.
+              </p>
 
-              <statement>
-                <p>
-                  The angle between <m>\vec u = \bbm  -2\\1\ebm</m> and
-                  <m>\vec v = \bbm  3\\5\ebm</m> is <var name="$theta" width="10"/>.
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
+              <p>
+                Sketch all three vectors on the same axes.
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
 
-        <exercise label="ex-dot-product-angle-3">
-          <webwork xml:id="webwork-ex-dot-product-angle-3">
-              <pg-code>
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $theta=Formula("pi/4");
-              </pg-code>
+      <exercise label="ex-dot-product-projection-4">
+        <webwork xml:id="webwork-ex-dot-product-projection-4">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;-3,2&gt;");
+              $v=Vector("&lt;2,3&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
+            </pg-code>
 
-              <statement>
-                <p>
-                  The angle between <m>\vec u = \bbm  8\\1\\-4\ebm</m> and
-                  <m>\vec v = \bbm  2\\2\\0\ebm</m> is <var name="$theta" width="10"/>.
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
+            <statement>
+              <p>
+                If <m>\vec u = \bbm  -3\\2\ebm</m> and <m>\vec v = \bbm 2\\3\ebm</m>,
+                then <m>\proj uv=</m><var name="$projuv" width="15"/>.
+              </p>
 
-        <exercise label="ex-dot-product-angle-4">
-          <webwork xml:id="webwork-ex-dot-product-angle-4">
-              <pg-code>
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $theta=Formula("pi/2");
-              </pg-code>
+              <p>
+                Sketch all three vectors on the same axes.
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
 
-              <statement>
-                <p>
-                  The angle between <m>\vec u = \bbm  1\\7\\2\ebm</m> and
-                  <m>\vec v = \bbm  4\\-2\\5\ebm</m> is <var name="$theta" width="10"/>.
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
+      <exercise label="ex-dot-product-projection-5">
+        <webwork xml:id="webwork-ex-dot-product-projection-5">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;1,5,1&gt;");
+              $v=Vector("&lt;1,2,3&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den&gt;");
+            </pg-code>
 
-      </exercisegroup>
-      <exercisegroup cols="2" xml:id="Exset-dot-product-find-orthogonal">
+            <statement>
+              <p>
+                If <m>\vec u = \bbm  1\\5\\1\ebm</m> and <m>\vec v = \bbm  1\\2\\3\ebm</m>,
+                then <m>\proj uv=</m><var name="$projuv" width="15"/>.
+              </p>
 
-        <introduction>
-          <p>
-            In the following exercises, a vector <m>\vec v</m> is given.
-            Give two vectors that are orthogonal to <m>\vec v</m>.
-          </p>
-        </introduction>
+              <p>
+                Sketch all three vectors on the same axes.
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
 
-        <exercise label="ex-dot-product-find-orthogonal-1">
-          <webwork xml:id="webwork-ex-dot-product-find-orthogonal-1">
-              <pg-code>
-                Context("Vector");
-                $v=Vector("&lt;4,7&gt;");
-                $u=Vector("&lt;-7,4&gt;");
-                $w=Vector("&lt;14,-8&gt;");
-                $multians = MultiAnswer($u,$v)-&gt;with(
-                    singleResult =&gt; 0,
-                    checker =&gt; sub {
-                        my ($correct,$student,$self) = @_;
-                        my ($s1, $s2) = @{$student};
-                        $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0&gt;")));
-                        $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0&gt;")) and ($s1 != $s2));
-                        return ~~@ret;
-                     }
-                  );
-              </pg-code>
+      <exercise xml:id="ex_10_03_ex_24" label="ex-dot-product-projection-6">
+        <webwork xml:id="webwork-ex-dot-product-projection-6">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;3,-1,2&gt;");
+              $v=Vector("&lt;2,2,1&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den&gt;");
+            </pg-code>
 
-              <statement>
-                <p>
-                  Find two nonzero vectors orthogonal to <m>\vec v = \bbm  4\\7\ebm</m>.
-                </p>
+            <statement>
+              <p>
+                If <m>\vec u = \bbm  3\\-1\\2\ebm</m> and <m>\vec v = \bbm  2\\2\\1\ebm</m>,
+                then <m>\proj uv=</m><var name="$projuv" width="15"/>.
+              </p>
 
-                <p>
-                  <var name="$multians" width="10"/> and <var name="$multians" width="10"/>
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Answers will vary; two possible answers are
-                  <m>\bbm  -7\\4\ebm</m> and <m>\bbm 14\\-8\ebm</m>.
-                </p>
-              </solution>
-          </webwork>
-        </exercise>
+              <p>
+                Sketch all three vectors on the same axes.
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
 
-        <exercise label="ex-dot-product-find-orthogonal-2">
-          <webwork xml:id="webwork-ex-dot-product-find-orthogonal-2">
-              <pg-code>
-                Context("Vector");
-                $v=Vector("&lt;-3,5&gt;");
-                $u=Vector("&lt;5,3&gt;");
-                $w=Vector("&lt;-15,-9&gt;");
-                $multians = MultiAnswer($u,$v)-&gt;with(
-                    singleResult =&gt; 0,
-                    checker =&gt; sub {
-                        my ($correct,$student,$self) = @_;
-                        my ($s1, $s2) = @{$student};
-                        $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0&gt;")));
-                        $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0&gt;")) and ($s1 != $s2));
-                        return ~~@ret;
-                     }
-                  );
-              </pg-code>
+    </exercisegroup>
+    <exercisegroup cols="2" xml:id="exset-dot-product-ortho-decomp">
 
-              <statement>
-                <p>
-                  Find two nonzero vectors orthogonal to <m>\vec v = \bbm  -3\\5\ebm</m>.
-                </p>
+      <introduction>
+        <p>
+          In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given.
+          Write <m>\vec u</m> as the sum of two vectors,
+          one of which is parallel to <m>\vec v</m>
+          (or is zero)
+          and one of which is orthogonal to <m>\vec v</m>.
+          Note: these are the same pairs of vectors as found in <xref first="ex_10_03_ex_21" last="ex_10_03_ex_24" text="local">Exercises</xref>.
+        </p>
+      </introduction>
 
-                <p>
-                  <var name="$multians" width="10"/> and <var name="$multians" width="10"/>
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Answers will vary; two possible answers are
-                  <m>\bbm  5\\3\ebm</m> and <m>\bbm -15\\-9\ebm</m>.
-                </p>
-              </solution>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-dot-product-find-orthogonal-3">
-          <webwork xml:id="webwork-ex-dot-product-find-orthogonal-3">
-              <pg-code>
-                Context("Vector");
-                $v=Vector("&lt;1,1,1&gt;");
-                $u=Vector("&lt;1,0,-1&gt;");
-                $w=Vector("&lt;4,5,-9&gt;");
-                $multians = MultiAnswer($u,$v)-&gt;with(
-                    singleResult =&gt; 0,
-                    checker =&gt; sub {
-                        my ($correct,$student,$self) = @_;
-                        my ($s1, $s2) = @{$student};
-                        $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0&gt;")));
-                        $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0&gt;")) and ($s1 != $s2));
-                        return ~~@ret;
-                     }
-                  );
-              </pg-code>
-
-              <statement>
-                <p>
-                  Find two nonzero vectors orthogonal to <m>\vec v = \bbm  1\\1\\1\ebm</m>.
-                </p>
-
-                <p>
-                  <var name="$multians" width="10"/> and <var name="$multians" width="10"/>
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Answers will vary; two possible answers are
-                  <m>\bbm  1\\0\\-1\ebm</m> and <m>\bbm  4\\5\\-9\ebm</m>.
-                </p>
-              </solution>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-dot-product-find-orthogonal-4">
-          <webwork xml:id="webwork-ex-dot-product-find-orthogonal-4">
-              <pg-code>
-                Context("Vector");
-                $v=Vector("&lt;1,-2,3&gt;");
-                $u=Vector("&lt;2,1,0&gt;");
-                $w=Vector("&lt;1,1,1/3&gt;");
-                $multians = MultiAnswer($u,$v)-&gt;with(
-                    singleResult =&gt; 0,
-                    checker =&gt; sub {
-                        my ($correct,$student,$self) = @_;
-                        my ($s1, $s2) = @{$student};
-                        $ret[0] = (($s1 . $v == 0) and ($s1 != Vector("&lt;0,0&gt;")));
-                        $ret[1] = (($s2 . $v == 0) and ($s2 != Vector("&lt;0,0&gt;")) and ($s1 != $s2));
-                        return ~~@ret;
-                     }
-                  );
-              </pg-code>
-
-              <statement>
-                <p>
-                  Find two nonzero vectors orthogonal to <m>\vec v = \bbm  1\\-2\\3\ebm</m>.
-                </p>
-
-                <p>
-                  <var name="$multians" width="10"/> and <var name="$multians" width="10"/>
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Answers will vary; two possible answers are
-                  <m>\bbm  2\\1\\0\ebm</m> and <m>\bbm  1\\1\\1/3\ebm</m>.
-                </p>
-              </solution>
-          </webwork>
-        </exercise>
-
-      </exercisegroup>
-      <exercisegroup cols="2" xml:id="exset-dot-product-projection">
-
-        <introduction>
-          <p>
-            In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given.
-            Find <m>\proj uv</m>,
-            the orthogonal projection of <m>\vec u</m> onto <m>\vec v</m>,
-            and sketch all three vectors with the same initial point.
-          </p>
-        </introduction>
-
-        <exercise xml:id="ex_10_03_ex_21" label="ex-dot-product-projection-1">
-          <webwork xml:id="webwork-ex-dot-product-projection-1">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;1,2&gt;");
-                $v=Vector("&lt;-1,3&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
-              </pg-code>
-
-              <statement>
-                <p>
-                  If <m>\vec u = \bbm  1\\2\ebm</m> and <m>\vec v = \bbm -1\\3\ebm</m>,
-                  then <m>\proj uv=</m><var name="$projuv" width="15"/>.
-                </p>
-
-                <p>
-                  Sketch all three vectors on the same axes.
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-dot-product-projection-2">
-          <webwork xml:id="webwork-ex-dot-product-projection-2">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;5,5&gt;");
-                $v=Vector("&lt;1,3&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
-              </pg-code>
-
-              <statement>
-                <p>
-                  If <m>\vec u = \bbm  5\\5\ebm</m> and <m>\vec v = \bbm 1\\3\ebm</m>,
-                  then <m>\proj uv=</m><var name="$projuv" width="15"/>.
-                </p>
-
-                <p>
-                  Sketch all three vectors on the same axes.
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-dot-product-projection-3">
-          <webwork xml:id="webwork-ex-dot-product-projection-3">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;-3,2&gt;");
-                $v=Vector("&lt;1,1&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
-              </pg-code>
-
-              <statement>
-                <p>
-                  If <m>\vec u = \bbm  -3\\2\ebm</m> and <m>\vec v = \bbm 1\\1\ebm</m>,
-                  then <m>\proj uv=</m><var name="$projuv" width="15"/>.
-                </p>
-
-                <p>
-                  Sketch all three vectors on the same axes.
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-dot-product-projection-4">
-          <webwork xml:id="webwork-ex-dot-product-projection-4">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;-3,2&gt;");
-                $v=Vector("&lt;2,3&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
-              </pg-code>
-
-              <statement>
-                <p>
-                  If <m>\vec u = \bbm  -3\\2\ebm</m> and <m>\vec v = \bbm 2\\3\ebm</m>,
-                  then <m>\proj uv=</m><var name="$projuv" width="15"/>.
-                </p>
-
-                <p>
-                  Sketch all three vectors on the same axes.
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-dot-product-projection-5">
-          <webwork xml:id="webwork-ex-dot-product-projection-5">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;1,5,1&gt;");
-                $v=Vector("&lt;1,2,3&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den&gt;");
-              </pg-code>
-
-              <statement>
-                <p>
-                  If <m>\vec u = \bbm  1\\5\\1\ebm</m> and <m>\vec v = \bbm  1\\2\\3\ebm</m>,
-                  then <m>\proj uv=</m><var name="$projuv" width="15"/>.
-                </p>
-
-                <p>
-                  Sketch all three vectors on the same axes.
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise xml:id="ex_10_03_ex_24" label="ex-dot-product-projection-6">
-          <webwork xml:id="webwork-ex-dot-product-projection-6">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;3,-1,2&gt;");
-                $v=Vector("&lt;2,2,1&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den&gt;");
-              </pg-code>
-
-              <statement>
-                <p>
-                  If <m>\vec u = \bbm  3\\-1\\2\ebm</m> and <m>\vec v = \bbm  2\\2\\1\ebm</m>,
-                  then <m>\proj uv=</m><var name="$projuv" width="15"/>.
-                </p>
-
-                <p>
-                  Sketch all three vectors on the same axes.
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-      </exercisegroup>
-      <exercisegroup cols="2" xml:id="exset-dot-product-ortho-decomp">
-
-        <introduction>
-          <p>
-            In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given.
-            Write <m>\vec u</m> as the sum of two vectors,
-            one of which is parallel to <m>\vec v</m>
-            (or is zero)
-            and one of which is orthogonal to <m>\vec v</m>.
-            Note: these are the same pairs of vectors as found in <xref first="ex_10_03_ex_21" last="ex_10_03_ex_24" text="local">Exercises</xref>.
-          </p>
-        </introduction>
-
-        <exercise label="ex-dot-product-ortho-decomp-1">
-          <webwork xml:id="webwork-ex-dot-product-ortho-decomp-1">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;1,2&gt;");
-                $v=Vector("&lt;-1,3&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
-                @uc=$u-&gt;value;
-                @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
-                $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den&gt;");
-                $multians = MultiAnswer($projuv,$comp)-&gt;with(
-                    singleResult =&gt; 0,
-                    checker =&gt; sub {
-                        my ($correct,$student,$self) = @_;
-                        my ($s1, $s2) = @{$student};
-                        my ($c1, $c2) = @{$correct};
-                        if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
-                          {return [1,1];}
-                        elsif ($s1+$s2 != $u)
-                          {$self-&gt;setMessage(1,"These vectors do not sum to u.");
-                           $self-&gt;setMessage(2,"These vectors do not sum to u.");
-                           return [0,0];
-                           }
-                        elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is parallel to v.");
-                           $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
-                           return [1,0];
-                          }
-                        elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
-                           $self-&gt;setMessage(2,"This vector is parallel to v.");
-                           return [0,1];
-                          }
-                        elsif ($s1 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
-                           $self-&gt;setMessage(2,"But this vector is not parallel to v.");
-                           return [1,0];
-                          }
-                        elsif ($s2 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is not parallel to v.");
-                           $self-&gt;setMessage(2,"This vector is orthogonal to v.");
-                           return [0,1];
-                          }
-                        else {
+      <exercise label="ex-dot-product-ortho-decomp-1">
+        <webwork xml:id="webwork-ex-dot-product-ortho-decomp-1">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;1,2&gt;");
+              $v=Vector("&lt;-1,3&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
+              @uc=$u-&gt;value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den&gt;");
+              $multians = MultiAnswer($projuv,$comp)-&gt;with(
+                  singleResult =&gt; 0,
+                  checker =&gt; sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self-&gt;setMessage(1,"These vectors do not sum to u.");
+                          $self-&gt;setMessage(2,"These vectors do not sum to u.");
                           return [0,0];
-                        };
-                     }
-                  );
-              </pg-code>
+                          }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is parallel to v.");
+                          $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
+                          return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
+                          $self-&gt;setMessage(2,"This vector is parallel to v.");
+                          return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
+                          $self-&gt;setMessage(2,"But this vector is not parallel to v.");
+                          return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is not parallel to v.");
+                          $self-&gt;setMessage(2,"This vector is orthogonal to v.");
+                          return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                    }
+                );
+            </pg-code>
 
-              <statement>
-                <p>
-                  Write <m>\vec u = \bbm  1\\2\ebm</m> as the sum of two vectors,
-                  one parallel to <m>\vec v = \bbm  -1\\3\ebm</m>
-                  (or zero)
-                  and the other perpendicular.
-                </p>
+            <statement>
+              <p>
+                Write <m>\vec u = \bbm  1\\2\ebm</m> as the sum of two vectors,
+                one parallel to <m>\vec v = \bbm  -1\\3\ebm</m>
+                (or zero)
+                and the other perpendicular.
+              </p>
 
-                <p>
-                  <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
+              <p>
+                <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
 
-        <exercise label="ex-dot-product-ortho-decomp-2">
-          <webwork xml:id="webwork-ex-dot-product-ortho-decomp-2">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;5,5&gt;");
-                $v=Vector("&lt;1,3&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
-                @uc=$u-&gt;value;
-                @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
-                $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den&gt;");
-                $multians = MultiAnswer($projuv,$comp)-&gt;with(
-                    singleResult =&gt; 0,
-                    checker =&gt; sub {
-                        my ($correct,$student,$self) = @_;
-                        my ($s1, $s2) = @{$student};
-                        my ($c1, $c2) = @{$correct};
-                        if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
-                          {return [1,1];}
-                        elsif ($s1+$s2 != $u)
-                          {$self-&gt;setMessage(1,"These vectors do not sum to u.");
-                           $self-&gt;setMessage(2,"These vectors do not sum to u.");
-                           return [0,0];
-                           }
-                        elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is parallel to v.");
-                           $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
-                           return [1,0];
-                          }
-                        elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
-                           $self-&gt;setMessage(2,"This vector is parallel to v.");
-                           return [0,1];
-                          }
-                        elsif ($s1 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
-                           $self-&gt;setMessage(2,"But this vector is not parallel to v.");
-                           return [1,0];
-                          }
-                        elsif ($s2 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is not parallel to v.");
-                           $self-&gt;setMessage(2,"This vector is orthogonal to v.");
-                           return [0,1];
-                          }
-                        else {
+      <exercise label="ex-dot-product-ortho-decomp-2">
+        <webwork xml:id="webwork-ex-dot-product-ortho-decomp-2">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;5,5&gt;");
+              $v=Vector("&lt;1,3&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
+              @uc=$u-&gt;value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den&gt;");
+              $multians = MultiAnswer($projuv,$comp)-&gt;with(
+                  singleResult =&gt; 0,
+                  checker =&gt; sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self-&gt;setMessage(1,"These vectors do not sum to u.");
+                          $self-&gt;setMessage(2,"These vectors do not sum to u.");
                           return [0,0];
-                        };
-                     }
-                  );
-              </pg-code>
+                          }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is parallel to v.");
+                          $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
+                          return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
+                          $self-&gt;setMessage(2,"This vector is parallel to v.");
+                          return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
+                          $self-&gt;setMessage(2,"But this vector is not parallel to v.");
+                          return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is not parallel to v.");
+                          $self-&gt;setMessage(2,"This vector is orthogonal to v.");
+                          return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                    }
+                );
+            </pg-code>
 
-              <statement>
-                <p>
-                  Write <m>\vec u = \bbm  5\\5\ebm</m> as the sum of two vectors,
-                  one parallel to <m>\vec v = \bbm  1\\3\ebm</m>
-                  (or zero)
-                  and the other perpendicular.
-                </p>
+            <statement>
+              <p>
+                Write <m>\vec u = \bbm  5\\5\ebm</m> as the sum of two vectors,
+                one parallel to <m>\vec v = \bbm  1\\3\ebm</m>
+                (or zero)
+                and the other perpendicular.
+              </p>
 
-                <p>
-                  <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
+              <p>
+                <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
 
-        <exercise label="ex-dot-product-ortho-decomp-3">
-          <webwork xml:id="webwork-ex-dot-product-ortho-decomp-3">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;-3,2&gt;");
-                $v=Vector("&lt;1,1&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
-                @uc=$u-&gt;value;
-                @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
-                $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den&gt;");
-                $multians = MultiAnswer($projuv,$comp)-&gt;with(
-                    singleResult =&gt; 0,
-                    checker =&gt; sub {
-                        my ($correct,$student,$self) = @_;
-                        my ($s1, $s2) = @{$student};
-                        my ($c1, $c2) = @{$correct};
-                        if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
-                          {return [1,1];}
-                        elsif ($s1+$s2 != $u)
-                          {$self-&gt;setMessage(1,"These vectors do not sum to u.");
-                           $self-&gt;setMessage(2,"These vectors do not sum to u.");
-                           return [0,0];
-                           }
-                        elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is parallel to v.");
-                           $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
-                           return [1,0];
-                          }
-                        elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
-                           $self-&gt;setMessage(2,"This vector is parallel to v.");
-                           return [0,1];
-                          }
-                        elsif ($s1 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
-                           $self-&gt;setMessage(2,"But this vector is not parallel to v.");
-                           return [1,0];
-                          }
-                        elsif ($s2 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is not parallel to v.");
-                           $self-&gt;setMessage(2,"This vector is orthogonal to v.");
-                           return [0,1];
-                          }
-                        else {
+      <exercise label="ex-dot-product-ortho-decomp-3">
+        <webwork xml:id="webwork-ex-dot-product-ortho-decomp-3">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;-3,2&gt;");
+              $v=Vector("&lt;1,1&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
+              @uc=$u-&gt;value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den&gt;");
+              $multians = MultiAnswer($projuv,$comp)-&gt;with(
+                  singleResult =&gt; 0,
+                  checker =&gt; sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self-&gt;setMessage(1,"These vectors do not sum to u.");
+                          $self-&gt;setMessage(2,"These vectors do not sum to u.");
                           return [0,0];
-                        };
-                     }
-                  );
-              </pg-code>
+                          }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is parallel to v.");
+                          $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
+                          return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
+                          $self-&gt;setMessage(2,"This vector is parallel to v.");
+                          return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
+                          $self-&gt;setMessage(2,"But this vector is not parallel to v.");
+                          return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is not parallel to v.");
+                          $self-&gt;setMessage(2,"This vector is orthogonal to v.");
+                          return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                    }
+                );
+            </pg-code>
 
-              <statement>
-                <p>
-                  Write <m>\vec u = \bbm  -3\\2\ebm</m> as the sum of two vectors,
-                  one parallel to <m>\vec v = \bbm  1\\1\ebm</m>
-                  (or zero)
-                  and the other perpendicular.
-                </p>
+            <statement>
+              <p>
+                Write <m>\vec u = \bbm  -3\\2\ebm</m> as the sum of two vectors,
+                one parallel to <m>\vec v = \bbm  1\\1\ebm</m>
+                (or zero)
+                and the other perpendicular.
+              </p>
 
-                <p>
-                  <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
+              <p>
+                <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
 
-        <exercise label="ex-dot-product-ortho-decomp-4">
-          <webwork xml:id="webwork-ex-dot-product-ortho-decomp-4">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;-3,2&gt;");
-                $v=Vector("&lt;2,3&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
-                @uc=$u-&gt;value;
-                @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
-                $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den&gt;");
-                $multians = MultiAnswer($projuv,$comp)-&gt;with(
-                    singleResult =&gt; 0,
-                    checker =&gt; sub {
-                        my ($correct,$student,$self) = @_;
-                        my ($s1, $s2) = @{$student};
-                        my ($c1, $c2) = @{$correct};
-                        if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
-                          {return [1,1];}
-                        elsif ($s1+$s2 != $u)
-                          {$self-&gt;setMessage(1,"These vectors do not sum to u.");
-                           $self-&gt;setMessage(2,"These vectors do not sum to u.");
-                           return [0,0];
-                           }
-                        elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is parallel to v.");
-                           $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
-                           return [1,0];
-                          }
-                        elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
-                           $self-&gt;setMessage(2,"This vector is parallel to v.");
-                           return [0,1];
-                          }
-                        elsif ($s1 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
-                           $self-&gt;setMessage(2,"But this vector is not parallel to v.");
-                           return [1,0];
-                          }
-                        elsif ($s2 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is not parallel to v.");
-                           $self-&gt;setMessage(2,"This vector is orthogonal to v.");
-                           return [0,1];
-                          }
-                        else {
+      <exercise label="ex-dot-product-ortho-decomp-4">
+        <webwork xml:id="webwork-ex-dot-product-ortho-decomp-4">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;-3,2&gt;");
+              $v=Vector("&lt;2,3&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den&gt;");
+              @uc=$u-&gt;value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den&gt;");
+              $multians = MultiAnswer($projuv,$comp)-&gt;with(
+                  singleResult =&gt; 0,
+                  checker =&gt; sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self-&gt;setMessage(1,"These vectors do not sum to u.");
+                          $self-&gt;setMessage(2,"These vectors do not sum to u.");
                           return [0,0];
-                        };
-                     }
-                  );
-              </pg-code>
+                          }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is parallel to v.");
+                          $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
+                          return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
+                          $self-&gt;setMessage(2,"This vector is parallel to v.");
+                          return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
+                          $self-&gt;setMessage(2,"But this vector is not parallel to v.");
+                          return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is not parallel to v.");
+                          $self-&gt;setMessage(2,"This vector is orthogonal to v.");
+                          return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                    }
+                );
+            </pg-code>
 
-              <statement>
-                <p>
-                  Write <m>\vec u = \bbm  -3\\2\ebm</m> as the sum of two vectors,
-                  one parallel to <m>\vec v = \bbm  2\\3\ebm</m>
-                  (or zero)
-                  and the other perpendicular.
-                </p>
+            <statement>
+              <p>
+                Write <m>\vec u = \bbm  -3\\2\ebm</m> as the sum of two vectors,
+                one parallel to <m>\vec v = \bbm  2\\3\ebm</m>
+                (or zero)
+                and the other perpendicular.
+              </p>
 
-                <p>
-                  <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
+              <p>
+                <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
 
-        <exercise label="ex-dot-product-ortho-decomp-5">
-          <webwork xml:id="webwork-ex-dot-product-ortho-decomp-5">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;1,5,1&gt;");
-                $v=Vector("&lt;1,2,3&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den&gt;");
-                @uc=$u-&gt;value;
-                @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1,2);
-                $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den,$compnums[2]/$den&gt;");
-                $multians = MultiAnswer($projuv,$comp)-&gt;with(
-                    singleResult =&gt; 0,
-                    checker =&gt; sub {
-                        my ($correct,$student,$self) = @_;
-                        my ($s1, $s2) = @{$student};
-                        my ($c1, $c2) = @{$correct};
-                        if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
-                          {return [1,1];}
-                        elsif ($s1+$s2 != $u)
-                          {$self-&gt;setMessage(1,"These vectors do not sum to u.");
-                           $self-&gt;setMessage(2,"These vectors do not sum to u.");
-                           return [0,0];
-                           }
-                        elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is parallel to v.");
-                           $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
-                           return [1,0];
-                          }
-                        elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
-                           $self-&gt;setMessage(2,"This vector is parallel to v.");
-                           return [0,1];
-                          }
-                        elsif ($s1 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
-                           $self-&gt;setMessage(2,"But this vector is not parallel to v.");
-                           return [1,0];
-                          }
-                        elsif ($s2 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is not parallel to v.");
-                           $self-&gt;setMessage(2,"This vector is orthogonal to v.");
-                           return [0,1];
-                          }
-                        else {
+      <exercise label="ex-dot-product-ortho-decomp-5">
+        <webwork xml:id="webwork-ex-dot-product-ortho-decomp-5">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;1,5,1&gt;");
+              $v=Vector("&lt;1,2,3&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den&gt;");
+              @uc=$u-&gt;value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1,2);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den,$compnums[2]/$den&gt;");
+              $multians = MultiAnswer($projuv,$comp)-&gt;with(
+                  singleResult =&gt; 0,
+                  checker =&gt; sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self-&gt;setMessage(1,"These vectors do not sum to u.");
+                          $self-&gt;setMessage(2,"These vectors do not sum to u.");
                           return [0,0];
-                        };
-                     }
-                  );
-              </pg-code>
+                          }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is parallel to v.");
+                          $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
+                          return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
+                          $self-&gt;setMessage(2,"This vector is parallel to v.");
+                          return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
+                          $self-&gt;setMessage(2,"But this vector is not parallel to v.");
+                          return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is not parallel to v.");
+                          $self-&gt;setMessage(2,"This vector is orthogonal to v.");
+                          return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                    }
+                );
+            </pg-code>
 
-              <statement>
-                <p>
-                  Write <m>\vec u = \bbm  1\\5\\1\ebm</m> as the sum of two vectors,
-                  one parallel to <m>\vec v = \bbm  1\\2\\3\ebm</m>
-                  (or zero)
-                  and the other perpendicular.
-                </p>
+            <statement>
+              <p>
+                Write <m>\vec u = \bbm  1\\5\\1\ebm</m> as the sum of two vectors,
+                one parallel to <m>\vec v = \bbm  1\\2\\3\ebm</m>
+                (or zero)
+                and the other perpendicular.
+              </p>
 
-                <p>
-                  <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
+              <p>
+                <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
 
-        <exercise label="ex-dot-product-ortho-decomp-6">
-          <webwork xml:id="webwork-ex-dot-product-ortho-decomp-6">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $u=Vector("&lt;3,-1,2&gt;");
-                $v=Vector("&lt;2,2,1&gt;");
-                $num=$u . $v;
-                $den=$v . $v;
-                @vc=$v-&gt;value;
-                @nums=map{$_*$num}(@vc);
-                $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den&gt;");
-                @uc=$u-&gt;value;
-                @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1,2);
-                $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den,$compnums[2]/$den&gt;");
-                $multians = MultiAnswer($projuv,$comp)-&gt;with(
-                    singleResult =&gt; 0,
-                    checker =&gt; sub {
-                        my ($correct,$student,$self) = @_;
-                        my ($s1, $s2) = @{$student};
-                        my ($c1, $c2) = @{$correct};
-                        if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
-                          {return [1,1];}
-                        elsif ($s1+$s2 != $u)
-                          {$self-&gt;setMessage(1,"These vectors do not sum to u.");
-                           $self-&gt;setMessage(2,"These vectors do not sum to u.");
-                           return [0,0];
-                           }
-                        elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is parallel to v.");
-                           $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
-                           return [1,0];
-                          }
-                        elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
-                          {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
-                           $self-&gt;setMessage(2,"This vector is parallel to v.");
-                           return [0,1];
-                          }
-                        elsif ($s1 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
-                           $self-&gt;setMessage(2,"But this vector is not parallel to v.");
-                           return [1,0];
-                          }
-                        elsif ($s2 . $v == 0)
-                          {$self-&gt;setMessage(1,"This vector is not parallel to v.");
-                           $self-&gt;setMessage(2,"This vector is orthogonal to v.");
-                           return [0,1];
-                          }
-                        else {
+      <exercise label="ex-dot-product-ortho-decomp-6">
+        <webwork xml:id="webwork-ex-dot-product-ortho-decomp-6">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $u=Vector("&lt;3,-1,2&gt;");
+              $v=Vector("&lt;2,2,1&gt;");
+              $num=$u . $v;
+              $den=$v . $v;
+              @vc=$v-&gt;value;
+              @nums=map{$_*$num}(@vc);
+              $projuv=Compute("&lt;$nums[0]/$den,$nums[1]/$den,$nums[2]/$den&gt;");
+              @uc=$u-&gt;value;
+              @compnums=map{$uc[$_]*$den-$nums[$_]}(0,1,2);
+              $comp=Compute("&lt;$compnums[0]/$den,$compnums[1]/$den,$compnums[2]/$den&gt;");
+              $multians = MultiAnswer($projuv,$comp)-&gt;with(
+                  singleResult =&gt; 0,
+                  checker =&gt; sub {
+                      my ($correct,$student,$self) = @_;
+                      my ($s1, $s2) = @{$student};
+                      my ($c1, $c2) = @{$correct};
+                      if ((($s1==$c1) and ($s2==$c2)) or (($s1==$c2) and ($s2==$c1)))
+                        {return [1,1];}
+                      elsif ($s1+$s2 != $u)
+                        {$self-&gt;setMessage(1,"These vectors do not sum to u.");
+                          $self-&gt;setMessage(2,"These vectors do not sum to u.");
                           return [0,0];
-                        };
-                     }
-                  );
-              </pg-code>
+                          }
+                      elsif (abs($s1 . $v) == sqrt($s1 . $s1)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is parallel to v.");
+                          $self-&gt;setMessage(2,"But this vector is not orthogonal to v.");
+                          return [1,0];
+                        }
+                      elsif (abs($s2 . $v) == sqrt($s2 . $s2)*sqrt($v . $v))
+                        {$self-&gt;setMessage(1,"This vector is not orthogonal to v.");
+                          $self-&gt;setMessage(2,"This vector is parallel to v.");
+                          return [0,1];
+                        }
+                      elsif ($s1 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is orthogonal to v.");
+                          $self-&gt;setMessage(2,"But this vector is not parallel to v.");
+                          return [1,0];
+                        }
+                      elsif ($s2 . $v == 0)
+                        {$self-&gt;setMessage(1,"This vector is not parallel to v.");
+                          $self-&gt;setMessage(2,"This vector is orthogonal to v.");
+                          return [0,1];
+                        }
+                      else {
+                        return [0,0];
+                      };
+                    }
+                );
+            </pg-code>
 
-              <statement>
-                <p>
-                  Write <m>\vec u = \bbm  3\\-1\\2\ebm</m> as the sum of two vectors,
-                  one parallel to <m>\vec v = \bbm  2\\2\\1\ebm</m>
-                  (or zero)
-                  and the other perpendicular.
-                </p>
-
-                <p>
-                  <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-      </exercisegroup>
-
-      <exercise label="ex-dot-product-force-1">
-        <!--<webwork xml:id="webwork-ex-dot-product-force-1">
-            <pg-code>
-            </pg-code> -->
             <statement>
               <p>
-                A 10lb box sits on a ramp that rises 4ft over a distance of 20ft.
-                How much force is required to keep the box from sliding down the ramp?
+                Write <m>\vec u = \bbm  3\\-1\\2\ebm</m> as the sum of two vectors,
+                one parallel to <m>\vec v = \bbm  2\\2\\1\ebm</m>
+                (or zero)
+                and the other perpendicular.
+              </p>
+
+              <p>
+                <m>\vec u=</m><var name="$multians" width="15"/><m>{}+{}</m><var name="$multians" width="15"/>
               </p>
             </statement>
-            <answer>
-              <p>
-                1.96lb
-              </p>
-            </answer>
-        <!-- </webwork> -->
+        </webwork>
       </exercise>
 
-      <exercise label="ex-dot-product-force-2">
-        <!--<webwork xml:id="webwork-ex-dot-product-force-2">
-            <pg-code>
-            </pg-code> -->
-            <statement>
-              <p>
-                A 10lb box sits on a 15ft ramp that makes a
-                <m>30^\circ</m> angle with the horizontal.
-                How much force is required to keep the box from sliding down the ramp?
-              </p>
-            </statement>
-            <answer>
-              <p>
-                5lb
-              </p>
-            </answer>
-        <!-- </webwork> -->
-      </exercise>
+    </exercisegroup>
 
-      <exercise label="ex-dot-product-work-1">
-        <!--<webwork xml:id="webwork-ex-dot-product-work-1">
-            <pg-code>
-            </pg-code> -->
-            <statement>
-              <p>
-                How much work is performed in moving a box horizontally 10ft with a force of 20lb applied at an angle of <m>45^\circ</m> to the horizontal?
-              </p>
-            </statement>
-            <answer>
-              <p>
-                <m>141.42</m>ft<ndash/>lb
-              </p>
-            </answer>
-        <!-- </webwork> -->
-      </exercise>
+    <exercise label="ex-dot-product-force-1">
+      <!--<webwork xml:id="webwork-ex-dot-product-force-1">
+          <pg-code>
+          </pg-code> -->
+          <statement>
+            <p>
+              A 10lb box sits on a ramp that rises 4ft over a distance of 20ft.
+              How much force is required to keep the box from sliding down the ramp?
+            </p>
+          </statement>
+          <answer>
+            <p>
+              1.96lb
+            </p>
+          </answer>
+      <!-- </webwork> -->
+    </exercise>
 
-      <exercise label="ex-dot-product-work-2">
-        <!--<webwork xml:id="webwork-ex-dot-product-work-2">
-            <pg-code>
-            </pg-code> -->
-            <statement>
-              <p>
-                How much work is performed in moving a box horizontally 10ft with a force of 20lb applied at an angle of <m>10^\circ</m> to the horizontal?
-              </p>
-            </statement>
-            <answer>
-              <p>
-                <m>196.96</m>ft<ndash/>lb
-              </p>
-            </answer>
-        <!-- </webwork> -->
-      </exercise>
+    <exercise label="ex-dot-product-force-2">
+      <!--<webwork xml:id="webwork-ex-dot-product-force-2">
+          <pg-code>
+          </pg-code> -->
+          <statement>
+            <p>
+              A 10lb box sits on a 15ft ramp that makes a
+              <m>30^\circ</m> angle with the horizontal.
+              How much force is required to keep the box from sliding down the ramp?
+            </p>
+          </statement>
+          <answer>
+            <p>
+              5lb
+            </p>
+          </answer>
+      <!-- </webwork> -->
+    </exercise>
 
-      <exercise label="ex-dot-product-work-3">
-        <!--<webwork xml:id="webwork-ex-dot-product-work-3">
-            <pg-code>
-            </pg-code> -->
-            <statement>
-              <p>
-                How much work is performed in moving a box up the length of a ramp that rises 2ft over a distance of 10ft,
-                with a force of 50lb applied horizontally?
-              </p>
-            </statement>
-            <answer>
-              <p>
-                <m>500</m>ft<ndash/>lb
-              </p>
-            </answer>
-        <!-- </webwork> -->
-      </exercise>
+    <exercise label="ex-dot-product-work-1">
+      <!--<webwork xml:id="webwork-ex-dot-product-work-1">
+          <pg-code>
+          </pg-code> -->
+          <statement>
+            <p>
+              How much work is performed in moving a box horizontally 10ft with a force of 20lb applied at an angle of <m>45^\circ</m> to the horizontal?
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>141.42</m>ft<ndash/>lb
+            </p>
+          </answer>
+      <!-- </webwork> -->
+    </exercise>
 
-      <exercise label="ex-dot-product-work-4">
-        <!--<webwork xml:id="webwork-ex-dot-product-work-4">
-            <pg-code>
-            </pg-code> -->
-            <statement>
-              <p>
-                How much work is performed in moving a box up the length of a ramp that rises 2ft over a distance of 10ft,
-                with a force of 50lb applied at an angle of <m>45^\circ</m> to the horizontal?
-              </p>
-            </statement>
-            <answer>
-              <p>
-                <m>424.26</m>ft<ndash/>lb
-              </p>
-            </answer>
-        <!-- </webwork> -->
-      </exercise>
+    <exercise label="ex-dot-product-work-2">
+      <!--<webwork xml:id="webwork-ex-dot-product-work-2">
+          <pg-code>
+          </pg-code> -->
+          <statement>
+            <p>
+              How much work is performed in moving a box horizontally 10ft with a force of 20lb applied at an angle of <m>10^\circ</m> to the horizontal?
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>196.96</m>ft<ndash/>lb
+            </p>
+          </answer>
+      <!-- </webwork> -->
+    </exercise>
 
-      <exercise label="ex-dot-product-work-5">
-        <!--<webwork xml:id="webwork-ex-dot-product-work-5">
-            <pg-code>
-            </pg-code> -->
-            <statement>
-              <p>
-                How much work is performed in moving a box up the length of a 10ft ramp that makes a <m>5^\circ</m> angle with the horizontal,
-                with 50lb of force applied in the direction of the ramp?
-              </p>
-            </statement>
-            <answer>
-              <p>
-                <m>500</m>ft<ndash/>lb
-              </p>
-            </answer>
-        <!-- </webwork> -->
-      </exercise>
-    </subexercises>
+    <exercise label="ex-dot-product-work-3">
+      <!--<webwork xml:id="webwork-ex-dot-product-work-3">
+          <pg-code>
+          </pg-code> -->
+          <statement>
+            <p>
+              How much work is performed in moving a box up the length of a ramp that rises 2ft over a distance of 10ft,
+              with a force of 50lb applied horizontally?
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>500</m>ft<ndash/>lb
+            </p>
+          </answer>
+      <!-- </webwork> -->
+    </exercise>
+
+    <exercise label="ex-dot-product-work-4">
+      <!--<webwork xml:id="webwork-ex-dot-product-work-4">
+          <pg-code>
+          </pg-code> -->
+          <statement>
+            <p>
+              How much work is performed in moving a box up the length of a ramp that rises 2ft over a distance of 10ft,
+              with a force of 50lb applied at an angle of <m>45^\circ</m> to the horizontal?
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>424.26</m>ft<ndash/>lb
+            </p>
+          </answer>
+      <!-- </webwork> -->
+    </exercise>
+
+    <exercise label="ex-dot-product-work-5">
+      <!--<webwork xml:id="webwork-ex-dot-product-work-5">
+          <pg-code>
+          </pg-code> -->
+          <statement>
+            <p>
+              How much work is performed in moving a box up the length of a 10ft ramp that makes a <m>5^\circ</m> angle with the horizontal,
+              with 50lb of force applied in the direction of the ramp?
+            </p>
+          </statement>
+          <answer>
+            <p>
+              <m>500</m>ft<ndash/>lb
+            </p>
+          </answer>
+      <!-- </webwork> -->
+    </exercise>
   </exercises>
 </section>

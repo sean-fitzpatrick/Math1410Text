@@ -1200,1238 +1200,1194 @@
   </subsection>
 
   <exercises>
-    <subexercises xml:id="TaC-vectors-planes">
-      <title>Terms and Concepts</title>
-      <exercise label="TaC-vectors-planes-1">
-        <!--<webwork xml:id="webwork-TaC-vectors-planes-1">
+    <exercisegroup cols="2" xml:id="exset-vectors-planes-find-points">
+
+      <introduction>
+        <p>
+          In the following exercises, give any two points in the given plane.
+        </p>
+      </introduction>
+
+      <exercise label="ex-vectors-planes-find-points-1">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-find-points-1">
             <pg-code>
             </pg-code>
             -->
             <statement>
               <p>
-                In order to find the equation of a plane,
-                what two pieces of information must one have?
+                <m>2x-4y+7z=2</m>
               </p>
             </statement>
             <answer>
               <p>
-                A point in the plane and a normal vector (<ie/>, a direction orthogonal to the plane).
+                Answers will vary.
               </p>
             </answer>
         <!-- </webwork> -->
       </exercise>
 
-      <exercise label="TaC-vectors-planes-2">
-        <!--<webwork xml:id="webwork-TaC-vectors-planes-2">
+      <exercise label="ex-vectors-planes-find-points-2">
+        <webwork xml:id="webwork-ex-vectors-planes-find-points-2">
+            <pg-code>
+              Context("Point");
+              $points=List("(-2,9,0),(2,9,3)");
+              $pev=$points-&gt;cmp(list_checker =&gt; sub {
+                my ($correct,$student,$ansHash,$value) = @_;
+                my $n = scalar(@$student);
+                my $score = 0;
+                my @errors = ();
+                my $i, $j;
+                for ($i = 0; $i &lt; $n; $i++) {
+                  my $ith = Value::List-&gt;NameForNumber($i+1);
+                  my $p = $student-&gt;[$i];   # i-th student answer
+                  if ($p-&gt;type ne "Point") {
+                      push(@errors,"Your $ith entry is not a point");
+                      next;
+                  }
+                  for ($j = 0, $used = 0; $j &lt; $i; $j++) {
+                    if ($student-&gt;[$j]-&gt;type eq "Point" and $student-&gt;[$j] == $p) {
+                      push(@errors,"Your $ith point is the same as a previous one") unless $ansHash-&gt;{isPreview};
+                      $used = 1; last;
+                    }
+                  }
+                  if (!$used) {
+                    my ($a,$b,$c) = $p-&gt;value;
+                    if (3*($a+2)+5*($b-9)-4*$c==0) {$score++} else {
+                      push(@errors,"Your $ith point is not correct") unless $ansHash-&gt;{isPreview}
+                    }
+                  }
+                }
+                if (!$ansHash-&gt;{isPreview}) {
+                  push(@errors,"You need to provide more points") if $i &lt; 2;
+                  push(@errors,"You have given too many points") if $score &gt; 2 and $i != $score;
+                }
+                return ($score,@errors);
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                List any two points in the plane with equation <m>3(x+2)+5(y-9)-4z=0</m>.
+              </p>
+
+              <p>
+                <var name="$points" evaluator="$pev" width="20"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-find-points-3">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-find-points-3">
             <pg-code>
             </pg-code>
             -->
             <statement>
               <p>
-                What is the relationship between a plane and one of its normal vectors?
+                <m>x=2</m>
               </p>
             </statement>
             <answer>
               <p>
-                A normal vector is orthogonal to the plane.
+                Answers will vary.
               </p>
             </answer>
         <!-- </webwork> -->
       </exercise>
-    </subexercises>
-    <subexercises>
-      <title>Problems</title>
-      <exercisegroup cols="2" xml:id="exset-vectors-planes-find-points">
 
-        <introduction>
-          <p>
-            In the following exercises, give any two points in the given plane.
-          </p>
-        </introduction>
-
-        <exercise label="ex-vectors-planes-find-points-1">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-find-points-1">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  <m>2x-4y+7z=2</m>
-                </p>
-              </statement>
-              <answer>
-                <p>
-                  Answers will vary.
-                </p>
-              </answer>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-find-points-2">
-          <webwork xml:id="webwork-ex-vectors-planes-find-points-2">
-              <pg-code>
-                Context("Point");
-                $points=List("(-2,9,0),(2,9,3)");
-                $pev=$points-&gt;cmp(list_checker =&gt; sub {
-                  my ($correct,$student,$ansHash,$value) = @_;
-                  my $n = scalar(@$student);
-                  my $score = 0;
-                  my @errors = ();
-                  my $i, $j;
-                  for ($i = 0; $i &lt; $n; $i++) {
-                    my $ith = Value::List-&gt;NameForNumber($i+1);
-                    my $p = $student-&gt;[$i];   # i-th student answer
-                    if ($p-&gt;type ne "Point") {
-                       push(@errors,"Your $ith entry is not a point");
-                       next;
-                    }
-                    for ($j = 0, $used = 0; $j &lt; $i; $j++) {
-                      if ($student-&gt;[$j]-&gt;type eq "Point" and $student-&gt;[$j] == $p) {
-                        push(@errors,"Your $ith point is the same as a previous one") unless $ansHash-&gt;{isPreview};
-                        $used = 1; last;
-                      }
-                    }
-                    if (!$used) {
-                      my ($a,$b,$c) = $p-&gt;value;
-                      if (3*($a+2)+5*($b-9)-4*$c==0) {$score++} else {
-                        push(@errors,"Your $ith point is not correct") unless $ansHash-&gt;{isPreview}
-                      }
+      <exercise label="ex-vectors-planes-find-points-4">
+        <webwork xml:id="webwork-ex-vectors-planes-find-points-4">
+            <pg-code>
+              Context("Point");
+              $points=List("(0,-2,6),(1,-2,6)");
+              $pev=$points-&gt;cmp(list_checker =&gt; sub {
+                my ($correct,$student,$ansHash,$value) = @_;
+                my $n = scalar(@$student);
+                my $score = 0;
+                my @errors = ();
+                my $i, $j;
+                for ($i = 0; $i &lt; $n; $i++) {
+                  my $ith = Value::List-&gt;NameForNumber($i+1);
+                  my $p = $student-&gt;[$i];   # i-th student answer
+                  if ($p-&gt;type ne "Point") {
+                      push(@errors,"Your $ith entry is not a point");
+                      next;
+                  }
+                  for ($j = 0, $used = 0; $j &lt; $i; $j++) {
+                    if ($student-&gt;[$j]-&gt;type eq "Point" and $student-&gt;[$j] == $p) {
+                      push(@errors,"Your $ith point is the same as a previous one") unless $ansHash-&gt;{isPreview};
+                      $used = 1; last;
                     }
                   }
-                  if (!$ansHash-&gt;{isPreview}) {
-                    push(@errors,"You need to provide more points") if $i &lt; 2;
-                    push(@errors,"You have given too many points") if $score &gt; 2 and $i != $score;
-                  }
-                  return ($score,@errors);
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  List any two points in the plane with equation <m>3(x+2)+5(y-9)-4z=0</m>.
-                </p>
-
-                <p>
-                  <var name="$points" evaluator="$pev" width="20"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-find-points-3">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-find-points-3">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  <m>x=2</m>
-                </p>
-              </statement>
-              <answer>
-                <p>
-                  Answers will vary.
-                </p>
-              </answer>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-find-points-4">
-          <webwork xml:id="webwork-ex-vectors-planes-find-points-4">
-              <pg-code>
-                Context("Point");
-                $points=List("(0,-2,6),(1,-2,6)");
-                $pev=$points-&gt;cmp(list_checker =&gt; sub {
-                  my ($correct,$student,$ansHash,$value) = @_;
-                  my $n = scalar(@$student);
-                  my $score = 0;
-                  my @errors = ();
-                  my $i, $j;
-                  for ($i = 0; $i &lt; $n; $i++) {
-                    my $ith = Value::List-&gt;NameForNumber($i+1);
-                    my $p = $student-&gt;[$i];   # i-th student answer
-                    if ($p-&gt;type ne "Point") {
-                       push(@errors,"Your $ith entry is not a point");
-                       next;
-                    }
-                    for ($j = 0, $used = 0; $j &lt; $i; $j++) {
-                      if ($student-&gt;[$j]-&gt;type eq "Point" and $student-&gt;[$j] == $p) {
-                        push(@errors,"Your $ith point is the same as a previous one") unless $ansHash-&gt;{isPreview};
-                        $used = 1; last;
-                      }
-                    }
-                    if (!$used) {
-                      my ($a,$b,$c) = $p-&gt;value;
-                      if (4*($b+2)-($c-6)==0) {$score++} else {
-                        push(@errors,"Your $ith point is not correct") unless $ansHash-&gt;{isPreview}
-                      }
+                  if (!$used) {
+                    my ($a,$b,$c) = $p-&gt;value;
+                    if (4*($b+2)-($c-6)==0) {$score++} else {
+                      push(@errors,"Your $ith point is not correct") unless $ansHash-&gt;{isPreview}
                     }
                   }
-                  if (!$ansHash-&gt;{isPreview}) {
-                    push(@errors,"You need to provide more points") if $i &lt; 2;
-                    push(@errors,"You have given too many points") if $score &gt; 2 and $i != $score;
-                  }
-                  return ($score,@errors);
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  List any two points in the plane with equation <m>4(y+2)-(z-6)=0</m>.
-                </p>
-
-                <p>
-                  <var name="$points" evaluator="$pev" width="20"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-      </exercisegroup>
-      <exercisegroup cols="2" xml:id="exset-vectors-planes-equation">
-
-        <introduction>
-          <p>
-            In the following exercises,
-            give the equation of the described plane in standard and general forms.
-          </p>
-        </introduction>
-
-        <exercise label="ex-vectors-planes-equation-1">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-equation-1">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  Passes through <m>(2,3,4)</m> and has normal vector
-                </p>
-
-                <p>
-                  <m>\vec n= \bbm  3\\-1\\7\ebm</m>.
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Standard form: <m>3(x-2)-(y-3)+7(z-4)=0</m>
-                </p>
-
-                <p>
-                  general form: <m>3x-y+7z=31</m>
-                </p>
-              </solution>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-2">
-          <webwork xml:id="webwork-ex-vectors-planes-equation-2">
-              <pg-code>
-                sub grouped {
-                  my $op = shift;
-                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
-                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
-                  my $context=Context();
-                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
-                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
-                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
-                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
-                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
-                  };
-                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
-                };
-                Context("ImplicitEquation");
-                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
-                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
-                $st=ImplicitEquation("2(y-3)+4(z-5)=0");
-                $stev=$st-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
-                  return $correct == $student;
-                });
-                $ge=ImplicitEquation("2y+4z=26");
-                $geev=$ge-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
-                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
-                  return $correct == $student;
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  A plane passes through <m>(1,3,5)</m> and has normal vector <m>\vec n= \bbm  0\\2\\4\ebm</m>.
-                </p>
-
-                <instruction>
-                  An equation for this plane in standard form is:
-                </instruction>
-                <p>
-                   <var name="$st" evaluator="$stev" width="30"/>
-                </p>
-
-                <instruction>
-                  An equation for this plane in general form is:
-                </instruction>
-                <p>
-                  <var name="$ge" evaluator="$geev" width="30"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-3">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-equation-3">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  Passes through the points <m>(1,2,3)</m>,
-                  <m>(3,-1,4)</m> and <m>(1,0,1)</m>.
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Answers may vary;
-                </p>
-
-                <p>
-                  Standard form: <m>8(x-1)+4(y-2)-4(z-3)=0</m>
-                </p>
-
-                <p>
-                  general form: <m>8x+4y-4z=4</m>
-                </p>
-              </solution>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-4">
-          <webwork xml:id="webwork-ex-vectors-planes-equation-4">
-
-              <pg-code>
-                sub grouped {
-                  my $op = shift;
-                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
-                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
-                  my $context=Context();
-                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
-                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
-                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
-                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
-                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
-                  };
-                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
-                };
-                Context("ImplicitEquation");
-                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
-                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
-                $st=ImplicitEquation("-5(x-5)+3(y-3)+2(z-8)=0");
-                $stev=$st-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
-                  return $correct == $student;
-                });
-                $ge=ImplicitEquation("-5x+3y+2z=0");
-                $geev=$ge-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
-                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
-                  return $correct == $student;
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  A plane passes through the points <m>(5,3,8)</m>,
-                  <m>(6,4,9)</m> and <m>(3,3,3)</m>.
-                </p>
-
-                <instruction>
-                  An equation for this plane in standard form is:
-                </instruction>
-                <p>
-                  <var name="$st" evaluator="$stev" width="30"/>
-                </p>
-
-                <instruction>
-                  An equation for this plane in general form is:
-                </instruction>
-                <p>
-                  <var name="$ge" evaluator="$geev" width="30"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-5">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-equation-5">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  Contains the intersecting lines
-                </p>
-
-                <p>
-                  <m>\vec\ell_1(t) = \bbm  2\\1\\2\ebm + t\bbm  1\\2\\3\ebm</m> and
-                </p>
-
-                <p>
-                  <m>\vec\ell_2(t) = \bbm  2\\1\\2\ebm + t\bbm  2\\5\\4\ebm</m>.
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Answers may vary;
-                </p>
-
-                <p>
-                  Standard form: <m>-7(x-2)+2(y-1)+(z-2)=0</m>
-                </p>
-
-                <p>
-                  general form: <m>-7x+2y+z=-10</m>
-                </p>
-              </solution>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-6">
-          <webwork xml:id="webwork-ex-vectors-planes-equation-6">
-
-              <pg-code>
-                sub grouped {
-                  my $op = shift;
-                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
-                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
-                  my $context=Context();
-                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
-                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
-                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
-                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
-                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
-                  };
-                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
-                };
-                Context("ImplicitEquation");
-                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
-                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
-                $st=ImplicitEquation("3(x-5)+3(z-3)=0");
-                $stev=$st-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
-                  return $correct == $student;
-                });
-                $ge=ImplicitEquation("3x+3z=24");
-                $geev=$ge-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
-                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
-                  return $correct == $student;
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  A plane contains the intersecting lines
-                  <m>\vec\ell_1(t) = \bbm  5\\0\\3\ebm + t\bbm  -1\\1\\1\ebm</m> and <m>\vec\ell_2(t) = \bbm  1\\4\\7\ebm + t\bbm  3\\0\\-3\ebm</m>.
-                </p>
-
-                <instruction>
-                  An equation for this plane in standard form is:
-                </instruction>
-                <p>
-                  <var name="$st" evaluator="$stev" width="30"/>
-                </p>
-
-                <instruction>
-                  An equation for this plane in general form is:
-                </instruction>
-                <p>
-                  <var name="$ge" evaluator="$geev" width="30"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-7">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-equation-7">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  Contains the parallel lines
-                </p>
-
-                <p>
-                  <m>\vec\ell_1(t) = \bbm  1\\1\\1\ebm + t\bbm  1\\2\\3\ebm</m> and
-                </p>
-
-                <p>
-                  <m>\vec\ell_2(t) = \bbm  1\\1\\2\ebm + t\bbm  1\\2\\3\ebm</m>.
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Answers may vary;
-                </p>
-
-                <p>
-                  Standard form: <m>2(x-1)-(y-1)=0</m>
-                </p>
-
-                <p>
-                  general form: <m>2x-y=1</m>
-                </p>
-              </solution>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-8">
-          <webwork xml:id="webwork-ex-vectors-planes-equation-8">
-
-              <pg-code>
-                sub grouped {
-                  my $op = shift;
-                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
-                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
-                  my $context=Context();
-                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
-                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
-                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
-                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
-                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
-                  };
-                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
-                };
-                Context("ImplicitEquation");
-                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
-                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
-                $st=ImplicitEquation("2(x-1)+(y-1)-3(z-1)=0");
-                $stev=$st-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
-                  return $correct == $student;
-                });
-                $ge=ImplicitEquation("2x+y-3z=0");
-                $geev=$ge-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
-                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
-                  return $correct == $student;
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  A plane contains the parallel lines
-                  <m>\vec\ell_1(t) = \bbm  1\\1\\1\ebm + t\bbm  4\\1\\3\ebm</m> and <m>\vec\ell_2(t) = \bbm  2\\2\\2\ebm + t\bbm  4\\1\\3\ebm</m>.
-                </p>
-
-                <instruction>
-                  An equation for this plane in standard form is:
-                </instruction>
-                <p>
-                  <var name="$st" evaluator="$stev" width="30"/>
-                </p>
-
-                <instruction>
-                  An equation for this plane in general form is:
-                </instruction>
-                <p>
-                  <var name="$ge" evaluator="$geev" width="30"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-9">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-equation-9">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  Contains the point <m>(2,-6,1)</m> and the line
-                </p>
-
-                <p>
-                  <m>\vec\ell(t) = \left\{\begin{aligned}x\amp =2+5t \\
-  																	y\amp =2+2t \\
-  																	z\amp =-1+2t
-                  \end{aligned} \right.</m>
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Answers may vary;
-                </p>
-
-                <p>
-                  Standard form: <m>2(x-2)-(y+6)-4(z-1)=0</m>
-                </p>
-
-                <p>
-                  general form: <m>2x-y-4z=6</m>
-                </p>
-              </solution>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-10">
-          <webwork xml:id="webwork-ex-vectors-planes-equation-10">
-
-              <pg-code>
-                sub grouped {
-                  my $op = shift;
-                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
-                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
-                  my $context=Context();
-                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
-                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
-                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
-                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
-                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
-                  };
-                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
-                };
-                Context("ImplicitEquation");
-                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
-                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
-                $st=ImplicitEquation("4(x-5)-2(y-7)-2(z-3)=0");
-                $stev=$st-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
-                  return $correct == $student;
-                });
-                $ge=ImplicitEquation("4x-2y-2z=0");
-                $geev=$ge-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
-                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
-                  return $correct == $student;
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  A plane contains the point <m>(5,7,3)</m> and the line <m>\vec\ell(t) = \begin{cases}x\amp=t\\y\amp=t\\z\amp=t\end{cases}</m>.
-                </p>
-
-                <instruction>
-                  An equation for this plane in standard form is:
-                </instruction>
-                <p>
-                  <var name="$st" evaluator="$stev" width="30"/>
-                </p>
-
-                <instruction>
-                  An equation for this plane in general form is:
-                </instruction>
-                <p>
-                  <var name="$ge" evaluator="$geev" width="30"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-11">
-          <webwork xml:id="webwork-ex-vectors-planes-equation-11">
-
-              <pg-code>
-                sub grouped {
-                  my $op = shift;
-                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
-                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
-                  my $context=Context();
-                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
-                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
-                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
-                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
-                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
-                  };
-                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
-                };
-                Context("ImplicitEquation");
-                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
-                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
-                $st=ImplicitEquation("(x-5)+(y-7)+(z-3)=0");
-                $stev=$st-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
-                  return $correct == $student;
-                });
-                $ge=ImplicitEquation("x+y+z=15");
-                $geev=$ge-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
-                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
-                  return $correct == $student;
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  A plane contains the point <m>(5,7,3)</m> and is orthogonal to the line <m>\vec\ell(t) = \bbm  4\\5\\6\ebm+ t\bbm  1\\1\\1\ebm</m>.
-                </p>
-
-                <instruction>
-                  An equation for this plane in standard form is:
-                </instruction>
-                <p>
-                  <var name="$st" evaluator="$stev" width="30"/>
-                </p>
-
-                <instruction>
-                  An equation for this plane in general form is:
-                </instruction>
-                <p>
-                  <var name="$ge" evaluator="$geev" width="30"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-12">
-          <webwork xml:id="webwork-ex-vectors-planes-equation-12">
-
-              <pg-code>
-                sub grouped {
-                  my $op = shift;
-                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
-                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
-                  my $context=Context();
-                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
-                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
-                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
-                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
-                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
-                  };
-                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
-                };
-                Context("ImplicitEquation");
-                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
-                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
-                $st=ImplicitEquation("4(x-4)+(y-1)+(z-1)=0");
-                $stev=$st-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
-                  return $correct == $student;
-                });
-                $ge=ImplicitEquation("4x+y+z=18");
-                $geev=$ge-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
-                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
-                  return $correct == $student;
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  A plane contains the point <m>(4,1,1)</m> and is orthogonal to the line <m>\begin{cases}x\amp=4+4t\\y\amp=1+t\\z\amp=1+t\end{cases}</m>.
-                </p>
-
-                <instruction>
-                  An equation for this plane in standard form is:
-                </instruction>
-                <p>
-                  <var name="$st" evaluator="$stev" width="30"/>
-                </p>
-
-                <instruction>
-                  An equation for this plane in general form is:
-                </instruction>
-                <p>
-                  <var name="$ge" evaluator="$geev" width="30"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-13">
-          <webwork xml:id="webwork-ex-vectors-planes-equation-13">
-
-              <pg-code>
-                sub grouped {
-                  my $op = shift;
-                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
-                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
-                  my $context=Context();
-                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
-                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
-                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
-                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
-                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
-                  };
-                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
-                };
-                Context("ImplicitEquation");
-                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
-                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
-                $st=ImplicitEquation("3(x+4)+8(y-7)-10(z-2)=0");
-                $stev=$st-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
-                  return $correct == $student;
-                });
-                $ge=ImplicitEquation("3x+8y-10z=24");
-                $geev=$ge-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
-                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
-                  return $correct == $student;
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  A plane contains the point
-                  <m>(-4,7,2)</m> and is parallel to the plane <m>3(x-2)+8(y+1) -10z=0</m>.
-                </p>
-
-                <instruction>
-                  An equation for this plane in standard form is:
-                </instruction>
-                <p>
-                  <var name="$st" evaluator="$stev" width="30"/>
-                </p>
-
-                <instruction>
-                  An equation for this plane in general form is:
-                </instruction>
-                <p>
-                  <var name="$ge" evaluator="$geev" width="30"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-equation-14">
-          <webwork xml:id="webwork-ex-vectors-planes-equation-14">
-
-              <pg-code>
-                sub grouped {
-                  my $op = shift;
-                  return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
-                  if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
-                  my $context=Context();
-                  my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
-                  my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
-                  return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
-                  if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
-                    return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
-                  };
-                  return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
-                };
-                Context("ImplicitEquation");
-                Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
-                Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
-                $st=ImplicitEquation("x-1=0");
-                $stev=$st-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
-                  return $correct == $student;
-                });
-                $ge=ImplicitEquation("x=1");
-                $geev=$ge-&gt;cmp(checker=&gt;sub{
-                  my ( $correct, $student, $ansHash ) = @_;
-                  return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
-                  my $context = Context();
-                  my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
-                  my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
-                  Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
-                  Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
-                  return $correct == $student;
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  A plane contains the point <m>(1,2,3)</m> and is parallel to the plane <m>x=5</m>.
-                </p>
-
-                <instruction>
-                  An equation for this plane in standard form is:
-                </instruction>
-                <p>
-                  <var name="$st" evaluator="$stev" width="30"/>
-                </p>
-
-                <instruction>
-                  An equation for this plane in general form is:
-                </instruction>
-                <p>
-                  <var name="$ge" evaluator="$geev" width="30"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-      </exercisegroup>
-      <exercisegroup cols="2" xml:id="exset-vectors-planes-intersection">
-
-        <introduction>
-          <p>
-            In the following exercises,
-            give the equation of the line that is the intersection of the given planes.
-          </p>
-        </introduction>
-
-        <exercise label="ex-vectors-planes-intersection-1">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-intersection-1">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  <m>p1:\ 3 (x - 2) + (y - 1) + 4 z=0</m>, and
-                </p>
-
-                <p>
-                  <m>p2:\ 2 (x - 1) - 2 (y + 3) + 6 (z - 1)=0</m>.
-                </p>
-              </statement>
-              <solution>
-                <p>
-                  Answers may vary:
-                </p>
-
-                <p>
-                  <m>\ell = \left\{\begin{aligned}x \amp = 14t\\
-                  y \amp = -1-10t\\
-                  z\amp = 2-8t
-                  \end{aligned} \right.</m>
-                </p>
-              </solution>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-intersection-2">
-          <webwork xml:id="webwork-ex-vectors-planes-intersection-2">
-              <pg-code>
-                Context("Vector");
-                Context()-&gt;variables-&gt;are(t=&gt;"Real");
-                $v=Compute("(1,3,3.5)+t&lt;20,2,-26&gt;");
-                $vev=$v-&gt;cmp(checker=&gt;sub{my($c,$st,$aH)=@_;
-                  $ds=Formula($st)-&gt;D('t')-&gt;reduce;
-                  if($ds-&gt;isConstant){$ds=Vector("$ds");}else{return 0;};
-                  $dc=$c-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
-                  $sp=Formula($st)-&gt;eval(t=&gt;0);$cp=$c-&gt;eval(t=&gt;0);
-                  $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
-                  return ($par and $tch);
-                });
-              </pg-code>
-
-              <statement>
-                <p>
-                  Give the equation of the line
-                  (in vector form)
-                  that is the intersection of the planes <m>5 (x - 5) + 2 (y + 2) + 4 (z - 1)=0</m>,
-                  and <m>3 x - 4 (y - 1) + 2 (z - 1)=0</m>.
-                </p>
-
-                <p>
-                  <var name="$v" evaluator="$vev" width="30"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-      </exercisegroup>
-      <exercisegroup cols="2" xml:id="exset-vectors-planes-intersect-line">
-
-        <introduction>
-          <p>
-            Find the point of intersection between the line and the plane.
-          </p>
-        </introduction>
-
-        <exercise label="ex-vectors-planes-intersect-line-1">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-intersect-line-1">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  line: <m>\bbm  5\\1\\-1\ebm + t\bbm  2\\2\\1\ebm</m>,
-                </p>
-
-                <p>
-                  plane: <m>5x-y-z=-3</m>
-                </p>
-              </statement>
-              <answer>
-                <p>
-                  <m>(-3,-7,-5)</m>
-                </p>
-              </answer>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-intersect-line-2">
-          <webwork xml:id="webwork-ex-vectors-planes-intersect-line-2">
-              <pg-code>
-                Context("Point");
-                Context()-&gt;strings-&gt;add('the entire line'=&gt;{});
-                $point=Point("(3,1,1)");
-              </pg-code>
-
-              <statement>
-                <p>
-                  Find the point of intersection between the line
-                  <m>\bbm  4\\1\\0\ebm + t\bbm  1\\0\\-1\ebm</m> and the plane <m>3x+y-2z=8</m>.
-                  (If the plane contains the line,
-                  enter <q>the entire line</q>.
-                  If the line does not intersect the plane at all, enter <q>none</q>.)
-                </p>
-
-                <p>
-                  <var name="$point" width="10"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-intersect-line-3">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-intersect-line-3">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  line: <m>\bbm  1\\2\\3\ebm + t\bbm  3\\5\\-1\ebm</m>,
-                </p>
-
-                <p>
-                  plane: <m>3x-2y-z=4</m>
-                </p>
-              </statement>
-              <answer>
-                <p>
-                  No point of intersection; the plane and line are parallel.
-                </p>
-              </answer>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-intersect-line-4">
-          <webwork xml:id="webwork-ex-vectors-planes-intersect-line-4">
-              <pg-code>
-                Context("Point");
-                Context()-&gt;strings-&gt;add('the entire line'=&gt;{});
-                $point=Compute('the entire line');
-              </pg-code>
-
-              <statement>
-                <p>
-                  Find the point of intersection between the line
-                  <m>\bbm  1\\2\\3\ebm + t\bbm  3\\5\\-1\ebm</m> and the plane <m>3x-2y-z=-4</m>.
-                  (If the plane contains the line,
-                  enter <q>the entire line</q>.
-                  If the line does not intersect the plane at all, enter <q>none</q>.)
-                </p>
-
-                <p>
-                  <var name="$point" width="10"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-      </exercisegroup>
-      <exercisegroup cols="2" xml:id="exset-vectors-planes-distance">
-
-        <introduction>
-          <p>
-            Find the indicated distance.
-          </p>
-        </introduction>
-
-        <exercise label="ex-vectors-planes-distance-1">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-distance-1">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  The distance from the point <m>(1,2,3)</m> to the plane
-                </p>
-
-                <p>
-                  <m>3(x-1)+(y-2)+5(z-2)=0</m>.
-                </p>
-              </statement>
-              <answer>
-                <p>
-                  <m>\sqrt{5/7}</m>
-                </p>
-              </answer>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-distance-2">
-          <webwork xml:id="webwork-ex-vectors-planes-distance-2">
-              <pg-code>
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $distance=Formula("8/sqrt(21)");
-              </pg-code>
-
-              <statement>
-                <p>
-                  Find the distance from the point <m>(2,6,2)</m> to the plane <m>2(x-1)-y+4(z+1)=0</m>.
-                </p>
-
-                <p>
-                  <var name="$distance" width="10"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-        <exercise label="ex-vectors-planes-distance-3">
-          <!--<webwork xml:id="webwork-ex-vectors-planes-distance-3">
-              <pg-code>
-              </pg-code>
-              -->
-              <statement>
-                <p>
-                  The distance between the parallel planes
-                </p>
-
-                <p>
-                  <m>x+y+z=0</m> and
-                </p>
-
-                <p>
-                  <m>(x-2)+(y-3)+(z+4)=0</m>
-                </p>
-              </statement>
-              <answer>
-                <p>
-                  <m>1/\sqrt{3}</m>
-                </p>
-              </answer>
-          <!-- </webwork> -->
-        </exercise>
-
-        <exercise label="ex-vectors-planes-distance-4">
-          <webwork xml:id="webwork-ex-vectors-planes-distance-4">
-              <pg-code>
-                Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
-                $distance=Formula("3");
-              </pg-code>
-
-              <statement>
-                <p>
-                  Find the distance between the parallel planes
-                  <m>2(x-1)+2(y+1)+(z-2)=0</m> and <m>2(x-3)+2(y-1)+(z-3)=0</m>.
-                </p>
-
-                <p>
-                  <var name="$distance" width="10"/>
-                </p>
-              </statement>
-          </webwork>
-        </exercise>
-
-      </exercisegroup>
-
-      <exercise label="ex-vectors-planes-distance-formula">
-        <!--<webwork xml:id="webwork-ex-vectors-planes-distance-formula">
+                }
+                if (!$ansHash-&gt;{isPreview}) {
+                  push(@errors,"You need to provide more points") if $i &lt; 2;
+                  push(@errors,"You have given too many points") if $score &gt; 2 and $i != $score;
+                }
+                return ($score,@errors);
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                List any two points in the plane with equation <m>4(y+2)-(z-6)=0</m>.
+              </p>
+
+              <p>
+                <var name="$points" evaluator="$pev" width="20"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+    </exercisegroup>
+    <exercisegroup cols="2" xml:id="exset-vectors-planes-equation">
+
+      <introduction>
+        <p>
+          In the following exercises,
+          give the equation of the described plane in standard and general forms.
+        </p>
+      </introduction>
+
+      <exercise label="ex-vectors-planes-equation-1">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-equation-1">
             <pg-code>
             </pg-code>
             -->
             <statement>
               <p>
-                Show why if the point <m>Q</m> lies in a plane,
-                then the distance formula correctly gives the distance from the point to the plane as <m>0</m>.
+                Passes through <m>(2,3,4)</m> and has normal vector
+              </p>
+
+              <p>
+                <m>\vec n= \bbm  3\\-1\\7\ebm</m>.
               </p>
             </statement>
             <solution>
               <p>
-                If <m>P</m> is any point in the plane,
-                and <m>Q</m> is also in the plane,
-                then <m>\overrightarrow{PQ}</m> lies parallel to the plane and is orthogonal to <m>\vec n</m>,
-                the normal vector.
-                Thus <m>\vec n\cdot \overrightarrow{PQ}=0</m>, giving the distance as 0.
+                Standard form: <m>3(x-2)-(y-3)+7(z-4)=0</m>
+              </p>
+
+              <p>
+                general form: <m>3x-y+7z=31</m>
               </p>
             </solution>
         <!-- </webwork> -->
       </exercise>
 
+      <exercise label="ex-vectors-planes-equation-2">
+        <webwork xml:id="webwork-ex-vectors-planes-equation-2">
+            <pg-code>
+              sub grouped {
+                my $op = shift;
+                return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                my $context=Context();
+                my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                  return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                };
+                return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+              };
+              Context("ImplicitEquation");
+              Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+              Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+              $st=ImplicitEquation("2(y-3)+4(z-5)=0");
+              $stev=$st-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                return $correct == $student;
+              });
+              $ge=ImplicitEquation("2y+4z=26");
+              $geev=$ge-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                return $correct == $student;
+              });
+            </pg-code>
 
-    </subexercises>
+            <statement>
+              <p>
+                A plane passes through <m>(1,3,5)</m> and has normal vector <m>\vec n= \bbm  0\\2\\4\ebm</m>.
+              </p>
+
+              <instruction>
+                An equation for this plane in standard form is:
+              </instruction>
+              <p>
+                  <var name="$st" evaluator="$stev" width="30"/>
+              </p>
+
+              <instruction>
+                An equation for this plane in general form is:
+              </instruction>
+              <p>
+                <var name="$ge" evaluator="$geev" width="30"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-3">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-equation-3">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                Passes through the points <m>(1,2,3)</m>,
+                <m>(3,-1,4)</m> and <m>(1,0,1)</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                Answers may vary;
+              </p>
+
+              <p>
+                Standard form: <m>8(x-1)+4(y-2)-4(z-3)=0</m>
+              </p>
+
+              <p>
+                general form: <m>8x+4y-4z=4</m>
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-4">
+        <webwork xml:id="webwork-ex-vectors-planes-equation-4">
+
+            <pg-code>
+              sub grouped {
+                my $op = shift;
+                return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                my $context=Context();
+                my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                  return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                };
+                return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+              };
+              Context("ImplicitEquation");
+              Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+              Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+              $st=ImplicitEquation("-5(x-5)+3(y-3)+2(z-8)=0");
+              $stev=$st-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                return $correct == $student;
+              });
+              $ge=ImplicitEquation("-5x+3y+2z=0");
+              $geev=$ge-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                return $correct == $student;
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                A plane passes through the points <m>(5,3,8)</m>,
+                <m>(6,4,9)</m> and <m>(3,3,3)</m>.
+              </p>
+
+              <instruction>
+                An equation for this plane in standard form is:
+              </instruction>
+              <p>
+                <var name="$st" evaluator="$stev" width="30"/>
+              </p>
+
+              <instruction>
+                An equation for this plane in general form is:
+              </instruction>
+              <p>
+                <var name="$ge" evaluator="$geev" width="30"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-5">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-equation-5">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                Contains the intersecting lines
+              </p>
+
+              <p>
+                <m>\vec\ell_1(t) = \bbm  2\\1\\2\ebm + t\bbm  1\\2\\3\ebm</m> and
+              </p>
+
+              <p>
+                <m>\vec\ell_2(t) = \bbm  2\\1\\2\ebm + t\bbm  2\\5\\4\ebm</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                Answers may vary;
+              </p>
+
+              <p>
+                Standard form: <m>-7(x-2)+2(y-1)+(z-2)=0</m>
+              </p>
+
+              <p>
+                general form: <m>-7x+2y+z=-10</m>
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-6">
+        <webwork xml:id="webwork-ex-vectors-planes-equation-6">
+
+            <pg-code>
+              sub grouped {
+                my $op = shift;
+                return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                my $context=Context();
+                my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                  return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                };
+                return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+              };
+              Context("ImplicitEquation");
+              Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+              Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+              $st=ImplicitEquation("3(x-5)+3(z-3)=0");
+              $stev=$st-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                return $correct == $student;
+              });
+              $ge=ImplicitEquation("3x+3z=24");
+              $geev=$ge-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                return $correct == $student;
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                A plane contains the intersecting lines
+                <m>\vec\ell_1(t) = \bbm  5\\0\\3\ebm + t\bbm  -1\\1\\1\ebm</m> and <m>\vec\ell_2(t) = \bbm  1\\4\\7\ebm + t\bbm  3\\0\\-3\ebm</m>.
+              </p>
+
+              <instruction>
+                An equation for this plane in standard form is:
+              </instruction>
+              <p>
+                <var name="$st" evaluator="$stev" width="30"/>
+              </p>
+
+              <instruction>
+                An equation for this plane in general form is:
+              </instruction>
+              <p>
+                <var name="$ge" evaluator="$geev" width="30"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-7">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-equation-7">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                Contains the parallel lines
+              </p>
+
+              <p>
+                <m>\vec\ell_1(t) = \bbm  1\\1\\1\ebm + t\bbm  1\\2\\3\ebm</m> and
+              </p>
+
+              <p>
+                <m>\vec\ell_2(t) = \bbm  1\\1\\2\ebm + t\bbm  1\\2\\3\ebm</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                Answers may vary;
+              </p>
+
+              <p>
+                Standard form: <m>2(x-1)-(y-1)=0</m>
+              </p>
+
+              <p>
+                general form: <m>2x-y=1</m>
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-8">
+        <webwork xml:id="webwork-ex-vectors-planes-equation-8">
+
+            <pg-code>
+              sub grouped {
+                my $op = shift;
+                return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                my $context=Context();
+                my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                  return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                };
+                return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+              };
+              Context("ImplicitEquation");
+              Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+              Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+              $st=ImplicitEquation("2(x-1)+(y-1)-3(z-1)=0");
+              $stev=$st-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                return $correct == $student;
+              });
+              $ge=ImplicitEquation("2x+y-3z=0");
+              $geev=$ge-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                return $correct == $student;
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                A plane contains the parallel lines
+                <m>\vec\ell_1(t) = \bbm  1\\1\\1\ebm + t\bbm  4\\1\\3\ebm</m> and <m>\vec\ell_2(t) = \bbm  2\\2\\2\ebm + t\bbm  4\\1\\3\ebm</m>.
+              </p>
+
+              <instruction>
+                An equation for this plane in standard form is:
+              </instruction>
+              <p>
+                <var name="$st" evaluator="$stev" width="30"/>
+              </p>
+
+              <instruction>
+                An equation for this plane in general form is:
+              </instruction>
+              <p>
+                <var name="$ge" evaluator="$geev" width="30"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-9">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-equation-9">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                Contains the point <m>(2,-6,1)</m> and the line
+              </p>
+
+              <p>
+                <m>\vec\ell(t) = \left\{\begin{aligned}x\amp =2+5t \\
+                                  y\amp =2+2t \\
+                                  z\amp =-1+2t
+                \end{aligned} \right.</m>
+              </p>
+            </statement>
+            <solution>
+              <p>
+                Answers may vary;
+              </p>
+
+              <p>
+                Standard form: <m>2(x-2)-(y+6)-4(z-1)=0</m>
+              </p>
+
+              <p>
+                general form: <m>2x-y-4z=6</m>
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-10">
+        <webwork xml:id="webwork-ex-vectors-planes-equation-10">
+
+            <pg-code>
+              sub grouped {
+                my $op = shift;
+                return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                my $context=Context();
+                my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                  return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                };
+                return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+              };
+              Context("ImplicitEquation");
+              Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+              Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+              $st=ImplicitEquation("4(x-5)-2(y-7)-2(z-3)=0");
+              $stev=$st-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                return $correct == $student;
+              });
+              $ge=ImplicitEquation("4x-2y-2z=0");
+              $geev=$ge-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                return $correct == $student;
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                A plane contains the point <m>(5,7,3)</m> and the line <m>\vec\ell(t) = \begin{cases}x\amp=t\\y\amp=t\\z\amp=t\end{cases}</m>.
+              </p>
+
+              <instruction>
+                An equation for this plane in standard form is:
+              </instruction>
+              <p>
+                <var name="$st" evaluator="$stev" width="30"/>
+              </p>
+
+              <instruction>
+                An equation for this plane in general form is:
+              </instruction>
+              <p>
+                <var name="$ge" evaluator="$geev" width="30"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-11">
+        <webwork xml:id="webwork-ex-vectors-planes-equation-11">
+
+            <pg-code>
+              sub grouped {
+                my $op = shift;
+                return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                my $context=Context();
+                my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                  return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                };
+                return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+              };
+              Context("ImplicitEquation");
+              Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+              Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+              $st=ImplicitEquation("(x-5)+(y-7)+(z-3)=0");
+              $stev=$st-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                return $correct == $student;
+              });
+              $ge=ImplicitEquation("x+y+z=15");
+              $geev=$ge-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                return $correct == $student;
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                A plane contains the point <m>(5,7,3)</m> and is orthogonal to the line <m>\vec\ell(t) = \bbm  4\\5\\6\ebm+ t\bbm  1\\1\\1\ebm</m>.
+              </p>
+
+              <instruction>
+                An equation for this plane in standard form is:
+              </instruction>
+              <p>
+                <var name="$st" evaluator="$stev" width="30"/>
+              </p>
+
+              <instruction>
+                An equation for this plane in general form is:
+              </instruction>
+              <p>
+                <var name="$ge" evaluator="$geev" width="30"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-12">
+        <webwork xml:id="webwork-ex-vectors-planes-equation-12">
+
+            <pg-code>
+              sub grouped {
+                my $op = shift;
+                return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                my $context=Context();
+                my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                  return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                };
+                return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+              };
+              Context("ImplicitEquation");
+              Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+              Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+              $st=ImplicitEquation("4(x-4)+(y-1)+(z-1)=0");
+              $stev=$st-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                return $correct == $student;
+              });
+              $ge=ImplicitEquation("4x+y+z=18");
+              $geev=$ge-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                return $correct == $student;
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                A plane contains the point <m>(4,1,1)</m> and is orthogonal to the line <m>\begin{cases}x\amp=4+4t\\y\amp=1+t\\z\amp=1+t\end{cases}</m>.
+              </p>
+
+              <instruction>
+                An equation for this plane in standard form is:
+              </instruction>
+              <p>
+                <var name="$st" evaluator="$stev" width="30"/>
+              </p>
+
+              <instruction>
+                An equation for this plane in general form is:
+              </instruction>
+              <p>
+                <var name="$ge" evaluator="$geev" width="30"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-13">
+        <webwork xml:id="webwork-ex-vectors-planes-equation-13">
+
+            <pg-code>
+              sub grouped {
+                my $op = shift;
+                return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                my $context=Context();
+                my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                  return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                };
+                return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+              };
+              Context("ImplicitEquation");
+              Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+              Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+              $st=ImplicitEquation("3(x+4)+8(y-7)-10(z-2)=0");
+              $stev=$st-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                return $correct == $student;
+              });
+              $ge=ImplicitEquation("3x+8y-10z=24");
+              $geev=$ge-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                return $correct == $student;
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                A plane contains the point
+                <m>(-4,7,2)</m> and is parallel to the plane <m>3(x-2)+8(y+1) -10z=0</m>.
+              </p>
+
+              <instruction>
+                An equation for this plane in standard form is:
+              </instruction>
+              <p>
+                <var name="$st" evaluator="$stev" width="30"/>
+              </p>
+
+              <instruction>
+                An equation for this plane in general form is:
+              </instruction>
+              <p>
+                <var name="$ge" evaluator="$geev" width="30"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-equation-14">
+        <webwork xml:id="webwork-ex-vectors-planes-equation-14">
+
+            <pg-code>
+              sub grouped {
+                my $op = shift;
+                return 1 if ($op-&gt;{name} or $op-&gt;{isConstant});
+                if ($op-&gt;{uop}) {return grouped($op-&gt;{op});};
+                my $context=Context();
+                my $lft=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{lop});
+                my $rgt=$context-&gt;Package("Formula")-&gt;new($context,$op-&gt;{rop});
+                return 0 if (($lft-&gt;usesOneOf('x') and $rgt-&gt;usesOneOf('x')) or ($lft-&gt;usesOneOf('y') and $rgt-&gt;usesOneOf('y')) or ($lft-&gt;usesOneOf('z') and $rgt-&gt;usesOneOf('z')));
+                if ($op-&gt;{bop} eq '+' or $op-&gt;{bop} eq '-') {
+                  return 0 unless (($lft-&gt;usesOneOf('x','y','z') and $rgt-&gt;usesOneOf('x','y','z')) or ($op-&gt;{lop}{name} and $op-&gt;{rop}{isConstant}) or ($op-&gt;{rop}{name} and $op-&gt;{lop}{isConstant}));
+                };
+                return (grouped($op-&gt;{lop}) and grouped($op-&gt;{rop}));
+              };
+              Context("ImplicitEquation");
+              Context()-&gt;variables-&gt;are(x=&gt;'Real',y=&gt;'Real',z=&gt;'Real');
+              Context()-&gt;variables-&gt;set(x=&gt;{limits=&gt;[-100,100]},y=&gt;{limits=&gt;[-100,100]},z=&gt;{limits=&gt;[-100,100]});
+              $st=ImplicitEquation("x-1=0");
+              $stev=$st-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                #return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in standard form") unless ($right == 0 and grouped($left-&gt;{tree}));
+                return $correct == $student;
+              });
+              $ge=ImplicitEquation("x=1");
+              $geev=$ge-&gt;cmp(checker=&gt;sub{
+                my ( $correct, $student, $ansHash ) = @_;
+                return 0 if $ansHash-&gt;{isPreview} || $correct != $student;
+                my $context = Context();
+                my $left=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{lop});
+                my $right=$context-&gt;Package("Formula")-&gt;new($context,$student-&gt;{tree}{rop});
+                Value::Error("Your answer is not in general form") unless ($left-&gt;eval(x=&gt;0,y=&gt;0,z=&gt;0)==0);
+                Value::Error("Your answer is not in general form") unless $right-&gt;isConstant;
+                return $correct == $student;
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                A plane contains the point <m>(1,2,3)</m> and is parallel to the plane <m>x=5</m>.
+              </p>
+
+              <instruction>
+                An equation for this plane in standard form is:
+              </instruction>
+              <p>
+                <var name="$st" evaluator="$stev" width="30"/>
+              </p>
+
+              <instruction>
+                An equation for this plane in general form is:
+              </instruction>
+              <p>
+                <var name="$ge" evaluator="$geev" width="30"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+    </exercisegroup>
+    <exercisegroup cols="2" xml:id="exset-vectors-planes-intersection">
+
+      <introduction>
+        <p>
+          In the following exercises,
+          give the equation of the line that is the intersection of the given planes.
+        </p>
+      </introduction>
+
+      <exercise label="ex-vectors-planes-intersection-1">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-intersection-1">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                <m>p1:\ 3 (x - 2) + (y - 1) + 4 z=0</m>, and
+              </p>
+
+              <p>
+                <m>p2:\ 2 (x - 1) - 2 (y + 3) + 6 (z - 1)=0</m>.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                Answers may vary:
+              </p>
+
+              <p>
+                <m>\ell = \left\{\begin{aligned}x \amp = 14t\\
+                y \amp = -1-10t\\
+                z\amp = 2-8t
+                \end{aligned} \right.</m>
+              </p>
+            </solution>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vectors-planes-intersection-2">
+        <webwork xml:id="webwork-ex-vectors-planes-intersection-2">
+            <pg-code>
+              Context("Vector");
+              Context()-&gt;variables-&gt;are(t=&gt;"Real");
+              $v=Compute("(1,3,3.5)+t&lt;20,2,-26&gt;");
+              $vev=$v-&gt;cmp(checker=&gt;sub{my($c,$st,$aH)=@_;
+                $ds=Formula($st)-&gt;D('t')-&gt;reduce;
+                if($ds-&gt;isConstant){$ds=Vector("$ds");}else{return 0;};
+                $dc=$c-&gt;D('t')-&gt;reduce;$dc=Vector("$dc");$par=$ds-&gt;isParallel($dc);
+                $sp=Formula($st)-&gt;eval(t=&gt;0);$cp=$c-&gt;eval(t=&gt;0);
+                $tch=(($sp==$cp) or $dc-&gt;isParallel($sp-$cp));
+                return ($par and $tch);
+              });
+            </pg-code>
+
+            <statement>
+              <p>
+                Give the equation of the line
+                (in vector form)
+                that is the intersection of the planes <m>5 (x - 5) + 2 (y + 2) + 4 (z - 1)=0</m>,
+                and <m>3 x - 4 (y - 1) + 2 (z - 1)=0</m>.
+              </p>
+
+              <p>
+                <var name="$v" evaluator="$vev" width="30"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+    </exercisegroup>
+    <exercisegroup cols="2" xml:id="exset-vectors-planes-intersect-line">
+
+      <introduction>
+        <p>
+          Find the point of intersection between the line and the plane.
+        </p>
+      </introduction>
+
+      <exercise label="ex-vectors-planes-intersect-line-1">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-intersect-line-1">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                line: <m>\bbm  5\\1\\-1\ebm + t\bbm  2\\2\\1\ebm</m>,
+              </p>
+
+              <p>
+                plane: <m>5x-y-z=-3</m>
+              </p>
+            </statement>
+            <answer>
+              <p>
+                <m>(-3,-7,-5)</m>
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vectors-planes-intersect-line-2">
+        <webwork xml:id="webwork-ex-vectors-planes-intersect-line-2">
+            <pg-code>
+              Context("Point");
+              Context()-&gt;strings-&gt;add('the entire line'=&gt;{});
+              $point=Point("(3,1,1)");
+            </pg-code>
+
+            <statement>
+              <p>
+                Find the point of intersection between the line
+                <m>\bbm  4\\1\\0\ebm + t\bbm  1\\0\\-1\ebm</m> and the plane <m>3x+y-2z=8</m>.
+                (If the plane contains the line,
+                enter <q>the entire line</q>.
+                If the line does not intersect the plane at all, enter <q>none</q>.)
+              </p>
+
+              <p>
+                <var name="$point" width="10"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-intersect-line-3">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-intersect-line-3">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                line: <m>\bbm  1\\2\\3\ebm + t\bbm  3\\5\\-1\ebm</m>,
+              </p>
+
+              <p>
+                plane: <m>3x-2y-z=4</m>
+              </p>
+            </statement>
+            <answer>
+              <p>
+                No point of intersection; the plane and line are parallel.
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vectors-planes-intersect-line-4">
+        <webwork xml:id="webwork-ex-vectors-planes-intersect-line-4">
+            <pg-code>
+              Context("Point");
+              Context()-&gt;strings-&gt;add('the entire line'=&gt;{});
+              $point=Compute('the entire line');
+            </pg-code>
+
+            <statement>
+              <p>
+                Find the point of intersection between the line
+                <m>\bbm  1\\2\\3\ebm + t\bbm  3\\5\\-1\ebm</m> and the plane <m>3x-2y-z=-4</m>.
+                (If the plane contains the line,
+                enter <q>the entire line</q>.
+                If the line does not intersect the plane at all, enter <q>none</q>.)
+              </p>
+
+              <p>
+                <var name="$point" width="10"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+    </exercisegroup>
+    <exercisegroup cols="2" xml:id="exset-vectors-planes-distance">
+
+      <introduction>
+        <p>
+          Find the indicated distance.
+        </p>
+      </introduction>
+
+      <exercise label="ex-vectors-planes-distance-1">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-distance-1">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                The distance from the point <m>(1,2,3)</m> to the plane
+              </p>
+
+              <p>
+                <m>3(x-1)+(y-2)+5(z-2)=0</m>.
+              </p>
+            </statement>
+            <answer>
+              <p>
+                <m>\sqrt{5/7}</m>
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vectors-planes-distance-2">
+        <webwork xml:id="webwork-ex-vectors-planes-distance-2">
+            <pg-code>
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $distance=Formula("8/sqrt(21)");
+            </pg-code>
+
+            <statement>
+              <p>
+                Find the distance from the point <m>(2,6,2)</m> to the plane <m>2(x-1)-y+4(z+1)=0</m>.
+              </p>
+
+              <p>
+                <var name="$distance" width="10"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+      <exercise label="ex-vectors-planes-distance-3">
+        <!--<webwork xml:id="webwork-ex-vectors-planes-distance-3">
+            <pg-code>
+            </pg-code>
+            -->
+            <statement>
+              <p>
+                The distance between the parallel planes
+              </p>
+
+              <p>
+                <m>x+y+z=0</m> and
+              </p>
+
+              <p>
+                <m>(x-2)+(y-3)+(z+4)=0</m>
+              </p>
+            </statement>
+            <answer>
+              <p>
+                <m>1/\sqrt{3}</m>
+              </p>
+            </answer>
+        <!-- </webwork> -->
+      </exercise>
+
+      <exercise label="ex-vectors-planes-distance-4">
+        <webwork xml:id="webwork-ex-vectors-planes-distance-4">
+            <pg-code>
+              Context()-&gt;flags-&gt;set(reduceConstants=&gt;0,reduceConstantFunctions=&gt;0);
+              $distance=Formula("3");
+            </pg-code>
+
+            <statement>
+              <p>
+                Find the distance between the parallel planes
+                <m>2(x-1)+2(y+1)+(z-2)=0</m> and <m>2(x-3)+2(y-1)+(z-3)=0</m>.
+              </p>
+
+              <p>
+                <var name="$distance" width="10"/>
+              </p>
+            </statement>
+        </webwork>
+      </exercise>
+
+    </exercisegroup>
+
+    <exercise label="ex-vectors-planes-distance-formula">
+      <!--<webwork xml:id="webwork-ex-vectors-planes-distance-formula">
+          <pg-code>
+          </pg-code>
+          -->
+          <statement>
+            <p>
+              Show why if the point <m>Q</m> lies in a plane,
+              then the distance formula correctly gives the distance from the point to the plane as <m>0</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              If <m>P</m> is any point in the plane,
+              and <m>Q</m> is also in the plane,
+              then <m>\overrightarrow{PQ}</m> lies parallel to the plane and is orthogonal to <m>\vec n</m>,
+              the normal vector.
+              Thus <m>\vec n\cdot \overrightarrow{PQ}=0</m>, giving the distance as 0.
+            </p>
+          </solution>
+      <!-- </webwork> -->
+    </exercise>
   </exercises>
 </section>
