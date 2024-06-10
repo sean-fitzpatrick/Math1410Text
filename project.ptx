@@ -2,7 +2,7 @@
 <project ptx-version="2" asy-method="local">
   <targets>
     <target name="html" format="html" source="1410text.ptx" publication="publication.ptx"/>
-    <target name="latex" format="latex" source="1410text.ptx" publication="publication-pdf.ptx" xsl="apex-latex-style.xsl"/>
+    <target name="latex" format="latex" source="1410text.ptx" publication="publication.ptx" xsl="apex-latex-style.xsl"/>
     <target name="latex-print" format="latex" source="1410text.ptx" publication="publication-print.ptx" xsl="apex-latex-print-style.xsl"/>
     <target name="latex-color-print" format="latex" source="1410text.ptx" publication="publication-colprint.ptx" xsl="apex-latex-style.xsl"/>
   </targets>
