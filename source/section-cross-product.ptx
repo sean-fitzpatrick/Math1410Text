@@ -1225,7 +1225,7 @@
         <me>
           \crossp vw = \bvm \veci  \amp  \vecj  \amp  \veck\\ v_1 \amp  v_2 \amp  v_3\\ w_1 \amp  w_2 \amp  w_3\evm = \bvm v_2 \amp  v_3\\w_2\amp w_3\evm\veci - \bvm v_1 \amp  v_3\\ w_1 \amp  w_3\evm\vecj + \bvm v_1 \amp  v_2\\ w_1 \amp  w_2\evm\veck
         </me>.
-        If we replace the unit vectors <m>\veci, \vecj, veck</m> in the above equation with the components of <m>\vec{u}</m>,
+        If we replace the unit vectors <m>\veci, \vecj, \veck</m> in the above equation with the components of <m>\vec{u}</m>,
         we arrive at our first instance of a <m>3\times 3</m> <term>determinant</term>, along with a method for computing such an object:
         <me>
           \bvm u_1  \amp  u_2  \amp  u_3\\ v_1 \amp  v_2 \amp  v_3\\ w_1 \amp  w_2 \amp  w_3\evm = u_1 \bvm v_2 \amp  v_3\\ w_2 \amp  w_3\evm - u_2\bvm v_1 \amp  v_3\\ w_1 \amp  w_3\evm + u_3\bvm v_1 \amp  v_2\\ w_1 \amp  w_2\evm = \vec u\boldsymbol{\cdot}(\crossp vw)
