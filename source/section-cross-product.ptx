@@ -1432,7 +1432,7 @@
       <introduction>
         <p>
           In the following exercises, vectors <m>\vec u</m> and <m>\vec v</m> are given.
-          Compute <m>\vec u\times\vec v</m> and check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+          Compute <m>\vec u\times\vec v</m> and check that this vector is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
         </p>
       </introduction>
 
@@ -1445,16 +1445,12 @@
 
             <statement>
               <p>
-                Let <m>\vec u = \bbm  3\\2\\-2\ebm</m>,
-                <m>\vec v = \bbm  0\\1\\5\ebm</m>.
+                Let <m>\vec u = \bbm 3\\2\\-2\ebm</m>,
+                <m>\vec v = \bbm 0\\1\\5\ebm</m>.
               </p>
 
               <p>
-                <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
-              </p>
-
-              <p>
-                Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                <var name="$cp" width="20"/>
               </p>
             </statement>
         </webwork>
@@ -1469,16 +1465,12 @@
 
             <statement>
               <p>
-                Let <m>\vec u = \bbm  5\\ -4\\ 3\ebm</m>,
-                <m>\vec v = \bbm  2\\ -5\\ 1\ebm</m>.
+                Let <m>\vec u = \bbm 5\\ -4\\ 3\ebm</m>,
+                <m>\vec v = \bbm 2\\ -5\\ 1\ebm</m>.
               </p>
 
               <p>
-                <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
-              </p>
-
-              <p>
-                Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                <var name="$cp" width="20"/>
               </p>
             </statement>
         </webwork>
@@ -1493,16 +1485,12 @@
 
             <statement>
               <p>
-                Let <m>\vec u = \bbm  4\\ -5\\ -5\ebm</m>,
-                <m>\vec v = \bbm  3\\ 3\\ 4\ebm</m>.
+                Let <m>\vec u = \bbm 4\\ -5\\ -5\ebm</m>,
+                <m>\vec v = \bbm 3\\ 3\\ 4\ebm</m>.
               </p>
 
               <p>
-                <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
-              </p>
-
-              <p>
-                Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                <var name="$cp" width="20"/>
               </p>
             </statement>
         </webwork>
@@ -1517,16 +1505,12 @@
 
             <statement>
               <p>
-                Let <m>\vec u = \bbm  -4\\ 7\\ -10\ebm</m>,
-                <m>\vec v = \bbm  4\\ 4\\ 1\ebm</m>.
+                Let <m>\vec u = \bbm -4\\ 7\\ -10\ebm</m>,
+                <m>\vec v = \bbm 4\\ 4\\ 1\ebm</m>.
               </p>
 
               <p>
-                <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
-              </p>
-
-              <p>
-                Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                <var name="$cp" width="20"/>
               </p>
             </statement>
         </webwork>
@@ -1541,16 +1525,12 @@
 
             <statement>
               <p>
-                Let <m>\vec u = \bbm  1\\ 0\\ 1\ebm</m>,
-                <m>\vec v = \bbm  5\\ 0\\ 7\ebm</m>.
+                Let <m>\vec u = \bbm 1\\ 0\\ 1\ebm</m>,
+                <m>\vec v = \bbm 5\\ 0\\ 7\ebm</m>.
               </p>
 
               <p>
-                <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
-              </p>
-
-              <p>
-                Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                <var name="$cp" width="20"/>
               </p>
             </statement>
         </webwork>
@@ -1565,34 +1545,30 @@
 
             <statement>
               <p>
-                Let <m>\vec u = \bbm  1\\ 5\\ -4\ebm</m>,
-                <m>\vec v = \bbm  -2\\ -10\\ 8\ebm</m>.
+                Let <m>\vec u = \bbm 1\\ 5\\ -4\ebm</m>,
+                <m>\vec v = \bbm -2\\ -10\\ 8\ebm</m>.
               </p>
 
               <p>
-                <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
-              </p>
-
-              <p>
-                Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                <var name="$cp" width="20"/>
               </p>
             </statement>
         </webwork>
       </exercise>
 
-    <exercise label="ex-cross-product-compute-7">
-      <statement>
-        <p>
-          <m>\vec u = \bbm  a\\b\\0\ebm</m>,
-          <m>\vec v = \bbm  c\\d\\0\ebm</m>
-        </p>
-      </statement>
-      <answer>
-        <p>
-          <m>\vec u\times \vec v = \bbm  0\\0\\ad-bc\ebm</m>
-        </p>
-      </answer>
-    </exercise>
+      <exercise label="ex-cross-product-compute-7">
+        <statement>
+          <p>
+            <m>\vec u = \bbm a\\b\\0\ebm</m>,
+            <m>\vec v = \bbm c\\d\\0\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>
+            <m>\vec u\times \vec v = \bbm 0\\0\\ad-bc\ebm</m>
+          </p>
+        </answer>
+      </exercise>
 
 
       <exercise label="ex-cross-product-compute-8">
@@ -1605,12 +1581,12 @@
 
             <statement>
               <p>
-                Let <m>\vec u = \hat\imath</m>,
+                <m>\vec u = \hat\imath</m>,
                 <m>\vec v = \hat\jmath</m>.
               </p>
 
               <p>
-                <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
+                <var name="$cp" width="20"/>
               </p>
 
               <p>
@@ -1630,15 +1606,11 @@
 
             <statement>
               <p>
-                Let <m>\vec u = \hat\imath</m>, <m>\vec v = \hat{k}</m>.
+                <m>\vec u = \hat\imath</m>, <m>\vec v = \hat{k}</m>.
               </p>
 
               <p>
-                <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
-              </p>
-
-              <p>
-                Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
+                <var name="$cp" width="20"/>
               </p>
             </statement>
         </webwork>
@@ -1654,22 +1626,18 @@
 
             <statement>
               <p>
-                Let <m>\vec u = \hat\jmath</m>, <m>\vec v = \hat{k}</m>.
+                <m>\vec u = \hat\jmath</m>, <m>\vec v = \hat{k}</m>.
               </p>
 
               <p>
                 <m>\vec u\times\vec v=</m><var name="$cp" width="20"/>
-              </p>
-
-              <p>
-                Check this is orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
               </p>
             </statement>
         </webwork>
       </exercise>
 
     </exercisegroup>
-
+    
     <exercise label="ex-cross-product-dist-prop">
       <!--<webwork xml:id="webwork-ex-cross-product-dist-prop">
           <pg-code>

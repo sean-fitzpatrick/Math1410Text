@@ -605,7 +605,7 @@
   </p>
 
   <exercises>
-    <exercisegroup>
+    <exercisegroup cols="2">
 
       <introduction>
         <p>
@@ -666,7 +666,7 @@
       </exercise>
     </exercisegroup>
 
-    <exercisegroup>
+    <exercisegroup cols="2">
 
       <introduction>
         <p>

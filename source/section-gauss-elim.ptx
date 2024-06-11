@@ -859,7 +859,7 @@
       </exercise>
     </exercisegroup>
 
-    <exercisegroup>
+    <exercisegroup cols="2">
 
       <introduction>
         <p>
@@ -870,7 +870,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 1 \amp 2\-3 \amp -5\\ \ebm</m>
+            <m>\bbm 1 \amp 2\\-3 \amp -5\\ \ebm</m>
           </p>
         </statement>
         <answer>
@@ -896,7 +896,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 4 \amp 12\-2 \amp -6\\ \ebm</m>
+            <m>\bbm 4 \amp 12\\-2 \amp -6\\ \ebm</m>
           </p>
         </statement>
         <answer>
@@ -922,7 +922,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm -1 \amp 1 \amp 4\-2\amp 1\amp 1 \ebm</m>
+            <m>\bbm -1 \amp 1 \amp 4\\-2\amp 1\amp 1 \ebm</m>
           </p>
         </statement>
         <answer>
@@ -948,7 +948,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 3 \amp -3 \amp 6\-1\amp 1\amp -2 \ebm</m>
+            <m>\bbm 3 \amp -3 \amp 6\\-1\amp 1\amp -2 \ebm</m>
           </p>
         </statement>
         <answer>
@@ -961,7 +961,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 4 \amp 5 \amp -6\-12\amp -15\amp 18 \ebm</m>
+            <m>\bbm 4 \amp 5 \amp -6\\-12\amp -15\amp 18 \ebm</m>
           </p>
         </statement>
         <answer>
@@ -974,7 +974,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm -2 \amp -4 \amp -8\-2\amp -3\amp -5\\ 2\amp 3\amp 6\\ \ebm</m>
+            <m>\bbm -2 \amp -4 \amp -8\\-2\amp -3\amp -5\\ 2\amp 3\amp 6\\ \ebm</m>
           </p>
         </statement>
         <answer>

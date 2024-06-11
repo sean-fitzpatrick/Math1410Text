@@ -1063,7 +1063,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   9  \amp  8 \ -6  \amp  -5\ebm</m>,
+            <m>\tta = \bbm   9  \amp  8 \\ -6  \amp  -5\ebm</m>,
             <m>\vx = \bbm -4\\3\ebm</m>
           </p>
         </statement>
@@ -1077,7 +1077,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   19  \amp  -6 \ 48  \amp  -15\ebm</m>,
+            <m>\tta = \bbm   19  \amp  -6 \\ 48  \amp  -15\ebm</m>,
             <m>\vx = \bbm 1\\3\ebm</m>
           </p>
         </statement>
@@ -1091,7 +1091,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   -11  \amp  -19  \amp  14 \ -6 \amp  -8 \amp  6 \\ -12 \amp  -22 \amp  15\ebm</m>,
+            <m>\tta = \bbm   -11  \amp  -19  \amp  14 \\ -6 \amp  -8 \amp  6 \\ -12 \amp  -22 \amp  15\ebm</m>,
             <m>\vx = \bbm 3\\2\\4\ebm</m>
           </p>
         </statement>
@@ -1105,7 +1105,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   -7  \amp  1  \amp  3 \ 10 \amp  2 \amp  -3 \\ -20 \amp  -14 \amp  1\ebm</m>,
+            <m>\tta = \bbm   -7  \amp  1  \amp  3 \\ 10 \amp  2 \amp  -3 \\ -20 \amp  -14 \amp  1\ebm</m>,
             <m>\vx = \bbm 1\\-2\\4\ebm</m>
           </p>
         </statement>
@@ -1119,7 +1119,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   -12  \amp  -10  \amp  0 \ 15 \amp  13 \amp  0 \\ 15 \amp  18 \amp  -5\ebm</m>,
+            <m>\tta = \bbm   -12  \amp  -10  \amp  0 \\ 15 \amp  13 \amp  0 \\ 15 \amp  18 \amp  -5\ebm</m>,
             <m>\vx = \bbm -1\\1\\1\ebm</m>
           </p>
         </statement>
@@ -1133,7 +1133,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   1 \amp  -2\ -2  \amp  4 \ebm</m>,
+            <m>\tta = \bbm   1 \amp  -2\\ -2  \amp  4 \ebm</m>,
             <m>\vx = \bbm 2\\1\ebm</m>
           </p>
         </statement>
@@ -1157,7 +1157,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -16  \amp  -28  \amp  -19 \ 42 \amp  69 \amp  46 \\ -42 \amp  -72 \amp  -49\ebm</m>,
+            <m>\tta = \bbm -16  \amp  -28  \amp  -19 \\ 42 \amp  69 \amp  46 \\ -42 \amp  -72 \amp  -49\ebm</m>,
             <m>\lambda = 5</m>
           </p>
         </statement>
@@ -1171,7 +1171,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 7  \amp  -5  \amp  -10 \ 6 \amp  2 \amp  -6 \\ 2 \amp  -5 \amp  -5\ebm</m>,
+            <m>\tta = \bbm 7  \amp  -5  \amp  -10 \\ 6 \amp  2 \amp  -6 \\ 2 \amp  -5 \amp  -5\ebm</m>,
             <m>\lambda = -3</m>
           </p>
         </statement>
@@ -1185,7 +1185,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm  4  \amp  5  \amp  -3 \ -7 \amp  -8 \amp  3 \\ 1 \amp  -5 \amp  8\ebm</m>,
+            <m>\tta = \bbm  4  \amp  5  \amp  -3 \\ -7 \amp  -8 \amp  3 \\ 1 \amp  -5 \amp  8\ebm</m>,
             <m>\lambda = 2</m>
           </p>
         </statement>
@@ -1199,7 +1199,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm  16  \amp  6 \ -18  \amp  -5\ebm</m>,
+            <m>\tta = \bbm  16  \amp  6 \\ -18  \amp  -5\ebm</m>,
             <m>\lambda = 4</m>
           </p>
         </statement>
@@ -1213,7 +1213,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm  -2  \amp  6 \ -9  \amp  13\ebm</m>,
+            <m>\tta = \bbm  -2  \amp  6 \\ -9  \amp  13\ebm</m>,
             <m>\lambda = 7</m>
           </p>
         </statement>
@@ -1265,7 +1265,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 2  \amp  -12 \ 2  \amp  -8\ebm</m>
+            <m>\bbm 2  \amp  -12 \\ 2  \amp  -8\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1279,7 +1279,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 5  \amp  0  \amp  0  \ 1 \amp  1 \amp  0 \\ -1 \amp  5 \amp  -2\ebm</m>
+            <m>\bbm 5  \amp  0  \amp  0  \\ 1 \amp  1 \amp  0 \\ -1 \amp  5 \amp  -2\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1293,7 +1293,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm-3  \amp  1 \ 0  \amp  -1\ebm</m>
+            <m>\bbm-3  \amp  1 \\ 0  \amp  -1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1321,7 +1321,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 1  \amp  0  \amp  12 \ 2 \amp  -5 \amp  0 \\ 1 \amp  0 \amp  2\ebm</m>
+            <m>\bbm 1  \amp  0  \amp  12 \\ 2 \amp  -5 \amp  0 \\ 1 \amp  0 \amp  2\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1335,7 +1335,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 3  \amp  12 \ 1  \amp  -1\ebm</m>
+            <m>\bbm 3  \amp  12 \\ 1  \amp  -1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1363,7 +1363,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 1  \amp  0  \amp  -18 \ -4 \amp  3 \amp  -1 \\ 1 \amp  0 \amp  -8\ebm</m>
+            <m>\bbm 1  \amp  0  \amp  -18 \\ -4 \amp  3 \amp  -1 \\ 1 \amp  0 \amp  -8\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1377,7 +1377,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 3 \amp 5 \amp -5\ -2\amp 3\amp 2\\-2\amp 5\amp 0\ebm</m>
+            <m>\bbm 3 \amp 5 \amp -5\\ -2\amp 3\amp 2\\-2\amp 5\amp 0\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1433,7 +1433,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm 5  \amp  9 \ -1  \amp  -5\ebm</m>
+            <m>\bbm 5  \amp  9 \\ -1  \amp  -5\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1447,7 +1447,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\bbm-4  \amp  72 \ -1  \amp  13\ebm</m>
+            <m>\bbm-4  \amp  72 \\ -1  \amp  13\ebm</m>
           </p>
         </statement>
         <answer>

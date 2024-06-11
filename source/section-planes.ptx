@@ -2184,18 +2184,25 @@
             -->
             <statement>
               <p>
-                line: <m>\bbm  5\\1\\-1\ebm + t\bbm  2\\2\\1\ebm</m>,
-              </p>
-
-              <p>
-                plane: <m>5x-y-z=-3</m>
+                <ul marker="">
+                  <li>
+                    <p>
+                      line: <m>\bbm 5\\1\\-1\ebm + t\bbm 2\\2\\1\ebm</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      plane: <m>5x-y-z=-3</m>
+                    </p>
+                  </li>
+                </ul>
               </p>
             </statement>
-            <answer>
+            <solution>
               <p>
                 <m>(-3,-7,-5)</m>
               </p>
-            </answer>
+            </solution>
         <!-- </webwork> -->
       </exercise>
 
@@ -2209,13 +2216,25 @@
 
             <statement>
               <p>
-                Find the point of intersection between the line
-                <m>\bbm  4\\1\\0\ebm + t\bbm  1\\0\\-1\ebm</m> and the plane <m>3x+y-2z=8</m>.
-                (If the plane contains the line,
-                enter <q>the entire line</q>.
-                If the line does not intersect the plane at all, enter <q>none</q>.)
+                <ul marker="">
+                  <li>
+                    <p>
+                      line: <m>\bbm 4\\1\\0\ebm + t\bbm 1\\0\\-1\ebm</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      plane: <m>3x+y-2z=8</m>
+                    </p>
+                  </li>
+                </ul>
               </p>
-
+              <instruction>
+                If the plane contains the line,
+                enter the phrase <q>the entire line</q>.
+                If the line does not intersect the plane at all, enter <q>none</q>.
+              </instruction>
+              
               <p>
                 <var name="$point" width="10"/>
               </p>
@@ -2230,18 +2249,25 @@
             -->
             <statement>
               <p>
-                line: <m>\bbm  1\\2\\3\ebm + t\bbm  3\\5\\-1\ebm</m>,
-              </p>
-
-              <p>
-                plane: <m>3x-2y-z=4</m>
+                <ul marker="">
+                  <li>
+                    <p>
+                      line: <m>\bbm 1\\2\\3\ebm + t\bbm 3\\5\\-1\ebm</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      plane: <m>3x-2y-z=4</m>
+                    </p>
+                  </li>
+                </ul>
               </p>
             </statement>
-            <answer>
+            <solution>
               <p>
                 No point of intersection; the plane and line are parallel.
               </p>
-            </answer>
+            </solution>
         <!-- </webwork> -->
       </exercise>
 
@@ -2255,12 +2281,24 @@
 
             <statement>
               <p>
-                Find the point of intersection between the line
-                <m>\bbm  1\\2\\3\ebm + t\bbm  3\\5\\-1\ebm</m> and the plane <m>3x-2y-z=-4</m>.
-                (If the plane contains the line,
-                enter <q>the entire line</q>.
-                If the line does not intersect the plane at all, enter <q>none</q>.)
+                <ul marker="">
+                  <li>
+                    <p>
+                      line: <m>\bbm 1\\2\\3\ebm + t\bbm 3\\5\\-1\ebm</m>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      plane: <m>3x-2y-z=-4</m>
+                    </p>
+                  </li>
+                </ul>
               </p>
+              <instruction>
+                If the plane contains the line,
+                enter the phrase <q>the entire line</q>.
+                If the line does not intersect the plane at all, enter <q>none</q>.
+              </instruction>
 
               <p>
                 <var name="$point" width="10"/>

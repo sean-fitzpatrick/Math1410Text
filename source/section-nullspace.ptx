@@ -373,7 +373,7 @@
       is equivalent to the question <q>Does the vector <m>\vec{b}</m> belong to <m>\operatorname{col}(A)</m>?</q>
       Unfortunately, while we may gain some insight from noticing that these questions are the same,
       we are no further ahead when it comes to answering them. Whatever version we prefer,
-      the only way to get an answer is to compute the reduced row echelon form of <m>\bbm A\amp \vec{b}\ebm</m>.
+      the only way to get an answer is to compute the reduced row echelon form of <m>\left[\begin{array}{c|c} A\amp \vec{b}\end{array}\right]</m>.
     </p>
 
     <p>

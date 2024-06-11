@@ -36,7 +36,7 @@
         Since we know there are 30 marbles in the jar, we know that
         <men xml:id="eq-rbg30">
           r+b+g=30
-        </men> .
+        </men>.
         Also, we are told that there are twice as many red marbles as green ones, so we know that
         <men xml:id="eq-r2g">
           r=2g
