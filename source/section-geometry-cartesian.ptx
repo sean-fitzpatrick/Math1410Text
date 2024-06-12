@@ -83,8 +83,8 @@
 						<latex-image label="img-mv-1">
 							\begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
 
-							\drawxlines{-2.5}{6.5}{-2,...,6};
-							\drawylines{-1.5}{5.5}{-1,...,5};
+							\drawxlines{-2.5}{6.5}{-2,...,6}
+							\drawylines{-1.5}{5.5}{-1,...,5}
 							\draw [-&gt;] (0,0)--(1,1) node [right ] {$\vx$};
 							\draw [-&gt;] (0,0)--(-1,1) node [above] {$\vy$};
 							\draw [-&gt;] (0,0)--(3,-1) node [below right] {$\vz$};
@@ -174,8 +174,8 @@
 						<shortdescription>Vectors x, y, x+y, Ax, Ay, and A(x+y) are plotted in the plane.</shortdescription>
 						<latex-image label="img-mv_2">
 							\begin{tikzpicture}[x={(1cm,0)},y={(0,1cm)}, &gt;=latex]
-							\drawxlines{-1}{4}{0,...,3};
-							\drawylines{-1}{5}{0,...,4};
+							\drawxlines{-1}{4}{0,...,3}
+							\drawylines{-1}{5}{0,...,4}
 							\draw [-&gt;] (0,0)--(2,1) node [right] {$\vx$};
 							\draw [-&gt;] (0,0)--(-1,1) node [left ] {$\vy$};
 							\draw [-&gt;,gray,dashed] (2,1) -- (1,2);
@@ -250,8 +250,8 @@
 						<latex-image label="img-mv-23">
 							\begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
 
-							\drawxlines{-2.5}{3.5}{-2,...,3};
-							\drawylines{-2.5}{3.5}{-2,...,3};
+							\drawxlines{-2.5}{3.5}{-2,...,3}
+							\drawylines{-2.5}{3.5}{-2,...,3}
 							\draw [-&gt;] (0,0)--(1,1) node [right ] {$\vx$};
 							\draw [-&gt;] (0,0)--(-1,1) node [above] {$\vy$};
 							\draw [-&gt;] (0,0)--(4,1) node [above] {$\vz$};
@@ -377,11 +377,11 @@
 							<shortdescription>Unit square in the Cartesian plane. The corners are marked with symbols.</shortdescription>
 							<latex-image label="img-mv-3a">
 								\begin{tikzpicture}[x={(.75cm,0)},y={(0,.75cm)}, &gt;=latex]
-								\drawxlines{-1}{5}{0,...,4};
-								\drawylines{-1}{5}{0,...,4};
+								\drawxlines{-1}{5}{0,...,4}
+								\drawylines{-1}{5}{0,...,4}
 								\node[below] at (1,-0.1) {1};
 								\node[left] at (0,1) {1};
-								\unitsquare[very thick];
+								\unitsquare[very thick]
 								\end{tikzpicture}
 							</latex-image>
 						</image>
@@ -389,11 +389,11 @@
 							<shortdescription>The image of the unit square is a parallelogram in the first quadrant.</shortdescription>
 							<latex-image label="img-mv-3-1">
 								\begin{tikzpicture}[x={(.75cm,0)},y={(0,.75cm)}, &gt;=latex]
-								\drawxlines{-1}{5}{0,...,4};
-								\drawylines{-1}{5}{0,...,4};
+								\drawxlines{-1}{5}{0,...,4}
+								\drawylines{-1}{5}{0,...,4}
 								\node[below] at (1,-0.1) {1};
 								\node[left] at (0,1) {1};
-								\unitsquare[cm={1,2,4,3,(0,0)},very thick];
+								\unitsquare[cm={1,2,4,3,(0,0)},very thick]
 								\end{tikzpicture}
 							</latex-image>
 						</image>
@@ -416,11 +416,11 @@
 							<shortdescription>Unit square in the Cartesian plane. The corners and some edge points are marked with symbols.</shortdescription>
 							<latex-image label="img-mv-3b-1">
 								\begin{tikzpicture}[x={(.75cm,0)},y={(0,.75cm)}, &gt;=latex]
-								\drawxlines{-1}{5}{0,...,4};
-								\drawylines{-1}{5}{0,...,4};
+								\drawxlines{-1}{5}{0,...,4}
+								\drawylines{-1}{5}{0,...,4}
 								\node[below] at (1,-0.1) {1};
 								\node[left] at (0,1) {1};
-								\unitsquare[very thick];
+								\unitsquare[very thick]
 								\filldraw [black!70] (.5,0) circle (2pt);
 								\filldraw [black!40] (1,.25) circle (2pt);
 								\filldraw [black!20] (1,.75) circle (2pt);
@@ -432,11 +432,11 @@
 							<shortdescription>The image of the unit square is a parallelogram in the first quadrant.</shortdescription>
 							<latex-image label="img-mv-3b-2">
 								\begin{tikzpicture}[x={(.75cm,0)},y={(0,.75cm)}, &gt;=latex]
-								\drawxlines{-1}{5}{0,...,4};
-								\drawylines{-1}{5}{0,...,4};
+								\drawxlines{-1}{5}{0,...,4}
+								\drawylines{-1}{5}{0,...,4}
 								\node[below] at (1,-0.1) {1};
 								\node[left] at (0,1) {1};
-								\unitsquare[very thick,cm={1,2,4,3,(0,0)}];
+								\unitsquare[very thick,cm={1,2,4,3,(0,0)}]
 								\filldraw [black!70] (.5,1) circle (2pt);
 								\filldraw [black!40] (2,2.75) circle (2pt);
 								\filldraw [black!20] (4,4.25) circle (2pt);
@@ -482,11 +482,11 @@
 							<shortdescription>The unit square in the plane, with corners marked, and horizontal vectors inside.</shortdescription>
 							<latex-image label="img-mv-4a">
 								\begin{tikzpicture}[&gt;=latex]
-								\drawxlines{-1.5}{1.5}{-1,1};
-								\drawylines{-1}{1.5}{1};
+								\drawxlines{-1.5}{1.5}{-1,1}
+								\drawylines{-1}{1.5}{1}
 								\node[below] at (1,-0.1) {1};
 								\node[left] at (0,1) {1};
-								\unitsquare[very thick];
+								\unitsquare[very thick]
 								\end{tikzpicture}
 							</latex-image>
 						</image>
@@ -494,10 +494,10 @@
 							<shortdescription>The unit square has been rotated by 90 degrees about the origin to lie in the second quadrant.</shortdescription>
 							<latex-image label="img-mv-4b">
 								\begin{tikzpicture}[&gt;=latex]
-								\drawxlines{-1.5}{1.5}{-1,1};
-								\drawylines{-1}{1.5}{1};
+								\drawxlines{-1.5}{1.5}{-1,1}
+								\drawylines{-1}{1.5}{1}
 								\node[below] at (1,-0.1) {1};
-								\unitsquare[very thick,cm={0,1,-1,0,(0,0)}];
+								\unitsquare[very thick,cm={0,1,-1,0,(0,0)}]
 								\end{tikzpicture}
 							</latex-image>
 						</image>
@@ -665,7 +665,7 @@
 								\draw [ultra thin,gray,step=.75cm] (-3,-3) grid (3,3);
 								\draw [&lt;-&gt;] (-3,0) -- (3,0);
 								\draw [&lt;-&gt;] (0,-3.5) -- (0,3.5);
-								\vmispider[very thick];
+								\vmispider[very thick]
 								\end{tikzpicture}
 							</latex-image>
 						</image>
@@ -676,7 +676,7 @@
 								\draw [ultra thin,gray,step=.75cm] (-4,-3) grid (4,3);
 								\draw [&lt;-&gt;] (-4.5,0) -- (4.5,0);
 								\draw [&lt;-&gt;] (0,-3.5) -- (0,3.5);
-								\vmispider[very thick,cm={2,0,0,-1,(0,0)}];
+								\vmispider[very thick,cm={2,0,0,-1,(0,0)}]
 								\end{tikzpicture}
 							</latex-image>
 						</image>
@@ -706,9 +706,9 @@
 				<shortdescription>A parallelogram with one vertex at the orgin, and the opposite vertex at (0,3).</shortdescription>
 				<latex-image label="img-trans">
 					\begin{tikzpicture}[&gt;=latex]
-					\drawxlines{-2}{2}{-1,1};
-					\drawylines{-1}{3.5}{1,2,3};
-					\unitsquare[thick,cm={1,1,-1,2,(0,0)}];
+					\drawxlines{-2}{2}{-1,1}
+					\drawylines{-1}{3.5}{1,2,3}
+					\unitsquare[thick,cm={1,1,-1,2,(0,0)}]
 					\end{tikzpicture}
 				</latex-image>
 			</image>
@@ -757,8 +757,8 @@
 				<shortdescription>A path is plotted in the plane, from the origin to (2,3), and then to (-1,8).</shortdescription>
 				<latex-image label="img-trans2">
 					\begin{tikzpicture}[&gt;=latex,x={(.5,0)},y={(0,.5)}]
-					\drawxlines{-2}{2}{-1,1};
-					\drawylines{-1}{8.5}{1,...,8};
+					\drawxlines{-2}{2}{-1,1}
+					\drawylines{-1}{8.5}{1,...,8}
 					\draw [dashed,-&gt;] (0,0) -- (2,2) node [pos=.5,right] {$2$ $\times$ ``new'' $\veone$};
 					\draw [dashed,-&gt;] (2,2) -- (-1,8) node [pos=.5,right] {$3$ $\times$ ``new'' $\vetwo$} node[left] {\parbox{2.5cm}{new location of the point $(2,3)$}};
 					\filldraw (-1,8) circle (2pt);
@@ -827,9 +827,9 @@
 						<shortdescription>A rectangle in the third quadrant, along with a point plotted at (3,0.5).</shortdescription>
 						<latex-image label="img-transf-2-1">
 							\begin{tikzpicture}[&gt;=latex]
-							\drawxlines{-1.5}{3.5}{-1,1,2,3};
-							\drawylines{-1.5}{1.5}{-1,1};
-							\unitsquare[very thick,cm={0,-.5,1.5,0,(0,0)}];
+							\drawxlines{-1.5}{3.5}{-1,1,2,3}
+							\drawylines{-1.5}{1.5}{-1,1}
+							\unitsquare[very thick,cm={0,-.5,1.5,0,(0,0)}]
 							\draw [dashed,thick,gray] (0,0) --(0,.5) -- (3,.5);
 							\filldraw (3,.5) circle (2pt);
 							\end{tikzpicture}
@@ -847,7 +847,7 @@
 								\draw [ultra thin,gray,step=.75cm] (-3,-3) grid (3,3);
 								\draw [&lt;-&gt;] (-3,0) -- (3,0);
 								\draw [&lt;-&gt;] (0,-3.5) -- (0,3.5);
-								\vmispider[very thick];
+								\vmispider[very thick]
 								\end{tikzpicture}
 							</latex-image>
 						</image>
@@ -907,10 +907,10 @@
 					<shortdescription>The unit square is stretched horizontally to a rectangle</shortdescription>
 					<latex-image label="img-2dmt-1">
 						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-1}{2.5}{1,2};
-						\drawylines{-1}{2.5}{1,2};
-						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquare[thick,cm={1.5,0,0,1,(0,0)}];
+						\drawxlines{-1}{2.5}{1,2}
+						\drawylines{-1}{2.5}{1,2}
+						\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+						\unitsquare[thick,cm={1.5,0,0,1,(0,0)}]
 						\node [above] at (C) {$(k,1)$};
 
 						\end{tikzpicture}
@@ -930,10 +930,10 @@
 					<shortdescription>The unit square is stretched vertically to a rectangle</shortdescription>
 					<latex-image label="img-2dmt-2">
 						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-1}{2.5}{1,2};
-						\drawylines{-1}{2.5}{1,2};
-						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquare[thick,cm={1,0,0,1.5,(0,0)}];
+						\drawxlines{-1}{2.5}{1,2}
+						\drawylines{-1}{2.5}{1,2}
+						\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+						\unitsquare[thick,cm={1,0,0,1.5,(0,0)}]
 						\node [above] at (C) {$(1,k)$};
 
 						\end{tikzpicture}
@@ -953,10 +953,10 @@
 					<shortdescription>A parallelogram obtained from the unit square by shifting the top to the right.</shortdescription>
 					<latex-image label="img-2dmt-3">
 						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-1}{2.5}{1,2};
-						\drawylines{-1}{2.5}{1,2};
-						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquare[thick,cm={1,0,1.5,1,(0,0)}];
+						\drawxlines{-1}{2.5}{1,2}
+						\drawylines{-1}{2.5}{1,2}
+						\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+						\unitsquare[thick,cm={1,0,1.5,1,(0,0)}]
 						\node [above] at (D) {$(k,1)$};
 						\end{tikzpicture}
 					</latex-image>
@@ -975,10 +975,10 @@
 					<shortdescription>A parallelogram obtained from the unit square by shifting the right side up.</shortdescription>
 					<latex-image label="img-2dmt-4">
 						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-1}{2.5}{1,2};
-						\drawylines{-1}{2.5}{1,2};
-						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquare[thick,cm={1,1.5,0,1,(0,0)}];
+						\drawxlines{-1}{2.5}{1,2}
+						\drawylines{-1}{2.5}{1,2}
+						\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+						\unitsquare[thick,cm={1,1.5,0,1,(0,0)}]
 						\node [right] at (B) {$(k,1)$};
 
 						\end{tikzpicture}
@@ -998,10 +998,10 @@
 					<shortdescription>The unit square is flipped across the y axis to the second quadrant.</shortdescription>
 					<latex-image label="img-2dmt-5">
 						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-1.5}{1.5}{1,-1};
-						\drawylines{-1.5}{1.5}{1,-1};
-						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquare[thick,cm={-1,0,0,1,(0,0)}];
+						\drawxlines{-1.5}{1.5}{1,-1}
+						\drawylines{-1.5}{1.5}{1,-1}
+						\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+						\unitsquare[thick,cm={-1,0,0,1,(0,0)}]
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -1019,10 +1019,10 @@
 					<shortdescription>The unit square is flipped across the x axis into the fourth quadrant.</shortdescription>
 					<latex-image label="img-2dmt-6">
 						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-1.5}{1.5}{1,-1};
-								\drawylines{-1.5}{1.5}{1,-1};
-								\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-								\unitsquare[thick,cm={1,0,0,-1,(0,0)}];
+						\drawxlines{-1.5}{1.5}{1,-1}
+								\drawylines{-1.5}{1.5}{1,-1}
+								\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+								\unitsquare[thick,cm={1,0,0,-1,(0,0)}]
 						\end{tikzpicture}
 					</latex-image>
 
@@ -1041,11 +1041,11 @@
 					<shortdescription>The unit square appears unchanged, but has been flipped across the line y=x.</shortdescription>
 					<latex-image label="img-2dmt-7">
 						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-1.5}{1.5}{1,-1};
-						\drawylines{-1.5}{1.5}{1,-1};
-						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
+						\drawxlines{-1.5}{1.5}{1,-1}
+						\drawylines{-1.5}{1.5}{1,-1}
+						\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
 						\draw [very thin,gray,dashed] (-1,-1) -- (1.5,1.5);
-						\unitsquare[thick,cm={0,1,1,0,(0,0)}];
+						\unitsquare[thick,cm={0,1,1,0,(0,0)}]
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -1063,10 +1063,10 @@
 					<shortdescription>The unit square has been rotated counter-clockwise about the origin by a specified angle.</shortdescription>
 					<latex-image label="img-2dmt-8">
 						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-1.5}{1.5}{1,-1};
-						\drawylines{-.5}{2.5}{1,2};
-						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquare[thick,cm={0.5,0.866,-0.866,0.5,(0,0)}];
+						\drawxlines{-1.5}{1.5}{1,-1}
+						\drawylines{-.5}{2.5}{1,2}
+						\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+						\unitsquare[thick,cm={0.5,0.866,-0.866,0.5,(0,0)}]
 						\draw [-&gt;] (.5,0) arc (0:58:0.5cm) ;
 						\path (.7,0) arc (0:30:.7) node {$\theta$};
 						\end{tikzpicture}
@@ -1087,10 +1087,10 @@
 					<shortdescription>The unit square has been collapsed to the unit interval on the x axis.</shortdescription>
 					<latex-image label="img-2dmt-9">
 						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-1.5}{1.5}{1,-1};
-						\drawylines{-1.5}{1.5}{1,-1};
-						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquarewithoutarrows[thick,cm={1,0,0,0,(0,0)}];
+						\drawxlines{-1.5}{1.5}{1,-1}
+						\drawylines{-1.5}{1.5}{1,-1}
+						\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+						\unitsquarewithoutarrows[thick,cm={1,0,0,0,(0,0)}]
 						\end{tikzpicture}
 					</latex-image>
 
@@ -1110,10 +1110,10 @@
 					<shortdescription>The unit square has been collapsed to the unit interval on the y axis.</shortdescription>
 					<latex-image label="img-2dmt-10">
 						\begin{tikzpicture}[&gt;=latex]
-						\drawxlines{-1.5}{1.5}{1,-1};
-						\drawylines{-1.5}{1.5}{1,-1};
-						\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-						\unitsquarewithoutarrows[thick,cm={0,0,0,1,(0,0)}];
+						\drawxlines{-1.5}{1.5}{1,-1}
+						\drawylines{-1.5}{1.5}{1,-1}
+						\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+						\unitsquarewithoutarrows[thick,cm={0,0,0,1,(0,0)}]
 						\end{tikzpicture}
 					</latex-image>
 				</image>
@@ -1234,10 +1234,10 @@
 						<shortdescription>The unit square and its transformed image.</shortdescription>
 						<latex-image label="img-trans-3-1">
 							\begin{tikzpicture}[&gt;=latex]
-							\drawxlines{-.5}{2.5}{1,2};
-							\drawylines{-1.5}{1.5}{-1,1};
-							\begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-							\unitsquare[thick,cm={0.933,1.232,0.866,-1,(0,0)}];
+							\drawxlines{-.5}{2.5}{1,2}
+							\drawylines{-1.5}{1.5}{-1,1}
+							\begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+							\unitsquare[thick,cm={0.933,1.232,0.866,-1,(0,0)}]
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -1253,7 +1253,7 @@
 								\draw [ultra thin,gray,step=.75cm] (-3,-3) grid (3,3);
 								\draw [&lt;-&gt;] (-3,0) -- (3,0);
 								\draw [&lt;-&gt;] (0,-3.5) -- (0,3.5);
-								\vmispider[very thick];
+								\vmispider[very thick]
 								\end{tikzpicture}
 							</latex-image>
 						</image>
@@ -1265,7 +1265,7 @@
 								\draw [ultra thin,gray,step=.75cm] (-3,-5) grid (4,3);
 								\draw [&lt;-&gt;] (-3.5,0) -- (4.5,0);
 								\draw [&lt;-&gt;] (0,-5.5) -- (0,3.5);
-								\vmispider[very thick,cm={0.933,1.232,0.866,-1,(0,0)}];
+								\vmispider[very thick,cm={0.933,1.232,0.866,-1,(0,0)}]
 								\end{tikzpicture}
 							</latex-image>
 
@@ -1316,8 +1316,8 @@
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex1">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)}]
-							\drawxlines{-3.5}{1.5}{-3,-2,-1,1};
-							\drawylines{-.5}{5.5}{1,...,5};
+							\drawxlines{-3.5}{1.5}{-3,-2,-1,1}
+							\drawylines{-.5}{5.5}{1,...,5}
 							\draw[thick,-&gt;] (0,0) -- (1,1) node [right] {$\vx$};
 							\draw[thick,-&gt;] (0,0) -- (-1,2) node [above] {$\vy$};
 							\draw[thick,-&gt;] (0,0) -- (0,5) node [right] {$\tta\vx$};
@@ -1339,8 +1339,8 @@
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex2">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)}]
-							\drawxlines{-2.5}{2.5}{-2,-1,1,2};
-							\drawylines{-.5}{7.5}{1,...,7};
+							\drawxlines{-2.5}{2.5}{-2,-1,1,2}
+							\drawylines{-.5}{7.5}{1,...,7}
 							\draw[thick,-&gt;] (0,0) -- (1,1) node [right] {$\vx$};
 							\draw[thick,-&gt;] (0,0) -- (-1,2) node [above] {$\vy$};
 							\draw[thick,-&gt;] (0,0) -- (2,2) node [right] {$\tta\vx$};
@@ -1362,8 +1362,8 @@
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex3">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)}]
-							\drawxlines{-1.5}{2.5}{-1,1,2};
-							\drawylines{-.5}{2.5}{1,...,2};
+							\drawxlines{-1.5}{2.5}{-1,1,2}
+							\drawylines{-.5}{2.5}{1,...,2}
 							\draw[thick,-&gt;] (0,0) -- (1,1) node [right] {$\vx$};
 							\draw[thick,-&gt;] (0,0) -- (-1,2) node [above] {$\vy$};
 							\draw[thick,-&gt;] (0,0) -- (2,2) node [right] {$\tta\vx$};
@@ -1385,8 +1385,8 @@
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex4">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)}]
-							\drawxlines{-1.5}{3.5}{-1,1,2,3};
-							\drawylines{-3.5}{2.5}{-3,...,2};
+							\drawxlines{-1.5}{3.5}{-1,1,2,3}
+							\drawylines{-3.5}{2.5}{-3,...,2}
 							\draw[thick,-&gt;] (0,0) -- (1,1) node [right] {$\vx$};
 							\draw[thick,-&gt;] (0,0) -- (-1,2) node [above] {$\vy$};
 							\draw[thick,-&gt;] (0,0) -- (3,-3) node [right] {$\tta\vx$};
@@ -1412,11 +1412,11 @@
 						<shortdescription></shortdescription>
 						<latex-image label="img-03-05-ex5">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)},baseline=10pt]
-							\drawxlines{-1}{3.5}{1,2,3};
-							\drawylines{-1}{7.5}{1,...,7};
+							\drawxlines{-1}{3.5}{1,2,3}
+							\drawylines{-1}{7.5}{1,...,7}
 							\node at (1,-.1) [below] {$1$};
 							\node at (0,1) [left] {$1$};
-							\unitsquare[thick,cm={1,3,2,4,(0,0)}];
+							\unitsquare[thick,cm={1,3,2,4,(0,0)}]
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -1434,11 +1434,11 @@
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex6">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)},baseline=10pt]
-							\drawxlines{-1.5}{2.5}{1,2};
-							\drawylines{-1}{3.5}{1,...,3};
+							\drawxlines{-1.5}{2.5}{1,2}
+							\drawylines{-1}{3.5}{1,...,3}
 							\node at (1,-.1) [below] {$1$};
 							\node at (0,1) [left] {$1$};
-							\unitsquare[thick,cm={-1,1,2,2,(0,0)}];
+							\unitsquare[thick,cm={-1,1,2,2,(0,0)}]
 							\end{tikzpicture}
 						</latex-image>
 
@@ -1457,11 +1457,11 @@
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex7">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)},baseline=10pt]
-							\drawxlines{-1.5}{2.5}{1,2};
-							\drawylines{-1}{3.5}{1,...,3};
+							\drawxlines{-1.5}{2.5}{1,2}
+							\drawylines{-1}{3.5}{1,...,3}
 							\node at (1,-.1) [below] {$1$};
 							\node at (0,1) [left] {$1$};
-							\unitsquare[thick,cm={1,1,2,2,(0,0)}];
+							\unitsquare[thick,cm={1,1,2,2,(0,0)}]
 							\end{tikzpicture}
 						</latex-image>
 					</image>
@@ -1479,11 +1479,11 @@
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex8">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)},baseline=10pt]
-							\drawxlines{-1.5}{2.5}{-1,1,2};
-							\drawylines{-1}{1.5}{1};
+							\drawxlines{-1.5}{2.5}{-1,1,2}
+							\drawylines{-1}{1.5}{1}
 							\node at (1,-.1) [below] {$1$};
 							\node at (0,1) [left] {$1$};
-							\unitsquare[thick,cm={2,0,-1,0,(0,0)}];
+							\unitsquare[thick,cm={2,0,-1,0,(0,0)}]
 							\end{tikzpicture}
 						</latex-image>
 

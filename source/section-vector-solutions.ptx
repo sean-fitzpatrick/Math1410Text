@@ -395,8 +395,8 @@
           <latex-image label="img-vect-sol-101">
             \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
 
-            \drawxlines{-4.5}{4.5}{-4,...,4};
-            \drawylines{-3.5}{3.5}{-3,...,3};
+            \drawxlines{-4.5}{4.5}{-4,...,4}
+            \drawylines{-3.5}{3.5}{-3,...,3}
             \draw [&lt;-&gt;](-4,2)--(4,-2);
             \draw [-&gt;,thick] (0,0)--(-2,1) node [above] {$\vvv$};
 
@@ -516,8 +516,8 @@
           <latex-image label="img-vect-sol-102">
             \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
 
-            \drawxlines{-3.5}{6}{-3,...,6};
-            \drawylines{-2.5}{4.5}{-2,...,4};
+            \drawxlines{-3.5}{6}{-3,...,6}
+            \drawylines{-2.5}{4.5}{-2,...,4}
             \draw [&lt;-&gt;](-3,-2)--(6,4);
             \draw [-&gt;,thick] (0,0)--(1.5,1) node [above] {$\vvv$};
 
@@ -695,8 +695,8 @@
           <latex-image label="img-vect-sol-103">
             \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
 
-            \drawxlines{-4.5}{4.5}{-4,...,4};
-            \drawylines{-2.5}{5.5}{-2,...,5};
+            \drawxlines{-4.5}{4.5}{-4,...,4}
+            \drawylines{-2.5}{5.5}{-2,...,5}
             \draw [&lt;-&gt;](5,-1)--(-5,4);
             \draw [-&gt;,thick] (0,0)--(3,0) node [below] {$\vec{x}_p$};
             \draw [-&gt;,thick] (3,0) -- (1,1) node [above] {$\vvv$};
@@ -1591,8 +1591,8 @@
             <shortdescription>A line in the plane.</shortdescription>
             <latex-image label="img-vector-sol-ex-1">
               \begin{tikzpicture}[x={(.4cm,0)},y={(0,.4cm)}, &gt;=latex]
-              \drawxlines{-4.5}{4.5}{-4,...,4};
-              \drawylines{-2.5}{2.5}{-2,...,2};
+              \drawxlines{-4.5}{4.5}{-4,...,4}
+              \drawylines{-2.5}{2.5}{-2,...,2}
               \draw [&lt;-&gt;](-4,2)--(4,-2);
               \draw [-&gt;,thick] (0,0)--(-2,1) node [above] {$\vvv$};
               \end{tikzpicture}
@@ -1616,8 +1616,8 @@
             <shortdescription>A line in the plane</shortdescription>
             <latex-image label="img-vect-sol-ex-02">
               \begin{tikzpicture}[x={(.4cm,0)},y={(0,.4cm)}, &gt;=latex]
-              \drawxlines{-4.5}{4.5}{-4,...,4};
-              \drawylines{-2.5}{2.5}{-2,...,2};
+              \drawxlines{-4.5}{4.5}{-4,...,4}
+              \drawylines{-2.5}{2.5}{-2,...,2}
               \draw [&lt;-&gt;](-4,-1.8)--(4,1.4);
               \draw [-&gt;,thick] (0,0)--(0.5,0) node [below] {$\vec{x}_{p}$};
               \draw [-&gt;,thick] (0.5,0)--(3,1) node [above] {$\vvv$};
@@ -1642,8 +1642,8 @@
             <shortdescription>A line in the plane</shortdescription>
             <latex-image label="img-vect-sol-ex-03">
               \begin{tikzpicture}[x={(.4cm,0)},y={(0,.4cm)}, &gt;=latex]
-              \drawxlines{-4.5}{4.5}{-4,...,4};
-              \drawylines{-4.5}{2.5}{-4,...,2};
+              \drawxlines{-4.5}{4.5}{-4,...,4}
+              \drawylines{-4.5}{2.5}{-4,...,2}
               \draw [&lt;-&gt;](-4,.5)--(4,-3.5);
               \draw [-&gt;,thick] (0,0)--(-3,0) node [below] {$\vec{x}_{p}$};
               \draw [-&gt;,thick] (-3,0)--(-5,1) node [above] {$\vvv$};
@@ -1669,8 +1669,8 @@
             <shortdescription>A line in the plane</shortdescription>
             <latex-image label="img-vect-sol-ex-04">
               \begin{tikzpicture}[x={(.4cm,0)},y={(0,.4cm)}, &gt;=latex]
-              \drawxlines{-4.5}{4.5}{-4,...,4};
-              \drawylines{-2.5}{2.5}{-2,...,2};
+              \drawxlines{-4.5}{4.5}{-4,...,4}
+              \drawylines{-2.5}{2.5}{-2,...,2}
               \draw [&lt;-&gt;](-4,-1.6)--(4,1.6);
               \draw [-&gt;,thick] (0,0)--(2.5,1) node [above] {$\vvv$};
               \end{tikzpicture}

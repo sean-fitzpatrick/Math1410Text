@@ -543,10 +543,10 @@
           <shortdescription>Illustration of a horizontal shear. The unit square becomes a parallelogram.</shortdescription>
           <latex-image label="img-eigenshear">
             \begin{tikzpicture}[&gt;=latex]
-            \drawxlines{-1}{2.5}{1,2};
-            \drawylines{-1}{2.5}{1,2};
-            \begin{scope}[opacity=.5]\unitsquare[very thin];\end{scope}
-            \unitsquare[thick,cm={1,0,1.5,1,(0,0)}];
+            \drawxlines{-1}{2.5}{1,2}
+            \drawylines{-1}{2.5}{1,2}
+            \begin{scope}[opacity=.5]\unitsquare[very thin]\end{scope}
+            \unitsquare[thick,cm={1,0,1.5,1,(0,0)}]
             \node [above] at (D) {$(k,1)$};
 
             \end{tikzpicture}

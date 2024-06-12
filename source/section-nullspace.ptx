@@ -538,8 +538,8 @@
             <latex-image label="img-null-sol-102">
               \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
 
-              \drawxlines{-3.5}{6}{-3,...,6};
-              \drawylines{-2.5}{4.5}{-2,...,4};
+              \drawxlines{-3.5}{6}{-3,...,6}
+              \drawylines{-2.5}{4.5}{-2,...,4}
               \draw [&lt;-&gt;](-3,-2)--(6,4);
               \draw [-&gt;,thick] (0,0)--(1.5,1) node [above] {$\vvv$};
 
