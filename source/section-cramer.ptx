@@ -29,7 +29,7 @@
           <me>
             x_i = \frac{\det(\tta_i(\vb))}{\det(A)}
           </me>,
-          where <m>\tta_i(\vb)</m> is the matrix formed by replacing the <m>i</m>th column of <m>\tta</m> with<m>\vb</m>.
+          where <m>\tta_i(\vb)</m> is the matrix formed by replacing the <m>i</m>th column of <m>\tta</m> with <m>\vb</m>.
         </p>
       </statement>
     </theorem>
