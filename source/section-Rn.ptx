@@ -310,9 +310,9 @@
         <latex-image label="lineardep">
           \begin{tikzpicture}
             \draw[-{Kite},black] (0,0) -- (4,0) node [midway,above] {$\vec w$};
-            \draw[-{Kite},blue] (0,0) -- (4,3) node [midway,above] {$3\vec u$};
-            \draw[thick,-{Kite},blue] (0,0) -- (1.33,1) node [midway,above] {$\vec u$};
-            \draw[-{Kite},red] (4,3) -- (4,0) node [midway, right] {$\vec v$};
+            \draw[-{Kite},firstcolor] (0,0) -- (4,3) node [midway,above] {$3\vec u$};
+            \draw[thick,-{Kite},firstcolor] (0,0) -- (1.33,1) node [midway,above] {$\vec u$};
+            \draw[-{Kite},secondcolor] (4,3) -- (4,0) node [midway, right] {$\vec v$};
           \end{tikzpicture}
         </latex-image>
       </image>

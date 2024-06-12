@@ -1095,9 +1095,9 @@
                 \node at (0.5,0) [above] {$\ell$};
                 \node at (7,0) [below] {$R$};
                 \node at (7,4) [right] {$Q$};
-                \draw[blue,-{Kite}] (1,0) -- (7,4) node [midway,above left] {$\overrightarrow{PQ}$};
+                \draw[firstcolor,-{Kite}] (1,0) -- (7,4) node [midway,above left] {$\overrightarrow{PQ}$};
                 \draw[dashed] (7,0) -- (7,4) node [midway,right] {$h$};
-                \draw[red,-{Kite}] (1,0) -- (3,0) node [midway,below] {$\vec d$};
+                \draw[secondcolor,-{Kite}] (1,0) -- (3,0) node [midway,below] {$\vec d$};
                 \node at (6,0) [below left] {$\overrightarrow{PR} = \operatorname{proj}_{\vec d}\overrightarrow{PQ}$};
               \end{tikzpicture}
             </latex-image>
