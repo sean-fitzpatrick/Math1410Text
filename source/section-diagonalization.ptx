@@ -13,6 +13,12 @@
   <paragraphs>
     <title>Similar matrices</title>
 
+    <p>
+      We begin by defining what it means for two matrices to be <term>similar</term>. 
+      Shortly, we will see that similar matrices share a number of properties, 
+      and ultimately we will define diagonalizable matrices as those matrices that are similar to a diagonal matrix.
+    </p>
+
     <definition xml:id="def-similar">
       <title>Similar Matrices</title>
       <statement>
