@@ -330,10 +330,10 @@
     <solution>
       <p>
         We proceed as in the previous examples. For the equation <m>AX=B</m>, we have
-        <me>
-          \bbm A\amp B\ebm = \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 1\amp 2\amp 0\\-2\amp 3\amp 4\amp 1\amp 1\amp 3\\0\amp 6\amp -4\amp 6\amp 3\amp 0\end{array}\right] \quad \to \quad
-          \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 1\amp 2\amp 0\\0\amp 3\amp -2\amp 3\amp 5\amp 3\\0\amp 0\amp 0\amp 0\amp -7\amp -6\end{array}\right]
-        </me>.
+        <md>
+          <mrow>\bbm A\amp B\ebm \amp = \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 1\amp 2\amp 0\\-2\amp 3\amp 4\amp 1\amp 1\amp 3\\0\amp 6\amp -4\amp 6\amp 3\amp 0\end{array}\right] </mrow>
+          <mrow>\amp \to\left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 1\amp 2\amp 0\\0\amp 3\amp -2\amp 3\amp 5\amp 3\\0\amp 0\amp 0\amp 0\amp -7\amp -6\end{array}\right]</mrow>
+        </md>.
         We stopped before reaching the reduced row echelon form, but there's no reason to continue:
         we already have a row of zeros on the left-hand side of the augmented matrix,
         and two non-zero entries in that same row, on the right.
@@ -343,10 +343,10 @@
 
       <p>
         For the equation <m>AX=C</m>, we have
-        <me>
-          \bbm A\amp C\ebm = \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 4\amp -2\amp -3\\-2\amp 3\amp 4\amp -6\amp 5\amp 7\\0\amp 6\amp -4\amp 4\amp 2\amp 2\end{array}\right] \quad \arref \quad
-          \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 4\amp -2\amp 3\\0\amp 1\amp -2/3\amp 2/3\amp 1/3\amp 1/3\\0\amp 0\amp 0\amp 0\amp 0\amp 0\end{array}\right]
-        </me>.
+        <md>
+          <mrow>\bbm A\amp C\ebm \amp = \left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 4\amp -2\amp -3\\-2\amp 3\amp 4\amp -6\amp 5\amp 7\\0\amp 6\amp -4\amp 4\amp 2\amp 2\end{array}\right]</mrow>
+          <mrow>\amp \arref\left[\begin{array}{ccc|ccc}1\amp 0\amp -3\amp 4\amp -2\amp 3\\0\amp 1\amp -2/3\amp 2/3\amp 1/3\amp 1/3\\0\amp 0\amp 0\amp 0\amp 0\amp 0\end{array}\right]</mrow>
+        </md>.
         In this case, we <em>are</em> able to solve for each column of <m>X</m>,
         but in each case there are infinitely many possibilities:
         we find <m>X = \bbm \vec{x}_1\amp \vec{x}_2\amp \vec{x}_3\ebm</m>, where
