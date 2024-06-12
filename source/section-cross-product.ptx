@@ -28,7 +28,7 @@
 
     <aside>
       <p>
-        The definition of te cross product may look strange (and complicated) at first,
+        The definition of the cross product may look strange (and complicated) at first,
         but it's more or less forced by the requirement that it be orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
         To begin to see why, suppose <m>\vec w = a \vec{i}+b\vec{j}+c\vec{k}</m> is an arbitrary vector
         such that <m>\dotp uv =0</m> and <m>\dotp uw =0</m>.
