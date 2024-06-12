@@ -204,17 +204,6 @@
     \def\pgfplots@path@@tikz@do@ellipse#1#2{\pgfplots@path@@tikz@do@circle@oldandbroken{#1}{#2}}
     \makeatother
     
-    \newcommand{\drawxticks}[1]
-    {\foreach \x in {#1}
-        {\draw  (\x,-.1)--(\x,.1);
-          };
-    }
-    \newcommand{\drawyticks}[1]
-    {\foreach \x in {#1}
-        {\draw  (-.1,\x)--(.1,\x);
-          };
-    }
-
     \newcommand{\drawxlines}[3]
     {\draw[&lt;-&gt;] (#1,0) -- (#2,0) node [right] {$x$};
     \foreach \x in {#3}
@@ -229,17 +218,6 @@
           };
     }
 
-    \newcommand{\drawxlabels}[1]
-    {\foreach \x in {#1}
-        {\draw  (\x,-.1) node [below] {\scriptsize $\x$};
-        };
-    }
-
-    \newcommand{\drawylabels}[1]
-    {\foreach \x in {#1}
-        {\draw  (-.1,\x) node [left] {\scriptsize $\x$};
-        };
-    }
     \newcommand{\unitsquare}[1][]
     {\begin{scope}
       \draw [#1] (0,0) node (A) {} -- (1,0) node (B) {} -- (1,1) node (C) {} -- (0,1) node (D) {} -- cycle;
@@ -388,17 +366,7 @@
     \def\pgfplots@path@@tikz@do@circle#1{\pgfplots@path@@tikz@do@circle@oldandbroken{#1}{#1}}
     \def\pgfplots@path@@tikz@do@ellipse#1#2{\pgfplots@path@@tikz@do@circle@oldandbroken{#1}{#2}}
     \makeatother
-    \newcommand{\drawxticks}[1]
-    {\foreach \x in {#1}
-        {\draw  (\x,-.1)--(\x,.1);
-          };
-    }
-    \newcommand{\drawyticks}[1]
-    {\foreach \x in {#1}
-        {\draw  (-.1,\x)--(.1,\x);
-          };
-    }
-
+    
     \newcommand{\drawxlines}[3]
     {\draw[&lt;-&gt;] (#1,0) -- (#2,0) node [right] {$x$};
     \foreach \x in {#3}
@@ -413,17 +381,6 @@
           };
     }
 
-    \newcommand{\drawxlabels}[1]
-    {\foreach \x in {#1}
-        {\draw  (\x,-.1) node [below] {\scriptsize $\x$};
-        };
-    }
-
-    \newcommand{\drawylabels}[1]
-    {\foreach \x in {#1}
-        {\draw  (-.1,\x) node [left] {\scriptsize $\x$};
-        };
-    }
     \newcommand{\unitsquare}[1][]
     {\begin{scope}
       \draw [#1] (0,0) node (A) {} -- (1,0) node (B) {} -- (1,1) node (C) {} -- (0,1) node (D) {} -- cycle;
