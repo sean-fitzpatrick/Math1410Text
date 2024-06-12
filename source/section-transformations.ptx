@@ -524,9 +524,9 @@
   </p>
 
   <insight xml:id="idea-transform_zero">
-    <title>Linear Transformations and \zero</title>
+    <title>Linear Transformations and <m>\zero</m></title>
     <p>
-      <idx><h>linear transformation</h><h>and \zero</h></idx>
+      <idx><h>linear transformation</h><h>and zero</h></idx>
 
       Let <m>T:\R^{n}\to\R^{m}</m> be a linear transformation. Then:
       <me>
@@ -535,7 +535,7 @@
     </p>
 
     <p>
-      That is, the zero vector in<m>\R^{n}</m>\ gets sent to the zero vector in<m>\R^{m}</m>.}
+      That is, the zero vector in<m>\R^{n}</m> gets sent to the zero vector in<m>\R^{m}</m>.
     </p>
   </insight>
 
@@ -557,7 +557,7 @@
 
     <p>
       Mathematicians do, of course, have a word for such maps:
-      a function of hte form <m>T(\vec x)= A\vec x+\vec b</m> is known as an <term>affine transformation</term>.
+      a function of the form <m>T(\vec x)= A\vec x+\vec b</m> is known as an <term>affine transformation</term>.
     </p>
   </aside>
 
