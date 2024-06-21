@@ -241,7 +241,7 @@
       If we think of each column of <m>A</m> as a column vector in <m>\R^m</m>, we can make the following definition:
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         <alert>Note:</alert> Although we didn't say so at the time,
         we already encountered this rule for multiplying a vector by a matrix in the argument we gave in support of
@@ -530,7 +530,7 @@
           Our solutions are multiples of a vector, and hence we can graph this, as done in <xref ref="fig-null_sol_102"/>.
         </p>
 
-        <figure xml:id="fig-null_sol_102">
+        <figure xml:id="fig-null_sol_102" vshift="0">
           <caption>The solution, as a line, to <m>\protect\tta\protect\vx=\protect\zero</m> in <xref ref="ex_null_sol_102"/></caption>
 
           <image>
@@ -687,7 +687,7 @@
       which means that <m>\vec x - \vec y = \vec{0}</m>, and thus <m>\vec x = \vec y</m>. We have proved the following:
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         Recall that a function <m>f</m> is one-to-one if no two inputs give the same output.
         In other words, if <m>f</m> is one-to-one, then whenever <m>f(a)=f(b)</m>, we can conclude that <m>a=b</m>.

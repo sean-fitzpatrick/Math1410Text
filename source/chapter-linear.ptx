@@ -13,7 +13,7 @@
       since we lacked the machinery for solving the systems of equations that arose.
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         <xref ref="chapter-vectors"/> also presented us with a few situations where the ability to solve systems of equations would have come in handy,
         such as the derivation of the cross product formula, and when we wanted to compute the point of intersection of two lines,

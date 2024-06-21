@@ -42,7 +42,7 @@
     </statement>
   </definition>
 
-  <aside>
+  <aside vshift="0">
     <p>
       Another way of phrasing <xref ref="def-subspace"/> is to say that <m>V</m> is a subspace if any
       linear combination of vectors in <m>V</m> is another vector in <m>V</m>; that is,
@@ -195,7 +195,7 @@
                 The easiest way to make sure of this is to check the rules in <xref ref="def-subspace"/> using <em>specific</em> vectors.
               </p>
 
-              <aside>
+              <aside vshift="0">
                 <p>
                   <alert>Note:</alert> When we want to show that a subset is a subspace,
                   we have to verify that <xref ref="def-subspace"/> is satisfied for <em>all</em>
@@ -481,7 +481,7 @@
     <idx><h>subspace </h><h> trivial</h></idx>
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       The trivial subspace appears at first glance to be an exception to the rule that <q>every subspace is a span</q>,
       but we can consider it to be the span of the zero vector. In more advanced textbooks where the concept of a basis is discussed,

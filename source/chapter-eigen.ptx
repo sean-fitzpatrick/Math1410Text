@@ -18,7 +18,7 @@
       that <m>\norm{5\vx}  = 5\norm{\vx}</m>.
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         Eigenvalues and eigenvectors are frequently encountered in the context of <q>characteristic directions</q>
         for linear transformations. Before continuing with this section,

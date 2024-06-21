@@ -220,7 +220,7 @@
     Before we start with a simple example, let us make a note about finding the reduced row echelon form of a matrix.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       <alert>Technology Note:</alert> In the previous section,
       we learned how to find the reduced row echelon form of a matrix using Gaussian elimination <mdash/> by hand.
@@ -300,7 +300,7 @@
           <idx><h>variable</h><h>leading</h></idx>
       </p>
 
-      <aside>
+      <aside vshift="2">
         <p>
           In other words, any free parameters in our system can be regarded as independent variables;
           the remaining variables are then seen as dependent variables,
@@ -659,7 +659,7 @@
         We can essentially ignore the third row; it does not divulge any information about the solution.
       </p>
 
-      <aside>
+      <aside vshift="0">
         <p>
           Why include the row of zeros in <xref ref="ex_ex_un_4"/>?
           Rows of zeros sometimes appear <q>unexpectedly</q> in matrices after they have been put in reduced row echelon form.
@@ -701,7 +701,7 @@
         to indicate the fact that two different parameters are required to describe the most general solution.
       </p>
 
-      <aside>
+      <aside vshift="0">
         <p>
           <alert>Note:</alert> It's useful to state the number of parameters in the general solution to a system with infinitely many solutions,
           since the number of parameters has geometric significance.

@@ -310,7 +310,7 @@
     </solution>
   </example>
 
-  <aside>
+  <aside vshift="0">
     <p>
       Technically, Gaussian elimination consists only of the <q>forward steps</q>;
       including the <q>backwards steps</q> results in an algorithm known as <em>Gauss-Jordan elimination</em>.
@@ -454,7 +454,7 @@
     Let's practice some more.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       In <xref ref="ex_rref_2"/>, we create our first leading 1 by multiplying Row 1 by <m>-\frac{1}{2}</m>.
       On a computer, this is the most efficient option, and it's a good choice in this example, since every entry in Row 1 is even,

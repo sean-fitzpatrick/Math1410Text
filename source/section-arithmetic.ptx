@@ -12,7 +12,7 @@
     focusing instead on the algebraic properties of real numbers. We begin with the axioms for addition of real numbers.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       The set of real numbers is denoted usually denoted <m>\R</m>.
       A careful definition of <m>\R</m> is actually quite complicated,
@@ -75,7 +75,7 @@
   </p>
 
 
-  <aside>
+  <aside vshift="0">
     <p>
       While it is true that <m>ab=ba</m> for any pair of real numbers <m>a</m> and <m>b</m>,
       there are plenty of algebraic systems where this property does not hold. In particular, in
@@ -180,7 +180,7 @@
     this is the sort of thing that will get you on your grader's bad side, so it's probably best to avoid the problem in the first place.)
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       Taken together, the axioms for addition and multiplication of real numbers,
       along with the distributive property, tell us that algebraically,
@@ -242,7 +242,7 @@
     </statement>
   </theorem>
 
-  <aside>
+  <aside vshift="2">
     <p>
       The Zero Product Property drives most of the equation solving algorithms in algebra
       because it allows us to take complicated equations and reduce them to simpler ones.
@@ -335,7 +335,7 @@
 
 
 
-  <aside>
+  <aside vshift="-4">
     <p>
       It's always worth remembering that <em>division is the same as multiplication by the reciprocal</em>.
       You'd be surprised how often this comes in handy.
@@ -405,7 +405,7 @@
     </p>
   </insight>
 
-  <aside>
+  <aside vshift="0">
     <p>
       In this text we do not distinguish typographically between the dashes in the expressions
       <q><m>5-3</m></q> and <q><m>-3</m></q> even though they are mathematically quite different.

@@ -178,7 +178,7 @@
     We do this investigation by way of examples, and then summarize what we have learned at the end.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       Remember, this is what mathematicians do. We learn something new,
       and then we ask lots of questions about it.

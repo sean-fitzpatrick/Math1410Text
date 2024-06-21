@@ -76,7 +76,7 @@
     hence each is the same vector.
   </p>
 
-  <figure xml:id="fig_vectintro1">
+  <figure xml:id="fig_vectintro1" vshift="3">
     <caption>Drawing the same vector with different initial points</caption>
     <!-- START figures/fig_vectintro1.tex -->
     <image width="47%">
@@ -126,7 +126,7 @@
         <idx><h>r@<m>\mathbb{R}</m></h></idx>
   </p>
 
-  <figure xml:id="fig_vectintro2">
+  <figure xml:id="fig_vectintro2" vshift="-2">
     <caption>Illustrating how equal vectors have the same displacement</caption>
     <!-- START figures/fig_vectintro2.tex -->
     <image width="47%">
@@ -233,7 +233,7 @@
     </me>.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       The component form of a vector allows us to identify a point <m>(a, b)</m> (or
       <m>(a, b, c)</m>) with the corresponding vec-
@@ -447,7 +447,7 @@
     That is, we define an <em>algebra</em> on vectors.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       In this section we restrict ourselves to
       vectors in two and three dimensions,
@@ -559,7 +559,7 @@
         </md>.
       </p>
 
-      <figure xml:id="fig_vect2">
+      <figure xml:id="fig_vect2" vshift="1">
         <caption>Graphing the sum of vectors in <xref ref="ex_vect2"/></caption>
         <!-- START figures/fig_vect2.tex -->
         <image width="47%">
@@ -641,7 +641,7 @@
         <idx><h>vectors</h><h>zero vector</h></idx>
   </p>
 
-  <figure xml:id="fig_vect2b">
+  <figure xml:id="fig_vect2b" vshift="-1">
     <caption>Illustrating how to add vectors using the Head to Tail Rule and Parallelogram Law</caption>
     <!-- START figures/fig_vect2b.tex -->
     <image width="47%">
@@ -742,7 +742,7 @@
         </md>.
       </p>
 
-      <figure xml:id="fig_vect4">
+      <figure xml:id="fig_vect4" vshift="0">
         <caption>Illustrating how to subtract vectors graphically</caption>
         <!-- START figures/fig_vect4.tex -->
         <image width="47%">
@@ -835,7 +835,7 @@
               </md>.
             </p>
 
-            <figure xml:id="fig_vect3">
+            <figure xml:id="fig_vect3" vshift="0">
               <caption>Graphing vectors <m>\vec v</m> and <m>2\vec v</m> in <xref ref="ex_vect3"/></caption>
             <!-- START figures/fig_vect3.tex -->
               <image width="47%">
@@ -1131,7 +1131,7 @@
               This is sketched in <xref ref="fig_vect5"/>.
             </p>
 
-            <figure xml:id="fig_vect5">
+            <figure xml:id="fig_vect5" vshift="3">
               <caption>Graphing vectors in <xref ref="ex_vect5"/>. All vectors shown have their initial point at the origin</caption>
             <!-- START figures/fig_vect5.tex -->
               <image width="47%">
@@ -1206,7 +1206,7 @@
     <video youtube="TZxf7vV1iuk" label="vid-vectors-intro-parallel"/>
   </figure>
 
-  <aside xml:id="aside-def-orthogonal">
+  <aside xml:id="aside-def-orthogonal" vshift="-1">
     <title>Direction and the zero vector</title>
 
     <p>
@@ -1303,7 +1303,7 @@
         Find the force applied to each chain.
       </p>
 
-      <figure xml:id="fig_vect6">
+      <figure xml:id="fig_vect6" vshift="0">
         <caption>A diagram of a weight hanging from 2 chains in <xref ref="ex_vect6"/></caption>
         <!-- START figures/fig_vect6.tex -->
         <image width="40%">
@@ -1381,7 +1381,7 @@
         </md>
       </p>
 
-      <figure xml:id="fig_vect6b">
+      <figure xml:id="fig_vect6b" vshift="0">
         <caption>A diagram of the force vectors from <xref ref="ex_vect6"/></caption>
         <!-- START figures/fig_vect6b.tex -->
         <image width="47%">

@@ -19,7 +19,7 @@
     In general, there are three ways to describe sets.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       One thing that student evaluations teach us is that any given Mathematics instructor can be simultaneously
       the best and worst teacher ever, depending on who is completing the evaluation.
@@ -102,7 +102,7 @@
     </statement>
   </definition>
 
-  <aside>
+  <aside vshift="0">
     <p>
       The notation <m>x\in A</m> can be read as <q><m>x</m> is in <m>A</m></q>,
       or <q><m>x</m> is an element of <m>A</m></q>, or <q><m>x</m> belongs to <m>A</m></q>,
@@ -210,7 +210,7 @@
     We introduce it here more as a symbol of convenience as opposed to a contrivance.
   </p>
 
-  <aside>
+  <aside vshift="4">
     <p>
       The full extent of the empty set's role will not be explored in this text,
       but it is of fundamental importance in Set Theory.
@@ -227,7 +227,7 @@
     A Venn Diagram for the sets <m>S</m>, <m>C</m> and <m>V</m> is drawn in <xref ref="venndiagram"/>.
   </p>
 
-  <figure xml:id="venndiagram">
+  <figure xml:id="venndiagram" vshift="-1">
     <caption>A Venn diagram for <m>C</m>, <m>S</m>, and <m>V</m></caption>
     <image width="47%">
       <shortdescription>Venn diagram consisting of three circles. S and V overlap, and C is inside S.</shortdescription>

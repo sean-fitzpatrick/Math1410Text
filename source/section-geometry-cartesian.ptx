@@ -45,7 +45,7 @@
 			our matrix must be a square, <m>2\times 2</m> matrix.
 		</p>
 
-		<aside>
+		<aside vshift="0">
 			<p>
 				We can multiply a <m>3\times 2</m> matrix by a 2D vector and get a 3D vector back,
 				and this gives very interesting results. See <xref ref="sec-lin_trans"/>.
@@ -76,7 +76,7 @@
 					</me>.
 					The vectors are sketched in <xref ref="fig-mv_1"/>.
 				</p>
-				<figure xml:id="fig-mv_1">
+				<figure xml:id="fig-mv_1" vshift="0">
 					<caption>Multiplying vectors by a matrix in <xref ref="ex_mv_1"/></caption>
 					<image>
 						<shortdescription>Vectors x, y, z are plotted in the plane, along with Ax, Ay, Az. The vector Ax is parallel to x.</shortdescription>
@@ -168,7 +168,7 @@
 					<m>\vx+\vy</m> and <m>\tta(\vx+\vy)</m>. Does anything strike you as interesting?
 				</p>
 
-				<figure xml:id="fig-mv_2">
+				<figure xml:id="fig-mv_2" vshift="0">
 					<caption>Vector addition and matrix multiplication in <xref ref="ex_mv_2"/></caption>
 					<image>
 						<shortdescription>Vectors x, y, x+y, Ax, Ay, and A(x+y) are plotted in the plane.</shortdescription>
@@ -243,7 +243,7 @@
 					The vectors are sketched in <xref ref="fig-mv_23"/>.
 				</p>
 
-				<figure xml:id="fig-mv_23">
+				<figure xml:id="fig-mv_23" vshift="0">
 					<caption>Multiplying vectors by a matrix in <xref ref="ex_mv_23"/></caption>
 					<image>
 						<shortdescription>Vectors x, y, z, Ax, Ay, and Az. Ax is the zero vector. Both Ay and Az are parallel to x.</shortdescription>
@@ -700,7 +700,7 @@
 			For instance, how can we use this picture to figure out how the point <m>(2,3)</m> will be transformed?
 		</p>
 
-		<figure xml:id="fig-trans">
+		<figure xml:id="fig-trans" vshift="0">
 			<caption>The unit square under an unknown transformation.</caption>
 			<image width="47%">
 				<shortdescription>A parallelogram with one vertex at the orgin, and the opposite vertex at (0,3).</shortdescription>
@@ -751,7 +751,7 @@
 			<m>3</m> units in the <em>new</em> <m>\vetwo</m> direction. This is demonstrated in <xref ref="fig-trans2"/>.
 		</p>
 
-		<figure xml:id="fig-trans2">
+		<figure xml:id="fig-trans2" vshift="0">
 			<caption>Finding the new location of the point <m>(2,3)</m></caption>
 			<image width="40%">
 				<shortdescription>A path is plotted in the plane, from the origin to (2,3), and then to (-1,8).</shortdescription>
@@ -821,7 +821,7 @@
 					<xref ref="fig-transf_2_2"/> shows the effects of the transformation on another shape.
 				</p>
 
-				<figure xml:id="fig-transf_2_1">
+				<figure xml:id="fig-transf_2_1" vshift="0">
 					<caption>Understanding the transformation in <xref ref="ex_transf_2"/></caption>
 					<image width="47%">
 						<shortdescription>A rectangle in the third quadrant, along with a point plotted at (3,0.5).</shortdescription>
@@ -1180,7 +1180,7 @@
 					In order to do both of these operations, in order, we multiply <m>\tta_2\tta_1</m>.
 				</p>
 
-				<aside>
+				<aside vshift="3">
 					<p>
 						<alert>Note:</alert> recall from <xref ref="sec-matrix_multiplication"/>
 						that matrix multiplication is <em>not</em> commutative.
@@ -1228,7 +1228,7 @@
 					in <xref ref="fig-trans_3_2"/> we sketch a shape and its transformation.
 				</p>
 
-				<figure xml:id="fig-trans_3_1">
+				<figure xml:id="fig-trans_3_1" vshift="-10">
 					<caption>The transformed unit square in <xref ref="ex_transf_3"/></caption>
 					<image>
 						<shortdescription>The unit square and its transformed image.</shortdescription>

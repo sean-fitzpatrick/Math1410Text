@@ -54,7 +54,7 @@
     </me>.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       <alert>Note:</alert> when we multiplied the second equation by <m>-\frac{1}{2}</m> in our third step,
       we were proceeding according to a well-known algorithm (which we will soon explain)

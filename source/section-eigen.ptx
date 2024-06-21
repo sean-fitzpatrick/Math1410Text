@@ -88,7 +88,7 @@
     At the same time, it has many, many applications to <q>the real world.</q>
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       We frequently make claims about topics in this text having <q>many applications to the real world.</q>
       You don't need to take our word for it on this.
@@ -537,7 +537,7 @@
         but vectors with a nonzero vertical component get pulled to the right: see <xref ref="fig-eigenshear"/>.
       </p>
 
-      <figure xml:id="fig-eigenshear">
+      <figure xml:id="fig-eigenshear" vshift="0">
         <caption>A horizontal shear by a factor of <m>k</m></caption>
         <image>
           <shortdescription>Illustration of a horizontal shear. The unit square becomes a parallelogram.</shortdescription>
@@ -823,7 +823,7 @@
         we'll assume the reader has access to methods for doing this accurately.
       </p>
 
-      <aside>
+      <aside vshift="0">
         <p>
           You may have learned the basics of factoring degree three polynomials in high school.
           As a reminder, possible roots can be found by factoring the constant term (in this case, <m>-6</m>) of the polynomial.

@@ -10,7 +10,7 @@
       see <xref ref="fig_planes_intro"/>.
     </p>
 
-    <figure xml:id="fig_planes_intro">
+    <figure xml:id="fig_planes_intro" vshift="0">
       <caption>Illustrating defining a plane with a sheet of cardboard and a nail</caption>
 
       <!-- START figures/figplanes_intro_3D.asy -->
@@ -208,7 +208,7 @@
           The plane is sketched in <xref ref="fig_planes1"/>.
         </p>
 
-        <figure xml:id="fig_planes1">
+        <figure xml:id="fig_planes1" vshift="0">
           <caption>Sketching the plane in <xref ref="ex_planes1"/></caption>
 
           <!-- START figures/figplanes1_3D.asy -->
@@ -374,7 +374,7 @@
           it is sketched in <xref ref="fig_planes2"/>.
         </p>
 
-        <figure xml:id="fig_planes2">
+        <figure xml:id="fig_planes2" vshift="0">
           <caption>Sketching the plane in <xref ref="ex_planes2"/></caption>
 
           <!-- START figures/figplanes2_3D.asy -->
@@ -442,7 +442,7 @@
       </solution>
     </example>
 
-    <aside>
+    <aside vshift="0">
       <p>
         We can think of the point <m>P=(-1,3,0)</m> in <xref ref="ex_planes2"/>
         as defining a point of <q>origin</q> on the plane,
@@ -514,7 +514,7 @@
           The line and plane are sketched in <xref ref="fig_planes3"/>.
         </p>
 
-        <figure xml:id="fig_planes3">
+        <figure xml:id="fig_planes3" vshift="0">
           <caption>The line and plane in <xref ref="ex_planes3"/></caption>
 
           <!-- START figures/figplanes3_3D.asy -->
@@ -655,7 +655,7 @@
           The planes and line are graphed in <xref ref="fig_planes4"/>.
         </p>
 
-        <figure xml:id="fig_planes4">
+        <figure xml:id="fig_planes4" vshift="0">
           <caption>Graphing the planes and their line of intersection in <xref ref="ex_planes4"/></caption>
 
           <!-- START figures/figplanes4_3D.asy -->
@@ -735,7 +735,7 @@
       </solution>
     </example>
 
-    <aside>
+    <aside vshift="0">
       <p>
         The method used to solve for the point <m>P</m> in <xref ref="ex_planes4"/>
         would not be considered best practice in a linear algebra course,
@@ -801,7 +801,7 @@
           illustrated in <xref ref="fig_planes5"/>.
         </p>
 
-        <figure xml:id="fig_planes5">
+        <figure xml:id="fig_planes5" vshift="3">
           <caption>Illustrating the intersection of a line and a plane in <xref ref="ex_planes5"/></caption>
 
           <!-- START figures/figplanes5_3D.asy -->
@@ -878,7 +878,7 @@
       it is also often necessary to find the distance from a point to a plane.
     </p>
 
-    <aside>
+    <aside vshift="-2">
       <p>
         <alert>Note:</alert> <xref ref="eq_plane_dist" text="local">Equation</xref>
         is useful as it does more than just give the distance between a point and a plane.
@@ -921,7 +921,7 @@
       we restate it as a Key Idea.
     </p>
 
-    <figure xml:id="fig_planes_dist">
+    <figure xml:id="fig_planes_dist" vshift="-6">
       <caption>Illustrating finding the distance from a point to a plane</caption>
 
       <!-- START figures/figplanes_dist_3D.asy -->

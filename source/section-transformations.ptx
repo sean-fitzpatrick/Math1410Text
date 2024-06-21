@@ -9,7 +9,7 @@
     (see <xref ref="fig-translation"/>). This is called a <term>translation</term>.
   </p>
 
-  <figure xml:id="fig-translation">
+  <figure xml:id="fig-translation" vshift="0">
     <caption>Translating the unit square one unit to the right</caption>
     <image width="60%">
       <shortdescription>Two unit squares are plotted on coordinate axes. The second is shifted to the right.</shortdescription>
@@ -40,7 +40,7 @@
     It is clear that we did not get the desired result; the unit square was not translated, but rather stretched/sheared in some way.
   </p>
 
-  <figure xml:id="fig-translation2">
+  <figure xml:id="fig-translation2" vshift="0">
     <caption>Actual transformation of the unit square by matrix <m>\tta</m></caption>
     <image width="60%">
       <shortdescription>A unit square on the left, and on the right, a parallelogram.</shortdescription>
@@ -100,7 +100,7 @@
     and the second<m>\R^{2}</m> means that a 2D vector is the output.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       We use <m>T</m> instead of <m>f</m> to define the function <m>T(\vx)=\tta\vx</m>
       to help differentiate it from <q>regular</q> functions.
@@ -298,7 +298,7 @@
     So we have an example of something that <em>doesn't</em> work. Let's try an example where things <em>do</em> work.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       In <xref ref="ex_lin_trans_2"/>, it's important to remember the following principle of logic:
       to show that something doesn't work, we just need to show one case where it fails,
@@ -471,7 +471,7 @@
     </statement>
   </definition>
 
-  <aside>
+  <aside vshift="0">
     <p>
       The matrix<ndash/>like brackets around <m>T</m> are intended to suggest that the standard matrix <m>\tta</m>
       is a matrix representative of the given transformation.
@@ -539,7 +539,7 @@
     </p>
   </insight>
 
-  <aside>
+  <aside vshift="-5">
     <p>
       The idea that linear transformations <q>send zero to zero</q> has an interesting relation to terminology.
       The reader is likely familiar with functions like <m>f(x) = 2x+3</m> and would likely refer to this as a <q>linear function.</q>
@@ -583,7 +583,7 @@
       </statement>
     </definition>
 
-    <aside>
+    <aside vshift="-10">
       <p>
         Recall that in <xref ref="ex_lin_trans_b"/>,
         we had to solve a system of equations to determine how to write our given vector in terms

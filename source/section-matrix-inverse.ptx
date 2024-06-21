@@ -152,7 +152,7 @@
     </statement>
   </theorem>
 
-  <aside>
+  <aside vshift="0">
     <p>
       <alert>Note:</alert> <xref ref="thm-inverse1"/> only applies to <em>square</em> matrices.
       If <m>A</m> is an <m>m\times n</m> matrix, with <m>m\neq n</m>,
@@ -329,7 +329,7 @@
     </statement>
   </theorem>
 
-  <aside>
+  <aside vshift="0">
     <p>
       Here's a useful exercise for the reader to consider:
       can you prove in general that for a <m>2\times 2</m> matrix <m>A</m>,
@@ -447,7 +447,7 @@
     Although this idea is simple, we should practice it.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       We don't prove <xref ref="thm-2by2"/>here, but it really isn't hard to do. Put the matrix
       <me>
@@ -545,7 +545,7 @@
     </statement>
   </theorem>
 
-  <aside>
+  <aside vshift="2">
     <p>
       A <em>corollary</em>is an idea that follows directly from a theorem;
       typically, all the hard work is done in proving the theorem, and any resulting corollaries are easy consequences.
@@ -563,7 +563,7 @@
     We demonstrate our theorem with an example.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       The method employed in <xref ref="ex_inverse_solution_1"/> is useful in theory, but not in practice:
       the amount of work required to solve a system this way is significantly greater than the amount of work involved in Gaussian Elimination.
@@ -619,7 +619,7 @@
     including stating several different ways in which we know that a matrix is invertible.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       As odd as it may sound, <em>knowing</em> a matrix is invertible is useful;
       actually computing the inverse isn't. This is discussed at the end of the next section.

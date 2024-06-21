@@ -57,7 +57,7 @@
     <m>\vec{b} = \bbm b_1\\b_2\\\vdots \\ b_m\ebm</m>.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       In this text, row vectors are only used in this section when we discuss matrix multiplication,
       whereas we'll make extensive use of column vectors.
@@ -589,7 +589,7 @@
     we don't have to be particularly careful in what order we multiply certain pairs of matrices together.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       Be careful: in computing <m>\tta\ttb\ttc</m> together,
       we can first multiply <m>\tta\ttb</m> or <m>\ttb\ttc</m>,
@@ -602,7 +602,7 @@
     In leading to an important theorem, let's define a matrix we saw in an earlier example.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       <xref ref="def-identity"/> uses a term we won't define until <xref ref="def-diagonal"/>: <em>diagonal</em>.
       In short, a <q>diagonal matrix</q> is one in which the only nonzero entries are the <q>diagonal entries.</q>
@@ -696,7 +696,7 @@
     for <m>\frac{1}{\tta}</m> makes no sense; we don't know how to <q>divide</q> by a matrix.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       With numbers, we can make sense of the expression <m>\frac{a}{b}</m>,
       because <m>ab^{-1}=b^{-1}a</m>.

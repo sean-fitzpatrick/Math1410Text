@@ -34,7 +34,7 @@
       </statement>
     </theorem>
 
-    <aside>
+    <aside vshift="0">
       <p>
         The closest we came to motivating the determinant is that if <m>\det(A) =0</m>,
         then we know that <m>\tta</m> is not invertible. But it seems that there may be easier ways to check.
@@ -166,7 +166,7 @@
       It simply is not done in practice; it is hard to beat Gaussian elimination.
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         A version of Cramer's Rule is often taught in introductory differential equations courses,
         as it can be used to find solutions to certain linear differential equations.
@@ -269,7 +269,7 @@
       This tells us what the diagonal is. What about the off-diagonal entries?
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         Here we see exactly why we want to take the transpose in our definition of <m>\operatorname{adj}(A)</m>:
         when we multiply matrices, we multiply rows times columns,
@@ -321,7 +321,7 @@
       </statement>
     </theorem>
 
-    <aside>
+    <aside vshift="0">
       <p>
         Notice that <xref ref="thm-2by2"/> is a special case of <xref ref="thm-adjugate"/>.
         The cofactors of a <m>2\times 2</m> matrix are simply numbers,
@@ -374,7 +374,7 @@
           </md>.
         </p>
 
-        <aside>
+        <aside vshift="0">
           <p>
             <alert>Caution:</alert> The entries of <m>\operatorname{adj}(A)</m> are the cofactors <m>C_{ij}</m>,
             and <em>not</em> the products <m>a_{ij}C_{ij}</m> that appear in the cofactor expansion theorem.

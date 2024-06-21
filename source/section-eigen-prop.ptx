@@ -288,7 +288,7 @@
     </p>
   </paragraphs>
 
-  <aside>
+  <aside vshift="0">
     <p>
       <alert>Note:</alert> the reader would be justified in wondering about the case where <m>A</m>
       is a real matrix with complex eigenvalues.

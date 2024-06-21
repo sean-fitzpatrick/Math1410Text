@@ -26,7 +26,7 @@
       then explores its properties and applications.
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         The definition of the cross product may look strange (and complicated) at first,
         but it's more or less forced by the requirement that it be orthogonal to both <m>\vec u</m> and <m>\vec v</m>.
@@ -224,7 +224,7 @@
       as before. The method will become more clear with a bit of practice.
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         <alert>Note:</alert> If the minus sign in front of the <m>\vecj</m> coefficient seems out of place to you,
         it might help to imagine wrapping our <m>3\times 3</m> array around a cylinder (like the label on a tin can).
@@ -427,7 +427,7 @@
       </statement>
     </theorem>
 
-    <aside xml:id="aside-cross-orthogonal">
+    <aside xml:id="aside-cross-orthogonal" vshift="1">
       <title>Parallel vectors and the cross product</title>
 
       <p>
@@ -535,7 +535,7 @@
             <idx><h>right hand rule</h><h>of the cross product</h></idx>
       </p>
 
-      <figure xml:id="fig_crossp_rhr">
+      <figure xml:id="fig_crossp_rhr" vshift="2">
         <caption>Illustrating the Right Hand Rule of the cross product</caption>
 
         <!-- START figures/figcrossp_rhr_3D.asy -->
@@ -895,7 +895,7 @@
             <m>B=(2,3)</m> and <m>C=(3,1)</m>,
             as pictured in <xref ref="fig_crossp5"/>.
           </p>
-          <figure xml:id="fig_crossp5">
+          <figure xml:id="fig_crossp5" vshift="0">
             <caption>Finding the area of a triangle in <xref ref="ex_crossp5"/></caption>
             <!-- START figures/fig_crossp5.tex -->
             <image width="47%">
@@ -968,13 +968,13 @@
 				of the parallelepiped! (Up to a sign;
         take the absolute value.)
       </p>
-      <aside>
+      <aside vshift="0">
         <p>
           The word <q>parallelepiped</q>
           is pronounced <q>parallel-eh-pipe-ed.</q>
         </p>
       </aside>
-      <figure xml:id="fig_crossp_parallelepiped">
+      <figure xml:id="fig_crossp_parallelepiped" vshift="-6">
         <caption>A parallelepiped is the three dimensional analogue to the parallelogram</caption>
 
         <!-- START figures/figcrosspparallelpiped_3D.asy -->
@@ -1115,7 +1115,7 @@
             So the volume of the parallelepiped is 2 cubic units.
           </p>
 
-          <figure xml:id="fig_crossp6">
+          <figure xml:id="fig_crossp6" vshift="-3">
             <caption>A parallelepiped in <xref ref="ex_crossp6"/></caption>
 
             <!-- START figures/figcrossp6_3D.asy -->
@@ -1272,7 +1272,7 @@
             Find the resulting torque when a force of 10lb is applied to the end of the level where:
           </p>
 
-          <figure xml:id="fig_crossp7">
+          <figure xml:id="fig_crossp7" vshift="0">
             <caption>Showing a force being applied to a lever in <xref ref="ex_crossp7"/></caption>
             <!-- START figures/fig_crossp7.tex -->
             <image width="47%">

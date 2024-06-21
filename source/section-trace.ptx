@@ -125,7 +125,7 @@
     Therefore <m>\tr(\ttai) = 6/17</m>. Again, the relationship isn't clear.
   </p>
 
-  <aside>
+  <aside vshift="3">
     <p>
       This example brings to light many interesting ideas that we'll flesh out just a little bit here.
       <ol>
@@ -211,7 +211,7 @@
   One reason mathematicians are interested in it is that it can give a measurement of the <q>size</q> of a matrix.
 </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       There are many different measurements of a matrix size.
       In this text, we just refer to its dimensions. Some measurements of size refer the magnitude of the elements in the matrix.

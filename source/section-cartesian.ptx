@@ -9,13 +9,13 @@
     <idx><h>Cartesian coordinate plane</h></idx>
   </p>
 
-  <aside>
+  <aside vshift="1">
     <p>
       The Cartesian Plane is named in honour of <url href="https://en.wikipedia.org/wiki/Descartes" visual="en.wikipedia.org/wiki/Descartes">René Descartes</url>.
     </p>
   </aside>
 
-  <figure xml:id="fig-cartplane">
+  <figure xml:id="fig-cartplane" vshift="-3">
     <caption>The Cartesian coordinate plane</caption>
     <image width="47%">
       <shortdescription>The Cartesian coordinate plane. Horizontal axis labelled x; vertical axis labelled y.</shortdescription>
@@ -42,7 +42,7 @@
     <idx><h><m>y</m>-axis</h></idx>
   </p>
 
-  <aside>
+  <aside vshift="-7">
     <p>
       Usually extending off  towards infinity is indicated by arrows, but here,
       the arrows are used to indicate the <em>direction</em> of increasing values of <m>x</m> and <m>y</m>.
@@ -177,7 +177,7 @@
         If the  <m>y</m>-coordinate is <m>0</m> we move along the <m>x</m>-axis only.
       </p>
 
-      <figure xml:id="fig-cartesian3">
+      <figure xml:id="fig-cartesian3" vshift="1">
         <caption>Plotting points in <xref ref="ex_cartplot"/></caption>
         <image width="47%">
           <shortdescription>A plot showing all of the points for this example in the Cartesian plane.</shortdescription>
@@ -212,7 +212,7 @@
     <idx><h>quadrants</h></idx>
   </p>
 
-  <figure xml:id="quadrant">
+  <figure xml:id="quadrant" vshift="-4">
     <caption>The four quadrants of the Cartesian plane</caption>
     <image width="47%">
       <shortdescription>Cartesian plane with four quadrants labelled</shortdescription>
@@ -306,7 +306,7 @@
       </md>.
     </p>
 
-    <aside>
+    <aside vshift="1">
       <p>
         Recall that the <term>absolute value</term> of a real number <m>a</m>, denoted by <m>\abs{a}</m>,
         measures the distance of <m>a</m> from the origin. Since we never want a negative distance,
@@ -397,7 +397,7 @@
           The reader is encouraged to think about why there are two answers.
         </p>
 
-        <figure xml:id="fig-pointdist">
+        <figure xml:id="fig-pointdist" vshift="2">
           <caption>Diagram for <xref ref="ex_pointwithdist"/></caption>
           <image width="47%">
             <shortdescription>Showing a point (1,y) on the line x=1, a distance of 4 units from (3,2)</shortdescription>
@@ -430,7 +430,7 @@
       <idx><h>midpoint </h><h> definition of</h></idx>
     </p>
 
-    <figure xml:id="fig-midptseg">
+    <figure xml:id="fig-midptseg" vshift="-2">
       <caption>The midpoint of a line segment</caption>
       <image width="47%">
         <shortdescription>A line segment from P to Q, with the midpoint M marked.</shortdescription>

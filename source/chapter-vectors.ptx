@@ -12,7 +12,7 @@
       Vectors will play an important role in many of the subsequent chapters in this text.
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         Until the last section of this chapter we'll restrict ourselves to vectors in two and three dimensions
         so that we're able to understand things visually. However, we'll also see that the <em>algebraic</em>

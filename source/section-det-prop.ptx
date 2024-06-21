@@ -25,7 +25,7 @@
     </statement>
   </theorem>
 
-  <aside>
+  <aside vshift="0">
     <p>
       <alert>Note:</alert><xref ref="thm-cofactor_choice"/> is sometimes called the <em>Laplace Expansion Theorem</em>,
       after Pierre-Simon, Marquis de Laplace (1749-1827),
@@ -441,7 +441,7 @@
     </ol>
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       <alert>Note:</alert> If you want to get really fancy, since <m>\det(A^T)=\det(A)</m>,
       and since performing row operations on <m>A^T</m> is the same as performing <em>column</em> operations on <m>A</m>,
@@ -554,7 +554,7 @@
     </solution>
   </example>
 
-  <aside>
+  <aside vshift="0">
     <p>
       Seeing that expansion along the first row agrees with expansion along the
       first column can be a bit tricky to think out in your head.

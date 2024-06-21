@@ -26,7 +26,7 @@
     and so on. Let's get started, and define the determinant for <m>2 \times 2</m> matrices.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       <alert>Note:</alert> we should point out that it's not that you <em>can't</em> give a formula for the determinant;
       you can, but it's complicated. To write down a formula, we'd have to use summation notation,
@@ -155,7 +155,7 @@
     </statement>
   </definition>
 
-  <aside>
+  <aside vshift="0">
     <p>
       <alert>Note:</alert> if it is necessary for clarity,
       we may write <m>A_{i,\,j}</m> and <m>C_{i,\, j}</m> for minors and cofactors;
@@ -294,7 +294,7 @@
     The notation of this definition might be a little intimidating, so let's look at an example.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       The reader may find it helpful to review the determinant formula for the cross product in <xref ref="sec_cross_product"/>.
       Our method for computing the cross product follows exactly the same pattern as the cofactor expansion of a
@@ -566,7 +566,7 @@
     it too needs to employ <q>tricks.</q>
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       It is common for mathematicians, scientists and engineers to consider linear systems with thousands of equations and variables.
     </p>

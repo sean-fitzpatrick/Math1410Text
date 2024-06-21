@@ -460,7 +460,7 @@
       identity matrix for large values of <m>k</m>.)
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         Although most students in a first course in linear algebra would prefer to avoid complex eigenvalues
         (and trigonometric functions!), it turns out that these are a key feature of stable ecosystems for a model like this!
@@ -557,7 +557,7 @@
       and thus form our desired basis of eigenvectors. (See the margin note for a proof of this fact.)
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         Suppose that <m>c_1\vec{x}_1+c_2\vec{x}_2+\cdots +c_k\vec{x}_k=\vec{0}</m> for some scalars <m>c_1,c_2,\ldots, c_k</m>.
         Then we have

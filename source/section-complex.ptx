@@ -19,7 +19,7 @@
   </p>
 
 
-  <aside>
+  <aside vshift="1">
     <p>
       Historically, the lack of solutions to the equation <m>x^2=-1</m> had nothing to do with the development of the complex numbers.
       Until the 19th century, equations such as <m>x^2=-1</m> would have been considered in the context of the analytic geometry of Descartes.
@@ -54,7 +54,7 @@
     </statement>
   </definition>
 
-  <aside>
+  <aside vshift="-4">
     <p>
       Note the use of the indefinite article <q>a</q>.  Whatever beast is chosen to be <m>i</m>,
       <m>-i</m> is the other square root of <m>-1</m>.
@@ -338,7 +338,7 @@
     </statement>
   </theorem>
 
-  <aside>
+  <aside vshift="4">
     <p>
       You may recall using conjugates to rationalize expressions involving square roots. For example, we have
       <md>

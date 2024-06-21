@@ -66,7 +66,7 @@
     </statement>
   </theorem>
 
-  <aside>
+  <aside vshift="0">
     <p>
       <alert>Note:</alert> <xref ref="thm-IMT"/> gives us several different ways of saying what is
       essentially the same thing (logically speaking). Theorems like this are very useful, since it's often the case that,
@@ -188,7 +188,7 @@
     </ul>
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       Think about how we, up to this point, determined the solution to <m>\ttaxb</m>.
       We set up the augmented matrix <m>\left[\begin{array}{c|c}\tta \amp  \vb \end{array}\right]</m> and put it into reduced row echelon form.
@@ -425,7 +425,7 @@
   </p>
 
 
-  <aside>
+  <aside vshift="3">
     <p>
       A natural question to ask at this point is whether or not the product of two non-invertible matrices could ever be invertible.
       The answer, not surprisingly, is <q>No.</q> To see this, suppose <m>AB</m> is invertible.
@@ -446,7 +446,7 @@
     in fact, the latter matrix may not even be invertible.
   </p>
 
-  <aside>
+  <aside vshift="-1">
     <p>
       The fact that invertibility works well with matrix multiplication should not come as a surprise.
       After all, saying that <m>\tta</m> is invertible makes a statement about the mulitiplicative properties of <m>\tta</m>.
@@ -490,7 +490,7 @@
     and it holds true in general. We'll state this and summarize the results of this section with the following theorem.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       We still haven't formally defined <em>diagonal</em>,
       but the definition is rather visual so we risk it.
@@ -556,7 +556,7 @@
     There are two main reasons why this is the case.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       Yes, real people do solve linear equations in real life. Not just mathematicians,
       but economists, engineers, and scientists of all flavours regularly need to solve linear equations,

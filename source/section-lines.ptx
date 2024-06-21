@@ -46,7 +46,7 @@
       where certain points along the line are indicated.
     </p>
 
-    <figure xml:id="fig_lines_intro">
+    <figure xml:id="fig_lines_intro" vshift="2">
       <caption>Defining a line in space</caption>
 
       <!-- START figures/figlines_intro_3D.asy -->
@@ -125,7 +125,7 @@
       <q><m>y=mx+b</m></q> equation of a line:
     </p>
 
-    <figure xml:id="fig_lines_eq">
+    <figure xml:id="fig_lines_eq" vshift="-4">
       <caption>Understanding the vector equation of a line</caption>
       <image width="67%">
         <shortdescription>A text description, comparing the elements the equations of a line in the plane, and in space.</shortdescription>
@@ -310,7 +310,7 @@
           </ul>
         </p>
 
-        <figure xml:id="fig_lines1">
+        <figure xml:id="fig_lines1" vshift="-1">
           <caption>Graphing a line in <xref ref="ex_lines1"/></caption>
 
           <!-- START figures/figlines1_3D.asy -->
@@ -431,7 +431,7 @@
           </me>.
         </p>
 
-        <figure xml:id="fig_lines6">
+        <figure xml:id="fig_lines6" vshift="0">
           <caption>A graph of the line in <xref ref="ex_lines6"/></caption>
 
           <!-- START figures/figlines6_3D.asy -->
@@ -591,7 +591,7 @@
           (where the points and directions indicated by the equations of each line are identified).
         </p>
 
-        <figure xml:id="fig_lines2">
+        <figure xml:id="fig_lines2" vshift="2">
           <caption>Sketching the lines from <xref ref="ex_lines2"/></caption>
 
           <!-- START figures/figlines2_3D.asy -->
@@ -687,7 +687,7 @@
           </me>.
         </p>
 
-        <aside>
+        <aside vshift="0">
           <p>
             We say that a system of equations with no solution,
             such as the one in <xref ref="ex_lines2"/>, is <term>inconsistent</term>.
@@ -797,7 +797,7 @@
           </md>.
         </p>
 
-        <figure xml:id="fig_lines3">
+        <figure xml:id="fig_lines3" vshift="0">
           <caption>Graphing the lines in <xref ref="ex_lines3"/></caption>
 
           <!-- START figures/figlines3_3D.asy -->
@@ -904,7 +904,7 @@
       and it also has the advantage of letting us identify the point <m>R</m> on the line that is closest to <m>Q</m>.
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         It is possible to obtain a formula for the distance from <m>Q</m> to the line using a clever trick:
         consider the triangle that has <m>\vec d</m> and <m>\overrightarrow{PQ}</m> as two of its sides.
@@ -920,7 +920,7 @@
       <m>\overrightarrow{PQ}</m> onto the direction vector <m>\vec d</m>.
     </p>
 
-    <figure xml:id="fig_lines_dist1">
+    <figure xml:id="fig_lines_dist1" vshift="-6">
       <caption>Establishing the distance from a point to a line</caption>
       <!-- START figures/fig_lines_dist1.tex -->
       <image width="33%">
@@ -1045,7 +1045,7 @@
       </p>
     </insight>
 
-    <aside>
+    <aside vshift="1">
       <p>
         <alert>Note:</alert> We can't overemphasize the fact that the diagram referred to in <xref ref="idea-distance_method"/>
         <em>does not have to be accurate</em> with respect to the coordinates and directions involved.
@@ -1072,7 +1072,7 @@
           as well as the distance from <m>Q</m> to <m>R</m>. We begin by diagramming the information in <xref ref="fig-linedistsetup"/>.
         </p>
 
-        <figure xml:id="fig-linedistsetup">
+        <figure xml:id="fig-linedistsetup" vshift="0">
           <caption>Setting up the solution in <xref ref="ex_lines4a"/></caption>
           <image width="47%">
             <shortdescription>A horizontal line, on which points P and R are plotted. R is the point closest to another point Q.</shortdescription>
@@ -1169,7 +1169,7 @@
       </mdn>.
     </p>
 
-    <figure xml:id="fig_lines_dist2">
+    <figure xml:id="fig_lines_dist2" vshift="0">
       <caption>Establishing the distance between lines</caption>
 
       <!-- START figures/figlines_dist2_3D.asy -->
@@ -1285,7 +1285,7 @@
       <m>\overrightarrow{P_1P_2}\cdot \vec c = \overrightarrow{P_1P_2}\cdot (\vec d_1\times \vec d_2)</m>.
     </p>
 
-    <aside>
+    <aside vshift="-5">
       <p>
         It turns out that skew lines always lie in parallel planes. In the next section,
         we'll see that a plane can be determined by two non-parallel direction vectors and a point on the plane.

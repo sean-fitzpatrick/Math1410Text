@@ -37,7 +37,7 @@
     and each crop to the same column, we can dispense with the labels and work directly with the data.
   </p>
 
-  <aside>
+  <aside vshift="0">
     <p>
       Matrices work well in situations such as our farming example where the data we need to organize falls into two categories,
       in this case, farms and crops. What if our data depends on three or more categories?
@@ -252,7 +252,7 @@
     </statement>
   </definition>
 
-  <aside>
+  <aside vshift="3">
     <p>
       <alert>Note:</alert> In Linear Algebra, a <term>scalar</term><idx><h>scalar</h></idx> is simply a number.
       For most of this text, the scalars we consider are real numbers, although one can also use complex numbers as scalars.
@@ -479,7 +479,7 @@
     </statement>
   </definition>
 
-  <aside>
+  <aside vshift="0">
     <p>
       We use the bold face to distinguish the zero matrix, <m>\tto</m>, from the number zero, 0.
     </p>

@@ -168,7 +168,7 @@
       </statement>
     </theorem>
 
-    <aside>
+    <aside vshift="0">
       <p>
         Vector spaces are defined in general to be sets on which one can define addition and scalar multiplication
         satisfying the algebraic properties given in <xref ref="thm-Rn_properties"/>.
@@ -303,7 +303,7 @@
       since they form three sides of a triangle, as depicted in <xref ref="fig-lindeptriangle"/>.
     </p>
 
-    <figure xml:id="fig-lindeptriangle">
+    <figure xml:id="fig-lindeptriangle" vshift="0">
       <caption>Depicting the last linear combination in <xref ref="ex_lincombRn"/></caption>
       <image width="40%">
         <shortdescription>The vectors 3u and v add to give the vector w, forming a triangle in a plane.</shortdescription>
@@ -460,7 +460,7 @@
       </solution>
      </example>
 
-     <aside>
+     <aside vshift="0">
       <p>
         For any plane through the origin, the sum of two vectors that lie in that plane
         (or indeed, any linear combination of vectors in the plane) is again a vector in that plane.
@@ -574,7 +574,7 @@
       The formal definition is as follows.
     </p>
 
-    <aside>
+    <aside vshift="0">
       <p>
         For reasons that become apparent as soon as one begins a discussion of basis and dimension
         (something we won't really cover in this text), we must consider any set containing the zero vector to be  linearly dependent.
@@ -737,7 +737,7 @@
       </p>
     </insight>
 
-    <aside>
+    <aside vshift="0">
       <p>
         At this point in the text, we're not in a position to prove that any set of four vectors in <m>\mathbb{R}^3</m>
         (or more generally, <m>k</m> vectors in <m>\mathbb{R}^n</m>, where <m>k\gt n</m>) is automatically independent.

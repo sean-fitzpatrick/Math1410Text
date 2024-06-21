@@ -299,7 +299,7 @@
           \tta = \bbm 1 \amp 2\\2 \amp 4 \ebm \quad \text{and} \quad \zero = \bbm 0\\0\ebm
         </me>.
       </p>
-      <aside>
+      <aside vshift="0">
         <p>
           <alert>Note:</alert> Our convention is always that <m>\vec 0</m>
           denotes the vector of the appropriate size whose entries are all zero,
@@ -388,7 +388,7 @@
         we know how to sketch the scalar multiples of <m>\vvv</m>. This is done in <xref ref="fig-vect_sol_101"/>.
       </p>
 
-      <figure xml:id="fig-vect_sol_101">
+      <figure xml:id="fig-vect_sol_101" vshift="0">
         <caption>The solution, as a line, to <m>\protect\tta\protect\vx=\protect\zero</m> in <xref ref="ex_vector_solution_101"/></caption>
         <image>
           <shortdescription>A line through the origin in the plane, with slope -0.5. The direction vector v points from the origin to (-2,1).</shortdescription>
@@ -509,7 +509,7 @@
         as done in <xref ref="fig-vect_sol_102"/>.
       </p>
 
-      <figure xml:id="fig-vect_sol_102">
+      <figure xml:id="fig-vect_sol_102" vshift="0">
         <caption>The solution, as a line, to <m>\protect\tta\protect\vx=\protect\zero</m> in <xref ref="ex_vect_sol_102"/></caption>
         <image>
           <shortdescription>A line through the origin in the plane, with slope 2/3. The vector v points from the origin to (3/2,1).</shortdescription>
@@ -688,7 +688,7 @@
         any vector pointing to any point on this line is a solution to <m>\ttaxb</m>.
       </p>
 
-      <figure xml:id="fig-vect_sol_103">
+      <figure xml:id="fig-vect_sol_103" vshift="0">
         <caption>The solution, as a line, to <m>\protect\tta\protect\vx=\protect\vb</m> in <xref ref="ex_vect_sol_103"/></caption>
         <image>
           <shortdescription>A line in the plane through (3,0) with slope -0.5. A vector points from the origin to (3,0), and a vector v points from (3,0) to (3/2,1).</shortdescription>
@@ -721,7 +721,7 @@
     we see this as multiplying certain important vectors by a scalar which gives a different solution.
   </p>
 
-  <aside>
+  <aside vshift="-2">
     <p>
       <alert>Note:</alert> Visually, the solutions in Examples <xref ref="ex_vector_solution_101"/>
       and <xref ref="ex_vect_sol_103"/> were both lines; from our experience with <xref ref="sec-lines"/>
@@ -1086,7 +1086,7 @@
         Of course, this does not mean that <m>\ttaxo</m> has no solution; it always has a solution.
       </p>
 
-      <aside>
+      <aside vshift="0">
         <p>
           As previously noted, the fact that <m>\ttaxb</m> has no solution in <xref ref="ex_vector_solution_7"/>
           simply indicates the fact that <m>\vec{b}</m> is not in the column space of <m>A</m>. Since the rank of <m>A</m> is equal to one,
