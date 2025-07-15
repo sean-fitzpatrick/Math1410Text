@@ -469,9 +469,9 @@
     <title>Using Gaussian elimination</title>
     <statement>
       <p>
-        Use Gaussian elimination to put the matrix <m>\tta</m> into reduced row echelon form, where
+        Use Gaussian elimination to put the matrix <m>A</m> into reduced row echelon form, where
         <me>
-          \tta = \bbm-2 \amp -4 \amp -2\amp -10\amp 0\\2\amp 4\amp 1\amp 9\amp -2\\3\amp 6\amp 1\amp 13\amp -4\ebm
+          A = \bbm-2 \amp -4 \amp -2\amp -10\amp 0\\2\amp 4\amp 1\amp 9\amp -2\\3\amp 6\amp 1\amp 13\amp -4\ebm
         </me>.
       </p>
     </statement>
@@ -558,9 +558,9 @@
     <statement>
 
       <p>
-        Put the matrix <m>\tta</m> into reduced row echelon form, where
+        Put the matrix <m>A</m> into reduced row echelon form, where
         <me>
-          \tta = \bbm 2 \amp 1 \amp -1\amp 4\\1\amp -1\amp 2\amp 12\\2\amp 2\amp -1\amp 9\\ \ebm
+          A = \bbm 2 \amp 1 \amp -1\amp 4\\1\amp -1\amp 2\amp 12\\2\amp 2\amp -1\amp 9\\ \ebm
         </me>.
       </p>
     </statement>

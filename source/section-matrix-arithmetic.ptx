@@ -157,7 +157,7 @@
       <p>
         <idx><h>matrix</h><h>equality</h></idx>
 
-        Two <m>m\times n</m> matrices <m>\tta</m> and <m>\ttb</m> are <term>equal</term> if their corresponding entries are equal.
+        Two <m>m\times n</m> matrices <m>A</m> and <m>B</m> are <term>equal</term> if their corresponding entries are equal.
       </p>
     </statement>
   </definition>
@@ -191,7 +191,7 @@
         <idx><h>matrix</h><h>addition</h></idx>
 
         Let <m>A=[a_{ij}]</m> and <m>B=[b_{ij}]</m> be <m>m\times n</m> matrices.
-        The <term>sum</term> of <m>\tta</m> and <m>\ttb</m>, denoted <m>\tta+\ttb</m>, is
+        The <term>sum</term> of <m>A</m> and <m>B</m>, denoted <m>A+B</m>, is
         <me>
           \bbm a_{11}+b_{11} \amp a_{12}+b_{12} \amp \cdots\amp a_{1n}+b_{1n}\\ a_{21}+b_{21}\amp a_{22}+b_{22}\amp \cdots\amp a_{2n}+b_{2n}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\ a_{m1}+b_{m1}\amp a_{m2}+b_{m2}\amp \cdots\amp a_{mn}+b_{mn}\ebm
         </me>.
@@ -243,8 +243,8 @@
       <p>
         <idx><h>matrix</h><h>scalar multiplication</h></idx>
 
-        Let <m>\tta = [a_{ij}]</m> be an <m>m\times n</m> matrix and let <m>k</m> be a scalar.
-        The <term>scalar multiplication</term> <m>\tta</m> by <m>k</m>, denoted <m>k\tta</m>, is defined by
+        Let <m>A = [a_{ij}]</m> be an <m>m\times n</m> matrix and let <m>k</m> be a scalar.
+        The <term>scalar multiplication</term> <m>A</m> by <m>k</m>, denoted <m>kA</m>, is defined by
         <me>
           \bbm ka_{11} \amp ka_{12} \amp \cdots\amp ka_{1n}\\ka_{21}\amp ka_{22}\amp \cdots\amp ka_{2n}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\ka_{m1}\amp ka_{m2}\amp \cdots\amp ka_{mn}\ebm
         </me>.
@@ -266,7 +266,7 @@
     we could imagine that a fertilizer company is advertising a new product they claim will increase crop yields by 30%.
     Increasing the yield of each crop by 30\% amounts to multiplying each of the entries in the matrices
     <m>A</m> or <m>B</m> by a factor of 1.3; according to <xref ref="def-scalar_multiplication"/>,
-    this is the same as forming the scalar multiples <m>1.3\tta</m> and <m>1.3\ttb</m>.
+    this is the same as forming the scalar multiples <m>1.3A</m> and <m>1.3B</m>.
   </p>
 
   <p>
@@ -328,18 +328,18 @@
       <p>
         Let
         <me>
-          \tta = \bbm 1 \amp 2 \amp 3\\-1\amp 2\amp 1\\5\amp 5\amp 5\ebm,\quad \ttb = \bbm 2\amp 4\amp 6\\1\amp 2\amp 2\\-1\amp 0\amp 4\ebm,\quad \ttc = \bbm 1\amp 2\amp 3\\9\amp 8\amp 7\ebm
+          A = \bbm 1 \amp 2 \amp 3\\-1\amp 2\amp 1\\5\amp 5\amp 5\ebm,\quad B = \bbm 2\amp 4\amp 6\\1\amp 2\amp 2\\-1\amp 0\amp 4\ebm,\quad C = \bbm 1\amp 2\amp 3\\9\amp 8\amp 7\ebm
         </me>.
         Simplify the following matrix expressions.
         <ol cols="2">
-          <li><m>\tta+\ttb</m></li>
-          <li><m>\ttb+\tta</m></li>
-          <li><m>\tta-\ttb</m></li>
-          <li><m>\tta + \ttc</m></li>
-          <li><m>-3\tta +2\ttb</m></li>
-          <li><m>\tta -\tta</m></li>
-          <li><m>5\tta + 5\ttb</m></li>
-          <li><m>5(\tta+\ttb)</m></li>
+          <li><m>A+B</m></li>
+          <li><m>B+A</m></li>
+          <li><m>A-B</m></li>
+          <li><m>A + C</m></li>
+          <li><m>-3A +2B</m></li>
+          <li><m>A -A</m></li>
+          <li><m>5A + 5B</m></li>
+          <li><m>5(A+B)</m></li>
         </ol>
       </p>
     </statement>
@@ -350,7 +350,7 @@
             <p>
               Adding the corresponding entries of <m>A</m> and <m>B</m>, we have
               <me>
-                \tta + \ttb =
+                A + B =
                 \bbm 1+2\amp 2+4\amp 3+6\\-1+1\amp 2+2\amp 1+2\\5-1\amp 5+0\amp 5+4\ebm = \bbm 3\amp 6\amp 9\\0\amp 4\amp 3\\4\amp 5\amp 9\ebm
               </me>.
             </p>
@@ -360,7 +360,7 @@
             <p>
               To compute <m>B+A</m>, we again add the corresponding entries, but in the opposite order:
               <me>
-                \ttb + \tta = \bbm 2+14+2\amp 6+3\\1-1\amp 2+2\amp 2+1\\-1+5\amp 0+5\amp 4+5\ebm = \bbm 3\amp 6\amp 9\\0\amp 4\amp 3\\4\amp 5\amp 9\ebm
+                B + A = \bbm 2+14+2\amp 6+3\\1-1\amp 2+2\amp 2+1\\-1+5\amp 0+5\amp 4+5\ebm = \bbm 3\amp 6\amp 9\\0\amp 4\amp 3\\4\amp 5\amp 9\ebm
               </me>.
             </p>
           </li>
@@ -369,16 +369,16 @@
             <p>
                In this case, we have to subtract the entries of <m>B</m> from those of <m>A</m>. This gives us
                <me>
-                \tta - \ttb = \bbm-1\amp -2\amp -3\\-2\amp 0\amp -1\\6\amp 5\amp 1\ebm
+                A - B = \bbm-1\amp -2\amp -3\\-2\amp 0\amp -1\\6\amp 5\amp 1\ebm
                </me>.
             </p>
           </li>
 
           <li>
             <p>
-              <m>\tta + \ttc</m> is not defined. If we look at our definition of matrix addition,
+              <m>A + C</m> is not defined. If we look at our definition of matrix addition,
               we see that the two matrices need to be the same size.
-              Since <m>\tta</m> and <m>\ttc</m> have different dimensions,
+              Since <m>A</m> and <m>C</m> have different dimensions,
               we don't even try to create something as an addition; we simply say that the sum is not defined.
             </p>
           </li>
@@ -387,7 +387,7 @@
             <p>
               To compute this linear combination we first carry out the scalar multiplication, followed by the addition:
               <md>
-                <mrow>-3\tta + 2\ttb \amp  = -3\bbm 1\amp 2\amp 3\\-1\amp 2\amp 1\\5\amp 5\amp 5\ebm + 2\bbm 2\amp 4\amp 6\\1\amp 2\amp 2\\-1\amp 0\amp 4\ebm</mrow>
+                <mrow>-3A + 2B \amp  = -3\bbm 1\amp 2\amp 3\\-1\amp 2\amp 1\\5\amp 5\amp 5\ebm + 2\bbm 2\amp 4\amp 6\\1\amp 2\amp 2\\-1\amp 0\amp 4\ebm</mrow>
                 <mrow>  \amp  = \bbm-3\amp -6\amp -9\\3\amp -6\amp -3\\-15\amp -15\amp -15\ebm + \bbm 4\amp 8\amp 12\\2\amp 4\amp 4\\-2\amp 0\amp 8\ebm</mrow>
                 <mrow>  \amp = \bbm 1\amp 2\amp 3\\5\amp -2\amp 1\\-17\amp -15\amp -7\ebm</mrow>
               </md>.
@@ -398,7 +398,7 @@
             <p>
               Subtracting each entry of <m>A</m> from itself, we get
               <me>
-                \tta - \tta = \bbm 0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm
+                A - A = \bbm 0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm
               </me>.
             </p>
           </li>
@@ -428,9 +428,9 @@
 
   <p>
     Our example raised a few interesting points.
-    Notice how <m>\tta + \ttb = \ttb + \tta</m>.
+    Notice how <m>A + B = B + A</m>.
     We probably aren't surprised by this, since we know that when dealing with numbers, <m>a+b = b+a</m>.
-    Also, notice that <m>5\tta+5\ttb = 5(\tta+\ttb)</m>. In our example,
+    Also, notice that <m>5A+5B = 5(A+B)</m>. In our example,
     we were careful to compute each of these expressions following the proper order of operations;
     knowing these are equal allows us to compute similar expressions in the most convenient way.
   </p>
@@ -438,7 +438,7 @@
   <p>
     Another interesting thing that came from our previous example is that
     <me>
-      \tta - \tta = \bbm 0 \amp 0 \amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm
+      A - A = \bbm 0 \amp 0 \amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm
     </me>.
     It seems like this should be a special matrix; after all, every entry is 0 and 0 is a special number.
   </p>
@@ -454,7 +454,7 @@
     Let's not get bogged down in semantics. If we ever see <m>\tto</m> in an expression,
     we will usually know right away what size <m>\tto</m> should be;
     it will be the size that allows the expression to make sense.
-    If <m>\tta</m> is a <m>3\times 5</m> matrix, and we write <m>\tta + \tto</m>,
+    If <m>A</m> is a <m>3\times 5</m> matrix, and we write <m>A + \tto</m>,
     we'll simply assume that <m>\tto</m> is also a <m>3\times 5</m> matrix.
     If we are ever in doubt, we can add a subscript; for instance, <m>\tto_{2\times 7}</m> is the <m>2\times7</m> matrix of all zeros.
   </p>
@@ -496,15 +496,15 @@
       <p>
         <idx><h>matrix</h><h>arithmetic properties</h></idx>
 
-        The following equalities hold for all <m>m\times n</m> matrices <m>\tta</m>,
-        <m>\ttb</m> and <m>\ttc</m> and scalars <m>k</m>.
+        The following equalities hold for all <m>m\times n</m> matrices <m>A</m>,
+        <m>B</m> and <m>C</m> and scalars <m>k</m>.
         <ol>
-          <li><m>\tta+\ttb = \ttb + \tta</m> (Commutative Property)</li>
-          <li><m>(\tta+\ttb)+\ttc = \tta + (\ttb+\ttc)</m> (Associative Property)</li>
-          <li><m>k(\tta + \ttb) = k\tta + k\ttb</m> (Scalar Multiplication Distributive Property)</li>
-          <li><m>k\tta = \tta k</m></li>
-          <li><m>\tta +\tto = \tto+\tta = \tta</m> (Additive Identity)</li>
-          <li><m>0\tta = \tto</m></li>
+          <li><m>A+B = B + A</m> (Commutative Property)</li>
+          <li><m>(A+B)+C = A + (B+C)</m> (Associative Property)</li>
+          <li><m>k(A + B) = kA + kB</m> (Scalar Multiplication Distributive Property)</li>
+          <li><m>kA = A k</m></li>
+          <li><m>A +\tto = \tto+A = A</m> (Additive Identity)</li>
+          <li><m>0A = \tto</m></li>
         </ol>
       </p>
     </statement>
@@ -560,28 +560,28 @@
       <p>
         Let
         <me>
-          \tta = \bbm 2 \amp -1\\3 \amp 6\ebm
+          A = \bbm 2 \amp -1\\3 \amp 6\ebm
         </me>.
-        Find the matrix <m>\ttx</m> such that
+        Find the matrix <m>X</m> such that
         <me>
-          2\tta + 3\ttx = -4\tta
+          2A + 3X = -4A
         </me>.
       </p>
     </statement>
     <solution>
       <p>
-        We can use basic algebra techniques to manipulate this equation for <m>\ttx</m> first,
-        let's subtract <m>2\tta</m> from both sides. This gives us
+        We can use basic algebra techniques to manipulate this equation for <m>X</m> first,
+        let's subtract <m>2A</m> from both sides. This gives us
         <me>
-          3\ttx = -6\tta
+          3X = -6A
         </me>.
         Now divide both sides by 3 to get
         <me>
-          \ttx = -2\tta
+          X = -2A
         </me>.
-        Now we just need to compute <m>-2\tta</m>; we find that
+        Now we just need to compute <m>-2A</m>; we find that
         <me>
-          \ttx = \bbm -4 \amp 2\\ -6 \amp -12\ebm
+          X = \bbm -4 \amp 2\\ -6 \amp -12\ebm
         </me>.
       </p>
     </solution>
@@ -589,10 +589,10 @@
 
   <p>
     Our matrix properties identified <m>\tto</m> as the Additive Identity; <ie/>,
-    if you add <m>\tto</m> to any matrix <m>\tta</m>, you simply get <m>\tta</m>.
+    if you add <m>\tto</m> to any matrix <m>A</m>, you simply get <m>A</m>.
     This is similar in notion to the fact that for all numbers <m>a</m>, <m>a+0 = a</m>.
-    A <em>Multiplicative Identity</em> would be a matrix <m>\tti</m> where <m>\tti\times\tta = \tta</m>
-    for all matrices <m>\tta</m>. (What would such a matrix look like? A matrix of all 1s, perhaps?)
+    A <em>Multiplicative Identity</em> would be a matrix <m>I</m> where <m>I\times A = A</m>
+    for all matrices <m>A</m>. (What would such a matrix look like? A matrix of all 1s, perhaps?)
     However, in order for this to make sense, we'll need to learn to multiply matrices together, which we'll do in the next section.
   </p>
 
@@ -601,10 +601,10 @@
 
       <introduction>
         <p>
-          For the matrices <m>\tta</m> and <m>\ttb</m> given below,
+          For the matrices <m>A</m> and <m>B</m> given below,
           simplify the given expression.
           <me>
-            \tta = \bbm 1 \amp -1\\ 7 \amp 4\ebm \quad \ttb = \bbm -3 \amp 2\\5 \amp 9\ebm
+            A = \bbm 1 \amp -1\\ 7 \amp 4\ebm \quad B = \bbm -3 \amp 2\\5 \amp 9\ebm
           </me>.
         </p>
       </introduction>
@@ -612,7 +612,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta + \ttb</m>
+            <m>A + B</m>
           </p>
         </statement>
         <answer>
@@ -625,7 +625,7 @@
       <exercise>
         <statement>
           <p>
-            <m>2\tta - 3\ttb</m>
+            <m>2A - 3B</m>
           </p>
         </statement>
         <answer>
@@ -638,7 +638,7 @@
       <exercise>
         <statement>
           <p>
-            <m>3\tta - \tta</m>
+            <m>3A - A</m>
           </p>
         </statement>
         <answer>
@@ -651,7 +651,7 @@
       <exercise>
         <statement>
           <p>
-            <m>4\ttb - 2\tta</m>
+            <m>4B - 2A</m>
           </p>
         </statement>
         <answer>
@@ -664,7 +664,7 @@
       <exercise>
         <statement>
           <p>
-            <m>3(\tta - \ttb)+\ttb</m>
+            <m>3(A - B)+B</m>
           </p>
         </statement>
         <answer>
@@ -677,7 +677,7 @@
       <exercise>
         <statement>
           <p>
-            <m>2(\tta - \ttb)-(\tta - 3\ttb)</m>
+            <m>2(A - B)-(A - 3B)</m>
           </p>
         </statement>
         <answer>
@@ -692,10 +692,10 @@
 
       <introduction>
         <p>
-          For the matrices <m>\tta</m> and <m>\ttb</m> given below,
+          For the matrices <m>A</m> and <m>B</m> given below,
           simplify the given expression.
           <me>
-            \tta = \bbm 3\\ 5\ebm \quad \ttb = \bbm -2\\4\ebm
+            A = \bbm 3\\ 5\ebm \quad B = \bbm -2\\4\ebm
           </me>.
         </p>
       </introduction>
@@ -703,7 +703,7 @@
       <exercise>
         <statement>
           <p>
-            <m>4\ttb - 2\tta</m>
+            <m>4B - 2A</m>
           </p>
         </statement>
         <answer>
@@ -716,7 +716,7 @@
       <exercise>
         <statement>
           <p>
-            <m>-2\tta + 3\tta</m>
+            <m>-2A + 3A</m>
           </p>
         </statement>
         <answer>
@@ -729,7 +729,7 @@
       <exercise>
         <statement>
           <p>
-            <m>-2\tta - 3\tta</m>
+            <m>-2A - 3A</m>
           </p>
         </statement>
         <answer>
@@ -742,7 +742,7 @@
       <exercise>
         <statement>
           <p>
-            <m>-\ttb + 3\ttb-2\ttb</m>
+            <m>-B + 3B-2B</m>
           </p>
         </statement>
         <answer>
@@ -758,10 +758,10 @@
 
       <introduction>
         <p>
-          For the matrices <m>\tta</m> and <m>\ttb</m> given below,
-          find <m>\ttx</m> that satisfies the given equation.
+          For the matrices <m>A</m> and <m>B</m> given below,
+          find <m>X</m> that satisfies the given equation.
           <me>
-            \tta = \bbm 3 \amp -1\\ 2 \amp 5\ebm \quad \ttb = \bbm 1 \amp 7\\3 \amp -4\ebm
+            A = \bbm 3 \amp -1\\ 2 \amp 5\ebm \quad B = \bbm 1 \amp 7\\3 \amp -4\ebm
           </me>
 
         </p>
@@ -770,12 +770,12 @@
       <exercise>
         <statement>
           <p>
-            <m>2\tta + \ttx = \ttb</m>
+            <m>2A + X = B</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttx = \bbm -5  \amp  9 \-1  \amp  -14 \ebm</m>
+            <m>X = \bbm -5  \amp  9 \-1  \amp  -14 \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -783,12 +783,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta - \ttx = 3\ttb</m>
+            <m>A - X = 3B</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttx = \bbm 0  \amp  -22 \-7  \amp  17 \ebm</m>
+            <m>X = \bbm 0  \amp  -22 \-7  \amp  17 \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -796,12 +796,12 @@
       <exercise>
         <statement>
           <p>
-            <m>3\tta + 2\ttx = -1\ttb</m>
+            <m>3A + 2X = -1B</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttx = \bbm -5  \amp  -2 \-9/2  \amp  -19/2 \ebm</m>
+            <m>X = \bbm -5  \amp  -2 \-9/2  \amp  -19/2 \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -809,12 +809,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta - \frac12\ttx = -\ttb</m>
+            <m>A - \frac12X = -B</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttx = \bbm 8  \amp  12 \10  \amp  2 \ebm</m>
+            <m>X = \bbm 8  \amp  12 \10  \amp  2 \ebm</m>
           </p>
         </answer>
       </exercise>

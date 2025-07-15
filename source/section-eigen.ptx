@@ -3,34 +3,34 @@
   <title>Eigenvalues and Eigenvectors</title>
 
   <p>
-    We start by considering the matrix <m>\tta</m> and vector <m>\vx</m> as given below.
+    We start by considering the matrix <m>A</m> and vector <m>\vx</m> as given below.
     <me>
-      \tta = \bbm 1 \amp 4\\2 \amp 3\ebm \quad \quad \vx = \bbm 1\\1\ebm
+      A = \bbm 1 \amp 4\\2 \amp 3\ebm \quad \quad \vx = \bbm 1\\1\ebm
     </me>.
   </p>
 
   <p>
-    Multiplying <m>\tta\vx</m> gives:
+    Multiplying <m>A\vx</m> gives:
     <md>
-      <mrow>\tta\vx  \amp = \bbm 1 \amp 4\\2\amp 3\ebm \bbm 1\\1\ebm</mrow>
+      <mrow>A\vx  \amp = \bbm 1 \amp 4\\2\amp 3\ebm \bbm 1\\1\ebm</mrow>
       <mrow>		\amp = \bbm 5\\5\ebm</mrow>
       <mrow>		\amp = 5\bbm 1\\1\ebm</mrow>
     </md>!
   </p>
 
   <p>
-    Wow! It looks like multiplying <m>\tta\vx</m> is the same as <m>5\vx</m>!
+    Wow! It looks like multiplying <m>A\vx</m> is the same as <m>5\vx</m>!
     This makes us wonder lots of things: is this the only case in the world where something like this happens? (Probably not.)
-    Is <m>\tta</m> somehow a special matrix, and <m>\tta\vx = 5\vx</m> for any vector <m>\vx</m> we pick? (Probably not.)
-    Or maybe <m>\vx</m> was a special vector, and no matter what <m>2\times 2</m> matrix <m>\tta</m> we picked,
-    we would have <m>\tta\vx =5\vx</m>. (Again, probably not.)
+    Is <m>A</m> somehow a special matrix, and <m>A\vx = 5\vx</m> for any vector <m>\vx</m> we pick? (Probably not.)
+    Or maybe <m>\vx</m> was a special vector, and no matter what <m>2\times 2</m> matrix <m>A</m> we picked,
+    we would have <m>A\vx =5\vx</m>. (Again, probably not.)
   </p>
 
   <p>
-    A more likely explanation is this: given the matrix <m>\tta</m>,
+    A more likely explanation is this: given the matrix <m>A</m>,
     the number 5 and the vector <m>\vx</m> formed a special pair that happened to work together in a nice way.
     It is then natural to wonder if other <q>special</q> pairs exist.
-    For instance, could we find a vector <m>\vx</m> where <m>\tta\vx=3\vx</m>?
+    For instance, could we find a vector <m>\vx</m> where <m>A\vx=3\vx</m>?
   </p>
 
   <p>
@@ -46,19 +46,19 @@
         <idx><h>eigenvalue</h><h>definition</h></idx>
         <idx><h>eigenvector</h><h>see: eigenvalue</h></idx>
 
-        Let <m>\tta</m> be an <m>n\times n</m> matrix, <m>\vx</m> a nonzero <m>n\times 1</m> column vector and <m>\lambda</m> a scalar. If
+        Let <m>A</m> be an <m>n\times n</m> matrix, <m>\vx</m> a nonzero <m>n\times 1</m> column vector and <m>\lambda</m> a scalar. If
         <me>
-          \tta\vx = \lda\vx,
+          A\vx = \lambda \vx,
         </me>
-        then <m>\vx</m> is an <em>eigenvector</em> of <m>\tta</m> and is an <em>eigenvalue</em> of <m>\tta</m>.
+        then <m>\vx</m> is an <em>eigenvector</em> of <m>A</m> and is an <em>eigenvalue</em> of <m>A</m>.
       </p>
     </statement>
   </definition>
 
   <p>
     The word <q>eigen</q> is German for <q>proper</q> or <q>characteristic.</q>
-    Therefore, an <em>eigenvector</em> of <m>\tta</m> is a <q>characteristic vector of <m>\tta</m>.</q>
-    This vector tells us something about <m>\tta</m>.
+    Therefore, an <em>eigenvector</em> of <m>A</m> is a <q>characteristic vector of <m>A</m>.</q>
+    This vector tells us something about <m>A</m>.
   </p>
 
   <p>
@@ -69,10 +69,10 @@
   </p>
 
   <p>
-    Note that our definition requires that <m>\tta</m> be a square matrix.
-    If <m>\tta</m> isn't square then <m>\tta\vx</m> and <m>\lambda\vx</m> will have different sizes, and so they cannot be equal.
+    Note that our definition requires that <m>A</m> be a square matrix.
+    If <m>A</m> isn't square then <m>A\vx</m> and <m>\lambda\vx</m> will have different sizes, and so they cannot be equal.
     Also note that <m>\vx</m> must be nonzero. Why? What if <m>\vx = \zero</m>?
-    Then <em>no matter what</em> is, <m>\tta\vx = \lda\vx</m>.
+    Then <em>no matter what</em> is, <m>A\vx = \lambda \vx</m>.
     This would then imply that <em>every number</em> is an eigenvalue; if every number is an eigenvalue,
     then we wouldn't need a definition for it.  Therefore we specify that <m>\vx\neq \zero</m>.
   </p>
@@ -104,29 +104,29 @@
   </aside>
 
   <p>
-    Back to our math. Given a square matrix <m>\tta</m>,
-    we want to find a nonzero vector <m>\vx</m> and a scalar such that <m>\tta\vx = \lda\vx</m>.
+    Back to our math. Given a square matrix <m>A</m>,
+    we want to find a nonzero vector <m>\vx</m> and a scalar such that <m>A\vx = \lambda \vx</m>.
     We will solve this using the skills we developed in <xref ref="chapter-algebra"/>.
     <md>
-      <mrow>\tta\vx \amp  =  \lda\vx \quad \text{ (original equation)}</mrow>
-      <mrow>\tta\vx - \lda\vx \amp  = \zero \quad \text{ (subtract } \lda\vx \text{ from both sides)}</mrow>
-      <mrow>(\tta-\lda\tti)\vx \amp  = \zero \quad \text{ (factor out } \vx)</mrow>
+      <mrow>A\vx \amp  =  \lambda \vx \quad \text{ (original equation)}</mrow>
+      <mrow>A\vx - \lambda \vx \amp  = \zero \quad \text{ (subtract } \lambda \vx \text{ from both sides)}</mrow>
+      <mrow>(A-\lambda I)\vx \amp  = \zero \quad \text{ (factor out } \vx)</mrow>
     </md>.
   </p>
 
   <p>
     Think about this last factorization. We are likely tempted to say
     <me>
-      \tta\vx-\lda\vx = (\tta-\lda)\vx
+      A\vx-\lambda \vx = (A-\lambda )\vx
     </me>,
     but this really doesn't make sense. After all, what does <q>a matrix minus a number</q> mean?
     We need the identity matrix in order for this to be logical.
   </p>
 
   <p>
-    Let us now think about the equation <m>(\tta-\lda\tti)\vx=\zero</m>.
+    Let us now think about the equation <m>(A-\lambda I)\vx=\zero</m>.
     While it looks complicated, it really is just matrix equation of the type we solved in <xref ref="sec-vector_solutions"/>.
-    We are just trying to solve <m>\ttb\vx=\zero</m>, where <m>\ttb = (\tta-\lda\tti)</m>.
+    We are just trying to solve <m>B\vx=\zero</m>, where <m>B = (A-\lambda I)</m>.
   </p>
 
   <p>
@@ -136,19 +136,19 @@
   </p>
 
   <p>
-    This means that we want solutions to <m>(\tta-\lda\tti)\vx=\zero</m> other than <m>\vx=\zero</m>.
-    Recall that <xref ref="thm-inverse_solution"/> says that if the matrix <m>(\tta-\lda\tti)</m> is invertible,
-    then the <em>only</em> solution to <m>(\tta-\lda\tti)\vx=\zero</m> is <m>\vx=\zero</m>.
-    Therefore, in order to have other solutions, we need <m>(\tta-\lda\tti)</m> to not be invertible.
+    This means that we want solutions to <m>(A-\lambda I)\vx=\zero</m> other than <m>\vx=\zero</m>.
+    Recall that <xref ref="thm-inverse_solution"/> says that if the matrix <m>(A-\lambda I)</m> is invertible,
+    then the <em>only</em> solution to <m>(A-\lambda I)\vx=\zero</m> is <m>\vx=\zero</m>.
+    Therefore, in order to have other solutions, we need <m>(A-\lambda I)</m> to not be invertible.
   </p>
 
   <p>
     Finally, recall from <xref ref="thm-determinant_properties"/> that noninvertible matrices all have a determinant of 0.
-    Therefore, if we want to find eigenvalues and eigenvectors<m>\vx</m>, we need <m>\det(\tta-\lda\tti) = 0</m>.
+    Therefore, if we want to find eigenvalues and eigenvectors<m>\vx</m>, we need <m>\det(A-\lambda I) = 0</m>.
   </p>
 
   <p>
-    Let's start our practice of this theory by finding such that <m>\det(\tta-\lda\tti) = 0</m>;
+    Let's start our practice of this theory by finding such that <m>\det(A-\lambda I) = 0</m>;
     that is, let's find the eigenvalues of a matrix.
   </p>
 
@@ -156,76 +156,76 @@
     <title>Computing the eigenvalues of a matrix</title>
     <statement>
       <p>
-        Find the eigenvalues of <m>\tta</m>, that is, find such that <m>\det(\tta-\lda\tti) = 0</m>, where
+        Find the eigenvalues of <m>A</m>, that is, find such that <m>\det(A-\lambda I) = 0</m>, where
         <me>
-          \tta = \bbm 1 \amp 4\\2 \amp 3\ebm
+          A = \bbm 1 \amp 4\\2 \amp 3\ebm
         </me>.
       </p>
     </statement>
     <solution>
       <p>
-        (Note that this is the matrix we used at the beginning of this section.) First, we write out what <m>\tta-\lda\tti</m> is:
+        (Note that this is the matrix we used at the beginning of this section.) First, we write out what <m>A-\lambda I</m> is:
         <md>
-          <mrow>\tta-\lda\tti \amp = \bbm 1\amp 4\\2\amp 3\ebm - \lda\eyetwo</mrow>
-          <mrow>              \amp = \bbm 1\amp 4\\2\amp 3\ebm - \bbm\lda\amp 0\\0\amp \lda\ebm</mrow>
-          <mrow>              \amp = \bbm 1-\lda \amp  4 \\ 2\amp 3-\lda\ebm</mrow>
+          <mrow>A-\lambda I \amp = \bbm 1\amp 4\\2\amp 3\ebm - \lambda \eyetwo</mrow>
+          <mrow>              \amp = \bbm 1\amp 4\\2\amp 3\ebm - \bbm\lambda \amp 0\\0\amp \lambda \ebm</mrow>
+          <mrow>              \amp = \bbm 1-\lambda  \amp  4 \\ 2\amp 3-\lambda \ebm</mrow>
         </md>.
       </p>
 
       <p>
         Therefore,
         <md>
-          <mrow>\det(\tta-\lda\tti) \amp = \bvm 1-\lda \amp  4 \\ 2\amp 3-\lda\evm</mrow>
-          <mrow>										\amp = (1-\lda)(3-\lda)-8</mrow>
-          <mrow>										\amp = \lda^2-4\lda-5</mrow>
+          <mrow>\det(A-\lambda I) \amp = \bvm 1-\lambda  \amp  4 \\ 2\amp 3-\lambda \evm</mrow>
+          <mrow>										\amp = (1-\lambda )(3-\lambda )-8</mrow>
+          <mrow>										\amp = \lambda ^2-4\lambda -5</mrow>
         </md>.
       </p>
 
       <p>
-        Since we want <m>\det(\tta-\lda\tti)=0</m>, we want <m>\lda^2-4\lda-5=0</m>.
+        Since we want <m>\det(A-\lambda I)=0</m>, we want <m>\lambda ^2-4\lambda -5=0</m>.
         This is a simple quadratic equation that is easy to factor:
         <md>
-          <mrow>\lda^2-4\lda-5 \amp = 0</mrow>
-          <mrow>(\lda-5)(\lda+1) \amp  = 0</mrow>
-          <mrow>\lda \amp = -1,\ 5</mrow>
+          <mrow>\lambda ^2-4\lambda -5 \amp = 0</mrow>
+          <mrow>(\lambda -5)(\lambda +1) \amp  = 0</mrow>
+          <mrow>\lambda  \amp = -1,\ 5</mrow>
         </md>.
       </p>
 
       <p>
-        According to our above work, <m>\det(\tta-\lda\tti)=0</m> when <m>\lda = -1,\ 5</m>.
-        Thus, the eigenvalues of <m>\tta</m> are <m>-1</m> and <m>5</m>.
+        According to our above work, <m>\det(A-\lambda I)=0</m> when <m>\lambda  = -1,\ 5</m>.
+        Thus, the eigenvalues of <m>A</m> are <m>-1</m> and <m>5</m>.
       </p>
     </solution>
   </example>
 
   <p>
     Earlier, when looking at the same matrix as used in our example,
-    we wondered if we could find a vector <m>\vx</m> such that <m>\tta\vx=3\vx</m>.
-    According to this example, the answer is <q>No.</q> With this matrix <m>\tta</m>,
-    the only values of <m>\lda</m> that work are <m>-1</m> and <m>5</m>.
+    we wondered if we could find a vector <m>\vx</m> such that <m>A\vx=3\vx</m>.
+    According to this example, the answer is <q>No.</q> With this matrix <m>A</m>,
+    the only values of <m>\lambda </m> that work are <m>-1</m> and <m>5</m>.
   </p>
 
   <p>
-    Let's restate the above in a different way: It is pointless to try to find <m>\vx</m> where <m>\tta\vx=3\vx</m>,
+    Let's restate the above in a different way: It is pointless to try to find <m>\vx</m> where <m>A\vx=3\vx</m>,
     for there is no such <m>\vx</m>. There are only 2 equations of this form that have a solution, namely
     <me>
-      \tta\vx = -\vx \quad\quad \text{and} \quad \quad \tta\vx=5\vx
+      A\vx = -\vx \quad\quad \text{and} \quad \quad A\vx=5\vx
     </me>.
   </p>
 
   <p>
-    As we introduced this section, we gave a vector <m>\vx</m> such that <m>\tta\vx = 5\vx</m>.
+    As we introduced this section, we gave a vector <m>\vx</m> such that <m>A\vx = 5\vx</m>.
     Is this the only one? Let's find out while calling our work an example;
-    this will amount to finding the eigenvectors of <m>\tta</m> that correspond to the eigenvector of 5.
+    this will amount to finding the eigenvectors of <m>A</m> that correspond to the eigenvector of 5.
   </p>
 
   <example xml:id="ex_find_ev">
     <title>Computing an eigenvector corresponding to a given eigenvalue</title>
     <statement>
       <p>
-        Find <m>\vx</m> such that <m>\tta\vx=5\vx</m>, where
+        Find <m>\vx</m> such that <m>A\vx=5\vx</m>, where
         <me>
-          \tta = \bbm 1 \amp 4\\2 \amp 3\ebm
+          A = \bbm 1 \amp 4\\2 \amp 3\ebm
         </me>.
       </p>
     </statement>
@@ -233,17 +233,17 @@
       <p>
         Recall that our algebra from before showed that if
         <me>
-          \tta\vx=\lda\vx \quad \text{then} \quad (\tta-\lda\tti)\vx=\zero
+          A\vx=\lambda \vx \quad \text{then} \quad (A-\lambda I)\vx=\zero
         </me>.
-        Therefore, we need to solve the equation <m>(\tta-\lda\tti)\vx=\zero</m> for <m>\vx</m> when <m>\lambda = 5</m>:
+        Therefore, we need to solve the equation <m>(A-\lambda I)\vx=\zero</m> for <m>\vx</m> when <m>\lambda = 5</m>:
         <md>
-          <mrow>\tta - 5\tti \amp = \bbm 1\amp 4\\2\amp 3\ebm - 5\bbm 1\amp 0\\0\amp 1\ebm</mrow>
+          <mrow>A - 5I \amp = \bbm 1\amp 4\\2\amp 3\ebm - 5\bbm 1\amp 0\\0\amp 1\ebm</mrow>
           <mrow>             \amp =  \bbm -4\amp 4\\2\amp -2\ebm</mrow>
         </md>.
       </p>
 
       <p>
-        To solve <m>(\tta-5\tti)\vx=\zero</m>, we form the augmented matrix and put it into reduced row echelon form:
+        To solve <m>(A-5I)\vx=\zero</m>, we form the augmented matrix and put it into reduced row echelon form:
         <me>
           \bbm-4 \amp 4 \amp 0\\2\amp -2\amp 0\ebm \quad\quad \overrightarrow{\text{rref}} \quad\quad \bbm 1\amp -1\amp 0\\0\amp 0\amp 0\ebm
         </me>.
@@ -259,7 +259,7 @@
       </p>
 
       <p>
-        We have infinitely many solutions to the equation <m>\tta\vx = 5\vx</m>; any nonzero scalar multiple of the vector <m>\bbm 1\\1\ebm</m> is a solution. We can do a few examples to confirm this:
+        We have infinitely many solutions to the equation <m>A\vx = 5\vx</m>; any nonzero scalar multiple of the vector <m>\bbm 1\\1\ebm</m> is a solution. We can do a few examples to confirm this:
         <md>
           <mrow>\bbm 1\amp 4\\2\amp 3\ebm\bbm 2\\2\ebm \amp = \bbm 10\\10\ebm = 5\bbm 2\\2\ebm</mrow>
           <mrow>\bbm 1\amp 4\\2\amp 3\ebm\bbm 7\\7\ebm \amp = \bbm 35\\35\ebm = 5\bbm 7\\7\ebm</mrow>
@@ -274,9 +274,9 @@
   </example>
 
   <p>
-    Our method of finding the eigenvalues of a matrix <m>\tta</m>
-    boils down to determining which values of <m>\lambda</m> give the matrix <m>(\tta - \lambda\tti)</m> a determinant of 0.
-    In computing <m>\det(\tta-\lambda\tti)</m>, we get a polynomial in <m>\lambda</m> whose roots are the eigenvalues of <m>\tta</m>.
+    Our method of finding the eigenvalues of a matrix <m>A</m>
+    boils down to determining which values of <m>\lambda</m> give the matrix <m>(A - \lambda I)</m> a determinant of 0.
+    In computing <m>\det(A-\lambda I)</m>, we get a polynomial in <m>\lambda</m> whose roots are the eigenvalues of <m>A</m>.
     This polynomial is important and so it gets its own name.
   </p>
 
@@ -286,9 +286,9 @@
       <p>
         <idx><h>characteristic polynomial</h></idx>
 
-        Let <m>\tta</m> be an <m>n\times n</m> matrix.
-        The <em>characteristic polynomial</em> of <m>\tta</m> is the <m>n</m>th degree polynomial
-        <m>p(\lambda) = \det(\tta-\lambda\tti)</m>.
+        Let <m>A</m> be an <m>n\times n</m> matrix.
+        The <em>characteristic polynomial</em> of <m>A</m> is the <m>n</m>th degree polynomial
+        <m>p(\lambda) = \det(A-\lambda I)</m>.
       </p>
     </statement>
   </definition>
@@ -296,14 +296,14 @@
   <p>
     Our definition just states <em>what</em> the characteristic polynomial is.
     We know from our work so far <em>why</em> we care:
-    the roots of the characteristic polynomial of an <m>n\times n</m> matrix <m>\tta</m> are the eigenvalues of <m>\tta</m>.
+    the roots of the characteristic polynomial of an <m>n\times n</m> matrix <m>A</m> are the eigenvalues of <m>A</m>.
   </p>
 
   <p>
     In Examples <xref ref="ex_find_el" text="local"/> and <xref ref="ex_find_ev" text="local"/>,
      we found eigenvalues and eigenvectors, respectively, of a given matrix.
-     That is, given a matrix <m>\tta</m>, we found values <m>\lambda</m> and vectors <m>\vx</m>
-     such that <m>\tta\vx = \lambda\vx</m>.
+     That is, given a matrix <m>A</m>, we found values <m>\lambda</m> and vectors <m>\vx</m>
+     such that <m>A\vx = \lambda\vx</m>.
      The steps that follow outline the general procedure for finding eigenvalues and eigenvectors;
      we'll follow this up with some examples.
   </p>
@@ -313,10 +313,10 @@
     <p>
       <idx><h>eigenvalue</h><h>finding</h></idx>
 
-      Let <m>\tta</m> be an <m>n\times n</m> matrix.
+      Let <m>A</m> be an <m>n\times n</m> matrix.
       <ol>
-        <li>To find the eigenvalues of <m>\tta</m>, compute <m>p(\lambda)</m>, the characteristic polynomial of <m>\tta</m>, set it equal to 0, then solve for <m>\lambda</m>.</li>
-        <li>To find the eigenvectors of <m>\tta</m>, <em>for each eigenvalue</em> solve the homogeneous system <m>(\tta-\lambda\tti)\vx = \zero</m>. </li>
+        <li>To find the eigenvalues of <m>A</m>, compute <m>p(\lambda)</m>, the characteristic polynomial of <m>A</m>, set it equal to 0, then solve for <m>\lambda</m>.</li>
+        <li>To find the eigenvectors of <m>A</m>, <em>for each eigenvalue</em> solve the homogeneous system <m>(A-\lambda I)\vx = \zero</m>. </li>
       </ol>
     </p>
   </insight>
@@ -325,17 +325,17 @@
     <title>Computing eigenvalues and eigenvectors</title>
     <statement>
       <p>
-        Find the eigenvalues of <m>\tta</m>, and for each eigenvalue, find an eigenvector where
+        Find the eigenvalues of <m>A</m>, and for each eigenvalue, find an eigenvector where
         <me>
-          \tta = \bbm-3 \amp 15\\3 \amp 9\ebm
+          A = \bbm-3 \amp 15\\3 \amp 9\ebm
         </me>.
       </p>
     </statement>
     <solution>
       <p>
-        To find the eigenvalues, we must compute <m>\det(\tta-\lambda\tti)</m> and set it equal to 0.
+        To find the eigenvalues, we must compute <m>\det(A-\lambda I)</m> and set it equal to 0.
         <md>
-          <mrow>\det(\tta-\lambda\tti) \amp = \bvm -3-\lambda \amp  15\\3 \amp  9-\lambda\evm</mrow>
+          <mrow>\det(A-\lambda I) \amp = \bvm -3-\lambda \amp  15\\3 \amp  9-\lambda\evm</mrow>
           <mrow>                        \amp = (-3-\lambda)(9-\lambda)-45</mrow>
           <mrow>                        \amp = \lambda^2-6\lambda-27-4</mrow>
           <mrow>                        \amp = \lambda^2-6\lambda-72</mrow>
@@ -344,7 +344,7 @@
       </p>
 
       <p>
-        Therefore, <m>\det(\tta-\lambda\tti) = 0</m> when <m>\lambda = -6</m> and <m>12</m>; these are our eigenvalues.
+        Therefore, <m>\det(A-\lambda I) = 0</m> when <m>\lambda = -6</m> and <m>12</m>; these are our eigenvalues.
         (We should note that <m>p(\lambda) =\lambda^2-6\lambda-72</m> is our characteristic polynomial.)
       </p>
 
@@ -354,7 +354,7 @@
       </p>
 
       <p>
-        For <m>\lambda_1=-6</m>, we need to solve the equation <m>(\tta - (-6)\tti)\vx = \zero</m>.
+        For <m>\lambda_1=-6</m>, we need to solve the equation <m>(A - (-6)I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
         <me>
           \bbm 3 \amp 15 \amp 0\\3\amp 15\amp 0\ebm \quad\quad\overrightarrow{\text{rref}}\quad\quad \bbm 1\amp 5\amp 0\\0\amp 0\amp 0\ebm
@@ -383,7 +383,7 @@
 
       <p>
         We now repeat this process to find an eigenvector for <m>\lambda_2 = 12</m>.
-        In solving <m>(\tta - 12\tti)\vx = \zero</m>, we find
+        In solving <m>(A - 12I)\vx = \zero</m>, we find
         <me>
           \bbm-15  \amp  15  \amp  0 \\ 3 \amp  -3 \amp  0 \ebm  \quad\quad\overrightarrow{\text{rref}}\quad\quad \bbm 1\amp -1\amp 0\\0\amp 0\amp 0\ebm
         </me>.
@@ -412,9 +412,9 @@
       </p>
 
       <p>
-        We should take a moment and check our work: is it true that <m>\tta\vx[1] = \lambda_1\vx[1]</m>?
+        We should take a moment and check our work: is it true that <m>A\vx[1] = \lambda_1\vx[1]</m>?
         <me>
-        \tta\vx[1]	=	\bbm-3\amp 15\\3\amp 9\ebm\bbm-5\\1\ebm
+        A\vx[1]	=	\bbm-3\amp 15\\3\amp 9\ebm\bbm-5\\1\ebm
                     =	\bbm 30\\-6\ebm
                     =	(-6)\bbm -5\\1\ebm
                     =	\lambda_1\vx[1]
@@ -428,20 +428,20 @@
     <title>Computing eigenvalues and eigenvectors</title>
     <statement>
       <p>
-        Let <m>\tta = \bbm -3\amp 0\\5\amp 1\ebm</m>. Find the eigenvalues of <m>\tta</m> and an eigenvector for each eigenvalue.
+        Let <m>A = \bbm -3\amp 0\\5\amp 1\ebm</m>. Find the eigenvalues of <m>A</m> and an eigenvector for each eigenvalue.
       </p>
     </statement>
     <solution>
       <p>
         We first compute the characteristic polynomial, set it equal to 0, then solve for <m>\lambda</m>.
         <md>
-          <mrow>\det(\tta-\lambda\tti) 	\amp = 	\bvm  -3-\lambda \amp  0\\5\amp 1-\lambda \evm</mrow>
+          <mrow>\det(A-\lambda I) 	\amp = 	\bvm  -3-\lambda \amp  0\\5\amp 1-\lambda \evm</mrow>
           <mrow>                      \amp = 	(-3-\lambda)(1-\lambda)</mrow>
         </md>.
       </p>
 
       <p>
-        From this, we see that <m>\det(\tta-\lambda\tti)=0</m> when <m>\lambda = -3, 1</m>.
+        From this, we see that <m>\det(A-\lambda I)=0</m> when <m>\lambda = -3, 1</m>.
         We'll set <m>\lambda_1 = -3</m> and <m>\lambda_2 = 1</m>.
       </p>
 
@@ -450,7 +450,7 @@
       </p>
 
       <p>
-        We solve <m>(\tta-(-3)\tti)\vx =\zero</m> for <m>\vx</m> by row reducing the appropriate matrix:
+        We solve <m>(A-(-3)I)\vx =\zero</m> for <m>\vx</m> by row reducing the appropriate matrix:
         <me>
           \bbm 0  \amp  0  \amp 0 \\ 5 \amp  4 \amp  0 \ebm \quad\quad\overrightarrow{\text{rref}}\quad\quad \bbm 1\amp 4/5\amp 0\\0\amp 0\amp 0\ebm
         </me>.
@@ -473,7 +473,7 @@
       </p>
 
       <p>
-        We solve <m>(\tta-(1)\tti)\vx =\zero</m> for <m>\vx</m> by row reducing the appropriate matrix:
+        We solve <m>(A-(1)I)\vx =\zero</m> for <m>\vx</m> by row reducing the appropriate matrix:
         <me>
           \bbm -4  \amp  0  \amp 0 \\ 5 \amp  0 \amp  0 \ebm \quad\quad\overrightarrow{\text{rref}}\quad\quad \bbm 1\amp 0\amp 0\\0\amp 0\amp 0\ebm
         </me>.
@@ -793,15 +793,15 @@
     <title>Eigenvalues and eigenvectors for a <m>3\times 3</m> matrix</title>
     <statement>
       <p>
-        Find the eigenvalues of <m>\tta</m>, and for each eigenvalue, give one eigenvector, where
+        Find the eigenvalues of <m>A</m>, and for each eigenvalue, give one eigenvector, where
         <me>
-          \tta = \bbm-7  \amp  -2  \amp  10\\ -3 \amp  2 \amp  3 \\ -6 \amp  -2 \amp  9 \ebm
+          A = \bbm-7  \amp  -2  \amp  10\\ -3 \amp  2 \amp  3 \\ -6 \amp  -2 \amp  9 \ebm
         </me>.
       </p>
     </statement>
     <solution>
       <p>
-        We first compute the characteristic polynomial, set it equal to 0, then solve for <m>\lda</m>.
+        We first compute the characteristic polynomial, set it equal to 0, then solve for <m>\lambda </m>.
         A warning: this process is rather long. We'll use cofactor expansion along the first row;
         don't get bogged down with the arithmetic that comes from each step;
         just try to get the basic idea of what was done from step to step.
@@ -809,16 +809,16 @@
 
       <p>
         <md>
-          <mrow>\det(\tta-\lambda\tti) \amp = \bvm  -7-\lda \amp  -2 \amp  10 \\-3 \amp  2-\lda \amp  3\\ -6 \amp  -2 \amp  9-\lda \evm</mrow>
-          <mrow>                    \amp = (-7-\lda)\bvm 2-\lda \amp  3\\-2 \amp  9-\lda\evm \ -\ (-2)\bvm  -3\amp 3\\-6 \amp  9-\lda \evm \ +\ 10\bvm  -3\amp 2-\lda \\-6 \amp  -2 \evm</mrow>
-          <mrow>                    \amp = (-7-\lda)(\lda^2-11\lda + 24) + 2(3\lda-9)+10(-6\lda+18)</mrow>
-          <mrow>                    \amp = -\lda^3+4\lda^2-\lda -6</mrow>
-          <mrow>                    \amp = -(\lda + 1)(\lda-2)(\lda-3)</mrow>
+          <mrow>\det(A-\lambda I) \amp = \bvm  -7-\lambda  \amp  -2 \amp  10 \\-3 \amp  2-\lambda  \amp  3\\ -6 \amp  -2 \amp  9-\lambda  \evm</mrow>
+          <mrow>                    \amp = (-7-\lambda )\bvm 2-\lambda  \amp  3\\-2 \amp  9-\lambda \evm \ -\ (-2)\bvm  -3\amp 3\\-6 \amp  9-\lambda  \evm \ +\ 10\bvm  -3\amp 2-\lambda  \\-6 \amp  -2 \evm</mrow>
+          <mrow>                    \amp = (-7-\lambda )(\lambda ^2-11\lambda  + 24) + 2(3\lambda -9)+10(-6\lambda +18)</mrow>
+          <mrow>                    \amp = -\lambda ^3+4\lambda ^2-\lambda  -6</mrow>
+          <mrow>                    \amp = -(\lambda  + 1)(\lambda -2)(\lambda -3)</mrow>
         </md>.
       </p>
 
       <p>
-        In the last step we factored the characteristic polynomial <m>-\lda^3+4\lda^2-\lda -6</m>.
+        In the last step we factored the characteristic polynomial <m>-\lambda ^3+4\lambda ^2-\lambda  -6</m>.
         Factoring polynomials of degree <m>\gt 2</m> is not trivial;
         we'll assume the reader has access to methods for doing this accurately.
       </p>
@@ -833,20 +833,20 @@
 
       <p>
         One could also graph this polynomial to find the roots.
-        Graphing will show us that <m>\lda = 3</m> <em>looks</em> like a root,
+        Graphing will show us that <m>\lambda  = 3</m> <em>looks</em> like a root,
         and a simple calculation will confirm that it is.
       </p>
 
       <p>
-        Our eigenvalues are <m>\lda_1 = -1</m>, <m>\lda_2 = 2</m> and <m>\lda_3 = 3</m>. We now find corresponding eigenvectors.
+        Our eigenvalues are <m>\lambda _1 = -1</m>, <m>\lambda _2 = 2</m> and <m>\lambda _3 = 3</m>. We now find corresponding eigenvectors.
       </p>
 
       <p>
-        For <m>\lda_1 = -1</m>:
+        For <m>\lambda _1 = -1</m>:
       </p>
 
       <p>
-        We need to solve the equation <m>(\tta - (-1)\tti)\vx = \zero</m>.
+        We need to solve the equation <m>(A - (-1)I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
         <me>
           \bbm -6  \amp  -2  \amp  10 \amp 0\\ -3 \amp  3 \amp  3 \amp  0  \\ -6 \amp  -2 \amp  10 \amp  0 \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 1\amp 0\amp -1.5\amp 0\\0\amp 1\amp -.5\amp 0\\0\amp 0\amp 0\amp 0\ebm
@@ -866,11 +866,11 @@
       </p>
 
       <p>
-        For <m>\lda_2 = 2</m>:
+        For <m>\lambda _2 = 2</m>:
       </p>
 
       <p>
-        We need to solve the equation <m>(\tta - 2\tti)\vx = \zero</m>.
+        We need to solve the equation <m>(A - 2I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
         <me>
           \bbm -9  \amp  -2  \amp  10 \amp 0\\ -3 \amp  0 \amp  3 \amp  0  \\ -6 \amp  -2 \amp  7 \amp  0 \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 1\amp 0\amp -1\amp 0\\0\amp 1\amp -.5\amp 0\\0\amp 0\amp 0\amp 0\ebm
@@ -890,11 +890,11 @@
       </p>
 
       <p>
-        For <m>\lda_3 = 3</m>:
+        For <m>\lambda _3 = 3</m>:
       </p>
 
       <p>
-        We need to solve the equation <m>(\tta - 3\tti)\vx = \zero</m>.
+        We need to solve the equation <m>(A - 3I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
         <me>
           \bbm -10  \amp  -2  \amp  10 \amp 0\\ -3 \amp  -1 \amp  3 \amp  0  \\ -6 \amp  -2 \amp  6 \amp  0 \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 1\amp 0\amp -1\amp 0\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 0\amp 0\ebm
@@ -916,9 +916,9 @@
       <p>
         To summarize, we have the following eigenvalue/eigenvector pairs:
         <md>
-          <mrow>\text{eigenvalue } \lda_1 \amp  = -1 \text{ with eigenvector } \vx[1] = \bbm 3\\1\\2\ebm</mrow>
-          <mrow>\text{eigenvalue } \lda_2 \amp  = 2 \text{ with eigenvector } \vx[2] = \bbm 2\\1\\2\ebm</mrow>
-          <mrow>\text{eigenvalue } \lda_3 = 3 \text{ with eigenvector } \vx[3] = \bbm 1\\0\\1\ebm</mrow>
+          <mrow>\text{eigenvalue } \lambda _1 \amp  = -1 \text{ with eigenvector } \vx[1] = \bbm 3\\1\\2\ebm</mrow>
+          <mrow>\text{eigenvalue } \lambda _2 \amp  = 2 \text{ with eigenvector } \vx[2] = \bbm 2\\1\\2\ebm</mrow>
+          <mrow>\text{eigenvalue } \lambda _3 = 3 \text{ with eigenvector } \vx[3] = \bbm 1\\0\\1\ebm</mrow>
         </md>.
       </p>
     </solution>
@@ -928,41 +928,41 @@
     <title>Computing eigenvalues and eigenvectors</title>
     <statement>
       <p>
-        Find the eigenvalues of <m>\tta</m>, and for each eigenvalue, give one eigenvector, where
+        Find the eigenvalues of <m>A</m>, and for each eigenvalue, give one eigenvector, where
         <me>
-          \tta = \bbm 2 \amp -1 \amp 1\\ 0\amp 1\amp 6 \\ 0\amp 3\amp 4 \ebm
+          A = \bbm 2 \amp -1 \amp 1\\ 0\amp 1\amp 6 \\ 0\amp 3\amp 4 \ebm
         </me>.
       </p>
     </statement>
     <solution>
       <p>
-        We first compute the characteristic polynomial, set it equal to 0, then solve for <m>\lda</m>.
+        We first compute the characteristic polynomial, set it equal to 0, then solve for <m>\lambda </m>.
         We'll use cofactor expansion down the first column (since it has lots of zeros).
         <md>
-          <mrow>\det(\tta-\lambda\tti) \amp = \bvm  2-\lda \amp  -1 \amp  1 \\0\amp 1-\lda \amp  6\\ 0 \amp  3 \amp  4-\lda \evm</mrow>
-          <mrow>                    \amp = (2-\lda)\bvm 1-\lda \amp  6\\3\amp 4-\lda\evm</mrow>
-          <mrow>                    \amp = (2-\lda)(\lda^2-5\lda-14)</mrow>
-          <mrow>                    \amp = (2-\lda)(\lda-7)(\lda+2)</mrow>
+          <mrow>\det(A-\lambda I) \amp = \bvm  2-\lambda  \amp  -1 \amp  1 \\0\amp 1-\lambda  \amp  6\\ 0 \amp  3 \amp  4-\lambda  \evm</mrow>
+          <mrow>                    \amp = (2-\lambda )\bvm 1-\lambda  \amp  6\\3\amp 4-\lambda \evm</mrow>
+          <mrow>                    \amp = (2-\lambda )(\lambda ^2-5\lambda -14)</mrow>
+          <mrow>                    \amp = (2-\lambda )(\lambda -7)(\lambda +2)</mrow>
         </md>.
       </p>
 
       <p>
         Notice that while the characteristic polynomial is cubic, we never actually saw a cubic;
-        we never distributed the <m>(2-\lda)</m> across the quadratic.
+        we never distributed the <m>(2-\lambda )</m> across the quadratic.
         Instead, we realized that this was a factor of the cubic, and just factored the remaining quadratic.
         (This makes this example quite a bit simpler than the previous example.)
       </p>
 
       <p>
-        Our eigenvalues are <m>\lda_1 = -2</m>, <m>\lda_2 = 2</m> and <m>\lda_3 = 7</m>. We now find corresponding eigenvectors.
+        Our eigenvalues are <m>\lambda _1 = -2</m>, <m>\lambda _2 = 2</m> and <m>\lambda _3 = 7</m>. We now find corresponding eigenvectors.
       </p>
 
       <p>
-        For <m>\lda_1 = -2</m>:
+        For <m>\lambda _1 = -2</m>:
       </p>
 
       <p>
-        We need to solve the equation <m>(\tta - (-2)\tti)\vx = \zero</m>.
+        We need to solve the equation <m>(A - (-2)I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
         <me>
           \bbm 4 \amp -1 \amp 1\amp 0\\ 0\amp 3\amp 6\amp 0 \\ 0\amp 3\amp 6\amp 0  \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 1\amp 0\amp 3/4\amp 0\\0\amp 1\amp 2\amp 0\\0\amp 0\amp 0\amp 0\ebm
@@ -982,11 +982,11 @@
       </p>
 
       <p>
-        For <m>\lda_2 = 2</m>:
+        For <m>\lambda _2 = 2</m>:
       </p>
 
       <p>
-        We need to solve the equation <m>(\tta - 2\tti)\vx = \zero</m>.
+        We need to solve the equation <m>(A - 2I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
         <me>
           \bbm 0 \amp -1 \amp 1\amp 0\\ 0\amp -1\amp 6\amp 0 \\ 0\amp 3\amp 2\amp 0  \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 0\\0\amp 0\amp 0\amp 0\ebm
@@ -1008,11 +1008,11 @@
       </p>
 
       <p>
-        For <m>\lda_3 = 7</m>:
+        For <m>\lambda _3 = 7</m>:
       </p>
 
       <p>
-        We need to solve the equation <m>(\tta - 7\tti)\vx = \zero</m>.
+        We need to solve the equation <m>(A - 7I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
         <me>
           \bbm -5 \amp -1 \amp 1\amp 0\\ 0\amp -6\amp 6\amp 0 \\ 0\amp 3\amp -3\amp 0  \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 1\amp 0\amp 0\amp 0\\0\amp 1\amp -1\amp 0\\0\amp 0\amp 0\amp 0\ebm
@@ -1034,9 +1034,9 @@
       <p>
         To summarize, we have the following eigenvalue/eigenvector pairs:
         <md>
-          <mrow>\text{eigenvalue } \lda_1 \amp  = -2 \text{ with eigenvector } \vx[1] = \bbm-3\\-8\\4\ebm</mrow>
-          <mrow>\text{eigenvalue } \lda_2 \amp  = 2 \text{ with eigenvector } \vx[2] = \bbm 1\\0\\0\ebm</mrow>
-          <mrow>\text{eigenvalue } \lda_3 \amp  = 7 \text{ with eigenvector } \vx[3] = \bbm 0\\1\\1\ebm</mrow>
+          <mrow>\text{eigenvalue } \lambda _1 \amp  = -2 \text{ with eigenvector } \vx[1] = \bbm-3\\-8\\4\ebm</mrow>
+          <mrow>\text{eigenvalue } \lambda _2 \amp  = 2 \text{ with eigenvector } \vx[2] = \bbm 1\\0\\0\ebm</mrow>
+          <mrow>\text{eigenvalue } \lambda _3 \amp  = 7 \text{ with eigenvector } \vx[3] = \bbm 0\\1\\1\ebm</mrow>
         </md>.
       </p>
     </solution>
@@ -1044,7 +1044,7 @@
 
   <p>
     In this section we have learned about a new concept:
-    given a matrix <m>\tta</m> we can find certain values and vectors <m>\vx</m> where <m>\tta\vx =\lda\vx</m>.
+    given a matrix <m>A</m> we can find certain values and vectors <m>\vx</m> where <m>A\vx =\lambda \vx</m>.
     In the next section we will continue to the pattern we have established in this text:
     after learning a new concept, we see how it interacts with other concepts we know about.
     That is, we'll look for connections between eigenvalues and eigenvectors and things like the inverse,
@@ -1056,14 +1056,14 @@
 
       <introduction>
         <p>
-          A matrix <m>\tta</m> and one of its eigenvectors are given. Find the eigenvalue of <m>\tta</m> for the given eigenvector.
+          A matrix <m>A</m> and one of its eigenvectors are given. Find the eigenvalue of <m>A</m> for the given eigenvector.
         </p>
       </introduction>
 
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   9  \amp  8 \\ -6  \amp  -5\ebm</m>,
+            <m>A = \bbm   9  \amp  8 \\ -6  \amp  -5\ebm</m>,
             <m>\vx = \bbm -4\\3\ebm</m>
           </p>
         </statement>
@@ -1077,7 +1077,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   19  \amp  -6 \\ 48  \amp  -15\ebm</m>,
+            <m>A = \bbm   19  \amp  -6 \\ 48  \amp  -15\ebm</m>,
             <m>\vx = \bbm 1\\3\ebm</m>
           </p>
         </statement>
@@ -1091,7 +1091,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   -11  \amp  -19  \amp  14 \\ -6 \amp  -8 \amp  6 \\ -12 \amp  -22 \amp  15\ebm</m>,
+            <m>A = \bbm   -11  \amp  -19  \amp  14 \\ -6 \amp  -8 \amp  6 \\ -12 \amp  -22 \amp  15\ebm</m>,
             <m>\vx = \bbm 3\\2\\4\ebm</m>
           </p>
         </statement>
@@ -1105,7 +1105,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   -7  \amp  1  \amp  3 \\ 10 \amp  2 \amp  -3 \\ -20 \amp  -14 \amp  1\ebm</m>,
+            <m>A = \bbm   -7  \amp  1  \amp  3 \\ 10 \amp  2 \amp  -3 \\ -20 \amp  -14 \amp  1\ebm</m>,
             <m>\vx = \bbm 1\\-2\\4\ebm</m>
           </p>
         </statement>
@@ -1119,7 +1119,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   -12  \amp  -10  \amp  0 \\ 15 \amp  13 \amp  0 \\ 15 \amp  18 \amp  -5\ebm</m>,
+            <m>A = \bbm   -12  \amp  -10  \amp  0 \\ 15 \amp  13 \amp  0 \\ 15 \amp  18 \amp  -5\ebm</m>,
             <m>\vx = \bbm -1\\1\\1\ebm</m>
           </p>
         </statement>
@@ -1133,7 +1133,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm   1 \amp  -2\\ -2  \amp  4 \ebm</m>,
+            <m>A = \bbm   1 \amp  -2\\ -2  \amp  4 \ebm</m>,
             <m>\vx = \bbm 2\\1\ebm</m>
           </p>
         </statement>
@@ -1150,14 +1150,14 @@
 
       <introduction>
         <p>
-          A matrix <m>\tta</m> and one of its eigenvalues are given. Find an eigenvector of <m>\tta</m> for the given eigenvalue.
+          A matrix <m>A</m> and one of its eigenvalues are given. Find an eigenvector of <m>A</m> for the given eigenvalue.
         </p>
       </introduction>
 
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -16  \amp  -28  \amp  -19 \\ 42 \amp  69 \amp  46 \\ -42 \amp  -72 \amp  -49\ebm</m>,
+            <m>A = \bbm -16  \amp  -28  \amp  -19 \\ 42 \amp  69 \amp  46 \\ -42 \amp  -72 \amp  -49\ebm</m>,
             <m>\lambda = 5</m>
           </p>
         </statement>
@@ -1171,7 +1171,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 7  \amp  -5  \amp  -10 \\ 6 \amp  2 \amp  -6 \\ 2 \amp  -5 \amp  -5\ebm</m>,
+            <m>A = \bbm 7  \amp  -5  \amp  -10 \\ 6 \amp  2 \amp  -6 \\ 2 \amp  -5 \amp  -5\ebm</m>,
             <m>\lambda = -3</m>
           </p>
         </statement>
@@ -1185,7 +1185,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm  4  \amp  5  \amp  -3 \\ -7 \amp  -8 \amp  3 \\ 1 \amp  -5 \amp  8\ebm</m>,
+            <m>A = \bbm  4  \amp  5  \amp  -3 \\ -7 \amp  -8 \amp  3 \\ 1 \amp  -5 \amp  8\ebm</m>,
             <m>\lambda = 2</m>
           </p>
         </statement>
@@ -1199,7 +1199,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm  16  \amp  6 \\ -18  \amp  -5\ebm</m>,
+            <m>A = \bbm  16  \amp  6 \\ -18  \amp  -5\ebm</m>,
             <m>\lambda = 4</m>
           </p>
         </statement>
@@ -1213,7 +1213,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm  -2  \amp  6 \\ -9  \amp  13\ebm</m>,
+            <m>A = \bbm  -2  \amp  6 \\ -9  \amp  13\ebm</m>,
             <m>\lambda = 7</m>
           </p>
         </statement>
@@ -1242,7 +1242,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -1</m> with <m>\vx[1] = \bbm 3\\0\\2\ebm</m>; <m>\lda_2 = 1</m> with <m>\vx[2] = \bbm 1\\0\\0\ebm</m> <m>\lda_3 = 3</m> with <m>\vx[3] = \bbm 5\\-8\\2\ebm</m>
+            <m>\lambda _1 = -1</m> with <m>\vx[1] = \bbm 3\\0\\2\ebm</m>; <m>\lambda _2 = 1</m> with <m>\vx[2] = \bbm 1\\0\\0\ebm</m> <m>\lambda _3 = 3</m> with <m>\vx[3] = \bbm 5\\-8\\2\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1256,7 +1256,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = 2</m> with <m>\vx[1] = \bbm 1\\0\\0\ebm</m>; <m>\lda_2 = 3</m> with <m>\vx[2] = \bbm-1\\1\\0\ebm</m>; <m>\lda_3 = 7</m> with <m>\vx[3] = \bbm-1\\15\\10\ebm</m>
+            <m>\lambda _1 = 2</m> with <m>\vx[1] = \bbm 1\\0\\0\ebm</m>; <m>\lambda _2 = 3</m> with <m>\vx[2] = \bbm-1\\1\\0\ebm</m>; <m>\lambda _3 = 7</m> with <m>\vx[3] = \bbm-1\\15\\10\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1270,7 +1270,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -4</m> with <m>\vx[1] = \bbm 2\\1\ebm</m>; <m>\lda_2 = -2</m> with <m>\vx[2] = \bbm 3\\1\ebm</m>
+            <m>\lambda _1 = -4</m> with <m>\vx[1] = \bbm 2\\1\ebm</m>; <m>\lambda _2 = -2</m> with <m>\vx[2] = \bbm 3\\1\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1284,7 +1284,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -2</m> with <m>\vx[1] = \bbm 0\\0\\1\ebm</m>; <m>\lda_2 = 1</m> with <m>\vx[2] = \bbm 0\\3\\5\ebm</m>; <m>\lda_3 = 5</m> with <m>\vx[3] = \bbm 28\\7\\1\ebm</m>
+            <m>\lambda _1 = -2</m> with <m>\vx[1] = \bbm 0\\0\\1\ebm</m>; <m>\lambda _2 = 1</m> with <m>\vx[2] = \bbm 0\\3\\5\ebm</m>; <m>\lambda _3 = 5</m> with <m>\vx[3] = \bbm 28\\7\\1\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1298,7 +1298,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -1</m> with <m>\vx[1] = \bbm 1\\2\ebm</m>; <m>\lda_2 = -3</m> with <m>\vx[2] = \bbm 1\\0\ebm</m>
+            <m>\lambda _1 = -1</m> with <m>\vx[1] = \bbm 1\\2\ebm</m>; <m>\lambda _2 = -3</m> with <m>\vx[2] = \bbm 1\\0\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1312,7 +1312,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -4</m> with <m>\vx[1] = \bbm-6\\1\\11\ebm</m>; <m>\lda_2 = -1</m> with <m>\vx[2] = \bbm 0\\0\\1\ebm</m>; <m>\lda_3 = 5</m> with <m>\vx[3] = \bbm 3\\1\\2\ebm</m>
+            <m>\lambda _1 = -4</m> with <m>\vx[1] = \bbm-6\\1\\11\ebm</m>; <m>\lambda _2 = -1</m> with <m>\vx[2] = \bbm 0\\0\\1\ebm</m>; <m>\lambda _3 = 5</m> with <m>\vx[3] = \bbm 3\\1\\2\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1326,7 +1326,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -5</m> with <m>\vx[1] = \bbm 0\\1\\0\ebm</m>; <m>\lda_2 = -2</m> with <m>\vx[2] = \bbm-12\\-8\\3\ebm</m>; <m>\lda_3 = 5</m> with <m>\vx[3] = \bbm 15\\3\\5\ebm</m>
+            <m>\lambda _1 = -5</m> with <m>\vx[1] = \bbm 0\\1\\0\ebm</m>; <m>\lambda _2 = -2</m> with <m>\vx[2] = \bbm-12\\-8\\3\ebm</m>; <m>\lambda _3 = 5</m> with <m>\vx[3] = \bbm 15\\3\\5\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1340,7 +1340,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -3</m> with <m>\vx[1] = \bbm-2\\1\ebm</m>; <m>\lda_2 = 5</m> with <m>\vx[2] = \bbm 6\\1\ebm</m>
+            <m>\lambda _1 = -3</m> with <m>\vx[1] = \bbm-2\\1\ebm</m>; <m>\lambda _2 = 5</m> with <m>\vx[2] = \bbm 6\\1\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1354,7 +1354,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = 2</m> with <m>\vx[1] = \bbm 1\\1\ebm</m>; <m>\lda_2 = 4</m> with <m>\vx[2] = \bbm-1\\1\ebm</m>
+            <m>\lambda _1 = 2</m> with <m>\vx[1] = \bbm 1\\1\ebm</m>; <m>\lambda _2 = 4</m> with <m>\vx[2] = \bbm-1\\1\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1368,7 +1368,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -5</m> with <m>\vx[1] = \bbm 24\\13\\8\ebm</m>; <m>\lda_2 = -2</m> with <m>\vx[2] = \bbm 6\\5\\1\ebm</m>; <m>\lda_3 = 3</m> with <m>\vx[3] = \bbm 0\\1\\0\ebm</m>
+            <m>\lambda _1 = -5</m> with <m>\vx[1] = \bbm 24\\13\\8\ebm</m>; <m>\lambda _2 = -2</m> with <m>\vx[2] = \bbm 6\\5\\1\ebm</m>; <m>\lambda _3 = 3</m> with <m>\vx[3] = \bbm 0\\1\\0\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1396,7 +1396,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -5</m> with <m>\vx[1] = \bbm 1\\1\ebm</m>; <m>\lda_2 = 2</m> with <m>\vx[2] = \bbm-4\\3\ebm</m>
+            <m>\lambda _1 = -5</m> with <m>\vx[1] = \bbm 1\\1\ebm</m>; <m>\lambda _2 = 2</m> with <m>\vx[2] = \bbm-4\\3\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1424,7 +1424,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -5</m> with <m>\vx[1] = \bbm-1\\5\ebm</m>; <m>\lda_2 = 5</m> with <m>\vx[2] = \bbm 1\\5\ebm</m>
+            <m>\lambda _1 = -5</m> with <m>\vx[1] = \bbm-1\\5\ebm</m>; <m>\lambda _2 = 5</m> with <m>\vx[2] = \bbm 1\\5\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1438,7 +1438,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = -4</m> with <m>\vx[1] = \bbm-1\\1\ebm</m>; <m>\lda_2 = 4</m> with <m>\vx[2] = \bbm-9\\1\ebm</m>
+            <m>\lambda _1 = -4</m> with <m>\vx[1] = \bbm-1\\1\ebm</m>; <m>\lambda _2 = 4</m> with <m>\vx[2] = \bbm-9\\1\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1452,7 +1452,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = 4</m> with <m>\vx[1] = \bbm 9\\1\ebm</m>; <m>\lda_2 = 5</m> with <m>\vx[2] = \bbm 8\\1\ebm</m>
+            <m>\lambda _1 = 4</m> with <m>\vx[1] = \bbm 9\\1\ebm</m>; <m>\lambda _2 = 5</m> with <m>\vx[2] = \bbm 8\\1\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1466,7 +1466,7 @@
         </statement>
         <answer>
           <p>
-            <m>\lda_1 = 3</m> with <m>\vx[1] = \bbm-3\\0\\2\ebm</m>; <m>\lda_2 = 4</m> with <m>\vx[2] = \bbm-5\\-1\\1\ebm</m>; <m>\lda_3 = 5</m> with <m>\vx[3] = \bbm 1\\0\\0\ebm</m>
+            <m>\lambda _1 = 3</m> with <m>\vx[1] = \bbm-3\\0\\2\ebm</m>; <m>\lambda _2 = 4</m> with <m>\vx[2] = \bbm-5\\-1\\1\ebm</m>; <m>\lambda _3 = 5</m> with <m>\vx[3] = \bbm 1\\0\\0\ebm</m>
           </p>
         </answer>
       </exercise>

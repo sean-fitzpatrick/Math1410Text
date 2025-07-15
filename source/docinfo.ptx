@@ -52,34 +52,10 @@
     \newcommand{\ven}[1]{\vec{e}_{#1}}
     \newcommand{\zero}{\vec{0}}
     \newcommand{\arref}{\overrightarrow{\text{rref}}}
-    \newcommand{\tta}{A}
-    \newcommand{\ttb}{B}
-    \newcommand{\ttc}{C}
-    \newcommand{\ttd}{D}
-    \newcommand{\ttm}{M}
-    \newcommand{\ttx}{X}
-    \newcommand{\tti}{I}
-    \newcommand{\tty}{Y}
-    \newcommand{\ttp}{P}
-    \newcommand{\ttat}{A^T}
-    \newcommand{\ttbt}{B^T}
-    \newcommand{\ttct}{C^T}
-    \newcommand{\ttdt}{D^T}
-    \newcommand{\ttmt}{M^T}
-    \newcommand{\ttxt}{X^T}
-    \newcommand{\ttit}{I^T}
-    \newcommand{\ttyt}{Y^T}
-    \newcommand{\ttai}{A^{-1}}
-    \newcommand{\ttbi}{B^{-1}}
-    \newcommand{\ttxi}{X^{-1}}
-    \newcommand{\ttpi}{P^{-1}}
-    \newcommand{\ttaxb}{\tta\vx=\vb}
-    \newcommand{\ttaxo}{\tta\vx=\zero}
     \newcommand{\eyetwo}{\begin{bmatrix}1\amp 0\\0\amp 1\end{bmatrix}}
     \newcommand{\eyethree}{\begin{bmatrix}1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\end{bmatrix}}
     \newcommand{\eyefour}{\begin{bmatrix}1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 0\\0\amp 0\amp 0\amp 1\end{bmatrix}}
-    \newcommand{\tto}{\textbf{0}}
-    \newcommand{\lda}{\lambda}    
+    \newcommand{\tto}{\textbf{0}} 
     \newcommand{\TT}{[\, T\, ]}
     \newcommand{\R}{\mathbb{R}}
     \newcommand{\bvm}{\begin{vmatrix}}

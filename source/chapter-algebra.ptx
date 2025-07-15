@@ -24,9 +24,9 @@
 
     <p>
       This chapter deals with the idea of doing similar operations, but instead of an unknown number <m>x</m>,
-      we will be using a matrix <m>\tta</m>. So what exactly does the expression
+      we will be using a matrix <m>A</m>. So what exactly does the expression
       <me>
-        \tta+3\tta-\tta\cdot \tta^2+\tta^5\cdot \tta^{-1}
+        A+3A-A\cdot A^2+A^5\cdot A^{-1}
       </me>
       mean? Before we can do anything, we need to actually define what a matrix is!
       Once we've taken care of that, we are going to need to learn to define what matrix addition, scalar multiplication,

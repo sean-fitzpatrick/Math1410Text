@@ -17,15 +17,15 @@
     <title>Eigenvalues of a triangular matrix</title>
     <statement>
       <p>
-        Let <m>\tta = \bbm 1\amp 2\amp 3\\0\amp 4\amp 5\\0\amp 0\amp 6\ebm</m>. Find the eigenvalues of <m>\tta</m>.
+        Let <m>A = \bbm 1\amp 2\amp 3\\0\amp 4\amp 5\\0\amp 0\amp 6\ebm</m>. Find the eigenvalues of <m>A</m>.
       </p>
     </statement>
     <solution>
       <p>
-        To find the eigenvalues, we compute <m>\det{\tta-\lda\tti}</m>:
+        To find the eigenvalues, we compute <m>\det{A-\lambda I}</m>:
         <md>
-          <mrow>\det{\tta-\lda\tti}	\amp =	\bvm  1-\lda \amp  2\amp 3\\0\amp 4-\lda\amp 5\\0\amp 0\amp 6-\lda \evm</mrow>
-          <mrow>                  \amp = (1-\lda)(4-\lda)(6-\lda)</mrow>
+          <mrow>\det{A-\lambda I}	\amp =	\bvm  1-\lambda  \amp  2\amp 3\\0\amp 4-\lambda \amp 5\\0\amp 0\amp 6-\lambda  \evm</mrow>
+          <mrow>                  \amp = (1-\lambda )(4-\lambda )(6-\lambda )</mrow>
         </md>.
       </p>
 
@@ -33,7 +33,7 @@
         Since our matrix is triangular, the determinant is easy to compute;
         it is just the product of the diagonal elements.
         Therefore, we found (and factored) our characteristic polynomial very easily,
-        and we see that we have eigenvalues of <m>\lda = 1, 4</m>, and 6.
+        and we see that we have eigenvalues of <m>\lambda  = 1, 4</m>, and 6.
       </p>
     </solution>
   </example>
@@ -53,16 +53,16 @@
     <title>Exploring properties of eigenvalues</title>
     <statement>
       <p>
-        Let <m>\tta = \bbm -3 \amp  15 \\ 3 \amp  9 \ebm</m>
-        and let <m>\ttb = \bbm -7 \amp  -2 \amp  10 \\-3 \amp  2 \amp  3\\ -6 \amp  -2 \amp  9\ebm</m>
+        Let <m>A = \bbm -3 \amp  15 \\ 3 \amp  9 \ebm</m>
+        and let <m>B = \bbm -7 \amp  -2 \amp  10 \\-3 \amp  2 \amp  3\\ -6 \amp  -2 \amp  9\ebm</m>
         (as used in Examples <xref ref="ex_eigen1"/> and <xref ref="ex_eigen3"/>, respectively).
         Find the following:
         <ol>
-          <li>The eigenvalues and eigenvectors of <m>\tta</m> and <m>\ttb</m></li>
-          <li>The eigenvalues and eigenvectors of <m>\ttai</m> and <m>\ttbi</m></li>
-          <li>eigenvalues and eigenvectors of <m>\ttat</m> and <m>\ttbt</m></li>
-          <li>The trace of <m>\tta</m> and <m>\ttb</m></li>
-          <li>The determinant of <m>\tta</m> and <m>\ttb</m></li>
+          <li>The eigenvalues and eigenvectors of <m>A</m> and <m>B</m></li>
+          <li>The eigenvalues and eigenvectors of <m>A^{-1}</m> and <m>B^{-1}</m></li>
+          <li>eigenvalues and eigenvectors of <m>A^T</m> and <m>B^T</m></li>
+          <li>The trace of <m>A</m> and <m>B</m></li>
+          <li>The determinant of <m>A</m> and <m>B</m></li>
         </ol>
       </p>
     </statement>
@@ -77,14 +77,14 @@
             </p>
 
             <p>
-              For <m>\tta</m>, we have eigenvalues <m>\lda = -6</m> and  <m>12</m>, with eigenvectors
+              For <m>A</m>, we have eigenvalues <m>\lambda  = -6</m> and  <m>12</m>, with eigenvectors
               <me>
                 \vx = x_2\bbm -5\\1\ebm \ \text{ and }\  x_2\bbm 1\\1\ebm\text{, respectively}
               </me>.
             </p>
 
             <p>
-              For <m>\ttb</m>, we have eigenvalues <m>\lda = -1,\ 2,</m> and <m>3</m> with eigenvectors
+              For <m>B</m>, we have eigenvalues <m>\lambda  = -1,\ 2,</m> and <m>3</m> with eigenvectors
               <me>
                 \vx = x_3 \bbm 3\\1\\2\ebm,\ x_3 \bbm 2\\1\\2\ebm\ \text{ and }\ x_3 \bbm 1\\0\\1\ebm \text{, respectively}
               </me>.
@@ -93,10 +93,10 @@
 
           <li>
             <p>
-              We first compute the inverses of <m>\tta</m> and <m>\ttb</m>. They are:
+              We first compute the inverses of <m>A</m> and <m>B</m>. They are:
               <me>
-                \ttai = \bbm -1/8 \amp  5/24 \\ 1/24 \amp  1/24 \ebm \quad \text{and} \quad
-                \ttbi = \bbm -4 \amp  1/3 \amp  13/3 \\ -3/2 \amp  1/2 \amp  3/2 \\ -3 \amp  1/3 \amp  10/3 \ebm
+                A^{-1} = \bbm -1/8 \amp  5/24 \\ 1/24 \amp  1/24 \ebm \quad \text{and} \quad
+                B^{-1} = \bbm -4 \amp  1/3 \amp  13/3 \\ -3/2 \amp  1/2 \amp  3/2 \\ -3 \amp  1/3 \amp  10/3 \ebm
               </me>.
             </p>
 
@@ -106,14 +106,14 @@
             </p>
 
             <p>
-              For <m>\ttai</m>, we have eigenvalues <m>\lda = -1/6</m> and <m>1/12</m>, with eigenvectors
+              For <m>A^{-1}</m>, we have eigenvalues <m>\lambda  = -1/6</m> and <m>1/12</m>, with eigenvectors
               <me>
                 \vx = x_2 \bbm -5\\1\ebm\ \text{ and }\  x_2 \bbm 1\\1\ebm\text{, respectively}
               </me>.
             </p>
 
             <p>
-              For <m>\ttbi</m>, we have eigenvalues <m>\lda = -1</m>, <m>1/2</m> and <m>1/3</m> with eigenvectors
+              For <m>B^{-1}</m>, we have eigenvalues <m>\lambda  = -1</m>, <m>1/2</m> and <m>1/3</m> with eigenvectors
               <me>
                 \vx = x_3\bbm 3\\1\\2\ebm,\ x_3\bbm 2\\1\\2\ebm \ \text{ and }\  x_3 \bbm 1\\0\\1\ebm\text{, respectively}
               </me>.
@@ -122,19 +122,19 @@
 
           <li>
             <p>
-              Of course, computing the transpose of <m>\tta</m> and <m>\ttb</m> is easy;
+              Of course, computing the transpose of <m>A</m> and <m>B</m> is easy;
               computing their eigenvalues and eigenvectors takes more work. Again, we omit the intermediate steps.
             </p>
 
             <p>
-              For <m>\ttat</m>, we have eigenvalues <m>\lda = -6</m> and <m>12</m> with eigenvectors
+              For <m>A^T</m>, we have eigenvalues <m>\lambda  = -6</m> and <m>12</m> with eigenvectors
               <me>
                 \vx = x_2 \bbm -1\\1\ebm\ \text{ and }\  x_2 \bbm 5\\1\ebm \text{, respectively}
               </me>.
             </p>
 
             <p>
-              For <m>\ttbt</m>, we have eigenvalues <m>\lda = -1,\ 2</m> and <m>3</m> with eigenvectors
+              For <m>B^T</m>, we have eigenvalues <m>\lambda  = -1,\ 2</m> and <m>3</m> with eigenvectors
               <me>
                 \vx = x_3 \bbm -1\\0\\1\ebm,\ x_3 \bbm -1\\1\\1\ebm\ \text{ and }\ x_3\bbm 0\\-2\\1\ebm\text{, respectively}
               </me>.
@@ -143,13 +143,13 @@
 
           <li>
             <p>
-              The trace of <m>\tta</m> is 6; the trace of <m>\ttb</m> is 4.
+              The trace of <m>A</m> is 6; the trace of <m>B</m> is 4.
             </p>
           </li>
 
           <li>
             <p>
-              The determinant of <m>\tta</m> is <m>-72</m>; the determinant of <m>\ttb</m> is <m>-6</m>.
+              The determinant of <m>A</m> is <m>-72</m>; the determinant of <m>B</m> is <m>-6</m>.
             </p>
           </li>
         </ol>
@@ -163,66 +163,66 @@
   </p>
 
   <paragraphs>
-    <title>The eigenvalues and eigenvectors of <m>\tta</m> and <m>\ttai</m></title>
+    <title>The eigenvalues and eigenvectors of <m>A</m> and <m>A^{-1}</m></title>
 
     <p>
-      In our example, we found that the eigenvalues of <m>\tta</m> are <m>-6</m> and 12;
-      the eigenvalues of <m>\ttai</m> are <m>-1/6</m> and <m>1/12</m>.
-      Also, the eigenvalues of <m>\ttb</m> are <m>-1</m>, 2 and 3,
-      whereas the eigenvalues of <m>\ttbi</m> are <m>-1</m>, <m>1/2</m> and <m>1/3</m>.
-      There is an obvious relationship here; it seems that if <m>\lda</m> is an eigenvalue of <m>\tta</m>,
-      then <m>1/\lda</m> will be an eigenvalue of <m>\ttai</m>.
+      In our example, we found that the eigenvalues of <m>A</m> are <m>-6</m> and 12;
+      the eigenvalues of <m>A^{-1}</m> are <m>-1/6</m> and <m>1/12</m>.
+      Also, the eigenvalues of <m>B</m> are <m>-1</m>, 2 and 3,
+      whereas the eigenvalues of <m>B^{-1}</m> are <m>-1</m>, <m>1/2</m> and <m>1/3</m>.
+      There is an obvious relationship here; it seems that if <m>\lambda </m> is an eigenvalue of <m>A</m>,
+      then <m>1/\lambda </m> will be an eigenvalue of <m>A^{-1}</m>.
       We can also note that the corresponding eigenvectors matched, too.
     </p>
 
     <p>
-      Why is this the case? Consider an invertible matrix <m>\tta</m> with eigenvalue <m>\lda\neq 0</m> and eigenvector<m>\vx</m>.
-      Then, by definition, we know that <m>\tta\vx = \lda\vx</m>. Now multiply both sides by <m>\ttai</m>:
+      Why is this the case? Consider an invertible matrix <m>A</m> with eigenvalue <m>\lambda \neq 0</m> and eigenvector<m>\vx</m>.
+      Then, by definition, we know that <m>A\vx = \lambda \vx</m>. Now multiply both sides by <m>A^{-1}</m>:
       <md>
-        <mrow>\tta\vx \amp  = \lda\vx</mrow>
-        <mrow>\ttai\tta\vx \amp  = \ttai\lda\vx</mrow>
-        <mrow>\vx \amp  = \lda\ttai\vx</mrow>
-        <mrow>\frac{1}{\lda}\vx \amp  = \ttai\vx </mrow>
+        <mrow>A\vx \amp  = \lambda \vx</mrow>
+        <mrow>A^{-1}A\vx \amp  = A^{-1}\lambda \vx</mrow>
+        <mrow>\vx \amp  = \lambda A^{-1}\vx</mrow>
+        <mrow>\frac{1}{\lambda }\vx \amp  = A^{-1}\vx </mrow>
       </md>.
     </p>
 
     <p>
-      We have just shown that <m>\ttai\vx = 1/\lda\vx</m>; this, by definition,
-      shows that <m>\vx</m> is an eigenvector of <m>\ttai</m> with eigenvalue <m>1/\lda</m>.
+      We have just shown that <m>A^{-1}\vx = 1/\lambda \vx</m>; this, by definition,
+      shows that <m>\vx</m> is an eigenvector of <m>A^{-1}</m> with eigenvalue <m>1/\lambda </m>.
       This explains the result we saw above. Of course, this all falls apart if <m>\lambda = 0</m>,
       but this is impossible for an invertible matrix: see <xref ref="thm-IMT_eigen"/> below.
     </p>
   </paragraphs>
 
   <paragraphs>
-    <title>The eigenvalues and eigenvectors of <m>\tta</m> and <m>\ttat</m></title>
+    <title>The eigenvalues and eigenvectors of <m>A</m> and <m>A^T</m></title>
 
     <p>
-      Our example showed that <m>\tta</m> and <m>\ttat</m> had the same eigenvalues but different (but somehow similar) eigenvectors;
-      it also showed that <m>\ttb</m> and <m>\ttbt</m> had the same eigenvalues but unrelated eigenvectors. Why is this?
+      Our example showed that <m>A</m> and <m>A^T</m> had the same eigenvalues but different (but somehow similar) eigenvectors;
+      it also showed that <m>B</m> and <m>B^T</m> had the same eigenvalues but unrelated eigenvectors. Why is this?
     </p>
 
     <p>
       We can answer the eigenvalue question relatively easily;
       it follows from the properties of the determinant and the transpose. Recall the following two facts:
       <ol>
-        <li><m>(\tta +\ttb)^T = \ttat + \ttbt</m> (<xref ref="thm-transpose"/>)</li>
-        <li><m>\det{\tta} = \det{\ttat}</m> (<xref ref="thm-determinant_properties"/>)</li>
+        <li><m>(A +B)^T = A^T + B^T</m> (<xref ref="thm-transpose"/>)</li>
+        <li><m>\det{A} = \det{A^T}</m> (<xref ref="thm-determinant_properties"/>)</li>
       </ol>
     </p>
 
     <p>
       We find the eigenvalues of a matrix by computing the characteristic polynomial;
-      that is, we find <m>\det{\tta - \lda\tti}</m>. What is the characteristic polynomial of <m>\ttat</m>? Consider:
+      that is, we find <m>\det{A - \lambda I}</m>. What is the characteristic polynomial of <m>A^T</m>? Consider:
       <md>
-        <mrow>\det{\ttat - \lda\tti} \amp  = \det{\ttat - \lda\tti^T} \quad \text{since } \tti = \tti^T</mrow>
-        <mrow> \amp  = \det{(\tta - \lda\tti)^T}  \quad (<xref ref="thm-transpose"/>)</mrow>
-        <mrow> \amp  = \det{\tta-\lda\tti}   \quad (<xref ref="thm-determinant_properties"/>)</mrow>
+        <mrow>\det{A^T - \lambda I} \amp  = \det{A^T - \lambda I^T} \quad \text{since } I = I^T</mrow>
+        <mrow> \amp  = \det{(A - \lambda I)^T}  \quad (<xref ref="thm-transpose"/>)</mrow>
+        <mrow> \amp  = \det{A-\lambda I}   \quad (<xref ref="thm-determinant_properties"/>)</mrow>
       </md>.
     </p>
 
     <p>
-      So we see that the characteristic polynomial of <m>\ttat</m> is the same as that for <m>\tta</m>.
+      So we see that the characteristic polynomial of <m>A^T</m> is the same as that for <m>A</m>.
       Therefore they have the same eigenvalues.
     </p>
 
@@ -232,11 +232,11 @@
   </paragraphs>
 
   <paragraphs>
-    <title>The eigenvalues and eigenvectors of <m>\tta</m> and the trace</title>
+    <title>The eigenvalues and eigenvectors of <m>A</m> and the trace</title>
 
     <p>
-      Note that the eigenvalues of <m>\tta</m> are <m>-6</m> and 12, and the trace is 6;
-      the eigenvalues of <m>\ttb</m> are <m>-1</m>, 2 and 3, and the trace of <m>\ttb</m> is 4.
+      Note that the eigenvalues of <m>A</m> are <m>-6</m> and 12, and the trace is 6;
+      the eigenvalues of <m>B</m> are <m>-1</m>, 2 and 3, and the trace of <m>B</m> is 4.
       Do we notice any relationship?
     </p>
 
@@ -252,39 +252,39 @@
     <p>
       Suppose <m>A</m> is an <m>n\times n</m> matrix with no complex eigenvalues
       (that is, the characteristic polynomial can be completely factored over the real numbers).
-      When this is the case, it turns out that we can find a square matrix <m>\ttp</m> such that
-      <m>\ttpi\tta\ttp</m> is an upper triangular matrix with the eigenvalues of <m>\tta</m> on the diagonal.
+      When this is the case, it turns out that we can find a square matrix <m>P</m> such that
+      <m>P^{-1}AP</m> is an upper triangular matrix with the eigenvalues of <m>A</m> on the diagonal.
       (We unfortunately do not have the time to prove this, or to explain how the matrix <m>P</m> is determined.)
     </p>
 
     <p>
-      Now, recall from <xref ref="thm-trace"/> that <m>\tr(\tta\ttb) = \tr(\ttb\tta)</m>.
-      Since <m>\ttpi\tta\ttp</m> is upper-triangular, we know that <m>\tr(\ttpi\tta\ttp)</m>
+      Now, recall from <xref ref="thm-trace"/> that <m>\tr(AB) = \tr(BA)</m>.
+      Since <m>P^{-1}AP</m> is upper-triangular, we know that <m>\tr(P^{-1}AP)</m>
       is the sum of the eigenvalues; also, using our <xref ref="thm-trace"/>,
-      we know that <m>\tr(\ttpi\tta\ttp) =  \tr(\ttpi\ttp\tta) =  \tr(\tta)</m>.
-      Thus the trace of <m>\tta</m> is the sum of the eigenvalues.
-      It turns out that this result remains true when <m>\tta</m> has complex eigenvalues,
+      we know that <m>\tr(P^{-1}AP) =  \tr(P^{-1}PA) =  \tr(A)</m>.
+      Thus the trace of <m>A</m> is the sum of the eigenvalues.
+      It turns out that this result remains true when <m>A</m> has complex eigenvalues,
       and the proof is similar, except that the entries of the matrix <m>P</m> will be complex numbers.
     </p>
   </paragraphs>
 
   <paragraphs>
-    <title>The eigenvalues and eigenvectors of <m>\tta</m> and the determinant</title>
+    <title>The eigenvalues and eigenvectors of <m>A</m> and the determinant</title>
 
     <p>
-      Again, the eigenvalues of <m>\tta</m> are <m>-6</m> and 12, and the determinant of <m>\tta</m> is <m>-72</m>.
-      The eigenvalues of <m>\ttb</m> are <m>-1</m>, 2 and 3; the determinant of <m>\ttb</m> is <m>-6</m>.
+      Again, the eigenvalues of <m>A</m> are <m>-6</m> and 12, and the determinant of <m>A</m> is <m>-72</m>.
+      The eigenvalues of <m>B</m> are <m>-1</m>, 2 and 3; the determinant of <m>B</m> is <m>-6</m>.
       It seems as though the product of the eigenvalues is the determinant.
     </p>
 
     <p>
       This is indeed true; we defend this with our argument from above.
       We know that the determinant of a triangular matrix is the product of the diagonal elements.
-      Therefore, given a matrix <m>\tta</m>, we can find <m>\ttp</m> such that <m>\ttpi\tta\ttp</m>
-      is upper triangular with the eigenvalues of <m>\tta</m> on the diagonal.
-      Thus <m>\det{\ttpi\tta\ttp}</m> is the product of the eigenvalues.
-      Using <xref ref="thm-determinant_properties"/>, we know that <m>\det{\ttpi\tta\ttp} = \det{\ttpi\ttp\tta} = \det{\tta}</m>.
-      Thus the determinant of <m>\tta</m> is the product of the eigenvalues.
+      Therefore, given a matrix <m>A</m>, we can find <m>P</m> such that <m>P^{-1}AP</m>
+      is upper triangular with the eigenvalues of <m>A</m> on the diagonal.
+      Thus <m>\det{P^{-1}AP}</m> is the product of the eigenvalues.
+      Using <xref ref="thm-determinant_properties"/>, we know that <m>\det{P^{-1}AP} = \det{P^{-1}PA} = \det{A}</m>.
+      Thus the determinant of <m>A</m> is the product of the eigenvalues.
     </p>
   </paragraphs>
 
@@ -313,13 +313,13 @@
       <p>
         <idx><h>eigenvalue</h><h>properties</h></idx>
 
-        Let <m>\tta</m> be an <m>n\times n</m> invertible matrix. The following are true:
+        Let <m>A</m> be an <m>n\times n</m> invertible matrix. The following are true:
         <ol>
-          <li>If <m>\tta</m> is triangular, then the diagonal elements of <m>\tta</m> are the eigenvalues of <m>\tta</m>.</li>
-          <li>If is an eigenvalue of <m>\tta</m> with eigenvector<m>\vx</m>, then <m>\frac{1}{\lda}</m> is an eigenvalue of <m>\ttai</m> with eigenvector<m>\vx</m>.</li>
-          <li>If is an eigenvalue of \tta\, then is an eigenvalue of \ttat.</li>
-          <li>The sum of the eigenvalues of <m>\tta</m> is equal to <m>\tr(\tta)</m>, the trace of <m>\tta</m>.</li>
-          <li>The product of the eigenvalues of <m>\tta</m> is the equal to <m>\det{\tta}</m>, the determinant of <m>\tta</m>.</li>
+          <li>If <m>A</m> is triangular, then the diagonal elements of <m>A</m> are the eigenvalues of <m>A</m>.</li>
+          <li>If is an eigenvalue of <m>A</m> with eigenvector<m>\vx</m>, then <m>\frac{1}{\lambda }</m> is an eigenvalue of <m>A^{-1}</m> with eigenvector <m>\vx</m>.</li>
+          <li>If is an eigenvalue of <m>A</m>, then is an eigenvalue of <m>A^T</m>.</li>
+          <li>The sum of the eigenvalues of <m>A</m> is equal to <m>\tr(A)</m>, the trace of <m>A</m>.</li>
+          <li>The product of the eigenvalues of <m>A</m> is the equal to <m>\det{A}</m>, the determinant of <m>A</m>.</li>
         </ol>
       </p>
     </statement>
@@ -333,26 +333,26 @@
     <title>Eigenvalues of a non-invertible matrix</title>
     <statement>
       <p>
-        Find the eigenvalues and eigenvectors of the matrix <m>\tta = \bbm 1\amp 2\\1\amp 2\ebm</m>.
+        Find the eigenvalues and eigenvectors of the matrix <m>A = \bbm 1\amp 2\\1\amp 2\ebm</m>.
       </p>
     </statement>
     <solution>
       <p>
-        To find the eigenvalues, we compute <m>\det{\tta-\lda\tti}</m>:
+        To find the eigenvalues, we compute <m>\det{A-\lambda I}</m>:
         <md>
-          <mrow>\det{\tta-\lda\tti} \amp = \bvm 1-\lda \amp  2\\1\amp 2-\lda \evm</mrow>
-          <mrow>          \amp = (1-\lda)(2-\lda)-2</mrow>
-          <mrow>          \amp = \lda^2-3\lda</mrow>
-          <mrow>          \amp = \lda(\lda-3)</mrow>
+          <mrow>\det{A-\lambda I} \amp = \bvm 1-\lambda  \amp  2\\1\amp 2-\lambda  \evm</mrow>
+          <mrow>          \amp = (1-\lambda )(2-\lambda )-2</mrow>
+          <mrow>          \amp = \lambda ^2-3\lambda </mrow>
+          <mrow>          \amp = \lambda (\lambda -3)</mrow>
         </md>
       </p>
 
       <p>
-        Our eigenvalues are therefore <m>\lda =  0, 3</m>.
+        Our eigenvalues are therefore <m>\lambda  =  0, 3</m>.
       </p>
 
       <p>
-        For <m>\lda = 0</m>, we find the eigenvectors:
+        For <m>\lambda  = 0</m>, we find the eigenvectors:
         <me>
           \bbm 1 \amp 2 \amp 0\\1\amp 2\amp 0\ebm \quad \overrightarrow{\text{rref}}\quad \bbm 1\amp 2\amp 0\\0\amp 0\amp 0\ebm
         </me>.
@@ -366,7 +366,7 @@
       </p>
 
       <p>
-        For <m>\lda = 3</m>, we find the eigenvectors:
+        For <m>\lambda  = 3</m>, we find the eigenvectors:
         <me>
           \bbm-2 \amp 2 \amp 0\\ 1\amp -1\amp 0 \ebm \quad \overrightarrow{\text{rref}}\quad \bbm 1\amp -1\amp 0\\0\amp 0\amp 0\ebm
         </me>.
@@ -382,19 +382,19 @@
   </example>
 
   <p>
-    One interesting thing about the above example is that we see that 0 is an eigenvalue of <m>\tta</m>;
+    One interesting thing about the above example is that we see that 0 is an eigenvalue of <m>A</m>;
     we have not officially encountered this before. Does this mean anything significant?
   </p>
 
   <p>
-    Think about what an eigenvalue of 0 means: there exists an nonzero vector <m>\vx</m> where <m>\tta\vx = 0\vx = \zero</m>.
-    That is, we have a nontrivial solution to <m>\tta\vx = \zero</m>. We know this only happens when <m>\tta</m> is not invertible.
+    Think about what an eigenvalue of 0 means: there exists an nonzero vector <m>\vx</m> where <m>A\vx = 0\vx = \zero</m>.
+    That is, we have a nontrivial solution to <m>A\vx = \zero</m>. We know this only happens when <m>A</m> is not invertible.
   </p>
 
   <p>
-    So if <m>\tta</m> is invertible, there is no nontrivial solution to <m>\tta\vx=\zero</m>,
-    and hence 0 <em>is not</em> an eigenvalue of <m>\tta</m>. If <m>\tta</m> is not invertible,
-    then there is a nontrivial solution to <m>\tta\vx=\zero</m>, and hence 0 <em>is</em> an eigenvalue of <m>\tta</m>.
+    So if <m>A</m> is invertible, there is no nontrivial solution to <m>A\vx=\zero</m>,
+    and hence 0 <em>is not</em> an eigenvalue of <m>A</m>. If <m>A</m> is not invertible,
+    then there is a nontrivial solution to <m>A\vx=\zero</m>, and hence 0 <em>is</em> an eigenvalue of <m>A</m>.
     This leads us to our final addition to the Invertible Matrix Theorem.
   </p>
 
@@ -404,36 +404,36 @@
       <p>
         <idx><h>Invertible Matrix Theorem</h></idx>
 
-        Let <m>\tta</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
+        Let <m>A</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
         <ol marker="(a)">
           <li>
             <p>
-              <m>\tta</m> is invertible.
+              <m>A</m> is invertible.
             </p>
           </li>
           <li>
             <p>
-              The equation <m>\ttaxo</m> has exactly one solution (namely, <m>\vx = \zero</m>).
+              The equation <m>A\vx = \zero</m> has exactly one solution (namely, <m>\vx = \zero</m>).
             </p>
           </li>
           <li>
             <p>
-              The reduced row echelon form of <m>\tta</m> is <m>\tti</m>.
+              The reduced row echelon form of <m>A</m> is <m>I</m>.
             </p>
           </li>
           <li>
             <p>
-              The equation <m>\ttaxb</m> has exactly one solution for every <m>n\times 1</m> vector<m>\vb</m>.
+              The equation <m>A\vx = \vb</m> has exactly one solution for every <m>n\times 1</m> vector<m>\vb</m>.
             </p>
           </li>
           <li>
             <p>
-              There exists a matrix <m>\ttc</m> such that <m>\tta\ttc = \tti</m>.
+              There exists a matrix <m>C</m> such that <m>AC = I</m>.
             </p>
           </li>
           <li>
             <p>
-              There exists a matrix <m>\ttb</m> such that <m>\ttb\tta = \tti</m>.
+              There exists a matrix <m>B</m> such that <m>BA = I</m>.
             </p>
           </li>
           <li>
@@ -443,7 +443,7 @@
           </li>
           <li>
             <p>
-              <m>\tta</m> does not have an eigenvalue of 0.
+              <m>A</m> does not have an eigenvalue of 0.
             </p>
           </li>
         </ol>
@@ -475,7 +475,7 @@
   </p>
 
   <p>
-    So how are eigenvalues found? There are <em>iterative</em> processes that can progressively transform a matrix <m>\tta</m>
+    So how are eigenvalues found? There are <em>iterative</em> processes that can progressively transform a matrix <m>A</m>
     into another matrix that is <em>almost</em> an upper triangular matrix (the entries below the diagonal are almost zero)
     where the entries on the diagonal are the eigenvalues. The more iterations one performs, the better the approximation is.
   </p>
@@ -496,31 +496,31 @@
 
       <introduction>
         <p>
-          A matrix <m>\tta</m> is given.
+          A matrix <m>A</m> is given.
           <ol marker="(a)">
             <li>
               <p>
-                Find the eigenvalues of <m>\tta</m>, and for each eigenvalue, find an eigenvector.
+                Find the eigenvalues of <m>A</m>, and for each eigenvalue, find an eigenvector.
               </p>
             </li>
             <li>
               <p>
-                Do the same for <m>\ttat</m>.
+                Do the same for <m>A^T</m>.
               </p>
             </li>
             <li>
               <p>
-                Do the same for <m>\ttai</m>.
+                Do the same for <m>A^{-1}</m>.
               </p>
             </li>
             <li>
               <p>
-                Find <m>\tr(\tta)</m>.
+                Find <m>\tr(A)</m>.
               </p>
             </li>
             <li>
               <p>
-                Find <m>\det{\tta}</m>.
+                Find <m>\det{A}</m>.
               </p>
             </li>
           </ol>
@@ -539,20 +539,20 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\lda_1 = 1</m> with <m>\vx[1] = \bbm 4\\1\ebm</m>;
-                   <m>\lda_2 = 4</m> with <m>\vx[2] = \bbm 1\\1\ebm</m>
+                  <m>\lambda _1 = 1</m> with <m>\vx[1] = \bbm 4\\1\ebm</m>;
+                   <m>\lambda _2 = 4</m> with <m>\vx[2] = \bbm 1\\1\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\lda_1 = 1</m> with <m>\vx[1] = \bbm-1\\1\ebm</m>;
-                  <m>\lda_2 = 4</m> with <m>\vx[2] = \bbm-1\\4\ebm</m>
+                  <m>\lambda _1 = 1</m> with <m>\vx[1] = \bbm-1\\1\ebm</m>;
+                  <m>\lambda _2 = 4</m> with <m>\vx[2] = \bbm-1\\4\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\lda_1 = 1/4</m> with <m>\vx[1] = \bbm 1\\1\ebm</m>;
-                  <m>\lda_2 = 1</m> with <m>\vx[2] = \bbm 4\\1\ebm</m>
+                  <m>\lambda _1 = 1/4</m> with <m>\vx[1] = \bbm 1\\1\ebm</m>;
+                  <m>\lambda _2 = 1</m> with <m>\vx[2] = \bbm 4\\1\ebm</m>
                 </p>
               </li>
               <li>
@@ -581,20 +581,20 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\lda_1 = -4</m> with <m>\vx[1] = \bbm 7\\1\ebm</m>;
-                  <m>\lda_2 = 5</m> with <m>\vx[2] = \bbm-2\\1\ebm</m>
+                  <m>\lambda _1 = -4</m> with <m>\vx[1] = \bbm 7\\1\ebm</m>;
+                  <m>\lambda _2 = 5</m> with <m>\vx[2] = \bbm-2\\1\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\lda_1 = -4</m> with <m>\vx[1] = \bbm 1\\2\ebm</m>;
-                  <m>\lda_2 = 5</m> with <m>\vx[2] = \bbm-1\\7\ebm</m>
+                  <m>\lambda _1 = -4</m> with <m>\vx[1] = \bbm 1\\2\ebm</m>;
+                  <m>\lambda _2 = 5</m> with <m>\vx[2] = \bbm-1\\7\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\lda_1 = -1/4</m> with <m>\vx[1] = \bbm 7\\1\ebm</m>;
-                  <m>\lda_2 = 1/5</m> with <m>\vx[2] = \bbm-2\\1\ebm</m>
+                  <m>\lambda _1 = -1/4</m> with <m>\vx[1] = \bbm 7\\1\ebm</m>;
+                  <m>\lambda _2 = 1/5</m> with <m>\vx[2] = \bbm-2\\1\ebm</m>
                 </p>
               </li>
               <li>
@@ -623,19 +623,19 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\lda_1 = -1</m> with <m>\vx[1] = \bbm-5\\1\ebm</m>;
-                  <m>\lda_2 = 0</m> with <m>\vx[2] = \bbm-6\\1\ebm</m>
+                  <m>\lambda _1 = -1</m> with <m>\vx[1] = \bbm-5\\1\ebm</m>;
+                  <m>\lambda _2 = 0</m> with <m>\vx[2] = \bbm-6\\1\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\lda_1 = -1</m> with <m>\vx[1] = \bbm 1\\6\ebm</m>;
-                  <m>\lda_2 = 0</m> with <m>\vx[2] = \bbm 1\\5\ebm</m>
+                  <m>\lambda _1 = -1</m> with <m>\vx[1] = \bbm 1\\6\ebm</m>;
+                  <m>\lambda _2 = 0</m> with <m>\vx[2] = \bbm 1\\5\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\tta</m> is not invertible.
+                  <m>A</m> is not invertible.
                 </p>
               </li>
               <li>
@@ -664,20 +664,20 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\lda_1 = 4</m> with <m>\vx[1] = \bbm 9\\1\ebm</m>;
-                  <m>\lda_2 = 5</m> with <m>\vx[2] = \bbm 8\\1\ebm</m>
+                  <m>\lambda _1 = 4</m> with <m>\vx[1] = \bbm 9\\1\ebm</m>;
+                  <m>\lambda _2 = 5</m> with <m>\vx[2] = \bbm 8\\1\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\lda_1 = 4</m> with <m>\vx[1] = \bbm-1\\8\ebm</m>;
-                  <m>\lda_2 = 5</m> with <m>\vx[2] = \bbm-1\\9\ebm</m>
+                  <m>\lambda _1 = 4</m> with <m>\vx[1] = \bbm-1\\8\ebm</m>;
+                  <m>\lambda _2 = 5</m> with <m>\vx[2] = \bbm-1\\9\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\lda_1 = 1/4</m> with <m>\vx[1] = \bbm 9\\1\ebm</m>;
-                  <m>\lda_2 = 1/5</m> with <m>\vx[2] = \bbm 8\\1\ebm</m>
+                  <m>\lambda _1 = 1/4</m> with <m>\vx[1] = \bbm 9\\1\ebm</m>;
+                  <m>\lambda _2 = 1/5</m> with <m>\vx[2] = \bbm 8\\1\ebm</m>
                 </p>
               </li>
               <li>
@@ -706,25 +706,25 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\lda_1 = -4</m> with <m>\vx[1] = \bbm-7\\-7\\6\ebm</m>;
-                  <m>\lda_2 = 3</m> with <m>\vx[2] = \bbm 0\\0\\1\ebm</m>;
-                  <m>\lda_3 = 4</m> with <m>\vx[3] = \bbm 9\\1\\22\ebm</m>
+                  <m>\lambda _1 = -4</m> with <m>\vx[1] = \bbm-7\\-7\\6\ebm</m>;
+                  <m>\lambda _2 = 3</m> with <m>\vx[2] = \bbm 0\\0\\1\ebm</m>;
+                  <m>\lambda _3 = 4</m> with <m>\vx[3] = \bbm 9\\1\\22\ebm</m>
                 </p>
               </li>
 
               <li>
                 <p>
-                  <m>\lda_1 = -4</m> with <m>\vx[1] = \bbm-1\\9\\0\ebm</m>;
-                  <m>\lda_2 = 3</m> with <m>\vx[2] = \bbm-20\\26\\7\ebm</m>;
-                  <m>\lda_3 = 4</m> with <m>\vx[3] = \bbm-1\\1\\0\ebm</m>
+                  <m>\lambda _1 = -4</m> with <m>\vx[1] = \bbm-1\\9\\0\ebm</m>;
+                  <m>\lambda _2 = 3</m> with <m>\vx[2] = \bbm-20\\26\\7\ebm</m>;
+                  <m>\lambda _3 = 4</m> with <m>\vx[3] = \bbm-1\\1\\0\ebm</m>
                 </p>
               </li>
 
               <li>
                 <p>
-                  <m>\lda_1 = -1/4</m> with <m>\vx[1] = \bbm-7\\-7\\6\ebm</m>;
-                  <m>\lda_2 = 1/3</m> with <m>\vx[2] = \bbm 0\\0\\1\ebm</m>;
-                  <m>\lda_3 = 1/4</m> with <m>\vx[3] = \bbm 9\\1\\22\ebm</m>
+                  <m>\lambda _1 = -1/4</m> with <m>\vx[1] = \bbm-7\\-7\\6\ebm</m>;
+                  <m>\lambda _2 = 1/3</m> with <m>\vx[2] = \bbm 0\\0\\1\ebm</m>;
+                  <m>\lambda _3 = 1/4</m> with <m>\vx[3] = \bbm 9\\1\\22\ebm</m>
                 </p>
               </li>
 
@@ -755,25 +755,25 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\lda_1 = -5</m> with <m>\vx[1] = \bbm-5\\1\\2\ebm</m>;
-                  <m>\lda_2 = -3</m> with <m>\vx[2] = \bbm 0\\0\\1\ebm</m>;
-                  <m>\lda_3 = 5</m> with <m>\vx[3] = \bbm 20\\4\\3\ebm</m>
+                  <m>\lambda _1 = -5</m> with <m>\vx[1] = \bbm-5\\1\\2\ebm</m>;
+                  <m>\lambda _2 = -3</m> with <m>\vx[2] = \bbm 0\\0\\1\ebm</m>;
+                  <m>\lambda _3 = 5</m> with <m>\vx[3] = \bbm 20\\4\\3\ebm</m>
                 </p>
               </li>
 
               <li>
                 <p>
-                  <m>\lda_1 = -5</m> with <m>\vx[1] = \bbm-1\\5\\0\ebm</m>;
-                  <m>\lda_2 = -3</m> with <m>\vx[2] = \bbm 1\\-11\\8\ebm</m>;
-                  <m>\lda_3 = 5</m> with <m>\vx[3] = \bbm 1\\5\\0\ebm</m>
+                  <m>\lambda _1 = -5</m> with <m>\vx[1] = \bbm-1\\5\\0\ebm</m>;
+                  <m>\lambda _2 = -3</m> with <m>\vx[2] = \bbm 1\\-11\\8\ebm</m>;
+                  <m>\lambda _3 = 5</m> with <m>\vx[3] = \bbm 1\\5\\0\ebm</m>
                 </p>
               </li>
 
               <li>
                 <p>
-                  <m>\lda_1 = -1/5</m> with <m>\vx[1] = \bbm-5\\1\\2\ebm</m>;
-                  <m>\lda_2 = -1/3</m> with <m>\vx[2] = \bbm 0\\0\\1\ebm</m>;
-                  <m>\lda_3 = 1/5</m> with <m>\vx[3] = \bbm 20\\4\\3\ebm</m>
+                  <m>\lambda _1 = -1/5</m> with <m>\vx[1] = \bbm-5\\1\\2\ebm</m>;
+                  <m>\lambda _2 = -1/3</m> with <m>\vx[2] = \bbm 0\\0\\1\ebm</m>;
+                  <m>\lambda _3 = 1/5</m> with <m>\vx[3] = \bbm 20\\4\\3\ebm</m>
                 </p>
               </li>
 

@@ -19,8 +19,8 @@
       <p>
         <idx><h>cofactor</h><h>expansion</h></idx>
 
-        Let <m>\tta</m> be an <m>n\times n</m> matrix.
-        The determinant of <m>\tta</m> can be computed using cofactor expansion along any row or column of <m>\tta</m>.
+        Let <m>A</m> be an <m>n\times n</m> matrix.
+        The determinant of <m>A</m> can be computed using cofactor expansion along any row or column of <m>A</m>.
       </p>
     </statement>
   </theorem>
@@ -59,7 +59,7 @@
       <p>
         Find the determinant of
         <me>
-          \tta = \bbm 1 \amp 2 \amp 0\amp 9\\2\amp -3\amp 0\amp 5\\7\amp 2\amp 3\amp 8\\-4\amp 1\amp 0\amp 2\ebm
+          A = \bbm 1 \amp 2 \amp 0\amp 9\\2\amp -3\amp 0\amp 5\\7\amp 2\amp 3\amp 8\\-4\amp 1\amp 0\amp 2\ebm
         </me>.
       </p>
     </statement>
@@ -100,7 +100,7 @@
       <p>
         Find the determinant of
         <me>
-          \tta = \bbm 1 \amp 2 \amp 3\amp 4\amp 5\\0\amp 6\amp 7\amp 8\amp 9\\0\amp 0\amp 10\amp 11\amp 12\\0\amp 0\amp 0\amp 13\amp 14\\0\amp 0\amp 0\amp 0\amp 15\ebm
+          A = \bbm 1 \amp 2 \amp 3\amp 4\amp 5\\0\amp 6\amp 7\amp 8\amp 9\\0\amp 0\amp 10\amp 11\amp 12\\0\amp 0\amp 0\amp 13\amp 14\\0\amp 0\amp 0\amp 0\amp 15\ebm
         </me>.
       </p>
     </statement>
@@ -176,9 +176,9 @@
       <p>
         Let
         <me>
-          \tta = \bbm 1 \amp 2\\3 \amp 4\ebm
+          A = \bbm 1 \amp 2\\3 \amp 4\ebm
         </me>.
-        Let <m>\ttb</m> be formed from <m>\tta</m> by doing one of the following elementary row operations:
+        Let <m>B</m> be formed from <m>A</m> by doing one of the following elementary row operations:
         <ol>
           <li><m>2R_1+R_2\rightarrow R_2</m></li>
           <li><m>5R_1 \rightarrow R_1</m></li>
@@ -193,25 +193,25 @@
       </p>
 
       <p>
-        Let <m>\ttb</m> be formed by performing the first row operation on <m>\tta</m>; thus
+        Let <m>B</m> be formed by performing the first row operation on <m>A</m>; thus
         <me>
-          \ttb = \bbm 1 \amp 2\\5 \amp 8\ebm
+          B = \bbm 1 \amp 2\\5 \amp 8\ebm
         </me>.
         It is clear that <m>\det(B) = -2</m>, the same as <m>\det(A)</m>.
       </p>
 
       <p>
-        Now let <m>\ttb</m> be formed by performing the second elementary row operation on <m>\tta</m>; that is,
+        Now let <m>B</m> be formed by performing the second elementary row operation on <m>A</m>; that is,
         <me>
-          \ttb = \bbm 5 \amp 10\\3 \amp 4\ebm
+          B = \bbm 5 \amp 10\\3 \amp 4\ebm
         </me>.
         We can see that <m>\det(B) = -10</m>, which is <m>5\cdot\det(A)</m>.
       </p>
 
       <p>
-        Finally, let <m>\ttb</m> be formed by the third row operation given; swap the two rows of <m>\tta</m>. We see that
+        Finally, let <m>B</m> be formed by the third row operation given; swap the two rows of <m>A</m>. We see that
         <me>
-          \ttb = \bbm 3 \amp 4\\1 \amp 2\ebm
+          B = \bbm 3 \amp 4\\1 \amp 2\ebm
         </me>
         and that <m>\det(B) = 2</m>, which is <m>(-1)\cdot\det(A)</m>.
       </p>
@@ -232,12 +232,12 @@
         <idx><h>elementary row operations</h><h>and determinants</h></idx>
         <idx><h>determinant</h><h>and elementary row operations</h></idx>
 
-        Let <m>\tta</m> be an <m>n\times n</m> matrix and let <m>\ttb</m>
-        be formed by performing one elementary row operation on <m>\tta</m>.
+        Let <m>A</m> be an <m>n\times n</m> matrix and let <m>B</m>
+        be formed by performing one elementary row operation on <m>A</m>.
         <ol>
-          <li>If <m>\ttb</m> is formed from <m>\tta</m> by adding a scalar multiple of one row to another, then <m>\det(B)=\det(A)</m>.</li>
-          <li>If <m>\ttb</m> is formed from <m>\tta</m> by multiplying one row of <m>\tta</m> by a scalar <m>k</m>, then <m>\det(B) = k\cdot\det(A)</m>.</li>
-          <li>If <m>\ttb</m> is formed from <m>\tta</m> by interchanging two rows of <m>\tta</m>, then <m>\det(B) = -\det(A)</m>.</li>
+          <li>If <m>B</m> is formed from <m>A</m> by adding a scalar multiple of one row to another, then <m>\det(B)=\det(A)</m>.</li>
+          <li>If <m>B</m> is formed from <m>A</m> by multiplying one row of <m>A</m> by a scalar <m>k</m>, then <m>\det(B) = k\cdot\det(A)</m>.</li>
+          <li>If <m>B</m> is formed from <m>A</m> by interchanging two rows of <m>A</m>, then <m>\det(B) = -\det(A)</m>.</li>
         </ol>
       </p>
     </statement>
@@ -253,14 +253,14 @@
       <p>
         Let
         <me>
-          \tta = \bbm 1 \amp 2 \amp 1\\0\amp 1\amp 1\\1\amp 1\amp 1\ebm
+          A = \bbm 1 \amp 2 \amp 1\\0\amp 1\amp 1\\1\amp 1\amp 1\ebm
         </me>.
         Compute <m>\det(A)</m>, then find the determinants of the following matrices by inspection using
         <xref ref="thm-determinant_row_operations"/>.
         <me>
-          \ttb = \bbm 1 \amp 1 \amp 1\\1\amp 2\amp 1\\0\amp 1\amp 1\ebm\quad
-          \ttc = \bbm 1\amp 2\amp 1\\0\amp 1\amp 1\\7\amp 7\amp 7\ebm\quad
-          \ttd = \bbm 1\amp -1\amp -2\\0\amp 1\amp 1\\1\amp 1\amp 1\ebm
+          B = \bbm 1 \amp 1 \amp 1\\1\amp 2\amp 1\\0\amp 1\amp 1\ebm\quad
+          C = \bbm 1\amp 2\amp 1\\0\amp 1\amp 1\\7\amp 7\amp 7\ebm\quad
+          D = \bbm 1\amp -1\amp -2\\0\amp 1\amp 1\\1\amp 1\amp 1\ebm
         </me>.
       </p>
     </statement>
@@ -271,18 +271,18 @@
       </p>
 
       <p>
-        To compute <m>\det(B)</m>, notice that the rows of <m>\tta</m> were rearranged to form <m>\ttb</m>.
+        To compute <m>\det(B)</m>, notice that the rows of <m>A</m> were rearranged to form <m>B</m>.
         There are different ways to describe what happened; saying <m>R_1\leftrightarrow R_2</m>
-        was followed by <m>R_1\leftrightarrow R_3</m> produces <m>\ttb</m> from <m>\tta</m>.
+        was followed by <m>R_1\leftrightarrow R_3</m> produces <m>B</m> from <m>A</m>.
         Since there were <em>two</em> row swaps, <m>\det(B) = (-1)(-1)\det(A) = \det(A) = 1</m>.
       </p>
 
       <p>
-        Notice that <m>\ttc</m> is formed from <m>\tta</m> by multiplying the third row by 7. Thus <m>\det(C) = 7\cdot\det(A) = 7</m>.
+        Notice that <m>C</m> is formed from <m>A</m> by multiplying the third row by 7. Thus <m>\det(C) = 7\cdot\det(A) = 7</m>.
       </p>
 
       <p>
-        It takes a little thought, but we can form <m>\ttd</m> from <m>\tta</m> by the operation <m>-3R_2+R_1\rightarrow R_1</m>.
+        It takes a little thought, but we can form <m>D</m> from <m>A</m> by the operation <m>-3R_2+R_1\rightarrow R_1</m>.
         This type of elementary row operation does not change determinants, so <m>\det(D) = \det(A)</m>.
       </p>
     </solution>
@@ -292,7 +292,7 @@
     <title>Effect of elementary row operations on the determinant</title>
     <statement>
       <p>
-        The matrix <m>\ttb</m> was formed from <m>\tta</m> using the following elementary row operations,
+        The matrix <m>B</m> was formed from <m>A</m> using the following elementary row operations,
         though not necessarily in this order. Find <m>\det(A)</m>.
       </p>
 
@@ -315,7 +315,7 @@
     </statement>
     <solution>
       <p>
-        It doesn't take too much work to compute <m>\det\ttb=24</m>.
+        It doesn't take too much work to compute <m>\det B=24</m>.
         In looking at our list of elementary row operations,
         we see that only the first three have an effect on the determinant.
         Therefore
@@ -331,7 +331,7 @@
   </example>
 
   <p>
-    In the previous example, we may have been tempted to <q>rebuild</q> <m>\tta</m>
+    In the previous example, we may have been tempted to <q>rebuild</q> <m>A</m>
     using the elementary row operations and then computing the determinant.
     This can be done, but in general it is a bad idea; it takes too much work and it is too easy to make a mistake.
   </p>
@@ -362,15 +362,15 @@
     <title>Reducing a determinant to triangular form</title>
     <statement>
       <p>
-        Find the determinant of <m>\tta</m> by first putting <m>\tta</m> into a triangular form, where
+        Find the determinant of <m>A</m> by first putting <m>A</m> into a triangular form, where
         <me>
-          \tta = \bbm 2 \amp 4 \amp -2\\-1\amp -2\amp 5\\3\amp 2\amp 1\ebm
+          A = \bbm 2 \amp 4 \amp -2\\-1\amp -2\amp 5\\3\amp 2\amp 1\ebm
         </me>.
       </p>
     </statement>
     <solution>
       <p>
-        In putting <m>\tta</m> into a triangular form, we need not worry about getting leading 1s,
+        In putting <m>A</m> into a triangular form, we need not worry about getting leading 1s,
         but it does tend to make our life easier as we work out a problem by hand. So let's scale the first row by <m>1/2</m>:
         <me>
           \frac 12R_1 \rightarrow R_1 \qquad \bbm 1\amp 2\amp -1\\-1\amp -2\amp 5\\3\amp 2\amp 1\ebm
@@ -386,30 +386,30 @@
       </p>
 
       <p>
-        Let's name this last matrix <m>\ttb</m>.
-        The determinant of <m>\ttb</m> is easy to compute as it is triangular; <m>\det(\ttb) = -16</m>.
-        We can use this to find <m>\det(\tta)</m>.
+        Let's name this last matrix <m>B</m>.
+        The determinant of <m>B</m> is easy to compute as it is triangular; <m>\det(B) = -16</m>.
+        We can use this to find <m>\det(A)</m>.
       </p>
 
       <p>
-        Recall the steps we used to transform <m>\tta</m> into <m>\ttb</m>. They are:
+        Recall the steps we used to transform <m>A</m> into <m>B</m>. They are:
         <me>
           \begin{matrix}\frac 12R_1 \rightarrow R_1\\R_1 + R_2 \rightarrow R_2\\-3R_1+R_3\rightarrow R_3\\R_2  \leftrightarrow R_3\end{matrix}
         </me>
       </p>
 
       <p>
-        The first operation multiplied a row of <m>\tta</m> by <m>\frac 12</m>.
-        This means that the resulting matrix had a determinant that was <m>\frac12</m> the determinant of <m>\tta</m>.
+        The first operation multiplied a row of <m>A</m> by <m>\frac 12</m>.
+        This means that the resulting matrix had a determinant that was <m>\frac12</m> the determinant of <m>A</m>.
       </p>
 
       <p>
         The next two operations did not affect the determinant at all.
         The last operation, the row swap, changed the sign. Combining these effects, we know that
         <me>
-          -16 = \det(\ttb)= (-1)\frac12\det(\tta)
+          -16 = \det(B)= (-1)\frac12\det(A)
         </me>.
-        Solving for <m>\det(\tta)</m> we have that <m>\det(\tta)=32</m>.
+        Solving for <m>\det(A)</m> we have that <m>\det(A)=32</m>.
       </p>
     </solution>
   </example>
@@ -494,40 +494,40 @@
       <p>
         Let
         <me>
-          \tta = \bbm 1 \amp 2\\3 \amp 4\ebm \ \text{and} \ \ttb = \bbm 2\amp 1\\ 3\amp 5\ebm
+          A = \bbm 1 \amp 2\\3 \amp 4\ebm \ \text{and} \ B = \bbm 2\amp 1\\ 3\amp 5\ebm
         </me>.
-        Find the determinants of the matrices <m>\tta</m>, <m>\ttb</m>, <m>\tta-\ttb</m>, <m>3\tta</m>,
-        <m>\tta\ttb</m>, <m>\ttat</m>, and <m>\ttai</m>. Can you find any connections between these values?
+        Find the determinants of the matrices <m>A</m>, <m>B</m>, <m>A-B</m>, <m>3A</m>,
+        <m>AB</m>, <m>A^T</m>, and <m>A^{-1}</m>. Can you find any connections between these values?
       </p>
     </statement>
     <solution>
       <p>
         We can quickly compute that <m>\det(A) = -2</m> and <m>\det(B) = 7</m>.
         <md>
-          <mrow>\det(\tta-\ttb) \amp = \det\left(\bbm 1\amp 2\\3\amp 4\ebm-\bbm 2\amp 1\\ 3\amp 5\ebm\right)</mrow>
+          <mrow>\det(A-B) \amp = \det\left(\bbm 1\amp 2\\3\amp 4\ebm-\bbm 2\amp 1\\ 3\amp 5\ebm\right)</mrow>
           <mrow>\amp = \bvm -1\amp 1\\0\amp -1\evm</mrow>
           <mrow>\amp = 1</mrow>
         </md>.
-        It's tough to find a connection between <m>\det(\tta-\ttb)</m>, <m>\det(A)</m> and  <m>\det(B)</m>.
+        It's tough to find a connection between <m>\det(A-B)</m>, <m>\det(A)</m> and  <m>\det(B)</m>.
       </p>
 
       <p>
         <md>
-          <mrow>\det(3\tta) \amp = \bvm 3\amp 6\\9\amp 12\evm</mrow>
+          <mrow>\det(3A) \amp = \bvm 3\amp 6\\9\amp 12\evm</mrow>
           <mrow>\amp = -18</mrow>
         </md>.
-        We can figure this one out; multiplying one row of <m>\tta</m> by 3 increases the determinant by a factor of 3;
+        We can figure this one out; multiplying one row of <m>A</m> by 3 increases the determinant by a factor of 3;
         doing it again (and hence multiplying both rows by 3) increases the determinant again by a factor of 3.
-        Therefore <m>\det(3\tta) = 3\cdot3\cdot\det(A)</m>, or <m>3^2\cdot\det(A)</m>.
+        Therefore <m>\det(3A) = 3\cdot3\cdot\det(A)</m>, or <m>3^2\cdot\det(A)</m>.
       </p>
 
       <p>
         <md>
-          <mrow>\det(\tta\ttb) \amp = \det\left(\bbm 1\amp 2\\3\amp 4\ebm\bbm 2\amp 1\\ 3\amp 5\ebm\right)</mrow>
+          <mrow>\det(AB) \amp = \det\left(\bbm 1\amp 2\\3\amp 4\ebm\bbm 2\amp 1\\ 3\amp 5\ebm\right)</mrow>
           <mrow>\amp =	\bvm 8\amp 11\\18 \amp  23\evm</mrow>
           <mrow>\amp = -14</mrow>
         </md>.
-        This one seems clear; <m>\det(\tta\ttb) = \det(A)\det(B)</m>.
+        This one seems clear; <m>\det(AB) = \det(A)\det(B)</m>.
       </p>
 
       <p>
@@ -536,8 +536,8 @@
           <mrow>\amp =	-2</mrow>
         </md>.
         Obviously <m>\det(A^T) = \det(A)</m>; is this always going to be the case?
-        If we think about it, we can see that the cofactor expansion along the first <em>row</em> of <m>\tta</m>
-        will give us the same result as the cofactor expansion along the first <em>column</em> of <m>\ttat</m>.
+        If we think about it, we can see that the cofactor expansion along the first <em>row</em> of <m>A</m>
+        will give us the same result as the cofactor expansion along the first <em>column</em> of <m>A^T</m>.
       </p>
 
       <p>
@@ -558,8 +558,8 @@
     <p>
       Seeing that expansion along the first row agrees with expansion along the
       first column can be a bit tricky to think out in your head.
-      Try it with a 3<m>\times 3</m> matrix <m>\tta</m> and see how it works.
-      All the <m>2\times 2</m> submatrices that are created in <m>\ttat</m> are the transpose of those found in <m>\tta</m>;
+      Try it with a 3<m>\times 3</m> matrix <m>A</m> and see how it works.
+      All the <m>2\times 2</m> submatrices that are created in <m>A^T</m> are the transpose of those found in <m>A</m>;
       this doesn't matter since it is easy to see that the determinant isn't affected by the transpose in a <m>2\times 2</m> matrix.
     </p>
   </aside>
@@ -605,11 +605,11 @@
       <p>
         <idx><h>determinant</h><h>properties</h></idx>
 
-        Let <m>\tta</m> and <m>\ttb</m> be <m>n\times n</m> matrices and let <m>k</m> be a scalar. The following are true:
+        Let <m>A</m> and <m>B</m> be <m>n\times n</m> matrices and let <m>k</m> be a scalar. The following are true:
         <ol>
           <li><m>\det(kA) = k^n\cdot\det(A)</m></li>
           <li><m>\det(A^T) = \det(A)</m></li>
-          <li><m>\det(\tta\ttb) = \det(A)\det(B)</m></li>
+          <li><m>\det(AB) = \det(A)\det(B)</m></li>
         </ol>
       </p>
     </statement>
@@ -682,36 +682,36 @@
       <p>
         <idx><h>Invertible Matrix Theorem</h></idx>
 
-        Let <m>\tta</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
+        Let <m>A</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
         <ol marker="(a)">
           <li>
             <p>
-              <m>\tta</m> is invertible.
+              <m>A</m> is invertible.
             </p>
           </li>
           <li>
             <p>
-              The equation <m>\ttaxo</m> has exactly one solution (namely, <m>\vx = \zero</m>).
+              The equation <m>A\vx = \zero</m> has exactly one solution (namely, <m>\vx = \zero</m>).
             </p>
           </li>
           <li>
             <p>
-              The reduced row echelon form of <m>\tta</m> is <m>\tti</m>.
+              The reduced row echelon form of <m>A</m> is <m>I</m>.
             </p>
           </li>
           <li>
             <p>
-              The equation <m>\ttaxb</m> has exactly one solution for every <m>n\times 1</m> vector<m>\vb</m>.
+              The equation <m>A\vx = \vb</m> has exactly one solution for every <m>n\times 1</m> vector<m>\vb</m>.
             </p>
           </li>
           <li>
             <p>
-              There exists a matrix <m>\ttc</m> such that <m>\tta\ttc = \tti</m>.
+              There exists a matrix <m>C</m> such that <m>AC = I</m>.
             </p>
           </li>
           <li>
             <p>
-              There exists a matrix <m>\ttb</m> such that <m>\ttb\tta = \tti</m>.
+              There exists a matrix <m>B</m> such that <m>BA = I</m>.
             </p>
           </li>
           <li>
@@ -916,35 +916,35 @@
 
       <introduction>
         <p>
-          A matrix <m>\ttm</m> and <m>\det(\ttm)</m> are given.
-          Matrices <m>\tta</m>, <m>\ttb</m> and <m>\ttc</m> are formed by performing operations on <m>\ttm</m>.
-          Determine the determinants of <m>\tta</m>, <m>\ttb</m> and <m>\ttc</m> using
+          A matrix <m>M</m> and <m>\det(M)</m> are given.
+          Matrices <m>A</m>, <m>B</m> and <m>C</m> are formed by performing operations on <m>M</m>.
+          Determine the determinants of <m>A</m>, <m>B</m> and <m>C</m> using
           <xref ref="thm-determinant_row_operations"/> and <xref ref="thm-determinant_properties"/>,
-          and indicate the operations used to form <m>\tta</m>, <m>\ttb</m> and <m>\ttc</m>.
+          and indicate the operations used to form <m>A</m>, <m>B</m> and <m>C</m>.
         </p>
       </introduction>
 
       <exercise>
         <statement>
           <p>
-            <m>\ttm=\bbm 9\amp 7\amp 8\\  1\amp 3\amp 7\\  6\amp 3\amp 3\ebm </m>,
-            <m>\det(\ttm)=45</m>.
+            <m>M=\bbm 9\amp 7\amp 8\\  1\amp 3\amp 7\\  6\amp 3\amp 3\ebm </m>,
+            <m>\det(M)=45</m>.
             <ol>
               <li>
                 <p>
-                  <m>\tta = \bbm 18 \amp 14 \amp 16\\  1\amp 3\amp 7\\  6\amp 3\amp 3\ebm</m>
+                  <m>A = \bbm 18 \amp 14 \amp 16\\  1\amp 3\amp 7\\  6\amp 3\amp 3\ebm</m>
                 </p>
               </li>
 
               <li>
                 <p>
-                  <m>\ttb = \bbm 9\amp 7\amp 8\\  1\amp 3\amp 7\\  96\amp 73\amp 83\ebm</m>
+                  <m>B = \bbm 9\amp 7\amp 8\\  1\amp 3\amp 7\\  96\amp 73\amp 83\ebm</m>
                 </p>
               </li>
 
               <li>
                 <p>
-                  <m>\ttc = \bbm 9\amp 1\amp 6\\  7\amp 3\amp 3\\  8\amp 7\amp 3\ebm</m>
+                  <m>C = \bbm 9\amp 1\amp 6\\  7\amp 3\amp 3\\  8\amp 7\amp 3\ebm</m>
                 </p>
               </li>
             </ol>
@@ -955,17 +955,17 @@
             <ol>
               <li>
                 <p>
-                  <m>\det(\tta) = 90</m>; <m>2R_1\rightarrow R_1</m>
+                  <m>\det(A) = 90</m>; <m>2R_1\rightarrow R_1</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\det(\ttb) = 45</m>; <m>10R_1+R_3\rightarrow R_3</m>
+                  <m>\det(B) = 45</m>; <m>10R_1+R_3\rightarrow R_3</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\det(\ttc) = 45</m>; <m>\ttc = \ttat</m>
+                  <m>\det(C) = 45</m>; <m>C = A^T</m>
                 </p>
               </li>
             </ol>
@@ -976,22 +976,22 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttm=\bbm 0\amp 3\amp 5\\  3\amp 1\amp 0\\  -2\amp -4\amp -1\ebm</m>,
-            <m>\det(\ttm)=-41</m>.
+            <m>M=\bbm 0\amp 3\amp 5\\  3\amp 1\amp 0\\  -2\amp -4\amp -1\ebm</m>,
+            <m>\det(M)=-41</m>.
             <ol>
               <li>
                 <p>
-                  <m>\tta = \bbm 0 \amp 3 \amp 5\\  -2\amp -4\amp -1\\  3\amp 1\amp 0\ebm</m>
+                  <m>A = \bbm 0 \amp 3 \amp 5\\  -2\amp -4\amp -1\\  3\amp 1\amp 0\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\ttb = \bbm 0\amp 3\amp 5\\  3\amp 1\amp 0\\  8\amp 16\amp 4\ebm</m>
+                  <m>B = \bbm 0\amp 3\amp 5\\  3\amp 1\amp 0\\  8\amp 16\amp 4\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\ttc = \bbm 3\amp 4\amp 5\\  3\amp 1\amp 0\\  -2\amp -4\amp -1\ebm</m>
+                  <m>C = \bbm 3\amp 4\amp 5\\  3\amp 1\amp 0\\  -2\amp -4\amp -1\ebm</m>
                 </p>
               </li>
             </ol>
@@ -1002,17 +1002,17 @@
             <ol>
               <li>
                 <p>
-                  <m>\det(\tta) = 41</m>; <m>R_2\leftrightarrow R_3</m>
+                  <m>\det(A) = 41</m>; <m>R_2\leftrightarrow R_3</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\det(\ttb) = 164</m>; <m>-4R_3\rightarrow R_3</m>
+                  <m>\det(B) = 164</m>; <m>-4R_3\rightarrow R_3</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\det(\ttc) = -41</m>; <m>R_2+R_1\rightarrow R_1</m>
+                  <m>\det(C) = -41</m>; <m>R_2+R_1\rightarrow R_1</m>
                 </p>
               </li>
             </ol>
@@ -1023,22 +1023,22 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttm=\bbm 5\amp 1\amp 5\\  4\amp 0\amp 2\\  0\amp 0\amp 4\ebm</m>,
-            <m>\det(\ttm)=-16</m>.
+            <m>M=\bbm 5\amp 1\amp 5\\  4\amp 0\amp 2\\  0\amp 0\amp 4\ebm</m>,
+            <m>\det(M)=-16</m>.
             <ol>
               <li>
                 <p>
-                  <m>\tta = \bbm 0 \amp 0 \amp 4\\  5\amp 1\amp 5\\  4\amp 0\amp 2\ebm</m>
+                  <m>A = \bbm 0 \amp 0 \amp 4\\  5\amp 1\amp 5\\  4\amp 0\amp 2\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\ttb = \bbm -5\amp -1\amp -5\\  -4\amp 0\amp -2\\  0\amp 0\amp 4\ebm</m>
+                  <m>B = \bbm -5\amp -1\amp -5\\  -4\amp 0\amp -2\\  0\amp 0\amp 4\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\ttc = \bbm 15\amp 3\amp 15\\  12\amp 0\amp 6\\  0\amp 0\amp 12\ebm</m>
+                  <m>C = \bbm 15\amp 3\amp 15\\  12\amp 0\amp 6\\  0\amp 0\amp 12\ebm</m>
                 </p>
               </li>
             </ol>
@@ -1049,17 +1049,17 @@
             <ol>
               <li>
                 <p>
-                  <m>\det(\tta) = -16</m>; <m>R_1\leftrightarrow R_2</m> then <m>R_1\leftrightarrow R_3</m>
+                  <m>\det(A) = -16</m>; <m>R_1\leftrightarrow R_2</m> then <m>R_1\leftrightarrow R_3</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\det(\ttb) = -16</m>; <m>-R_1\rightarrow R_1</m> and <m>-R_2\rightarrow R_2</m>
+                  <m>\det(B) = -16</m>; <m>-R_1\rightarrow R_1</m> and <m>-R_2\rightarrow R_2</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\det(\ttc) = -432</m>; <m>\ttc = 3*\ttm</m>
+                  <m>\det(C) = -432</m>; <m>C = 3*M</m>
                 </p>
               </li>
             </ol>
@@ -1070,22 +1070,22 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttm=\bbm 5\amp 4\amp 0\\  7\amp 9\amp 3\\  1\amp 3\amp 9\ebm</m>,
-            <m>\det(\ttm)=120</m>.
+            <m>M=\bbm 5\amp 4\amp 0\\  7\amp 9\amp 3\\  1\amp 3\amp 9\ebm</m>,
+            <m>\det(M)=120</m>.
             <ol>
               <li>
                 <p>
-                  <m>\tta = \bbm 1 \amp 3 \amp 9\\  7\amp 9\amp 3\\  5\amp 4\amp 0\ebm</m>
+                  <m>A = \bbm 1 \amp 3 \amp 9\\  7\amp 9\amp 3\\  5\amp 4\amp 0\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\ttb = \bbm 5\amp 4\amp 0\\  14\amp 18\amp 6\\  3\amp 9\amp 27\ebm</m>
+                  <m>B = \bbm 5\amp 4\amp 0\\  14\amp 18\amp 6\\  3\amp 9\amp 27\ebm</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\ttc = \bbm -5\amp -4\amp 0\\  -7\amp -9\amp -3\\  -1\amp -3\amp -9\ebm</m>
+                  <m>C = \bbm -5\amp -4\amp 0\\  -7\amp -9\amp -3\\  -1\amp -3\amp -9\ebm</m>
                 </p>
               </li>
             </ol>
@@ -1096,17 +1096,17 @@
             <ol>
               <li>
                 <p>
-                  <m>\det(\tta) = -120</m>; <m>R_1\leftrightarrow R_2</m> then <m>R_1\leftrightarrow R_3</m> then <m>R_2\leftrightarrow R_3</m>
+                  <m>\det(A) = -120</m>; <m>R_1\leftrightarrow R_2</m> then <m>R_1\leftrightarrow R_3</m> then <m>R_2\leftrightarrow R_3</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\det(\ttb) = 720</m>; <m>2R_2\rightarrow R_2</m> and <m>3R_3\rightarrow R_3</m>
+                  <m>\det(B) = 720</m>; <m>2R_2\rightarrow R_2</m> and <m>3R_3\rightarrow R_3</m>
                 </p>
               </li>
               <li>
                 <p>
-                  <m>\det(\ttc) = -120</m>; <m>\ttc = -\ttm</m>
+                  <m>\det(C) = -120</m>; <m>C = -M</m>
                 </p>
               </li>
             </ol>
@@ -1119,21 +1119,21 @@
 
       <introduction>
         <p>
-          Matrices <m>\tta</m> and <m>\ttb</m> are given. Verify part 3 of <xref ref="thm-determinant_properties"/>
-          by computing <m>\det(\tta)</m>, <m>\det(\ttb)</m> and <m>\det(\tta\ttb)</m>.
+          Matrices <m>A</m> and <m>B</m> are given. Verify part 3 of <xref ref="thm-determinant_properties"/>
+          by computing <m>\det(A)</m>, <m>\det(B)</m> and <m>\det(AB)</m>.
         </p>
       </introduction>
 
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 2 \amp 0\  1 \amp 2\ebm</m>,
-            <m>\ttb = \bbm 0\amp -4\\  1\amp 3\ebm</m>.
+            <m>A = \bbm 2 \amp 0\  1 \amp 2\ebm</m>,
+            <m>B = \bbm 0\amp -4\\  1\amp 3\ebm</m>.
           </p>
         </statement>
         <answer>
           <p>
-            <m>\det(\tta)=4</m>, <m>\det(\ttb)=4</m>, <m>\det(\tta\ttb)=16</m>
+            <m>\det(A)=4</m>, <m>\det(B)=4</m>, <m>\det(AB)=16</m>
           </p>
         </answer>
       </exercise>
@@ -1141,13 +1141,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 3 \amp -1\  4 \amp 1\ebm</m>,
-            <m>\ttb = \bbm -4\amp -1\\  -5\amp 3\ebm</m>.
+            <m>A = \bbm 3 \amp -1\  4 \amp 1\ebm</m>,
+            <m>B = \bbm -4\amp -1\\  -5\amp 3\ebm</m>.
           </p>
         </statement>
         <answer>
           <p>
-            <m>\det(\tta)=7</m>, <m>\det(\ttb)=-17</m>, <m>\det(\tta\ttb)=-119</m>
+            <m>\det(A)=7</m>, <m>\det(B)=-17</m>, <m>\det(AB)=-119</m>
           </p>
         </answer>
       </exercise>
@@ -1155,13 +1155,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -4 \amp 4\  5 \amp -2\ebm</m>,
-            <m>\ttb = \bbm -3\amp -4\\  5\amp -3\ebm</m>.
+            <m>A = \bbm -4 \amp 4\  5 \amp -2\ebm</m>,
+            <m>B = \bbm -3\amp -4\\  5\amp -3\ebm</m>.
           </p>
         </statement>
         <answer>
           <p>
-            <m>\det(\tta)=-12</m>, <m>\det(\ttb)=29</m>, <m>\det(\tta\ttb)=-348</m>
+            <m>\det(A)=-12</m>, <m>\det(B)=29</m>, <m>\det(AB)=-348</m>
           </p>
         </answer>
       </exercise>
@@ -1169,13 +1169,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -3 \amp -1\  2 \amp -3\ebm</m>,
-            <m>\ttb = \bbm 0\amp 0\\  4\amp -4\ebm</m>.
+            <m>A = \bbm -3 \amp -1\  2 \amp -3\ebm</m>,
+            <m>B = \bbm 0\amp 0\\  4\amp -4\ebm</m>.
           </p>
         </statement>
         <answer>
           <p>
-            <m>\det(\tta)=11</m>, <m>\det(\ttb)=0</m>, <m>\det(\tta\ttb)=0</m>
+            <m>\det(A)=11</m>, <m>\det(B)=0</m>, <m>\det(AB)=0</m>
           </p>
         </answer>
       </exercise>

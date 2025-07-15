@@ -31,17 +31,17 @@
   <p>
     Our work from the previous section allows us to find the matrix quickly. By looking at the picture, it is easy to see that <m>\veone</m> is moved to <m>\bbm 2\\0\ebm</m> and <m>\vetwo</m> is moved to <m>\bbm 1\\1\ebm</m>. Therefore, the transformation matrix should be
     <me>
-        \tta = \bbm 2 \amp 1\\0 \amp 1\ebm
+        A = \bbm 2 \amp 1\\0 \amp 1\ebm
     </me>.
   </p>
 
   <p>
-    <em>However</em>, look at <xref ref="fig-translation2"/> where the unit square is drawn after being transformed by <m>\tta</m>.
+    <em>However</em>, look at <xref ref="fig-translation2"/> where the unit square is drawn after being transformed by <m>A</m>.
     It is clear that we did not get the desired result; the unit square was not translated, but rather stretched/sheared in some way.
   </p>
 
   <figure xml:id="fig-translation2" vshift="0">
-    <caption>Actual transformation of the unit square by matrix <m>\tta</m></caption>
+    <caption>Actual transformation of the unit square by matrix <m>A</m></caption>
     <image width="60%">
       <shortdescription>A unit square on the left, and on the right, a parallelogram.</shortdescription>
       <latex-image label="img-translation2">
@@ -70,8 +70,8 @@
     We are used to functions like <m>f(x) = x^2</m>, where the input is a number and the output is another number.
     In the previous section, we learned about transformations (functions)
     where the input was a vector and the output was another vector.
-    If <m>\tta</m> is a <q>transformation matrix,</q> then we could create a function of the form <m>T(\vx) = \tta\vx</m>.
-    That is, a vector <m>\vx</m> is the input, and the output is <m>\vx</m> multiplied by <m>\tta</m>.
+    If <m>A</m> is a <q>transformation matrix,</q> then we could create a function of the form <m>T(\vx) = A\vx</m>.
+    That is, a vector <m>\vx</m> is the input, and the output is <m>\vx</m> multiplied by <m>A</m>.
   </p>
 
   <p>
@@ -89,9 +89,9 @@
 
   <p>
     To define a transformation where a 2D vector is transformed into another 2D vector
-    via multiplication by a <m>2\times 2</m> matrix <m>\tta</m>, we should write
+    via multiplication by a <m>2\times 2</m> matrix <m>A</m>, we should write
     <me>
-        T:\R^{2}\to\R^{2} \quad \text{ where } \quad T(\vx) = \tta\vx
+        T:\R^{2}\to\R^{2} \quad \text{ where } \quad T(\vx) = A\vx
     </me>.
   </p>
 
@@ -102,7 +102,7 @@
 
   <aside vshift="0">
     <p>
-      We use <m>T</m> instead of <m>f</m> to define the function <m>T(\vx)=\tta\vx</m>
+      We use <m>T</m> instead of <m>f</m> to define the function <m>T(\vx)=A\vx</m>
       to help differentiate it from <q>regular</q> functions.
       <q>Normally</q> functions are defined using lower case letters when the input is a number;
       when the input is a vector, we use upper case letters.
@@ -313,9 +313,9 @@
     <title>Identifying linear transformations</title>
     <statement>
       <p>
-        Determine whether or not the transformation <m>T:\R^{2}\to\R^{2}</m> is a linear transformation, where <m>T(\vx) = \tta\vx</m> and
+        Determine whether or not the transformation <m>T:\R^{2}\to\R^{2}</m> is a linear transformation, where <m>T(\vx) = A\vx</m> and
         <me>
-            \tta = \bbm 1 \amp 2\\3 \amp 4\ebm
+            A = \bbm 1 \amp 2\\3 \amp 4\ebm
         </me>.
       </p>
     </statement>
@@ -378,7 +378,7 @@
       <p>
         Consider <m>T(\vx+\vy)</m>. By the definition of <m>T</m>, we have
         <me>
-            T(\vx+\vy) = \tta(\vx+\vy)
+            T(\vx+\vy) = A(\vx+\vy)
         </me>.
       </p>
 
@@ -386,11 +386,11 @@
         By <xref ref="thm-matrix_multiplication"/>, part <xref ref="thm-mat_mult_dist"/>
         we state that the Distributive Property holds for matrix multiplication.
         (Recall that a vector is just a special type of matrix, so this theorem applies to matrix<ndash/>vector multiplication as well.)
-        So <m>\tta(\vx+\vy) = \tta\vx + \tta\vy</m>.
+        So <m>A(\vx+\vy) = A\vx + A\vy</m>.
         Recognize now that this last part is just <m>T(\vx) + T(\vy)</m>! We repeat the above steps, all together:
         <md>
-          <mrow>T(\vx+\vy)	\amp = \tta(\vx+\vy) \quad \text{ (by the definition of } T \text{ in this example)}</mrow>
-          <mrow> \amp = \tta\vx + \tta\vy \quad \text{ (by the Distributive Property)}</mrow>
+          <mrow>T(\vx+\vy)	\amp = A(\vx+\vy) \quad \text{ (by the definition of } T \text{ in this example)}</mrow>
+          <mrow> \amp = A\vx + A\vy \quad \text{ (by the Distributive Property)}</mrow>
           <mrow> \amp = T(\vx) + T(\vy) \quad \text{ (again, by the definition of } T)</mrow>
         </md>.
       </p>
@@ -402,8 +402,8 @@
       <p>
         The second part is satisfied in a similar fashion. Let <m>k</m> be a scalar, and consider:
         <md>
-          <mrow>T(k\vx)	\amp =	\tta(k\vx) \quad \text{ (by the definition of } T \text{ in this example)}</mrow>
-          <mrow> \amp =	k\tta\vx \quad \text{ (by <xref ref="thm-matrix_multiplication"/> part <xref ref="thm-mat_mult_scalar"/>)}</mrow>
+          <mrow>T(k\vx)	\amp =	A(k\vx) \quad \text{ (by the definition of } T \text{ in this example)}</mrow>
+          <mrow> \amp =	kA\vx \quad \text{ (by <xref ref="thm-matrix_multiplication"/> part <xref ref="thm-mat_mult_scalar"/>)}</mrow>
           <mrow> \amp = kT(\vx) \quad \text{ (again, by the definition of } T)</mrow>
         </md>
       </p>
@@ -421,10 +421,10 @@
 
   <p>
     First, consider how we proved the transformation in <xref ref="ex_lin_trans_2"/> was linear.
-    We defined <m>T</m> by matrix multiplication, that is, <m>T(\vx) = \tta\vx</m>.
+    We defined <m>T</m> by matrix multiplication, that is, <m>T(\vx) = A\vx</m>.
     We proved <m>T</m> was linear using properties of matrix multiplication <mdash/>
-    <em>we never considered the specific values of <m>\tta</m>!</em>
-    That is, we didn't just choose a good matrix for <m>T</m>; <em>any</em> matrix <m>\tta</m> would have worked.
+    <em>we never considered the specific values of <m>A</m>!</em>
+    That is, we didn't just choose a good matrix for <m>T</m>; <em>any</em> matrix <m>A</m> would have worked.
     This leads us to an important theorem. The first part we have essentially just proved;
     the second part we won't prove, although its truth is very powerful.
   </p>
@@ -436,14 +436,14 @@
         <ol>
           <li>
             <p>
-              Define <m>T:\R^{n}\to\R^{m}</m> by <m>T(\vx) = \tta\vx</m>,
-              where <m>\tta</m> is an <m>m\times n</m> matrix. Then <m>T</m> is a linear transformation.
+              Define <m>T:\R^{n}\to\R^{m}</m> by <m>T(\vx) = A\vx</m>,
+              where <m>A</m> is an <m>m\times n</m> matrix. Then <m>T</m> is a linear transformation.
             </p>
           </li>
           <li>
             <p>
               Let <m>T:\R^{n}\to\R^{m}</m> be any linear transformation.
-              Then there exists an unique <m>m\times n</m> matrix <m>\tta</m> such that <m>T(\vx) = \tta\vx</m>.
+              Then there exists an unique <m>m\times n</m> matrix <m>A</m> such that <m>T(\vx) = A\vx</m>.
             </p>
           </li>
         </ol>
@@ -464,8 +464,8 @@
         <idx><h>linear transformation</h><h>standard matrix of</h></idx>
 
         Let <m>T:\R^{n}\to\R^{m}</m> be a linear transformation.
-        By <xref ref="thm-linear_matrix"/>, there is a matrix <m>\tta</m> such that <m>T(\vx) = \tta\vx</m>.
-        This matrix <m>\tta</m> is called the <term>standard matrix of the linear transformation <m>T</m></term>,
+        By <xref ref="thm-linear_matrix"/>, there is a matrix <m>A</m> such that <m>T(\vx) = A\vx</m>.
+        This matrix <m>A</m> is called the <term>standard matrix of the linear transformation <m>T</m></term>,
         and is denoted <m>[\, T\, ]</m>.
       </p>
     </statement>
@@ -473,7 +473,7 @@
 
   <aside vshift="0">
     <p>
-      The matrix<ndash/>like brackets around <m>T</m> are intended to suggest that the standard matrix <m>\tta</m>
+      The matrix<ndash/>like brackets around <m>T</m> are intended to suggest that the standard matrix <m>A</m>
       is a matrix representative of the given transformation.
     </p>
   </aside>
@@ -609,11 +609,11 @@
 
     <p>
       How do these vectors help us find the standard matrix of a linear transformation? Recall again our work in the previous section.
-      There, we practised looking at the transformed unit square and deducing the standard transformation matrix <m>\tta</m>.
-      We did this by making the first column of <m>\tta</m> the vector where <m>\veone</m>
-      ended up and making the second column of <m>\tta</m> the vector where <m>\vetwo</m> ended up. One could represent this with:
+      There, we practised looking at the transformed unit square and deducing the standard transformation matrix <m>A</m>.
+      We did this by making the first column of <m>A</m> the vector where <m>\veone</m>
+      ended up and making the second column of <m>A</m> the vector where <m>\vetwo</m> ended up. One could represent this with:
       <me>
-          \tta = \bbm T(\veone)  \amp  T(\vetwo) \ebm = [\, T\, ].
+          A = \bbm T(\veone)  \amp  T(\vetwo) \ebm = [\, T\, ].
       </me>
     </p>
 
@@ -693,7 +693,7 @@
         <p>
           Thus
           <me>
-              \TT =\tta = \bbm 1 \amp 1 \amp 0 \\ 3 \amp  0\amp -1\\ 0\amp 2\amp 5\\ 4\amp 3\amp 2\ebm
+              \TT =A = \bbm 1 \amp 1 \amp 0 \\ 3 \amp  0\amp -1\\ 0\amp 2\amp 5\\ 4\amp 3\amp 2\ebm
           </me>.
         </p>
 
@@ -714,9 +714,9 @@
 
 
         <p>
-          Now compute <m>T(\vx)</m> by computing <m>\TT\vx = \tta\vx</m>.
+          Now compute <m>T(\vx)</m> by computing <m>\TT\vx = A\vx</m>.
           <me>
-            \tta\vx = \bbm 1 \amp 1 \amp 0 \\ 3 \amp  0\amp -1\\ 0\amp 2\amp 5\\ 4\amp 3\amp 2\ebm\bbm 1\\2\\3\ebm = \bbm 3\\0\\19\\16\ebm
+            A\vx = \bbm 1 \amp 1 \amp 0 \\ 3 \amp  0\amp -1\\ 0\amp 2\amp 5\\ 4\amp 3\amp 2\ebm\bbm 1\\2\\3\ebm = \bbm 3\\0\\19\\16\ebm
           </me>.
           They match! (Of course they do. That was the whole point.)
         </p>
@@ -789,12 +789,12 @@
         <p>
           Thus our transformation matrix <m>\TT</m> is
           <me>
-              \TT = \tta =\bbm 1 \amp 1 \amp 1\amp 1\\1\amp 2\amp 3\amp 4\ebm
+              \TT = A =\bbm 1 \amp 1 \amp 1\amp 1\\1\amp 2\amp 3\amp 4\ebm
           </me>.
         </p>
 
         <p>
-          As an example, consider a player who had 102 singles, 30 doubles, 8 triples and 14 home runs. By using <m>\tta</m>, we find that
+          As an example, consider a player who had 102 singles, 30 doubles, 8 triples and 14 home runs. By using <m>A</m>, we find that
           <me>
               \bbm 1 \amp 1 \amp 1\amp 1\\1\amp 2\amp 3\amp 4\ebm\bbm 102\\30\\8\\14\ebm = \bbm 154\\242\ebm,
           </me>

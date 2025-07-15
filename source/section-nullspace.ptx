@@ -343,7 +343,7 @@
     <p>
       Let's make a few observations about the previous example.
       Notice that we have three leading 1s, so <m>\operatorname{rank}(A) = 3</m>.
-      In particular, there is a leading 1 in each row, so we're guaranteed that the system <m>\ttaxb</m> is consistent,
+      In particular, there is a leading 1 in each row, so we're guaranteed that the system <m>A\vx = \vb</m> is consistent,
       no matter what the vector <m>\vec{b}</m> is.
       Since the number of pivot columns of <m>A</m> is equal to the number of leading 1s, we obtain the following result.
     </p>
@@ -369,7 +369,7 @@
     </p>
 
     <p>
-      The key observation here is that the question <q>Does <m>\ttaxb</m> have a solution?</q>
+      The key observation here is that the question <q>Does <m>A\vx = \vb</m> have a solution?</q>
       is equivalent to the question <q>Does the vector <m>\vec{b}</m> belong to <m>\operatorname{col}(A)</m>?</q>
       Unfortunately, while we may gain some insight from noticing that these questions are the same,
       we are no further ahead when it comes to answering them. Whatever version we prefer,
@@ -380,7 +380,7 @@
       Suppose we repeated <xref ref="ex_colspace"/> using the matrix <m>A</m> from <xref ref="ex_basic_sols"/>.
       Both cases involved a matrix of size <m>3\times 4</m>, but the matrix from <xref ref="ex_basic_sols"/> had rank 2,
       so the column space of <m>A</m> is only two-dimensional. In this case,
-      the system <m>\ttaxb</m> will be consistent if <m>\vec{b}</m> belongs to the span of the first two columns of <m>A</m>,
+      the system <m>A\vx = \vb</m> will be consistent if <m>\vec{b}</m> belongs to the span of the first two columns of <m>A</m>,
       and inconsistent otherwise.
     </p>
 
@@ -410,7 +410,7 @@
       (Why do it the hard way if the easy way works?
       Because if we're in any other case than a two-dimensional subspace of <m>\R^3</m>,
       the hard way is the only option we have!)
-      The hard way is to solve the equation <m>\ttaxb</m> for an <em>arbitrary</em>
+      The hard way is to solve the equation <m>A\vx = \vb</m> for an <em>arbitrary</em>
       vector <m>\vb = \bbm a\\b\\c\ebm</m>. As with the previous examples,
       we set up the augmented matrix and reduce:
       <me>
@@ -471,7 +471,7 @@
         <p>
           Determine the null space of the matrix
           <me>
-            \tta = \bbm 2  \amp  -3 \\ -2  \amp  3\ebm
+            A = \bbm 2  \amp  -3 \\ -2  \amp  3\ebm
           </me>.
         </p>
       </statement>
@@ -531,7 +531,7 @@
         </p>
 
         <figure xml:id="fig-null_sol_102" vshift="0">
-          <caption>The solution, as a line, to <m>\protect\tta\protect\vx=\protect\zero</m> in <xref ref="ex_null_sol_102"/></caption>
+          <caption>The solution, as a line, to <m>A\vx=\zero</m> in <xref ref="ex_null_sol_102"/></caption>
 
           <image>
             <shortdescription>A line through the origin with slope 1, and its direction vector v.</shortdescription>
@@ -739,9 +739,9 @@
         k + \operatorname{rank}(A) = n
       </me>,
       where <m>k</m> is the number of parameters in the general solution of <m>A\vx = \vec b</m>.
-      Now, we know from <xref ref="def-basic_sol"/> that the number of parameters in the general solution to <m>\ttaxb</m>
+      Now, we know from <xref ref="def-basic_sol"/> that the number of parameters in the general solution to <m>A\vx = \vb</m>
       is equal to the number of basic solutions to the system <m>A\vx = \vec 0</m>,
-      and that the basic solutions to <m>\ttaxo</m> form a basis for <m>\operatorname{null}(A)</m>. From this, we can conclude that
+      and that the basic solutions to <m>A\vx = \zero</m> form a basis for <m>\operatorname{null}(A)</m>. From this, we can conclude that
       <me>
         k = \dim \operatorname{null}(A)
       </me>.
@@ -756,7 +756,7 @@
         <p>
           Let
           <me>
-            \tta = \bbm 1 \amp -1 \amp 1\amp 3\\4\amp 2\amp 4\amp 6\ebm \quad \text{and} \quad \vb = \bbm 1\\10\ebm
+            A = \bbm 1 \amp -1 \amp 1\amp 3\\4\amp 2\amp 4\amp 6\ebm \quad \text{and} \quad \vb = \bbm 1\\10\ebm
           </me>.
           Determine:
           <ol>
@@ -776,7 +776,7 @@
       <solution>
         <p>
           We'll tackle the null space first.
-          We form the augmented matrix for the system <m>\ttaxo</m>, put it into reduced row echelon form, and interpret the result.
+          We form the augmented matrix for the system <m>A\vx = \zero</m>, put it into reduced row echelon form, and interpret the result.
           <me>
             \left[\begin{array}{cccc|c}1 \amp -1 \amp 1\amp 3\amp 0\\4\amp 2\amp 4\amp 6\amp 0\end{array}\right] \quad \arref \quad \left[\begin{array}{cccc|c}1\amp 0\amp 1\amp 2\amp 0\\0\amp 1\amp 0\amp -1\amp 0\end{array}\right]
           </me>
@@ -811,8 +811,8 @@
           <me>
             \operatorname{null}(A) = \operatorname{span}\{\vu, \vvv\}
           </me>.
-          It is easy to confirm that both <m>\vu</m> and <m>\vvv</m> are solutions to the linear system <m>\tta\vx=\zero</m>.
-          (Just multiply <m>\tta\vu</m> and <m>\tta\vvv</m> and see that both are \zero.)
+          It is easy to confirm that both <m>\vu</m> and <m>\vvv</m> are solutions to the linear system <m>A\vx=\zero</m>.
+          (Just multiply <m>A\vu</m> and <m>A\vvv</m> and see that both are \zero.)
           Since both are solutions to a homogeneous system of linear equations,
           any linear combination of <m>\vu</m> and <m>\vvv</m> will be a solution, too,
           so the vectors <m>\vu</m> and <m>\vvv</m> form a basis for the null space of <m>A</m>.
@@ -820,7 +820,7 @@
 
         <p>
           Now let's tackle the column space.
-          Determining whether or not <m>\vec b</m> belongs to the column space is the same as solving the system <m>\tta\vx = \vb</m>.
+          Determining whether or not <m>\vec b</m> belongs to the column space is the same as solving the system <m>A\vx = \vb</m>.
           Once again we put the associated augmented matrix into reduced row echelon form and interpret the results.
           <me>
             \left[\begin{array}{cccc|c}1 \amp -1 \amp 1\amp 3\amp 1\\4\amp 2\amp 4\amp 6\amp 10\end{array}\right] \quad \arref \quad \left[\begin{array}{cccc|c}1\amp 0\amp 1\amp 2\amp 2\\0\amp 1\amp 0\amp -1\amp 1\end{array}\right]
@@ -847,7 +847,7 @@
               <mrow> \amp =\bbm 2\\1\\0\\0\ebm+s\bbm-1\\0\\1\\0\ebm + t\bbm-2\\1\\0\\1\ebm</mrow>
               <mrow> \amp =\underbrace{\vec{x}_p}_{\text{particular solution}}+\underbrace{s\vu + t\vvv}_{\text{solution to homogeneous system}}</mrow>
           </md>.
-          Note that <m>\tta\vec{x}_p = \vb</m>; by itself, <m>\vec{x}_p</m> is a solution.
+          Note that <m>A\vec{x}_p = \vb</m>; by itself, <m>\vec{x}_p</m> is a solution.
           The fact that we have at least one vector <m>\vec{x}_p</m> such that <m>A\vec{x}_p=\vec{b}</m>
           tells us that <m>\vb</m> belongs to the range of the transformation <m>T(\vx) = A\vx</m>.
           The fact that there is more than one solution corresponds to the fact that the null space of <m>A</m> is non-trivial.

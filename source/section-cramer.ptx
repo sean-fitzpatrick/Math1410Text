@@ -20,16 +20,16 @@
         <p>
           <idx><h>Cramer's Rule</h></idx>
 
-          Let <m>\tta</m> be an <m>n\times n</m> matrix with <m>\det(A)\neq 0</m>
+          Let <m>A</m> be an <m>n\times n</m> matrix with <m>\det(A)\neq 0</m>
           and let  be an <m>n\times 1</m> column vector. Then the linear system
           <me>
-            \ttaxb
+            A\vx = \vb
           </me>
           has solution
           <me>
-            x_i = \frac{\det(\tta_i(\vb))}{\det(A)}
+            x_i = \frac{\det(A_i(\vb))}{\det(A)}
           </me>,
-          where <m>\tta_i(\vb)</m> is the matrix formed by replacing the <m>i</m>th column of <m>\tta</m> with <m>\vb</m>.
+          where <m>A_i(\vb)</m> is the matrix formed by replacing the <m>i</m>th column of <m>A</m> with <m>\vb</m>.
         </p>
       </statement>
     </theorem>
@@ -37,7 +37,7 @@
     <aside vshift="0">
       <p>
         The closest we came to motivating the determinant is that if <m>\det(A) =0</m>,
-        then we know that <m>\tta</m> is not invertible. But it seems that there may be easier ways to check.
+        then we know that <m>A</m> is not invertible. But it seems that there may be easier ways to check.
       </p>
 
       <p>
@@ -56,15 +56,15 @@
       <title>Using Cramer's Rule</title>
       <statement>
         <p>
-          Use Cramer's Rule to solve the linear system <m>\ttaxb</m> where
+          Use Cramer's Rule to solve the linear system <m>A\vx = \vb</m> where
           <me>
-            \tta = \bbm 1 \amp 5 \amp -3\\1\amp 4\amp 2\\2\amp -1\amp 0 \ebm \ \text{ and }\ \vb = \bbm-36\\-11\\7\ebm
+            A = \bbm 1 \amp 5 \amp -3\\1\amp 4\amp 2\\2\amp -1\amp 0 \ebm \ \text{ and }\ \vb = \bbm-36\\-11\\7\ebm
           </me>.
         </p>
       </statement>
       <solution>
         <p>
-          We first compute the determinant of <m>\tta</m> to see if we can apply Cramer's Rule.
+          We first compute the determinant of <m>A</m> to see if we can apply Cramer's Rule.
           <me>
             \det(A) = \bvm 1 \amp 5 \amp -3\\1\amp 4\amp 2\\2\amp -1\amp 0\evm  = 49
           </me>.
@@ -72,26 +72,26 @@
 
         <p>
           Since <m>\det(A)\neq 0</m>, we can apply Cramer's Rule.
-          Following <xref ref="thm-cramers_rule"/>, we compute <m>\det(\tta_1(\vb))</m>, <m>\det(\tta_2(\vb))</m> and <m>\det(\tta_3(\vb))</m>.
+          Following <xref ref="thm-cramers_rule"/>, we compute <m>\det(A_1(\vb))</m>, <m>\det(A_2(\vb))</m> and <m>\det(A_3(\vb))</m>.
         </p>
 
         <p>
           <me>
-            \det(\tta_1(\vb)) = \bvm  \mathbf{-36} \amp 5 \amp -3\\ \mathbf{-11}\amp 4\amp 2\\ \mathbf{7}\amp -1\amp 0 \evm  = 49
+            \det(A_1(\vb)) = \bvm  \mathbf{-36} \amp 5 \amp -3\\ \mathbf{-11}\amp 4\amp 2\\ \mathbf{7}\amp -1\amp 0 \evm  = 49
           </me>.
-          (We used a bold font to show where  replaced the first column of <m>\tta</m>.)
+          (We used a bold font to show where  replaced the first column of <m>A</m>.)
           <md>
-            <mrow>\det(\tta_2(\vb)) \amp = \bvm  1\amp  \mathbf{-36}\amp -3\\1\amp \mathbf{-11}\amp 2\\2\amp \mathbf{7}\amp 0\evm  = -245</mrow>
-            <mrow>\det(\tta_3(\vb)) \amp = \bvm   1\amp 5\amp \mathbf{-36}\\1\amp 4\amp \mathbf{-11}\\2\amp -1\amp  \mathbf{7}\evm  = 196</mrow>
+            <mrow>\det(A_2(\vb)) \amp = \bvm  1\amp  \mathbf{-36}\amp -3\\1\amp \mathbf{-11}\amp 2\\2\amp \mathbf{7}\amp 0\evm  = -245</mrow>
+            <mrow>\det(A_3(\vb)) \amp = \bvm   1\amp 5\amp \mathbf{-36}\\1\amp 4\amp \mathbf{-11}\\2\amp -1\amp  \mathbf{7}\evm  = 196</mrow>
           </md>.
         </p>
 
         <p>
           Therefore we can compute <m>\vx</m>:
           <md>
-            <mrow>x_1 \amp = \frac{\det(\tta_1(\vb))}{\det(A)} = \frac{49}{49} = 1</mrow>
-            <mrow>x_2 \amp = \frac{\det(\tta_2(\vb))}{\det(A)} = \frac{-245}{49} = -5</mrow>
-            <mrow>x_3 \amp = \frac{\det(\tta_3(\vb))}{\det(A)} = \frac{196}{49} = 4</mrow>
+            <mrow>x_1 \amp = \frac{\det(A_1(\vb))}{\det(A)} = \frac{49}{49} = 1</mrow>
+            <mrow>x_2 \amp = \frac{\det(A_2(\vb))}{\det(A)} = \frac{-245}{49} = -5</mrow>
+            <mrow>x_3 \amp = \frac{\det(A_3(\vb))}{\det(A)} = \frac{196}{49} = 4</mrow>
           </md>.
         </p>
 
@@ -108,26 +108,26 @@
       <title>Using Cramer's Rule</title>
       <statement>
         <p>
-          Use Cramer's Rule to solve the linear system <m>\ttaxb</m> where
+          Use Cramer's Rule to solve the linear system <m>A\vx = \vb</m> where
           <me>
-            \tta = \bbm 1 \amp 2\\3 \amp 4\ebm \ \text{ and } \ \vb = \bbm -1\\1\ebm
+            A = \bbm 1 \amp 2\\3 \amp 4\ebm \ \text{ and } \ \vb = \bbm -1\\1\ebm
           </me>.
         </p>
       </statement>
       <solution>
         <p>
-          The determinant of <m>\tta</m> is <m>-2</m>, so we can apply Cramer's Rule.
+          The determinant of <m>A</m> is <m>-2</m>, so we can apply Cramer's Rule.
           <md>
-            <mrow>\det(\tta_1(\vb)) \amp = \bvm  \mathbf{-1} \amp  2\\ \mathbf{1} \amp  4\evm  = -6</mrow>
-            <mrow>\det(\tta_2(\vb)) \amp = \bvm  1 \amp  \mathbf{-1}\\ 3 \amp  \mathbf{1} \evm  = 4</mrow>
+            <mrow>\det(A_1(\vb)) \amp = \bvm  \mathbf{-1} \amp  2\\ \mathbf{1} \amp  4\evm  = -6</mrow>
+            <mrow>\det(A_2(\vb)) \amp = \bvm  1 \amp  \mathbf{-1}\\ 3 \amp  \mathbf{1} \evm  = 4</mrow>
           </md>.
         </p>
 
         <p>
           Therefore
           <md>
-            <mrow>x_1 \amp = \frac{\det(\tta_1(\vb))}{\det(A)} = \frac{-6}{-2} = 3</mrow>
-            <mrow>x_2 \amp = \frac{\det(\tta_2(\vb))}{\det(A)} = \frac{4}{-2} = -2</mrow>
+            <mrow>x_1 \amp = \frac{\det(A_1(\vb))}{\det(A)} = \frac{-6}{-2} = 3</mrow>
+            <mrow>x_2 \amp = \frac{\det(A_2(\vb))}{\det(A)} = \frac{4}{-2} = -2</mrow>
           </md>,
           and
           <me>
@@ -139,11 +139,11 @@
 
     <p>
       We learned in <xref ref="sec-determinant_properties"/>
-      that when considering a linear system <m>\ttaxb</m> where <m>\tta</m> is square,
-      if <m>\det(A)\neq 0</m> then <m>\tta</m> is invertible and <m>\ttaxb</m> has exactly one solution.
+      that when considering a linear system <m>A\vx = \vb</m> where <m>A</m> is square,
+      if <m>\det(A)\neq 0</m> then <m>A</m> is invertible and <m>A\vx = \vb</m> has exactly one solution.
       We also stated in <xref ref="idea-solutions_invert"/> that if <m>\det(A) = 0</m>,
-      then <m>\tta</m> is not invertible and so therefore either <m>\ttaxb</m> has no solution or infinitely many solutions.
-      Our method of figuring out which of these cases applied was to form the augmented matrix <m>\bbm \tta \amp  \vb \ebm</m>,
+      then <m>A</m> is not invertible and so therefore either <m>A\vx = \vb</m> has no solution or infinitely many solutions.
+      Our method of figuring out which of these cases applied was to form the augmented matrix <m>\bbm A \amp  \vb \ebm</m>,
       put it into reduced row echelon form, and then interpret the results.
     </p>
 
@@ -424,16 +424,16 @@
 
       <introduction>
         <p>
-          Matrices <m>\tta</m> and <m>\vb</m> are given.
+          Matrices <m>A</m> and <m>\vb</m> are given.
           <ol marker="(a)">
             <li>
               <p>
-                Give <m>\det(\tta)</m> and <m>\det(\tta_i)</m> for all <m>i</m>.
+                Give <m>\det(A)</m> and <m>\det(A_i)</m> for all <m>i</m>.
               </p>
             </li>
             <li>
               <p>
-                Use Cramer's Rule to solve <m>\ttaxb</m>.
+                Use Cramer's Rule to solve <m>A\vx = \vb</m>.
                 If Cramer's Rule cannot be used to find the solution,
                 then state whether or not a solution exists.
               </p>
@@ -445,7 +445,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 3 \amp 0 \amp -3\  5\amp 4\amp 4\\  5\amp 5\amp -4\ebm</m>,
+            <m>A = \bbm 3 \amp 0 \amp -3\  5\amp 4\amp 4\\  5\amp 5\amp -4\ebm</m>,
             <m>\vb = \bbm 24\\  0\\ 31\ebm</m>.
           </p>
         </statement>
@@ -454,7 +454,7 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = -123</m>, <m>\det(\tta_1) = -492</m>, <m>\det(\tta_2) = 123</m>, <m>\det(\tta_3) = 492</m>
+                  <m>\det(A) = -123</m>, <m>\det(A_1) = -492</m>, <m>\det(A_2) = 123</m>, <m>\det(A_3) = 492</m>
                 </p>
               </li>
               <li>
@@ -470,7 +470,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 4 \amp -4 \amp 0\  5\amp 1\amp -1\\  3\amp -1\amp 2\ebm</m>,
+            <m>A = \bbm 4 \amp -4 \amp 0\  5\amp 1\amp -1\\  3\amp -1\amp 2\ebm</m>,
             <m>\vb = \bbm 16\\  22\\ 8\ebm</m>.
           </p>
         </statement>
@@ -479,7 +479,7 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = 56</m>, <m>\det(\tta_1) = 224</m>, <m>\det(\tta_2) = 0</m>, <m>\det(\tta_3) = -112</m>
+                  <m>\det(A) = 56</m>, <m>\det(A_1) = 224</m>, <m>\det(A_2) = 0</m>, <m>\det(A_3) = -112</m>
                 </p>
               </li>
               <li>
@@ -495,7 +495,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 1 \amp 0 \amp -10\  4\amp -3\amp -10\\  -9\amp 6\amp -2\ebm</m>,
+            <m>A = \bbm 1 \amp 0 \amp -10\  4\amp -3\amp -10\\  -9\amp 6\amp -2\ebm</m>,
             <m>\vb = \bbm -40\\  -94 \\  132\ebm</m>.
           </p>
         </statement>
@@ -504,7 +504,7 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = 96</m>, <m>\det(\tta_1) = -960</m>, <m>\det(\tta_2) = 768</m>, <m>\det(\tta_3) = 288</m>
+                  <m>\det(A) = 96</m>, <m>\det(A_1) = -960</m>, <m>\det(A_2) = 768</m>, <m>\det(A_3) = 288</m>
                 </p>
               </li>
               <li>
@@ -520,7 +520,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -6 \amp -7 \amp -7\  5\amp 4\amp 1\\  5\amp 4\amp 8\ebm </m>,
+            <m>A = \bbm -6 \amp -7 \amp -7\  5\amp 4\amp 1\\  5\amp 4\amp 8\ebm </m>,
             <m>\vb = \bbm 58\\  -35\\  -49\ebm</m>.
           </p>
         </statement>
@@ -529,7 +529,7 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = 77</m>, <m>\det(\tta_1) = -385</m>, <m>\det(\tta_2) = -154</m>, <m>\det(\tta_3) = -154</m>
+                  <m>\det(A) = 77</m>, <m>\det(A_1) = -385</m>, <m>\det(A_2) = -154</m>, <m>\det(A_3) = -154</m>
                 </p>
               </li>
               <li>
@@ -545,7 +545,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 9 \amp 5\  -4 \amp -7\ebm</m>,
+            <m>A = \bbm 9 \amp 5\  -4 \amp -7\ebm</m>,
             <m>\vb = \bbm -45\\  20\ebm</m>.
           </p>
         </statement>
@@ -554,7 +554,7 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = -43</m>, <m>\det(\tta_1) = 215</m>, <m>\det(\tta_2) = 0</m>
+                  <m>\det(A) = -43</m>, <m>\det(A_1) = 215</m>, <m>\det(A_2) = 0</m>
                 </p>
               </li>
               <li>
@@ -570,7 +570,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 0 \amp -6\  9 \amp -10\ebm</m>,
+            <m>A = \bbm 0 \amp -6\  9 \amp -10\ebm</m>,
             <m>\vb = \bbm 6\\  -17\ebm</m>.
           </p>
         </statement>
@@ -579,7 +579,7 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = 54</m>, <m>\det(\tta_1) = -162</m>, <m>\det(\tta_2) = -54</m>
+                  <m>\det(A) = 54</m>, <m>\det(A_1) = -162</m>, <m>\det(A_2) = -54</m>
                 </p>
               </li>
               <li>
@@ -596,7 +596,7 @@
        <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 2 \amp 10\  -1 \amp 3\ebm</m>,
+            <m>A = \bbm 2 \amp 10\  -1 \amp 3\ebm</m>,
             <m>\vb = \bbm 42\\  19\ebm</m>.
           </p>
         </statement>
@@ -605,7 +605,7 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = 16</m>, <m>\det(\tta_1) = -64</m>, <m>\det(\tta_2) = 80</m>
+                  <m>\det(A) = 16</m>, <m>\det(A_1) = -64</m>, <m>\det(A_2) = 80</m>
                 </p>
               </li>
               <li>
@@ -621,7 +621,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 7 \amp -7\  -7 \amp 9\ebm</m>,
+            <m>A = \bbm 7 \amp -7\  -7 \amp 9\ebm</m>,
             <m>\vb = \bbm 28\\  -26\ebm</m>.
           </p>
         </statement>
@@ -630,7 +630,7 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = 14</m>, <m>\det(\tta_1) = 70</m>, <m>\det(\tta_2) = 14</m>
+                  <m>\det(A) = 14</m>, <m>\det(A_1) = 70</m>, <m>\det(A_2) = 14</m>
                 </p>
               </li>
               <li>
@@ -645,7 +645,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -8 \amp 16\  10 \amp -20\ebm</m>,
+            <m>A = \bbm -8 \amp 16\  10 \amp -20\ebm</m>,
             <m>\vb = \bbm -48\\  60\ebm</m>.
           </p>
         </statement>
@@ -654,12 +654,12 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = 0</m>, <m>\det(\tta_1) = 0</m>, <m>\det(\tta_2) = 0</m>
+                  <m>\det(A) = 0</m>, <m>\det(A_1) = 0</m>, <m>\det(A_2) = 0</m>
                 </p>
               </li>
               <li>
                 <p>
-                  Infinite solutions exist.
+                  Infinitely many solutions exist.
                 </p>
               </li>
             </ol>
@@ -670,7 +670,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 7 \amp 14\  -2 \amp -4\ebm</m>,
+            <m>A = \bbm 7 \amp 14\  -2 \amp -4\ebm</m>,
             <m>\vb = \bbm -1\\  4\ebm</m>.
           </p>
         </statement>
@@ -679,7 +679,7 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = 0</m>, <m>\det(\tta_1) = -52</m>, <m>\det(\tta_2) = 26</m>
+                  <m>\det(A) = 0</m>, <m>\det(A_1) = -52</m>, <m>\det(A_2) = 26</m>
                 </p>
               </li>
               <li>
@@ -695,7 +695,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 4 \amp 9 \amp 3\  -5\amp -2\amp -13\\  -1\amp 10\amp -13\ebm</m>,
+            <m>A = \bbm 4 \amp 9 \amp 3\  -5\amp -2\amp -13\\  -1\amp 10\amp -13\ebm</m>,
             <m>\vb = \bbm -28\\  35\\  7\ebm</m>.
           </p>
         </statement>
@@ -704,12 +704,12 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det(\tta) = 0</m>, <m>\det(\tta_1) = 0</m>, <m>\det(\tta_2) = 0</m>, <m>\det(\tta_3) = 0</m>
+                  <m>\det(A) = 0</m>, <m>\det(A_1) = 0</m>, <m>\det(A_2) = 0</m>, <m>\det(A_3) = 0</m>
                 </p>
               </li>
               <li>
                 <p>
-                  Infinite solutions exist.
+                  Infinitely many solutions exist.
                 </p>
               </li>
             </ol>
@@ -720,7 +720,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 7 \amp -4 \amp 25\  -2\amp 1\amp -7\\  9\amp -7\amp 34\ebm</m>,
+            <m>A = \bbm 7 \amp -4 \amp 25\  -2\amp 1\amp -7\\  9\amp -7\amp 34\ebm</m>,
             <m>\vb = \bbm -1\\  -3\\ 5\ebm</m>.
           </p>
         </statement>
@@ -729,7 +729,7 @@
             <ol marker="(a)">
               <li>
                 <p>
-                  <m>\det{\tta} = 0</m>, <m>\det{\tta_1} = 147</m>, <m>\det{\tta_2} = -49</m>, <m>\det{\tta_3} = -49</m>
+                  <m>\det{A} = 0</m>, <m>\det{A_1} = 147</m>, <m>\det{A_2} = -49</m>, <m>\det{A_3} = -49</m>
                 </p>
               </li>
               <li>

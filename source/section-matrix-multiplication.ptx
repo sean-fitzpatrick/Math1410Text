@@ -163,40 +163,40 @@
       <p>
         <idx><h>matrix</h><h>multiplication</h></idx>
 
-        Let <m>\tta</m> be an <m>m\times r</m> matrix, and let <m>\ttb</m> be an <m>r\times n</m> matrix.
-        The <term>matrix product of <m>\tta</m> and \ttb</term>, denoted <m>\tta\cdot\ttb</m>,
-        or simply <m>\tta\ttb</m>, is the <m>m\times n</m> matrix <m>\ttm</m> whose entry in the
+        Let <m>A</m> be an <m>m\times r</m> matrix, and let <m>B</m> be an <m>r\times n</m> matrix.
+        The <term>matrix product</term> of <m>A</m> and <m>B</m>, denoted <m>A\cdot B</m>,
+        or simply <m>AB</m>, is the <m>m\times n</m> matrix <m>M</m> whose entry in the
         <m>i</m>th row and <m>j</m>th column is the product of the <m>i</m>th row of
-        <m>\tta</m> and the <m>j</m>th column of <m>\ttb</m>.
+        <m>A</m> and the <m>j</m>th column of <m>B</m>.
       </p>
     </statement>
   </definition>
 
   <p>
     It may help to illustrate it in this way.
-    Let matrix <m>\tta</m> have rows <m>\vec{a}_{1}</m>, <m>\vec{a}_{2}</m>, <m>\cdots</m>, <m>\vec{a}_{m}</m>
-    and let <m>\ttb</m> have columns  <m>\vec{b}_{1}</m>, <m>\vec{b}_{2}</m>, <m>\cdots</m>, <m>\vec{b}_{n}</m>.
-    Thus <m>\tta</m> looks like
+    Let matrix <m>A</m> have rows <m>\vec{a}_{1}</m>, <m>\vec{a}_{2}</m>, <m>\cdots</m>, <m>\vec{a}_{m}</m>
+    and let <m>B</m> have columns  <m>\vec{b}_{1}</m>, <m>\vec{b}_{2}</m>, <m>\cdots</m>, <m>\vec{b}_{n}</m>.
+    Thus <m>A</m> looks like
     <me>
       \bbm- \amp \vec{a}_{1} \amp -\\-\amp \vec{a}_{2}\amp -\\ \amp  \vdots \amp  \\ -\amp \vec{a}_{m}\amp -\ebm
     </me>,
     where the <q><m>-</m></q> symbols just serve as reminders that the <m>\vec{a}_{i}</m> represent rows,
-    and <m>\ttb</m> looks like
+    and <m>B</m> looks like
     <me>
       \bbm|\amp |\amp  \amp |\\\vec{b}_{1}\amp \vec{b}_{2}\amp \cdots\amp \vec{b}_{n}\\|\amp |\amp  \amp |\ebm
     </me>,
     where again, the <q><m>|</m></q> symbols just remind us that the <m>\vec{b}_{i}</m> represent column vectors. Then
     <me>
-      \tta\ttb = \bbm\vec{a}_{1}\vec{b}_{1}  \amp  \vec{a}_{1}\vec{b}_{2}  \amp  \cdots \amp  \vec{a}_{1}\vec{b}_{n}\\ \vec{a}_{2}\vec{b}_{1} \amp  \vec{a}_{2}\vec{b}_{2} \amp  \cdots \amp  \vec{a}_{2}\vec{b}_{n}\\ \vdots \amp  \vdots \amp  \ddots \amp  \vdots \\ \vec{a}_{m}\vec{b}_{1} \amp  \vec{a}_{m}\vec{b}_{2} \amp  \cdots \amp  \vec{a}_{m}\vec{b}_{n}\ebm
+      AB = \bbm\vec{a}_{1}\vec{b}_{1}  \amp  \vec{a}_{1}\vec{b}_{2}  \amp  \cdots \amp  \vec{a}_{1}\vec{b}_{n}\\ \vec{a}_{2}\vec{b}_{1} \amp  \vec{a}_{2}\vec{b}_{2} \amp  \cdots \amp  \vec{a}_{2}\vec{b}_{n}\\ \vdots \amp  \vdots \amp  \ddots \amp  \vdots \\ \vec{a}_{m}\vec{b}_{1} \amp  \vec{a}_{m}\vec{b}_{2} \amp  \cdots \amp  \vec{a}_{m}\vec{b}_{n}\ebm
     </me>.
   </p>
 
   <p>
-    Two quick notes about this definition. First, notice that in order to multiply <m>\tta</m> and <m>\ttb</m>,
-    the number of <em>columns</em> of <m>\tta</m> must be the same as the number of <em>rows</em> of <m>\ttb</m>
+    Two quick notes about this definition. First, notice that in order to multiply <m>A</m> and <m>B</m>,
+    the number of <em>columns</em> of <m>A</m> must be the same as the number of <em>rows</em> of <m>B</m>
     (we refer to these as the <q>inner dimensions</q>).
-    Secondly, the resulting matrix has the same number of <em>rows</em> as <m>\tta</m>
-    and the same number of <em>columns</em> as <m>\ttb</m> (we refer to these as the <q>outer dimensions</q>).
+    Secondly, the resulting matrix has the same number of <em>rows</em> as <m>A</m>
+    and the same number of <em>columns</em> as <m>B</m> (we refer to these as the <q>outer dimensions</q>).
     <me>
       \overbrace{(m\times\hspace{-38pt} \underbrace{r) \times (r}_\text{these inner dimensions must match}\hspace{-38pt}\times n)}^\text{final dimensions are the outer dimensions}
     </me>
@@ -216,43 +216,43 @@
     </statement>
     <solution>
       <p>
-        Let's call our first matrix <m>\tta</m> and the second <m>\ttb</m>.
+        Let's call our first matrix <m>A</m> and the second <m>B</m>.
         We should first check to see that we can actually perform this multiplication.
-        Matrix <m>\tta</m> is <m>2\times 2</m> and <m>\ttb</m> is <m>2\times 3</m>.
+        Matrix <m>A</m> is <m>2\times 2</m> and <m>B</m> is <m>2\times 3</m>.
         The <q>inner</q> dimensions match up, so we can compute the product; the <q>outer</q>
         dimensions tell us that the product will be <m>2\times 3</m>. Let
         <me>
-          \tta\ttb = \bbm m_{11}  \amp  m_{12}  \amp  m_{13}\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
+          AB = \bbm m_{11}  \amp  m_{12}  \amp  m_{13}\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
         </me>.
         Let's find the value of each of the entries.
       </p>
 
       <p>
         The entry <m>m_{11}</m> is in the first row and first column;
-        therefore to find its value, we need to multiply the first row of <m>\tta</m> by the first column of <m>\ttb</m>. Thus
+        therefore to find its value, we need to multiply the first row of <m>A</m> by the first column of <m>B</m>. Thus
         <me>
           m_{11} = \bbm 1 \amp 2\ebm\bbm 1\\2\ebm = 1(1)+2(2) = 5
         </me>.
         So now we know that
         <me>
-          \tta\ttb = \bbm 5  \amp  m_{12}  \amp  m_{13}\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
+          AB = \bbm 5  \amp  m_{12}  \amp  m_{13}\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
         </me>.
         Finishing out the first row, we have
         <me>
           m_{12} = \bbm 1 \amp 2\ebm\bbm-1\\2\ebm = 1(-1)+2(2) = 3
         </me>
-        using the first row of <m>\tta</m> and the second column of <m>\ttb</m>, and
+        using the first row of <m>A</m> and the second column of <m>B</m>, and
         <me>
           m_{13} = \bbm 1 \amp 2\ebm\bbm 0\\-1\ebm = 1(0)+2(-1) = -2
         </me>
-        using the first row of <m>\tta</m> and the third column of <m>\ttb</m>. Thus we have
+        using the first row of <m>A</m> and the third column of <m>B</m>. Thus we have
         <me>
-          \tta\ttb = \bbm 5  \amp  3  \amp  -2\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
+          AB = \bbm 5  \amp  3  \amp  -2\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
         </me>.
       </p>
 
       <p>
-        To compute the second row of <m>\tta\ttb</m>, we multiply with the second row of <m>\tta</m>. We find
+        To compute the second row of <m>AB</m>, we multiply with the second row of <m>A</m>. We find
         <md>
           <mrow>m_{21} \amp = \bbm 3\amp 4\ebm\bbm 1\\2\ebm = 11,</mrow>
           <mrow>m_{22} \amp = \bbm 3\amp 4\ebm\bbm-1\\2\ebm = 5, \text{ and}</mrow>
@@ -260,7 +260,7 @@
         </md>.
         Thus
         <me>
-          \tta\ttb = \bbm 1 \amp 2\\3 \amp 4\ebm\bbm 1\amp -1\amp 0\\2\amp 2\amp -1\ebm = \bbm 5 \amp  3 \amp  -2\\11 \amp  5 \amp  -4\ebm
+          AB = \bbm 1 \amp 2\\3 \amp 4\ebm\bbm 1\amp -1\amp 0\\2\amp 2\amp -1\ebm = \bbm 5 \amp  3 \amp  -2\\11 \amp  5 \amp  -4\ebm
         </me>.
       </p>
     </solution>
@@ -280,11 +280,11 @@
     <solution>
       <p>
         Let's first check to make sure this product is defined.
-        Again calling the first matrix <m>\tta</m> and the second <m>\ttb</m>,
-        we see that <m>\tta</m> is a <m>3\times 2</m> matrix and <m>\ttb</m> is a <m>2\times4</m> matrix;
+        Again calling the first matrix <m>A</m> and the second <m>B</m>,
+        we see that <m>A</m> is a <m>3\times 2</m> matrix and <m>B</m> is a <m>2\times4</m> matrix;
         the inner dimensions match so the product is defined, and the product will be a <m>3\times 4</m> matrix,
         <me>
-          \tta\ttb = \bbm m_{11} \amp m_{12} \amp m_{13}\amp m_{14}\\ m_{21}\amp m_{22}\amp m_{23}\amp m_{24}\\m_{31}\amp m_{32}\amp m_{33}\amp m_{34}\ebm
+          AB = \bbm m_{11} \amp m_{12} \amp m_{13}\amp m_{14}\\ m_{21}\amp m_{22}\amp m_{23}\amp m_{24}\\m_{31}\amp m_{32}\amp m_{33}\amp m_{34}\ebm
         </me>.
       </p>
 
@@ -302,13 +302,13 @@
       </p>
 
       <p>
-        So far, we've computed this much of <m>\tta\ttb</m>:
+        So far, we've computed this much of <m>AB</m>:
         <me>
-          \tta\ttb = \bbm-1 \amp m_{12} \amp -6\amp m_{14}\\ m_{21}\amp m_{22}\amp 19\amp 23\\m_{31}\amp 16\amp m_{33}\amp 25\ebm
+          AB = \bbm-1 \amp m_{12} \amp -6\amp m_{14}\\ m_{21}\amp m_{22}\amp 19\amp 23\\m_{31}\amp 16\amp m_{33}\amp 25\ebm
         </me>.
         The final product is
         <me>
-          \tta\ttb = \bbm-1 \amp -5 \amp -6\amp -8\\ 9\amp 17\amp 19\amp 23\\4\amp 16\amp 19\amp 25\ebm
+          AB = \bbm-1 \amp -5 \amp -6\amp -8\\ 9\amp 17\amp 19\amp 23\\4\amp 16\amp 19\amp 25\ebm
         </me>.
       </p>
     </solution>
@@ -327,9 +327,9 @@
     </statement>
     <solution>
       <p>
-        Again, we'll call the first matrix <m>\tta</m> and the second <m>\ttb</m>.
-        Checking the dimensions of each matrix, we see that <m>\tta</m> is a <m>2\times 3</m> matrix,
-        whereas <m>\ttb</m> is a <m>2\times2</m> matrix. The inner dimensions do not match,
+        Again, we'll call the first matrix <m>A</m> and the second <m>B</m>.
+        Checking the dimensions of each matrix, we see that <m>A</m> is a <m>2\times 3</m> matrix,
+        whereas <m>B</m> is a <m>2\times2</m> matrix. The inner dimensions do not match,
         therefore this multiplication is not defined.
       </p>
     </solution>
@@ -407,10 +407,10 @@
 
   <p>
     In <xref ref="sec-matrix-arithmetic"/>, we identified the zero matrix <m>\tto</m>
-    that had a nice property in relation to matrix addition (<ie/>, <m>\tta+\tto = \tta</m> for any matrix <m>\tta</m>).
+    that had a nice property in relation to matrix addition (<ie/>, <m>A+\tto = A</m> for any matrix <m>A</m>).
     In the following example we'll identify a matrix that works well with multiplication as well as some multiplicative properties.
-    For instance, we've learned how <m>1\cdot\tta = \tta</m>; is there a <em>matrix</em> that acts like the number 1?
-    That is, can we find a matrix <m>\ttx</m> where <m>\ttx\cdot\tta=\tta</m>?
+    For instance, we've learned how <m>1\cdot A = A</m>; is there a <em>matrix</em> that acts like the number 1?
+    That is, can we find a matrix <m>X</m> where <m>X\cdot A=A</m>?
     (We made a guess in <xref ref="sec-matrix-arithmetic"/> that maybe a matrix of all 1s would work,
     but you can probably already see that this guess is doomed to failure.)
   </p>
@@ -423,22 +423,22 @@
       <p>
         Let
         <md>
-          <mrow>\tta \amp = \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm, \amp  \ttb \amp = \bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm</mrow>
-          <mrow>\ttc \amp = \bbm 1\amp 0\amp 2\\2\amp 1\amp 0\\0\amp 2\amp 1\ebm, \amp  \tti \amp = \bbm 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\ebm</mrow>
+          <mrow>A \amp = \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm, \amp  B \amp = \bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm</mrow>
+          <mrow>C \amp = \bbm 1\amp 0\amp 2\\2\amp 1\amp 0\\0\amp 2\amp 1\ebm, \amp  I \amp = \bbm 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\ebm</mrow>
         </md>.
         Find the following products.
       </p>
 
       <p>
         <ol cols="2">
-          <li><m>\tta\ttb</m></li>
-          <li><m>\ttb\tta</m></li>
-          <li><m>\tta\tto_{3\times4}</m></li>
-          <li><m>\tta\tti</m></li>
-          <li><m>\tti\tta</m></li>
-          <li><m>\tti^2</m></li>
-          <li><m>\ttb\ttc</m></li>
-          <li><m>\ttb^2</m></li>
+          <li><m>AB</m></li>
+          <li><m>BA</m></li>
+          <li><m>A\tto_{3\times4}</m></li>
+          <li><m>AI</m></li>
+          <li><m>IA</m></li>
+          <li><m>I^2</m></li>
+          <li><m>BC</m></li>
+          <li><m>B^2</m></li>
         </ol>
       </p>
     </statement>
@@ -446,23 +446,23 @@
       <p>
         We will find each product, but we leave the details of each computation to the reader.
         <ol>
-          <li><m>\tta\ttb =  \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm\bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm = \bbm 6\amp 6\amp 6\\0\amp 0\amp 0\\-7\amp -7\amp -7\ebm</m></li>
-          <li><m>\ttb\tta = \bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm\bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm = \bbm 1\amp -13\amp 11\\1\amp -13\amp 11\\1\amp -13\amp 11\ebm</m></li>
-          <li><m>\tta\tto_{3\times4} = \tto_{3\times4}</m>. </li>
-          <li><m>\tta\tti = \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm\eyethree = \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm</m></li>
-          <li><m>\tti\tta = \eyethree\bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm = \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm</m></li>
+          <li><m>AB =  \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm\bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm = \bbm 6\amp 6\amp 6\\0\amp 0\amp 0\\-7\amp -7\amp -7\ebm</m></li>
+          <li><m>BA = \bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm\bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm = \bbm 1\amp -13\amp 11\\1\amp -13\amp 11\\1\amp -13\amp 11\ebm</m></li>
+          <li><m>A\tto_{3\times4} = \tto_{3\times4}</m>. </li>
+          <li><m>AI = \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm\eyethree = \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm</m></li>
+          <li><m>IA = \eyethree\bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm = \bbm 1\amp 2\amp 3\\2\amp -7\amp 5\\-2\amp -8\amp 3\ebm</m></li>
           <li>
             <p>
-              We haven't formally defined what <m>\tti^2</m> means,
-              but we could probably make the reasonable guess that <m>\tti^2=\tti\cdot\tti </m>.
+              We haven't formally defined what <m>I^2</m> means,
+              but we could probably make the reasonable guess that <m>I^2=I\cdot I </m>.
               Thus
               <me>
-                \tti^2 = \eyethree\eyethree = \eyethree
+                I^2 = \eyethree\eyethree = \eyethree
               </me>.
             </p>
           </li>
-          <li><m>\ttb\ttc = \bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm \bbm 1\amp 0\amp 2\\2\amp 1\amp 0\\0\amp 2\amp 1\ebm = \bbm 3\amp 3\amp 3\\3\amp 3\amp 3\\3\amp 3\amp 3\ebm</m></li>
-          <li><m>\ttb^2 = \ttb\ttb = \bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm\bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm=\bbm 3\amp 3\amp 3\\3\amp 3\amp 3\\3\amp 3\amp 3\ebm</m></li>
+          <li><m>BC = \bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm \bbm 1\amp 0\amp 2\\2\amp 1\amp 0\\0\amp 2\amp 1\ebm = \bbm 3\amp 3\amp 3\\3\amp 3\amp 3\\3\amp 3\amp 3\ebm</m></li>
+          <li><m>B^2 = BB = \bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm\bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm=\bbm 3\amp 3\amp 3\\3\amp 3\amp 3\\3\amp 3\amp 3\ebm</m></li>
         </ol>
       </p>
     </solution>
@@ -474,7 +474,7 @@
       <li>
         <title>Interesting Idea #1</title>
         <p>
-          Notice that in our example, <m>\tta\ttb \neq \ttb\tta</m>!
+          Notice that in our example, <m>AB \neq BA</m>!
           When dealing with numbers, we were used to the idea that <m>ab = ba</m>.
           With matrices, multiplication is <em>not</em> commutative.
           (Of course, we can find special situations where it does work. In general, though, it doesn't.)
@@ -486,9 +486,9 @@
           Right before this example we wondered if there was a matrix that <q>acted like the number 1,</q>
           and guessed it may be a matrix of all 1s.
           However, we found out that such a matrix does not work in that way;
-          in our example, <m>\tta\ttb \neq \tta</m>. We did find that <m>\tta\tti = \tti\tta = \tta</m>.
+          in our example, <m>AB \neq A</m>. We did find that <m>AI = IA = A</m>.
           There is a Multiplicative Identity; it just isn't what we thought it would be.
-          And just as <m>1^2 = 1</m>, <m>\tti^2 = \tti</m>.
+          And just as <m>1^2 = 1</m>, <m>I^2 = I</m>.
         </p>
       </li>
       <li>
@@ -496,8 +496,8 @@
         <p>
           When dealing with numbers, we are very familiar with the notion that <q>If <m>ax = bx</m>,
             then <m>a=b</m>.</q> (As long as <m>x\neq 0</m>.)
-            Notice that, in our example, <m>\ttb\ttb = \ttb\ttc</m>, yet <m>\ttb\neq\ttc</m>.
-            In general, just because <m>\tta\ttx = \ttb\ttx</m>, we <em>cannot</em> conclude that <m>\tta =\ttb</m>.
+            Notice that, in our example, <m>BB = BC</m>, yet <m>B\neq C</m>.
+            In general, just because <m>AX = BX</m>, we <em>cannot</em> conclude that <m>A =B</m>.
         </p>
       </li>
     </dl>
@@ -518,14 +518,14 @@
       <p>
         Let
         <me>
-          \tta = \bbm 1 \amp 2\\3 \amp 4\ebm,\quad \ttb = \bbm 1\amp 1\\1\amp -1\ebm \quad \text{and} \quad \ttc=\bbm 2\amp 1\\1\amp 2\ebm
+          A = \bbm 1 \amp 2\\3 \amp 4\ebm,\quad B = \bbm 1\amp 1\\1\amp -1\ebm \quad \text{and} \quad C=\bbm 2\amp 1\\1\amp 2\ebm
         </me>.
         Find the following:
         <ol cols="2">
-          <li><m>\tta(\ttb+\ttc)</m></li>
-          <li><m>\tta\ttb+\tta\ttc</m></li>
-          <li><m>\tta(\ttb\ttc)</m></li>
-          <li><m>(\tta\ttb)\ttc</m></li>
+          <li><m>A(B+C)</m></li>
+          <li><m>AB+AC</m></li>
+          <li><m>A(BC)</m></li>
+          <li><m>(AB)C</m></li>
         </ol>
       </p>
     </statement>
@@ -537,7 +537,7 @@
           <li>
             <p>
               <md>
-                <mrow>\tta(\ttb+\ttc) \amp = \bbm 1\amp 2\\3\amp 4\ebm\left(\bbm 1\amp 1\\1\amp -1\ebm+\bbm 2\amp 1\\1\amp 2\ebm\right)</mrow>
+                <mrow>A(B+C) \amp = \bbm 1\amp 2\\3\amp 4\ebm\left(\bbm 1\amp 1\\1\amp -1\ebm+\bbm 2\amp 1\\1\amp 2\ebm\right)</mrow>
                 <mrow>                \amp = \bbm 1\amp 2\\3\amp 4\ebm\bbm 3\amp 2\\2\amp 1\ebm</mrow>
                 <mrow>                \amp = \bbm 7\amp 4\\17\amp 10\ebm</mrow>
               </md>
@@ -547,7 +547,7 @@
           <li>
             <p>
               <md>
-                <mrow>\tta\ttb+\tta\ttc \amp = \bbm 1\amp 2\\3\amp 4\ebm\bbm 1\amp 1\\1\amp -1\ebm+\bbm 1\amp 2\\3\amp 4\ebm\bbm 2\amp 1\\1\amp 2\ebm</mrow>
+                <mrow>AB+AC \amp = \bbm 1\amp 2\\3\amp 4\ebm\bbm 1\amp 1\\1\amp -1\ebm+\bbm 1\amp 2\\3\amp 4\ebm\bbm 2\amp 1\\1\amp 2\ebm</mrow>
                 <mrow>\amp = \bbm 3\amp -1\\7\amp -1\ebm + \bbm 4\amp 5\\10\amp 11\ebm</mrow>
                 <mrow>\amp = \bbm 7\amp 4\\17\amp 10\ebm</mrow>
               </md>
@@ -557,7 +557,7 @@
           <li>
             <p>
               <md>
-                <mrow>\tta(\ttb\ttc) \amp = \bbm 1\amp 2\\3\amp 4\ebm\left(\bbm 1\amp 1\\1\amp -1\ebm\bbm 2\amp 1\\1\amp 2\ebm\right)</mrow>
+                <mrow>A(BC) \amp = \bbm 1\amp 2\\3\amp 4\ebm\left(\bbm 1\amp 1\\1\amp -1\ebm\bbm 2\amp 1\\1\amp 2\ebm\right)</mrow>
                 <mrow>\amp = \bbm 1\amp 2\\3\amp 4\ebm\bbm 3\amp 3\\1\amp -1\ebm</mrow>
                 <mrow>\amp = \bbm 5\amp 1\\13\amp 5\ebm</mrow>
               </md>
@@ -567,7 +567,7 @@
           <li>
             <p>
               <md>
-                <mrow>\left(\tta\ttb\right)\ttc \amp = \left(\bbm 1\amp 2\\3\amp 4\ebm\bbm 1\amp 1\\1\amp -1\ebm\right)\bbm 2\amp 1\\1\amp 2\ebm</mrow>
+                <mrow>\left(AB\right)C \amp = \left(\bbm 1\amp 2\\3\amp 4\ebm\bbm 1\amp 1\\1\amp -1\ebm\right)\bbm 2\amp 1\\1\amp 2\ebm</mrow>
                 <mrow>\amp = \bbm 3\amp -1\\7\amp -1\ebm\bbm 2\amp 1\\1\amp 2\ebm</mrow>
                 <mrow>\amp = \bbm 5\amp 1\\13\amp 5\ebm</mrow>
               </md>
@@ -581,20 +581,20 @@
   <p>
     In looking at our example, we should notice two things.
     First, it looks like the <q>distributive property</q> holds;
-    that is, <m>\tta(\ttb+\ttc) = \tta\ttb + \tta\ttc</m>.
+    that is, <m>A(B+C) = AB + AC</m>.
     This is nice as many algebraic techniques we have learned about in the past
     (when doing <q>ordinary algebra</q>) will still work.
-    Secondly, it looks like the <q>associative property</q> holds; that is, <m>\tta(\ttb\ttc) = (\tta\ttb)\ttc</m>.
+    Secondly, it looks like the <q>associative property</q> holds; that is, <m>A(BC) = (AB)C</m>.
     This is nice, for it tells us that when we are multiplying several matrices together,
     we don't have to be particularly careful in what order we multiply certain pairs of matrices together.
   </p>
 
   <aside vshift="0">
     <p>
-      Be careful: in computing <m>\tta\ttb\ttc</m> together,
-      we can first multiply <m>\tta\ttb</m> or <m>\ttb\ttc</m>,
+      Be careful: in computing <m>ABC</m> together,
+      we can first multiply <m>AB</m> or <m>BC</m>,
       but we cannot change the <em>order</em>
-      in which these matrices appear. We cannot multiply <m>\ttb\tta</m> or <m>\tta\ttc</m>, for instance.
+      in which these matrices appear. We cannot multiply <m>BA</m> or <m>AC</m>, for instance.
     </p>
   </aside>
 
@@ -618,7 +618,7 @@
         <idx><h>matrix</h><h>identity matrix</h></idx>
 
         The <m>n\times n</m> matrix with 1s on the diagonal and zeros elsewhere is the
-        <term><m>n\times n</m> identity matrix</term>, denoted <m>\tti_n</m>.
+        <term><m>n\times n</m> identity matrix</term>, denoted <m>I_n</m>.
         When the context makes the dimension of the identity clear, the subscript is generally omitted.
       </p>
     </statement>
@@ -628,16 +628,16 @@
     Note that while the zero matrix can come in all different shapes and sizes,
     the identity matrix is always a square matrix. We show a few identity matrices below.
     <me>
-      \tti_2= \eyetwo ,\quad \tti_3 = \eyethree , \quad \tti_4 = \eyefour
+      I_2= \eyetwo ,\quad I_3 = \eyethree , \quad I_4 = \eyefour
     </me>.
   </p>
 
   <p>
     In our examples above, we have seen examples of things that do and do not work.
     We should be careful about what examples <em>prove</em>, though.
-    If someone were to claim that <m>\tta\ttb = \ttb\tta</m> is always true,
+    If someone were to claim that <m>AB = BA</m> is always true,
     one would only need to show them one example where they were false, and we would know the person was wrong.
-    However, if someone claims that <m>\tta(\ttb+\ttc) = \tta\ttb+\tta\ttc</m> is always true,
+    However, if someone claims that <m>A(B+C) = AB+AC</m> is always true,
     we can't prove this with just one example. We need something more powerful; we need a true proof.
   </p>
 
@@ -656,18 +656,18 @@
       <p>
         <idx><h>matrix</h><h>multiplication!properties</h></idx>
 
-        Let <m>\tta</m>, <m>\ttb</m> and <m>\ttc</m> be matrices whose sizes are such that the following operations make sense,
+        Let <m>A</m>, <m>B</m> and <m>C</m> be matrices whose sizes are such that the following operations make sense,
         and let <m>k</m> be a scalar. The following equalities hold:
         <ol>
-          <li><m>\tta(\ttb\ttc) = (\tta\ttb)\ttc</m> (Associative Property)</li>
+          <li><m>A(BC) = (AB)C</m> (Associative Property)</li>
           <li xml:id="thm-mat_mult_dist">
             <p>
-              <m>\tta(\ttb+\ttc) = \tta\ttb + \tta\ttc</m> and
-              <m>(\ttb+\ttc)\tta = \ttb\tta + \ttc\tta</m> (Distributive Property)
+              <m>A(B+C) = AB + AC</m> and
+              <m>(B+C)A = BA + CA</m> (Distributive Property)
             </p>
           </li>
-          <li xml:id="thm-mat_mult_scalar"><m>k(\tta\ttb) = (k\tta)\ttb = \tta(k\ttb)</m></li>
-          <li><m>\tta\tti = \tti\tta = \tta</m></li>
+          <li xml:id="thm-mat_mult_scalar"><m>k(AB) = (kA)B = A(kB)</m></li>
+          <li><m>AI = IA = A</m></li>
         </ol>
       </p>
     </statement>
@@ -676,15 +676,15 @@
   <p>
     The above box contains some very good news, and probably some very surprising news.
     Matrix multiplication probably seems to us like a very odd operation,
-    so we probably wouldn't have been surprised if we were told that <m>\tta(\ttb\ttc)\neq(\tta\ttb)\ttc</m>.
+    so we probably wouldn't have been surprised if we were told that <m>A(BC)\neq(AB)C</m>.
     It is a very nice thing that the Associative Property does hold.
   </p>
 
   <p>
     As we near the end of this section, we raise one more issue of notation.
-    We define <m>\tta^0 = \tti</m>. If <m>n</m> is a positive integer, we define
+    We define <m>A^0 = I</m>. If <m>n</m> is a positive integer, we define
     <me>
-      \tta^n = \underbrace{\tta\cdot\tta\cdot \ \cdots\ \cdot\tta}_{n \text{ times}}
+      A^n = \underbrace{A\cdot A\cdot \ \cdots\ \cdot A}_{n \text{ times}}
     </me>.
   </p>
 
@@ -692,8 +692,8 @@
     With numbers, we are used to <m>a^{-n} = \frac{1}{a^n}</m>.
     Do negative exponents work with matrices, too? The answer is yes, sort of.
     We'll have to be careful, and we'll cover the topic in detail once we define the inverse of a matrix.
-    For now, though, we recognize the fact that <m>\tta^{-1} \neq \frac{1}{\tta}</m>,
-    for <m>\frac{1}{\tta}</m> makes no sense; we don't know how to <q>divide</q> by a matrix.
+    For now, though, we recognize the fact that <m>A^{-1} \neq \frac{1}{A}</m>,
+    for <m>\frac{1}{A}</m> makes no sense; we don't know how to <q>divide</q> by a matrix.
   </p>
 
   <aside vshift="0">
@@ -713,12 +713,12 @@
     <ol>
       <li>
         <p>
-          Matrix multiplication is not commutative; that is, <m>\tta\ttb \neq \ttb\tta</m>.
+          Matrix multiplication is not commutative; that is, <m>AB \neq BA</m>.
         </p>
       </li>
       <li>
         <p>
-          In general, just because <m>\tta\ttx = \ttb\ttx</m>, we cannot conclude that <m>\tta=\ttb</m>.
+          In general, just because <m>AX = BX</m>, we cannot conclude that <m>A=B</m>.
         </p>
       </li>
     </ol>
@@ -729,9 +729,9 @@
     <me>
       (a+b)^2 = a^2+2ab+b^2
     </me>.
-    What about <m>(\tta+\ttb)^2</m>? All we'll say here is that
+    What about <m>(A+B)^2</m>? All we'll say here is that
     <me>
-      (\tta+\ttb)^2 \neq \tta^2+2\tta\ttb+\ttb^2;
+      (A+B)^2 \neq A^2+2AB+B^2;
     </me>
     we leave it to the reader to figure out why.
   </p>
@@ -907,17 +907,17 @@
 
       <introduction>
         <p>
-          Matrices <m>\tta</m> and <m>\ttb</m> are defined.
+          Matrices <m>A</m> and <m>B</m> are defined.
           <ol marker="(a)">
             <li>
               <p>
-                Give the dimensions of <m>\tta</m> and <m>\ttb</m>.
-                If the dimensions properly match, give the dimensions of <m>\tta\ttb</m> and <m>\ttb\tta</m>.
+                Give the dimensions of <m>A</m> and <m>B</m>.
+                If the dimensions properly match, give the dimensions of <m>AB</m> and <m>BA</m>.
               </p>
             </li>
             <li>
               <p>
-                Find the products <m>\tta\ttb</m> and <m>\ttb\tta</m>, if possible.
+                Find the products <m>AB</m> and <m>BA</m>, if possible.
               </p>
             </li>
           </ol>
@@ -927,100 +927,85 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 1\amp 2\\-1\amp 4\ebm</m>, <m>\ttb = \bbm 2\amp 5\\3\amp -1\ebm</m>
+            <m>A = \bbm 1\amp 2\\-1\amp 4\ebm</m>, <m>B = \bbm 2\amp 5\\3\amp -1\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb=\bbm 8\amp 3\\10\amp -9\ebm</m>, <m>\ttb\tta=\bbm -3\amp 24\\4\amp 2\ebm</m>
+            <m>AB=\bbm 8\amp 3\\10\amp -9\ebm</m>, <m>BA=\bbm -3\amp 24\\4\amp 2\ebm</m>
           </p>
         </answer>
       </exercise>
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 3\amp 7\\2\amp 5\ebm</m>, <m>\ttb = \bbm 1\amp -1\\3\amp -3\ebm</m>
+            <m>A = \bbm 3\amp 7\\2\amp 5\ebm</m>, <m>B = \bbm 1\amp -1\\3\amp -3\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb=\bbm 24\amp -24\\17\amp -17\ebm</m>, <m>\ttb\tta=\bbm 1\amp 2\\3\amp 6\ebm</m>
+            <m>AB=\bbm 24\amp -24\\17\amp -17\ebm</m>, <m>BA=\bbm 1\amp 2\\3\amp 6\ebm</m>
           </p>
         </answer>
       </exercise>
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 3\amp -1\\2\amp 2\ebm</m>, <m>\ttb = \bbm 1\amp 0\amp 7\\4\amp 2\amp 9\ebm</m>
+            <m>A = \bbm 3\amp -1\\2\amp 2\ebm</m>, <m>B = \bbm 1\amp 0\amp 7\\4\amp 2\amp 9\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb=\bbm -1\amp -2\amp 12\\10\amp 4\amp 32\ebm</m>, <m>\ttb\tta</m> is not possible.
+            <m>AB=\bbm -1\amp -2\amp 12\\10\amp 4\amp 32\ebm</m>, <m>BA</m> is not possible.
           </p>
         </answer>
       </exercise>
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 0\amp 1\\1\amp -1\\-2\amp -4\ebm</m>, <m>\ttb = \bbm-2\amp 0\\3\amp 8\ebm</m>
+            <m>A = \bbm 0\amp 1\\1\amp -1\\-2\amp -4\ebm</m>, <m>B = \bbm-2\amp 0\\3\amp 8\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb=\bbm 3\amp 8\\-5\amp -8\\-8\amp -32\ebm</m>, <m>\ttb\tta</m> is not possible.
+            <m>AB=\bbm 3\amp 8\\-5\amp -8\\-8\amp -32\ebm</m>, <m>BA</m> is not possible.
           </p>
         </answer>
       </exercise>
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 9\amp 4\amp 3\\9\amp -5\amp 9\ebm</m>, <m>\ttb = \bbm-2\amp 5\\-2\amp -1\ebm</m>
+            <m>A = \bbm 9\amp 4\amp 3\\9\amp -5\amp 9\ebm</m>, <m>B = \bbm-2\amp 5\\-2\amp -1\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb</m> is not possible, <m>\ttb\tta = \bbm 27\amp -33\amp 39\\-27\amp -3\amp -15\ebm</m>
+            <m>AB</m> is not possible, <m>BA = \bbm 27\amp -33\amp 39\\-27\amp -3\amp -15\ebm</m>
           </p>
         </answer>
       </exercise>
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -2\amp -1\\9\amp -5\\3\amp -1\ebm</m>, <m>\ttb = \bbm-5\amp 6\amp -4\\0\amp 6\amp -3\ebm</m>
+            <m>A = \bbm -2\amp -1\\9\amp -5\\3\amp -1\ebm</m>, <m>B = \bbm-5\amp 6\amp -4\\0\amp 6\amp -3\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb =\bbm 10\amp -18\amp 11\\-45\amp 24\amp -21\\-15\amp 12\amp -9\ebm</m>, <m>\ttb\tta = \bbm 52 \amp  -21\\45\amp -27\ebm</m>
+            <m>AB =\bbm 10\amp -18\amp 11\\-45\amp 24\amp -21\\-15\amp 12\amp -9\ebm</m>, <m>BA = \bbm 52 \amp  -21\\45\amp -27\ebm</m>
           </p>
         </answer>
       </exercise>
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 2\amp 6\\6\amp 2\\5\amp -1\ebm</m>, <m>\ttb = \bbm-4 \amp 5 \amp 0\\-4\amp 4\amp -4\ebm</m>
+            <m>A = \bbm 2\amp 6\\6\amp 2\\5\amp -1\ebm</m>, <m>B = \bbm-4 \amp 5 \amp 0\\-4\amp 4\amp -4\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb =\bbm-32\amp 34\amp -24\\-32\amp 38\amp -8\\-16\amp 21\amp 4\ebm</m>,
-            <m>\ttb\tta = \bbm 22\amp -14\\-4\amp -12\ebm</m>
-          </p>
-        </answer>
-      </exercise>
-
-      <exercise>
-        <statement>
-          <p>
-            <m>\tta = \bbm -5\amp 2\\  -5\amp -2\\-5\amp -4\ebm</m>,
-            <m>\ttb = \bbm 0\amp -5\amp 6\\  -5\amp -3\amp -1\ebm</m>
-          </p>
-        </statement>
-        <answer>
-          <p>
-            <m>tta\ttb = \bbm -10\amp 19\amp -32\\  10\amp 31\amp -28\\  20\amp 37\amp -26\end{array}\ebm</m>,
-            <m>\ttb\tta = \bbm -5\amp -14\\  45\amp 0\ebm</m>
+            <m>AB =\bbm-32\amp 34\amp -24\\-32\amp 38\amp -8\\-16\amp 21\amp 4\ebm</m>,
+            <m>BA = \bbm 22\amp -14\\-4\amp -12\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1028,14 +1013,14 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 8\amp -2\\  4\amp 5\\  2\amp -5\ebm</m>,
-            <m>\ttb =  \bbm -5\amp 1\amp -5\\  8\amp 3\amp -2\ebm</m>
+            <m>A = \bbm -5\amp 2\\  -5\amp -2\\-5\amp -4\ebm</m>,
+            <m>B = \bbm 0\amp -5\amp 6\\  -5\amp -3\amp -1\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb = \bbm -56\amp 2\amp -36\\  20\amp 19\amp -30\\ -50\amp -13\amp 0\ebm</m>,
-            <m>\ttb\tta = \bbm -46\amp 40\\  72\amp 9\ebm  </m>
+            <m>ttaB = \bbm -10\amp 19\amp -32\\  10\amp 31\amp -28\\  20\amp 37\amp -26\end{array}\ebm</m>,
+            <m>BA = \bbm -5\amp -14\\  45\amp 0\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1043,14 +1028,14 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 1\amp 4\\  7\amp 6\ebm</m>,
-            <m>\ttb =  \bbm 1\amp -1\amp -5\amp 5\\  -2\amp 1\amp 3\amp -5\ebm </m>
+            <m>A = \bbm 8\amp -2\\  4\amp 5\\  2\amp -5\ebm</m>,
+            <m>B =  \bbm -5\amp 1\amp -5\\  8\amp 3\amp -2\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb = \bbm -7\amp 3\amp 7\amp -15\\  -5\amp -1\amp -17\amp 5\ebm</m>,
-            <m>\ttb\tta</m> is not possible.
+            <m>AB = \bbm -56\amp 2\amp -36\\  20\amp 19\amp -30\\ -50\amp -13\amp 0\ebm</m>,
+            <m>BA = \bbm -46\amp 40\\  72\amp 9\ebm  </m>
           </p>
         </answer>
       </exercise>
@@ -1058,14 +1043,14 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -1\amp 5\\  6\amp 7\ebm</m>,
-            <m>\ttb =  \bbm 5\amp -3\amp -4\amp -4\\  -2\amp -5\amp -5\amp -1\ebm </m>
+            <m>A = \bbm 1\amp 4\\  7\amp 6\ebm</m>,
+            <m>B =  \bbm 1\amp -1\amp -5\amp 5\\  -2\amp 1\amp 3\amp -5\ebm </m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\ttb = \bbm -15\amp -22\amp -21\amp -1\\  16\amp -53\amp -59\amp -31\ebm </m>,
-            <m>\ttb\tta</m> is not possible.
+            <m>AB = \bbm -7\amp 3\amp 7\amp -15\\  -5\amp -1\amp -17\amp 5\ebm</m>,
+            <m>BA</m> is not possible.
           </p>
         </answer>
       </exercise>
@@ -1073,13 +1058,14 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -1\amp 2\amp 1\\  -1\amp 2\amp -1\\  0\amp 0\amp -2\ebm</m>,
-            <m>\ttb =  \bbm 0\amp 0\amp -2\\  1\amp 2\amp -1\\  1\amp 0\amp 0\ebm</m>
+            <m>A = \bbm -1\amp 5\\  6\amp 7\ebm</m>,
+            <m>B =  \bbm 5\amp -3\amp -4\amp -4\\  -2\amp -5\amp -5\amp -1\ebm </m>
           </p>
         </statement>
         <answer>
-          <p>      <m>\tta\ttb = \bbm 3\amp 4\amp 0\\  1\amp 4\amp 0\\  -2\amp 0\amp 0\ebm</m>,
-            <m>\ttb\tta = \bbm 0\amp 0\amp 4\\  -3\amp 6\amp 1\\  -1\amp 2\amp 1\ebm</m>
+          <p>
+            <m>AB = \bbm -15\amp -22\amp -21\amp -1\\  16\amp -53\amp -59\amp -31\ebm </m>,
+            <m>BA</m> is not possible.
           </p>
         </answer>
       </exercise>
@@ -1087,13 +1073,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -1\amp 1\amp 1\\  -1\amp -1\amp -2\\  1\amp 1\amp -2\ebm</m>,
-            <m>\ttb =  \bbm -2\amp -2\amp -2\\  0\amp -2\amp 0\\  -2\amp 0\amp 2\ebm</m>
+            <m>A = \bbm -1\amp 2\amp 1\\  -1\amp 2\amp -1\\  0\amp 0\amp -2\ebm</m>,
+            <m>B =  \bbm 0\amp 0\amp -2\\  1\amp 2\amp -1\\  1\amp 0\amp 0\ebm</m>
           </p>
         </statement>
         <answer>
-          <p>      <m>\tta\ttb = \bbm 0\amp 0\amp 4\\  6\amp 4\amp -2\\  2\amp -4\amp -6\ebm</m>,
-            <m>\ttb\tta = \bbm 2\amp -2\amp 6\\  2\amp 2\amp 4\\  4\amp 0\amp -6\ebm</m>
+          <p>      <m>AB = \bbm 3\amp 4\amp 0\\  1\amp 4\amp 0\\  -2\amp 0\amp 0\ebm</m>,
+            <m>BA = \bbm 0\amp 0\amp 4\\  -3\amp 6\amp 1\\  -1\amp 2\amp 1\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1101,13 +1087,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -4\amp 3\amp 3\\  -5\amp -1\amp -5\\  -5\amp 0\amp -1\ebm</m>,
-            <m>\ttb =  \bbm 0\amp 5\amp 0\\  -5\amp -4\amp 3\\  5\amp -4\amp 3\ebm</m>
+            <m>A = \bbm -1\amp 1\amp 1\\  -1\amp -1\amp -2\\  1\amp 1\amp -2\ebm</m>,
+            <m>B =  \bbm -2\amp -2\amp -2\\  0\amp -2\amp 0\\  -2\amp 0\amp 2\ebm</m>
           </p>
         </statement>
         <answer>
-          <p>      <m>\tta\ttb = \bbm 0\amp -44\amp 18\\  -20\amp -1\amp -18\\  -5\amp -21\amp -3\ebm</m>,
-            <m>\ttb\tta = \bbm -25\amp -5\amp -25\\  25\amp -11\amp 2\\  -15\amp 19\amp 32\ebm</m>
+          <p>      <m>AB = \bbm 0\amp 0\amp 4\\  6\amp 4\amp -2\\  2\amp -4\amp -6\ebm</m>,
+            <m>BA = \bbm 2\amp -2\amp 6\\  2\amp 2\amp 4\\  4\amp 0\amp -6\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1115,13 +1101,27 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -4\amp -1\amp 3\\  2\amp -3\amp 5\\  1\amp 5\amp 3\ebm</m>,
-            <m>\ttb =  \bbm -2\amp 4\amp 3\\  -1\amp 1\amp -1\\  4\amp 0\amp 2\ebm</m>
+            <m>A = \bbm -4\amp 3\amp 3\\  -5\amp -1\amp -5\\  -5\amp 0\amp -1\ebm</m>,
+            <m>B =  \bbm 0\amp 5\amp 0\\  -5\amp -4\amp 3\\  5\amp -4\amp 3\ebm</m>
           </p>
         </statement>
         <answer>
-          <p>      <m>\tta\ttb = \bbm 21\amp -17\amp -5\\  19\amp 5\amp 19\\  5\amp 9\amp 4\ebm</m>,
-            <m>\ttb\tta = \bbm 19\amp 5\amp 23\\  5\amp -7\amp -1\\  -14\amp 6\amp 18\ebm</m>
+          <p>      <m>AB = \bbm 0\amp -44\amp 18\\  -20\amp -1\amp -18\\  -5\amp -21\amp -3\ebm</m>,
+            <m>BA = \bbm -25\amp -5\amp -25\\  25\amp -11\amp 2\\  -15\amp 19\amp 32\ebm</m>
+          </p>
+        </answer>
+      </exercise>
+
+      <exercise>
+        <statement>
+          <p>
+            <m>A = \bbm -4\amp -1\amp 3\\  2\amp -3\amp 5\\  1\amp 5\amp 3\ebm</m>,
+            <m>B =  \bbm -2\amp 4\amp 3\\  -1\amp 1\amp -1\\  4\amp 0\amp 2\ebm</m>
+          </p>
+        </statement>
+        <answer>
+          <p>      <m>AB = \bbm 21\amp -17\amp -5\\  19\amp 5\amp 19\\  5\amp 9\amp 4\ebm</m>,
+            <m>BA = \bbm 19\amp 5\amp 23\\  5\amp -7\amp -1\\  -14\amp 6\amp 18\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1132,21 +1132,21 @@
 
       <introduction>
         <p>
-          A <em>diagonal</em> matrix <m>\ttd</m> and a matrix <m>\tta</m> are given.
-          Find the products <m>\ttd\tta</m> and <m>\tta\ttd</m>, where possible.
+          A <em>diagonal</em> matrix <m>D</m> and a matrix <m>A</m> are given.
+          Find the products <m>DA</m> and <m>AD</m>, where possible.
         </p>
       </introduction>
 
       <exercise>
         <statement>
           <p>
-            <m>\ttd = \bbm -1\amp 0\amp 0\\  0\amp 2\amp 0\\  0\amp 0\amp 3\ebm</m>,
-            <m>\tta = \bbm 1\amp 2\amp 3\\  4\amp 5\amp 6\\  7\amp 8\amp 9\ebm</m>
+            <m>D = \bbm -1\amp 0\amp 0\\  0\amp 2\amp 0\\  0\amp 0\amp 3\ebm</m>,
+            <m>A = \bbm 1\amp 2\amp 3\\  4\amp 5\amp 6\\  7\amp 8\amp 9\ebm</m>
           </p>
         </statement>
         <answer>
-          <p>      <m>\ttd\tta= \bbm -1\amp 4\amp 9\\  -4\amp 10\amp 18\\  -7\amp 16\amp 27\ebm</m>,
-            <m>\tta\ttd = \bbm -1\amp -2\amp -3\\  8\amp 10\amp 12\\  21\amp 24\amp 27\ebm</m>
+          <p>      <m>DA= \bbm -1\amp 4\amp 9\\  -4\amp 10\amp 18\\  -7\amp 16\amp 27\ebm</m>,
+            <m>AD = \bbm -1\amp -2\amp -3\\  8\amp 10\amp 12\\  21\amp 24\amp 27\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1154,13 +1154,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttd = \bbm 1\amp 1\amp 1\\  2\amp 2\amp 2\\  -3\amp -3\amp -3\ebm</m>,
-            <m>\tta = \bbm 2\amp 0\amp 0\\  0\amp -3\amp 0\\  0\amp 0\amp 5\ebm</m>
+            <m>D = \bbm 1\amp 1\amp 1\\  2\amp 2\amp 2\\  -3\amp -3\amp -3\ebm</m>,
+            <m>A = \bbm 2\amp 0\amp 0\\  0\amp -3\amp 0\\  0\amp 0\amp 5\ebm</m>
           </p>
         </statement>
         <answer>
-          <p>      <m>\ttd\tta= \bbm 2\amp 2\amp 2\\  -6\amp -6\amp -6\\  -15\amp -15\amp -15\ebm</m>,
-            <m>\tta\ttd =  \bbm 2\amp -3\amp 5\\  4\amp -6\amp 10\\  -6\amp 9\amp -15\ebm</m>
+          <p>      <m>DA= \bbm 2\amp 2\amp 2\\  -6\amp -6\amp -6\\  -15\amp -15\amp -15\ebm</m>,
+            <m>AD =  \bbm 2\amp -3\amp 5\\  4\amp -6\amp 10\\  -6\amp 9\amp -15\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1168,13 +1168,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttd = \bbm 3\amp 0\\  0\amp -1\ebm</m>,
-            <m>\tta = \bbm 2\amp 4\\  6\amp 8\ebm</m>
+            <m>D = \bbm 3\amp 0\\  0\amp -1\ebm</m>,
+            <m>A = \bbm 2\amp 4\\  6\amp 8\ebm</m>
           </p>
         </statement>
         <answer>
-          <p>      <m>\ttd\tta= \bbm 6\amp -4\\  18\amp -8\ebm</m>,
-            <m>\tta\ttd =  \bbm 6\amp 12\\  -6\amp -8\ebm</m>
+          <p>      <m>DA= \bbm 6\amp -4\\  18\amp -8\ebm</m>,
+            <m>AD =  \bbm 6\amp 12\\  -6\amp -8\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1182,14 +1182,14 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttd = \bbm 4\amp 0\\  0\amp -3\ebm</m>,
-            <m>\tta = \bbm 1\amp 2\\  1\amp 2\ebm</m>
+            <m>D = \bbm 4\amp 0\\  0\amp -3\ebm</m>,
+            <m>A = \bbm 1\amp 2\\  1\amp 2\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttd\tta= \bbm 4\amp -6\\  4\amp -6\ebm</m>,
-            <m>\tta\ttd =  \bbm 4\amp 8\\  -3\amp -6\ebm</m>
+            <m>DA= \bbm 4\amp -6\\  4\amp -6\ebm</m>,
+            <m>AD =  \bbm 4\amp 8\\  -3\amp -6\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1197,14 +1197,14 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttd = \bbm d_1\amp 0\\  0\amp d_2\ebm</m>,
-            <m>\tta = \bbm a\amp b\\  c\amp d\ebm</m>
+            <m>D = \bbm d_1\amp 0\\  0\amp d_2\ebm</m>,
+            <m>A = \bbm a\amp b\\  c\amp d\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttd\tta= \bbm d_1a\amp d_1b\\  d_2c\amp d_2d\ebm</m>,
-            <m>\tta\ttd =  \bbm d_1a\amp d_2b\\  d_1c\amp d_2d\ebm</m>
+            <m>DA= \bbm d_1a\amp d_1b\\  d_2c\amp d_2d\ebm</m>,
+            <m>AD =  \bbm d_1a\amp d_2b\\  d_1c\amp d_2d\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1212,14 +1212,14 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttd = \bbm d_1\amp 0\amp 0\\  0\amp d_2\amp 0\\  0\amp 0\amp d_3\ebm</m>,
-            <m>\tta = \bbm a\amp b\amp c\\  d\amp e\amp f\\  g\amp h\amp i\ebm </m>
+            <m>D = \bbm d_1\amp 0\amp 0\\  0\amp d_2\amp 0\\  0\amp 0\amp d_3\ebm</m>,
+            <m>A = \bbm a\amp b\amp c\\  d\amp e\amp f\\  g\amp h\amp i\ebm </m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttd\tta= \bbm d_1a\amp d_1b\amp d_1c\\  d_2d\amp d_2e\amp d_2f\\  d_3g\amp d_3h\amp d_3i\ebm</m>,
-            <m>\tta\ttd =  \bbm d_1a\amp d_2b\amp d_3c\\  d_1d\amp d_2e\amp d_3f\\  d_1g\amp d_2h\amp d_3i\ebm</m>
+            <m>DA= \bbm d_1a\amp d_1b\amp d_1c\\  d_2d\amp d_2e\amp d_2f\\  d_3g\amp d_3h\amp d_3i\ebm</m>,
+            <m>AD =  \bbm d_1a\amp d_2b\amp d_3c\\  d_1d\amp d_2e\amp d_3f\\  d_1g\amp d_2h\amp d_3i\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1229,20 +1229,20 @@
 
       <introduction>
         <p>
-          A matrix <m>\tta</m> and a vector <m>\vx</m> are given. Find the product <m>\tta\vx</m>.
+          A matrix <m>A</m> and a vector <m>\vx</m> are given. Find the product <m>A\vx</m>.
         </p>
       </introduction>
 
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 2\amp 3\\  1\amp -1\ebm</m>,
+            <m>A = \bbm 2\amp 3\\  1\amp -1\ebm</m>,
             <m>\vx = \bbm 4\\  9\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\vx= \bbm 35\\  -5\ebm</m>
+            <m>A\vx= \bbm 35\\  -5\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1250,13 +1250,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta =   \bbm -1\amp 4\\  7\amp 3\ebm</m>,
+            <m>A =   \bbm -1\amp 4\\  7\amp 3\ebm</m>,
             <m>\vx = \bbm 2\\  -1\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\vx= \bbm -6\\  11\ebm</m>
+            <m>A\vx= \bbm -6\\  11\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1264,13 +1264,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta =   \bbm 2\amp 0\amp 3\\  1\amp 1\amp 1\\  3\amp -1\amp 2\ebm</m>,
+            <m>A =   \bbm 2\amp 0\amp 3\\  1\amp 1\amp 1\\  3\amp -1\amp 2\ebm</m>,
             <m>\vx = \bbm 1\\  4\\  2\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\vx= \bbm 8\\  7\\  3\ebm</m>
+            <m>A\vx= \bbm 8\\  7\\  3\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1278,13 +1278,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm -2\amp 0\amp 3\\  1\amp 1\amp -2\\  4\amp 2\amp -1\ebm</m>,
+            <m>A = \bbm -2\amp 0\amp 3\\  1\amp 1\amp -2\\  4\amp 2\amp -1\ebm</m>,
             <m>\vx = \bbm 4\\  3\\  1\ebm </m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\vx= \bbm -5\\  5\\  21\ebm</m>
+            <m>A\vx= \bbm -5\\  5\\  21\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1292,13 +1292,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 1\amp 2\amp 3\\  1\amp 0\amp 2\\  2\amp 3\amp 1\ebm</m>,
+            <m>A = \bbm 1\amp 2\amp 3\\  1\amp 0\amp 2\\  2\amp 3\amp 1\ebm</m>,
             <m>\vx = \bbm x_1\\  x_2\\  x_3\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\vx= \bbm x_1+2x_2+3x_3\\  x_1+2x_3\\  2x_1+3x_2+x_3\ebm</m>
+            <m>A\vx= \bbm x_1+2x_2+3x_3\\  x_1+2x_3\\  2x_1+3x_2+x_3\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1306,13 +1306,13 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm 2\amp -1\\   4\amp 3\ebm</m>,
+            <m>A = \bbm 2\amp -1\\   4\amp 3\ebm</m>,
             <m>\vx = \bbm x_1\\  x_2\ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\tta\vx= \bbm2x_1-x_2\\  4x_1+3x_2\ebm</m>
+            <m>A\vx= \bbm2x_1-x_2\\  4x_1+3x_2\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -1322,12 +1322,12 @@
     <exercise>
       <statement>
         <p>
-          Let <m>\tta = \bbm 0 \amp 1\\1 \amp 0\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
+          Let <m>A = \bbm 0 \amp 1\\1 \amp 0\ebm</m>. Find <m>A^2</m> and <m>A^3</m>.
         </p>
       </statement>
       <answer>
         <p>
-          <m>\tta^2 = \bbm 1 \amp 0\\0 \amp 1\ebm</m>; <m>\tta^3 = \bbm 0\amp 1\\1\amp 0\ebm</m>
+          <m>A^2 = \bbm 1 \amp 0\\0 \amp 1\ebm</m>; <m>A^3 = \bbm 0\amp 1\\1\amp 0\ebm</m>
         </p>
       </answer>
     </exercise>
@@ -1335,12 +1335,12 @@
     <exercise>
       <statement>
         <p>
-          Let <m>\tta = \bbm 2 \amp 0\\0 \amp 3\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
+          Let <m>A = \bbm 2 \amp 0\\0 \amp 3\ebm</m>. Find <m>A^2</m> and <m>A^3</m>.
         </p>
       </statement>
       <answer>
         <p>
-          <m>\tta^2 = \bbm 4 \amp 0\\0 \amp 9\ebm</m>; <m>\tta^3 = \bbm 8\amp 0\\0\amp 27\ebm</m>
+          <m>A^2 = \bbm 4 \amp 0\\0 \amp 9\ebm</m>; <m>A^3 = \bbm 8\amp 0\\0\amp 27\ebm</m>
         </p>
       </answer>
     </exercise>
@@ -1348,12 +1348,12 @@
     <exercise>
       <statement>
         <p>
-          Let <m>\tta = \bbm -1 \amp 0 \amp 0\\0\amp 3\amp 0\\0\amp 0\amp 5\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
+          Let <m>A = \bbm -1 \amp 0 \amp 0\\0\amp 3\amp 0\\0\amp 0\amp 5\ebm</m>. Find <m>A^2</m> and <m>A^3</m>.
         </p>
       </statement>
       <answer>
         <p>
-          <m>\tta^2 = \bbm 1 \amp 0 \amp 0\\0\amp 9\amp 0\\0\amp 0\amp 25\ebm</m>; <m>\tta^3 = \bbm -1\amp 0\amp 0\\0\amp 27\amp 0\\0\amp 0\amp 125\ebm</m>
+          <m>A^2 = \bbm 1 \amp 0 \amp 0\\0\amp 9\amp 0\\0\amp 0\amp 25\ebm</m>; <m>A^3 = \bbm -1\amp 0\amp 0\\0\amp 27\amp 0\\0\amp 0\amp 125\ebm</m>
         </p>
       </answer>
     </exercise>
@@ -1361,12 +1361,12 @@
     <exercise>
       <statement>
         <p>
-          Let <m>\tta = \bbm 0 \amp 1 \amp 0\\0\amp 0\amp 1\\1\amp 0\amp 0\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
+          Let <m>A = \bbm 0 \amp 1 \amp 0\\0\amp 0\amp 1\\1\amp 0\amp 0\ebm</m>. Find <m>A^2</m> and <m>A^3</m>.
         </p>
       </statement>
       <answer>
         <p>
-          <m>\tta^2 = \bbm 0 \amp 0 \amp 1\\1\amp 0\amp 0\\0\amp 1\amp 0\ebm</m>; <m>\tta^3 = \bbm 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\ebm</m>
+          <m>A^2 = \bbm 0 \amp 0 \amp 1\\1\amp 0\amp 0\\0\amp 1\amp 0\ebm</m>; <m>A^3 = \bbm 1\amp 0\amp 0\\0\amp 1\amp 0\\0\amp 0\amp 1\ebm</m>
         </p>
       </answer>
     </exercise>
@@ -1374,12 +1374,12 @@
     <exercise>
       <statement>
         <p>
-          Let <m>\tta = \bbm 0 \amp 0 \amp 1\\0\amp 0\amp 0\\0\amp 1\amp 0\ebm</m>. Find <m>\tta^2</m> and <m>\tta^3</m>.
+          Let <m>A = \bbm 0 \amp 0 \amp 1\\0\amp 0\amp 0\\0\amp 1\amp 0\ebm</m>. Find <m>A^2</m> and <m>A^3</m>.
         </p>
       </statement>
       <answer>
         <p>
-          <m>\tta^2 = \bbm 0 \amp 1 \amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm</m>; <m>\tta^3 = \bbm 0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm</m>
+          <m>A^2 = \bbm 0 \amp 1 \amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm</m>; <m>A^3 = \bbm 0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm</m>
         </p>
       </answer>
     </exercise>
@@ -1387,22 +1387,22 @@
     <exercise>
       <statement>
         <p>
-          In the text we state that <m>(\tta+\ttb)^2 \neq \tta^2+2\tta\ttb+\ttb^2</m>. We investigate that claim here.
+          In the text we state that <m>(A+B)^2 \neq A^2+2AB+B^2</m>. We investigate that claim here.
           <ol>
             <li>
               <p>
-                Let <m>\tta = \bbm 5\amp 3\\  -3\amp -2\ebm</m> and let <m>\ttb = \bbm -5 \amp -5\  -2 \amp 1\ebm</m>.
-                Compute <m>\tta+\ttb</m>.
+                Let <m>A = \bbm 5\amp 3\\  -3\amp -2\ebm</m> and let <m>B = \bbm -5 \amp -5\  -2 \amp 1\ebm</m>.
+                Compute <m>A+B</m>.
               </p>
             </li>
             <li>
               <p>
-                Find <m>(\tta+\ttb)^2</m> by using your answer from (a).
+                Find <m>(A+B)^2</m> by using your answer from (a).
               </p>
             </li>
             <li>
               <p>
-                Compute <m>\tta^2+2\tta\ttb+\ttb^2</m>.
+                Compute <m>A^2+2AB+B^2</m>.
               </p>
             </li>
             <li>
@@ -1414,9 +1414,9 @@
               <p>
                 Carefully expand the expression
                 <me>
-                  (\tta+\ttb)^2 = (\tta+\ttb)(\tta+\ttb)
+                  (A+B)^2 = (A+B)(A+B)
                 </me>
-                and show why this is not equal to <m>\tta^2+2\tta\ttb+\ttb^2</m>.
+                and show why this is not equal to <m>A^2+2AB+B^2</m>.
               </p>
             </li>
           </ol>
@@ -1447,7 +1447,7 @@
             </li>
             <li>
               <p>
-                <m>(\tta+\ttb)(\tta + \ttb) = \tta\tta + \tta\ttb + \ttb\tta + \ttb\ttb = \tta^2+\tta\ttb+\ttb\tta+\ttb^2</m>.
+                <m>(A+B)(A + B) = AA + AB + BA + BB = A^2+AB+BA+B^2</m>.
               </p>
             </li>
           </ol>

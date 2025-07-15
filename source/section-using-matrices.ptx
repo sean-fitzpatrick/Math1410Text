@@ -643,9 +643,9 @@
 
       <introduction>
         <p>
-          Perform the given row operations on <m>\tta</m>, where
+          Perform the given row operations on <m>A</m>, where
           <me>
-            \tta = \bbm 2\amp -1\amp 7\\0\amp 4\amp -2\\5\amp 0\amp 3\ebm
+            A = \bbm 2\amp -1\amp 7\\0\amp 4\amp -2\\5\amp 0\amp 3\ebm
           </me>.
         </p>
       </introduction>
@@ -734,18 +734,18 @@
 
       <introduction>
         <p>
-          A matrix <m>\tta</m> is given below:
+          A matrix <m>A</m> is given below:
           <me>
-            \tta = \bbm 1\amp 1\amp 1\\1\amp 0\amp 1\\1\amp 2\amp 3\ebm
+            A = \bbm 1\amp 1\amp 1\\1\amp 0\amp 1\\1\amp 2\amp 3\ebm
           </me>.
-          For the given matrix <m>\ttb</m>, give the row operation that transforms <m>\tta</m> into <m>\ttb</m>.
+          For the given matrix <m>B</m>, give the row operation that transforms <m>A</m> into <m>B</m>.
         </p>
       </introduction>
 
       <exercise>
         <statement>
           <p>
-            <m>\ttb = \bbm 1 \amp 1 \amp 1\\2\amp 0\amp 2\\1\amp 2\amp 3\\ \ebm</m>
+            <m>B = \bbm 1 \amp 1 \amp 1\\2\amp 0\amp 2\\1\amp 2\amp 3\\ \ebm</m>
           </p>
         </statement>
         <answer>
@@ -758,7 +758,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttb = \bbm 1 \amp 1 \amp 1\\2\amp 1\amp 2\\1\amp 2\amp 3\\ \ebm</m>
+            <m>B = \bbm 1 \amp 1 \amp 1\\2\amp 1\amp 2\\1\amp 2\amp 3\\ \ebm</m>
           </p>
         </statement>
         <answer>
@@ -771,7 +771,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttb = \bbm 3 \amp 5 \amp 7\\1\amp 0\amp 1\\1\amp 2\amp 3\\ \ebm</m>
+            <m>B = \bbm 3 \amp 5 \amp 7\\1\amp 0\amp 1\\1\amp 2\amp 3\\ \ebm</m>
           </p>
         </statement>
         <answer>
@@ -784,7 +784,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttb = \bbm 1 \amp 0 \amp 1\\1\amp 1\amp 1\\1\amp 2\amp 3\\ \ebm</m>
+            <m>B = \bbm 1 \amp 0 \amp 1\\1\amp 1\amp 1\\1\amp 2\amp 3\\ \ebm</m>
           </p>
         </statement>
         <answer>
@@ -797,7 +797,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\ttb = \bbm 1 \amp 1 \amp 1\\1\amp 0\amp 1\\0\amp 2\amp 2\\ \ebm</m>
+            <m>B = \bbm 1 \amp 1 \amp 1\\1\amp 0\amp 1\\0\amp 2\amp 2\\ \ebm</m>
           </p>
         </statement>
         <answer>

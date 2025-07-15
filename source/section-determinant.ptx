@@ -9,8 +9,8 @@
     (an operation on a matrix that returns another matrix) and the trace
     (an operation on a square matrix that returns a number).
     In this section we'll learn another operation on square matrices that returns a number,
-    called the <term>determinant</term>. The determinant of an <m>n\times n</m> matrix <m>\tta</m> is a number,
-    denoted <m>\det(A)</m>, that is determined by <m>\tta</m>.
+    called the <term>determinant</term>. The determinant of an <m>n\times n</m> matrix <m>A</m> is a number,
+    denoted <m>\det(A)</m>, that is determined by <m>A</m>.
     We had a brief encounter with determinants in <xref ref="sec_cross_product"/>,
     where we saw that determinants of <m>2\times 2</m> and <m>3\times 3</m> matrices are related to the cross product of vectors in <m>\R^3</m>.
   </p>
@@ -44,11 +44,11 @@
 
         Let
         <me>
-          \tta = \bbm a \amp b\\c \amp d\ebm
+          A = \bbm a \amp b\\c \amp d\ebm
         </me>.
-        The <em>determinant of \tta</em>, denoted by
+        The <em>determinant of</em> <m>A</m>, denoted by
         <me>
-          \det(\tta) \ \text{or}\ \bvm a \amp b\\c \amp d\evm ,
+          \det(A) \ \text{or}\ \bvm a \amp b\\c \amp d\evm ,
         </me>
         is <m>ad-bc</m>.
       </p>
@@ -57,14 +57,14 @@
 
   <p>
     We've seen the expression <m>ad-bc</m> before. In <xref ref="sec-inverses"/>,
-    we saw that a <m>2\times2</m> matrix <m>\tta</m> has inverse
+    we saw that a <m>2\times2</m> matrix <m>A</m> has inverse
     <me>
       \frac{1}{ad-bc}\bbm d \amp -b\\-c \amp a\ebm
     </me>
     as long as <m>ad-bc\neq 0</m>; otherwise, the inverse does not exist.
-    We can rephrase the above statement now: If <m>\det(\tta)\neq 0</m>, then
+    We can rephrase the above statement now: If <m>\det(A)\neq 0</m>, then
     <me>
-      \ttai = \frac{1}{\det(A)}\bbm d \amp -b\\-c \amp a\ebm
+      A^{-1} = \frac{1}{\det(A)}\bbm d \amp -b\\-c \amp a\ebm
     </me>.
   </p>
 
@@ -74,7 +74,7 @@
     We discussed at the end of the last section the idea of measuring the <q>size</q> of a matrix,
     and mentioned that there are many different ways to measure size.
     The determinant is one such way. Just as the absolute value of a number measures its size (and ignores its sign),
-    the determinant of a matrix is a measurement of the size of the matrix. (Be careful, though: <m>\det(\tta)</m> can be negative!)
+    the determinant of a matrix is a measurement of the size of the matrix. (Be careful, though: <m>\det(A)</m> can be negative!)
   </p>
 
   <p>
@@ -103,15 +103,15 @@
     <title>Computing <m>2\times 2</m> determinants</title>
     <statement>
       <p>
-        Find the determinant of <m>\tta</m>, <m>\ttb</m> and <m>\ttc</m> where
+        Find the determinant of <m>A</m>, <m>B</m> and <m>C</m> where
         <me>
-          \tta = \bbm 1 \amp 2\\3 \amp 4\ebm, \ \ttb = \bbm 3\amp -1\\2\amp 7\ebm\ \text{and}\ \ttc = \bbm 1\amp -3\\-2\amp 6\ebm
+          A = \bbm 1 \amp 2\\3 \amp 4\ebm, \ B = \bbm 3\amp -1\\2\amp 7\ebm\ \text{and}\ C = \bbm 1\amp -3\\-2\amp 6\ebm
         </me>.
       </p>
     </statement>
     <solution>
       <p>
-        Finding the determinant of \tta:
+        Finding the determinant of <m>A</m>:
         <md>
           <mrow>\det(A) \amp = \bvm 1\amp 2\\3\amp 4\evm</mrow>
           <mrow>            \amp = 1(4) - 2(3)</mrow>
@@ -120,7 +120,7 @@
       </p>
 
       <p>
-        Similar computations show that <m>\det(\ttb) = 3(7)- (-1)(2) = 23</m> and <m>\det(\ttc) = 1(6) - (-3)(-2) = 0</m>.
+        Similar computations show that <m>\det(B) = 3(7)- (-1)(2) = 23</m> and <m>\det(C) = 1(6) - (-3)(-2) = 0</m>.
       </p>
     </solution>
   </example>
@@ -140,16 +140,16 @@
         <idx><h>minor</h></idx>
         <idx><h>cofactor</h></idx>
 
-        Let <m>\tta</m> be an <m>n\times n</m> matrix.
-        The <em><m>(i,j)</m>-minor of</em> <m>\tta</m>, denoted <m>\tta_{ij}</m>,
+        Let <m>A</m> be an <m>n\times n</m> matrix.
+        The <em><m>(i,j)</m>-minor of</em> <m>A</m>, denoted <m>A_{ij}</m>,
         is the  determinant of the <m>(n-1)\times(n-1)</m> matrix formed by deleting the <m>i^{th}</m>
-        row and <m>j^{th}</m> column of <m>\tta</m>.
+        row and <m>j^{th}</m> column of <m>A</m>.
       </p>
 
       <p>
-        The <em><m>(i,j)</m>-cofactor of \tta</em> is the number
+        The <em><m>(i,j)</m>-cofactor of</em> <m>A</m> is the number
         <me>
-          C_{ij}=(-1)^{i+j}\tta_{ij}
+          C_{ij}=(-1)^{i+j}A_{ij}
         </me>.
       </p>
     </statement>
@@ -179,56 +179,56 @@
       <p>
         Let
         <me>
-          \tta = \bbm 1 \amp 2 \amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm\ \text{and}\ \ttb = \bbm 1\amp 2\amp 0\amp 8\\-3\amp 5\amp 7\amp 2\\-1\amp 9\amp -4\amp 6\\1\amp 1\amp 1\amp 1\ebm
+          A = \bbm 1 \amp 2 \amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm\ \text{and}\ B = \bbm 1\amp 2\amp 0\amp 8\\-3\amp 5\amp 7\amp 2\\-1\amp 9\amp -4\amp 6\\1\amp 1\amp 1\amp 1\ebm
         </me>.
-        Find <m>\tta_{1,3}</m>, <m>\tta_{3,2}</m>, <m>\ttb_{2,1}</m>, <m>\ttb_{4,3}</m> and their respective cofactors.
+        Find <m>A_{1,3}</m>, <m>A_{3,2}</m>, <m>B_{2,1}</m>, <m>B_{4,3}</m> and their respective cofactors.
       </p>
     </statement>
     <solution>
       <p>
-        To compute the minor <m>\tta_{1,3}</m>, we remove the first row and third column of <m>\tta</m> then take the determinant.
+        To compute the minor <m>A_{1,3}</m>, we remove the first row and third column of <m>A</m> then take the determinant.
         <md>
-          <mrow>\tta \amp = \bbm 1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm\Rightarrow\bbm\mathbf{\cancel{1}}\amp \mathbf{\cancel{2}}\amp \mathbf{\cancel{3}}\\4\amp 5\amp \mathbf{\cancel{6}}\\7\amp 8\amp \mathbf{\cancel{9}}\ebm\Rightarrow\bbm 4\amp 5\\7\amp 8\ebm</mrow>
-          <mrow>\tta_{1,3} \amp = \bvm 4\amp 5\\7\amp 8\evm  = 32-35 = -3</mrow>
+          <mrow>A \amp = \bbm 1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm\Rightarrow\bbm\mathbf{\cancel{1}}\amp \mathbf{\cancel{2}}\amp \mathbf{\cancel{3}}\\4\amp 5\amp \mathbf{\cancel{6}}\\7\amp 8\amp \mathbf{\cancel{9}}\ebm\Rightarrow\bbm 4\amp 5\\7\amp 8\ebm</mrow>
+          <mrow>A_{1,3} \amp = \bvm 4\amp 5\\7\amp 8\evm  = 32-35 = -3</mrow>
         </md>.
       </p>
 
       <p>
         The corresponding cofactor, <m>C_{1,3}</m>, is
         <me>
-          C_{1,3} = (-1)^{1+3}\tta_{1,3} = (-1)^4(-3) = -3
+          C_{1,3} = (-1)^{1+3}A_{1,3} = (-1)^4(-3) = -3
         </me>.
       </p>
 
       <p>
-        The minor <m>\tta_{3,2}</m> is found by removing the third row and second column of <m>\tta</m> then taking the determinant.
+        The minor <m>A_{3,2}</m> is found by removing the third row and second column of <m>A</m> then taking the determinant.
         <md>
-          <mrow>\tta \amp = \bbm 1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm\Rightarrow\bbm 1\amp \mathbf{\cancel{2}}\amp 3\\4\amp \mathbf{\cancel{5}}\amp 6\\ \mathbf{\cancel{7}}\amp \mathbf{\cancel{8}}\amp \mathbf{\cancel{9}}\ebm\Rightarrow \bbm 1\amp 3\\4\amp 6\ebm</mrow>
-          <mrow>\tta_{3,2} \amp = \bvm 1\amp 3\\4\amp 6\evm  = 6-12 = -6</mrow>
+          <mrow>A \amp = \bbm 1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm\Rightarrow\bbm 1\amp \mathbf{\cancel{2}}\amp 3\\4\amp \mathbf{\cancel{5}}\amp 6\\ \mathbf{\cancel{7}}\amp \mathbf{\cancel{8}}\amp \mathbf{\cancel{9}}\ebm\Rightarrow \bbm 1\amp 3\\4\amp 6\ebm</mrow>
+          <mrow>A_{3,2} \amp = \bvm 1\amp 3\\4\amp 6\evm  = 6-12 = -6</mrow>
         </md>.
         The corresponding cofactor, <m>C_{3,2}</m>, is
         <me>
-          C_{3,2} = (-1)^{3+2}\tta_{3,2} = (-1)^5(-6) = 6
+          C_{3,2} = (-1)^{3+2}A_{3,2} = (-1)^5(-6) = 6
         </me>.
       </p>
 
       <p>
-        The minor <m>\tta_{3,2}</m> is found by removing the third row and second column of <m>\tta</m> then taking the determinant.
+        The minor <m>A_{3,2}</m> is found by removing the third row and second column of <m>A</m> then taking the determinant.
         <md>
-          <mrow>\tta \amp = \bbm 1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm\Rightarrow\bbm 1\amp \mathbf{\cancel{2}}\amp 3\\4\amp \mathbf{\cancel{5}}\amp 6\\ \mathbf{\cancel{7}}\amp \mathbf{\cancel{8}}\amp \mathbf{\cancel{9}}\ebm\Rightarrow \bbm 1\amp 3\\4\amp 6\ebm</mrow>
-          <mrow>\tta_{3,2} \amp = \bvm 1\amp 3\\4\amp 6\evm  = 6-12 = -6</mrow>
+          <mrow>A \amp = \bbm 1\amp 2\amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm\Rightarrow\bbm 1\amp \mathbf{\cancel{2}}\amp 3\\4\amp \mathbf{\cancel{5}}\amp 6\\ \mathbf{\cancel{7}}\amp \mathbf{\cancel{8}}\amp \mathbf{\cancel{9}}\ebm\Rightarrow \bbm 1\amp 3\\4\amp 6\ebm</mrow>
+          <mrow>A_{3,2} \amp = \bvm 1\amp 3\\4\amp 6\evm  = 6-12 = -6</mrow>
         </md>.
         The corresponding cofactor, <m>C_{3,2}</m>, is
         <me>
-          C_{3,2} = (-1)^{3+2}\tta_{3,2} = (-1)^5(-6) = 6
+          C_{3,2} = (-1)^{3+2}A_{3,2} = (-1)^5(-6) = 6
         </me>.
       </p>
 
       <p>
-        The minor <m>\ttb_{2,1}</m> is found by removing the second row and first column of <m>\ttb</m> then taking the determinant.
+        The minor <m>B_{2,1}</m> is found by removing the second row and first column of <m>B</m> then taking the determinant.
         <md>
-          <mrow>\ttb \amp = \bbm 1\amp 2\amp 0\amp 8\\-3\amp 5\amp 7\amp 2\\-1\amp 9\amp -4\amp 6\\1\amp 1\amp 1\amp 1\ebm \Rightarrow \bbm\mathbf{\cancel{1}}\amp 2\amp 0\amp 8\\ \mathbf{\cancel{-3}}\amp \mathbf{\cancel{5}}\amp \mathbf{\cancel{7}}\amp \mathbf{\cancel{2}}\\ \mathbf{\cancel{-1}}\amp 9\amp -4\amp 6\\ \mathbf{\cancel{1}}\amp 1\amp 1\amp 1\ebm \Rightarrow \bbm 2\amp 0\amp 8\\9\amp -4\amp 6\\1\amp 1\amp 1\ebm</mrow>
-          <mrow>\ttb_{2,1} \amp = \bvm 2\amp 0\amp 8\\9\amp -4\amp 6\\1\amp 1\amp 1\evm  \stackrel{!}{=}</mrow>
+          <mrow>B \amp = \bbm 1\amp 2\amp 0\amp 8\\-3\amp 5\amp 7\amp 2\\-1\amp 9\amp -4\amp 6\\1\amp 1\amp 1\amp 1\ebm \Rightarrow \bbm\mathbf{\cancel{1}}\amp 2\amp 0\amp 8\\ \mathbf{\cancel{-3}}\amp \mathbf{\cancel{5}}\amp \mathbf{\cancel{7}}\amp \mathbf{\cancel{2}}\\ \mathbf{\cancel{-1}}\amp 9\amp -4\amp 6\\ \mathbf{\cancel{1}}\amp 1\amp 1\amp 1\ebm \Rightarrow \bbm 2\amp 0\amp 8\\9\amp -4\amp 6\\1\amp 1\amp 1\ebm</mrow>
+          <mrow>B_{2,1} \amp = \bvm 2\amp 0\amp 8\\9\amp -4\amp 6\\1\amp 1\amp 1\evm  \stackrel{!}{=}</mrow>
         </md>?
       </p>
 
@@ -236,20 +236,20 @@
         We're a bit stuck. We don't know how to find the determinant of this <m>3\times 3</m> matrix.
         We'll come back to this later. The corresponding cofactor is
         <me>
-          C_{2,1} = (-1)^{2+1}\ttb_{2,1} = -\ttb_{2,1}
+          C_{2,1} = (-1)^{2+1}B_{2,1} = -B_{2,1}
         </me>,
         whatever this number happens to be.
-        The minor <m>\ttb_{4,3}</m> is found by removing the fourth row and third column of <m>\ttb</m> then taking the determinant.
+        The minor <m>B_{4,3}</m> is found by removing the fourth row and third column of <m>B</m> then taking the determinant.
         <md>
-          <mrow>\ttb \amp = \bbm 1\amp 2\amp 0\amp 8\\-3\amp 5\amp 7\amp 2\\-1\amp 9\amp -4\amp 6\\1\amp 1\amp 1\amp 1\ebm \Rightarrow \bbm 1\amp 2\amp \mathbf{\cancel{0}}\amp 8\\-3\amp 5\amp \mathbf{\cancel{7}}\amp 2\\-1\amp 9\amp \mathbf{\cancel{-4}}\amp 6\\ \mathbf{\cancel{1}}\amp \mathbf{\cancel{1}}\amp \mathbf{\cancel{1}}\amp \mathbf{\cancel{1}}\ebm \Rightarrow \bbm 1\amp 2\amp 8\\-3\amp 5\amp 2\\-1\amp 9\amp 6\ebm</mrow>
-          <mrow>\ttb_{4,3} \amp = \bvm 1\amp 2\amp 8\\-3\amp 5\amp 2\\-1\amp 9\amp 6\evm  \stackrel{!}{=}</mrow>
+          <mrow>B \amp = \bbm 1\amp 2\amp 0\amp 8\\-3\amp 5\amp 7\amp 2\\-1\amp 9\amp -4\amp 6\\1\amp 1\amp 1\amp 1\ebm \Rightarrow \bbm 1\amp 2\amp \mathbf{\cancel{0}}\amp 8\\-3\amp 5\amp \mathbf{\cancel{7}}\amp 2\\-1\amp 9\amp \mathbf{\cancel{-4}}\amp 6\\ \mathbf{\cancel{1}}\amp \mathbf{\cancel{1}}\amp \mathbf{\cancel{1}}\amp \mathbf{\cancel{1}}\ebm \Rightarrow \bbm 1\amp 2\amp 8\\-3\amp 5\amp 2\\-1\amp 9\amp 6\ebm</mrow>
+          <mrow>B_{4,3} \amp = \bvm 1\amp 2\amp 8\\-3\amp 5\amp 2\\-1\amp 9\amp 6\evm  \stackrel{!}{=}</mrow>
         </md>?
       </p>
 
       <p>
         Again, we're stuck. We won't be able to fully compute <m>C_{4,3}</m>; all we know so far is that
         <me>
-          C_{4,3} = (-1)^{4+3}\ttb_{4,3} = (-1)\ttb_{4,3}
+          C_{4,3} = (-1)^{4+3}B_{4,3} = (-1)B_{4,3}
         </me>.
         Once we learn how to compute determinants for matrices larger than <m>2\times 2</m> we can come back and finish this exercise.
       </p>
@@ -275,14 +275,14 @@
         <idx><h>cofactor</h><h>expansion</h></idx>
 
         Let <m>A=[a_{ij}]</m> be an <m>n\times n</m> matrix.
-        The <term>cofactor expansion</term> of <m>\tta</m> along the <m>i</m>th row is the sum
+        The <term>cofactor expansion</term> of <m>A</m> along the <m>i</m>th row is the sum
         <me>
           a_{i,1}C_{i,1} + a_{i,2}C_{i,2} + \cdots + a_{i,n}C_{i,n}
         </me>.
       </p>
 
       <p>
-        The cofactor expansion of <m>\tta</m> down the <m>j</m>th column is the sum
+        The cofactor expansion of <m>A</m> down the <m>j</m>th column is the sum
         <me>
           a_{1,j}C_{1,j} + a_{2,j}C_{2,j} + \cdots + a_{n,j}C_{n,j}
         </me>.
@@ -308,7 +308,7 @@
       <p>
         Let
         <me>
-          \tta = \bbm 1 \amp 2 \amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm
+          A = \bbm 1 \amp 2 \amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm
         </me>.
         Find the cofactor expansions along the second row and down the first column.
       </p>
@@ -326,9 +326,9 @@
       <p>
         We'll find each cofactor and then compute the sum.
         <md>
-          <mrow>C_{2,1} \amp = (-1)^{2+1}\bvm 2\amp 3\\8\amp 9\evm   = (-1)(-6) = 6 \quad \scriptstyle \begin{pmatrix} \text{we removed the second row}\\ \text{and first column of } \tta \\ \text{to compute the minor}\end{pmatrix}\displaystyle</mrow>
-          <mrow>C_{2,2} \amp = (-1)^{2+2}\bvm 1\amp 3\\7\amp 9\evm  = (1)(-12) = -12\quad \scriptstyle \begin{pmatrix} \text{we removed the second row}\\ \text{and second column of } \tta \\ \text{to compute the minor}\end{pmatrix}\displaystyle</mrow>
-          <mrow>C_{2,3} \amp = (-1)^{2+3}\bvm 1\amp 2\\7\amp 8\evm  = (-1)(-6) = 6 \quad \scriptstyle \begin{pmatrix} \text{we removed  the second row}\\ \text{and third column of } \tta\\ \text{to compute the minor}\end{pmatrix}\displaystyle</mrow>
+          <mrow>C_{2,1} \amp = (-1)^{2+1}\bvm 2\amp 3\\8\amp 9\evm   = (-1)(-6) = 6 \quad \scriptstyle \begin{pmatrix} \text{we removed the second row}\\ \text{and first column of } A \\ \text{to compute the minor}\end{pmatrix}\displaystyle</mrow>
+          <mrow>C_{2,2} \amp = (-1)^{2+2}\bvm 1\amp 3\\7\amp 9\evm  = (1)(-12) = -12\quad \scriptstyle \begin{pmatrix} \text{we removed the second row}\\ \text{and second column of } A \\ \text{to compute the minor}\end{pmatrix}\displaystyle</mrow>
+          <mrow>C_{2,3} \amp = (-1)^{2+3}\bvm 1\amp 2\\7\amp 8\evm  = (-1)(-6) = 6 \quad \scriptstyle \begin{pmatrix} \text{we removed  the second row}\\ \text{and third column of } A\\ \text{to compute the minor}\end{pmatrix}\displaystyle</mrow>
         </md>.
       </p>
 
@@ -356,9 +356,9 @@
       <p>
         We find each cofactor:
         <md>
-          <mrow>C_{1,1} \amp = (-1)^{1+1}\bvm 5\amp 6\\8\amp 9\evm  = (1)(-3) = -3 \quad \scriptstyle \begin{pmatrix}\text{we removed  the first row}\\ \text{and first column of} \tta\\ \text{to compute the minor}\end{pmatrix}\displaystyle</mrow>
+          <mrow>C_{1,1} \amp = (-1)^{1+1}\bvm 5\amp 6\\8\amp 9\evm  = (1)(-3) = -3 \quad \scriptstyle \begin{pmatrix}\text{we removed  the first row}\\ \text{and first column of} A\\ \text{to compute the minor}\end{pmatrix}\displaystyle</mrow>
           <mrow>C_{2,1} \amp = (-1)^{2+1}\bvm 2\amp 3\\8\amp 9\evm   = (-1)(-6) = 6 \quad \text{(we computed this cofactor above)}\displaystyle</mrow>
-          <mrow>C_{3,1} \amp = (-1)^{3+1}\bvm 2\amp 3\\5\amp 6\evm  = (1)(-3) = -3 \quad \scriptstyle \begin{pmatrix}\text{we removed  the third row}\\ \text{and first column of } \tta\\ \text{ to compute the minor}\end{pmatrix}\displaystyle</mrow>
+          <mrow>C_{3,1} \amp = (-1)^{3+1}\bvm 2\amp 3\\5\amp 6\evm  = (1)(-3) = -3 \quad \scriptstyle \begin{pmatrix}\text{we removed  the third row}\\ \text{and first column of } A\\ \text{ to compute the minor}\end{pmatrix}\displaystyle</mrow>
         </md>
       </p>
 
@@ -385,20 +385,20 @@
         <idx><h>matrix</h><h>determinant</h></idx>
         <idx><h>determinant</h><h>definition</h></idx>
 
-        The <em>determinant</em> of an <m>n\times n</m> matrix <m>\tta</m>,
-        denoted <m>\det(A)</m> or <m>|\tta|</m>, is a number given by the following:
+        The <em>determinant</em> of an <m>n\times n</m> matrix <m>A</m>,
+        denoted <m>\det(A)</m> or <m>|A|</m>, is a number given by the following:
         <ul>
           <li>
             <p>
-              if <m>\tta</m> is a <m>1\times 1</m> matrix <m>\tta = [a]</m>, then <m>\det(A) = a.</m>
+              if <m>A</m> is a <m>1\times 1</m> matrix <m>A = [a]</m>, then <m>\det(A) = a.</m>
             </p>
           </li>
 
           <li>
             <p>
-              if <m>\tta</m> is a <m>2\times 2</m> matrix
+              if <m>A</m> is a <m>2\times 2</m> matrix
               <me>
-                \tta = \bbm a \amp b\\c \amp d\ebm,
+                A = \bbm a \amp b\\c \amp d\ebm,
               </me>
               then <m>\det(A) = ad-bc</m>.
             </p>
@@ -406,8 +406,8 @@
 
           <li>
             <p>
-              if <m>\tta</m> is an <m>n\times n</m> matrix, where <m>n\geq 2</m>,
-              then <m>\det(A)</m> is the number found by taking the cofactor expansion along the first row of <m>\tta</m>. That is,
+              if <m>A</m> is an <m>n\times n</m> matrix, where <m>n\geq 2</m>,
+              then <m>\det(A)</m> is the number found by taking the cofactor expansion along the first row of <m>A</m>. That is,
               <me>
                 \det(A) = a_{1,1}C_{1,1} + a_{1,2}C_{1,2} + \cdots + a_{1,n}C_{1,n}
               </me>.
@@ -430,7 +430,7 @@
       <p>
         Find the determinant of
         <me>
-          \tta = \bbm 1 \amp 2 \amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm
+          A = \bbm 1 \amp 2 \amp 3\\4\amp 5\amp 6\\7\amp 8\amp 9\ebm
         </me>.
       </p>
     </statement>
@@ -445,12 +445,12 @@
 
       <p>
         <md>
-          <mrow>C_{1,1} \amp = (-1)^{1+1}\tta_{1,1} \amp C_{1,2} \amp = (-1)^{1+2}\tta_{1,2} \amp C_{1,3} \amp = (-1)^{1+3}\tta_{1,3}</mrow>
+          <mrow>C_{1,1} \amp = (-1)^{1+1}A_{1,1} \amp C_{1,2} \amp = (-1)^{1+2}A_{1,2} \amp C_{1,3} \amp = (-1)^{1+3}A_{1,3}</mrow>
           <mrow>  \amp = 1\cdot\bvm 5\amp 6\\8\amp 9\evm  \amp \amp = (-1)\cdot\bvm  4\amp 6\\7\amp 9\evm \amp \amp  = 1\cdot\bvm 4\amp 5\\7\amp 8\evm </mrow>
           <mrow>  \amp = 45-48 \amp \amp = (-1)(36-42) \amp  \amp = 32-35</mrow>
           <mrow>  \amp =-3 \amp \amp =6 \amp \amp =-3</mrow>
         </md>.
-        Therefore the determinant of <m>\tta</m> is
+        Therefore the determinant of <m>A</m> is
         <me>
           \det(A) = 1(-3) + 2(6)+3(-3) = 0
         </me>.
@@ -464,7 +464,7 @@
       <p>
         Find the determinant of
         <me>
-          \tta = \bbm 3 \amp 6 \amp 7\\0\amp 2\amp -1\\3\amp -1\amp 1\ebm
+          A = \bbm 3 \amp 6 \amp 7\\0\amp 2\amp -1\\3\amp -1\amp 1\ebm
         </me>.
       </p>
     </statement>
@@ -472,7 +472,7 @@
       <p>
         We'll compute each cofactor first then find the determinant.
         <md>
-          <mrow>C_{1,1} \amp = (-1)^{1+1}\tta_{1,1} \amp  C_{1,2} \amp = (-1)^{1+2}\tta_{1,2} \amp  C_{1,3} \amp = (-1)^{1+3}\tta_{1,3}</mrow>
+          <mrow>C_{1,1} \amp = (-1)^{1+1}A_{1,1} \amp  C_{1,2} \amp = (-1)^{1+2}A_{1,2} \amp  C_{1,3} \amp = (-1)^{1+3}A_{1,3}</mrow>
           <mrow> \amp  = 1\cdot\bvm 2\amp -1\\-1\amp 1\evm \amp \amp = (-1)\cdot\bvm  0\amp -1\\3\amp 1\evm \amp \amp = 1\cdot\bvm 0\amp 2\\3\amp -1\evm</mrow>
           <mrow> \amp = 2-1 \amp \amp = (-1)(0+3) \amp \amp = 0-6</mrow>
           <mrow> \amp =1 \amp \amp =-3 \amp \amp =-6</mrow>
@@ -491,7 +491,7 @@
       <p>
         Find the determinant of
         <me>
-          \tta = \bbm 1 \amp 2 \amp 1\amp 2\\-1\amp 2\amp 3\amp 4\\8\amp 5\amp -3\amp 1\\5\amp 9\amp -6\amp 3\ebm
+          A = \bbm 1 \amp 2 \amp 1\amp 2\\-1\amp 2\amp 3\amp 4\\8\amp 5\amp -3\amp 1\\5\amp 9\amp -6\amp 3\ebm
         </me>.
       </p>
     </statement>
@@ -504,7 +504,7 @@
         (But it might make us feel a little better. Glance ahead: do you see how much work we have to do?!?)
         so let's get started. We first compute the cofactors:
         <md>
-          <mrow>C_{1,1} \amp = (-1)^{1+1}\tta_{1,1}</mrow>
+          <mrow>C_{1,1} \amp = (-1)^{1+1}A_{1,1}</mrow>
           <mrow>\amp = 1\cdot\bvm 2\amp 3\amp 4\\5\amp -3\amp 1\\9\amp -6\amp 3\evm  \quad\quad\quad \scriptstyle \begin{pmatrix} \text{we must compute the determinant}\\ \text{of this } 3\times 3 \text{ matrix}\end{pmatrix}\displaystyle</mrow>
           <mrow>\amp = 2\cdot(-1)^{1+1}\bvm -3\amp 1\\-6\amp 3\evm  + 3\cdot(-1)^{1+2}\bvm 5\amp 1\\9\amp 3\evm  + 4\cdot(-1)^{1+3}\bvm 5\amp -3\\9\amp -6\evm</mrow>
           <mrow>\amp = 2(-3) + 3(-6) + 4(-3)</mrow>
@@ -512,7 +512,7 @@
         </md>
 
         <md>
-          <mrow>C_{1,2} \amp = (-1)^{1+2}\tta_{1,2}</mrow>
+          <mrow>C_{1,2} \amp = (-1)^{1+2}A_{1,2}</mrow>
           <mrow>\amp = (-1)\cdot\bvm -1\amp 3\amp 4\\8\amp -3\amp 1\\5\amp -6\amp 3\evm  \quad\quad\quad \scriptstyle \begin{pmatrix} \text{we must compute the determinant}\\ \text{of this } 3\times 3 \text{ matrix}\end{pmatrix}\displaystyle</mrow>
           <mrow>\amp = (-1)\underbrace{\left[(-1)\cdot(-1)^{1+1}\bvm -3\amp 1\\-6\amp 3\evm  + 3\cdot(-1)^{1+2}\bvm 8\amp 1\\5\amp 3\evm  + 4\cdot(-1)^{1+3}\bvm 8\amp -3\\5\amp -6\evm  \right]}_{\text{the determinant of the } 3 \times 3 \text{ matrix}}</mrow>
           <mrow>\amp = (-1)\left[(-1)(-3)+3(-19)+4(-33) \right]</mrow>
@@ -520,7 +520,7 @@
         </md>
 
         <md>
-          <mrow>C_{1,3} \amp = (-1)^{1+3}\tta_{1,3}</mrow>
+          <mrow>C_{1,3} \amp = (-1)^{1+3}A_{1,3}</mrow>
           <mrow>\amp = 1\cdot\bvm -1\amp 2\amp 4\\8\amp 5\amp 1\\5\amp 9\amp 3\evm  \quad\quad\quad \scriptstyle \begin{pmatrix} \text{we must compute the determinant}\\ \text{of this } 3\times 3 \text{ matrix}\end{pmatrix}\displaystyle</mrow>
           <mrow>\amp = (-1)\cdot(-1)^{1+1}\bvm 5\amp 1\\9\amp 3\evm  + 2\cdot(-1)^{1+2}\bvm 8\amp 1\\5\amp 3\evm  + 4\cdot(-1)^{1+3}\bvm 8\amp 5\\5\amp 9\evm</mrow>
           <mrow>\amp = (-1)(6)+2(-19)+4(47)</mrow>
@@ -528,7 +528,7 @@
         </md>
 
         <md>
-          <mrow>C_{1,4} \amp = (-1)^{1+4}\tta_{1,4}\\</mrow>
+          <mrow>C_{1,4} \amp = (-1)^{1+4}A_{1,4}\\</mrow>
           <mrow>\amp = (-1)\cdot\bvm -1\amp 2\amp 3\\8\amp 5\amp -3\\5\amp 9\amp -6\evm  \quad\quad\quad\scriptstyle \begin{pmatrix} \text{we must compute the determinant}\\ \text{of this } 3\times 3 \text{ matrix}\end{pmatrix}\displaystyle</mrow>
           <mrow>\amp = (-1)\underbrace{\left[(-1)\cdot(-1)^{1+1}\bvm 5\amp -3\\9\amp -6\evm  + 2\cdot(-1)^{1+2}\bvm 8\amp -3\\5\amp -6\evm  + 3\cdot(-1)^{1+3}\bvm 8\amp 5\\5\amp 9\evm \right]}_{\text{the determinant of the } 3 \times 3 \text{ matrix}}</mrow>
           <mrow>\amp = (-1)\left[(-1)(-3)+2(33)+3(47)\right]</mrow>
@@ -707,9 +707,9 @@
 
       <introduction>
         <p>
-          A matrix <m>\tta</m> is given.
+          A matrix <m>A</m> is given.
           <ol marker="(a)">
-            <li>Construct the submatrices used to compute the minors <m>\tta_{1,1}</m>, <m>\tta_{1,2}</m> and <m>\tta_{1,3}</m>.</li>
+            <li>Construct the submatrices used to compute the minors <m>A_{1,1}</m>, <m>A_{1,2}</m> and <m>A_{1,3}</m>.</li>
             <li>Find the cofactors <m>C_{1,1}</m>, <m>C_{1,2}</m>, and <m>C_{1,3}</m>.</li>
           </ol>
         </p>
@@ -1002,9 +1002,9 @@
     <exercise>
       <statement>
         <p>
-          Let <m>\tta</m> be a <m>2\times 2</m> matrix;
-          <m>\tta = \bbm a\amp b\\c\amp d\ebm</m>.
-          Show why <m>\det(\tta)=ad-bc</m> by computing the cofactor expansion of <m>\tta</m> along the first row.
+          Let <m>A</m> be a <m>2\times 2</m> matrix;
+          <m>A = \bbm a\amp b\\c\amp d\ebm</m>.
+          Show why <m>\det(A)=ad-bc</m> by computing the cofactor expansion of <m>A</m> along the first row.
         </p>
       </statement>
       <answer>

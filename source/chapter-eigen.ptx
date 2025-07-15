@@ -4,8 +4,8 @@
   <introduction>
     <p>
       We have often explored new ideas in Linear Algebra by making connections to our previous algebraic experience.
-      Adding two numbers, <m>x+y</m>, led us to adding vectors <m>\vx+\vy</m> and adding matrices <m>\tta+\ttb</m>.
-      We explored multiplication, which then led us to solving the matrix equation <m>\ttaxb</m>,
+      Adding two numbers, <m>x+y</m>, led us to adding vectors <m>\vx+\vy</m> and adding matrices <m>A+B</m>.
+      We explored multiplication, which then led us to solving the matrix equation <m>A\vx = \vb</m>,
       which was reminiscent of solving the algebra equation <m>ax=b</m>.
     </p>
 
@@ -34,11 +34,11 @@
 
     <p>
       Within the linear algebra context, though, we have two types of multiplication:
-      scalar and matrix multiplication. What happens to <m>\vx</m> when we multiply it by a matrix <m>\tta</m>?
+      scalar and matrix multiplication. What happens to <m>\vx</m> when we multiply it by a matrix <m>A</m>?
       Our first response is likely along the lines of <q>You just get another vector.
       There is no definable relationship.</q> We might wonder
       if there is ever the case where a matrix<ndash/>vector multiplication is very similar to a scalar<ndash/>vector multiplication.
-      That is, do we ever have the case where <m>\tta\vx = a\vx</m>, where <m>a</m> is some scalar?
+      That is, do we ever have the case where <m>A\vx = a\vx</m>, where <m>a</m> is some scalar?
       That is the motivating question of this chapter.
     </p>
   </introduction>

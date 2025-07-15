@@ -29,36 +29,36 @@
         <idx><h>inverse</h><h>properties</h></idx>
         <idx><h>inverse</h><h>Invertible Matrix Theorem</h></idx>
 
-        Let <m>\tta</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
+        Let <m>A</m> be an <m>n\times n</m> matrix. The following statements are equivalent.
         <ol marker="(a)">
           <li xml:id="imt-def">
             <p>
-              <m>\tta</m> is invertible.
+              <m>A</m> is invertible.
             </p>
           </li>
           <li xml:id="imt-axo">
             <p>
-              The equation <m>\ttaxo</m> has exactly one solution (namely, <m>\vx = \zero</m>).
+              The equation <m>A\vx = \zero</m> has exactly one solution (namely, <m>\vx = \zero</m>).
             </p>
           </li>
           <li xml:id="imt-rref">
             <p>
-              The reduced row echelon form of <m>\tta</m> is <m>\tti</m>.
+              The reduced row echelon form of <m>A</m> is <m>I</m>.
             </p>
           </li>
           <li xml:id="imt-axb">
             <p>
-              The equation <m>\ttaxb</m> has exactly one solution for every <m>n\times 1</m> vector<m>\vb</m>.
+              The equation <m>A\vx = \vb</m> has exactly one solution for every <m>n\times 1</m> vector<m>\vb</m>.
             </p>
           </li>
           <li xml:id="imt-ac">
             <p>
-              There exists a matrix <m>\ttc</m> such that <m>\tta\ttc = \tti</m>.
+              There exists a matrix <m>C</m> such that <m>AC = I</m>.
             </p>
           </li>
           <li xml:id="imt-ba">
             <p>
-              There exists a matrix <m>\ttb</m> such that <m>\ttb\tta = \tti</m>.
+              There exists a matrix <m>B</m> such that <m>BA = I</m>.
             </p>
           </li>
         </ol>
@@ -75,8 +75,8 @@
     </p>
 
     <p>
-      Also note: If we know that <m>\tta</m> is invertible,
-      then we already know that there is a matrix <m>\ttb</m> where <m>\ttb\tta=\tti</m>.
+      Also note: If we know that <m>A</m> is invertible,
+      then we already know that there is a matrix <m>B</m> where <m>BA=I</m>.
       That is part of the definition of invertible. Part of the significance of <xref ref="thm-IMT"/>
       is that as soon as we find a matrix <m>B</m> such that <m>AB=I</m>,
       we immediately know that <m>A</m> is invertible, and that <m>BA=I</m> as well.
@@ -89,9 +89,9 @@
     Recall that when two or more statements are equivalent,
     it means that the truth of any one of them implies that the rest are also true;
     if any one of the statements is false, then they are all false.
-    So, for example, if we determined that the equation <m>\ttaxo</m> had exactly one solution
-    (and <m>\tta</m> was an <m>n\times n</m> matrix) then we would know that <m>\tta</m> was invertible,
-    that <m>\ttaxb</m> had only one solution, that the reduced row echelon form of <m>\tta</m> was <m>\tti</m>, <etc/>
+    So, for example, if we determined that the equation <m>A\vx = \zero</m> had exactly one solution
+    (and <m>A</m> was an <m>n\times n</m> matrix) then we would know that <m>A</m> was invertible,
+    that <m>A\vx = \vb</m> had only one solution, that the reduced row echelon form of <m>A</m> was <m>I</m>, <etc/>
   </p>
 
 
@@ -105,7 +105,7 @@
 	  <ul>
 	    <li>
         <p>
-          (a) <m>\Rightarrow</m> (b): Suppose <m>\ttaxo</m> for some vector <m>\vx</m>.
+          (a) <m>\Rightarrow</m> (b): Suppose <m>A\vx = \zero</m> for some vector <m>\vx</m>.
           Since <m>A</m> is invertible, we can multiply both sides of this equation by <m>A^{-1}</m>, giving us
           <me>
             \vx = I\vx = (A^{-1}A)\vx = A^{-1}(A\vx) = A^{-1}\zero = \zero
@@ -115,9 +115,9 @@
       </li>
       <li>
         <p>
-	        (b) <m>\Rightarrow</m> (c): Suppose the only solution to <m>\ttaxo</m> is <m>\vx = \zero</m>.
+	        (b) <m>\Rightarrow</m> (c): Suppose the only solution to <m>A\vx = \zero</m> is <m>\vx = \zero</m>.
           Why must the reduced row echelon form of <m>A</m> be equal to <m>I</m>?
-          If we let <m>R</m> denote the reduced row echelon form of <m>A</m>, we know that to solve <m>\ttaxo</m>,
+          If we let <m>R</m> denote the reduced row echelon form of <m>A</m>, we know that to solve <m>A\vx = \zero</m>,
           we form the augmented matrix <m>\bbm A\amp \zero\ebm</m> and reduce:
           <me>
             \bbm A\amp \zero\ebm \quad \arref \quad \bbm R\amp \zero\ebm
@@ -126,25 +126,25 @@
 
         <p>
           If the <m>R\neq I</m>, then <m>R</m> has a row of zeros, and thus, so does <m>\bbm R\amp \zero\ebm</m>,
-          in which case the system <m>\ttaxo</m> would have at least one parameter, and thus infinitely many solutions.
-          Since we're assuming that <m>\ttaxo</m> has the unique solution <m>\vx=\zero</m>,
+          in which case the system <m>A\vx = \zero</m> would have at least one parameter, and thus infinitely many solutions.
+          Since we're assuming that <m>A\vx = \zero</m> has the unique solution <m>\vx=\zero</m>,
           it follows that <m>R</m> cannot have a row of zeros, and thus <m>R=I</m>.
         </p>
       </li>
       <li>
         <p>
     	    (c) <m>\Rightarrow</m> (d): Suppose that the reduced row echelon form of <m>A</m> is equal to <m>I</m>.
-          It follows that when solving the system <m>\ttaxb</m>, we would have
+          It follows that when solving the system <m>A\vx = \vb</m>, we would have
           <me>
             \bbm A\amp \vb\ebm \quad \arref \quad \bbm I\amp  \vec{c}\ebm
           </me>
-          for some column vector <m>\vec{c}</m>, and thus <m>\vx = \vec{c}</m> is the unique solution to <m>\ttaxb</m>.
+          for some column vector <m>\vec{c}</m>, and thus <m>\vx = \vec{c}</m> is the unique solution to <m>A\vx = \vb</m>.
         </p>
       </li>
 
   	  <li>
         <p>
-          (d) <m>\Rightarrow</m> (e): Suppose that <m>\ttaxb</m> has a unique solution for every column vector <m>\vb</m>.
+          (d) <m>\Rightarrow</m> (e): Suppose that <m>A\vx = \vb</m> has a unique solution for every column vector <m>\vb</m>.
           Then in particular, we have a unique solution <m>\vec{c}_j</m> to the systems <m>A\vx=\ven{j}</m> for
           <m>j=1,\ldots, n</m>, where <m>\ven{1}, \ven{2}, \ldots, \ven{n}</m> are the standard basis vectors in <m>\R^n</m>
           (and also the columns of <m>I_n</m>). If we let
@@ -190,41 +190,41 @@
 
   <aside vshift="0">
     <p>
-      Think about how we, up to this point, determined the solution to <m>\ttaxb</m>.
-      We set up the augmented matrix <m>\left[\begin{array}{c|c}\tta \amp  \vb \end{array}\right]</m> and put it into reduced row echelon form.
+      Think about how we, up to this point, determined the solution to <m>A\vx = \vb</m>.
+      We set up the augmented matrix <m>\left[\begin{array}{c|c}A \amp  \vb \end{array}\right]</m> and put it into reduced row echelon form.
       We know that getting the identity matrix on the left means that we had a unique solution
       (and not getting the identity means we either have no solution or infinitely many solutions).
-      So getting <m>\tti</m> on the left means having a unique solution; having <m>\tti</m>
-      on the left means that the reduced row echelon form of <m>\tta</m> is <m>\tti</m>,
-      which we know is the same as <m>\tta</m> being invertible.
+      So getting <m>I</m> on the left means having a unique solution; having <m>I</m>
+      on the left means that the reduced row echelon form of <m>A</m> is <m>I</m>,
+      which we know is the same as <m>A</m> being invertible.
     </p>
   </aside>
 
   <p>
-    So we came up with a list of statements that are all <em>equivalent</em> to the statement <q><m>\tta</m> is invertible.</q>
+    So we came up with a list of statements that are all <em>equivalent</em> to the statement <q><m>A</m> is invertible.</q>
     Again, if we know that if any one of them is true (or false), then they are all true (or all false).
   </p>
 
   <p>
-    <xref ref="thm-IMT"/> states formally that if <m>\tta</m> is invertible,
-    then <m>\ttaxb</m> has exactly one solution, namely <m>\ttai\vb</m>.
-    What if <m>\tta</m> is not invertible? What are the possibilities for solutions to <m>\ttaxb</m>?
+    <xref ref="thm-IMT"/> states formally that if <m>A</m> is invertible,
+    then <m>A\vx = \vb</m> has exactly one solution, namely <m>A^{-1}\vb</m>.
+    What if <m>A</m> is not invertible? What are the possibilities for solutions to <m>A\vx = \vb</m>?
   </p>
 
   <p>
-    We know that <m>\ttaxb</m> <em>cannot</em> have exactly one solution;
+    We know that <m>A\vx = \vb</m> <em>cannot</em> have exactly one solution;
     if it did, then by our theorem it would be invertible. Recalling that linear equations have either one solution,
-    infinitely many solutions, or no solution, we are left with the latter options when <m>\tta</m> is not invertible.
+    infinitely many solutions, or no solution, we are left with the latter options when <m>A</m> is not invertible.
     This idea is important and so we'll state it again as a Key Idea.
   </p>
 
   <insight xml:id="idea-solutions_invert">
-    <title>Solutions to <m>\ttaxb</m> and the Invertibility of \tta</title>
+    <title>Solutions to <m>A\vx = \vb</m> and the Invertibility of <m>A</m></title>
     <p>
-      Consider the system of linear equations <m>\ttaxb</m>.
+      Consider the system of linear equations <m>A\vx = \vb</m>.
       <ol>
-        <li>If <m>\tta</m> is invertible, then <m>\ttaxb</m> has exactly one solution, namely <m>\ttai\vb</m>.</li>
-        <li>If <m>\tta</m> is not invertible, then <m>\ttaxb</m> has either infinitely many solutions or no solution.</li>
+        <li>If <m>A</m> is invertible, then <m>A\vx = \vb</m> has exactly one solution, namely <m>A^{-1}\vb</m>.</li>
+        <li>If <m>A</m> is not invertible, then <m>A\vx = \vb</m> has either infinitely many solutions or no solution.</li>
       </ol>
     </p>
   </insight>
@@ -232,14 +232,14 @@
   <p>
     In <xref ref="thm-IMT"/> we've come up with a list of ways in which we can tell whether or not a matrix is invertible.
     At the same time, we have come up with a list of properties of invertible matrices <mdash/> things we know that are true about them.
-    (For instance, if we know that <m>\tta</m> is invertible, then we know that <m>\ttaxb</m> has only one solution.)
+    (For instance, if we know that <m>A</m> is invertible, then we know that <m>A\vx = \vb</m> has only one solution.)
   </p>
 
   <p>
     We now go on to discover other properties of invertible matrices.
     Specifically, we want to find out how invertibility interacts with other matrix operations.
-    For instance, if we know that <m>\tta</m> and <m>\ttb</m> are invertible,
-    what is the inverse of <m>\tta+\ttb</m>? What is the inverse of <m>\tta\ttb</m>?
+    For instance, if we know that <m>A</m> and <m>B</m> are invertible,
+    what is the inverse of <m>A+B</m>? What is the inverse of <m>AB</m>?
     What is <q>the inverse of the inverse?</q> We'll explore these questions through an example.
   </p>
 
@@ -250,16 +250,16 @@
       <p>
         Let
         <me>
-          \tta = \bbm 3 \amp 2\\0 \amp 1\ebm \text{ and } \ttb = \bbm-2 \amp  0\\1\amp 1\ebm
+          A = \bbm 3 \amp 2\\0 \amp 1\ebm \text{ and } B = \bbm-2 \amp  0\\1\amp 1\ebm
         </me>.
         Find:
         <ol cols="2">
-          <li><m>\ttai</m></li>
-          <li><m>\ttbi</m></li>
-          <li><m>(\tta\ttb)^{-1}</m></li>
-          <li><m>(\ttai)^{-1}</m></li>
-          <li><m>(\tta+\ttb)^{-1}</m></li>
-          <li><m>(5\tta)^{-1}</m></li>
+          <li><m>A^{-1}</m></li>
+          <li><m>B^{-1}</m></li>
+          <li><m>(AB)^{-1}</m></li>
+          <li><m>(A^{-1})^{-1}</m></li>
+          <li><m>(A+B)^{-1}</m></li>
+          <li><m>(5A)^{-1}</m></li>
         </ol>
       </p>
 
@@ -272,49 +272,49 @@
         <ol>
           <li>
             <p>
-              Computing <m>\ttai</m> is straightforward; we'll use <xref ref="thm-2by2"/>.
+              Computing <m>A^{-1}</m> is straightforward; we'll use <xref ref="thm-2by2"/>.
               <me>
-                \ttai = \frac{1}{3}\bbm 1 \amp -2\\0 \amp 3\ebm = \bbm 1/3 \amp  -2/3\\ 0 \amp  1\ebm
+                A^{-1} = \frac{1}{3}\bbm 1 \amp -2\\0 \amp 3\ebm = \bbm 1/3 \amp  -2/3\\ 0 \amp  1\ebm
               </me>.
             </p>
           </li>
 
           <li>
             <p>
-              We compute <m>\ttbi</m> in the same way as above.
+              We compute <m>B^{-1}</m> in the same way as above.
               <me>
-                  \ttbi = \frac{1}{-2}\bbm 1 \amp 0\\-1 \amp -2\ebm = \bbm -1/2 \amp  0 \\ 1/2 \amp  1\ebm
+                  B^{-1} = \frac{1}{-2}\bbm 1 \amp 0\\-1 \amp -2\ebm = \bbm -1/2 \amp  0 \\ 1/2 \amp  1\ebm
               </me>.
             </p>
           </li>
 
           <li>
             <p>
-              To compute <m>(\tta\ttb)^{-1}</m>, we first compute <m>\tta\ttb</m>:
+              To compute <m>(AB)^{-1}</m>, we first compute <m>AB</m>:
               <me>
-                \tta\ttb = \bbm 3 \amp 2\\0 \amp 1\ebm\bbm-2 \amp  0\\1\amp 1\ebm = \bbm -4\amp 2\\1\amp 1\ebm
+                AB = \bbm 3 \amp 2\\0 \amp 1\ebm\bbm-2 \amp  0\\1\amp 1\ebm = \bbm -4\amp 2\\1\amp 1\ebm
               </me>.
-              We now apply <xref ref="thm-2by2"/> to find <m>(\tta\ttb)^{-1}</m>.
+              We now apply <xref ref="thm-2by2"/> to find <m>(AB)^{-1}</m>.
               <me>
-                (\tta\ttb)^{-1} = \frac{1}{-6}\bbm 1 \amp -2\\-1 \amp -4\ebm = \bbm -1/6 \amp  1/3\\1/6 \amp  2/3\ebm
-              </me>.
-            </p>
-          </li>
-
-          <li>
-            <p>
-              To compute <m>(\ttai)^{-1}</m>, we simply apply <xref ref="thm-2by2"/> to <m>\ttai</m>:
-              <me>
-                (\ttai)^{-1} = \frac{1}{1/3}\bbm 1  \amp  2/3\\0  \amp  1/3\ebm = \bbm 3 \amp  2\\0 \amp  1\ebm
+                (AB)^{-1} = \frac{1}{-6}\bbm 1 \amp -2\\-1 \amp -4\ebm = \bbm -1/6 \amp  1/3\\1/6 \amp  2/3\ebm
               </me>.
             </p>
           </li>
 
           <li>
             <p>
-              To compute <m>(\tta + \ttb)^{-1}</m>, we first compute <m>\tta+\ttb</m> then apply <xref ref="thm-2by2"/>:
+              To compute <m>(A^{-1})^{-1}</m>, we simply apply <xref ref="thm-2by2"/> to <m>A^{-1}</m>:
               <me>
-                \tta+\ttb = \bbm 3 \amp 2\\0 \amp 1\ebm+\bbm-2 \amp  0\\1\amp 1\ebm = \bbm 1\amp 2\\1\amp 2\ebm
+                (A^{-1})^{-1} = \frac{1}{1/3}\bbm 1  \amp  2/3\\0  \amp  1/3\ebm = \bbm 3 \amp  2\\0 \amp  1\ebm
+              </me>.
+            </p>
+          </li>
+
+          <li>
+            <p>
+              To compute <m>(A + B)^{-1}</m>, we first compute <m>A+B</m> then apply <xref ref="thm-2by2"/>:
+              <me>
+                A+B = \bbm 3 \amp 2\\0 \amp 1\ebm+\bbm-2 \amp  0\\1\amp 1\ebm = \bbm 1\amp 2\\1\amp 2\ebm
               </me>.
               We notice immediately that the two rows of <m>A+B</m> are the same!
               Subtracting Row 1 from Row 2 would produce a row of zeros, so <m>A+B</m> has rank <m>1\lt 2</m>,
@@ -324,9 +324,9 @@
 
           <li>
             <p>
-              To compute <m>(5\tta)^{-1}</m>, we compute 5<m>\tta</m> and then apply <xref ref="thm-2by2"/>.
+              To compute <m>(5A)^{-1}</m>, we compute 5<m>A</m> and then apply <xref ref="thm-2by2"/>.
               <me>
-                (5\tta)^{-1} = \left(\bbm 15  \amp  10\\0 \amp 5\ebm\right)^{-1} = \frac{1}{75}\bbm 5\amp -10\\0\amp 15\ebm = \bbm 1/15 \amp  -2/15\\ 0 \amp  1/5\ebm
+                (5A)^{-1} = \left(\bbm 15  \amp  10\\0 \amp 5\ebm\right)^{-1} = \frac{1}{75}\bbm 5\amp -10\\0\amp 15\ebm = \bbm 1/15 \amp  -2/15\\ 0 \amp  1/5\ebm
               </me>.
             </p>
           </li>
@@ -336,79 +336,79 @@
       </p>
 
       <p>
-        We now look for connections between <m>\ttai</m>, <m>\ttbi</m>, <m>(\tta\ttb)^{-1}</m>, <m>(\ttai)^{-1}</m> and
-        <m>(\tta+\ttb)^{-1}</m>.
+        We now look for connections between <m>A^{-1}</m>, <m>B^{-1}</m>, <m>(AB)^{-1}</m>, <m>(A^{-1})^{-1}</m> and
+        <m>(A+B)^{-1}</m>.
       </p>
 
       <p>
-        Is there some sort of relationship between <m>(\tta\ttb)^{-1}</m> and <m>\ttai</m> and <m>\ttbi</m>?
-        A first guess that seems plausible is <m>(\tta\ttb)^{-1} = \ttai\ttbi</m>. Is this true? Using our work from above, we have
+        Is there some sort of relationship between <m>(AB)^{-1}</m> and <m>A^{-1}</m> and <m>B^{-1}</m>?
+        A first guess that seems plausible is <m>(AB)^{-1} = A^{-1}B^{-1}</m>. Is this true? Using our work from above, we have
         <me>
-          \ttai\ttbi = \bbm 1/3 \amp  -2/3\\ 0 \amp  1\ebm\bbm -1/2 \amp  0 \\ 1/2 \amp  1\ebm = \bbm -1/2 \amp  -2/3 \\ 1/2 \amp  1\ebm
+          A^{-1}B^{-1} = \bbm 1/3 \amp  -2/3\\ 0 \amp  1\ebm\bbm -1/2 \amp  0 \\ 1/2 \amp  1\ebm = \bbm -1/2 \amp  -2/3 \\ 1/2 \amp  1\ebm
         </me>.
-        Obviously, this is not equal to <m>(\tta\ttb)^{-1}</m>. Before we do some further guessing,
-        let's think about what the inverse of <m>\tta\ttb</m> is supposed to do.
-        The inverse <mdash/> let's call it <m>\ttc</m> <mdash/> is supposed to be a matrix such that
+        Obviously, this is not equal to <m>(AB)^{-1}</m>. Before we do some further guessing,
+        let's think about what the inverse of <m>AB</m> is supposed to do.
+        The inverse <mdash/> let's call it <m>C</m> <mdash/> is supposed to be a matrix such that
         <me>
-          (\tta\ttb)\ttc = \ttc(\tta\ttb) = \tti
+          (AB)C = C(AB) = I
         </me>.
       </p>
 
       <p>
-        In examining the expression <m>(\tta\ttb)\ttc</m>, we see that we want <m>\ttb</m> to somehow <q>cancel</q> with <m>\ttc</m>.
-        What <q>cancels</q> <m>\ttb</m>? An obvious answer is <m>\ttbi</m>.
-        This gives us a thought: perhaps we got the order of <m>\ttai</m> and <m>\ttbi</m> wrong before.
+        In examining the expression <m>(AB)C</m>, we see that we want <m>B</m> to somehow <q>cancel</q> with <m>C</m>.
+        What <q>cancels</q> <m>B</m>? An obvious answer is <m>B^{-1}</m>.
+        This gives us a thought: perhaps we got the order of <m>A^{-1}</m> and <m>B^{-1}</m> wrong before.
         After all, we were hoping to find that
         <me>
-          \tta\ttb\ttai\ttbi \overset{\text{?}}{=} \tti,
+          ABA^{-1}B^{-1} \overset{\text{?}}{=} I,
         </me>
         but algebraically speaking, it is hard to cancel out these terms.
-        (Recall that matrix multiplication is not commutative: <m>\tta\ttb\neq \ttb\tta</m> in general.)
+        (Recall that matrix multiplication is not commutative: <m>AB\neq BA</m> in general.)
       </p>
 
       <p>
-    		However, switching the order of <m>\ttai</m> and <m>\ttbi</m> gives us some hope.
-        Is <m>(\tta\ttb)^{-1} = \ttbi\ttai</m>? Let's see.
+    		However, switching the order of <m>A^{-1}</m> and <m>B^{-1}</m> gives us some hope.
+        Is <m>(AB)^{-1} = B^{-1}A^{-1}</m>? Let's see.
         <md>
-          <mrow>(\tta\ttb)(\ttbi\ttai) \amp = \tta(\ttb\ttbi)\ttai \text{ (regrouping by the associative property)}</mrow>
-          <mrow>          \amp = \tta\tti\ttai \quad (\ttb\ttbi = \tti)</mrow>
-          <mrow>          \amp = \tta\ttai \quad (\tta\tti = \tta)</mrow>
-          <mrow>          \amp = \tti \quad (\tta\ttai=\tti)</mrow>
+          <mrow>(AB)(B^{-1}A^{-1}) \amp = A(BB^{-1})A^{-1} \text{ (regrouping by the associative property)}</mrow>
+          <mrow>          \amp = AIA^{-1} \quad (BB^{-1} = I)</mrow>
+          <mrow>          \amp = AA^{-1} \quad (AI = A)</mrow>
+          <mrow>          \amp = I \quad (AA^{-1}=I)</mrow>
         </md>.
       </p>
 
       <p>
         Since <m>(AB)(B^{-1}A^{-1})=I_n</m>, we know immediately from <xref ref="thm-IMT"/>
-        that <m>(\tta\ttb)^{-1} = \ttbi\ttai</m>. Note also that our argument above was completely general,
+        that <m>(AB)^{-1} = B^{-1}A^{-1}</m>. Note also that our argument above was completely general,
         so this result holds true for <em>any</em> pair of <m>n\times n</m> matrices <m>A</m> and <m>B</m>.
         Let's confirm this with our example matrices.
         <me>
-          \ttbi\ttai = \bbm -1/2  \amp  0 \\ 1/2  \amp  1\ebm\bbm 1/3 \amp  -2/3\\ 0 \amp  1\ebm = \bbm -1/6 \amp  1/3\\ 1/6 \amp  2/3 \ebm = (\tta\ttb)^{-1}
+          B^{-1}A^{-1} = \bbm -1/2  \amp  0 \\ 1/2  \amp  1\ebm\bbm 1/3 \amp  -2/3\\ 0 \amp  1\ebm = \bbm -1/6 \amp  1/3\\ 1/6 \amp  2/3 \ebm = (AB)^{-1}
         </me>.
         It worked!
       </p>
 
       <p>
-        Is there some sort of connection between <m>(\ttai)^{-1}</m> and <m>\tta</m>?
+        Is there some sort of connection between <m>(A^{-1})^{-1}</m> and <m>A</m>?
         The answer is pretty obvious: they are equal. The <q>inverse of the inverse</q> returns one to the original matrix.
       </p>
 
       <p>
-        Is there some sort of relationship between <m>(\tta+\ttb)^{-1}</m>, <m>\ttai</m> and <m>\ttbi</m>?
+        Is there some sort of relationship between <m>(A+B)^{-1}</m>, <m>A^{-1}</m> and <m>B^{-1}</m>?
         Certainly, if we were forced to make a guess without working any examples, we would guess that
         <me>
-          (\tta+\ttb)^{-1} \overset{\text{?}}{=} \ttai+\ttbi
+          (A+B)^{-1} \overset{\text{?}}{=} A^{-1}+B^{-1}
         </me>.
-        However, we saw that in our example, the matrix <m>(\tta+\ttb)</m> isn't even invertible.
+        However, we saw that in our example, the matrix <m>(A+B)</m> isn't even invertible.
         This pretty much kills any hope of a connection.
       </p>
 
       <p>
-        Is there a connection between <m>(5\tta)^{-1}</m> and <m>\ttai</m>? Consider:
+        Is there a connection between <m>(5A)^{-1}</m> and <m>A^{-1}</m>? Consider:
         <md>
-          <mrow>(5\tta)^{-1}  \amp = \bbm 1/15  \amp  -2/15\\ 0 \amp  1/5\ebm</mrow>
+          <mrow>(5A)^{-1}  \amp = \bbm 1/15  \amp  -2/15\\ 0 \amp  1/5\ebm</mrow>
           <mrow>    \amp = \frac{1}{5} \bbm 1/3 \amp  -2/3\\0\amp 1/5\ebm</mrow>
-          <mrow>    \amp = \frac 15 \ttai</mrow>
+          <mrow>    \amp = \frac 15 A^{-1}</mrow>
         </md>.
         Yes, there is a connection!
       </p>
@@ -416,12 +416,12 @@
   </example>
 
   <p>
-    Let's summarize the results of this example. If <m>\tta</m> and <m>\ttb</m> are both invertible matrices,
-    then so is their product, \tta<m>\ttb</m>. We demonstrated this with our example,
-    and there is more to be said. Let's suppose that <m>\tta</m> and <m>\ttb</m> are <m>n\times n</m> matrices,
-    but we don't yet know if they are invertible. If \tta<m>\ttb</m> is invertible,
-    then each of <m>\tta</m> and <m>\ttb</m> are; if \tta<m>\ttb</m> is not invertible,
-    then either <m>\tta</m> or <m>\ttb</m> is not invertible.
+    Let's summarize the results of this example. If <m>A</m> and <m>B</m> are both invertible matrices,
+    then so is their product, <m>AB</m>. We demonstrated this with our example,
+    and there is more to be said. Let's suppose that <m>A</m> and <m>B</m> are <m>n\times n</m> matrices,
+    but we don't yet know if they are invertible. If <m>AB</m> is invertible,
+    then each of <m>A</m> and <m>B</m> are; if <m>AB</m> is not invertible,
+    then either <m>A</m> or <m>B</m> is not invertible.
   </p>
 
 
@@ -442,15 +442,15 @@
   <p>
     In short, invertibility <q>works well</q> with matrix multiplication.
     However, we saw that it doesn't work well with matrix addition.
-    Knowing that <m>\tta</m> and <m>\ttb</m> are invertible does not help us find the inverse of <m>(\tta+\ttb)</m>;
+    Knowing that <m>A</m> and <m>B</m> are invertible does not help us find the inverse of <m>(A+B)</m>;
     in fact, the latter matrix may not even be invertible.
   </p>
 
   <aside vshift="-1">
     <p>
       The fact that invertibility works well with matrix multiplication should not come as a surprise.
-      After all, saying that <m>\tta</m> is invertible makes a statement about the mulitiplicative properties of <m>\tta</m>.
-      It says that I can multiply <m>\tta</m> with a special matrix to get <m>\tti</m>.
+      After all, saying that <m>A</m> is invertible makes a statement about the mulitiplicative properties of <m>A</m>.
+      It says that I can multiply <m>A</m> with a special matrix to get <m>I</m>.
       Invertibility, in and of itself, says nothing about matrix addition,
       therefore we should not be too surprised that it doesn't work well with it.
     </p>
@@ -465,28 +465,28 @@
     <statement>
 
       <p>
-        Find the inverse of <m>\tta = \bbm 2\amp 0\amp 0\\0\amp 3\amp 0\\0\amp 0\amp -7\ebm</m>.
+        Find the inverse of <m>A = \bbm 2\amp 0\amp 0\\0\amp 3\amp 0\\0\amp 0\amp -7\ebm</m>.
       </p>
     </statement>
     <solution>
       <p>
-        We'll find <m>\ttai</m> using <xref ref="idea-finding_inverses"/>.
+        We'll find <m>A^{-1}</m> using <xref ref="idea-finding_inverses"/>.
         <me>
           \bbm 2\amp 0\amp 0\amp 1\amp 0\amp 0\\0\amp 3\amp 0\amp 0\amp 1\amp 0\\0\amp 0\amp -7\amp 0\amp 0\amp 1\ebm \quad \overrightarrow{\text{rref}} \quad
           \bbm 1\amp 0\amp 0\amp 1/2\amp 0\amp 0\\0\amp 1\amp 0\amp 0\amp 1/3\amp 0\\0\amp 0\amp 1\amp 0\amp 0\amp -1/7\ebm
         </me>
         Therefore
         <me>
-          \ttai = \bbm 1/2  \amp  0  \amp  0 \\ 0 \amp  1/3 \amp  0 \\ 0 \amp  0 \amp  -1/7\ebm
+          A^{-1} = \bbm 1/2  \amp  0  \amp  0 \\ 0 \amp  1/3 \amp  0 \\ 0 \amp  0 \amp  -1/7\ebm
         </me>.
       </p>
     </solution>
   </example>
 
   <p>
-    The matrix <m>\tta</m> in the previous example is a <em>diagonal</em> matrix:
-    the only nonzero entries of <m>\tta</m> lie on the <em>diagonal</em>.
-    The relationship between <m>\tta</m> and <m>\ttai</m> in the above example seems pretty strong,
+    The matrix <m>A</m> in the previous example is a <em>diagonal</em> matrix:
+    the only nonzero entries of <m>A</m> lie on the <em>diagonal</em>.
+    The relationship between <m>A</m> and <m>A^{-1}</m> in the above example seems pretty strong,
     and it holds true in general. We'll state this and summarize the results of this section with the following theorem.
   </p>
 
@@ -504,28 +504,28 @@
       <p>
         <idx><h>inverse</h><h>properties</h></idx>
 
-        Let <m>\tta</m> and <m>\ttb</m> be <m>n\times n</m> invertible matrices. Then:
+        Let <m>A</m> and <m>B</m> be <m>n\times n</m> invertible matrices. Then:
           <ol>
           <li>
             <p>
-              \tta<m>\ttb</m> is invertible; <m>(\tta\ttb)^{-1} = \ttbi\ttai</m>.
+              <m>AB</m> is invertible; <m>(AB)^{-1} = B^{-1}A^{-1}</m>.
             </p>
           </li>
           <li>
             <p>
-              <m>\ttai</m> is invertible; <m>(\ttai)^{-1} = \tta</m>.
+              <m>A^{-1}</m> is invertible; <m>(A^{-1})^{-1} = A</m>.
             </p>
           </li>
           <li>
             <p>
-              <m>n\tta</m> is invertible for any nonzero scalar <m>n</m>; <m>(n\tta)^{-1} = \frac 1n \ttai</m>.
+              <m>nA</m> is invertible for any nonzero scalar <m>n</m>; <m>(nA)^{-1} = \frac 1n A^{-1}</m>.
             </p>
           </li>
           <li>
             <p>
-              If <m>\tta</m> is a diagonal matrix, with diagonal entries <m>d_1, d_2, \cdots , d_n</m>,
-              where none of the diagonal entries are 0, then <m>\ttai</m> exists and is a diagonal matrix.
-              Furthermore, the diagonal entries of <m>\ttai</m> are <m>1/d_1, 1/d_2, \cdots, 1/d_n</m>.
+              If <m>A</m> is a diagonal matrix, with diagonal entries <m>d_1, d_2, \cdots , d_n</m>,
+              where none of the diagonal entries are 0, then <m>A^{-1}</m> exists and is a diagonal matrix.
+              Furthermore, the diagonal entries of <m>A^{-1}</m> are <m>1/d_1, 1/d_2, \cdots, 1/d_n</m>.
             </p>
           </li>
         </ol>
@@ -536,12 +536,12 @@
         <ol>
           <li>
             <p>
-              If a product \tta<m>\ttb</m> is not invertible, then <m>\tta</m> or <m>\ttb</m> is not invertible.
+              If a product <m>AB</m> is not invertible, then <m>A</m> or <m>B</m> is not invertible.
             </p>
           </li>
           <li>
             <p>
-              If <m>\tta</m> or <m>\ttb</m> are not invertible, then \tta<m>\ttb</m> is not invertible.
+              If <m>A</m> or <m>B</m> are not invertible, then <m>AB</m> is not invertible.
             </p>
           </li>
         </ol>
@@ -551,7 +551,7 @@
 
   <p>
     We end this section with a comment about solving systems of equations <q>in real life.</q>
-    Solving a system <m>\ttaxb</m> by computing <m>\ttai\vb</m> seems pretty slick,
+    Solving a system <m>A\vx = \vb</m> by computing <m>A^{-1}\vb</m> seems pretty slick,
     so it would make sense that this is the way it is normally done. However, in practice, this is rarely done.
     There are two main reasons why this is the case.
   </p>
@@ -578,29 +578,29 @@
   </aside>
 
   <p>
-    First, computing <m>\ttai</m> and <m>\ttai\vb</m> is <q>expensive</q>
+    First, computing <m>A^{-1}</m> and <m>A^{-1}\vb</m> is <q>expensive</q>
     in the sense that it takes up a lot of computing time.
     Certainly, our calculators have no trouble dealing with the <m>3 \times 3</m>
     cases we often consider in this textbook, but in real life the matrices being considered are very large
-    (as in, hundreds of thousand rows and columns). Computing <m>\ttai</m> alone is rather impractical,
-    and we waste a lot of time if we come to find out that <m>\ttai</m> does not exist.
-    Even if we already know what <m>\ttai</m> is, computing <m>\ttai\vb</m> is computationally expensive
+    (as in, hundreds of thousand rows and columns). Computing <m>A^{-1}</m> alone is rather impractical,
+    and we waste a lot of time if we come to find out that <m>A^{-1}</m> does not exist.
+    Even if we already know what <m>A^{-1}</m> is, computing <m>A^{-1}\vb</m> is computationally expensive
     <mdash/> Gaussian elimination is faster.
   </p>
 
   <p>
-    Secondly, computing <m>\ttai</m> using the method we've described often gives rise to numerical roundoff errors.
+    Secondly, computing <m>A^{-1}</m> using the method we've described often gives rise to numerical roundoff errors.
     Even though computers often do computations with an accuracy to more than 8 decimal places, after thousands of computations,
     rounding off can cause big errors. (A <q>small</q> <m>1,000 \times 1,000</m> matrix has <m>1,000,000</m> entries!
     That's a lot of places to have roundoff errors accumulate!)
-    It is not unheard of to have a computer compute <m>\ttai</m> for a large matrix,
-    and then immediately have it compute <m>\tta\ttai</m> and <em>not</em> get the identity matrix.
+    It is not unheard of to have a computer compute <m>A^{-1}</m> for a large matrix,
+    and then immediately have it compute <m>AA^{-1}</m> and <em>not</em> get the identity matrix.
     (The result is usually very close, with the numbers on the diagonal close to 1 and the other entries near 0.
     But it isn't exactly the identity matrix.)
   </p>
 
   <p>
-    Therefore, in real life, solutions to <m>\ttaxb</m> are usually found using the methods we learned in <xref ref="sec-vector_solutions"/>.
+    Therefore, in real life, solutions to <m>A\vx = \vb</m> are usually found using the methods we learned in <xref ref="sec-vector_solutions"/>.
     It turns out that even with all of our advances in mathematics, it is hard to beat the basic method that Gauss introduced a long time ago.
   </p>
 
@@ -609,19 +609,19 @@
 
       <introduction>
         <p>
-          Matrices <m>\tta</m> and <m>\ttb</m> are given. Compute <m>(\tta\ttb)^{-1}</m> and <m>\ttb^{-1}\tta^{-1}</m>.
+          Matrices <m>A</m> and <m>B</m> are given. Compute <m>(AB)^{-1}</m> and <m>B^{-1}A^{-1}</m>.
         </p>
       </introduction>
 
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm     1  \amp   2 \\1  \amp  1  \ebm$, $\ttb = \bbm     3  \amp   5 \\2  \amp  5  \ebm</m>
+            <m>A = \bbm     1  \amp   2 \\1  \amp  1  \ebm</m>, <m>B = \bbm     3  \amp   5 \\2  \amp  5  \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>(\tta\ttb)^{-1} = \bbm     -2  \amp   3 \\1  \amp  -1.4  \ebm</m>
+            <m>(AB)^{-1} = \bbm     -2  \amp   3 \\1  \amp  -1.4  \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -629,12 +629,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm     1  \amp   2 \\3  \amp  4  \ebm$, $\ttb = \bbm     7  \amp   1 \\2  \amp  1  \ebm</m>
+            <m>A = \bbm     1  \amp   2 \\3  \amp  4  \ebm</m>, <m>B = \bbm     7  \amp   1 \\2  \amp  1  \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>(\tta\ttb)^{-1} = \bbm   -7/10 \amp 3/10 \\  29/10 \amp -11/10\ebm</m>
+            <m>(AB)^{-1} = \bbm   -7/10 \amp 3/10 \\  29/10 \amp -11/10\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -642,12 +642,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm     2  \amp   5 \\3  \amp  8   \ebm$, $\ttb = \bbm     1  \amp   -1 \\1  \amp  4  \ebm</m>
+            <m>A = \bbm     2  \amp   5 \\3  \amp  8   \ebm</m>, <m>B = \bbm     1  \amp   -1 \\1  \amp  4  \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>(\tta\ttb)^{-1} = \bbm     29/5  \amp   -18/5 \\-11/5  \amp  7/5  \ebm</m>
+            <m>(AB)^{-1} = \bbm     29/5  \amp   -18/5 \\-11/5  \amp  7/5  \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -655,12 +655,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm     2  \amp   4 \\2  \amp  5  \ebm$, $\ttb = \bbm     2  \amp   2 \\6  \amp  5  \ebm</m>
+            <m>A = \bbm     2  \amp   4 \\2  \amp  5  \ebm</m>, <m>B = \bbm     2  \amp   2 \\6  \amp  5  \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>(\tta\ttb)^{-1} = \bbm     -29/4  \amp   6\\17/2  \amp  -7  \ebm</m>
+            <m>(AB)^{-1} = \bbm     -29/4  \amp   6\\17/2  \amp  -7  \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -670,20 +670,20 @@
 
       <introduction>
         <p>
-          A <m>2\times 2</m> matrix <m>\tta</m> is given.
-          Compute <m>\ttai</m> and <m>(\ttai)^{-1}</m> using <xref ref="thm-2by2"/>.
+          A <m>2\times 2</m> matrix <m>A</m> is given.
+          Compute <m>A^{-1}</m> and <m>(A^{-1})^{-1}</m> using <xref ref="thm-2by2"/>.
         </p>
       </introduction>
 
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm     -3  \amp   5 \\1  \amp  -2  \ebm</m>
+            <m>A = \bbm     -3  \amp   5 \\1  \amp  -2  \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttai = \bbm     -2  \amp   -5\\-1  \amp  -3  \ebm$, $(\ttai)^{-1} = \bbm     -3  \amp   5 \\1  \amp  -2    \ebm</m>
+            <m>A^{-1} = \bbm     -2  \amp   -5\\-1  \amp  -3  \ebm</m>, <m>(A^{-1})^{-1} = \bbm     -3  \amp   5 \\1  \amp  -2    \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -691,12 +691,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm     3  \amp   5\\2  \amp  4  \ebm</m>
+            <m>A = \bbm     3  \amp   5\\2  \amp  4  \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttai = \bbm   2 \amp -5/2\\ -1 \amp 3/2\ebm$, $(\ttai)^{-1} = \bbm   3 \amp 5\\2  \amp  4\ebm</m>
+            <m>A^{-1} = \bbm   2 \amp -5/2\\ -1 \amp 3/2\ebm</m>, <m>(A^{-1})^{-1} = \bbm   3 \amp 5\\2  \amp  4\ebm</m>
           </p>
         </answer>
       </exercise>
@@ -704,12 +704,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm       2  \amp   7\\1  \amp  3  \ebm</m>
+            <m>A = \bbm       2  \amp   7\\1  \amp  3  \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttai = \bbm   -3 \amp  7\\  1 \amp  -2 \ebm$, $(\ttai)^{-1} = \bbm     2  \amp   7\\1  \amp  3    \ebm</m>
+            <m>A^{-1} = \bbm   -3 \amp  7\\  1 \amp  -2 \ebm</m>, <m>(A^{-1})^{-1} = \bbm     2  \amp   7\\1  \amp  3    \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -717,12 +717,12 @@
       <exercise>
         <statement>
           <p>
-            <m>\tta = \bbm       9  \amp   0 \\7  \amp  9  \ebm</m>
+            <m>A = \bbm       9  \amp   0 \\7  \amp  9  \ebm</m>
           </p>
         </statement>
         <answer>
           <p>
-            <m>\ttai = \bbm   1/9 \amp  0 \\-7/81  \amp  1/9 \ebm$, $(\ttai)^{-1} = \bbm     9  \amp   0 \\7  \amp  9    \ebm</m>
+            <m>A^{-1} = \bbm   1/9 \amp  0 \\-7/81  \amp  1/9 \ebm</m>, <m>(A^{-1})^{-1} = \bbm     9  \amp   0 \\7  \amp  9    \ebm</m>
           </p>
         </answer>
       </exercise>
@@ -731,7 +731,7 @@
     <exercise>
       <statement>
         <p>
-          Find <m>2\times 2</m> matrices <m>\tta</m> and <m>\ttb</m> that are each invertible, but <m>\tta+\ttb</m> is not.
+          Find <m>2\times 2</m> matrices <m>A</m> and <m>B</m> that are each invertible, but <m>A+B</m> is not.
         </p>
       </statement>
       <answer>
@@ -744,8 +744,8 @@
     <exercise>
       <statement>
         <p>
-          Create a random <m>6\times 6</m> matrix <m>\tta</m>,
-          then have a calculator or computer compute <m>\tta\ttai</m>.
+          Create a random <m>6\times 6</m> matrix <m>A</m>,
+          then have a calculator or computer compute <m>AA^{-1}</m>.
           Was the identity matrix returned exactly? Comment on your results.
         </p>
       </statement>
@@ -759,8 +759,8 @@
     <exercise>
       <statement>
         <p>
-          Use a calculator or computer to compute <m>\tta\ttai</m>,
-          where <m>\tta = \bbm 1 \amp 2 \amp 3\amp 4\\1\amp 4\amp 9\amp 16\\1\amp 8\amp 27\amp 64\\1\amp 16\amp 81\amp 256\ebm.</m>
+          Use a calculator or computer to compute <m>AA^{-1}</m>,
+          where <m>A = \bbm 1 \amp 2 \amp 3\amp 4\\1\amp 4\amp 9\amp 16\\1\amp 8\amp 27\amp 64\\1\amp 16\amp 81\amp 256\ebm.</m>
           Was the identity matrix returned exactly? Comment on your results.
         </p>
       </statement>
