@@ -7,7 +7,7 @@
     <title>Elementary Linear Algebra</title>
     <subtitle>For University of Lethbridge Math 1410</subtitle>
     <frontmatter label="frontmatter">
-      <titlepage>
+      <bibinfo>
         <author>
           <personname>Gregory Hartman, Ph.D.</personname>
           <department>Department of Applied Mathematics</department>
@@ -36,9 +36,6 @@
           <institution>University of Lethbridge</institution>
         </editor>
         <date><today/></date>
-      </titlepage>
-
-      <colophon label="colophon">
 
         <credit>
           <role>Source for Chapter 1</role>
@@ -68,6 +65,14 @@
             Licensed to the public under Creative Commons Attribution-Noncommercial 4.0 International Public License
           </shortlicense>
         </copyright>
+      </bibinfo>
+
+      <titlepage label="titlepage">
+        <titlepage-items/>
+      </titlepage>
+
+      <colophon label="colophon">
+        <colophon-items/>        
       </colophon>
     </frontmatter>
 
