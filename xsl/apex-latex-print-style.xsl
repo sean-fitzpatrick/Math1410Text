@@ -79,7 +79,12 @@
     <xsl:text>coltitle=black, fonttitle=\bfseries, attach title to upper, after title={\space},left=1pt,</xsl:text>
 </xsl:template>
 
+<xsl:template match="figure" mode="tcb-style">
+    <xsl:text>bwminimalstyle, middle=1ex, blockspacingstyle, fontlower=\blocktitlefont, after skip=\baselineskip</xsl:text>
+</xsl:template>
+
 <xsl:template match="example" mode="tcb-style">
+    <xsl:text>blockspacingstyle, after title={\space}, before upper ={\setparstyle},&#xa; </xsl:text>
     <xsl:text>fonttitle=\normalfont\bfseries, colback=white, colframe=black, colbacktitle=white, coltitle=black,
       enhanced,
       breakable,
@@ -234,12 +239,19 @@ https://tex.stackexchange.com/questions/605955/can-i-avoid-indentation-of-margin
 <xsl:template match="image[not(ancestor::sidebyside) and (descendant::latex-image or descendant::asymptote) and not(ancestor::exercise)]">
   <xsl:choose>
     <xsl:when test="ancestor::figure/@vshift">
+      <xsl:variable name="rtf-layout">
+        <xsl:apply-templates select="." mode="layout-parameters" />
+      </xsl:variable>
+      <xsl:variable name="layout" select="exsl:node-set($rtf-layout)" />
       <xsl:text>\begin{image}</xsl:text>
-      <xsl:text>{0</xsl:text>
+      <xsl:text>{</xsl:text>
+      <xsl:value-of select="($layout/left-margin div 50)-.50"/>
       <xsl:text>}</xsl:text>
-      <xsl:text>{1</xsl:text>
+      <xsl:text>{</xsl:text>
+      <xsl:value-of select="$layout/width div 50"/>
       <xsl:text>}</xsl:text>
-      <xsl:text>{0</xsl:text>
+      <xsl:text>{</xsl:text>
+      <xsl:value-of select="($layout/right-margin div 50)-.50"/>
       <xsl:text>}{}%&#xa;</xsl:text>
       <xsl:apply-templates select="." mode="image-inclusion" />
       <xsl:text>\end{image}%&#xa;</xsl:text>
@@ -338,7 +350,7 @@ https://tex.stackexchange.com/questions/605955/can-i-avoid-indentation-of-margin
       <xsl:when test="ancestor::example and not(ancestor::ul or ancestor::ol)">
         <xsl:text>\tcbmarginbox{%&#xa;</xsl:text>
       </xsl:when>
-      <xsl:when test="ancestor::example and (ancestor::ul or ancestor::ol)">
+      <xsl:when test="(ancestor::example or ancestor::theorem) and (ancestor::ul or ancestor::ol)">
         <xsl:text>\listmarginbox{%&#xa;</xsl:text>
       </xsl:when>
       <xsl:otherwise>
@@ -361,9 +373,9 @@ https://tex.stackexchange.com/questions/605955/can-i-avoid-indentation-of-margin
 </xsl:template>
 
 <!-- ensure exercises ignore subsection numbering -->
-<!-- shamelessly stolen from Oscar Levin -->
-<xsl:template match="book|article|part|chapter|appendix|section|subsection|subsubsection" mode="is-structured-division">
-    <xsl:if test="chapter|section|subsection|subsubsection">
+<!-- stolen from Oscar Levin and changed to fix headings -->
+<xsl:template match="appendix|section|subsection|subsubsection" mode="is-structured-division">
+    <xsl:if test="subsection|subsubsection">
         <xsl:text></xsl:text> <!-- removed "true", so now this should make all exercises think they are part of unstructured divisions -->
     </xsl:if>
 </xsl:template>
