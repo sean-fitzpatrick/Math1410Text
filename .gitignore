@@ -99,3 +99,4 @@ codechat_config.yaml
 
 .github/
 .devcontainer.json
+.cache/
