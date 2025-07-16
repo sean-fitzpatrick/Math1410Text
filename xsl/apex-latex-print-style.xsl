@@ -59,19 +59,19 @@
 </xsl:template>
 
 <xsl:template match="insight" mode="tcb-style">
-    <xsl:text>fonttitle=\normalfont\bfseries, colbacktitle=white, colframe=black, colback=white, coltitle=black, titlerule=-0.3pt,</xsl:text>
+    <xsl:text>before skip=\baselineskip, after skip=\baselineskip,fonttitle=\normalfont\bfseries, colbacktitle=white, colframe=black, colback=white, coltitle=black, titlerule=-0.3pt,</xsl:text>
 </xsl:template>
 
 <xsl:template match="&DEFINITION-LIKE;" mode="tcb-style">
-    <xsl:text>fonttitle=\normalfont\bfseries, colbacktitle=white, colframe=black, colback=white, coltitle=black, titlerule=-0.3pt,</xsl:text>
+    <xsl:text>before skip=\baselineskip, after skip=\baselineskip,fonttitle=\normalfont\bfseries, colbacktitle=white, colframe=black, colback=white, coltitle=black, titlerule=-0.3pt,</xsl:text>
 </xsl:template>
 
 <xsl:template match="&THEOREM-LIKE;" mode="tcb-style">
-    <xsl:text>fonttitle=\normalfont\bfseries, colbacktitle=white, colframe=black, colback=white, coltitle=black, titlerule=-0.3pt,</xsl:text>
+    <xsl:text>before skip=\baselineskip, after skip=\baselineskip,fonttitle=\normalfont\bfseries, colbacktitle=white, colframe=black, colback=white, coltitle=black, titlerule=-0.3pt,</xsl:text>
 </xsl:template>
 
 <xsl:template match="assemblage" mode="tcb-style">
-    <xsl:text>fonttitle=\normalfont\bfseries, colbacktitle=white, colframe=black, colback=white, coltitle=black, titlerule=-0.3pt,</xsl:text>
+    <xsl:text>before skip=\baselineskip, after skip=\baselineskip,fonttitle=\normalfont\bfseries, colbacktitle=white, colframe=black, colback=white, coltitle=black, titlerule=-0.3pt,</xsl:text>
 </xsl:template>
 
 <xsl:template match="&ASIDE-LIKE;" mode="tcb-style">
@@ -113,33 +113,7 @@
 <xsl:template match="exercises|appendix|solutions" mode="latex-division-heading">
     <!-- \newgeometry includes a \clearpage -->
     <xsl:apply-templates select="." mode="new-geometry"/>
-    <xsl:text>\begin{</xsl:text>
-    <xsl:apply-templates select="." mode="division-environment-name" />
-    <!-- possibly numberless -->
-    <xsl:apply-templates select="." mode="division-environment-name-suffix" />
-    <xsl:text>}</xsl:text>
-    <xsl:text>{</xsl:text>
-    <xsl:apply-templates select="." mode="type-name"/>
-    <xsl:text>}</xsl:text>
-    <xsl:text>{</xsl:text>
-    <xsl:apply-templates select="." mode="title-full"/>
-    <xsl:text>}</xsl:text>
-    <xsl:text>{</xsl:text>
-    <!-- subtitle here -->
-    <xsl:text>}</xsl:text>
-    <xsl:text>{</xsl:text>
-    <xsl:apply-templates select="." mode="title-short"/>
-    <xsl:text>}</xsl:text>
-    <xsl:text>{</xsl:text>
-    <!-- author here -->
-    <xsl:text>}</xsl:text>
-    <xsl:text>{</xsl:text>
-    <!-- subtitle here -->
-    <xsl:text>}</xsl:text>
-    <xsl:text>{</xsl:text>
-    <xsl:apply-templates select="." mode="unique-id" />
-    <xsl:text>}</xsl:text>
-    <xsl:text>&#xa;</xsl:text>
+    <xsl:apply-imports/>
 </xsl:template>
 
 
@@ -157,11 +131,7 @@
 
 <!-- restore geometry for next section -->
 <xsl:template match="exercises|appendix|solutions" mode="latex-division-footing">
-    <xsl:text>\end{</xsl:text>
-    <xsl:apply-templates select="." mode="division-environment-name" />
-    <!-- possibly numberless -->
-    <xsl:apply-templates select="." mode="division-environment-name-suffix" />
-    <xsl:text>}&#xa;</xsl:text>
+    <xsl:apply-imports/>
       <!-- \restoregeometry includes a \clearpage -->
     <xsl:text>\restoregeometry&#xa;</xsl:text>
 </xsl:template>
@@ -284,6 +254,15 @@ https://tex.stackexchange.com/questions/605955/can-i-avoid-indentation-of-margin
 <xsl:template match="pagebreak-latex">
   <xsl:text>&#xa;</xsl:text>
   <xsl:text>\pagebreak</xsl:text>
+  <xsl:text>&#xa;</xsl:text>
+</xsl:template>
+
+<!-- and enable occasional enlarging of a page to avoid orphans -->
+<xsl:template match="enlarge-page">
+  <xsl:text>&#xa;</xsl:text>
+  <xsl:text>\enlargethispage{</xsl:text>
+    <xsl:value-of select="@skipsize"/>
+  <xsl:text>\baselineskip}&#xa;</xsl:text>
   <xsl:text>&#xa;</xsl:text>
 </xsl:template>
 
