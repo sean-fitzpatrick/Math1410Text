@@ -672,7 +672,7 @@
       which is essentially synonymous to <em>perpendicular</em>.
     </p>
 
-    <aside vshift="2">
+    <aside vshift="-2">
       <p>
         <alert>Note:</alert> the term <em>perpendicular</em> originally referred to lines.
         As mathematics progressed, the concept of <q>being at right angles</q>

@@ -425,7 +425,7 @@
   </p>
 
 
-  <aside vshift="3">
+  <aside vshift="4">
     <p>
       A natural question to ask at this point is whether or not the product of two non-invertible matrices could ever be invertible.
       The answer, not surprisingly, is <q>No.</q> To see this, suppose <m>AB</m> is invertible.
@@ -446,7 +446,7 @@
     in fact, the latter matrix may not even be invertible.
   </p>
 
-  <aside vshift="-1">
+  <aside vshift="-2">
     <p>
       The fact that invertibility works well with matrix multiplication should not come as a surprise.
       After all, saying that <m>A</m> is invertible makes a statement about the mulitiplicative properties of <m>A</m>.

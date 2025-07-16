@@ -574,7 +574,7 @@
       The formal definition is as follows.
     </p>
 
-    <aside vshift="0">
+    <aside vshift="-2">
       <p>
         For reasons that become apparent as soon as one begins a discussion of basis and dimension
         (something we won't really cover in this text), we must consider any set containing the zero vector to be  linearly dependent.
@@ -737,7 +737,7 @@
       </p>
     </insight>
 
-    <aside vshift="0">
+    <aside vshift="2">
       <p>
         At this point in the text, we're not in a position to prove that any set of four vectors in <m>\mathbb{R}^3</m>
         (or more generally, <m>k</m> vectors in <m>\mathbb{R}^n</m>, where <m>k\gt n</m>) is automatically independent.

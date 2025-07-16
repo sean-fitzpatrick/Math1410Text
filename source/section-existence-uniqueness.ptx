@@ -460,6 +460,8 @@
     </statement>
   </definition>
 
+  <enlarge-page skipsize="2"/>
+  
   <p>
     These definitions help us understand when a consistent system of linear equations will have infinitely many solutions.
     If there are no free variables, then there is exactly one solution; if there are any free variables, there are infinitely many solutions.
@@ -487,6 +489,8 @@
       A consistent linear system with more variables than equations will always have infinitely many solutions.
     </p>
   </insight>
+
+  <pagebreak-latex/>
 
   <p>
     <alert>Note:</alert> <xref ref="idea-consistent"/> applies only to <em>consistent</em> systems.

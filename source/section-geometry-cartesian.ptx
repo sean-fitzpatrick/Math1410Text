@@ -78,7 +78,7 @@
 				</p>
 				<figure xml:id="fig-mv_1" vshift="0">
 					<caption>Multiplying vectors by a matrix in <xref ref="ex_mv_1"/></caption>
-					<image>
+					<image width="47%">
 						<shortdescription>Vectors x, y, z are plotted in the plane, along with Ax, Ay, Az. The vector Ax is parallel to x.</shortdescription>
 						<latex-image label="img-mv-1">
 							\begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
@@ -170,7 +170,7 @@
 
 				<figure xml:id="fig-mv_2" vshift="0">
 					<caption>Vector addition and matrix multiplication in <xref ref="ex_mv_2"/></caption>
-					<image>
+					<image width="47%">
 						<shortdescription>Vectors x, y, x+y, Ax, Ay, and A(x+y) are plotted in the plane.</shortdescription>
 						<latex-image label="img-mv_2">
 							\begin{tikzpicture}[x={(1cm,0)},y={(0,1cm)}, &gt;=latex]
@@ -245,7 +245,7 @@
 
 				<figure xml:id="fig-mv_23" vshift="0">
 					<caption>Multiplying vectors by a matrix in <xref ref="ex_mv_23"/></caption>
-					<image>
+					<image width="47%">
 						<shortdescription>Vectors x, y, z, Ax, Ay, and Az. Ax is the zero vector. Both Ay and Az are parallel to x.</shortdescription>
 						<latex-image label="img-mv-23">
 							\begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
@@ -756,13 +756,13 @@
 			<image width="40%">
 				<shortdescription>A path is plotted in the plane, from the origin to (2,3), and then to (-1,8).</shortdescription>
 				<latex-image label="img-trans2">
-					\begin{tikzpicture}[&gt;=latex,x={(.5,0)},y={(0,.5)}]
-					\drawxlines{-2}{2}{-1,1}
-					\drawylines{-1}{8.5}{1,...,8}
-					\draw [dashed,-&gt;] (0,0) -- (2,2) node [pos=.5,right] {$2$ $\times$ ``new'' $\veone$};
-					\draw [dashed,-&gt;] (2,2) -- (-1,8) node [pos=.5,right] {$3$ $\times$ ``new'' $\vetwo$} node[left] {\parbox{2.5cm}{new location of the point $(2,3)$}};
-					\filldraw (-1,8) circle (2pt);
-					\end{tikzpicture}
+					\begin{tikzpicture}[&gt;=latex,scale=0.5]
+						\drawxlines{-4}{4}{-3,-2,-1,1,2,3}
+						\drawylines{-1}{8.5}{1,...,8}
+						\draw [dashed,-&gt;] (0,0) -- (2,2) node [pos=.5,right] {$2$ $\times$ ``new'' $\veone$};
+						\draw [dashed,-&gt;] (2,2) -- (-1,8) node [pos=.5,right] {$3$ $\times$ ``new'' $\vetwo$} node[shift={(14pt,0pt)},left] {\parbox{2cm}{new location of $(2,3)$}};
+						\filldraw (-1,8) circle (2pt);
+					\end{tikzpicture}%
 				</latex-image>
 			</image>
 		</figure>
@@ -789,7 +789,7 @@
 				<p>
 					To find <m>A</m>, first consider the new location of <m>\veone</m>.
 					Stretching the plane vertically does not affect <m>\veone</m>;
-					stretching the plane horizontally by a factor of <m>0.5</m> changes \veone to <m>\bbm 1/2\\0\ebm</m>,
+					stretching the plane horizontally by a factor of <m>0.5</m> changes <m>\veone</m> to <m>\bbm 1/2\\0\ebm</m>,
 					and then rotating it <m>90^\circ</m> about the origin moves it to <m>\bbm 0\\-1/2\ebm</m>.
 					This is the first column of <m>A</m>.
 				</p>
@@ -1202,7 +1202,7 @@
 						Thus to perform all of the operations <q>at once,</q> we need to multiply by
 						<md>
 							<mrow>A \amp = A_4A_3A_2A_1</mrow>
-							<mrow>			\amp  = \bbm 0\amp 1 \\ 1\amp 0\ebm\bbm 2\amp 0\\0\amp 1\ebm\bbm \sqrt{3}/2 \amp  -1/2 \\ 1/2 \amp  \sqrt{3}/2\ebm\bbm 1\amp 0\\0.5\amp 1\ebm</mrow>
+							<mrow>			\amp  = \bbm 0\amp 1 \\ 1\amp 0\ebm\bbm 2\amp 0\\0\amp 1\ebm\bbm \frac{\sqrt{3}}{2} \amp  -\frac12 \\ \frac12 \amp  \frac{\sqrt{3}}{2}\ebm\bbm 1\amp 0\\0.5\amp 1\ebm</mrow>
 							<mrow>			\amp  = \bbm (\sqrt{3}+2)/4 \amp  \sqrt{3}/2 \\ (2\sqrt{3}-1)/2 \amp  -1\ebm</mrow>
 							<mrow>			\amp  \approx \bbm 0.933 \amp  0.866\\ 1.232 \amp  -1 \ebm</mrow>
 						</md>.
@@ -1228,9 +1228,9 @@
 					in <xref ref="fig-trans_3_2"/> we sketch a shape and its transformation.
 				</p>
 
-				<figure xml:id="fig-trans_3_1" vshift="-10">
+				<figure xml:id="fig-trans_3_1" vshift="-2">
 					<caption>The transformed unit square in <xref ref="ex_transf_3"/></caption>
-					<image>
+					<image width="47%">
 						<shortdescription>The unit square and its transformed image.</shortdescription>
 						<latex-image label="img-trans-3-1">
 							\begin{tikzpicture}[&gt;=latex]
@@ -1312,7 +1312,7 @@
 					</p>
 				</statement>
 				<answer>
-					<image>
+					<image width="50%">
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex1">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)}]
@@ -1335,7 +1335,7 @@
 					</p>
 				</statement>
 				<answer>
-					<image>
+					<image width="50%">
 						<shortdescription></shortdescription>
 						<latex-image label="img-05-03-ex2">
 							\begin{tikzpicture}[&gt;=latex,x={(.5cm,0)},y={(0,.5cm)}]

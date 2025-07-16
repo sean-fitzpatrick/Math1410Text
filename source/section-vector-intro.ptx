@@ -1131,7 +1131,7 @@
               This is sketched in <xref ref="fig_vect5"/>.
             </p>
 
-            <figure xml:id="fig_vect5" vshift="3">
+            <figure xml:id="fig_vect5" vshift="7">
               <caption>Graphing vectors in <xref ref="ex_vect5"/>. All vectors shown have their initial point at the origin</caption>
             <!-- START figures/fig_vect5.tex -->
               <image width="47%">
@@ -1206,7 +1206,7 @@
     <video youtube="TZxf7vV1iuk" label="vid-vectors-intro-parallel"/>
   </figure>
 
-  <aside xml:id="aside-def-orthogonal" vshift="-1">
+  <aside xml:id="aside-def-orthogonal" vshift="4">
     <title>Direction and the zero vector</title>
 
     <p>

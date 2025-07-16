@@ -760,7 +760,7 @@
       of the zero vector to our particular solution!
     </p>
 
-    <aside vshift="0">
+    <aside vshift="1">
       <p>
         <alert>Note:</alert>In <xref ref="sec-vector_solutions"/>,
         we'll start writing our solutions to linear systems in vector form,

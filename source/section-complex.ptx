@@ -338,7 +338,7 @@
     </statement>
   </theorem>
 
-  <aside vshift="4">
+  <aside vshift="-3">
     <p>
       You may recall using conjugates to rationalize expressions involving square roots. For example, we have
       <md>

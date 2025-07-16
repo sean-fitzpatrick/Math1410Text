@@ -545,7 +545,7 @@
     </statement>
   </theorem>
 
-  <aside vshift="2">
+  <aside vshift="0">
     <p>
       A <em>corollary</em>is an idea that follows directly from a theorem;
       typically, all the hard work is done in proving the theorem, and any resulting corollaries are easy consequences.
@@ -563,15 +563,6 @@
     We demonstrate our theorem with an example.
   </p>
 
-  <aside vshift="0">
-    <p>
-      The method employed in <xref ref="ex_inverse_solution_1"/> is useful in theory, but not in practice:
-      the amount of work required to solve a system this way is significantly greater than the amount of work involved in Gaussian Elimination.
-      The only scenario where you should consider using the inverse to solve a system (aside from being asked to do so on a test!)
-      is when there are <em>several</em> systems you need to solve that all have the same coefficient matrix.
-    </p>
-  </aside>
-
   <example xml:id="ex_inverse_solution_1">
     <title>Using a matrix inverse to solve a system</title>
     <statement>
@@ -583,6 +574,16 @@
         \\  4\amp -5\amp -11\ebm\ \text{ and }\ \vb = \bbm -15\\   57 \\  -46\ebm
         </me>.
       </p>
+
+      <aside vshift="-2">
+        <p>
+          The method employed in <xref ref="ex_inverse_solution_1"/> is useful in theory, but not in practice:
+          the amount of work required to solve a system this way is significantly greater than the amount of work involved in Gaussian Elimination.
+          The only scenario where you should consider using the inverse to solve a system (aside from being asked to do so on a test!)
+          is when there are <em>several</em> systems you need to solve that all have the same coefficient matrix.
+        </p>
+      </aside>
+
     </statement>
     <solution>
       <p>

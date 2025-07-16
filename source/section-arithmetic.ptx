@@ -133,7 +133,7 @@
 
   <p>
     While most students (and some faculty) tend to skip over these properties or give them a cursory glance at best,
-    it is important to realize that the properties stated above are what drive the symbolic manipulation for all of agebra.
+    it is important to realize that the properties stated above are what drive the symbolic manipulation for all of algebra.
     When listing a tally of more than two numbers,
     <men xml:id="howtoaddonetwothree">
       1 + 2 + 3
@@ -335,7 +335,7 @@
 
 
 
-  <aside vshift="-4">
+  <aside vshift="-1">
     <p>
       It's always worth remembering that <em>division is the same as multiplication by the reciprocal</em>.
       You'd be surprised how often this comes in handy.

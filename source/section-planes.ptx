@@ -801,7 +801,7 @@
           illustrated in <xref ref="fig_planes5"/>.
         </p>
 
-        <figure xml:id="fig_planes5" vshift="3">
+        <figure xml:id="fig_planes5" vshift="0">
           <caption>Illustrating the intersection of a line and a plane in <xref ref="ex_planes5"/></caption>
 
           <!-- START figures/figplanes5_3D.asy -->
@@ -878,7 +878,7 @@
       it is also often necessary to find the distance from a point to a plane.
     </p>
 
-    <aside vshift="-2">
+    <aside vshift="-6">
       <p>
         <alert>Note:</alert> <xref ref="eq_plane_dist" text="local">Equation</xref>
         is useful as it does more than just give the distance between a point and a plane.
@@ -921,7 +921,7 @@
       we restate it as a Key Idea.
     </p>
 
-    <figure xml:id="fig_planes_dist" vshift="-6">
+    <figure xml:id="fig_planes_dist" vshift="-8">
       <caption>Illustrating finding the distance from a point to a plane</caption>
 
       <!-- START figures/figplanes_dist_3D.asy -->

@@ -533,7 +533,7 @@
         <figure xml:id="fig-null_sol_102" vshift="0">
           <caption>The solution, as a line, to <m>A\vx=\zero</m> in <xref ref="ex_null_sol_102"/></caption>
 
-          <image>
+          <image width="47%">
             <shortdescription>A line through the origin with slope 1, and its direction vector v.</shortdescription>
             <latex-image label="img-null-sol-102">
               \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]

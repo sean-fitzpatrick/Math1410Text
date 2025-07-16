@@ -539,7 +539,7 @@
 
       <figure xml:id="fig-eigenshear" vshift="0">
         <caption>A horizontal shear by a factor of <m>k</m></caption>
-        <image>
+        <image width="47%">
           <shortdescription>Illustration of a horizontal shear. The unit square becomes a parallelogram.</shortdescription>
           <latex-image label="img-eigenshear">
             \begin{tikzpicture}[&gt;=latex]

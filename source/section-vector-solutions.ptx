@@ -390,7 +390,7 @@
 
       <figure xml:id="fig-vect_sol_101" vshift="0">
         <caption>The solution, as a line, to <m>A\vx=\zero</m> in <xref ref="ex_vector_solution_101"/></caption>
-        <image>
+        <image width="47%">
           <shortdescription>A line through the origin in the plane, with slope -0.5. The direction vector v points from the origin to (-2,1).</shortdescription>
           <latex-image label="img-vect-sol-101">
             \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
@@ -511,7 +511,7 @@
 
       <figure xml:id="fig-vect_sol_102" vshift="0">
         <caption>The solution, as a line, to <m>A\vx=\zero</m> in <xref ref="ex_vect_sol_102"/></caption>
-        <image>
+        <image width="47%">
           <shortdescription>A line through the origin in the plane, with slope 2/3. The vector v points from the origin to (3/2,1).</shortdescription>
           <latex-image label="img-vect-sol-102">
             \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]
@@ -690,7 +690,7 @@
 
       <figure xml:id="fig-vect_sol_103" vshift="0">
         <caption>The solution, as a line, to <m>A\vx=\vb</m> in <xref ref="ex_vect_sol_103"/></caption>
-        <image>
+        <image width="47%">
           <shortdescription>A line in the plane through (3,0) with slope -0.5. A vector points from the origin to (3,0), and a vector v points from (3,0) to (3/2,1).</shortdescription>
           <latex-image label="img-vect-sol-103">
             \begin{tikzpicture}[x={(.6cm,0)},y={(0,.6cm)}, &gt;=latex]

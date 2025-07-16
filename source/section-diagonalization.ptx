@@ -460,7 +460,7 @@
       identity matrix for large values of <m>k</m>.)
     </p>
 
-    <aside vshift="0">
+    <aside vshift="3">
       <p>
         Although most students in a first course in linear algebra would prefer to avoid complex eigenvalues
         (and trigonometric functions!), it turns out that these are a key feature of stable ecosystems for a model like this!
