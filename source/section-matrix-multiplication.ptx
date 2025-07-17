@@ -157,6 +157,8 @@
     Now that we understand how to multiply a row vector by a column vector, we are ready to define matrix multiplication.
   </p>
 
+  <pagebreak-latex/>
+
   <definition xml:id="def-matrix_multiply">
     <title>Matrix Multiplication</title>
     <statement>
@@ -723,6 +725,8 @@
       </li>
     </ol>
   </p>
+
+  <enlarge-page skipsize="2"/>
 
   <p>
     The bad news is that these ideas pop up in many places where we don't expect them. For instance, we are used to

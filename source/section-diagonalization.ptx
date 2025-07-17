@@ -588,9 +588,10 @@
     <p>
       As we discussed above, the diagonalizability of <m>A</m> makes it easy to compute powers of <m>A</m>.
       Indeed, suppose <m>P^{-1}AP=D</m> is diagonal, for some invertible matrix <m>P</m>. Then <m>A = PDP^{-1}</m>, and
-      <me>
-        A^n = (PDP^{-1})^n = (PDP^{-1})\cdots (PDP^{-1}) = PD(P^{-1}P)D\cdots (P^{-1}P)DP^{-1} = PD^nP^{-1}
-      </me>.
+      <md>
+        <mrow>A^n \amp = (PDP^{-1})^n = (PDP^{-1})\cdots (PDP^{-1})</mrow>
+        <mrow> \amp = PD(P^{-1}P)D\cdots (P^{-1}P)DP^{-1} = PD^nP^{-1}</mrow>
+      </md>.
       This makes it easy to compute <m>A^n</m>, since it's easy to compute <m>D^n</m>:
       <me>
         \text{If } D=\bbm \lambda_1  \amp  0  \amp  \cdots \amp  0\\0\amp \lambda_2 \amp  \cdots \amp  0\\\vdots \amp  \vdots \amp  \ddots \amp \vdots\\0\amp 0\amp \cdots \amp  \lambda_n\ebm, \text{ then } D^n = \bbm \lambda_1^n \amp  0 \amp  \cdots \amp  0\\0\amp \lambda_2^n \amp  \cdots \amp  0\\\vdots \amp  \vdots \amp  \ddots \amp \vdots\\0\amp 0\amp \cdots \amp  \lambda_n^n\ebm

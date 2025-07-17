@@ -1201,7 +1201,7 @@
 						perform the horizontal stretch and diagonal reflection, respectively.
 						Thus to perform all of the operations <q>at once,</q> we need to multiply by
 						<md>
-							<mrow>A \amp = A_4A_3A_2A_1</mrow>
+							<mrow>\amp A  = A_4A_3A_2A_1</mrow>
 							<mrow>			\amp  = \bbm 0\amp 1 \\ 1\amp 0\ebm\bbm 2\amp 0\\0\amp 1\ebm\bbm \frac{\sqrt{3}}{2} \amp  -\frac12 \\ \frac12 \amp  \frac{\sqrt{3}}{2}\ebm\bbm 1\amp 0\\0.5\amp 1\ebm</mrow>
 							<mrow>			\amp  = \bbm (\sqrt{3}+2)/4 \amp  \sqrt{3}/2 \\ (2\sqrt{3}-1)/2 \amp  -1\ebm</mrow>
 							<mrow>			\amp  \approx \bbm 0.933 \amp  0.866\\ 1.232 \amp  -1 \ebm</mrow>

@@ -237,6 +237,8 @@
     From here, it's not too much of a stretch to conclude that the same definition is reasonable for matrices in general.
   </p>
 
+  <pagebreak-latex/>
+
   <definition xml:id="def-scalar_multiplication">
     <title>Scalar Multiplication</title>
     <statement>

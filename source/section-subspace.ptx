@@ -107,9 +107,10 @@
                 \vec u + \vec v = \bbm u_1+v_1\\u_2+v_2\\u_3+v_3\ebm
               </me>,
               we find
-              <me>
-                2(u_1+v_1)-4(u_2+v_2)+3(u_3+v_3) = (2u_1-4u_2+3u_3) + (2v_1-4v_2+3v_3) = 0 + 0 = 0,
-              </me>
+              <md>
+                <mrow>2(u_1+v_1)-4(u_2+v_2)+3(u_3+v_3)\amp = (2u_1-4u_2+3u_3) + (2v_1-4v_2+3v_3)</mrow>
+                <mrow>\amp = 0 + 0 = 0</mrow>
+              </md>,
               which shows that <m>\vec u+\vec v\in R</m>. Similarly, for any scalar <m>c</m>,
               <me>
                 2(cu_1)-4(cu_2)+3(cu_3) = c(2u_1-4u_2+3u_3) = 0
