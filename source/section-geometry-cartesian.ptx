@@ -61,7 +61,7 @@
 			<title>Multiplying a vector by a matrix</title>
 			<statement>
 				<p>
-					Let <m>A</m> be a matrix, and<m>\vx</m>,<m>\vy</m>, and <m>\vz</m> be vectors as given below.
+					Let <m>A</m> be a matrix, and <m>\vx</m>, <m>\vy</m>, and <m>\vz</m> be vectors as given below.
 					<me>
 						A = \bbm 1 \amp 4\\2 \amp 3\ebm,  \quad \vx = \bbm 1\\1\ebm, \quad \vy = \bbm-1\\1\ebm, \quad \vz = \bbm 3\\-1\ebm
 					</me>.
