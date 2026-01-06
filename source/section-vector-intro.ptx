@@ -236,9 +236,10 @@
   <aside vshift="0">
     <p>
       The component form of a vector allows us to identify a point <m>(a, b)</m> (or
-      <m>(a, b, c)</m>) with the corresponding vec-
-      tor <m>\bbm a\\b\ebm</m> (or <m>\bbm a\\b\\c\ebm</m>), so that vectors and points contain essentially the
-      same information, presented in different contexts. This is why mathematicians don't mind using the notation
+      <m>(a, b, c)</m>) with the corresponding vector <m>\bbm a\\b\ebm</m> (or <m>\bbm a\\b\\c\ebm</m>), 
+      so that vectors and points contain essentially the
+      same information, presented in different contexts. 
+      This is why mathematicians don't mind using the notation
       <m>\R^n</m> to refer to both a set of vectors
       and the set of points containing those
       vectors.
