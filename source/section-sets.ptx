@@ -58,7 +58,7 @@
     Also, the <em>order</em> of the elements doesn't matter, so <m>\left\{ o, n, p, r, g, s, h \right\}</m>
     is also a roster description of <m>S</m>.   A <term>set-builder</term> description of <m>S</m> is:
     <me>
-      \{ x \, | \, x \text{ is a letter in the word ``pronghorns''}\}
+      \{ x \, | \, x \text{ is a letter in the word pronghorns}\}
     </me>.
   </p>
 
@@ -66,7 +66,7 @@
     The way to read this is: <q>The set of elements <m>x</m> <em>such that</em> <m>x</m> is a letter in the word <sq>pronghorns.</sq></q>
     We define to sets to be equal if they have exactly the same elements, and denote this using the familiar equals sign <q><m>=</m></q>.
     Thus, we may write
-    <m>S = \left\{  p, r, o, n, g, h, s  \right\}</m> or  <m>S = \{ x \, | \, x \text{ is a letter in the word ``pronghorns''.}\}</m>.
+    <m>S = \left\{  p, r, o, n, g, h, s  \right\}</m> or  <m>S = \{ x \, | \, x \text{ is a letter in the word pronghorns}\}</m>.
     Clearly <m>r</m> is an element of <m>S</m> and <m>q</m> is not an element <m>S</m>.
     We express these sentiments mathematically by writing  <m>r \in S</m> and <m>q \notin S</m>.
   </p>
