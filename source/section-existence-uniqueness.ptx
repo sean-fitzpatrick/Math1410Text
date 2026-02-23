@@ -584,7 +584,7 @@
         Confirm that the linear system
         <me>
           \begin{array}{ccccc}
-            \amp + \amp y\amp =\amp 0\\
+            x\amp + \amp y\amp =\amp 0\\
             2x \amp +\amp 2y\amp =\amp 4
           \end{array}
         </me>
