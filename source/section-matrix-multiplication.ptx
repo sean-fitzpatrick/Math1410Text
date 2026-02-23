@@ -200,7 +200,7 @@
     Secondly, the resulting matrix has the same number of <em>rows</em> as <m>A</m>
     and the same number of <em>columns</em> as <m>B</m> (we refer to these as the <q>outer dimensions</q>).
     <me>
-      \overbrace{(m\times\hspace{-38pt} \underbrace{r) \times (r}_\text{these inner dimensions must match}\hspace{-38pt}\times n)}^\text{final dimensions are the outer dimensions}
+      \overbrace{(m\times\hspace{-32pt} \underbrace{r) \times (r}_\text{these inner dimensions must match}\hspace{-32pt}\times n)}^\text{final dimensions are the outer dimensions}
     </me>
     Of course, this will make much more sense when we see an example.
   </p>
