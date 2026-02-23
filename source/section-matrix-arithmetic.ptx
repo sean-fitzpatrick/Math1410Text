@@ -525,9 +525,9 @@
     We then have
     <md>
       <mrow>A+B \amp  = [a_{ij}]+[b_{ij}]</mrow>
-      <mrow>\amp  = [a_{ij}+b_{ij}] \quad \text{ (by <xref ref="def-addition"/>)}</mrow>
+      <mrow>\amp  = [a_{ij}+b_{ij}] \quad \text{ (by } <xref ref="def-addition"/> \text{)}</mrow>
       <mrow>\amp  = [b_{ij}+a_{ij}] \quad \text{ (since addition of real numbers commutes)}</mrow>
-      <mrow>\amp  = [b_{ij}]+[a_{ij}] \quad \text{ (by <xref ref="def-addition"/>)}</mrow>
+      <mrow>\amp  = [b_{ij}]+[a_{ij}] \quad \text{ (by } <xref ref="def-addition"/> \text{)}</mrow>
       <mrow>\amp  = B+A</mrow>
     </md>.
   </p>
