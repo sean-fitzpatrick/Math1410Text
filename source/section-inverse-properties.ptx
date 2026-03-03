@@ -48,7 +48,7 @@
           </li>
           <li xml:id="imt-axb">
             <p>
-              The equation <m>A\vx = \vb</m> has exactly one solution for every <m>n\times 1</m> vector<m>\vb</m>.
+              The equation <m>A\vx = \vb</m> has exactly one solution for every <m>n\times 1</m> vector <m>\vb</m>.
             </p>
           </li>
           <li xml:id="imt-ac">
