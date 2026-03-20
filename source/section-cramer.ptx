@@ -780,7 +780,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 2 \amp -4 \amp 7\-3\amp 1\amp 5\\5\amp -5\amp 2\ebm</m>
+            <m>A = \bbm 2 \amp -4 \amp 7\\-3\amp 1\amp 5\\5\amp -5\amp 2\ebm</m>
           </p>
         </statement>
         <answer>
