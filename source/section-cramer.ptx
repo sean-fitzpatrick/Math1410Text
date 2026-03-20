@@ -445,7 +445,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 3 \amp 0 \amp -3\  5\amp 4\amp 4\\  5\amp 5\amp -4\ebm</m>,
+            <m>A = \bbm 3 \amp 0 \amp -3\\  5\amp 4\amp 4\\  5\amp 5\amp -4\ebm</m>,
             <m>\vb = \bbm 24\\  0\\ 31\ebm</m>.
           </p>
         </statement>
@@ -470,7 +470,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 4 \amp -4 \amp 0\  5\amp 1\amp -1\\  3\amp -1\amp 2\ebm</m>,
+            <m>A = \bbm 4 \amp -4 \amp 0\\  5\amp 1\amp -1\\  3\amp -1\amp 2\ebm</m>,
             <m>\vb = \bbm 16\\  22\\ 8\ebm</m>.
           </p>
         </statement>
@@ -495,7 +495,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 1 \amp 0 \amp -10\  4\amp -3\amp -10\\  -9\amp 6\amp -2\ebm</m>,
+            <m>A = \bbm 1 \amp 0 \amp -10\\  4\amp -3\amp -10\\  -9\amp 6\amp -2\ebm</m>,
             <m>\vb = \bbm -40\\  -94 \\  132\ebm</m>.
           </p>
         </statement>
@@ -520,7 +520,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm -6 \amp -7 \amp -7\  5\amp 4\amp 1\\  5\amp 4\amp 8\ebm </m>,
+            <m>A = \bbm -6 \amp -7 \amp -7\\  5\amp 4\amp 1\\  5\amp 4\amp 8\ebm </m>,
             <m>\vb = \bbm 58\\  -35\\  -49\ebm</m>.
           </p>
         </statement>
@@ -545,7 +545,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 9 \amp 5\  -4 \amp -7\ebm</m>,
+            <m>A = \bbm 9 \amp 5\\  -4 \amp -7\ebm</m>,
             <m>\vb = \bbm -45\\  20\ebm</m>.
           </p>
         </statement>
@@ -570,7 +570,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 0 \amp -6\  9 \amp -10\ebm</m>,
+            <m>A = \bbm 0 \amp -6\\  9 \amp -10\ebm</m>,
             <m>\vb = \bbm 6\\  -17\ebm</m>.
           </p>
         </statement>
@@ -596,7 +596,7 @@
        <exercise>
         <statement>
           <p>
-            <m>A = \bbm 2 \amp 10\  -1 \amp 3\ebm</m>,
+            <m>A = \bbm 2 \amp 10\\  -1 \amp 3\ebm</m>,
             <m>\vb = \bbm 42\\  19\ebm</m>.
           </p>
         </statement>
@@ -621,7 +621,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 7 \amp -7\  -7 \amp 9\ebm</m>,
+            <m>A = \bbm 7 \amp -7\\  -7 \amp 9\ebm</m>,
             <m>\vb = \bbm 28\\  -26\ebm</m>.
           </p>
         </statement>
@@ -645,7 +645,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm -8 \amp 16\  10 \amp -20\ebm</m>,
+            <m>A = \bbm -8 \amp 16\\  10 \amp -20\ebm</m>,
             <m>\vb = \bbm -48\\  60\ebm</m>.
           </p>
         </statement>
@@ -670,7 +670,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 7 \amp 14\  -2 \amp -4\ebm</m>,
+            <m>A = \bbm 7 \amp 14\\  -2 \amp -4\ebm</m>,
             <m>\vb = \bbm -1\\  4\ebm</m>.
           </p>
         </statement>
@@ -695,7 +695,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 4 \amp 9 \amp 3\  -5\amp -2\amp -13\\  -1\amp 10\amp -13\ebm</m>,
+            <m>A = \bbm 4 \amp 9 \amp 3\\  -5\amp -2\amp -13\\  -1\amp 10\amp -13\ebm</m>,
             <m>\vb = \bbm -28\\  35\\  7\ebm</m>.
           </p>
         </statement>
@@ -720,7 +720,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 7 \amp -4 \amp 25\  -2\amp 1\amp -7\\  9\amp -7\amp 34\ebm</m>,
+            <m>A = \bbm 7 \amp -4 \amp 25\\  -2\amp 1\amp -7\\  9\amp -7\amp 34\ebm</m>,
             <m>\vb = \bbm -1\\  -3\\ 5\ebm</m>.
           </p>
         </statement>
