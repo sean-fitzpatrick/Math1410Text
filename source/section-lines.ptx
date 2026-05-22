@@ -995,7 +995,7 @@
         </md>,
         and the distance is
         <md>
-          <mrow>h \amp = \norm{\overrightarrow{PR}} = \norm \frac27 \bbm -4\\1\\5\ebm</mrow>
+          <mrow>h \amp = \norm{\overrightarrow{PR}} = \norm{\frac27 \bbm -4\\1\\5\ebm}</mrow>
           <mrow>  \amp = \frac27\sqrt{(-4)^2+1^2+5^2}</mrow>
           <mrow>  \amp = \frac27\sqrt{42} = 2\sqrt{\frac67}</mrow>
         </md>.
