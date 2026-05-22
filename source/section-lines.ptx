@@ -988,14 +988,14 @@
         <md>
           \overrightarrow{PR} = \proj vd = \frac{\dotp vd}{\dotp dd}\vec{d} = \frac{0+6+2}{4+9+1}\bbm 2\\3\\1\ebm = \frac47\bbm 2\\3\\1\ebm
         </md>.
-        Now, we know that the height <m>h</m> satisfies <m>h = \len{\overrightarrow{RQ}}</m>, 
+        Now, we know that the height <m>h</m> satisfies <m>h = \norm{\overrightarrow{RQ}}</m>, 
         and that <m>\overrightarrow{PQ} = \overrightarrow{PR}+\overrightarrow{RQ}</m>. Therefore,
         <md>
           \overrightarrow{RQ}=\overrightarrow{PQ}-\overrightarrow{PR}=\bbm 0\\2\\2\ebm-\frac47\bbm 2\\3\\1\ebm = \bbm -8/7\\2/7\\10/7\ebm
         </md>,
         and the distance is
         <md>
-          <mrow>h \amp = \len{\overrightarrow{PR}} = \len \frac27 \bbm -4\\1\\5\ebm</mrow>
+          <mrow>h \amp = \norm{\overrightarrow{PR}} = \norm \frac27 \bbm -4\\1\\5\ebm</mrow>
           <mrow>  \amp = \frac27\sqrt{(-4)^2+1^2+5^2}</mrow>
           <mrow>  \amp = \frac27\sqrt{42} = 2\sqrt{\frac67}</mrow>
         </md>.
