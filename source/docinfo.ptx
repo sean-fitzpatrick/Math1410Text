@@ -6,8 +6,8 @@
   <document-id edition="5">1410text</document-id>
 
   <blurb shelf="Mathematics">
-    A traditional calculus textbook with many exercises and few proofs,
-    covering calculus from limits to vector calculus.
+    A textbook on elementary linear algebra, covering vector geometry,
+    linear systems, matrix algebra, and eigenvalues.
   </blurb>
 
   <math-package latex-name="cancel" mathjax-name="cancel"/>
