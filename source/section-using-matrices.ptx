@@ -16,13 +16,13 @@
   <p>
     Let's rewrite these equations so that all variables are on the left of the equal sign and all constants are on the right.
     Also, for a bit more consistency, let's list the variables in alphabetical order in each equation. Therefore we can write the equations as
-    <men xml:id="eq-before_matrix">
+    <md number="yes" xml:id="eq-before_matrix">
       \begin{array}{ccccccc}
         b\amp + \amp g\amp + \amp r\amp = \amp 30\\
          \amp -  \amp 2g \amp + \amp r\amp = \amp 0\\
         -b\amp + \amp g\amp + \amp r\amp = \amp 0
       \end{array}
-    </men>.
+    </md>.
   </p>
 
   <p>
@@ -33,25 +33,25 @@
   <p>
     First, let's add the first and last equations together, and write the result as a new
     third equation. This gives us:
-    <me>
+    <md>
       \begin{array}{ccccccc}
       b\amp +\amp g\amp +\amp r\amp =\amp 30\\
          \amp -  \amp 2g\amp +\amp r\amp =\amp 0\\
         \amp  \amp 2g\amp +\amp 2r\amp =\amp 30
       \end{array}
-    </me>.
+    </md>.
     A nice feature of this is that the only equation with a <m>b</m> in it is the first equation.
   </p>
 
   <p>
     Now let's multiply the second equation by <m>-\frac12</m>. This gives
-    <me>
+    <md>
       \begin{array}{ccccccc}
       b\amp +\amp g\amp +\amp r\amp =\amp 30\\
         \amp    \amp  g\amp -\amp 1/2r\amp =\amp 0\\
         \amp  \amp 2g\amp +\amp 2r\amp =\amp 30
       \end{array}
-    </me>.
+    </md>.
   </p>
 
   <aside vshift="0">
@@ -71,24 +71,24 @@
     and add that to the first equation, replacing the first equation with that sum. To remove the <m>g</m> in the third equation,
     let's multiply the second equation by <m>-2</m> and add that to the third equation, replacing the third equation.
     Our new system of equations now becomes
-    <me>
+    <md>
       \begin{array}{ccccccc}
       b\amp + \amp  \amp \amp 3/2r\amp =\amp 30\\
         \amp    \amp g\amp -\amp 1/2r\amp =\amp 0\\
         \amp   \amp  \amp \amp 3r\amp =\amp 30
       \end{array}
-    </me>.
+    </md>.
   </p>
 
   <p>
     Clearly we can multiply the third equation by <m>\frac13</m> and find that <m>r=10</m>; let's make this our new third equation, giving
-    <me>
+    <md>
       \begin{array}{ccccccc}
       b\amp + \amp  \amp \amp 3/2r\amp =\amp 30\\
         \amp    \amp g\amp -\amp 1/2r\amp =\amp 0\\
         \amp   \amp  \amp \amp r\amp =\amp 10
       \end{array}
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -97,13 +97,13 @@
     and add the result to the first equation, replacing the first equation with that sum.
     To remove the <m>r</m> in the second equation, we can multiply the third equation by <m>\frac12</m>
     and add that to the second equation, replacing the second equation with that sum. This gives us:
-    <me>
+    <md>
       \begin{array}{ccccccc}
       b \amp  \amp  \amp  \amp \amp =\amp 15\\
          \amp    \amp g \amp  \amp \amp =\amp 5\\
         \amp   \amp  \amp \amp r\amp =\amp 10
       \end{array}
-    </me>.
+    </md>.
     Clearly we have discovered the same result as when we solved this problem in <xref ref="sec-intro"/>.
   </p>
 
@@ -119,7 +119,7 @@
     Let's look again at our system of equations in <xref ref="eq-before_matrix" text="local">Equation</xref>
     and write the coefficients and the constants in a rectangular array.
     This time we won't ignore the zeros, but rather write them out.
-    <me>
+    <md>
       \begin{array}{ccccccc}
         b\amp +\amp g\amp +\amp r\amp =\amp 30\\
         0b \amp -\amp 2g\amp +\amp r\amp =\amp 0\\
@@ -130,7 +130,7 @@
       1\amp 1\amp 1\amp 30\\
       0\amp -2\amp 1\amp 0\\
       -1\amp 1\amp 1\amp 0\ebm
-    </me>.
+    </md>.
     Notice how even the equal signs are gone; we don't need them, for we know that the last <em>column</em> contains the coefficients.
   </p>
 
@@ -292,13 +292,13 @@
 
       <p>
         Find a solution to the following system of linear equations by simultaneously manipulating the equations and the corresponding augmented matrices.
-        <me>
+        <md>
           \begin{array}{ccccccc}
           x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 0\\
           2x_1\amp +\amp 2x_2\amp +\amp x_3\amp =\amp 0\\
           -1x_1\amp +\amp x_2\amp -\amp 2x_3\amp =\amp 2
           \end{array}
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -644,9 +644,9 @@
       <introduction>
         <p>
           Perform the given row operations on <m>A</m>, where
-          <me>
+          <md>
             A = \bbm 2\amp -1\amp 7\\0\amp 4\amp -2\\5\amp 0\amp 3\ebm
-          </me>.
+          </md>.
         </p>
       </introduction>
 
@@ -735,9 +735,9 @@
       <introduction>
         <p>
           A matrix <m>A</m> is given below:
-          <me>
+          <md>
             A = \bbm 1\amp 1\amp 1\\1\amp 0\amp 1\\1\amp 2\amp 3\ebm
-          </me>.
+          </md>.
           For the given matrix <m>B</m>, give the row operation that transforms <m>A</m> into <m>B</m>.
         </p>
       </introduction>

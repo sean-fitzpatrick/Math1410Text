@@ -281,7 +281,7 @@
             <li>
               <p>
                 Law of Cosines:
-                <me>c^2=a^2+b^2-2ab\cos \theta</me>
+                <md>c^2=a^2+b^2-2ab\cos \theta</md>
               </p>
             </li>
           </ul>

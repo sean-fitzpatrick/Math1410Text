@@ -244,21 +244,21 @@
 
       <p>
         Put the augmented matrix of the following system of linear equations into reduced row echelon form.
-        <me>
+        <md>
           \begin{array}{ccccccc}
           -3x_1\amp -\amp 3x_2\amp +\amp 9x_3\amp =\amp 12\\
           2x_1\amp +\amp 2x_2\amp -\amp 4x_3\amp =\amp -2\\
           \amp \amp -2x_2\amp -\amp 4x_3\amp =\amp -8
           \end{array}
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         We start by converting the linear system into an augmented matrix.
-        <me>
+        <md>
           \left[\begin{array}{ccc|c}\boxed{-3} \amp -3 \amp 9\amp 12\\ 2\amp 2\amp -4\amp -2\\0\amp -2\amp -4\amp -8\end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -470,9 +470,9 @@
     <statement>
       <p>
         Use Gaussian elimination to put the matrix <m>A</m> into reduced row echelon form, where
-        <me>
+        <md>
           A = \bbm-2 \amp -4 \amp -2\amp -10\amp 0\\2\amp 4\amp 1\amp 9\amp -2\\3\amp 6\amp 1\amp 13\amp -4\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -526,9 +526,9 @@
     <statement>
       <p>
         Put the matrix
-        <me>
+        <md>
           \bbm 1 \amp 2 \amp 1\amp 3\\2\amp 1\amp 1\amp 1\\3\amp 3\amp 2\amp 1\ebm
-        </me>
+        </md>
         into reduced row echelon form.
       </p>
     </statement>
@@ -559,9 +559,9 @@
 
       <p>
         Put the matrix <m>A</m> into reduced row echelon form, where
-        <me>
+        <md>
           A = \bbm 2 \amp 1 \amp -1\amp 4\\1\amp -1\amp 2\amp 12\\2\amp 2\amp -1\amp 9\\ \ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -578,28 +578,28 @@
 
       <p>
         Let's take a break here and think about the state of our linear system at this moment. Converting back to linear equations, we now know
-        <me>
+        <md>
           \begin{array}{rcl}
           x_1+1/2x_2-1/2x_3\amp =\amp 2\\
           x_2-5/3x_3\amp =\amp -20/3\\
           x_3\amp =\amp 7\\
           \end{array}
-        </me>.
+        </md>.
       </p>
 
       <p>
         Since we know that <m>x_3 = 7</m>, the second equation turns into
-        <me>
+        <md>
           x_2 - (5/3)(7) = -20/3
-        </me>,
+        </md>,
         telling us that <m>x_2 = 5</m>.
       </p>
 
       <p>
         Finally, knowing values for <m>x_2</m> and <m>x_3</m> lets us substitute in the first equation and find
-        <me>
+        <md>
           x_1 +(1/2)(5)-(1/2)(7) = 2
-        </me>,
+        </md>,
         so <m>x_1 = 3</m>.
       </p>
 

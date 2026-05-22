@@ -26,17 +26,17 @@
 
     <p>
       If you paid attention in high school, you probably also remember that the order of composition matters: in general,
-      <me>
+      <md>
         (f\circ g)(x) \neq (g\circ f)(x)
-      </me>.
+      </md>.
       For example, if <m>f(x) = 2x+1</m> and <m>g(x) = x^2</m>, then
-      <me>
+      <md>
         (f\circ g)(x) = f(g(x)) = 2g(x)+1 = 2x^2+1,
-      </me>
+      </md>
       while
-      <me>
+      <md>
         (g\circ f)(x) = g(f(x)) = (f(x))^2 = (2x+1)^2 = 4x^2+4x+1
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -45,9 +45,9 @@
       In fact, if <m>f:\R\to\R</m> satisfies <xref ref="def-lin_trans"/>,
       then we must have <m>f(x) = ax</m> for some real number <m>a</m>.
       If <m>g(x) = bx</m> is another linear transformation from <m>\R</m> to <m>\R</m>, notice that we have
-      <me>
+      <md>
         (f\circ g)(x) = f(g(x))=a(g(x)) = a(bx) = (ab)x
-      </me>.
+      </md>.
       Thus, to compose two linear transformations from <m>\R</m> to <m>\R</m>,
       we simply multiply the constants used to define the transformations.
     </p>
@@ -55,9 +55,9 @@
     <p>
       Now, what about a general linear transformation <m>S:\R^n\to \R^m</m>?
       We know that any such transformation is a matrix transformation: we must have
-      <me>
+      <md>
         S(\vec x) = A\vec x
-      </me>
+      </md>
       for any <m>\vec x\in\R^n</m>, where <m>A</m> is an <m>m\times n</m> matrix.
       Since we're multiplying an <m>m\times n</m> matrix by an <m>n\times 1</m> matrix,
       the rules of matrix multiplication ensure that the output <m>\vec y = A\vec x</m> is an element of <m>\R^m</m>.
@@ -78,9 +78,9 @@
       That is, since <m>S\circ T</m> is defined by <m>(S\circ T)(\vec x) = S(T(\vec x))</m>,
       the vector <m>T(\vec x)</m> (which by definition is in the range of <m>T</m>) must belong to the domain of <m>S</m>.
       This means that we must have <m>T(\vec x)\in \R^n</m>, so we have
-      <me>
+      <md>
         T:\R^k\to \R^n
-      </me>
+      </md>
       for some natural number <m>k</m>. On the other hand, we know that if <m>T</m> is a linear transformation,
       then <m>T</m> is defined by matrix multiplication: <m>T(\vec x) = B\vec x</m> for some <m>n\times k</m> matrix <m>B</m>.
     </p>
@@ -101,9 +101,9 @@
       But this is the same conclusion as above! What is the connection?
       Well, if we follow the rules for function composition, if <m>T(\vec x) = B\vec x</m> and <m>S(\vec y) = A\vec y</m>,
       we must have
-      <me>
+      <md>
         (S\circ T)(\vec x) = S(T(\vec x)) = A(T(\vec x)) = A(B\vec x) = (AB)\vec x
-      </me>,
+      </md>,
       where the last equality is due to the associative property of matrix multiplication from <xref ref="thm-matrix_multiplication"/>.
       Thus, we see that:
     </p>
@@ -122,13 +122,13 @@
             When <m>A</m> and <m>B</m> are both <m>n\times n</m> matrices,
             the transformations <m>S(\vec x) = A\vec x</m> and <m>T(\vec x) = B\vec x</m>
             are both maps from <m>\mathbb{R}^n</m> to <m>\mathbb{R}^n</m>, and we can define both
-            <me>
+            <md>
               (S\circ T)(\vec x) = (AB)\vec x
-            </me>
+            </md>
             and
-            <me>
+            <md>
               (T\circ S)(\vec x) = (BA)\vec x
-            </me>.
+            </md>.
             Our experience with functions teaches us that most of the time,
             <m>S\circ T \neq T\circ S</m>, so of course it makes sense that <m>AB\neq BA</m> in general!
           </p>
@@ -169,14 +169,14 @@
 
     <p>
       But we also argued above that we should have
-      <me>
+      <md>
         (S\circ T)\left(\bbm x\\y\ebm\right) = (AB)\bbm x\\y\ebm
-      </me>,
+      </md>,
       from which we're forced to conclude that
-      <me>
+      <md>
         AB = \bbm a_{11}b_{11}+a_{12}b_{21} \amp  a_{11}b_{12}+a_{12}b_{22}\\
                   a_{21}b_{11}+a_{22}b_{21}  \amp  a_{21}b_{12}+a_{22}b_{22}\ebm
-      </me>,
+      </md>,
       and this is exactly the rule for multiplying two <m>2\times 2</m> matrices!
       Of course, we can repeat the above argument for the general case where <m>A</m>
       is <m>m\times n</m> and <m>B</m> is <m>n\times k</m>,
@@ -203,15 +203,15 @@
       Consider Examples <xref ref="ex_mv_2"/> and <xref ref="ex_mv_23"/> from way back at the beginning of the section.
       In <xref ref="ex_mv_2"/>, the vectors <m>A\vec x</m> and <m>A\vec y</m> were non-parallel, and therefore independent.
       It follows that for any other vector <m>\vec z\in\R^2</m>, we can find scalars <m>a</m> and <m>b</m> such that
-      <me>
+      <md>
         \vec z = a(A\vec x) + b(A\vec y) = A(a\vec x) + A(b\vec y) = A(a\vec x+b\vec y)
-      </me>,
+      </md>,
       so every vector in <m>\R^2</m> can be written as the output of the transformation <m>T(\vec x) = A\vec x</m>.
       On the other hand, using the matrix <m>A = \bbm 1\amp -1\\1\amp -1\ebm</m> in <xref ref="ex_mv_23"/>,
       for any vector <m>\bbm a\\b\ebm\in\R^2</m>, we have
-      <me>
+      <md>
         A\bbm a\\b\ebm = \bbm 1 \amp  -1\\1 \amp -1\ebm \bbm a\\b\ebm = \bbm a-b\\a-b\ebm = (a-b)\bbm 1\\1\ebm
-      </me>,
+      </md>,
       so the only vectors in the range of <m>T(\vec x) = A\vec x</m> are those parallel to the vector <m>\bbm 1\\1\ebm</m>.
     </p>
 
@@ -249,9 +249,9 @@
         Some textbooks actually use this observation to give an alternative definition of matrix multiplication.
         Once we know how the product <m>A\vec x</m> is defined for an <m>m\times n</m> matrix <m>A</m> and <m>n\times 1</m> vector <m>\vec x</m>,
         we can define <m>AB</m> for an <m>n\times p</m> matrix <m>B</m> as follows: first, we write
-        <me>
+        <md>
           B = \bbm \vec{b}_1  \amp \vec{b}_2 \amp  \cdots \amp  \vec{b}_p\ebm
-        </me>,
+        </md>,
         where the <m>n\times 1</m> vectors <m>\vec{b}_1,\ldots, \vec{b}_p</m> are the columns of <m>B</m>. We then define
         <md>
           <mrow>AB \amp  = A\bbm \vec{b}_1 \amp \vec{b}_2 \amp  \cdots \amp  \vec{b}_p\ebm</mrow>
@@ -268,9 +268,9 @@
         <p>
           The <term>column space</term> of an <m>m\times n</m> matrix <m>A</m>
           is the subspace of <m>\R^m</m> spanned by the columns of <m>A</m>:
-          <me>
+          <md>
             \operatorname{col}(A) = \operatorname{span}\left\{\bbm a_{11}\\a_{21}\\\vdots \\ a_{m1}\ebm, \bbm a_{12}\\a_{22}\\ \vdots \\ a_{m2}\ebm, \ldots , \bbm a_{1n}\\a_{2n}\\ \vdots \\ a_{mn}\ebm\right\}
-          </me>.
+          </md>.
 
           <idx><h>column space</h></idx>
         </p>
@@ -280,9 +280,9 @@
     <p>
       From the discussion above, we can make two conclusions.
       First, if <m>T(\vec x) = A\vec x</m> is a linear transformation, we have
-      <me>
+      <md>
         \operatorname{range}(T) = \operatorname{col}(A)
-      </me>.
+      </md>.
       Second, as mentioned in <xref ref="def-colspace"/>,
       since the range of <m>T</m> can be written as a span,
       it is automatically a subspace of <m>\R^m</m> according to <xref ref="thm-subspan"/>.
@@ -320,21 +320,21 @@
       <statement>
         <p>
           Determine a basis for the column space of the matrix
-          <me>
+          <md>
             A = \bbm 1 \amp 0 \amp 2\amp -3\\2\amp -1\amp 0\amp 4\\-1\amp 1\amp 3\amp 0\ebm
-          </me>.
+          </md>.
         </p>
       </statement>
       <solution>
         <p>
           We begin by computing the reduced row echelon form <m>R</m> of <m>A</m>. We find
-          <me>
+          <md>
             R = \bbm 1  \amp  0  \amp  0 \amp  -17\\ 0 \amp  1 \amp  0 \amp  -38\\ 0 \amp  0 \amp  1 \amp  7\ebm
-          </me>,
+          </md>,
           and note that <m>R</m> has leading 1s in columns 1, 2, and 3. It follows that
-          <me>
+          <md>
             B = \left\{\bbm 1\\2\\-1\ebm, \bbm 0\\-1\\1\ebm, \bbm 2\\0\\3\ebm\right\}
-          </me>
+          </md>
           is a basis for <m>\operatorname{col}(A)</m>.
         </p>
       </solution>
@@ -386,25 +386,25 @@
 
     <p>
       Reading off the first two columns of <m>A</m>, we find that
-      <me>
+      <md>
         \operatorname{col}(A) = \operatorname{span}\left\{\bbm 1\\3\\-2\ebm, \bbm -2\\-1\\-6\ebm\right\}
-      </me>.
+      </md>.
       We know that this is a plane through the origin in <m>\mathbb{R}^3</m>, but how do we quickly determine what vectors belong to this plane? There's an easy way and a hard way. The easy way is to compute the cross product, as we did in many of the problems from <xref ref="sec-planes"/>. We find
-      <me>
+      <md>
         \bbm 1\\3\\-2\ebm\times\bbm -2\\-1\\-6\ebm = \bbm -20\\10\\5\ebm = 5\bbm -4\\2\\1\ebm = 5\vec n
-      </me>,
+      </md>,
       where we've chosen to factor out the scalar multiple of 5 to simplify our normal vector.
     </p>
 
     <p>
       From this we know that a vector
-      <me>
+      <md>
         \vb = \bbm a\\b\\c\ebm
-      </me>
+      </md>
       belongs to the column space of <m>A</m> if and only if
-      <me>
+      <md>
         -4a+2b+c=0,
-      </me>
+      </md>
       using the scalar form for the equation of a plane in <m>\mathbb{R}^3</m>.
       Having done it the easy way, let us do things once more the hard way.
       (Why do it the hard way if the easy way works?
@@ -413,18 +413,18 @@
       The hard way is to solve the equation <m>A\vx = \vb</m> for an <em>arbitrary</em>
       vector <m>\vb = \bbm a\\b\\c\ebm</m>. As with the previous examples,
       we set up the augmented matrix and reduce:
-      <me>
+      <md>
         \left[\begin{array}{cccc|c}1 \amp -2 \amp 0\amp 4\amp a\\3\amp -1\amp 5\amp 2\amp b\\-2\amp -6\amp -10\amp 12\amp c\end{array}\right] \quad \longrightarrow \quad \left[\begin{array}{cccc|c}1\amp -2\amp 0\amp 4\amp a\\0\amp 1\amp 1\amp -2\amp (b-3a)/5\\0\amp 0\amp 0\amp 0\amp (c-4a+2b)/10\end{array}\right]
-      </me>.
+      </md>.
     </p>
 
     <p>
       We stopped before getting all the way to the reduced row echelon form,
       but we're far enough along to realize that the only way our system can be consistent
       is if the last entry in the third row is equal to zero. This gives us the condition
-      <me>
+      <md>
         \frac{c-4a+2b}{10}=0
-      </me>,
+      </md>,
       which (after multiplying both sides by 10) is exactly the same as what we found using the cross product.
     </p>
   </subsection>
@@ -445,18 +445,18 @@
           <idx><h>null space</h></idx>
 
           The <term>null space</term> of an <m>m\times n</m> matrix <m>A</m> is denoted by <m>\operatorname{null}(A)</m>, and defined by
-          <me>
+          <md>
             \operatorname{null}(A) = \{\vec x\in\R^n \, | \, A\vec x = \vec 0\}
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
 
     <p>
       For example, we saw in <xref ref="ex_mv_23"/> that the vector <m>\vec x = \bbm 1\\1\ebm</m> belongs to the null space of the matrix <m>A = \bbm 1\amp -1\\1\amp -1\ebm</m>, since
-      <me>
+      <md>
         A\vec x = \bbm 1  \amp  -1\\1  \amp  -1\ebm \bbm 1\\1\ebm = \bbm 1-1\\1-1\ebm  = \bbm 0\\0\ebm
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -470,9 +470,9 @@
       <statement>
         <p>
           Determine the null space of the matrix
-          <me>
+          <md>
             A = \bbm 2  \amp  -3 \\ -2  \amp  3\ebm
-          </me>.
+          </md>.
         </p>
       </statement>
       <solution>
@@ -480,9 +480,9 @@
           Since the null space of <m>A</m> is equal to the set of all solutions <m>\vx</m> to
           the matrix equation <m>A\vec x = \vec 0</m>, we proceed by forming the proper augmented matrix
           and putting it into reduced row echelon form, which we do below.
-          <me>
+          <md>
             \left[\begin{array}{cc|c} 2 \amp -3 \amp 0\\-2 \amp  3\amp 0\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c} 1 \amp  -3/2 \amp  0 \\0\amp 0\amp 0\end{array}\right]
-          </me>
+          </md>
         </p>
 
         <p>
@@ -495,34 +495,34 @@
 
         <p>
           We can say that <m>\vx\in\operatorname{null}(A)</m> provided that
-          <me>
+          <md>
             \vx = \bbm x_1\\x_2\ebm = \bbm \frac{3}{2}t\\ t\ebm = t\bbm \frac{3}{2}\\1\ebm
-          </me>.
+          </md>.
           If we set
-          <me>
+          <md>
             \vvv = \bbm 3/2\\1\ebm
-          </me>,
+          </md>,
           then we can write our solution as
-          <me>
+          <md>
             \operatorname{null}(A) = \left\{t\vvv \,|\, t\in\R \text{ and } \vvv = \bbm 3/2\\1\ebm\right\}
-          </me>.
+          </md>.
         </p>
 
         <p>
           We see that the null space of <m>A</m> contains infinitely many solutions to the equation <m>A\vx  = \vec 0</m>;
           any choice of <m>x_2</m> gives us one of these solutions. For instance, picking <m>x_2=2</m> gives the solution
-          <me>
+          <md>
             \vx = \bbm 3\\2\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
           This is a particularly nice solution, since there are no fractions!
           In fact, since the parameter <m>t</m> can take on any <em>real</em> value,
           there is nothing preventing us from defining a new parameter <m>s = t/2</m>, and then
-          <me>
+          <md>
             \vx = t\bbm 3/2 \\1\ebm = t\left(\frac{1}{2}\bbm 3\\2\ebm \right) = \frac{t}{2}\bbm 3\\2\ebm = s\bbm 3\\2\ebm = s\vec w,
-          </me>
+          </md>
           where <m>\vec w = 2\vvv</m>.
         </p>
 
@@ -569,13 +569,13 @@
       The proof of this theorem is simple. Suppose <m>\vec x, \vec y\in \operatorname{null}(A)</m>.
       By definition, this means <m>A\vec x = \vec 0</m> and <m>A\vec y = \vec 0</m>.
       Using the properties of matrix multiplication, we have
-      <me>
+      <md>
         A(\vec x + \vec y) = A\vec x + A\vec y = \vec 0 + \vec 0 = \vec 0
-      </me>,
+      </md>,
       so <m>\vec x + \vec y\in \operatorname{null}(A)</m>, and
-      <me>
+      <md>
         A(c\vec x) = c(A\vec x) = c\vec 0 = \vec 0
-      </me>,
+      </md>,
       so <m>c\vec x\in \operatorname{null}(A)</m>.
       It follows from the definition of a subspace that <m>\operatorname{null}(A)</m> is a subspace of <m>\R^n</m>.
     </p>
@@ -602,9 +602,9 @@
       <p>
         The basic solutions to the homogeneous system <m>A\vec{x}=\vec{0}</m> form a basis for the null space of <m>A</m>.
         That is, if <m>\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k</m> are the basic solutions to <m>A\vec{x}=\vec{0}</m>, then
-        <me>
+        <md>
           \operatorname{null}(A)=\operatorname{span}\{\vec{v}_1,\vec{v}_2,\ldots, \vec{v}_k\}
-        </me>.
+        </md>.
 
         <idx><h>basis </h><h> of a null space</h></idx>
       </p>
@@ -620,9 +620,9 @@
       <statement>
         <p>
           Find a basis for the null space of <m>A</m>, where
-          <me>
+          <md>
             A = \bbm 1 \amp -2 \amp 0\amp 4\\3\amp -1\amp 5\amp 2\\-2\amp -6\amp -10\amp 12\ebm
-          </me>.
+          </md>.
         </p>
       </statement>
       <solution>
@@ -630,10 +630,10 @@
           Again, determining <m>\operatorname{null}(A)</m> is the same as solving the homogeneous system <m>A\vx = \vec 0</m>,
           and by <xref ref="idea-nullbasis"/>, a basis for <m>\operatorname{null}(A)</m> is given by the basic solutions to this system.
           As usual, to find the basic solutions, we set up the augmented matrix of the system and reduce:
-          <me>
+          <md>
             \left[\begin{array}{cccc|c}1\amp -2\amp 0\amp 4\amp 0\\3\amp -1\amp 5\amp 2\amp 0\\-2\amp -6\amp -10\amp 12\amp 0\end{array}\right] \quad \arref \quad
             \left[\begin{array}{cccc|c}1\amp 0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp -2\amp 0\\0\amp 0\amp 0\amp 0\amp 0\end{array}\right]
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -648,19 +648,19 @@
 
         <p>
           In this case, we have two parameters, so we expect two basic solutions. To find these, we write our solution in vector form:
-          <me>
+          <md>
             \vx = \bbm x_1\\x_2\\x_3\\x_4\ebm = \bbm -2s\\-s+2t\\s\\t\ebm = s\bbm -2\\-1\\1\\0\ebm + t\bbm 0\\2\\0\\1\ebm
-          </me>.
+          </md>.
           From the above, we see that the general solution can be written as <m>\vx = s\vvv +t\vec{w}</m>, where
-          <me>
+          <md>
             \vvv = \bbm -2\\-1\\1\\0\ebm \quad \text{ and } \quad \vec{w} = \bbm 0\\2\\0\\1\ebm
-          </me>
+          </md>
           are the basic solutions to <m>A\vx = \vec 0</m>.
           Since the null space of <m>A</m> is equal to the set of solutions to <m>A\vx  = \vec 0</m>,
           and since every solution to <m>A\vx = \vec 0</m> can be written in terms of <m>\vvv</m> and <m>\vec{w}</m>, it follows that
-          <me>
+          <md>
             \operatorname{null}(A) = \operatorname{span}\{\vvv, \vec{w}\},
-          </me>
+          </md>
           and that <m>\{\vvv, \vec{w}\}</m> is a basis for <m>\operatorname{null}(A)</m>.
         </p>
       </solution>
@@ -674,15 +674,15 @@
       (as it must be, since <m>\operatorname{null}(A)</m> is a subspace).
       If we have any non-zero vector <m>\vec v\in\operatorname{null}(A)</m>,
       then <m>T</m> cannot be one-to-one, since we'd have
-      <me>
+      <md>
         T(\vec v) = A\vec v = \vec 0 = T(\vec 0)
-      </me>.
+      </md>.
       Thus, if <m>\operatorname{null}(A)\neq \{\vec 0\}</m>, then <m>T</m> is not one-to-one.
       On the other hand, suppose <m>\operatorname{null}(A)=\{\vec 0\}</m>,
       and that <m>T(\vec x) = T(\vec y)</m> for vectors <m>\vec x, \vec y\in R^n</m>. Then we have
-      <me>
+      <md>
         \vec 0 = T(\vec x) - T(\vec y) = T(\vec x - \vec y) = A(\vec x - \vec y)
-      </me>,
+      </md>,
       so that <m>\vec x - \vec y\in \operatorname{null}(A) = \{0\}</m>,
       which means that <m>\vec x - \vec y = \vec{0}</m>, and thus <m>\vec x = \vec y</m>. We have proved the following:
     </p>
@@ -714,9 +714,9 @@
         <p>
           Let <m>T:\R^n\to\R^m</m> be a linear transformation defined by <m>T(\vec x) = A\vec x</m> for some <m>m\times n</m> matrix <m>A</m>.
           Then
-          <me>
+          <md>
             \dim \operatorname{null}(A) + \dim \operatorname{col}(A) = n
-          </me>.
+          </md>.
         </p>
       </statement>
     </theorem>
@@ -735,16 +735,16 @@
       but the intuition we've gained from solving systems should make it plausible.
       Recall that Item 3 in <xref ref="thm-rank_and_sols"/> on the relationship
       between the rank of a matrix and types of solutions gives us the equation
-      <me>
+      <md>
         k + \operatorname{rank}(A) = n
-      </me>,
+      </md>,
       where <m>k</m> is the number of parameters in the general solution of <m>A\vx = \vec b</m>.
       Now, we know from <xref ref="def-basic_sol"/> that the number of parameters in the general solution to <m>A\vx = \vb</m>
       is equal to the number of basic solutions to the system <m>A\vx = \vec 0</m>,
       and that the basic solutions to <m>A\vx = \zero</m> form a basis for <m>\operatorname{null}(A)</m>. From this, we can conclude that
-      <me>
+      <md>
         k = \dim \operatorname{null}(A)
-      </me>.
+      </md>.
       We also claimed in <xref ref="thm-coldimrank"/> above that the rank of <m>A</m>
       is equal to the dimension of its column space. Putting these facts together,
       we can see why the rank-nullity theorem must hold. Let's confirm that the result holds in one more example.
@@ -755,9 +755,9 @@
       <statement>
         <p>
           Let
-          <me>
+          <md>
             A = \bbm 1 \amp -1 \amp 1\amp 3\\4\amp 2\amp 4\amp 6\ebm \quad \text{and} \quad \vb = \bbm 1\\10\ebm
-          </me>.
+          </md>.
           Determine:
           <ol>
             <li>
@@ -777,9 +777,9 @@
         <p>
           We'll tackle the null space first.
           We form the augmented matrix for the system <m>A\vx = \zero</m>, put it into reduced row echelon form, and interpret the result.
-          <me>
+          <md>
             \left[\begin{array}{cccc|c}1 \amp -1 \amp 1\amp 3\amp 0\\4\amp 2\amp 4\amp 6\amp 0\end{array}\right] \quad \arref \quad \left[\begin{array}{cccc|c}1\amp 0\amp 1\amp 2\amp 0\\0\amp 1\amp 0\amp -1\amp 0\end{array}\right]
-          </me>
+          </md>
           <md>
             <mrow>x_1 \amp =-x_3-2x_4</mrow>
             <mrow>x_2  \amp = x_4</mrow>
@@ -790,9 +790,9 @@
 
         <p>
           We now obtain our vector solution
-          <me>
+          <md>
             \vx = \bbm x_1\\x_2\\x_3\\x_4\ebm = \bbm-s-2t\\t\\s\\t\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -808,9 +808,9 @@
 
         <p>
           We use <m>\vu</m> and <m>\vvv</m> simply to give these vectors names (and save some space). In terms of these names, we can write
-          <me>
+          <md>
             \operatorname{null}(A) = \operatorname{span}\{\vu, \vvv\}
-          </me>.
+          </md>.
           It is easy to confirm that both <m>\vu</m> and <m>\vvv</m> are solutions to the linear system <m>A\vx=\zero</m>.
           (Just multiply <m>A\vu</m> and <m>A\vvv</m> and see that both are \zero.)
           Since both are solutions to a homogeneous system of linear equations,
@@ -822,9 +822,9 @@
           Now let's tackle the column space.
           Determining whether or not <m>\vec b</m> belongs to the column space is the same as solving the system <m>A\vx = \vb</m>.
           Once again we put the associated augmented matrix into reduced row echelon form and interpret the results.
-          <me>
+          <md>
             \left[\begin{array}{cccc|c}1 \amp -1 \amp 1\amp 3\amp 1\\4\amp 2\amp 4\amp 6\amp 10\end{array}\right] \quad \arref \quad \left[\begin{array}{cccc|c}1\amp 0\amp 1\amp 2\amp 2\\0\amp 1\amp 0\amp -1\amp 1\end{array}\right]
-          </me>
+          </md>
           <md>
            <mrow>x_1 \amp =2-s-2t</mrow>
            <mrow>x_2  \amp = 1+t</mrow>
@@ -836,9 +836,9 @@
 
         <p>
           Writing this solution in vector form gives
-          <me>
+          <md>
             \vx = \bbm x_1\\x_2\\x_3\\x_4\ebm = \bbm 2-s-2t\\1+t\\s\\t\ebm
-          </me>.
+          </md>.
           Again, we pull apart this vector, but this time we break it into three vectors:
           one with <q><m>s</m></q> stuff, one with <q><m>t</m></q> stuff, and one with just constants.
           <md>
@@ -895,7 +895,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 3 \amp 2 \amp 0\amp -5\-1\amp 6\amp -4\amp 3\\2\amp 8\amp -4\amp -2\ebm</m>
+            <m>A = \bbm 3 \amp 2 \amp 0\amp -5\\-1\amp 6\amp -4\amp 3\\2\amp 8\amp -4\amp -2\ebm</m>
           </p>
         </statement>
         <answer>
@@ -910,7 +910,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 1 \amp -2 \amp 1\-2\amp -4\amp 6\\0\amp -8\amp 8\ebm</m>
+            <m>A = \bbm 1 \amp -2 \amp 1\\-2\amp -4\amp 6\\0\amp -8\amp 8\ebm</m>
           </p>
         </statement>
         <answer>
@@ -955,7 +955,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 2 \amp 3 \amp -1\-1\amp 5\amp 2\\1\amp 8\amp 1\ebm</m>
+            <m>A = \bbm 2 \amp 3 \amp -1\\-1\amp 5\amp 2\\1\amp 8\amp 1\ebm</m>
           </p>
         </statement>
         <answer>

@@ -228,9 +228,9 @@
         <p>
           Let <m>P=(x_1,y_1,z_1)</m> and <m>Q = (x_2,y_2,z_2)</m> be points in space.
           The distance <m>D</m> between <m>P</m> and <m>Q</m> is <idx><h>distance</h><h>between points in space</h></idx>
-          <me>
+          <md>
             D = \sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
@@ -263,9 +263,9 @@
           One <em>cannot</em> actually measure this line on the page and deduce anything meaningful;
           its true length must be measured analytically.
           Applying <xref ref="def_space_distance"/>, we have
-          <me>
+          <md>
             \norm{\overline{PQ}} = \sqrt{(2-1)^2+(1-4)^2+(1-(-1))^2} = \sqrt{14}\approx 3.74
-          </me>.
+          </md>.
         </p>
 
         <figure xml:id="fig_space1" vshift="1">

@@ -97,9 +97,9 @@
 
   <p>
     Let's see exactly <em>why</em> all of these statements are equivalent. What we will do is establish the following chain of logic:
-    <me>
+    <md>
       (\text{a})\Rightarrow (\text{b})\Rightarrow (\text{c})\Rightarrow (\text{d})\Rightarrow (\text{e})\Rightarrow (\text{f})\Rightarrow (\text{a})
-    </me>.
+    </md>.
     Since this chain of implications circles back on itself, each of the statements implies the others.
     (For example, to show (e) implies (c), we start at (e) and circle around through (a) until we get to (c).)
 	  <ul>
@@ -107,9 +107,9 @@
         <p>
           (a) <m>\Rightarrow</m> (b): Suppose <m>A\vx = \zero</m> for some vector <m>\vx</m>.
           Since <m>A</m> is invertible, we can multiply both sides of this equation by <m>A^{-1}</m>, giving us
-          <me>
+          <md>
             \vx = I\vx = (A^{-1}A)\vx = A^{-1}(A\vx) = A^{-1}\zero = \zero
-          </me>
+          </md>
           Thus, the only possible solution to the system is <m>\vx = \zero</m>.
         </p>
       </li>
@@ -119,9 +119,9 @@
           Why must the reduced row echelon form of <m>A</m> be equal to <m>I</m>?
           If we let <m>R</m> denote the reduced row echelon form of <m>A</m>, we know that to solve <m>A\vx = \zero</m>,
           we form the augmented matrix <m>\bbm A\amp \zero\ebm</m> and reduce:
-          <me>
+          <md>
             \bbm A\amp \zero\ebm \quad \arref \quad \bbm R\amp \zero\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -135,9 +135,9 @@
         <p>
     	    (c) <m>\Rightarrow</m> (d): Suppose that the reduced row echelon form of <m>A</m> is equal to <m>I</m>.
           It follows that when solving the system <m>A\vx = \vb</m>, we would have
-          <me>
+          <md>
             \bbm A\amp \vb\ebm \quad \arref \quad \bbm I\amp  \vec{c}\ebm
-          </me>
+          </md>
           for some column vector <m>\vec{c}</m>, and thus <m>\vx = \vec{c}</m> is the unique solution to <m>A\vx = \vb</m>.
         </p>
       </li>
@@ -148,13 +148,13 @@
           Then in particular, we have a unique solution <m>\vec{c}_j</m> to the systems <m>A\vx=\ven{j}</m> for
           <m>j=1,\ldots, n</m>, where <m>\ven{1}, \ven{2}, \ldots, \ven{n}</m> are the standard basis vectors in <m>\R^n</m>
           (and also the columns of <m>I_n</m>). If we let
-          <me>
+          <md>
             C = \bbm \vec{c}_1 \amp  \vec{c}_2 \amp   \cdots \amp  \vec{c}_n\ebm
-          </me>,
+          </md>,
           then
-          <me>
+          <md>
             AC = \bbm A\vec{c}_1 \amp  A\vec{c}_2 \amp   \cdots \amp  A\vec{c}_n\ebm = \bbm \ven{1} \amp  \ven{2} \amp  \cdots \amp  \ven{n}\ebm = I_n
-          </me>.
+          </md>.
         </p>
       </li>
 
@@ -163,17 +163,17 @@
           (e) <m>\Rightarrow</m> (f): Suppose that <m>AC=I_n</m> for some <m>n\times n</m> matrix <m>C</m>.
           We claim that Property <xref ref="imt-axo"/> holds for the matrix <m>C</m>.
           To see this, note that since <m>AC = I_n</m>, if <m>C\vx = \zero</m>, then
-          <me>
+          <md>
             \vx = I_n(\vx) = (AC)\vx = A(C\vx) = A\zero = \zero.
-          </me>
+          </md>
           Since Property <xref ref="imt-axo"/> holds for the matrix <m>C</m>,
           it follows that Properties <xref ref="imt-rref"/>, <xref ref="imt-axb"/>,
           and <xref ref="imt-ac"/> do as well, by what we've proven so far.
           Thus, there exists a matrix <m>D</m> such that <m>CD = I_n</m>. We can complete our proof by showing that <m>D=A</m>,
           and this is the case since (recalling that we've assumed <m>AC=I_n</m>)
-          <me>
+          <md>
             A = A(I_n) = A(CD) = (AC)D = I_nD = D
-          </me>.
+          </md>.
           Thus, (f) holds. (Note that this argument finally establishes the truth of <xref ref="thm-inverse1"/>.)
         </p>
       </li>
@@ -249,9 +249,9 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 3 \amp 2\\0 \amp 1\ebm \text{ and } B = \bbm-2 \amp  0\\1\amp 1\ebm
-        </me>.
+        </md>.
         Find:
         <ol cols="2">
           <li><m>A^{-1}</m></li>
@@ -273,49 +273,49 @@
           <li>
             <p>
               Computing <m>A^{-1}</m> is straightforward; we'll use <xref ref="thm-2by2"/>.
-              <me>
+              <md>
                 A^{-1} = \frac{1}{3}\bbm 1 \amp -2\\0 \amp 3\ebm = \bbm 1/3 \amp  -2/3\\ 0 \amp  1\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
           <li>
             <p>
               We compute <m>B^{-1}</m> in the same way as above.
-              <me>
+              <md>
                   B^{-1} = \frac{1}{-2}\bbm 1 \amp 0\\-1 \amp -2\ebm = \bbm -1/2 \amp  0 \\ 1/2 \amp  1\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
           <li>
             <p>
               To compute <m>(AB)^{-1}</m>, we first compute <m>AB</m>:
-              <me>
+              <md>
                 AB = \bbm 3 \amp 2\\0 \amp 1\ebm\bbm-2 \amp  0\\1\amp 1\ebm = \bbm -4\amp 2\\1\amp 1\ebm
-              </me>.
+              </md>.
               We now apply <xref ref="thm-2by2"/> to find <m>(AB)^{-1}</m>.
-              <me>
+              <md>
                 (AB)^{-1} = \frac{1}{-6}\bbm 1 \amp -2\\-1 \amp -4\ebm = \bbm -1/6 \amp  1/3\\1/6 \amp  2/3\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
           <li>
             <p>
               To compute <m>(A^{-1})^{-1}</m>, we simply apply <xref ref="thm-2by2"/> to <m>A^{-1}</m>:
-              <me>
+              <md>
                 (A^{-1})^{-1} = \frac{1}{1/3}\bbm 1  \amp  2/3\\0  \amp  1/3\ebm = \bbm 3 \amp  2\\0 \amp  1\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
           <li>
             <p>
               To compute <m>(A + B)^{-1}</m>, we first compute <m>A+B</m> then apply <xref ref="thm-2by2"/>:
-              <me>
+              <md>
                 A+B = \bbm 3 \amp 2\\0 \amp 1\ebm+\bbm-2 \amp  0\\1\amp 1\ebm = \bbm 1\amp 2\\1\amp 2\ebm
-              </me>.
+              </md>.
               We notice immediately that the two rows of <m>A+B</m> are the same!
               Subtracting Row 1 from Row 2 would produce a row of zeros, so <m>A+B</m> has rank <m>1\lt 2</m>,
               and therefore cannot be invertible.
@@ -325,9 +325,9 @@
           <li>
             <p>
               To compute <m>(5A)^{-1}</m>, we compute 5<m>A</m> and then apply <xref ref="thm-2by2"/>.
-              <me>
+              <md>
                 (5A)^{-1} = \left(\bbm 15  \amp  10\\0 \amp 5\ebm\right)^{-1} = \frac{1}{75}\bbm 5\amp -10\\0\amp 15\ebm = \bbm 1/15 \amp  -2/15\\ 0 \amp  1/5\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
@@ -343,15 +343,15 @@
       <p>
         Is there some sort of relationship between <m>(AB)^{-1}</m> and <m>A^{-1}</m> and <m>B^{-1}</m>?
         A first guess that seems plausible is <m>(AB)^{-1} = A^{-1}B^{-1}</m>. Is this true? Using our work from above, we have
-        <me>
+        <md>
           A^{-1}B^{-1} = \bbm 1/3 \amp  -2/3\\ 0 \amp  1\ebm\bbm -1/2 \amp  0 \\ 1/2 \amp  1\ebm = \bbm -1/2 \amp  -2/3 \\ 1/2 \amp  1\ebm
-        </me>.
+        </md>.
         Obviously, this is not equal to <m>(AB)^{-1}</m>. Before we do some further guessing,
         let's think about what the inverse of <m>AB</m> is supposed to do.
         The inverse <mdash/> let's call it <m>C</m> <mdash/> is supposed to be a matrix such that
-        <me>
+        <md>
           (AB)C = C(AB) = I
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -359,9 +359,9 @@
         What <q>cancels</q> <m>B</m>? An obvious answer is <m>B^{-1}</m>.
         This gives us a thought: perhaps we got the order of <m>A^{-1}</m> and <m>B^{-1}</m> wrong before.
         After all, we were hoping to find that
-        <me>
+        <md>
           ABA^{-1}B^{-1} \overset{\text{?}}{=} I,
-        </me>
+        </md>
         but algebraically speaking, it is hard to cancel out these terms.
         (Recall that matrix multiplication is not commutative: <m>AB\neq BA</m> in general.)
       </p>
@@ -382,9 +382,9 @@
         that <m>(AB)^{-1} = B^{-1}A^{-1}</m>. Note also that our argument above was completely general,
         so this result holds true for <em>any</em> pair of <m>n\times n</m> matrices <m>A</m> and <m>B</m>.
         Let's confirm this with our example matrices.
-        <me>
+        <md>
           B^{-1}A^{-1} = \bbm -1/2  \amp  0 \\ 1/2  \amp  1\ebm\bbm 1/3 \amp  -2/3\\ 0 \amp  1\ebm = \bbm -1/6 \amp  1/3\\ 1/6 \amp  2/3 \ebm = (AB)^{-1}
-        </me>.
+        </md>.
         It worked!
       </p>
 
@@ -396,9 +396,9 @@
       <p>
         Is there some sort of relationship between <m>(A+B)^{-1}</m>, <m>A^{-1}</m> and <m>B^{-1}</m>?
         Certainly, if we were forced to make a guess without working any examples, we would guess that
-        <me>
+        <md>
           (A+B)^{-1} \overset{\text{?}}{=} A^{-1}+B^{-1}
-        </me>.
+        </md>.
         However, we saw that in our example, the matrix <m>(A+B)</m> isn't even invertible.
         This pretty much kills any hope of a connection.
       </p>
@@ -432,9 +432,9 @@
       Then we know that the only solution to the equation <m>(AB)\vx = \zero</m> is <m>\vx = \zero</m>.
       But if <m>B</m> is not invertible, then the equation <m>B\vx=\zero</m> <em>does</em>
       have a non-trivial solution <m>\vx \neq \zero</m>, and then
-      <me>
+      <md>
         (AB)\vx = A(B\vx) = A\zero = \zero,
-      </me>
+      </md>
       implying that <m>\vx</m> is a non-zero solution to <m>(AB)\vx = \zero</m>, and thus <m>AB</m> cannot be invertible.
     </p>
   </aside>
@@ -471,14 +471,14 @@
     <solution>
       <p>
         We'll find <m>A^{-1}</m> using <xref ref="idea-finding_inverses"/>.
-        <me>
+        <md>
           \bbm 2\amp 0\amp 0\amp 1\amp 0\amp 0\\0\amp 3\amp 0\amp 0\amp 1\amp 0\\0\amp 0\amp -7\amp 0\amp 0\amp 1\ebm \quad \overrightarrow{\text{rref}} \quad
           \bbm 1\amp 0\amp 0\amp 1/2\amp 0\amp 0\\0\amp 1\amp 0\amp 0\amp 1/3\amp 0\\0\amp 0\amp 1\amp 0\amp 0\amp -1/7\ebm
-        </me>
+        </md>
         Therefore
-        <me>
+        <md>
           A^{-1} = \bbm 1/2  \amp  0  \amp  0 \\ 0 \amp  1/3 \amp  0 \\ 0 \amp  0 \amp  -1/7\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>

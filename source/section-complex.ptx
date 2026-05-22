@@ -74,9 +74,9 @@
     In property 2, it is important to remember the restriction on <m>c</m>.
     For example, it is perfectly acceptable to say  <m>\sqrt{-4} = i \sqrt{4} = i(2) = 2i</m>.
     However, <m>\sqrt{-(-4)} \neq i \sqrt{-4}</m>, otherwise, we'd get
-    <me>
+    <md>
       2 = \sqrt{4} = \sqrt{-(-4)} = i \sqrt{-4} = i (2i) = 2i^2 = 2(-1) = -2
-    </me>,
+    </md>,
     which is unacceptable. The moral of this story is that the general properties of radicals do not apply for even roots of negative quantities.
     With <xref ref="idefn"/> in place, we are now in position to define the <term>complex numbers</term>.
   </p>
@@ -123,9 +123,9 @@
       <p>
         <idx><h>complex numbers </h><h> addition</h></idx>
         Given two complex numbers <m>z=a+ib</m> and <m>w=c+id</m>, we define their <term>sum</term> to be the complex number given by
-        <me>
+        <md>
           z+w = (a+c)+i(b+d)
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -137,9 +137,9 @@
         <idx><h>complex numbers </h><h> multiplication</h></idx>
         Given two complex numbers <m>z=a+ib</m> and <m>w=c+id</m>,
         we define their <term>product</term> to be the complex number
-        <me>
+        <md>
           zw = (ac-bd) + i(ad+bc)
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -283,9 +283,9 @@
     In the previous example, we used the idea of a <q>conjugate</q> to divide two complex numbers.
     More generally, the <term>complex conjugate</term> of a complex number <m>a+bi</m> is the number <m>a-bi</m>.
     The notation commonly used for complex conjugation is a <q>bar</q>:  <m>\overline{a+bi} = a-bi</m>. For example,
-    <me>
+    <md>
       \overline{3+2i} = 3-2i \quad \text{ and } \quad \overline{3-2i} = 3+2i
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -512,9 +512,9 @@
     The discriminant <m>b^2 - 4ac = -16</m> is negative, so we know from the quadratic formula that there are no <em>real</em> solutions,
     since the Quadratic Formula would involve the term <m>\sqrt{-16}</m>.
     Complex numbers, however, are built just for such situations, so we can go ahead and apply the Quadratic Formula to get:
-    <me>
+    <md>
       x = \dfrac{-(-2) \pm \sqrt{(-2)^2-4(1)(5)}}{2(1)} = \dfrac{2 \pm \sqrt{-16}}{2} = \dfrac{2 \pm 4i}{2} = 1 \pm 2i
-    </me>.
+    </md>.
   </p>
 
   <example xml:id="complexsolnsreviewex">
@@ -592,9 +592,9 @@
 
             <p>
               From <m>2t^2 + 1 = 0</m> we get <m>2t^2 = -1</m>, or <m>t^2 = -\frac{1}{2}</m>.  We extract square roots as follows:
-              <me>
+              <md>
                 t = \pm \sqrt{-\dfrac{1}{2}} = \pm i \sqrt{\dfrac{1}{2}} = \pm i \dfrac{\sqrt{1}}{\sqrt{2}} = \pm i \dfrac{1}{\sqrt{2}} = \pm \dfrac{i \sqrt{2}}{2}
-              </me>,
+              </md>,
               where we have rationalized the denominator per convention.
               From <m>t^2 = 5</m>, we get <m>t = \pm \sqrt{5}</m>.
               In total, we have four complex solutions - two real: <m>t = \pm \sqrt{5}</m>
@@ -617,9 +617,9 @@
 
             <p>
               From <m>z+1 = 0</m>, we get our real solution <m>z = -1</m>.  From <m>z^2 -z + 1 = 0</m>, we apply the Quadratic Formula to get:
-              <me>
+              <md>
                 z = \dfrac{-(-1) \pm \sqrt{(-1)^2 - 4(1)(1)}}{2(1)} = \dfrac{1 \pm \sqrt{-3}}{2} = \dfrac{1 \pm i\sqrt{3}}{2}
-              </me>.
+              </md>.
               Thus we get <em>three</em> solutions to <m>z^3 + 1 = 0</m> - one real: <m>z = -1</m>
               and two non-real: <m>z =  \frac{1 \pm i\sqrt{3}}{2}</m>.
               As always, the reader is encouraged to test their algebraic mettle and check these solutions.

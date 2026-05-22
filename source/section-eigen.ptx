@@ -4,9 +4,9 @@
 
   <p>
     We start by considering the matrix <m>A</m> and vector <m>\vx</m> as given below.
-    <me>
+    <md>
       A = \bbm 1 \amp 4\\2 \amp 3\ebm \quad \quad \vx = \bbm 1\\1\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -47,9 +47,9 @@
         <idx><h>eigenvector</h><h>see: eigenvalue</h></idx>
 
         Let <m>A</m> be an <m>n\times n</m> matrix, <m>\vx</m> a nonzero <m>n\times 1</m> column vector and <m>\lambda</m> a scalar. If
-        <me>
+        <md>
           A\vx = \lambda \vx,
-        </me>
+        </md>
         then <m>\vx</m> is an <em>eigenvector</em> of <m>A</m> and is an <em>eigenvalue</em> of <m>A</m>.
       </p>
     </statement>
@@ -116,9 +116,9 @@
 
   <p>
     Think about this last factorization. We are likely tempted to say
-    <me>
+    <md>
       A\vx-\lambda \vx = (A-\lambda )\vx
-    </me>,
+    </md>,
     but this really doesn't make sense. After all, what does <q>a matrix minus a number</q> mean?
     We need the identity matrix in order for this to be logical.
   </p>
@@ -157,9 +157,9 @@
     <statement>
       <p>
         Find the eigenvalues of <m>A</m>, that is, find such that <m>\det(A-\lambda I) = 0</m>, where
-        <me>
+        <md>
           A = \bbm 1 \amp 4\\2 \amp 3\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -208,9 +208,9 @@
   <p>
     Let's restate the above in a different way: It is pointless to try to find <m>\vx</m> where <m>A\vx=3\vx</m>,
     for there is no such <m>\vx</m>. There are only 2 equations of this form that have a solution, namely
-    <me>
+    <md>
       A\vx = -\vx \quad\quad \text{and} \quad \quad A\vx=5\vx
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -224,17 +224,17 @@
     <statement>
       <p>
         Find <m>\vx</m> such that <m>A\vx=5\vx</m>, where
-        <me>
+        <md>
           A = \bbm 1 \amp 4\\2 \amp 3\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         Recall that our algebra from before showed that if
-        <me>
+        <md>
           A\vx=\lambda \vx \quad \text{then} \quad (A-\lambda I)\vx=\zero
-        </me>.
+        </md>.
         Therefore, we need to solve the equation <m>(A-\lambda I)\vx=\zero</m> for <m>\vx</m> when <m>\lambda = 5</m>:
         <md>
           <mrow>A - 5I \amp = \bbm 1\amp 4\\2\amp 3\ebm - 5\bbm 1\amp 0\\0\amp 1\ebm</mrow>
@@ -244,18 +244,18 @@
 
       <p>
         To solve <m>(A-5I)\vx=\zero</m>, we form the augmented matrix and put it into reduced row echelon form:
-        <me>
+        <md>
           \bbm-4 \amp 4 \amp 0\\2\amp -2\amp 0\ebm \quad\quad \overrightarrow{\text{rref}} \quad\quad \bbm 1\amp -1\amp 0\\0\amp 0\amp 0\ebm
-        </me>.
+        </md>.
         Thus
         <md>
           <mrow>x_1 \amp = t</mrow>
           <mrow>x_2 \amp = t \text{ is free}</mrow>
         </md>
         and
-        <me>
+        <md>
           \vx = \bbm x_1\\x_2\ebm = t\bbm 1\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -266,9 +266,9 @@
           <mrow>\bbm 1\amp 4\\2\amp 3\ebm\bbm-3\\-3\ebm \amp = \bbm-15\\-15\ebm = 5\bbm-3\\-3\ebm</mrow>
         </md>.
         Of course, this works in general. For any <m>t</m>, we have
-        <me>
+        <md>
           \bbm 1 \amp 4\\2 \amp 3\ebm\left(t\bbm 1\\1\ebm\right) = t\left(\bbm 1\amp 4\\2\amp 3\ebm\bbm 1\\1\ebm\right) = t\left(5\bbm 1\\1\ebm\right) = 5\left(t\bbm 1\\1\ebm\right)
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
@@ -326,9 +326,9 @@
     <statement>
       <p>
         Find the eigenvalues of <m>A</m>, and for each eigenvalue, find an eigenvector where
-        <me>
+        <md>
           A = \bbm-3 \amp 15\\3 \amp 9\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -356,9 +356,9 @@
       <p>
         For <m>\lambda_1=-6</m>, we need to solve the equation <m>(A - (-6)I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
-        <me>
+        <md>
           \bbm 3 \amp 15 \amp 0\\3\amp 15\amp 0\ebm \quad\quad\overrightarrow{\text{rref}}\quad\quad \bbm 1\amp 5\amp 0\\0\amp 0\amp 0\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -368,57 +368,57 @@
           <mrow>x_2 \amp = t \quad \text{ is free}</mrow>
         </md>;
         in vector form, we have
-        <me>
+        <md>
           \vx = t\bbm-5\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         We may pick any nonzero value for <m>t</m> to get an eigenvector; a simple option is <m>x_2 = 1</m>. Thus we have the eigenvector
-        <me>
+        <md>
           \vx[1] = \bbm-5\\1\ebm
-        </me>.
+        </md>.
         (We used the notation <m>\vx[1]</m> to associate this eigenvector with the eigenvalue <m>\lambda_1</m>.)
       </p>
 
       <p>
         We now repeat this process to find an eigenvector for <m>\lambda_2 = 12</m>.
         In solving <m>(A - 12I)\vx = \zero</m>, we find
-        <me>
+        <md>
           \bbm-15  \amp  15  \amp  0 \\ 3 \amp  -3 \amp  0 \ebm  \quad\quad\overrightarrow{\text{rref}}\quad\quad \bbm 1\amp -1\amp 0\\0\amp 0\amp 0\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         In vector form, we have
-        <me>
+        <md>
           \vx = t\bbm 1\\1\ebm
-        </me>.
+        </md>.
         Again, we may pick any nonzero value for <m>t</m>, and so we choose <m>t = 1</m>. Thus an eigenvector for <m>\lambda_2</m> is
-        <me>
+        <md>
           \vx[2] = \bbm 1\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         To summarize, we have:
-        <me>
+        <md>
           \text{eigenvalue } \lambda_1 = -6 \text{ with  eigenvector } \vx[1] = \bbm-5\\1\ebm
-        </me>
+        </md>
         and
-        <me>
+        <md>
           \text{eigenvalue } \lambda_2 = 12 \text{ with eigenvector } \vx[2] = \bbm 1\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         We should take a moment and check our work: is it true that <m>A\vx[1] = \lambda_1\vx[1]</m>?
-        <me>
+        <md>
         A\vx[1]	=	\bbm-3\amp 15\\3\amp 9\ebm\bbm-5\\1\ebm
                     =	\bbm 30\\-6\ebm
                     =	(-6)\bbm -5\\1\ebm
                     =	\lambda_1\vx[1]
-        </me>.
+        </md>.
         Yes; it appears we have truly found an eigenvalue/eigenvector pair for the matrix <m>A</m>.
       </p>
     </solution>
@@ -451,21 +451,21 @@
 
       <p>
         We solve <m>(A-(-3)I)\vx =\zero</m> for <m>\vx</m> by row reducing the appropriate matrix:
-        <me>
+        <md>
           \bbm 0  \amp  0  \amp 0 \\ 5 \amp  4 \amp  0 \ebm \quad\quad\overrightarrow{\text{rref}}\quad\quad \bbm 1\amp 4/5\amp 0\\0\amp 0\amp 0\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         Our solution, in vector form, is
-        <me>
+        <md>
           \vx = t\bbm-4/5\\1\ebm
-        </me>.
+        </md>.
         Again, we can pick any nonzero value for <m>t</m>; a nice choice would eliminate the fraction.
         Therefore we pick <m>t = 5</m>, and find
-        <me>
+        <md>
           \vx[1] = \bbm -4\\5\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -474,33 +474,33 @@
 
       <p>
         We solve <m>(A-(1)I)\vx =\zero</m> for <m>\vx</m> by row reducing the appropriate matrix:
-        <me>
+        <md>
           \bbm -4  \amp  0  \amp 0 \\ 5 \amp  0 \amp  0 \ebm \quad\quad\overrightarrow{\text{rref}}\quad\quad \bbm 1\amp 0\amp 0\\0\amp 0\amp 0\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         We've seen a matrix like this before,  but we may need a bit of a refreshing.
         Our first row tells us that <m>x_1 = 0</m>, and we see that no rows/equations involve <m>x_2</m>.
         We conclude that <m>x_2</m> is free.   Therefore, our solution, in vector form, is
-        <me>
+        <md>
           \vx = t\bbm 0\\1\ebm
-        </me>.
+        </md>.
         We pick <m>t = 1</m>, and find
-        <me>
+        <md>
           \vx[2] = \bbm 0\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         To summarize, we have:
-        <me>
+        <md>
           \text{eigenvalue } \lambda_1 = -3 \text{ with  eigenvector } \vx[1] = \bbm-5\\4\ebm
-        </me>
+        </md>
         and
-        <me>
+        <md>
           \text{eigenvalue } \lambda_2 = 1 \text{ with eigenvector } \vx[2] = \bbm 0\\1\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
@@ -525,9 +525,9 @@
     <statement>
       <p>
         Find the eigenvalues and eigenvectors of the matrix
-        <me>
+        <md>
           A = \bbm 1 \amp 4\\0 \amp 1\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -561,26 +561,26 @@
 
       <p>
         We begin as usual by finding the characteristic polynomial. We have
-        <me>
+        <md>
         \det(A-\lambda I)  = \begin{vmatrix}
         1-\lambda \amp 41\\0 \amp  1-\lambda
         \end{vmatrix} = (1-\lambda)^2
-        </me>.
+        </md>.
         Here, we see that we have only one eigenvalue; namely, <m>\lambda =1</m>. Let's look for a corresponding eigenvector. We have
-        <me>
+        <md>
           A-\lambda = \bbm 0 \amp 4\\0 \amp 0\ebm \quad \arref \quad \bbm 0\amp 1\\0\amp 0\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         The corresponding system <m>(A-1\cdot I)\vx=\zero</m> has augmented matrix with reduced row echelon form
-        <me>
+        <md>
           \left[\begin{array}{cc|c}0 \amp 1 \amp 0\\0\amp 0\amp 0\end{array}\right],
-        </me>
+        </md>
         which tells us that in our solution, <m>x_1=t</m> is free, and <m>x_2=0</m>. Setting <m>t=1</m>, we get the single eigenvector
-        <me>
+        <md>
           \vec{x}_1=\bbm 1\\0\ebm,
-        </me>
+        </md>
         as expected.
       </p>
     </solution>
@@ -607,9 +607,9 @@
     <statement>
       <p>
         Find the eigenvalues and eigenvectors of the matrix
-        <me>
+        <md>
           A = \bbm 4 \amp 0\\0 \amp 4\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -620,9 +620,9 @@
         Knowing that this is a transformation that stretches, but does not rotate,
         we might expect that <em>every</em> nonzero vector is an eigenvector of <m>A</m>!
         Indeed, given <m>\vx\neq \zero</m>, we have
-        <me>
+        <md>
           A\vx = (4I)\vx = 4(I\vx) =\vx
-        </me>,
+        </md>,
         so <m>\vx</m> is an eigenvector corresponding to the eigenvalue 4.
       </p>
 
@@ -630,17 +630,17 @@
         Of course, this is pretty much the end of the story here,
         but let's get some practice with our algorithm for finding eigenvalues and eigenvectors and confirm our results.
         We can immediately see that
-        <me>
+        <md>
           \det(A-\lambda I) = (4-\lambda)^2,
-        </me>
+        </md>
         so that <m>\lambda=4</m> is an eigenvalue of multiplicity 2.
       </p>
 
       <p>
         What about the eigenvectors? Well, computing <m>A-4I</m> is somewhat interesting: we get
-        <me>
+        <md>
           A-4I = \bbm 4-4 \amp 0\\0 \amp 4-4\ebm = \bbm 0\amp 0\\0\amp 0\ebm,
-        </me>
+        </md>
         the zero matrix. Again, we see that literally <em>any</em> nonzero vector <m>\vx \in\R^2</m> qualifies as an eigenvector.
         We know that we can find at most two independent vectors in <m>\R^2</m>,
         so a simple choice is to take the standard basis vectors <m>\ven{1}</m> and <m>\ven{2}</m>.
@@ -649,18 +649,18 @@
       <p>
         Notice that we could have proceeded as usual and attempted to solve the system <m>(A-4I)\vx=\zero</m>.
         In this case we get a rather strange augmented matrix:
-        <me>
+        <md>
           \bbm A \amp \zero\ebm = \bbm\mathbf{0} \amp \zero\ebm = \bbm 0\amp 0\amp 0\\0\amp 0\amp 0\ebm
-        </me>!
+        </md>!
       </p>
 
       <p>
         It might seem like there's absolutely nothing to do here, but we can read off a solution.
         In this case neither row places any conditions on the variables <m>x_1</m> and <m>x_2</m>,
         so both are free: <m>x_1=s</m> and <m>x_2=t</m> are both parameters, and
-        <me>
+        <md>
           \vx = \bbm x_1\\x_2\ebm = \bbm s\\t\ebm  = s\bbm 1\\0\ebm + t\bbm 0 \\ 1\ebm
-        </me>.
+        </md>.
         Setting <m>s=1</m> and <m>t=0</m> gives us the eigenvector <m>\ven{1}</m>,
         and setting <m>s=0</m>, <m>t=1</m> gives us the eigenvector <m>\ven{2}</m>.
       </p>
@@ -677,30 +677,30 @@
     <statement>
       <p>
         Find the eigenvalues and eigenvectors of the matrix
-        <me>
+        <md>
           A = \bbm 0 \amp -1\\1 \amp 0\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         Before we proceed, let's pause and think about this in the context of matrix transformations.
         If we define the transformation <m>T(\vx) = A\vx</m>, we have
-        <me>
+        <md>
           T\left(\bbm x_1\\x_2\ebm\right) = \bbm 0 \amp -1\\1 \amp 0\ebm\bbm x_1\\x_2\ebm = \bbm -x_2\\x_1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         Notice that <m>T(\vx)</m> is orthogonal to <m>\vx</m>:
-        <me>
+        <md>
           T(\vx)\boldsymbol{\cdot}\vx = \bbm -x_2\\x_1\ebm \boldsymbol{\cdot}\bbm x_1\\x_2\ebm = -x_2x_1+x_1x_2=0
-        </me>.
+        </md>.
         This is because the transformation <m>T</m> represents a rotation through an angle of <m>\frac{\pi}{2}</m> (90 degrees).
         Indeed, <m>A</m> is a rotation matrix (see <xref ref="sec-geom_3"/>) of the form
-        <me>
+        <md>
           A = \bbm \cos\theta  \amp  -\sin\theta\\ \sin\theta  \amp  \cos\theta\ebm,
-        </me>
+        </md>
         where <m>\theta = \frac{\pi}{2}</m>.
       </p>
 
@@ -708,20 +708,20 @@
         Now, think about the eigenvalue equation <m>A\vx = \lambda\vx</m>.
         In this case, an eigenvector <m>\vx</m> would be a vector in the plane
         such that rotating it by 90 degrees produces a parallel vector! Clearly, this is nonsense, and indeed, we find that
-        <me>
+        <md>
         \det(A-\lambda I) = \begin{vmatrix}
         -\lambda \amp  -1\\1\amp -\lambda
         \end{vmatrix} = \lambda^2+1
-        </me>,
+        </md>,
         which has no real roots, so the matrix <m>A</m> has no eigenvalues, which makes sense from a geometric point of view.
       </p>
 
       <p>
         However, this is not the end of the story, provided that we're willing to work with complex numbers.
         Over the <em>complex</em> numbers, we <em>do</em> have two eigenvalues:
-        <me>
+        <md>
           \lambda^2+1 = (\lambda+i)(\lambda-i),
-        </me>
+        </md>
         so <m>\lambda = i</m> and <m>\lambda = -i</m> are eigenvalues.
         What are the eigenvectors? We proceed as always,
         except that the arithmetic in the row operations is a bit trickier with complex numbers.
@@ -731,14 +731,14 @@
 
       <p>
         We have
-        <me>
+        <md>
           A-iI = \bbm 0 \amp -1\\1 \amp 0\ebm - \bbm i\amp 0\\0\amp i\ebm = \bbm-i\amp -1\\1\amp -i\ebm,
-        </me>
+        </md>
         so we get the augmented matrix
-        <me>
+        <md>
           \left[\begin{array}{cc|c}-i\amp -1\amp 0\\1\amp -i\amp 0\end{array}\right] \xrightarrow[]{R_1\leftrightarrow R_2}
           \left[\begin{array}{cc|c}1\amp -i\amp 0\\-i\amp -1\amp 0\end{array}\right] \xrightarrow[]{R_2+iR_1\to R_2}\left[\begin{array}{cc|c}1\amp -i\amp 0\\0\amp 0\amp 0\end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -746,25 +746,25 @@
         and <m>-1+i(-i)=-1+1=0</m> gives the zero in the second column.
         This tells us that <m>x_2=t</m> is a free (complex!) parameter while <m>x_1-ix_2=0</m>, so <m>x_1 = ix_2=it</m>.
         Our vector solution is thus
-        <me>
+        <md>
           \vx[1] = \bbm it\\t\ebm = t\bbm i\\1\ebm
-        </me>,
+        </md>,
         and we can check that
-        <me>
+        <md>
           A\vx[1] = \bbm 0 \amp -1\\1 \amp 0\ebm\bbm i\\1\ebm = \bbm -1\\i\ebm = \bbm i(i)\\ i(1)\ebm  = i\bbm i\\1\ebm = i\vx
-        </me>,
+        </md>,
         as expected.
       </p>
 
       <p>
         We can similarly set up and solve
-        <me>
+        <md>
           \bbm(A+iI) \amp \zero\ebm = \left[\begin{array}{cc|c}i \amp -1\amp 0\\1\amp i\amp 0\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c}1\amp i\amp 0\\0\amp 0\amp 0\end{array}\right]
-        </me>,
+        </md>,
         giving us <m>x_2=t</m> as a free parameter, and <m>x_1 = -ix_2 = -it</m>, so
-        <me>
+        <md>
           \vx[2] = \bbm -it\\t\ebm = t\bbm -i\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -794,9 +794,9 @@
     <statement>
       <p>
         Find the eigenvalues of <m>A</m>, and for each eigenvalue, give one eigenvector, where
-        <me>
+        <md>
           A = \bbm-7  \amp  -2  \amp  10\\ -3 \amp  2 \amp  3 \\ -6 \amp  -2 \amp  9 \ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -848,16 +848,16 @@
       <p>
         We need to solve the equation <m>(A - (-1)I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
-        <me>
+        <md>
           \bbm -6  \amp  -2  \amp  10 \amp 0\\ -3 \amp  3 \amp  3 \amp  0  \\ -6 \amp  -2 \amp  10 \amp  0 \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 1\amp 0\amp -1.5\amp 0\\0\amp 1\amp -.5\amp 0\\0\amp 0\amp 0\amp 0\ebm
-        </me>
+        </md>
       </p>
 
       <p>
         Our solution, in vector form, is
-        <me>
+        <md>
           \vx = x_3\bbm 3/2\\1/2\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -872,16 +872,16 @@
       <p>
         We need to solve the equation <m>(A - 2I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
-        <me>
+        <md>
           \bbm -9  \amp  -2  \amp  10 \amp 0\\ -3 \amp  0 \amp  3 \amp  0  \\ -6 \amp  -2 \amp  7 \amp  0 \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 1\amp 0\amp -1\amp 0\\0\amp 1\amp -.5\amp 0\\0\amp 0\amp 0\amp 0\ebm
-        </me>
+        </md>
       </p>
 
       <p>
         Our solution, in vector form, is
-        <me>
+        <md>
           \vx = x_3\bbm 1\\1/2\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -896,16 +896,16 @@
       <p>
         We need to solve the equation <m>(A - 3I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
-        <me>
+        <md>
           \bbm -10  \amp  -2  \amp  10 \amp 0\\ -3 \amp  -1 \amp  3 \amp  0  \\ -6 \amp  -2 \amp  6 \amp  0 \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 1\amp 0\amp -1\amp 0\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 0\amp 0\ebm
-        </me>
+        </md>
       </p>
 
       <p>
         Our solution, in vector form, is (note that <m>x_2 = 0</m>):
-        <me>
+        <md>
           \vx = x_3\bbm 1\\0\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -918,7 +918,7 @@
         <md>
           <mrow>\text{eigenvalue } \lambda _1 \amp  = -1 \text{ with eigenvector } \vx[1] = \bbm 3\\1\\2\ebm</mrow>
           <mrow>\text{eigenvalue } \lambda _2 \amp  = 2 \text{ with eigenvector } \vx[2] = \bbm 2\\1\\2\ebm</mrow>
-          <mrow>\text{eigenvalue } \lambda _3 = 3 \text{ with eigenvector } \vx[3] = \bbm 1\\0\\1\ebm</mrow>
+          <mrow>\text{eigenvalue } \lambda _3 \amp  = 3 \text{ with eigenvector } \vx[3] = \bbm 1\\0\\1\ebm</mrow>
         </md>.
       </p>
     </solution>
@@ -929,9 +929,9 @@
     <statement>
       <p>
         Find the eigenvalues of <m>A</m>, and for each eigenvalue, give one eigenvector, where
-        <me>
+        <md>
           A = \bbm 2 \amp -1 \amp 1\\ 0\amp 1\amp 6 \\ 0\amp 3\amp 4 \ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -964,16 +964,16 @@
       <p>
         We need to solve the equation <m>(A - (-2)I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
-        <me>
+        <md>
           \bbm 4 \amp -1 \amp 1\amp 0\\ 0\amp 3\amp 6\amp 0 \\ 0\amp 3\amp 6\amp 0  \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 1\amp 0\amp 3/4\amp 0\\0\amp 1\amp 2\amp 0\\0\amp 0\amp 0\amp 0\ebm
-        </me>
+        </md>
       </p>
 
       <p>
         Our solution, in vector form, is
-        <me>
+        <md>
           \vx = x_3\bbm -3/4\\-2\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -988,18 +988,18 @@
       <p>
         We need to solve the equation <m>(A - 2I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
-        <me>
+        <md>
           \bbm 0 \amp -1 \amp 1\amp 0\\ 0\amp -1\amp 6\amp 0 \\ 0\amp 3\amp 2\amp 0  \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 0\\0\amp 0\amp 0\amp 0\ebm
-        </me>
+        </md>
       </p>
 
       <p>
         This looks funny, so we'll look remind ourselves how to solve this.
         The first two rows tell us that <m>x_2 = 0</m> and <m>x_3 = 0</m>, respectively.
         Notice that no row/equation uses <m>x_1</m>; we conclude that it is free. Therefore, our solution in vector form is
-        <me>
+        <md>
           \vx = x_1\bbm 1\\0\\0\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -1014,16 +1014,16 @@
       <p>
         We need to solve the equation <m>(A - 7I)\vx = \zero</m>.
         To do this, we form the appropriate augmented matrix and put it into reduced row echelon form.
-        <me>
+        <md>
           \bbm -5 \amp -1 \amp 1\amp 0\\ 0\amp -6\amp 6\amp 0 \\ 0\amp 3\amp -3\amp 0  \ebm \quad \overrightarrow{\text{rref}} \quad \bbm 1\amp 0\amp 0\amp 0\\0\amp 1\amp -1\amp 0\\0\amp 0\amp 0\amp 0\ebm
-        </me>
+        </md>
       </p>
 
       <p>
         Our solution, in vector form, is (note that <m>x_1 = 0</m>):
-        <me>
+        <md>
           \vx = x_3\bbm 0\\1\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>

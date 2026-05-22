@@ -40,9 +40,9 @@
       <p>
         Let's call the number of blue balls <m>b</m>, and the number of the other balls <m>g</m>, <m>r</m> and <m>y</m>,
         each representing the obvious. Since we know that we have 100 marbles, we have the equation
-        <me>
+        <md>
           b+g+r+y=100
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -52,9 +52,9 @@
       <p>
         We are told that there are twice as many yellow marbles as blue.
         One of the following two equations is correct, based on this statement; which one is it?
-        <me>
+        <md>
           2y=b \quad\quad \text{or} \quad\quad 2b=y
-        </me>
+        </md>
       </p>
 
       <p>
@@ -66,9 +66,9 @@
 
       <p>
         The next statement of <q>there are 10 more blue marbles as red</q> can be written as either
-        <me>
+        <md>
           b=r+10 \quad\quad \text{or} \quad\quad r=b+10
-        </me>.
+        </md>.
         Which is it?
       </p>
 
@@ -81,9 +81,9 @@
       <p>
         The final statement tells us that the sum of the red and yellow marbles
         is the same as the sum of the blue and green marbles, giving us the equation
-        <me>
+        <md>
           r+y=b+g
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -110,9 +110,9 @@
       <p>
         To find the solution, let's form the appropriate augmented matrix and put it into reduced row echelon form.
         We do so here, without showing the steps.
-        <me>
+        <md>
           \left[\begin{array}{cccc|c}1 \amp 1 \amp 1\amp 1\amp 100\\2\amp 0\amp 0\amp -1\amp 0\\1\amp 0\amp -1\amp 0\amp 10\\-1\amp -1\amp 1\amp 1\amp 0\\ \end{array}\right] \quad\quad \overrightarrow{\text{rref}} \quad\quad \left[\begin{array}{cccc|c} 1\amp 0\amp 0\amp 0\amp 20\\0\amp 1\amp 0\amp 0\amp 30\\0\amp 0\amp 1\amp 0\amp 10\\0\amp 0\amp 0\amp 1\amp 40\\ \end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -233,37 +233,37 @@
 
       <p>
         Having our unknowns identified and variables named, we now proceed to forming equations from the information given. Knowing that Prize A goes to guests in the first and second sections and that we'll need 105 of these prizes tells us
-        <me>
+        <md>
           x_1+x_2 = 105
-        </me>.
+        </md>.
       </p>
 
       <p>
         Proceeding in a similar fashion, we get two more equations,
-        <me>
+        <md>
           x_2+x_3 = 103\quad\text{ and }\quad x_1+x_3 = 88
-        </me>.
+        </md>.
       </p>
       <p>
         Thus our linear system is
-        <me>
+        <md>
           \begin{array}{rcl}
             x_1+x_2 \amp = \amp 105\\
             x_2+x_3 \amp = \amp 103\\
             x_1+x_3 \amp =\amp 88
           \end{array}
-        </me>,
+        </md>,
         and the corresponding augmented matrix is
-        <me>
+        <md>
           \left[\begin{array}{ccc|c}1 \amp 1 \amp 0\amp 105\\0\amp 1\amp 1\amp 103\\1\amp 0\amp 1\amp 88\\ \end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
         To solve our system, let's put this matrix into reduced row echelon form.
-        <me>
+        <md>
           \left[\begin{array}{ccc|c}1 \amp 1 \amp 0\amp 105\\0\amp 1\amp 1\amp 103\\1\amp 0\amp 1\amp 88\\ \end{array}\right] \quad \quad \overrightarrow{\text{rref}} \quad\quad \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 45\\0\amp 1\amp 0\amp 60\\0\amp 0\amp 1\amp 43\\ \end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -334,17 +334,17 @@
 
       <p>
         The corresponding augmented matrix is
-        <me>
+        <md>
           \left[\begin{array}{cc|c} 1  \amp  1  \amp  4\\ 2\amp -1\amp 4\\ \end{array}\right]
-        </me>.
+        </md>.
         Note that we decided to let the first column hold the coefficients of <m>b</m>.
       </p>
 
       <p>
         Putting this matrix in reduced row echelon form gives us:
-        <me>
+        <md>
           \left[\begin{array}{cc|c} 1  \amp  1  \amp  4\\ 2\amp -1\amp 4\\ \end{array}\right]\quad\quad\overrightarrow{\text{rref}}\quad\quad\left[\begin{array}{cc|c}1\amp 0\amp 8/3\\0\amp 1\amp 4/3\\ \end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -373,29 +373,29 @@
         in this case, they are our unknowns. We have three points; consider the point <m>(-1,6)</m>.
         This tells us directly that if <m>x=-1</m>, then <m>y=6</m>. Therefore we know that <m>6=a(-1)^2+b(-1)+c</m>.
         Writing this in a more standard form, we have the linear equation
-        <me>
+        <md>
           a - b+c=6
-        </me>.
+        </md>.
       </p>
 
       <p>
         The second point tells us that <m>a(1)^2+b(1)+c = 2</m>, which we can simplify as <m>a+b+c=2</m>,
         and the last point tells us <m>a(2)^2+b(2)+c = 3</m>, or <m>4a+2b+c=3</m>. Thus our linear system is
-        <me>
+        <md>
           \begin{array}{rcl}
           a-b+c \amp = \amp 6\\
           a+b+c \amp = \amp 2\\
           4a+2b+c \amp =\amp 3.
           \end{array}
-        </me>.
+        </md>.
       </p>
 
       <p>
         Again, to solve our system, we find the reduced row echelon form of the corresponding augmented matrix.
         We don't show the steps here, just the final result.
-        <me>
+        <md>
           \left[\begin{array}{ccc|c}1 \amp -1 \amp 1\amp 6\\1\amp 1\amp 1\amp 2\\4\amp 2\amp 1\amp 3\\ \end{array}\right] \quad\quad \overrightarrow{\text{ rref }}\quad\quad \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 1\\0\amp 1\amp 0\amp -2\\0\amp 0\amp 1\amp 3\\ \end{array}\right]
-        </me>
+        </md>
       </p>
 
       <p>
@@ -439,16 +439,16 @@
         Let's name our unknowns <m>x</m>, <m>y</m> and <m>z</m> for our ones, fives and tens, respectively
         (it is tempting to call them <m>o</m>, <m>f</m> and <m>t</m>, but <m>o</m> looks too much like 0).
         We know that there are a total of 32 bills, so we have the equation
-        <me>
+        <md>
           x+y+z = 32
-        </me>.
+        </md>.
       </p>
 
       <p>
         We also know that we have $100, so we have the equation
-        <me>
+        <md>
           x+5y+10z = 100
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -458,9 +458,9 @@
 
       <p>
         Putting the system into a matrix and then finding the reduced row echelon form, we have
-        <me>
+        <md>
           \left[\begin{array}{ccc|c}1\amp 1\amp 1\amp 32\\ 1\amp 5\amp 10\amp 100 \end{array}\right] \qquad \overrightarrow{\text{rref}}\qquad \left[\begin{array}{ccc|c}1\amp 0\amp -\frac54\amp 15\\0\amp 1\amp \frac94\amp 17 \end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -521,32 +521,32 @@
       <p>
         Now we address the issue of writing equations with these variables using the given information.
         Since we have a total of 7 scoring occasions, we know that
-        <me>
+        <md>
           t+x+w+f=7
-        </me>.
+        </md>.
       </p>
 
       <p>
         The total points scored is 24; considering the value of each type of scoring opportunity, we can write the equation
-        <me>
+        <md>
           6t+x+2w+3f = 24
-        </me>.
+        </md>.
       </p>
 
       <p>
         Finally, we know that each touchdown was followed by a successful extra point or two point conversion.
         This is subtle, but it tells us that the number of touchdowns is equal to the sum of extra points and two point conversions.
         In other words,
-        <me>
+        <md>
           t = x+w
-        </me>.
+        </md>.
       </p>
 
       <p>
         To solve our problem, we put these equations into a matrix and put the matrix into reduced row echelon form. Doing so, we find
-        <me>
+        <md>
           \left[\begin{array}{cccc|c}1 \amp 1 \amp 1\amp 1\amp 7\\ 6\amp 1\amp 2\amp 3\amp 24\\1\amp -1\amp -1\amp 0\amp 0 \end{array}\right] \quad\quad\overrightarrow{\text{rref}}\quad\quad \left[\begin{array}{cccc|c} 1\amp 0\amp 0\amp 0.5\amp 3.5\\0\amp 1\amp 0\amp 1\amp 4\\ 0\amp 0\amp 1\amp -0.5\amp -0.5 \end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -650,36 +650,36 @@
           Put another way, this problem is asking us which, if any, of the vectors
           <m>\vec{a}</m>, <m>\vec{b}</m>, <m>\vec{c}</m> belong to the span of the vectors
           <m>\vec{v}_1</m>, <m>\vec{v}_2</m>, <m>\vec{v}_3</m>. Recall that
-          <me>
+          <md>
             \vec{a}\in \operatorname{span}\{\vec{v}_1, \vec{v}_2, \vec{v}_3\}
-          </me>
+          </md>
           if and only if there exist scalars <m>x_1,x_2,x_3</m> such that
-          <me>
+          <md>
             x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 = \vec{a}
-          </me>.
+          </md>.
         </p>
         <p>
           Plugging in values for our vectors, we are trying to solve
-          <me>
+          <md>
             x_1\bbm 1\\-2\\0\ebm + x_2\bbm 3\\4\\8\ebm + x_3\bbm 3\\-1\\4\ebm = \bbm 2\\-14\\-8\ebm
-          </me>.
+          </md>.
         </p>
         <p>
           If we combine the vectors on the left-hand side above into a single vector and equate coefficients, we obtain the system
-          <me>
+          <md>
             \begin{array}{ccccccc}
             x_1\amp +\amp 3x_2\amp +\amp 3x_3\amp =\amp 2\\
             -2x_1\amp +\amp 4x_2\amp -\amp x_3\amp =\amp -14\\
               \amp  \amp 8x_2\amp +\amp 4x_3\amp =\amp -8
             \end{array}
-          </me>.
+          </md>.
         </p>
 
         <p>
           We now what to do from here: we set up our augmented matrix and reduce:
-          <me>
+          <md>
             \left[\begin{array}{ccc|c}1\amp 3\amp 3\amp 2\\ -2\amp 4\amp -1\amp -14\\0\amp 8\amp 4\amp -8 \end{array}\right] \qquad \overrightarrow{\text{rref}}\qquad \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp 5\\0\amp 1\amp \frac12\amp -1\\0\amp 0\amp 0\amp 0 \end{array}\right].
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -691,9 +691,9 @@
             <mrow>  x_3 \amp  = t</mrow>
           </md>,
           but any particular solution will do. Taking <m>t=0</m>, we get <m>x_1=5</m>, <m>x_2=-1</m>, and <m>x_3=0</m>, telling us that
-          <me>
+          <md>
             \vec a = 5\vec{v}_1 - \vec{v}_2 + 0\vec{v}_3
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -705,17 +705,17 @@
           It should be clear that the system of equations we obtain differs from the one above only in the constants on the right-hand side
           (since these are defined by the vector <m>\vec{b}</m>),
           so we can proceed by replacing the right-hand column in our augmented matrix above by the vector <m>\vec{b}</m>, and reducing:
-          <me>
+          <md>
             \left[\begin{array}{ccc|c}1\amp 3\amp 3\amp 1\\ -2\amp 4\amp -1\amp 0\\0\amp 8\amp 4\amp -4 \end{array}\right] \qquad \overrightarrow{\text{rref}}\qquad \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp \frac25\\0\amp 1\amp \frac12\amp \frac15\\0\amp 0\amp 0\amp -\frac{7}{10} \end{array}\right]
-          </me>.
+          </md>.
         </p>
         <p>
           This time, we see that the third row in the reduced row echelon form of our augmented matrix corresponds to the impossible equation
           <m>0=-\frac{7}{10}</m>, so no solution exists. This means that it is impossible to find scalars <m>x_1</m>, <m>x_2</m>, <m>x_3</m>
           such that
-          <me>
+          <md>
             \vec b = x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3
-          </me>,
+          </md>,
           and therefore the vector <m>\vec{b}</m> <em>cannot</em> be written as a linear combination of the vectors
           <m>\vec{v}_1</m>, <m>\vec{v}_2</m>, and <m>\vec{v}_3</m>.
         </p>
@@ -723,9 +723,9 @@
         <p>
           The solution for the vector <m>\vec{c}</m> is similar.
           We replace the right-hand column in our augmented matrix by <m>\vec{c}</m> and reduce:
-          <me>
+          <md>
             \left[\begin{array}{ccc|c}1\amp 3\amp 3\amp -4\\ -2\amp 4\amp -1\amp 3\\0\amp 8\amp 4\amp 1 \end{array}\right] \qquad \overrightarrow{\text{rref}}\qquad \left[\begin{array}{ccc|c}1\amp 0\amp \frac32\amp -\frac52\\0\amp 1\amp \frac12\amp -\frac12\\0\amp 0\amp 0\amp \frac58 \end{array}\right]
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -751,9 +751,9 @@
       Setting <m>t=0</m> gives us the particular solution we chose. What happens if we choose other values of <m>t</m>?
       Well, nothing happens to the left-hand side of the equation above,
       so it must be that nothing happens on the right either. How can this be? Look at the vector in parentheses: we have
-      <me>
+      <md>
         \vec{v}_3-\frac{3}{2}\vec{v}_1-\frac{1}{2}\vec{v}_2 = \bbm 3\\-1\\4\ebm -\frac{3}{2}\bbm 3\\4\\8\ebm +\frac{1}{2}\bbm 3\\-1\\4\ebm = \bbm 0\\ 0\\0\ebm
-      </me>!
+      </md>!
     </p>
     <p>
       Of course nothing happens: choosing different values for <m>t</m> simply means we're adding different multiples
@@ -788,9 +788,9 @@
       and not by the vector <m>\vec{b}</m>. With this observation in place,
       we can speed things up considerably by solving the problem for all three vectors at once.
       We simply set up and reduce an augmented matrix with <em>three</em> columns on the right, like so:
-      <me>
+      <md>
         \left[\begin{array}{ccc|c|c|c}1\amp 3\amp 3\amp 2\amp 1\amp -4\\ -2\amp 4\amp -1\amp -14\amp 0\amp 3\\0\amp 8\amp 4\amp -8\amp -4\amp 1 \end{array}\right] \quad \overrightarrow{\text{rref}}\quad \left[\begin{array}{ccc|c|c|c} 1\amp 0\amp \frac32\amp 5\amp \frac25 \amp -\frac52 \\0\amp 1\amp \frac12\amp -1\amp \frac15 \amp -\frac 12\\0\amp 0\amp 0\amp 0\amp -\frac{7}{10}\amp \frac58 \end{array}\right]
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -809,9 +809,9 @@
 
         <p>
           Determine whether or not the vectors
-          <me>
+          <md>
             \vec{v}_1 = \bbm 1\\-3\\4\ebm, \vec{v}_2 = \bbm -2\\1\\-3\ebm, \vec{v}_3 = \bbm 2\\0\\-1\ebm
-          </me>
+          </md>
           are linearly independent.
         </p>
       </statement>
@@ -819,21 +819,21 @@
         <p>
           We test for linear independence by setting up and solving <xref ref="eq-linearindep" text="local">Equation</xref>:
           we suppose that there exist scalars <m>x_1, x_2, x_3</m> such that
-          <me>
+          <md>
             x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 = \vec{0}
-          </me>,
+          </md>,
           and determine what values of <m>x_1, x_2, x_3</m> are possible. Putting in our vectors we have
-          <me>
+          <md>
             x_1\bbm 1\\-3\\4\ebm + x_2\bbm -2\\1\\-3\ebm + x_3 \bbm 2\\0\\-1\ebm = \bbm x_1-2x_2+2x_3\\-3x_1+2x_2\\4x_1-3x_2-x_3\ebm = \bbm 0\\0\\0\ebm
-          </me>,
+          </md>,
           leading to the system of linear equations
-          <me>
+          <md>
             \begin{array}{ccccccc}
               x_1\amp -\amp 2x_2\amp +\amp 2x_3\amp =\amp 0\\
               -3x_1\amp +\amp 2x_2\amp  \amp  \amp =\amp 0\\
               4x_1\amp -\amp 3x_2\amp -\amp z_3\amp =\amp 0
             \end{array}
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -849,11 +849,11 @@
         <p>
           Since a homogeneous system is, after all, a linear system, we know how to proceed:
           set up the corresponding augmented matrix and reduce.
-          <me>
+          <md>
             \left[\begin{array}{ccc|c} 1\amp -2\amp 2\amp 0\\-3\amp 1\amp 0\amp 0\\4\amp -3\amp -1\amp 0\end{array}\right]
             \qquad \overrightarrow{\text{rref}}\qquad
             \left[\begin{array}{ccc|c} 1\amp 0\amp 0\amp 0\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 0\end{array}\right]
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -869,9 +869,9 @@
       <statement>
         <p>
           Determine whether the vectors
-          <me>
+          <md>
             \vec{w}_1 = \bbm 2\\-3\\1\ebm, \vec{w}_2 = \bbm 3\\0\\4\ebm, \vec{w}_3 = \bbm 1\\12\\8\ebm
-          </me>
+          </md>
           in <m>\R^3</m> are linearly independent.
         </p>
       </statement>
@@ -881,11 +881,11 @@
           leads to a system of linear equations with zeros on the right-hand sides,
           and the vectors <m>\vec{w}_1</m>, <m>\vec{w}_2</m>, <m>\vec{w}_3</m> make up the columns on the left of the corresponding augmented matrix.
           We find
-          <me>
+          <md>
             \left[\begin{array}{ccc|c} 2\amp 3\amp 1\amp 0\\-3\amp 0\amp 12\amp 0\\1\amp 4\amp 8\amp 0\end{array}\right]
             \qquad \overrightarrow{\text{rref}}\qquad
             \left[\begin{array}{ccc|c} 1\amp 0\amp -4\amp 0\\0\amp 1\amp 3\amp 0\\0\amp 0\amp 0\amp 0\end{array}\right]
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -903,9 +903,9 @@
           Choosing any value of <m>t\neq 0</m> gives us a non-trivial solution.
           For example, setting <m>t=1</m> gives us <m>4\vec{w}_1-3\vec{w}_2+\vec{w}_3=\vec{0}</m>, so <m>\vec{w}_3</m>
           can be written as the linear combination
-          <me>
+          <md>
             \vec{w}_3 = -4\vec{w}_1+3\vec{w}_2
-          </me>,
+          </md>,
           which shows that the given vectors are <em>not</em> linearly independent.
         </p>
       </solution>
@@ -1108,13 +1108,13 @@
               <p>
                 Plugging in the points for <m>x</m> and <m>y</m> in the equation <m>\ln y = \ln a + bx</m>,
                 we have equations
-                <me>
+                <md>
                   \begin{array}{ccccc} \ln a \amp  + \amp  b \amp  = \amp  \ln 2 \\ \ln a \amp  + \amp  2b \amp  = \amp  \ln 4\\ \end{array}
-                </me>.
+                </md>.
                 To solve,
-                <me>
+                <md>
                   \bbm 1 \amp 1\amp \ln 2 \\ 1 \amp  2 \amp \ln 4 \\ \ebm \overrightarrow{\text{rref}} \bbm 1\amp 0\amp 0\\0\amp 1\amp \ln 2\\ \ebm
-                </me>.
+                </md>.
                 Therefore <m>\ln a = 0</m> and <m>b = \ln 2</m>.
               </p>
             </li>

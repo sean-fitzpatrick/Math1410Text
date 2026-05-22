@@ -30,9 +30,9 @@
     Someone in charge of compiling data on farms and crops probably already has a program or spreadsheet
     set up with all of the farms and crops pre-defined; what they are interested in are the numbers giving the crop yields.
     Thus, when they enter their data into the computer, they are probably more interested in the array
-    <men xml:id="eq-farmmatrix">
+    <md number="yes" xml:id="eq-farmmatrix">
       A = \bbm 48 \amp  18 \amp  92 \amp  0\\ 0 \amp  0 \amp  73 \amp  152\\ 34 \amp  203 \amp  0 \amp  88 \ebm
-    </men>.
+    </md>.
     As long as we're consistent and always assign each farm to the same row,
     and each crop to the same column, we can dispense with the labels and work directly with the data.
   </p>
@@ -70,14 +70,14 @@
 
       <p>
         The entries of an <m>m\times n</m> matrix are indexed as follows:
-        <me>
+        <md>
           \bbm
             a_{11}\amp a_{12}\amp a_{13}\amp \cdots\amp a_{1n}\\
             a_{21}\amp a_{22}\amp a_{23}\amp \cdots\amp a_{2n}\\
             a_{31}\amp a_{32}\amp a_{33}\amp \cdots\amp a_{3n}\\
             \vdots\amp \vdots\amp \vdots\amp \ddots\amp \vdots\\
             a_{m1}\amp a_{m2}\amp a_{m3}\amp \cdots\amp a_{mn} \ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -103,16 +103,16 @@
         <idx><h>vector </h><h> column</h></idx>
 
         A <term>row vector</term> is a <m>1\times n</m> matrix of the form
-        <me>
+        <md>
           R = \bbm r_1  \amp  r_2 \amp  \cdots \amp  r_n\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         A <term>column vector</term> is a <m>m\times 1</m> matrix of the form
-        <me>
+        <md>
           C = \bbm c_1\\c_2\\ \vdots \\ c_m\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -121,28 +121,28 @@
     In particular, we can obtain row or column vectors by isolating any row or column of a given <m>m\times n</m> matrix.
     For example, given our matrix of crop data in <xref ref="eq-farmmatrix" text="local">Equation</xref>,
     we might be interested only in Farm B, in which case we would want the row vector
-    <me>
+    <md>
       R_B = \bbm 0  \amp  0 \amp  73 \amp  152\ebm
-    </me>.
+    </md>.
     Similarly, we might only be interested in yields for soybean crops, in which case the column vector
-    <me>
+    <md>
       C_{\text{soy}} = \bbm 92 \\ 73\\0\ebm
-    </me>
+    </md>
     is our object of interest.
   </p>
 
   <p>
     Continuing with our farming example,
     suppose that in addition to the matrix <m>A</m> of 2014 crop yields above we also have data for 2015 crop yields given by
-    <me>
+    <md>
       B = \bbm 41  \amp  25  \amp  15 \amp  20\\ 0 \amp  72 \amp  0 \amp  165\\ 47 \amp  193 \amp  0 \amp  77\ebm
-    </me>.
+    </md>.
     We might be interested in quantities such as the total crop yields over two years.
     If we arrange these totals into a matrix <m>T</m>,
     it seems like it should be reasonable to define matrix addition in such a way that we can write
-    <me>
+    <md>
       T = A + B
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -192,9 +192,9 @@
 
         Let <m>A=[a_{ij}]</m> and <m>B=[b_{ij}]</m> be <m>m\times n</m> matrices.
         The <term>sum</term> of <m>A</m> and <m>B</m>, denoted <m>A+B</m>, is
-        <me>
+        <md>
           \bbm a_{11}+b_{11} \amp a_{12}+b_{12} \amp \cdots\amp a_{1n}+b_{1n}\\ a_{21}+b_{21}\amp a_{22}+b_{22}\amp \cdots\amp a_{2n}+b_{2n}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\ a_{m1}+b_{m1}\amp a_{m2}+b_{m2}\amp \cdots\amp a_{mn}+b_{mn}\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -204,9 +204,9 @@
     assuming that our matrices represent all of the crops each farm produces.
     This would be obtained by simply calculating the total for each row in the matrix <m>A</m>.
     Another way to accomplish the same task is as follows: let
-    <me>
+    <md>
       C_1 = \bbm 48\\0\\34\ebm, C_2 = \bbm 18\\0\\203\ebm, C_3 = \bbm 92\\73\\0\ebm, C_4 = \bbm 0\\152\\88\ebm
-    </me>
+    </md>
     denote the columns of the matrix <m>A</m>;
     note that each column represents the yields across all three farms for each crop.
   </p>
@@ -225,9 +225,9 @@
   <p>
     Recall from <xref ref="chapter-vectors"/> that we defined the multiplication of a vector
     <m>\vec{v} = \bbm  a\\ b\\ c\ebm</m> by a scalar <m>t\in\mathbb{R}</m> by
-    <me>
+    <md>
       t\vec{v} = t\bbm  a\\ b\\ c\ebm = \bbm  ta\\ tb\\ tc\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -247,9 +247,9 @@
 
         Let <m>A = [a_{ij}]</m> be an <m>m\times n</m> matrix and let <m>k</m> be a scalar.
         The <term>scalar multiplication</term> <m>A</m> by <m>k</m>, denoted <m>kA</m>, is defined by
-        <me>
+        <md>
           \bbm ka_{11} \amp ka_{12} \amp \cdots\amp ka_{1n}\\ka_{21}\amp ka_{22}\amp \cdots\amp ka_{2n}\\\vdots\amp \vdots\amp \ddots\amp \vdots\\ka_{m1}\amp ka_{m2}\amp \cdots\amp ka_{mn}\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -275,24 +275,24 @@
     Since we have two years' worth of crop data, we could also ask for the <em>average</em> yield for each crop on each farm.
     For example, Farm A produced 48 tonnes of corn in 2014, and 41 tonnes of corn in 2015.
     The two-year average for corn on Farm A is thus
-    <me>
+    <md>
       \frac{48+41}{2} = \frac{89}{2} = 44.5 \text{ tonnes}
-    </me>.
+    </md>.
     Notice that we can obtain the average for each entry by dividing each entry in <m>T=A+B</m> by 2,
     which is the same thing as multiplying by <m>\frac{1}{2}</m>. Our matrix of averages is
-    <me>
+    <md>
       \frac{1}{2}T = \frac{1}{2}\bbm 89  \amp  43  \amp  107 \amp  20\\0\amp  72 \amp  73 \amp  317\\81 \amp  396 \amp  0 \amp  165\ebm = \bbm 89/2 \amp  43/2 \amp  107/2 \amp  10\\0\amp  36 \amp  73/2 \amp  317/2\\81/2 \amp  198 \amp  0 \amp  165/2\ebm
-    </me>.
+    </md>.
     Finally, notice also that since
-    <me>
+    <md>
       \frac{48+41}{2} = \frac{1}{2}(48)+\frac{1}{2}(41)
-    </me>,
+    </md>,
     with similar considerations for the other entries,
     we also could have obtained the average by first dividing <m>A</m> and <m>B</m> by <m>\frac{1}{2}</m>,
     and then adding the result. That is,
-    <me>
+    <md>
       \frac{1}{2}T = \frac{1}{2}(A+B) = \frac{1}{2}A +\frac{1}{2}B
-    </me>.
+    </md>.
     We'll see shortly that this result is due to a general property of matrix arithmetic, called the <em>distributive property</em>.
   </p>
 
@@ -310,9 +310,9 @@
 
         Given <m>m\times n</m> matrices <m>A_1, A_2, \ldots, A_k</m>,
         a <term>linear combination</term> of these matrices is any expression of the form
-        <me>
+        <md>
           B = c_1A_1+c_2A_2+\cdots +c_kA_k
-        </me>,
+        </md>,
         where <m>c_1, c_2, \ldots, c_k</m> are scalars.
       </p>
     </statement>
@@ -329,9 +329,9 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 1 \amp 2 \amp 3\\-1\amp 2\amp 1\\5\amp 5\amp 5\ebm,\quad B = \bbm 2\amp 4\amp 6\\1\amp 2\amp 2\\-1\amp 0\amp 4\ebm,\quad C = \bbm 1\amp 2\amp 3\\9\amp 8\amp 7\ebm
-        </me>.
+        </md>.
         Simplify the following matrix expressions.
         <ol cols="2">
           <li><m>A+B</m></li>
@@ -351,28 +351,28 @@
           <li>
             <p>
               Adding the corresponding entries of <m>A</m> and <m>B</m>, we have
-              <me>
+              <md>
                 A + B =
                 \bbm 1+2\amp 2+4\amp 3+6\\-1+1\amp 2+2\amp 1+2\\5-1\amp 5+0\amp 5+4\ebm = \bbm 3\amp 6\amp 9\\0\amp 4\amp 3\\4\amp 5\amp 9\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
           <li>
             <p>
               To compute <m>B+A</m>, we again add the corresponding entries, but in the opposite order:
-              <me>
-                B + A = \bbm 2+14+2\amp 6+3\\1-1\amp 2+2\amp 2+1\\-1+5\amp 0+5\amp 4+5\ebm = \bbm 3\amp 6\amp 9\\0\amp 4\amp 3\\4\amp 5\amp 9\ebm
-              </me>.
+              <md>
+                B + A = \bbm 2+1 \amp 4+2\amp 6+3\\1-1\amp 2+2\amp 2+1\\-1+5\amp 0+5\amp 4+5\ebm = \bbm 3\amp 6\amp 9\\0\amp 4\amp 3\\4\amp 5\amp 9\ebm
+              </md>.
             </p>
           </li>
 
           <li>
             <p>
                In this case, we have to subtract the entries of <m>B</m> from those of <m>A</m>. This gives us
-               <me>
+               <md>
                 A - B = \bbm-1\amp -2\amp -3\\-2\amp 0\amp -1\\6\amp 5\amp 1\ebm
-               </me>.
+               </md>.
             </p>
           </li>
 
@@ -399,18 +399,18 @@
           <li>
             <p>
               Subtracting each entry of <m>A</m> from itself, we get
-              <me>
+              <md>
                 A - A = \bbm 0\amp 0\amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
           <li>
             <p>
               Carrying out the scalar multiplication followed by the addition, we find
-              <me>
+              <md>
                 5A+5B = \bbm 5\amp 10\amp 15\\-5\amp 10\amp 5\\25\amp 25\amp 25\ebm +\bbm 10\amp 20\amp 30\\5\amp 10\amp 10\\-5\amp 0\amp 20\ebm = \bbm 15\amp 30\amp 45\\0\amp 20\amp 15\\20\amp 25\amp 45\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
@@ -439,9 +439,9 @@
 
   <p>
     Another interesting thing that came from our previous example is that
-    <me>
+    <md>
       A - A = \bbm 0 \amp 0 \amp 0\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm
-    </me>.
+    </md>.
     It seems like this should be a special matrix; after all, every entry is 0 and 0 is a special number.
   </p>
 
@@ -525,9 +525,9 @@
     We then have
     <md>
       <mrow>A+B \amp  = [a_{ij}]+[b_{ij}]</mrow>
-      <mrow>\amp  = [a_{ij}+b_{ij}] \quad \text{ (by } <xref ref="def-addition"/> \text{)}</mrow>
-      <mrow>\amp  = [b_{ij}+a_{ij}] \quad \text{ (since addition of real numbers commutes)}</mrow>
-      <mrow>\amp  = [b_{ij}]+[a_{ij}] \quad \text{ (by } <xref ref="def-addition"/> \text{)}</mrow>
+      <mrow>\amp  = [a_{ij}+b_{ij}]  \amp \amp \text{ (by } <xref ref="def-addition"/> \text{)}</mrow>
+      <mrow>\amp  = [b_{ij}+a_{ij}]  \amp \amp \text{ (since addition of real numbers commutes)}</mrow>
+      <mrow>\amp  = [b_{ij}]+[a_{ij}]  \amp \amp \text{ (by } <xref ref="def-addition"/> \text{)}</mrow>
       <mrow>\amp  = B+A</mrow>
     </md>.
   </p>
@@ -535,12 +535,12 @@
   <p>
     Similarly, the distributive property in item 3 is valid since
     <md>
-      <mrow>k(A+B) \amp  = k([a_{ij}]+[b_{ij}])</mrow>
-      <mrow> \amp  = k[a_{ij}+b_{ij}] \quad \text{ (definition of matrix addition)}</mrow>
-      <mrow> \amp  = [k(a_{ij}+b_{ij})] \quad \text{ (definition of scalar multiplication)}</mrow>
-      <mrow> \amp  = [k\cdot a_{ij}+k\cdot b_{ij}] \quad \text{ (distributive property of real numbers)}</mrow>
-      <mrow> \amp  = [k\cdot a_{ij}] + [\cdot b_{ij}] \quad \text{ (definition of matrix addition)}</mrow>
-      <mrow> \amp  = k[a_{ij}]+k[b_{ij}] \quad \text{ (definition of scalar multiplication)}</mrow>
+      <mrow>k(A+B) \amp  = k([a_{ij}]+[b_{ij}]) \amp \amp</mrow>
+      <mrow> \amp  = k[a_{ij}+b_{ij}]  \amp \amp \text{ (definition of matrix addition)}</mrow>
+      <mrow> \amp  = [k(a_{ij}+b_{ij})]  \amp \amp \text{ (definition of scalar multiplication)}</mrow>
+      <mrow> \amp  = [k\cdot a_{ij}+k\cdot b_{ij}]  \amp \amp \text{ (distributive property of real numbers)}</mrow>
+      <mrow> \amp  = [k\cdot a_{ij}] + [\cdot b_{ij}]  \amp \amp \text{ (definition of matrix addition)}</mrow>
+      <mrow> \amp  = k[a_{ij}]+k[b_{ij}]  \amp \amp \text{ (definition of scalar multiplication)}</mrow>
       <mrow> \amp  = kA +kB</mrow>
     </md>.
   </p>
@@ -561,30 +561,30 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 2 \amp -1\\3 \amp 6\ebm
-        </me>.
+        </md>.
         Find the matrix <m>X</m> such that
-        <me>
+        <md>
           2A + 3X = -4A
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         We can use basic algebra techniques to manipulate this equation for <m>X</m> first,
         let's subtract <m>2A</m> from both sides. This gives us
-        <me>
+        <md>
           3X = -6A
-        </me>.
+        </md>.
         Now divide both sides by 3 to get
-        <me>
+        <md>
           X = -2A
-        </me>.
+        </md>.
         Now we just need to compute <m>-2A</m>; we find that
-        <me>
+        <md>
           X = \bbm -4 \amp 2\\ -6 \amp -12\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
@@ -605,9 +605,9 @@
         <p>
           For the matrices <m>A</m> and <m>B</m> given below,
           simplify the given expression.
-          <me>
+          <md>
             A = \bbm 1 \amp -1\\ 7 \amp 4\ebm \quad B = \bbm -3 \amp 2\\5 \amp 9\ebm
-          </me>.
+          </md>.
         </p>
       </introduction>
 
@@ -696,9 +696,9 @@
         <p>
           For the matrices <m>A</m> and <m>B</m> given below,
           simplify the given expression.
-          <me>
+          <md>
             A = \bbm 3\\ 5\ebm \quad B = \bbm -2\\4\ebm
-          </me>.
+          </md>.
         </p>
       </introduction>
 
@@ -762,9 +762,9 @@
         <p>
           For the matrices <m>A</m> and <m>B</m> given below,
           find <m>X</m> that satisfies the given equation.
-          <me>
+          <md>
             A = \bbm 3 \amp -1\\ 2 \amp 5\ebm \quad B = \bbm 1 \amp 7\\3 \amp -4\ebm
-          </me>
+          </md>
 
         </p>
       </introduction>

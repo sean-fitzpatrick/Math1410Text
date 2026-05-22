@@ -99,22 +99,22 @@
             <p>
               It turns out that any plane through the origin is a subspace, and <m>R</m> is no exception,
               but let's verify this directly using <xref ref="def-subspace"/>. Suppose
-              <me>
+              <md>
                 \vec u = \bbm u_1\\u_2\\u_3\ebm \quad \text{ and } \quad \vec v = \bbm v_1\\v_2\\v_3\ebm
-              </me>
+              </md>
               are vectors in <m>R</m>, so that <m>2u_1-4u_2+3u_3=0</m> and <m>2v_1-4v_2+3v_3=0</m>. For the vector
-              <me>
+              <md>
                 \vec u + \vec v = \bbm u_1+v_1\\u_2+v_2\\u_3+v_3\ebm
-              </me>,
+              </md>,
               we find
               <md>
                 <mrow>2(u_1+v_1)-4(u_2+v_2)+3(u_3+v_3)\amp = (2u_1-4u_2+3u_3) + (2v_1-4v_2+3v_3)</mrow>
                 <mrow>\amp = 0 + 0 = 0</mrow>
               </md>,
               which shows that <m>\vec u+\vec v\in R</m>. Similarly, for any scalar <m>c</m>,
-              <me>
+              <md>
                 2(cu_1)-4(cu_2)+3(cu_3) = c(2u_1-4u_2+3u_3) = 0
-              </me>,
+              </md>,
               verifying that <m>c\vec u \in R</m>. Since <m>R</m> is closed under both addition and scalar multiplication, it is a subspace.
             </p>
           </li>
@@ -172,9 +172,9 @@
 
             <p>
               Next, if <m>k\in \mathbb{R}</m> is a scalar, we have
-              <me>
+              <md>
                 k\vec v = k\bbm 3a-2b\\a+b\\a-4b\ebm = \bbm k(3a-2b)\\k(a+b)\\k(a-4b)\ebm = \bbm 3(ka)-2(kb)\\(ka)+(kb)\\(ka)-4(kb)\ebm,
-              </me>
+              </md>
               which again fits the patter for vectors in <m>T</m>, so <m>k\vec v\in T</m>.
               From <xref ref="def-subspace"/>, we can conclude that <m>T</m> is a subspace.
             </p>
@@ -215,25 +215,25 @@
 
               <p>
                 If we let <m>x=1</m> and <m>y=2</m> in the definition of the set <m>U</m>, we get the vector
-                <me>
+                <md>
                     \vec v = \bbm 1+2\\3(1)(2)\\1^2\ebm = \bbm 3\\6\\1\ebm
-                </me>.
+                </md>.
               </p>
 
               <p>
                 Now consider the vector <m>4\vec v</m>. We have
-                <me>
+                <md>
                     4\vec v = 4\bbm 3\\6\\1\ebm = \bbm 12\\6\\4\ebm
-                </me>.
+                </md>.
               </p>
 
               <p>
                 Looking at the definition of the set <m>U</m>, we know that if <m>4\vec v\in U</m>,
                 then the third component of <m>\vec v</m> tells us <m>x^2=4</m>, so <m>x=\pm 2</m>.
                 Now, let's look at the other two components. If <m>x=2</m>, we must have
-                <me>
+                <md>
                     2+y = 12 \text{ and } 3(2)(y) = 6
-                </me>.
+                </md>.
               </p>
 
               <p>
@@ -288,9 +288,9 @@
 
             <p>
               The first thing we might check is whether or not <m>\vec 0 \in V</m>. If we want
-              <me>
+              <md>
                 \bbm u+2v\\v+4\\u-2\ebm = \bbm 0\\0\\0\ebm
-              </me>,
+              </md>,
               then clearly we need <m>v=-4</m> and <m>u=2</m> from the second and third components,
               but <m>2+2(-4) = -6\neq 0</m>, so there is no way to obtain the zero vector as an element of <m>V</m>,
               telling us that <m>V</m> is not a subspace.
@@ -303,27 +303,27 @@
               so our instinct is probably telling us that <m>W</m> is not a subspace, either.
               To know for sure, the first thing we might check is whether or not <m>\vec 0 \in W</m>.
               In this case, we see that <m>\vec 0</m> is indeed in there. Setting <m>u=2</m> and <m>v=-4</m>, we get the vector
-              <me>
+              <md>
                 \bbm 2(2)+(-4)\\-4+4\\2-2\ebm = \bbm 0\\0\\0\ebm = \vec 0,
-              </me>
+              </md>
               so <m>\vec 0 \in W</m>. Let's try the addition test. Setting <m>u=1</m> and <m>v=0</m> gives us the vector
-              <me>
+              <md>
                 \vec v = \bbm 2(1)+0\\0+4\\1-2\ebm = \bbm 2\\4\\-1\ebm \in W
-              </me>.
+              </md>.
             </p>
 
             <p>
               Setting <m>u=0</m> and <m>v=1</m> gives us the vector
-              <me>
+              <md>
                   \vec w = \bbm 2(0)+1\\1+4\\0-2\ebm = \bbm 1\\5\\-2\ebm \in W
-              </me>.
+              </md>.
             </p>
 
             <p>
               We now check to see whether or not <m>\vec v + \vec w \in W</m>. We have
-              <me>
+              <md>
                   \vec v + \vec w = \bbm 2\\4\\-1\ebm + \bbm 1\\5\\-2\ebm = \bbm 3\\9\\-3\ebm
-              </me>.
+              </md>.
             </p>
 
             <p>
@@ -339,13 +339,13 @@
               If we try a few more examples (the reader is encouraged to do so),
               we find that things keep working out, so we begin to suspect that maybe <m>W</m> really is a subspace.
               The only way to know for sure is to attempt to verify <xref ref="def-subspace"/> with a general proof. Suppose
-              <me>
+              <md>
                 \vec v = \bbm 2a+b\\b+4\\a-2\ebm \text{ and } \vec w = \bbm 2c+d\\d+4\\c-2\ebm
-              </me>
+              </md>
               are arbitrary elements of <m>W</m>. Adding these vectors, we get
-              <me>
+              <md>
                 \vec v + \vec w = \bbm 2(a+c)+(b+d)\\ (b+d)+8\\(a+c)-4\ebm
-              </me>,
+              </md>,
               which certainly doesn't look like an element of <m>W</m>; the constants are all wrong!
               We have an 8 in the second component instead of a 4, and a <m>-4</m> in the third component instead of a <m>-2</m>.
               (This is why constant terms in the definition of a subset are generally problematic.)
@@ -356,13 +356,13 @@
               Let's write the second component as <m>(b+d+4)+4</m>, and the third as <m>(a+c-2)-2</m>,
               and let <m>v=b+d+4</m>, and <m>u=a+c-2</m>. If <m>\vec v + \vec w</m> is an element of <m>W</m>,
               then we're going to need
-              <me>
+              <md>
                 2(a+c)+(b+d) = 2u+v
-              </me>,
+              </md>,
               so that <m>\vec v + \vec w = \bbm 2u+v\\v+4\\u-2\ebm</m> fits the definition of <m>W</m>. Is this true? Let's check:
-              <me>
+              <md>
                   2u+v = 2(a+c-2)+(b+d+4) = 2(a+c)-4+(b+d)+4 = 2(a+c)+(b+d)
-              </me>.
+              </md>.
             </p>
 
             <p>
@@ -374,9 +374,9 @@
                 <mrow> \amp  = \bbm 2(ka-2k+2)+(kb+4k-4)\\(kb+4k-4)+4\\(ka-2k+2)-2\ebm</mrow>
               </md>,
               which fits the definition of <m>W</m>. Note that in the last equality, things cancel out again:
-              <me>
+              <md>
                   2(ka-2k+2)+(kb+4k-4) = 2(ka)-4k+4+(kb)+4k-4 = 2(ka)+(kb)
-              </me>.
+              </md>.
             </p>
 
             <p>
@@ -387,14 +387,14 @@
             <p>
               We know that the potential trouble here came from the constant terms,
               so one option we have is to try burying them. Given the element
-              <me>
+              <md>
                 \vec v = \bbm 2u+v\\v+4\\u-2\ebm \in W
-              </me>,
+              </md>,
               we're under no obligation to stick with the variables <m>u</m> and <m>v</m>.
               Let's try to simplify a bit: if we let <m>x = u-2</m> (so <m>u=x+2</m>) and <m>y = v+4</m> (so <m>v=y-4</m>), then
-              <me>
+              <md>
                 2u+v = 2(x+2)+(y-4) = 2x+4+y-4 = 2x+y
-              </me>,
+              </md>,
               and thus we can write <m>\vec v = \bbm 2x+y\\y\\x\ebm</m>, with no more constant terms.
               In this form it's much easier to verify that <m>W</m> is a subspace.
             </p>
@@ -407,25 +407,25 @@
   <p>
     Let's take a second look at the subspaces <m>T</m> and <m>W</m> from <xref ref="ex_subspace2"/> and <xref ref="ex_subspace3"/>.
     Given an element <m>\vec v = \bbm 3a-2b\\a+b\\a-4b\ebm</m> of <m>T</m>, we note that
-    <me>
+    <md>
       \vec v = \bbm 3a-2b\\a+b\\a-4b\ebm = \bbm 3a\\a\\a\ebm + \bbm -2b\\b\\-4b\ebm = a\bbm 3\\1\\1\ebm + b\bbm -2\\1\\-4\ebm
-    </me>;
+    </md>;
     in other words, <m>T</m> can be written as the span of the vectors
-    <me>
+    <md>
         \bbm 3\\1\\1\ebm \text{ and } \bbm -2\\1\\-4\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
     Similarly, if we write <m>\vec w = \bbm 2x+y\\y\\x\ebm\in W</m>
     for an arbitrary element of <m>W</m> (using our change of variables), we have
-    <me>
+    <md>
       \vec w = \bbm 2x\\0\\x\ebm + \bbm y\\y\\0\ebm = x\bbm 2\\0\\1\ebm + y\bbm 1\\1\\0\ebm
-    </me>,
+    </md>,
     so the subspace <m>W</m> again can be rewritten as
-    <me>
+    <md>
         W = \operatorname{span}\left\{\bbm 2\\0\\1\ebm, \bbm 1\\1\\0\ebm\right\}
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -476,9 +476,9 @@
     We conclude with a discussion of how <xref ref="thm-subspan"/>
     and the concept of linear independence allows us to give a complete description of the possible subspaces of <m>\mathbb{R}^n</m>.
     To begin with, we have the simplest possible subspace, the <term>trivial subspace</term>
-    <me>
+    <md>
         V_0 = \{\vec 0\}
-    </me>.
+    </md>.
     <idx><h>subspace </h><h> trivial</h></idx>
   </p>
 
@@ -495,9 +495,9 @@
     If a subspace <m>V</m> has at least one non-zero vector, let's say <m>\vec v\in V</m>,
     then by definition it must contain every scalar multiple of that vector.
     Thus, the next simplest type of subspace is given as the span of a single, non-zero vector:
-    <me>
+    <md>
         V_1 = \{t\vec v \, | \, t\in\mathbb{R} \text{ and } \vec v \neq \vec 0\}
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -511,9 +511,9 @@
     with <m>\vec v, \vec w \neq \vec 0</m>. There are two possibilities.
     One is that <m>\vec v</m> and <m>\vec w</m> are parallel, so that the set <m>\{\vec v,\vec w\}</m> is linearly dependent.
     In this case we can write <m>\vec w = k\vec v</m> for some scalar <m>k</m>, and for any scalars <m>a</m> and <m>b</m>,
-    <me>
+    <md>
       a\vec v+b\vec w = a\vec v + b(k\vec v) = (a+bk)\vec v,
-    </me>
+    </md>
     so our subspace <m>V_2</m> is really of the same type as <m>V_1</m>.
     If, however, the vectors <m>\vec v</m> and <m>\vec w</m> are linearly independent,
     then adding the vector <m>\vec w</m> gives us a second direction to work with,
@@ -528,9 +528,9 @@
     and the span of this set is the same as what we already had.
     If, however, <m>\vec u \notin\operatorname{span}\{\vec v, \vec w\}</m>,
     then <m>\{\vec u, \vec v,\vec w\}</m> is linearly independent, and
-    <me>
+    <md>
       V_3 = \operatorname{span}\{\vec u, \vec v, \vec w\}
-    </me>
+    </md>
     is a strictly larger subspace than <m>\operatorname{span}\{\vec v, \vec w\}</m>.
     We could then look for a fourth vector, and so on. However, in the familiar case of <m>\mathbb{R}^3</m>,
     the process stops at 3.
@@ -550,9 +550,9 @@
         <li>
           <p>
             Lines through the origin, of the form
-            <me>
+            <md>
               V_1 = \operatorname{span}\{\vec v\}
-            </me>,
+            </md>,
             where <m>\vec v\neq \vec 0</m>. (One dimensional)
           </p>
         </li>
@@ -560,9 +560,9 @@
         <li>
           <p>
             Planes through the origin, of the form
-            <me>
+            <md>
               V_2 = \operatorname{span}\{\vec v, \vec w\}
-            </me>,
+            </md>,
             where the vectors <m>\vec v, \vec w</m> are linearly independent. (Two dimensional)
           </p>
         </li>
@@ -663,9 +663,9 @@
         <answer>
           <p>
             Subspace. If <m>y=2x</m>, we have
-            <me>
+            <md>
               \bbm x\\y\ebm = \bbm x\\2x\ebm = x\bbm 1\\2\ebm,
-            </me>
+            </md>
             so <m>U</m> is equal to the span of the vector <m>\bbm 1\\2\ebm</m>, and therefore a subspace.
           </p>
         </answer>

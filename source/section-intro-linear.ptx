@@ -34,18 +34,18 @@
 
       <p>
         Since we know there are 30 marbles in the jar, we know that
-        <men xml:id="eq-rbg30">
+        <md number="yes" xml:id="eq-rbg30">
           r+b+g=30
-        </men>.
+        </md>.
         Also, we are told that there are twice as many red marbles as green ones, so we know that
-        <men xml:id="eq-r2g">
+        <md number="yes" xml:id="eq-r2g">
           r=2g
-        </men>.
+        </md>.
         Finally, we know that the number of blue marbles is the same as the sum of the red and green marbles,
         so we have
-        <men xml:id="eq-brg">
+        <md number="yes" xml:id="eq-brg">
           b = r+g
-        </men>.
+        </md>.
       </p>
 
       <p>
@@ -54,9 +54,9 @@
         One way is to combine ideas from equations <xref ref="eq-r2g"/> and <xref ref="eq-brg"/>;
         in <xref ref="eq-brg"/> replace <m>r</m> with <m>2g</m>.
         This gives us
-        <men xml:id="eq-b3g">
+        <md number="yes" xml:id="eq-b3g">
           b = 2g+g = 3g
-        </men>.
+        </md>.
         We can then combine equations <xref ref="eq-rbg30"/>, <xref ref="eq-r2g"/> and <xref ref="eq-b3g"/>
         by replacing <m>r</m> in <xref ref="eq-rbg30"/> with <m>2g</m> as we did before,
         and replacing <m>b</m> with <m>3g</m> to get
@@ -158,9 +158,9 @@
     <statement>
       <p>
         A <term>linear equation</term> is an equation that can be written in the form
-        <me>
+        <md>
           a_1x_1+a_2x_2+\cdots+a_nx_n = c
-        </me>
+        </md>
         where the <m>x_i</m> are variables (the unknowns), the <m>a_i</m> are coefficients, and <m>c</m> is a constant.
       </p>
 

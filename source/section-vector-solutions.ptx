@@ -27,33 +27,33 @@
 
   <p>
     Consider a general system of linear equations, of the form
-    <men xml:id="eq-linsys">
+    <md number="yes" xml:id="eq-linsys">
       \begin{array}{ccccccccc}
       a_{11}x_1\amp +\amp a_{12}x_2\amp +\amp \cdots\amp +\amp a_{1n}x_n\amp =\amp b_1\\
       a_{21}x_1\amp +\amp a_{22}x_2\amp +\amp \cdots\amp +\amp a_{2n}x_n\amp =\amp b_2\\
       \vdots  \amp   \amp  \vdots \amp  \amp  \amp  \amp  \vdots \amp  \amp  \vdots\\
       a_{m1}x_1 \amp + \amp a_{m2}x_2\amp +\amp \cdots\amp +\amp a_{mn}x_n\amp =\amp b_m\\
       \end{array}
-    </men>.
+    </md>.
   </p>
 
   <p>
     Notice that the information we place into our augmented matrix can be divided into two pieces: the coefficient matrix
-    <me>
+    <md>
       A = \bbm a_{11} \amp  a_{12} \amp  \cdots \amp  a_{1n}\\
             a_{21}  \amp  a_{22}  \amp  \cdots \amp  a_{2n}\\
             \vdots  \amp  \vdots  \amp  \ddots \amp  \vdots\\
             a_{m1}  \amp  a_{m2} \amp  \cdots \amp  a_{mn}
         \ebm
-    </me>
+    </md>
     and the column vector
-    <me>
+    <md>
       \vec{b} = \bbm b_1\\b_2\\\vdots \\b_m\ebm
-    </me>.
+    </md>.
     Moreover, instead of writing our solution as a list (<m>x_1 = , x_2 = \ldots</m>), we can arrange our variables into a vector
-    <me>
+    <md>
       \vec{x} = \bbm x_1\\x_2\\\vdots\\x_n\ebm
-    </me>,
+    </md>,
     and express our solution as a single vector rather than a list of numbers.
   </p>
 
@@ -61,9 +61,9 @@
     To create an analogy with the single variable equation <m>ax=b</m>, we ask:
     Is there a way to define the product <m>A\vec{x}</m> of a matrix and a column vector in such a way that the
     system <xref ref="eq-linsys"/> can be written in the form
-    <me>
+    <md>
       A\vec{x}=\vec{b}
-    </me>?
+    </md>?
     Fortunately for us, the answer is yes! Even better, we'll see that the definition we give here turns out to be a special case
     (and motivating example) for the general definition of matrix multiplication given in <xref ref="sec-matrix_multiplication"/>.
   </p>
@@ -84,13 +84,13 @@
         a_{21}  \amp  a_{22}  \amp  \cdots \amp  a_{2n}\\
         \vdots  \amp  \vdots  \amp  \ddots \amp  \vdots\\
         a_{m1}  \amp  a_{m2} \amp  \cdots \amp  a_{mn}\ebm</m> and the vector <m>\vec{x} = \bbm x_1\\x_2\\\vdots\\x_n\ebm</m> is given by
-        <me>
+        <md>
           A\vec{x} = \bbm a_{11}x_1+a_{12}x_2+\cdots +a_{1n}x_n\\
                  a_{21}x_1+a_{22}x_2+\cdots +a_{2n}x_n\\
                  \vdots\\
                  a_{m1}x_1+a_{m2}x_2+\cdots +a_{mn}x_n
             \ebm
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -117,14 +117,14 @@
   <p>
     Second, the right-hand side of the equation defining <m>A\vx</m> in <xref ref="def-Ax"/>
     can be rewritten as follows:
-    <me>
+    <md>
       A\vx = \bbm a_{11}x_1+a_{12}x_2+\cdots +a_{1n}x_n\\
       a_{21}x_1+a_{22}x_2+\cdots +a_{2n}x_n\\
       \vdots\\
       a_{m1}x_1+a_{m2}x_2+\cdots +a_{mn}x_n
       \ebm  = x_1\bbm a_{11}\\ a_{12}\\ \vdots \\ a_{m1}\ebm + x_2 \bbm a_{21}\\a_{22}\\ \vdots\\ a_{m2}\ebm
       + \cdots + x_x\bbm a_{1n}\\ a_{2n}\\ \vdots \\ a_{mn}\ebm
-    </me>.
+    </md>.
     That is, <em>the product</em> <m>A\vx</m> <em>is a linear combination of the columns of </em> <m>A</m>,
     <em>with the entries of</em> <m>\vx</m> <em>as coefficients</em>.
   </p>
@@ -137,9 +137,9 @@
 
   <p>
     To help understand what this is asking, we'll consider an example. Let
-    <me>
+    <md>
       A = \bbm 1 \amp 1 \amp 1\\1\amp -1\amp 2\\2\amp 0\amp 1\ebm, \quad \vb = \bbm 2\\-3\\1\ebm \quad \text{and} \quad \vx=\bbm x_1\\x_2\\x_3\ebm
-    </me>.
+    </md>.
     (We don't know what <m>\vx</m> is, so we have to represent its entries with the variables <m>x_1</m>, <m>x_2</m> and <m>x_3</m>.)
     Let's <q>solve for <m>\vx</m>,</q> given the equation <m>A\vx = \vb</m>.
   </p>
@@ -148,9 +148,9 @@
     We multiply out the left hand side of this equation according to <xref ref="def-Ax"/>.
     The first row of <m>A</m> is the row vector <m>\vec{a}_1=\bbm 1\amp 1\amp 1\ebm</m>.
     Treating this as a column vector, we form the dot product with <m>\vec{x}</m>, giving us
-    <me>
+    <md>
       \vec{a}_1\boldsymbol{\cdot}\vec{x} = x_1+x_2+x_3
-    </me>.
+    </md>.
     Similarly, letting <m>\vec{a}_2</m> and <m>\vec{a}_3</m> denote the second and third rows of <m>A</m>, respectively, we find
     <md>
       <mrow>\vec{a}_2\boldsymbol{\cdot}\vec{x} \amp = x_1-x_2+2x_3</mrow>
@@ -160,9 +160,9 @@
 
   <p>
     Putting things together, we find that
-    <me>
+    <md>
       A\vx = \bbm x_1+x_2+x_3\\x_1-x_2+2x_3\\2x_1+x_3\ebm
-    </me>.
+    </md>.
     Be sure to note that the product is just a vector; it has just one column.
   </p>
 
@@ -170,17 +170,17 @@
     If you prefer to think in terms of the columns of <m>A</m>,
     we can use the observation above, that <m>A\vx</m> is a linear combination of the columns of <m>A</m>.
     This gives us
-    <me>
+    <md>
       A\vx = x_1\bbm 1\\1\\2\ebm + x_2 \bbm 1\\-1\\0\ebm + x_3\bbm 1\\2\\1\ebm = \bbm x_1\\x_1\\2x_1\ebm+\bbm x_2\\-x_2\\0\ebm + \bbm x_3\\2x_3\\x_3\ebm
-    </me>.
+    </md>.
     When we add these three columns together, we get the same result as above.
   </p>
 
   <p>
     Setting <m>A\vx</m> equal to <m>\vb</m>, we have
-    <me>
+    <md>
       \bbm x_1+x_2+x_3\\x_1-x_2+2x_3\\2x_1+x_3\ebm = \bbm 2\\-3\\1\ebm
-    </me>.
+    </md>.
     Since two vectors are equal only when their corresponding entries are equal, we know
     <md>
       <mrow>x_1+x_2+x_3\amp =2</mrow>
@@ -204,20 +204,20 @@
 
   <p>
     We convert the above linear system into an augmented matrix and find the reduced row echelon form:
-    <me>
+    <md>
       \left[\begin{array}{ccc|c}1 \amp 1 \amp 1\amp 2\\1\amp -1\amp 2\amp -3\\2\amp 0\amp 1\amp 1\end{array}\right] \quad\overrightarrow{\text{rref}}\quad \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 1\\0\amp 1\amp 0\amp 2\\0\amp 0\amp 1\amp -1\end{array}\right]
-    </me>.
+    </md>.
     This tells us that <m>x_1=1</m>, <m>x_2=2</m> and <m>x_3 = -1</m>, so
-    <me>
+    <md>
       \vx = \bbm 1\\2\\-1\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
     We should check our work; multiply out <m>A\vx</m> and verify that we indeed get <m>\vb</m>:
-    <me>
+    <md>
       \bbm 1 \amp 1 \amp 1\\1\amp -1\amp 2\\2\amp 0\amp 1\ebm\bbm 1\\2\\-1\ebm \quad\text{does equal}\quad \bbm 2\\-3\\1\ebm
-    </me>.
+    </md>.
   </p>
 
   <example xml:id="ex_vector_solution_1">
@@ -226,29 +226,29 @@
 
       <p>
         Solve the equation <m>A\vx=\vb</m> for <m>\vx</m> where
-        <me>
+        <md>
           A = \bbm 1 \amp 2 \amp 3\\-1\amp 2\amp 1\\1\amp 1\amp 0\ebm \quad \text{and}\quad \bbm 5\\-1\\2\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         The solution is rather straightforward, even though we did a lot of work before to find the answer.
         Form the augmented matrix <m>\bbm A\amp \vb\ebm</m> and interpret its reduced row echelon form.
-        <me>
+        <md>
           \left[\begin{array}{ccc|c} 1 \amp 2 \amp 3\amp 5\\-1\amp 2\amp 1\amp -1\\1\amp 1\amp 0\amp 2\end{array}\right]\quad\overrightarrow{\text{rref}}\quad \left[\begin{array}{ccc|c}1\amp 0\amp 0\amp 2\\0\amp 1\amp 0\amp 0\\0\amp 0\amp 1\amp 1\end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
         In previous sections we were fine stating that the result as
-        <me>
+        <md>
           x_1=2, \quad x_2=0,\quad x_3=1
-        </me>,
+        </md>,
         but we were asked to find <m>\vx</m>; therefore, we state the solution as
-        <me>
+        <md>
           \vx = \bbm 2\\0\\1\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
@@ -295,9 +295,9 @@
 
       <p>
         Solve the linear system <m>A\vx=\zero</m> for <m>\vx</m> and write the solution in vector form, where
-        <me>
+        <md>
           A = \bbm 1 \amp 2\\2 \amp 4 \ebm \quad \text{and} \quad \zero = \bbm 0\\0\ebm
-        </me>.
+        </md>.
       </p>
       <aside vshift="0">
         <p>
@@ -311,9 +311,9 @@
     <solution>
       <p>
         To solve this system, put the augmented matrix into reduced row echelon form, which we do below.
-        <me>
+        <md>
           \left[\begin{array}{cc|c} 1 \amp 2 \amp 0\\2\amp 4\amp 0\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c} 1\amp 2\amp 0\\0\amp 0\amp 0\end{array}\right]
-        </me>
+        </md>
       </p>
 
       <p>
@@ -326,30 +326,30 @@
 
       <p>
         We are not done; we need to write the solution in vector form, for our solution is the vector<m>\vx</m>. Recall that
-        <me>
+        <md>
           \vx = \bbm x_1\\x_2\ebm
-        </me>.
+        </md>.
         From above we know that <m>x_1 = -2x_2</m>, where <m>x_2=t</m>,
         so we replace the <m>x_1</m> in <m>\vx</m> with <m>-2t</m> and replace <m>x_2</m> by <m>t</m>.
         This gives our solution as
-        <me>
+        <md>
           \vx = \bbm -2t\\t\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         Note that we can now pull the <m>t</m> out of the vector (it is just a scalar) and write <m>\vx</m> as
-        <me>
+        <md>
           \vx = t\bbm-2\\1\ebm
-        </me>.
+        </md>.
         For convenience, if we set
-        <me>
+        <md>
           \vvv = \bbm -2\\1\ebm
-        </me>,
+        </md>,
         then our solution can be simply written as
-        <me>
+        <md>
           \vx = t\vvv
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -359,18 +359,18 @@
 
       <p>
         For instance, by setting <m>t = -1</m>, <m>0</m>, and <m>5</m>, we get the solutions
-        <me>
+        <md>
           \vx = \bbm 2\\-1\ebm, \quad \bbm 0\\0\ebm,\quad \text{ and }\quad \bbm -10\\5\ebm
-        </me>,
+        </md>,
         respectively.
       </p>
 
       <p>
         We should check our work; multiply each of the above vectors by <m>A</m> to see if we indeed get <m>\zero</m>.
         Or, we can save ourselves some time and check the general solution. We have
-        <me>
+        <md>
           A\vx = A(t\vvv) = t(A\vvv) = t\bbm 1 \amp 2\\2 \amp 4\ebm \bbm -2\\1\ebm = t\bbm 0\\0\ebm = \bbm 0\\0\ebm
-        </me>
+        </md>
         for <em>every</em> value of <m>t</m>.
       </p>
 
@@ -381,9 +381,9 @@
 
       <p>
         Our solution is
-        <me>
+        <md>
           \vx = x_2\bbm-2\\1\ebm
-        </me>.
+        </md>.
         This means that any scalar multiple of the vector <m>\vvv = \bbm -2\\1\ebm</m> is a solution;
         we know how to sketch the scalar multiples of <m>\vvv</m>. This is done in <xref ref="fig-vect_sol_101"/>.
       </p>
@@ -455,18 +455,18 @@
 
       <p>
         Determine the solution to the system <m>A\vx = \vec 0</m>, where
-        <me>
+        <md>
           A = \bbm 2  \amp  -3 \\ -2  \amp  3\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         We proceed exactly as we did in <xref ref="ex_vector_solution_101"/>,
         by forming the proper augmented matrix and putting it into reduced row echelon form, which we do below.
-        <me>
+        <md>
           \left[\begin{array}{cc|c} 2 \amp -3 \amp 0\\-2 \amp  3\amp 0\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c} 1 \amp  -3/2 \amp  0 \\0\amp 0\amp 0\end{array}\right]
-        </me>
+        </md>
       </p>
 
       <p>
@@ -476,31 +476,31 @@
           <mrow>x_2  \amp  = t \text{ is free}</mrow>
         </md>.
         As before, we can say that <m>A\vx=\vec 0</m> provided that
-        <me>
+        <md>
           \vx = \bbm x_1\\x_2\ebm = \bbm \frac{3}{2}t\\ t\ebm = t\bbm \frac{3}{2}\\1\ebm
-        </me>.
+        </md>.
         If we set
-        <me>
+        <md>
           \vvv = \bbm 3/2\\1\ebm
-        </me>,
+        </md>,
         then our solution can be written as
-        <me>
+        <md>
           \left\{t\vvv \,|\, t\in\R \text{ and } \vvv = \bbm 3/2\\1\ebm\right\}
-        </me>.
+        </md>.
       </p>
 
       <p>
         Again, we have infinitely many solutions to the equation <m>A\vx  = \vec 0</m>;
         any choice of <m>x_2</m> gives us one of these solutions. For instance, picking <m>x_2=2</m> gives the solution
-        <me>
+        <md>
           \vx = \bbm 3\\2\ebm
-        </me>.
+        </md>.
         This is a particularly nice solution, since there are no fractions!
         In fact, since the parameter <m>t</m> can take on any <em>real</em> value,
         there is nothing preventing us from defining a new parameter <m>s = t/2</m>, and then
-        <me>
+        <md>
           \vx = t\bbm 3/2 \\1\ebm = t\left(\frac{1}{2}\bbm 3\\2\ebm \right) = \frac{t}{2}\bbm 3\\2\ebm = s\bbm 3\\2\ebm = s\vec w
-        </me>,
+        </md>,
         where <m>\vec w = 2\vvv</m>.
       </p>
 
@@ -541,17 +541,17 @@
         <idx><h>solution</h><h>basic</h></idx>
         <idx><h>basic solution</h></idx>
         Let <m>A\vx = \vec 0</m> be a homogeneous linear system of equations with infinitely many solutions and free variables
-        <me>
+        <md>
           x_{i_1}=t_1, x_{i_2} = t_2, \ldots, x_{i_k} = t_k
-        </me>.
+        </md>.
       </p>
 
       <p>
         The <term>basic</term> solutions to the system <m>A\vx = \vec 0</m> are the vectors
         <m>\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k</m> such that the general solution to the system is given by
-        <me>
+        <md>
           \vx = t_1\vec{v}_1 + t_2\vec{v}_2 + \cdots + t_k\vec{v}_k
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -566,18 +566,18 @@
 
       <p>
         Find the general solution to the homogeneous system <m>A\vx = \vec 0</m>, where
-        <me>
+        <md>
           A = \bbm 1 \amp -2 \amp 0\amp 4\\3\amp -1\amp 5\amp 2\\-2\amp -6\amp -10\amp 12\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         As usual, to find the basic solutions, we set up the augmented matrix of the system and reduce:
-        <me>
+        <md>
           \left[\begin{array}{cccc|c}1\amp -2\amp 0\amp 4\amp 0\\3\amp -1\amp 5\amp 2\amp 0\\-2\amp -6\amp -10\amp 12\amp 0\end{array}\right] \quad \arref \quad
          \left[\begin{array}{cccc|c}1\amp 0\amp 2\amp 0\amp 0\\0\amp 1\amp 1\amp -2\amp 0\\0\amp 0\amp 0\amp 0\amp 0\end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -589,13 +589,13 @@
           <mrow>x_4 \amp = t \text{ is free}</mrow>
         </md>.
         In this case, we have two parameters, so we expect two basic solutions. To find these, we write our solution in vector form:
-        <me>
+        <md>
           \vx = \bbm x_1\\x_2\\x_3\\x_4\ebm = \bbm -2s\\-s+2t\\s\\t\ebm = s\bbm -2\\-1\\1\\0\ebm + t\bbm 0\\2\\0\\1\ebm
-        </me>.
+        </md>.
         From the above, we see that the general solution can be written as <m>\vx = s\vvv +t\vec{w}</m>, where
-        <me>
+        <md>
           \vvv = \bbm -2\\-1\\1\\0\ebm \quad \text{ and } \quad \vec{w} = \bbm 0\\2\\0\\1\ebm
-        </me>
+        </md>
         are the basic solutions to <m>A\vx = \vec 0</m>.
       </p>
     </solution>
@@ -613,9 +613,9 @@
 
       <p>
         Solve the linear system <m>A\vx = \vb</m>, where
-        <me>
+        <md>
           A = \bbm 1 \amp 2\\2 \amp 4\ebm \quad \text{and} \quad \vb = \bbm 3\\6\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -625,9 +625,9 @@
 
       <p>
         Our methodology is the same as before; we form the augmented matrix and put it into reduced row echelon form.
-        <me>
+        <md>
           \left[\begin{array}{cc|c} 1 \amp 2 \amp 3\\2\amp 4\amp 6\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c} 1\amp 2\amp 3\\0\amp 0\amp 0\end{array}\right]
-        </me>
+        </md>
       </p>
 
       <p>
@@ -637,9 +637,9 @@
         <mrow>x_2  \amp =t \text{ is free}</mrow>
         </md>.
         Putting things into vector form, we have
-        <me>
+        <md>
           \vx = \bbm x_1\\x_2\ebm = \bbm 3-2t\\t\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -658,21 +658,21 @@
       <p>
         Once again, let's give names to the different component vectors of this solution
         (we are getting near the explanation of why we are doing this). Let
-        <me>
+        <md>
           \vec{x}_p = \bbm 3\\0\ebm \quad \text{and} \quad \vvv = \bbm-2\\1\ebm
-        </me>.
+        </md>.
         We can then write our solution in the form
-        <me>
+        <md>
           \vx = \vec{x}_p + t\vvv
-        </me>.
+        </md>.
       </p>
 
       <p>
         We still have infinitely many solutions; by picking a value for <m>t</m> we get one of these solutions.
         For instance, by letting <m>t= -1</m>, <m>0</m>, or <m>2</m>, we get the solutions
-        <me>
+        <md>
           \bbm 5\\-1\ebm, \quad \bbm 3\\0\ebm \quad \text{and} \quad \bbm -1\\2\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -736,9 +736,9 @@
     Another important concept that these examples demonstrate comes from the fact that Examples
     <xref ref="ex_vector_solution_101" text="local"/> and <xref ref="ex_vect_sol_103" text="local"/>
     were only <q>slightly different</q> and hence had only <q>slightly different</q> answers. Both solutions had
-    <me>
+    <md>
       t\bbm-2\\1\ebm
-    </me>
+    </md>
     in them; in <xref ref="ex_vect_sol_103"/> the solution also had another vector added to this.
     The addition of the vector <m>\vec{x}_p</m> in <xref ref="ex_vect_sol_103"/>
     is needed to account for the fact that we were dealing with a non-homogeneous system of linear equations.
@@ -780,29 +780,29 @@
   <p>
     While the new question has an old solution, it does lead to a great idea.
     Let's refresh our memory; earlier we solved two linear systems,
-    <me>
+    <md>
       A\vx = \zero \quad \text{and} \quad A\vx = \vb
-    </me>
+    </md>
     where
-    <me>
+    <md>
       A = \bbm 1 \amp 2\\2 \amp 4\ebm \quad \text{and} \quad \vb = \bbm 3\\6\ebm
-    </me>.
+    </md>.
     The solution to the first system of equations, <m>A\vx = \zero</m>, is
-    <me>
+    <md>
       \vx = t\bbm-2\\1\ebm = t\vvv
-    </me>
+    </md>
     and the solution to the second set of equations, <m>A\vx = \vb</m>, is
-    <me>
+    <md>
       \vx = \bbm 3\\0\ebm + t\bbm-2\\1\ebm = \vec{x}_p+t\vvv,
-    </me>
+    </md>
     for all <m>t\in\R</m>, where <m>\vec{x}_p = \bbm 3\\0\ebm</m> and <m>\vvv = \bbm -2\\1\ebm</m>.
   </p>
 
   <p>
     To see why the general solution to <m>A\vx = \vb</m> works, note that
-    <me>
+    <md>
       A\vec{x}_p = \bbm 1 \amp 2\\2 \amp 4\ebm\bbm 3\\0\ebm = \bbm 3\\6\ebm = \vec{b}
-    </me>,
+    </md>,
     so <m>\vec{x}_p</m> is a solution.
     (The subscript <m>p</m> of <q><m>\vec{x}_p</m></q> is used to denote that this vector is a <term>particular</term> solution:
     see <xref ref="def-particular"/>.) What about the general solution <m>\vec x = \vec{x}_p+t\vvv</m>?
@@ -918,9 +918,9 @@
               If <m>\operatorname{rank}(A)=\operatorname{rank}\left[\begin{array}{c|c} A \amp \vec b\end{array}\right] = \lt n</m>,
               then the system <m>A\vx = \vb</m> has infinitely solutions.
               Moreover, the general solution to <m>A\vx = \vb</m> will involve <m>k</m> parameters, where
-              <me>
+              <md>
                 k = n - \operatorname{rank}(A)
-              </me>.
+              </md>.
             </p>
           </li>
         </ol>
@@ -930,14 +930,14 @@
 
   <p>
     To understand Item 1 above, note that if
-    <me>
+    <md>
       \operatorname{rank}(A)\lt \operatorname{rank}\left[\begin{array}{c|c} A \amp \vec b\end{array}\right]
-    </me>,
+    </md>,
     then there must be a leading 1 in the right-hand column of the reduced row echelon form of <m>\bbm A \amp  \vec b\ebm</m>,
     meaning that we have a row of the form
-    <me>
+    <md>
       \bbm 0  \amp  0 \amp  \cdots \amp  0 \amp  1\ebm
-    </me>,
+    </md>,
     which is exactly what we expect in a system with no solutions.
   </p>
 
@@ -959,25 +959,25 @@
 
       <p>
         Rewrite the linear system
-        <me>
+        <md>
           \begin{array}{ccccccccccc} x_1 \amp + \amp 2x_2\amp -\amp 3x_3\amp +\amp 2x_4\amp +\amp 7x_5\amp =\amp 2\\3x_1\amp +\amp 4x_2\amp +\amp 5x_3\amp +\amp 2x_4\amp +\amp 3x_5\amp =\amp -4 \end{array}
-        </me>
+        </md>
         as a matrix--vector equation, solve the system using vector notation, and give the solution to the related homogeneous equations.
       </p>
     </statement>
     <solution>
       <p>
         Rewriting the linear system in the form of <m>A\vx=\vb</m>, we have that
-        <me>
+        <md>
           A = \bbm 1 \amp 2 \amp -3\amp 2\amp 7\\3\amp 4\amp 5\amp 2\amp 3\ebm,\quad \vx = \bbm x_1\\x_2\\x_3\\x_4\\x_5\ebm \quad \text{and} \quad \vb = \bbm 2\\-4\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         To solve the system, we put the associated augmented matrix into reduced row echelon form and interpret the results.
-        <me>
+        <md>
           \left[\begin{array}{ccccc|c}1 \amp 2 \amp -3\amp 2\amp 7\amp 2\\3\amp 4\amp 5\amp 2\amp 3\amp -4\end{array}\right]\quad \arref \quad \left[\begin{array}{ccccc|c}1\amp 0\amp 11\amp -2\amp -11\amp -8\\0\amp 1\amp -7\amp 2\amp 9\amp 5\end{array}\right]
-        </me>
+        </md>
         <md>
           <mrow>x_1 \amp =-8-11r+2s+11t</mrow>
           <mrow>x_2 \amp =5+7r-2s-9t</mrow>
@@ -1016,26 +1016,26 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 1 \amp 2\\4 \amp 5\ebm \quad \text{and} \quad \vb = \bbm 3\\6\ebm
-        </me>.
+        </md>.
         Find the solutions to <m>A\vx=\vb</m> and <m>A\vx = \zero</m>.
       </p>
     </statement>
     <solution>
       <p>
         We go through the familiar work of finding the reduced row echelon form of the appropriate augmented matrix and interpreting the solution.
-        <me>
+        <md>
           \bbm 1 \amp 2 \amp 3\\4\amp 5\amp 6\ebm \quad \arref \quad \bbm 1\amp 0\amp -1\\0\amp 1\amp 2\ebm
-        </me>
+        </md>
         <md>
           <mrow>x_1  \amp = -1</mrow>
           <mrow>x_2  \amp = 2</mrow>
         </md>.
         Thus
-        <me>
+        <md>
           \vx = \bbm x_1\\x_2\ebm = \bbm-1\\2\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -1066,18 +1066,18 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 1 \amp 1\\2 \amp 2\ebm \quad \text{and} \quad \vb = \bbm 1\\1\ebm
-        </me>.
+        </md>.
         Find the solutions to <m>A\vx=\vb</m> and <m>A\vx = \zero</m>.
       </p>
     </statement>
     <solution>
       <p>
         To solve <m>A\vx = \vb</m>, we put the appropriate augmented matrix into reduced row echelon form and interpret the results.
-        <me>
+        <md>
           \left[\begin{array}{cc|c}1 \amp 1 \amp 1\\2\amp 2\amp 1\end{array}\right] \quad \arref \quad \left[\begin{array}{cc|c}1\amp 1\amp 0\\0\amp 0\amp 1\end{array}\right]
-        </me>
+        </md>
       </p>
 
       <p>
@@ -1097,17 +1097,17 @@
 
       <p>
         To find the solution to <m>A\vx = \zero</m>, we interpret the reduced row echelon form of the appropriate augmented matrix.
-        <me>
+        <md>
           \bbm 1 \amp 1 \amp 0\\2\amp 2\amp 0\ebm \quad \arref \quad \bbm 1\amp 1\amp 0\\0\amp 0\amp 0\ebm
-        </me>
+        </md>
         <md>
           <mrow>x_1 \amp =-x_2</mrow>
           <mrow>x_2 \amp \text{ is free}</mrow>
         </md>.
         Thus,
-        <me>
+        <md>
           \vx = \bbm x_1\\x_2\ebm = \bbm-x_2\\x_2\ebm = x_2\bbm-1\\1\ebm = x_2\vu
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -1168,7 +1168,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 1 \amp -2\   -3 \amp 6 \ebm </m>,
+            <m>A = \bbm 1 \amp -2\\ -3 \amp 6 \ebm </m>,
             <m>\vb=\bbm 0\\   0 \ebm </m>,
             <m>\vu = \bbm 2\\ 1 \ebm</m>,
             <m>\vvv = \bbm -10\\ -5 \ebm</m>
@@ -1184,7 +1184,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 1 \amp 0\   2 \amp 0 \ebm </m>,
+            <m>A = \bbm 1 \amp 0\\ 2 \amp 0 \ebm </m>,
             <m>\vb=\bbm 0\\   0 \ebm </m>,
             <m>\vu = \bbm 0\\ -1 \ebm</m>,
             <m>\vvv = \bbm 0\\ 59 \ebm </m>
@@ -1200,7 +1200,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 1 \amp 0\   2 \amp 0 \ebm </m>,
+            <m>A = \bbm 1 \amp 0\\ 2 \amp 0 \ebm </m>,
             <m>\vb=\bbm -3\\   -6 \ebm </m>,
             <m>\vu = \bbm -3\\ -1 \ebm</m>, <m>\vvv = \bbm -3\\ 59 \ebm </m>
           </p>
@@ -1215,7 +1215,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 1 \amp -2\   -3 \amp 6 \ebm </m>,
+            <m>A = \bbm 1 \amp -2\\ -3 \amp 6 \ebm </m>,
             <m>\vb=\bbm 2\\   -6 \ebm </m>,
             <m>\vu = \bbm 0\\ -1 \ebm</m>, <m>\vvv = \bbm 2\\ 0 \ebm</m>
           </p>
@@ -1230,7 +1230,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 0  \amp  -3  \amp  -1 \amp  -3 \    -4 \amp  2 \amp  -3 \amp  5 \ebm </m>,
+            <m>A = \bbm 0  \amp  -3  \amp  -1 \amp  -3 \\  -4 \amp  2 \amp  -3 \amp  5 \ebm </m>,
             <m>\vb=\bbm 0\\   0 \ebm </m>,
             <m>\vu = \bbm 11 \\ 4 \\ -12 \\ 0 \ebm</m>,
             <m>\vvv = \bbm 9\\ -12\\ 0 \\ 12 \ebm </m>
@@ -1246,7 +1246,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 0  \amp  -3  \amp  -1 \amp  -3 \    -4 \amp  2 \amp  -3 \amp  5 \ebm </m>,
+            <m>A = \bbm 0  \amp  -3  \amp  -1 \amp  -3 \\  -4 \amp  2 \amp  -3 \amp  5 \ebm </m>,
             <m>\vb=\bbm 48\\   36 \ebm </m>,
             <m>\vu = \bbm -17 \\ -16 \\ 0 \\ 0 \ebm</m>,
             <m>\vvv = \bbm -8\\ -28\\ 0 \\ 12 \ebm </m>
@@ -1272,7 +1272,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 2 \amp -2 \amp -1 \    -1\amp 1\amp -1\\    -2\amp 2\amp -1 \ebm </m>,
+            <m>A = \bbm 2 \amp -2 \amp -1 \\ -1\amp 1\amp -1\\    -2\amp 2\amp -1 \ebm </m>,
             <m>\vb=\bbm 1\\   1 \\    1 \ebm </m>,
             <m>\vu = \bbm 1 \\ 1 \\ 0  \ebm</m>,
             <m>\vvv = \bbm 1\\ 1 \\ -1  \ebm </m>
@@ -1288,7 +1288,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 1  \amp  -1  \amp  3 \    3\amp -3\amp -3\\    -1\amp 1\amp 1 \ebm </m>,
+            <m>A = \bbm 1  \amp  -1  \amp  3 \\ 3\amp -3\amp -3\\    -1\amp 1\amp 1 \ebm </m>,
             <m>\vb=\bbm -1\\    -3 \\    1 \ebm </m>,
             <m>\vu = \bbm 2 \\ 2 \\ 0  \ebm</m>,
             <m>\vvv = \bbm 2\\ 3 \\ 0  \ebm </m>
@@ -1304,7 +1304,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 2  \amp  0  \amp  0 \  0\amp 1\amp -3\\  3\amp 1\amp -3 \ebm </m>,
+            <m>A = \bbm 2  \amp  0  \amp  0 \\  0\amp 1\amp -3\\  3\amp 1\amp -3 \ebm </m>,
             <m>\vb=\bbm 2\\    -4 \\    -1 \ebm </m>,
             <m>\vu = \bbm 0 \\ 6 \\ 2  \ebm</m>,
             <m>\vvv = \bbm 1\\ -1 \\ 1  \ebm </m>
@@ -1339,7 +1339,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 0 \amp 2\  -1 \amp 3\ebm</m>, <m>\vb=\bbm -2\\  -1\ebm</m>
+            <m>A = \bbm 0 \amp 2\\  -1 \amp 3\ebm</m>, <m>\vb=\bbm -2\\  -1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1355,7 +1355,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm -4 \amp -1\  -3 \amp -2\ebm</m>, <m>\vb=\bbm 1\\  4\ebm</m>
+            <m>A = \bbm -4 \amp -1\\ -3 \amp -2\ebm</m>, <m>\vb=\bbm 1\\  4\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1371,7 +1371,7 @@
       <exercise>
         <statement>
           <p>
-            <m> = \bbm 1 \amp -2\  0 \amp 1\ebm</m>, <m>\vb=\bbm 0\\  -5\ebm</m>
+            <m> = \bbm 1 \amp -2\\ 0 \amp 1\ebm</m>, <m>\vb=\bbm 0\\  -5\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1387,7 +1387,7 @@
       <exercise>
         <statement>
           <p>
-            <m> = \bbm 1 \amp 0\  5 \amp -4\ebm</m>, <m>\vb=\bbm -2\\  -1\ebm</m>
+            <m> = \bbm 1 \amp 0\\ 5 \amp -4\ebm</m>, <m>\vb=\bbm -2\\  -1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1403,7 +1403,7 @@
       <exercise>
         <statement>
           <p>
-            <m> = \bbm 2 \amp -3\  -4 \amp 6\ebm</m>, <m>\vb=\bbm 1\\  -1\ebm</m>
+            <m> = \bbm 2 \amp -3\\ -4 \amp 6\ebm</m>, <m>\vb=\bbm 1\\  -1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1419,7 +1419,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm -4 \amp 3 \amp 2\  -4\amp 5\amp 0\ebm</m>, <m>\vb=\bbm -4\\  -4\ebm</m>
+            <m>A = \bbm -4 \amp 3 \amp 2\\ -4\amp 5\amp 0\ebm</m>, <m>\vb=\bbm -4\\  -4\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1435,7 +1435,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 1 \amp 5 \amp -2\  1\amp 4\amp 5\ebm</m>, <m>\vb=\bbm 0\\  1\ebm</m>
+            <m>A = \bbm 1 \amp 5 \amp -2\\  1\amp 4\amp 5\ebm</m>, <m>\vb=\bbm 0\\  1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1451,7 +1451,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm -1 \amp -2 \amp -2\  3\amp 4\amp -2\ebm </m>, <m>\vb=\bbm -4\\  -4\ebm</m>
+            <m>A = \bbm -1 \amp -2 \amp -2\\ 3\amp 4\amp -2\ebm </m>, <m>\vb=\bbm -4\\  -4\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1467,7 +1467,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 2 \amp 2 \amp 2\  5\amp 5\amp -3\ebm</m>, <m>\vb=\bbm 3\\  -3\ebm</m>
+            <m>A = \bbm 2 \amp 2 \amp 2\\  5\amp 5\amp -3\ebm</m>, <m>\vb=\bbm 3\\  -3\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1483,7 +1483,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 1 \amp 5 \amp -4\amp -1\  1\amp 0\amp -2\amp 1\ebm </m>,
+            <m>A = \bbm 1 \amp 5 \amp -4\amp -1\\  1\amp 0\amp -2\amp 1\ebm </m>,
             <m>\vb=\bbm 0\\  -2\ebm </m>
           </p>
         </statement>
@@ -1500,7 +1500,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm -4 \amp 2 \amp -5\amp 4\  0\amp 1\amp -1\amp 5\ebm </m>,
+            <m>A = \bbm -4 \amp 2 \amp -5\amp 4\\  0\amp 1\amp -1\amp 5\ebm </m>,
             <m>\vb=\bbm -3\\  -2\ebm </m>
           </p>
         </statement>
@@ -1517,7 +1517,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 0 \amp 0 \amp 2\amp 1\amp 4\  -2\amp -1\amp -4\amp -1\amp 5\ebm</m>,
+            <m>A = \bbm 0 \amp 0 \amp 2\amp 1\amp 4\\  -2\amp -1\amp -4\amp -1\amp 5\ebm</m>,
             <m>\vb=\bbm 3\\  4\ebm</m>
           </p>
         </statement>
@@ -1534,7 +1534,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm 3 \amp 0 \amp -2\amp -4\amp 5\  2\amp 3\amp 2\amp 0\amp 2\\  -5\amp 0\amp 4\amp 0\amp 5\ebm</m>,
+            <m>A = \bbm 3 \amp 0 \amp -2\amp -4\amp 5\\  2\amp 3\amp 2\amp 0\amp 2\\  -5\amp 0\amp 4\amp 0\amp 5\ebm</m>,
             <m>\vb=\bbm -1\\  -5\\  4\ebm</m>
           </p>
         </statement>
@@ -1551,7 +1551,7 @@
       <exercise>
         <statement>
           <p>
-            <m>A = \bbm -1 \amp 3 \amp 1\amp -3\amp 4\  3\amp -3\amp -1\amp 1 \amp -4\\  -2\amp 3\amp -2\amp -3\amp 1\ebm </m>,
+            <m>A = \bbm -1 \amp 3 \amp 1\amp -3\amp 4\\  3\amp -3\amp -1\amp 1 \amp -4\\  -2\amp 3\amp -2\amp -3\amp 1\ebm </m>,
             <m>\vb=\bbm 1\\  1\\  -5\ebm </m>
           </p>
         </statement>

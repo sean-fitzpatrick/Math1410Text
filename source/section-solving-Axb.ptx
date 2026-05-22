@@ -12,28 +12,28 @@
     We will start by considering the best case scenario when solving <m>A\vx = \vb</m>;
     that is, when <m>A</m> is square and we have exactly one solution.
     For instance, suppose we want to solve <m>A\vx = \vb</m> where
-    <me>
+    <md>
       A = \bbm 1 \amp 1\\2 \amp 1\ebm \quad \text{and} \quad \vb = \bbm 0\\1\ebm
-    </me>.
+    </md>.
     We know how to solve this; put the appropriate matrix into reduced row echelon form and interpret the result.
-    <me>
+    <md>
       \bbm 1 \amp 1 \amp 0\\2\amp 1\amp 1\ebm \quad \arref \quad \bbm 1\amp 0\amp 1\\0\amp 1\amp -1\ebm
-    </me>
+    </md>
     We read from this that
-    <me>
+    <md>
       \vx = \bbm 1\\-1\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
     Written in a more general form,  we found our solution by forming the augmented matrix
-    <me>
+    <md>
       \bbm A  \amp  \vb\ebm
-    </me>
+    </md>
     and interpreting its reduced row echelon form:
-    <me>
+    <md>
       \bbm A  \amp  \vb\ebm \quad \arref \quad \bbm I \amp  \vx \ebm
-    </me>.
+    </md>.
     Notice that when the reduced row echelon form of <m>A</m> is the identity matrix <m>I</m> we have exactly one solution.
     This, again, is the best case scenario.
   </p>
@@ -41,13 +41,13 @@
   <p>
     We apply the same general technique to solving the matrix equation <m>AX=B</m> for <m>X</m>.
     We'll assume that <m>A</m> is a square matrix (<m>B</m> need not be) and we'll form the augmented matrix
-    <me>
+    <md>
       \bbm A \amp B\ebm
-    </me>.
+    </md>.
     Putting this matrix into reduced row echelon form will give us <m>X</m>, much like we found <m>\vx</m> before.
-    <me>
+    <md>
       \bbm A \amp B\ebm \quad \arref \quad \bbm I \amp  X\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -66,26 +66,26 @@
 
       <p>
         Solve the matrix equation <m>AX=B</m> where
-        <me>
+        <md>
           A = \bbm 1 \amp -1\\ 5 \amp 3\ebm\quad \text{and} \quad B = \bbm -8\amp -13\amp 1\\32\amp -17\amp 21\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         To solve <m>AX=B</m> for <m>X</m>, we form the proper augmented matrix,
         put it into reduced row echelon form, and interpret the result.
-        <me>
+        <md>
           \bbm 1\amp -1\amp -8\amp -13\amp 1\\5\amp 3\amp 32\amp -17\amp 21\ebm\quad \arref \quad
           \bbm 1\amp 0\amp 1\amp -7\amp 3\\0\amp 1\amp 9\amp 6\amp 2\ebm
-        </me>
+        </md>
       </p>
 
       <p>
         We read from the reduced row echelon form of the matrix that
-        <me>
+        <md>
           X = \bbm 1 \amp -7 \amp 3\\9\amp 6\amp 2\ebm
-        </me>.
+        </md>.
         We can easily check to see if our answer is correct by multiplying <m>AX</m>.
 
       </p>
@@ -98,37 +98,37 @@
 
       <p>
         Solve the matrix equation <m>AX = B</m> where
-        <me>
+        <md>
           A = \bbm 1 \amp 0 \amp 2\\0\amp -1\amp -2\\2\amp -1\amp 0\ebm \quad\text{and}\quad B = \bbm-1\amp 2\\2\amp -6\\2\amp -4\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         To solve, let's again form the augmented matrix
-        <me>
+        <md>
           \bbm A  \amp  B\ebm
-        </me>,
+        </md>,
         put it into reduced row echelon form, and interpret the result.
-        <me>
+        <md>
           \bbm 1 \amp 0 \amp 2\amp -1\amp 2\\0\amp -1\amp -2\amp 2\amp -6\\2\amp -1\amp 0\amp 2\amp -4\ebm\quad\arref\quad \bbm 1\amp 0\amp 0\amp 1\amp 0\\0\amp 1\amp 0\amp 0\amp 4\\0\amp 0\amp 1\amp -1\amp 1\ebm
-        </me>
+        </md>
       </p>
 
       <p>
         We see from this that
-        <me>
+        <md>
           X = \bbm 1 \amp 0\\0 \amp 4\\-1\amp 1\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
 
   <p>
     Why does this work? To see the answer, let's define five matrices.
-    <me>
+    <md>
       A = \bbm 1 \amp 2\\3 \amp 4\ebm, \ \ \vu =\bbm 1\\1\ebm, \ \ \vvv =\bbm-1\\1\ebm, \ \ \vw = \bbm 5\\6\ebm \ \ \text{and} \ \ X = \bbm 1\amp -1\amp 5\\1\amp 1\amp 6\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -148,9 +148,9 @@
 
   <p>
     So again note that the columns of <m>X</m> are <m>\vu</m>, <m>\vvv</m>, and <m>\vw</m>; that is, we can write
-    <me>
+    <md>
       X = \bbm\vu  \amp  \vvv\amp \vw \ebm
-    </me>.
+    </md>.
     Notice also that the columns of <m>AX</m> are <m>A\vu</m>, <m>A\vvv</m> and <m>A\vw</m>, respectively.
     Thus we can write
     <md>
@@ -205,9 +205,9 @@
     and looked at the product <m>AX</m>. Let's call the product <m>B</m>; that is, set <m>B = AX</m>.
     Now, let's pretend that we don't know what <m>X</m> is, and let's try to find the matrix <m>X</m>
     that satisfies the equation <m>AX=B</m>. As a refresher, recall that
-    <me>
+    <md>
       A = \bbm 1 \amp 2\\3 \amp 4\ebm \quad \text{and} \quad B = \bbm 3\amp 1\amp 17\\7\amp 1\amp 39\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -236,37 +236,37 @@
 
   <p>
     To find <m>\vec{x}_{1}</m>, we form the proper augmented matrix and put it into reduced row echelon form and interpret the results.
-    <me>
+    <md>
       \bbm 1 \amp 2 \amp 3\\3\amp 4\amp 7\ebm \quad \arref \quad \bbm 1\amp 0\amp 1\\0\amp 1\amp 1\ebm
-    </me>
+    </md>
     This shows us that
-    <me>
+    <md>
       \vec{x}_{1} = \bbm 1\\1\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
     To find <m>\vec{x}_{2}</m>, we again form an augmented matrix and interpret its reduced row echelon form.
-    <me>
+    <md>
       \bbm 1 \amp 2 \amp 1\\3\amp 4\amp 1\ebm \quad \arref \quad \bbm 1\amp 0\amp -1\\0\amp 1\amp 1\ebm
-    </me>.
+    </md>.
     Thus
-    <me>
+    <md>
       \vec{x}_{2} = \bbm-1\\1\ebm
-    </me>,
+    </md>,
     which matches with what we already knew from above.
   </p>
 
   <p>
     Before continuing on in this manner to find <m>\vec{x}_{3}</m>, we should stop and think.
     If the matrix vector equation <m>A\vx = \vb</m> is consistent, then the steps involved in putting
-    <me>
+    <md>
       \bbm A  \amp  \vb\ebm
-    </me>
+    </md>
     into reduced row echelon form depend only on <m>A</m>; it does not matter what  is. So when we put the two matrices
-    <me>
+    <md>
       \bbm 1 \amp 2 \amp 3\\3\amp 4\amp 7\ebm \quad \text{and} \quad \bbm 1\amp 2\amp 1\\3\amp 4\amp 1\ebm
-    </me>
+    </md>
     from above into reduced row echelon form, we performed exactly the same steps!
     (In fact, those steps are: <m>-3R_1+R_2\rightarrow R_2</m>; <m>-\frac12R_2\rightarrow R_2</m>; <m>-2R_2+R_1\rightarrow R_1</m>.)
   </p>
@@ -276,24 +276,24 @@
     Instead of solving for each column of <m>X</m> separately,
     performing the same steps to put the necessary matrices into reduced row echelon form three different times,
     why don't we just do it all at once? (Unless you enjoy doing unnecessary work.) Instead of individually putting
-    <me>
+    <md>
       \bbm 1 \amp 2 \amp 3\\3\amp 4\amp 7\ebm, \quad \bbm 1\amp 2\amp 1\\3\amp 4\amp 1\ebm \quad \text{and} \quad \bbm 1\amp 2\amp 17\\3\amp 4\amp 39\ebm
-    </me>
+    </md>
     into reduced row echelon form, let's just put
-    <me>
+    <md>
       \bbm 1 \amp 2 \amp 3\amp 1\amp 17\\3\amp 4\amp 7\amp 1\amp 39\ebm
-    </me>
+    </md>
     into reduced row echelon form.
-    <me>
+    <md>
       \bbm 1 \amp 2 \amp 3\amp 1\amp 17\\3\amp 4\amp 7\amp 1\amp 39\ebm \quad \arref \quad \bbm 1\amp 0\amp 1\amp -1\amp 5\\0\amp 1\amp 1\amp 1\amp 6\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
     By looking at the last three columns, we see <m>X</m>:
-    <me>
+    <md>
       X = \bbm 1 \amp -1 \amp 5\\1\amp 1\amp 6\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -322,9 +322,9 @@
 
       <p>
         Solve the matrix equations <m>AX=B</m> and <m>AX=C</m>, where
-        <me>
+        <md>
           A = \bbm 1 \amp 0 \amp -3\\-2\amp 3\amp 4\\0\amp 6\amp -4\ebm, B = \bbm 1\amp 2\amp 0\\1\amp 1\amp 3\\6\amp 3\amp 0\ebm, \text{ and } C = \bbm 4\amp -2\amp -3\\-6\amp 5\amp 7\\4\amp 2\amp 2\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -350,14 +350,14 @@
         In this case, we <em>are</em> able to solve for each column of <m>X</m>,
         but in each case there are infinitely many possibilities:
         we find <m>X = \bbm \vec{x}_1\amp \vec{x}_2\amp \vec{x}_3\ebm</m>, where
-        <me>
+        <md>
           \vec{x}_1 = \bbm 4+3r\\ \frac{2}{3}+\frac{2}{3}r\\r\ebm, \vec{x}_2 = \bbm -2+3s\\ \frac{1}{3}+\frac{2}{3}s\\s\ebm, \vec{x}_3 = \bbm -3+3t\\ \frac{1}{3}+\frac{2}{3}t\\ t\ebm,
-        </me>
+        </md>
         for parameters <m>r, s, t</m>. Any choice of values for each of these parameters provides us with a solution.
         For simple example, we can set all three parameters equal to zero, giving us
-        <me>
+        <md>
           X = \bbm 4 \amp -2 \amp -3\\2/3\amp 1/3\amp 1/3\\0\amp 0\amp 0\ebm
-        </me>.
+        </md>.
         It's easy to check that indeed, <m>AX=C</m> in this case.
       </p>
     </solution>
@@ -370,9 +370,9 @@
     for some vector <m>\vec{x}_i</m>. Now recall from <xref ref="sec-Rn"/>
     that the set of vectors of the form <m>A\vx</m> is precisely the column space of <m>A</m>.
     In the case of the matrix <m>C</m>, we can check that if we write
-    <me>
+    <md>
       A = \bbm \vec{a}_1 \amp \vec{a}_2\amp \vec{a}_3\ebm \text{ and } C = \bbm \vec{c}_1 \amp  \vec{c}_2 \amp  \vec{c}_3\ebm
-    </me>,
+    </md>,
     then <m>\vec{c}_1 = \vec{a}_1-\vec{a}_2</m>, <m>\vec{c}_2 = \vec{a}_1+\vec{a}_2+\vec{a}_3</m>, and <m>\vec{c}_3 = \vec{a}_2+\vec{a}_3</m>.
     Thus, all three columns of <m>C</m> are linear combinations of the columns of <m>A</m>,
     which is what allowed us to find a solution to <m>AX=C</m> even though the rank of <m>A</m> was less than <m>n</m>.
@@ -448,7 +448,7 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm -3 \amp -6 \    4 \amp 0 \ebm </m>,
+              <m>A = \bbm -3 \amp -6 \\    4 \amp 0 \ebm </m>,
               <m>B=\bbm 48\amp -30\\    0\amp -8  \ebm </m>
             </p>
           </statement>
@@ -462,13 +462,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm 0 \amp -2 \amp 1 \    0\amp 2\amp 2 \\    1\amp 2\amp -3\ebm </m>,
+              <m>A = \bbm 0 \amp -2 \amp 1 \\    0\amp 2\amp 2 \\    1\amp 2\amp -3\ebm </m>,
               <m>B=I_3 </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm 5/3 \amp 2/3 \amp 1\    -1/3 \amp 1/6\amp 0\\    1/3\amp 1/3\amp 0  \ebm </m>
+              <m>X=\bbm 5/3 \amp 2/3 \amp 1\\    -1/3 \amp 1/6\amp 0\\    1/3\amp 1/3\amp 0  \ebm </m>
             </p>
           </answer>
         </exercise>
@@ -476,13 +476,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm -4 \amp 1 \    -1 \amp -2 \ebm </m>,
+              <m>A = \bbm -4 \amp 1 \\    -1 \amp -2 \ebm </m>,
               <m>B=\bbm -2\amp -10\amp 19\\    13\amp 2\amp -2 \ebm </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm -1 \amp 2 \amp -4\    -6\amp -2\amp 3  \ebm </m>
+              <m>X=\bbm -1 \amp 2 \amp -4\\   -6\amp -2\amp 3  \ebm </m>
             </p>
           </answer>
         </exercise>
@@ -490,13 +490,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm 1 \amp -3 \    -3 \amp 6 \ebm </m>,
+              <m>A = \bbm 1 \amp -3 \\    -3 \amp 6 \ebm </m>,
               <m>B=\bbm 12\amp -10\\    -27 \amp  27  \ebm </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm 3 \amp -7\    -3 \amp 1  \ebm </m>
+              <m>X=\bbm 3 \amp -7\\    -3 \amp 1  \ebm </m>
             </p>
           </answer>
         </exercise>
@@ -504,13 +504,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm -1 \amp -2 \    -2 \amp -3 \ebm </m>,
+              <m>A = \bbm -1 \amp -2 \\    -2 \amp -3 \ebm </m>,
               <m>B=\bbm 13\amp 4\amp 7\\    22\amp 5\amp 12  \ebm </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm -5 \amp 2 \amp -3\    -4\amp -3\amp -2  \ebm </m>
+              <m>X=\bbm -5 \amp 2 \amp -3\\    -4\amp -3\amp -2  \ebm </m>
             </p>
           </answer>
         </exercise>
@@ -518,13 +518,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm 3 \amp 3 \    6 \amp 4 \ebm </m>,
+              <m>A = \bbm 3 \amp 3 \\    6 \amp 4 \ebm </m>,
               <m>B=\bbm 15\amp -39\\    16\amp -66  \ebm </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm -2 \amp -7\    7 \amp -6  \ebm </m>
+              <m>X=\bbm -2 \amp -7\\    7 \amp -6  \ebm </m>
             </p>
           </answer>
         </exercise>
@@ -532,13 +532,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm 4 \amp -1 \    -7 \amp 5 \ebm </m>,
+              <m>A = \bbm 4 \amp -1 \\    -7 \amp 5 \ebm </m>,
               <m>B=\bbm 8 \amp  -31\\    -27 \amp  38  \ebm </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm 1  \amp  -9\    -4  \amp  -5  \ebm </m>
+              <m>X=\bbm 1  \amp  -9\\    -4  \amp  -5  \ebm </m>
             </p>
           </answer>
         </exercise>
@@ -546,13 +546,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm 2 \amp 2 \    3 \amp 1  \ebm </m>,
+              <m>A = \bbm 2 \amp 2 \\    3 \amp 1  \ebm </m>,
               <m>B=I_2 </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm -1/4  \amp  1/2 \    3/4  \amp  -1/2  \ebm </m>
+              <m>X=\bbm -1/4  \amp  1/2 \\    3/4  \amp  -1/2  \ebm </m>
             </p>
           </answer>
         </exercise>
@@ -560,13 +560,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm -2 \amp 0 \amp 4 \    -5\amp -4\amp 5 \\    -3\amp 5\amp -3\ebm </m>,
+              <m>A = \bbm -2 \amp 0 \amp 4 \\    -5\amp -4\amp 5 \\    -3\amp 5\amp -3\ebm </m>,
               <m>B=\bbm -18\amp 2\amp -14\\    -38\amp 18\amp -13 \\    10\amp 2\amp -18  \ebm </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm 3 \amp -3 \amp 3\    2\amp -2\amp -3 \\    -3\amp -1\amp -2  \ebm </m>
+              <m>X=\bbm 3 \amp -3 \amp 3\\    2\amp -2\amp -3 \\    -3\amp -1\amp -2  \ebm </m>
             </p>
           </answer>
         </exercise>
@@ -574,13 +574,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm -5 \amp -4 \amp -1 \    8\amp -2\amp -3 \\    6\amp 1\amp -8\ebm </m>,
+              <m>A = \bbm -5 \amp -4 \amp -1 \\    8\amp -2\amp -3 \\    6\amp 1\amp -8\ebm </m>,
               <m>B=\bbm -21\amp -8\amp -19\\    65\amp -11\amp -10 \\    75 \amp  -51\amp 33  \ebm </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm 6 \amp 1 \amp -1\    -1\amp -1\amp 7 \\    -5\amp 7\amp -4  \ebm </m>
+              <m>X=\bbm 6 \amp 1 \amp -1\\    -1\amp -1\amp 7 \\    -5\amp 7\amp -4  \ebm </m>
             </p>
           </answer>
         </exercise>
@@ -588,13 +588,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm -3 \amp 3 \amp -2 \    1\amp -3\amp 2 \\    -1\amp -1\amp 2\ebm </m>,
+              <m>A = \bbm -3 \amp 3 \amp -2 \\    1\amp -3\amp 2 \\    -1\amp -1\amp 2\ebm </m>,
               <m>B=I_3 </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm -1/2  \amp  -1/2  \amp  0\    -1/2 \amp  -1 \amp  1/2 \\    -1/2 \amp  -3/4 \amp  3/4  \ebm </m>
+              <m>X=\bbm -1/2  \amp  -1/2  \amp  0\\    -1/2 \amp  -1 \amp  1/2 \\    -1/2 \amp  -3/4 \amp  3/4  \ebm </m>
             </p>
           </answer>
         </exercise>
@@ -602,13 +602,13 @@
         <exercise>
           <statement>
             <p>
-              <m>A = \bbm 1 \amp 0 \    3 \amp -1  \ebm </m>,
+              <m>A = \bbm 1 \amp 0 \\   3 \amp -1  \ebm </m>,
               <m>B=I_2 </m>
             </p>
           </statement>
           <answer>
             <p>
-              <m>X=\bbm 1 \amp 0 \    3 \amp -1  \ebm </m>
+              <m>X=\bbm 1 \amp 0 \\    3 \amp -1  \ebm </m>
             </p>
           </answer>
         </exercise>

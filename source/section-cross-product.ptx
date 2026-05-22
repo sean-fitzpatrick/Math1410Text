@@ -56,9 +56,9 @@
           The <term>cross product</term> of <m>\vec u</m> and <m>\vec v</m>,
           denoted <m>\crossp uv</m>,
           is the vector <idx><h>vectors</h><h>cross product</h></idx><idx><h>cross product</h><h>definition</h></idx>
-          <me>
+          <md>
             \crossp uv = \bbm  u_2v_3-u_3v_2\\-(u_1v_3-u_3v_1)\\u_1v_2-u_2v_1\ebm
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
@@ -89,9 +89,9 @@
       <solution>
         <p>
           Using <xref ref="def_cross_product"/>, we have
-          <me>
+          <md>
             \crossp uv = \bbm  (-1)5-(4)2\\-\big((2)5-(4)3\big)\\ (2)2-(-1)3\ebm = \bbm  -13\\2\\7\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -101,12 +101,12 @@
 
         <p>
           We test whether or not <m>\crossp uv</m> is orthogonal to <m>\vec u</m> and <m>\vec v</m> using the dot product:
-          <me>
+          <md>
             \big(\crossp uv\big) \cdot \vec u = \bbm  -13\\2\\7\ebm \cdot \bbm  2\\-1\\4\ebm = 0
-          </me>,
-          <me>
+          </md>,
+          <md>
             \big(\crossp uv\big) \cdot \vec v = \bbm  -13\\2\\7\ebm \cdot \bbm  3\\2\\5 \ebm = 0
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -129,9 +129,9 @@
     <p>
       Consider a rectangular array <m>\bbm a \amp b\\c \amp d\ebm</m> of four real numbers <m>a,b,c</m>, and <m>d</m>.
       A <m>2\times 2</m> determinant takes any such array and assigns the number <m>ad-bc</m>. This is commonly denoted as follows:
-      <me>
+      <md>
         \bvm a \amp b\\c \amp d\evm = ad-bc
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -160,9 +160,9 @@
       </mdn>,
       as before. Now, this might not seem like much of an improvement over the previous formula,
       so we take things one step further. First, we form a <m>3\times 3</m> array as shown below.
-      <me>
+      <md>
         \bvm \veci \amp \vecj \amp \veck\\u_1 \amp  u_2 \amp u_3\\v_1\amp v_2\amp v_3\evm
-      </me>.
+      </md>.
       The first row comprises the standard unit vectors <m>\vec i</m>, <m>\vec j</m>, and <m>\vec k</m>.
       The second and third rows are the vectors <m>\vec u</m> and <m>\vec v</m>, respectively.
       Next, we <em>expand</em> our <m>3\times 3</m> array as a vector,
@@ -172,9 +172,9 @@
 
     <p>
       For example, if we use <m>\vec u</m> and <m>\vec v</m> from <xref ref="ex_crossp1"/>, we obtain the array
-      <me>
+      <md>
         \bvm \veci \amp \vecj \amp \veck\\  2\amp -1\amp 4\\3\amp 2\amp 5\evm
-      </me>.
+      </md>.
       The expansion process used to obtain the coefficients of <m>\veci, \vecj, \veck</m> looks like the following:
     </p>
 
@@ -416,9 +416,9 @@
         <p>
           Let <m>\vec u</m> and <m>\vec v</m> be nonzero vectors in <m>\mathbb{R}^3</m>.
           Then
-          <me>
+          <md>
             \norm{\crossp uv} = \vnorm u\, \vnorm v \sin(\theta)
-          </me>,
+          </md>,
           where <m>\theta</m>, <m>0\leq \theta \leq \pi</m>,
           is the angle between <m>\vecu</m> and <m>\vecv</m>.
               <idx><h>vectors</h><h>cross product</h></idx>
@@ -498,9 +498,9 @@
         <p>
           Numerically, they seem equal.
           Using a right triangle, one can show that
-          <me>
+          <md>
             \sin\left(\cos^{-1}\left(\frac{11}{\sqrt{46}\sqrt{6}}\right)\right) = \frac{\sqrt{155}}{\sqrt{46}\sqrt{6}}
-          </me>,
+          </md>,
           which allows us to verify the theorem exactly.
         </p>
       </solution>
@@ -631,9 +631,9 @@
         as illustrated in <xref ref="fig_crossp_parallelogramb"/>.
         Trigonometry tells us that <m>h = \vnorm u \sin(\theta)</m>,
         hence the area of the parallelogram is
-        <men xml:id="eq_crossp1">
+        <md number="yes" xml:id="eq_crossp1">
           A = \vnorm u\,\vnorm v\sin(\theta) = \norm{\crossp uv}
-        </men>,
+        </md>,
         where the second equality comes from <xref ref="thm_cross_product"/>.
       </p>
 
@@ -867,9 +867,9 @@
                   we need to show that the opposite sides are parallel.
                   We can quickly show that <m>\overrightarrow{AB} =\overrightarrow{DC} = \bbm  1\\2\\1\ebm</m> and <m>\overrightarrow{BC} = \overrightarrow{AD} = \bbm  2\\2\\1\ebm</m>.
                   We find the area by computing the magnitude of the cross product of <m>\overrightarrow{AB}</m> and <m>\overrightarrow{BC}</m>:
-                  <me>
+                  <md>
                     \overrightarrow{AB} \times \overrightarrow{BC} = \bbm  0\\1\\-2\ebm  \Rightarrow  \norm{\overrightarrow{AB}\times\overrightarrow{BC}} = \sqrt{5} \approx 2.236
-                  </me>.
+                  </md>.
                 </p>
               </li>
             </ol>
@@ -939,9 +939,9 @@
             As in the previous example,
             we will rewrite these vectors with a third component of 0 so that we can apply the cross product.
             The area of the triangle is
-            <me>
+            <md>
               \frac12\norm{\overrightarrow{AB}\times\overrightarrow{AC}} = \frac12\norm{\bbm  1\\1\\0\ebm \times \bbm  2\\-1\\0\ebm} = \frac12\norm{\bbm  0\\0\\-3\ebm} = \frac32
-            </me>.
+            </md>.
           </p>
 
           <p>
@@ -1077,9 +1077,9 @@
       <p>
         Thus the volume of a parallelepiped defined by vectors <m>\vecu</m>,
         <m>\vecv</m> and <m>\vec w</m> is
-        <men xml:id="eq_crossp2">
+        <md number="yes" xml:id="eq_crossp2">
           V = \abs{\vecu\cdot (\crossp vw)}
-        </men>.
+        </md>.
       </p>
 
       <p>
@@ -1088,9 +1088,9 @@
         Applying the identities given in the theorem shows that we can apply the Triple Scalar Product in any <q>order</q>
         we choose to find the volume.
         That is,
-        <me>
+        <md>
           V = \abs{\vecu\cdot(\crossp vw)} = \abs{\vec u\cdot (\crossp wv)} = \abs{(\crossp uv)\cdot \vecw}, \text{ etc. }
-        </me>
+        </md>
       </p>
 
       <example xml:id="ex_crossp6">
@@ -1106,9 +1106,9 @@
             We apply <xref ref="eq_crossp2">Equation</xref>.
             We first find <m>\crossp vw =\bbm  1\\1\\-1\ebm</m>.
             Then
-            <me>
+            <md>
               \abs{\vec u\cdot(\crossp vw)} = \abs{\bbm  1\\1\\0\ebm \cdot \bbm 1\\1\\-1\ebm} = 2
-            </me>.
+            </md>.
           </p>
 
           <p>
@@ -1222,14 +1222,14 @@
 
       <p>
         Compare this with our determinant formula for computing the cross product,
-        <me>
+        <md>
           \crossp vw = \bvm \veci  \amp  \vecj  \amp  \veck\\ v_1 \amp  v_2 \amp  v_3\\ w_1 \amp  w_2 \amp  w_3\evm = \bvm v_2 \amp  v_3\\w_2\amp w_3\evm\veci - \bvm v_1 \amp  v_3\\ w_1 \amp  w_3\evm\vecj + \bvm v_1 \amp  v_2\\ w_1 \amp  w_2\evm\veck
-        </me>.
+        </md>.
         If we replace the unit vectors <m>\veci, \vecj, \veck</m> in the above equation with the components of <m>\vec{u}</m>,
         we arrive at our first instance of a <m>3\times 3</m> <term>determinant</term>, along with a method for computing such an object:
-        <me>
+        <md>
           \bvm u_1  \amp  u_2  \amp  u_3\\ v_1 \amp  v_2 \amp  v_3\\ w_1 \amp  w_2 \amp  w_3\evm = u_1 \bvm v_2 \amp  v_3\\ w_2 \amp  w_3\evm - u_2\bvm v_1 \amp  v_3\\ w_1 \amp  w_3\evm + u_3\bvm v_1 \amp  v_2\\ w_1 \amp  w_2\evm = \vec u\boldsymbol{\cdot}(\crossp vw)
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -1259,9 +1259,9 @@
         While a full understanding of torque is beyond the purposes of this book,
         when a force <m>\vec F</m> is applied to a lever arm
         <m>\vec \ell</m>, the resulting torque is
-        <men xml:id="eq_crossp3">
+        <md number="yes" xml:id="eq_crossp3">
           \vec \tau = \crossp \ell F
-        </men>.
+        </md>.
       </p>
 
       <example xml:id="ex_crossp7">

@@ -4,31 +4,31 @@
 
   <p>
     Once again we visit the old algebra equation, <m>ax=b</m>. How do we solve for <m>x</m>? We know that, as long as <m>a\neq 0</m>,
-    <me>
+    <md>
       x = \frac{b}{a}, \ \text{or, stated in another way,} \ x = a^{-1}b
-    </me>.
+    </md>.
   </p>
 
   <p>
     What is <m>a^{-1}</m>? It is the number that, when multiplied by <m>a</m>, returns 1. That is,
-    <me>
+    <md>
       a^{-1}a = 1
-    </me>.
+    </md>.
   </p>
 
   <p>
     Let us now think in terms of matrices.
     We have learned of the identity matrix <m>I</m> that <q>acts like the number 1.</q>
     That is, if <m>A</m> is a square matrix, then
-    <me>
+    <md>
       IA = AI = A
-    </me>.
+    </md>.
     If we had a matrix, which we'll call <m>A^{-1}</m>, where <m>A^{-1}A=I</m>,
     then by analogy to our algebra example above it seems like we might be able to solve the linear system
     <m>A\vx = \vb</m> for <m>\vx</m> by multiplying both sides of the equation by <m>A^{-1}</m>. That is, perhaps
-    <me>
+    <md>
       \vx = A^{-1}\vb
-    </me>.
+    </md>.
     There is no guarantee that such a matrix is going to exist for an arbitrary <m>n\times n</m> matrix <m>A</m>,
     but if it does, we say that <m>A</m> is <em>invertible</em>.
   </p>
@@ -41,9 +41,9 @@
         <idx><h>inverse</h><h>definition</h></idx>
 
         We say that an <m>n\times n</m> matrix <m>A</m> is <term>invertible</term> if there exists a matrix <m>X</m> such that
-        <me>
+        <md>
           AX = XA = I_n
-        </me>.
+        </md>.
         When this is the case, we call the matrix <m>X</m> the <term>inverse</term> of <m>A</m> and write <m>X=A^{-1}</m>.
       </p>
     </statement>
@@ -65,9 +65,9 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 2 \amp 1\\1 \amp 1\ebm
-        </me>.
+        </md>.
         Find a matrix <m>X</m> such that <m>AX = I</m>.
       </p>
     </statement>
@@ -75,16 +75,16 @@
       <p>
         We know how to solve this from the previous section: we form the proper augmented matrix,
         put it into reduced row echelon form and interpret the results.
-        <me>
+        <md>
           \bbm 2 \amp 1 \amp 1\amp 0\\1\amp 1\amp 0\amp 1\ebm \quad \arref \quad \bbm 1\amp 0\amp 1\amp -1\\0\amp 1\amp -1\amp 2\ebm
-        </me>
+        </md>
       </p>
 
       <p>
         We read from our matrix that
-        <me>
+        <md>
           X = \bbm 1 \amp -1\\-1 \amp 2\ebm
-        </me>.
+        </md>.
         Let's check our work:
         <md>
           <mrow>AX \amp  = \bbm 2\amp 1\\1\amp 1\ebm\bbm 1\amp -1\\-1\amp 2\ebm</mrow>
@@ -225,9 +225,9 @@
       <p>
         Using <xref ref="thm-inverse_unique"/>, we can quickly kill two birds with one stone.
         Using properties of exponents (and the fact that <m>5=1+4</m>), we have
-        <me>
+        <md>
           A^5 = A\cdot (A\cdot A\cdot A\cdot A) = A(A^4) = I_n
-        </me>.
+        </md>.
         Thus, if we set <m>X=A^4</m>, then <m>AX = I_n</m>,
         so by Theorems <xref ref="thm-inverse1"/> and <xref ref="thm-inverse_unique"/>,
         <m>A</m> is invertible, and <m>A^{-1} = A^4</m>.
@@ -256,13 +256,13 @@
       <p>
         By solving the equation <m>AX = I</m> for <m>X</m> will give us the inverse of <m>A</m>.
         Forming the appropriate augmented matrix and finding its reduced row echelon form gives us
-        <me>
+        <md>
           \bbm 1 \amp 2 \amp 1\amp 0\\2\amp 4\amp 0\amp 1\ebm \quad \arref \quad \bbm 1\amp 2\amp 0\amp 1/2\\0\amp 0\amp 1\amp -1/2\ebm
-        </me>
+        </md>
         Yikes! We were expecting to find that the reduced row echelon form of this matrix would look like
-        <me>
+        <md>
           \bbm I  \amp  A^{-1}\ebm
-        </me>.
+        </md>.
         However, we don't have the identity on the left hand side. Our conclusion: <m>A</m> is not invertible.
       </p>
     </solution>
@@ -367,13 +367,13 @@
       <idx><h>matrix</h><h>inverse</h></idx>
 
       Let <m>A</m> be an <m>n \times n</m> matrix. To find <m>A^{-1}</m>, put the augmented matrix
-      <me>
+      <md>
         \bbm A  \amp  I_n \ebm
-      </me>
+      </md>
       into reduced row echelon form. If the result is of the form
-      <me>
+      <md>
         \bbm I_n  \amp  X \ebm,
-      </me>
+      </md>
       then <m>A^{-1} = X</m>. If not, (that is, if the first <m>n</m> columns of the reduced row echelon form are not <m>I_n</m>),
       then <m>A</m> is not invertible.
     </p>
@@ -394,16 +394,16 @@
     <solution>
       <p>
         We'll try to solve <m>AX = I</m> for <m>X</m> and see what happens.
-        <me>
+        <md>
           \bbm 1 \amp 1 \amp -1\amp 1\amp 0\amp 0\\1\amp -1\amp 1\amp 0\amp 1\amp 0\\1\amp 2\amp 3\amp 0\amp 0\amp 1\ebm \quad \arref\quad \bbm 1\amp 0\amp 0\amp 1/2\amp 1/2\amp 0\\0\amp 1\amp 0\amp 1/5\amp -2/5\amp 1/5\\0\amp 0\amp 1\amp -3/10\amp 1/10\amp 1/5\ebm
-        </me>
+        </md>
       </p>
 
       <p>
         We have a solution, so
-        <me>
+        <md>
           A^{-1} = \bbm 1/2 \amp 1/2 \amp 0\\1/5\amp -2/5\amp 1/5\\-3/10\amp 1/10\amp 1/5\ebm
-        </me>.
+        </md>.
         Multiply <m>AA^{-1}</m> to verify that it is indeed the inverse of <m>A</m>.
       </p>
     </solution>
@@ -420,26 +420,26 @@
     <statement>
       <p>
         Let
-        <me>
+        <md>
           A = \bbm a \amp b\\c \amp d\ebm
-        </me>.
+        </md>.
         Then <m>A</m> is invertible if and only if <m>ad-bc\neq 0</m>.
       </p>
 
       <p>
         If <m>ad-bc \neq 0</m>, then
-        <me>
+        <md>
           A^{-1} = \frac{1}{ad-bc}\bbm d \amp -b\\-c \amp a\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
   </theorem>
 
   <p>
     We can't divide by 0, so if <m>ad-bc=0</m>, we don't have an inverse. Recall <xref ref="ex_inverse_2"/>, where
-    <me>
+    <md>
       A = \bbm 1 \amp 2\\2 \amp 4\ebm
-    </me>.
+    </md>.
     Here, <m>ad-bc = 1(4) - 2(2) = 0</m>, which is why <m>A</m> didn't have an inverse.
   </p>
 
@@ -450,9 +450,9 @@
   <aside vshift="0">
     <p>
       We don't prove <xref ref="thm-2by2"/>here, but it really isn't hard to do. Put the matrix
-      <me>
+      <md>
         \bbm a \amp b \amp 1\amp 0\\c\amp d\amp 0\amp 1\ebm
-      </me>
+      </md>
       into reduced row echelon form and you'll discover the result of the theorem.
       Alternatively, multiply <m>A</m> by what we propose is the inverse and see that we indeed get <m>I</m>.
       It turns out that <xref ref="thm-2by2"/> is a special case of a general formula for the inverse of a matrix in terms of
@@ -468,9 +468,9 @@
 
       <p>
         Use <xref ref="thm-2by2"/> to find the inverse of
-        <me>
+        <md>
           A = \bbm 3  \amp  2\\-1  \amp  9\ebm
-        </me>
+        </md>
         if it exists.
       </p>
     </statement>
@@ -485,9 +485,9 @@
 
       <p>
         We can leave our answer in this form, or we could <q>simplify</q> it as
-        <me>
+        <md>
           A^{-1} = \frac{1}{29}\bbm 9 \amp -2\\1 \amp 3\ebm = \bbm 9/29 \amp  -2/29\\1/29 \amp  3/29\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
@@ -538,9 +538,9 @@
 
         Let <m>A</m> be an invertible <m>n\times n</m> matrix, and let  be any <m>n\times 1</m> column vector.
         Then the equation <m>A\vx = \vb</m> has exactly one solution, namely
-        <me>
+        <md>
           \vx = A^{-1}\vb
-        </me>.
+        </md>.
       </p>
     </statement>
   </theorem>
@@ -569,10 +569,10 @@
 
       <p>
         Solve <m>A\vx = \vb</m> by computing <m>\vx = A^{-1}\vb</m>, where
-        <me>
+        <md>
         A = \bbm 1\amp 0\amp -3\\  -3\amp -4\amp 10
         \\  4\amp -5\amp -11\ebm\ \text{ and }\ \vb = \bbm -15\\   57 \\  -46\ebm
-        </me>.
+        </md>.
       </p>
 
       <aside vshift="-2">
@@ -588,11 +588,11 @@
     <solution>
       <p>
         Without showing our steps, we compute
-        <me>
+        <md>
         A^{-1} = \bbm 94\amp 15\amp -12\\
                       7\amp 1\amp -1\\
                     31\amp 5\amp -4\ebm
-        </me>.
+        </md>.
         We then find the solution to <m>A\vx = \vb</m> by computing <m>A^{-1}\vb</m>:
         <md>
           <mrow>\vx \amp =A^{-1}\vb</mrow>
@@ -605,10 +605,10 @@
 
       <p>
         We can easily check our answer:
-        <me>
+        <md>
         \bbm 1\amp 0\amp -3\\  -3\amp -4\amp 10
         \\  4\amp -5\amp -11\ebm\bbm -3\\   -2\\    4\ebm = \bbm -15\\   57 \\  -46\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>

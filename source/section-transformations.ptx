@@ -30,9 +30,9 @@
 
   <p>
     Our work from the previous section allows us to find the matrix quickly. By looking at the picture, it is easy to see that <m>\veone</m> is moved to <m>\bbm 2\\0\ebm</m> and <m>\vetwo</m> is moved to <m>\bbm 1\\1\ebm</m>. Therefore, the transformation matrix should be
-    <me>
+    <md>
         A = \bbm 2 \amp 1\\0 \amp 1\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -77,9 +77,9 @@
   <p>
     When we defined <m>f(x) = x^2</m> above, we let the reader assume that the input was indeed a number.
     If we wanted to be complete, we should have stated
-    <me>
+    <md>
         f:\R\to\R \quad \text{ where } \quad f(x)=x^2
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -90,9 +90,9 @@
   <p>
     To define a transformation where a 2D vector is transformed into another 2D vector
     via multiplication by a <m>2\times 2</m> matrix <m>A</m>, we should write
-    <me>
+    <md>
         T:\R^{2}\to\R^{2} \quad \text{ where } \quad T(\vx) = A\vx
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -113,16 +113,16 @@
 
   <p>
     Consider a quick example:
-    <me>
+    <md>
         T:\R^{2}\to\R^{3} \quad \text{ where } \quad T\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1^2\\2x_1\\x_1x_2\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
     Notice that this takes 2D vectors as input and returns 3D vectors as output. For instance,
-    <me>
+    <md>
         T\left(\bbm 3\\-2\ebm\right) = \bbm 9\\6\\-6\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -167,9 +167,9 @@
     <statement>
       <p>
         Given that <m>T:\R_3\to \R_2</m> is a linear transformation such that
-        <me>
+        <md>
             T(\vec{u}) = \bbm -1\\2\ebm, T(\vec{v}) = \bbm 3\\0\ebm, \text{ and } T(\vec{w}) = \bbm 1\\-4\ebm
-        </me>,
+        </md>,
         compute the value of <m>T(2\vec{u}-3\vec{v}+\vec{w})</m>.
       </p>
     </statement>
@@ -190,9 +190,9 @@
     <statement>
       <p>
         Suppose <m>T:\R^2\to \R^3</m> is a linear transformation such that
-        <me>
+        <md>
             T\left(\bbm 2\\1\ebm\right) = \bbm 2\\-1\\3\ebm \text{ and } T\left(\bbm -1\\3\ebm\right) = \bbm 0\\4\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -205,19 +205,19 @@
         since we first need to figure out how to write the vector <m>\bbm 1\\11\ebm</m>
         as a linear combination of the vectors <m>\bbm 2\\1\ebm</m> and <m>\bbm -1\\3\ebm</m>.
         That is, we need to find scalars <m>a</m> and <m>b</m> such that
-        <me>
+        <md>
             a\bbm 2\\1\ebm+b\bbm -1\\3\ebm = \bbm 1\\11\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         Writing the left-hand side as the single vector <m>\bbm 2a-b\\a+3b\ebm</m>, we see that this amounts to solving the pair of equations
-        <me>
+        <md>
           \begin{array}{ccccc}
           2a\amp -\amp b\amp =\amp 1\\
           a\amp +\amp 3b\amp =\amp 11
           \end{array}
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -251,17 +251,17 @@
     <statement>
       <p>
         Determine whether or not the transformation <m>T:\R^{2}\to\R^{3}</m> is a linear transformation, where
-        <me>
+        <md>
             T\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1^2\\2x_1\\x_1x_2\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         We'll arbitrarily pick two vectors <m>\vx</m> and <m>\vy</m>:
-        <me>
+        <md>
           \vx = \bbm 3\\-2\ebm \quad \text{ and } \quad \vy = \bbm 1\\5\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -270,9 +270,9 @@
 
       <p>
         Is <m>T(\vx+\vy) = T(\vx)+T(\vy)</m>? First, compute <m>\vx+\vy</m>:
-        <me>
+        <md>
           \vx+\vy = \bbm 3\\-2\ebm + \bbm 1\\5\ebm = \bbm 4\\3\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -286,9 +286,9 @@
 
       <p>
         Is <m>T(\vx+\vy) = T(\vx)+T(\vy)</m>?
-        <me>
+        <md>
           \bbm 9\\6\\-6\ebm+\bbm 1\\2\\5\ebm \overset{!}{\neq} \bbm 16\\8\\12\ebm
-        </me>.
+        </md>.
         Therefore, <m>T</m> is <term>not</term> a linear transformation.
       </p>
     </solution>
@@ -314,18 +314,18 @@
     <statement>
       <p>
         Determine whether or not the transformation <m>T:\R^{2}\to\R^{2}</m> is a linear transformation, where <m>T(\vx) = A\vx</m> and
-        <me>
+        <md>
             A = \bbm 1 \amp 2\\3 \amp 4\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         Let's start by again choosing a couple of vectors and seeing what happens.
         Let's choose the same <m>\vx</m> and <m>\vy</m> from <xref ref="ex_lin_trans_1"/>.
-        <me>
+        <md>
           \vx = \bbm 3\\-2\ebm \quad \text{ and } \quad \vy = \bbm 1\\5\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -334,9 +334,9 @@
 
       <p>
         Is <m>T(\vx+\vy) = T(\vx)+T(\vy)</m>? Recall:
-        <me>
+        <md>
           \vx+\vy = \bbm 4\\3\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -350,9 +350,9 @@
 
       <p>
         Is <m>T(\vx+\vy) = T(\vx)+T(\vy)</m>?
-        <me>
+        <md>
             \bbm -1\\1\ebm+\bbm 11\\23\ebm = \bbm 10\\24\ebm \quad !
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -377,9 +377,9 @@
 
       <p>
         Consider <m>T(\vx+\vy)</m>. By the definition of <m>T</m>, we have
-        <me>
+        <md>
             T(\vx+\vy) = A(\vx+\vy)
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -389,9 +389,9 @@
         So <m>A(\vx+\vy) = A\vx + A\vy</m>.
         Recognize now that this last part is just <m>T(\vx) + T(\vy)</m>! We repeat the above steps, all together:
         <md>
-          <mrow>T(\vx+\vy)	\amp = A(\vx+\vy) \quad \text{ (by the definition of } T \text{ in this example)}</mrow>
-          <mrow> \amp = A\vx + A\vy \quad \text{ (by the Distributive Property)}</mrow>
-          <mrow> \amp = T(\vx) + T(\vy) \quad \text{ (again, by the definition of } T)</mrow>
+          <mrow>T(\vx+\vy)	\amp = A(\vx+\vy) \amp \amp \text{ (by the definition of } T \text{ in this example)}</mrow>
+          <mrow> \amp = A\vx + A\vy \amp \amp \text{ (by the Distributive Property)}</mrow>
+          <mrow> \amp = T(\vx) + T(\vy) \amp \amp \text{ (again, by the definition of } T)</mrow>
         </md>.
       </p>
 
@@ -402,9 +402,9 @@
       <p>
         The second part is satisfied in a similar fashion. Let <m>k</m> be a scalar, and consider:
         <md>
-          <mrow>T(k\vx)	\amp =	A(k\vx) \quad \text{ (by the definition of } T \text{ in this example)}</mrow>
-          <mrow> \amp =	kA\vx \quad \text{ (by <xref ref="thm-matrix_multiplication"/> part <xref ref="thm-mat_mult_scalar"/>)}</mrow>
-          <mrow> \amp = kT(\vx) \quad \text{ (again, by the definition of } T)</mrow>
+          <mrow>T(k\vx)	\amp =	A(k\vx) \amp \amp \text{ (by the definition of } T \text{ in this example)}</mrow>
+          <mrow> \amp =	kA\vx \amp \amp \text{ (by } <xref ref="thm-matrix_multiplication"/> \text{ part } <xref ref="thm-mat_mult_scalar"/>\text{)}</mrow>
+          <mrow> \amp = kT(\vx) \amp \amp \text{ (again, by the definition of } T)</mrow>
         </md>
       </p>
 
@@ -514,9 +514,9 @@
   <p>
     This is a quick way to see that the translation transformation fails to be linear.
     By shifting the unit square to the right one unit, the corner at the point <m>(0,0)</m> was sent to the point <m>(1,0)</m>, <ie/>,
-    <me>
+    <md>
         \text{the vector } \bbm 0\\0\ebm \text{ was sent to the vector } \bbm 1\\0\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -529,9 +529,9 @@
       <idx><h>linear transformation</h><h>and zero</h></idx>
 
       Let <m>T:\R^{n}\to\R^{m}</m> be a linear transformation. Then:
-      <me>
+      <md>
           T(\zero_n) = \zero_m
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -595,16 +595,16 @@
 
     <p>
       We've already seen these vectors in the previous section. In<m>\R^{2}</m>, we identified
-      <me>
+      <md>
           \veone = \bbm 1\\0\ebm \quad \text{ and } \quad \vetwo = \bbm 0\\1\ebm
-      </me>.
+      </md>.
     </p>
 
     <p>
       In<m>\R^{4}</m>, there are 4 standard unit vectors:
-      <me>
+      <md>
           \veone = \bbm 1\\0\\0\\0\ebm, \quad \vetwo = \bbm 0\\1\\0\\0\ebm, \quad \vethree = \bbm 0\\0\\1\\0\ebm, \quad \text{and} \quad \ven{4} = \bbm 0\\0\\0\\1\ebm
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -612,9 +612,9 @@
       There, we practised looking at the transformed unit square and deducing the standard transformation matrix <m>A</m>.
       We did this by making the first column of <m>A</m> the vector where <m>\veone</m>
       ended up and making the second column of <m>A</m> the vector where <m>\vetwo</m> ended up. One could represent this with:
-      <me>
+      <md>
           A = \bbm T(\veone)  \amp  T(\vetwo) \ebm = [\, T\, ].
-      </me>
+      </md>
     </p>
 
     <p>
@@ -625,9 +625,9 @@
       The same holds true in general. Given a linear transformation <m>T:\R^{n}\to\R^{m}</m>,
       the standard matrix of <m>T</m> is the matrix whose <m>i</m>th column is the vector where <m>\vei</m> ends up.
       To see that this is the case, note that any vector <m>\vec x\in\R^n</m> can be written as
-      <me>
+      <md>
           \vec x = x_1\veone + x_2\vetwo + \cdots + x_n\ven{n},
-      </me>
+      </md>
       and by <xref ref="def-lin_trans"/>, we have
       <md>
         <mrow>T(\vec x) \amp  = T(x_1\veone + x_2\vetwo + \cdots + x_n\ven{n})</mrow>
@@ -646,9 +646,9 @@
         <p>
           <idx><h>linear transformation</h><h>standard matrix of</h></idx>
           Let <m>T:\R^{n}\to\R^{m}</m> be a linear transformation. Then <m>[\, T \, ]</m> is the <m>m\times n</m> matrix:
-          <me>
+          <md>
               [\, T \, ] = \bbm T(\veone)  \amp  T(\vetwo) \amp  \cdots \amp  T(\ven{n}) \ebm
-          </me>.
+          </md>.
         </p>
       </statement>
     </theorem>
@@ -662,9 +662,9 @@
       <statement>
         <p>
           Define <m>T:\R^{3}\to\R^{4}</m> to be the linear transformation where
-          <me>
+          <md>
               T\left(\bbm x_1\\x_2\\x_3\ebm\right) = \bbm x_1+x_2\\ 3x_1-x_3 \\ 2x_2+5x_3 \\ 4x_1+3x_2+2x_3\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -675,9 +675,9 @@
         <p>
           <m>T</m> takes vectors from<m>\R^{3}</m> into<m>\R^{4}</m>,
           so <m>[\, T \, ]</m> is going to be a <m>4\times 3</m> matrix. Note that
-          <me>
+          <md>
             \veone = \bbm 1\\0\\0\ebm, \quad \vetwo = \bbm 0\\1\\0\ebm \quad \text{ and } \quad \vethree = \bbm 0\\0\\1\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -692,32 +692,32 @@
 
         <p>
           Thus
-          <me>
-              \TT =A = \bbm 1 \amp 1 \amp 0 \\ 3 \amp  0\amp -1\\ 0\amp 2\amp 5\\ 4\amp 3\amp 2\ebm
-          </me>.
+          <md>
+            \TT =A = \bbm 1 \amp 1 \amp 0 \\ 3 \amp  0\amp -1\\ 0\amp 2\amp 5\\ 4\amp 3\amp 2\ebm
+          </md>.
         </p>
 
 
         <p>
           Let's check this. Consider the vector
-          <me>
-              \vx = \bbm 1\\2\\3\ebm
-          </me>.
+          <md>
+            \vx = \bbm 1\\2\\3\ebm
+          </md>.
         </p>
 
         <p>
           Strictly from the original definition, we can compute that
-          <me>
+          <md>
               T(\vx) = T\left(\bbm 1\\2\\3\ebm\right) = \bbm 1+2\\3-3\\4+15\\4+6+6 \ebm = \bbm 3\\0\\19\\16\ebm
-          </me>.
+          </md>.
         </p>
 
 
         <p>
           Now compute <m>T(\vx)</m> by computing <m>\TT\vx = A\vx</m>.
-          <me>
+          <md>
             A\vx = \bbm 1 \amp 1 \amp 0 \\ 3 \amp  0\amp -1\\ 0\amp 2\amp 5\\ 4\amp 3\amp 2\ebm\bbm 1\\2\\3\ebm = \bbm 3\\0\\19\\16\ebm
-          </me>.
+          </md>.
           They match! (Of course they do. That was the whole point.)
         </p>
       </solution>
@@ -762,16 +762,16 @@
           (<ie/>, the number of singles, doubles, <etc/>) and he wants two numbers as output
           (<ie/>, number of hits and bases). Thus he wants a transformation
           <m>T:\R^{4}\to\R^{2}</m> where each vector in <m>\R^{4}</m> can be interpreted as
-          <me>
-              \bbm \text{\#\ of singles} \\\text{\#\ of doubles} \\ \text{\#\ of triples} \\ \text{\#\ of home runs} \ebm,
-          </me>
+          <md>
+              \bbm \text{\# of singles} \\\text{\# of doubles} \\ \text{\# of triples} \\ \text{\# of home runs} \ebm,
+          </md>
         </p>
 
         <p>
           and each vector in <m>\R^{2}</m> can be interpreted as
-          <me>
-              \bbm \text{\#\ of hits} \\\text{\#\ of bases} \ebm
-          </me>.
+          <md>
+              \bbm \text{\# of hits} \\ \text{\# of bases} \ebm
+          </md>.
         </p>
 
         <p>
@@ -788,16 +788,16 @@
 
         <p>
           Thus our transformation matrix <m>\TT</m> is
-          <me>
+          <md>
               \TT = A =\bbm 1 \amp 1 \amp 1\amp 1\\1\amp 2\amp 3\amp 4\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
           As an example, consider a player who had 102 singles, 30 doubles, 8 triples and 14 home runs. By using <m>A</m>, we find that
-          <me>
+          <md>
               \bbm 1 \amp 1 \amp 1\amp 1\\1\amp 2\amp 3\amp 4\ebm\bbm 102\\30\\8\\14\ebm = \bbm 154\\242\ebm,
-          </me>
+          </md>
         </p>
 
         <p>
@@ -812,13 +812,13 @@
 
     <p>
       This is a good point; the answer is fairly easy. Recall from <xref ref="ex_lin_trans_1"/> the transformation
-      <me>
+      <md>
           T_{\text{6.2.3}}\left(\bbm x_1\\x_2\ebm\right) = \bbm x_1^2\\2x_1\\x_1x_2\ebm
-      </me>
+      </md>
       and from <xref ref="ex_stand_mat1"/>
-      <me>
+      <md>
           T_{\text{6.2.5}}\left(\bbm x_1\\x_2\\x_3\ebm\right) = \bbm x_1+x_2\\ 3x_1-x_3 \\ 2x_2+5x_3 \\ 4x_1+3x_2+2x_3\ebm
-      </me>,
+      </md>,
       where we use the subscripts for <m>T</m> to remind us which example they came from.
     </p>
 
@@ -845,18 +845,18 @@
         <idx><h>linear transformation</h><h>conditions on</h></idx>
 
         Let <m>T:\R^{n}\to\R^{m}</m> be a transformation and consider the entries of
-        <me>
+        <md>
             T(\vx) = T\left(\bbm x_1\\x_2\\ \vdots \\ x_n\ebm\right)
-        </me>.
+        </md>.
         <m>T</m> is linear if and only if each entry of <m>T(\vx)</m> is of the form <m>a_1x_1 + a_2x_2+\cdots a_nx_n</m>.
       </p>
     </insight>
 
     <p>
       Going back to our baseball example, the manager could have defined his transformation as
-      <me>
+      <md>
           T\left(\bbm x_1\\x_2\\x_3\\x_4\ebm\right) = \bbm x_1+x_2+x_3+x_4 \\ x_1+2x_2+3x_3+4x_4\ebm
-      </me>.
+      </md>.
     </p>
 
     <p>

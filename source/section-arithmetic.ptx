@@ -135,9 +135,9 @@
     While most students (and some faculty) tend to skip over these properties or give them a cursory glance at best,
     it is important to realize that the properties stated above are what drive the symbolic manipulation for all of algebra.
     When listing a tally of more than two numbers,
-    <men xml:id="howtoaddonetwothree">
+    <md number="yes" xml:id="howtoaddonetwothree">
       1 + 2 + 3
-    </men>
+    </md>
     for example, we don't need to specify the order in which those numbers are added.
     Notice though, try as we might, we can add only two numbers at a time and it is the associative property of addition
     which assures us that we could organize this sum as <m>(1+2) + 3</m> or <m>1+(2+3)</m>.
@@ -499,9 +499,9 @@
           What we are asked to simplify in this problem is known as a  <q>complex</q> or <q>compound</q> fraction.
           Simply put, we have fractions within a fraction.
           The longest division line (also called a <q>vinculum</q>) performs the same sort of grouping function as parentheses:
-          <me>
+          <md>
             \dfrac{\dfrac{12}{5} - \dfrac{7}{24}}{1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)} =  \dfrac{\left(\dfrac{12}{5} - \dfrac{7}{24}\right)}{\left(1 + \left(\dfrac{12}{5}\right) \left(\dfrac{7}{24}\right)\right)}
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -550,9 +550,9 @@
         <p>
           This fraction may look simpler than the one before it, but the negative signs and parentheses mean that we shouldn't get complacent.
           Again we note that the division line here acts as a grouping symbol.  That is,
-          <me>
+          <md>
             \dfrac{(2(2)+1)(-3-(-3)) - 5(4-7)}{4-2(3)} = \dfrac{\left((2(2)+1)(-3-(-3)) - 5(4-7) \right)}{(4-2(3))}
-          </me>.
+          </md>.
         </p>
 
         <p>

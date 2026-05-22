@@ -57,9 +57,9 @@
     Note that we listed <q>r</q>, <q>o</q>, and <q>n</q> only once, even though they appear twice in <q>pronghorns.</q>
     Also, the <em>order</em> of the elements doesn't matter, so <m>\left\{ o, n, p, r, g, s, h \right\}</m>
     is also a roster description of <m>S</m>.   A <term>set-builder</term> description of <m>S</m> is:
-    <me>
+    <md>
       \{ x \, | \, x \text{ is a letter in the word pronghorns}\}
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -112,9 +112,9 @@
 
   <p>
     Now let's consider the set
-    <me>
+    <md>
       C =  \{ x \, | \, x \text{ is a consonant in the word ``pronghorns'}\}
-    </me>.
+    </md>.
     A roster description of <m>C</m> is  <m>C = \{ p, r, n, g, h, s\}</m>.
     Note that by construction, every element of <m>C</m> is also in <m>S</m>.
     We express this relationship by stating that the set <m>C</m> is a <term>subset</term> of the set <m>S</m>,
@@ -196,9 +196,9 @@
     <statement>
       <p>
         The <term>Empty Set</term> <m>\emptyset</m> is the set which contains no elements.  That is,
-        <me>
+        <md>
           \emptyset=\{ \}=\{x\,|\, x \neq x\}
-        </me>.
+        </md>.
         <idx><h>set </h><h> empty</h></idx><idx><h>empty set</h></idx>
       </p>
     </statement>

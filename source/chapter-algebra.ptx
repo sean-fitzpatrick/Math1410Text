@@ -13,21 +13,21 @@
       A fundamental topic of mathematics is arithmetic; adding, subtracting, multiplying and dividing numbers.
       After learning how to do this, most of us went on to learn how to add, subtract, multiply and divide <q><m>x</m></q>.
       We are comfortable with expressions such as
-      <me>
+      <md>
         x+3x-x\cdot x^2+x^5\cdot x^{-1}
-      </me>
+      </md>
       and know that we can <q>simplify</q> this to
-      <me>
+      <md>
         4x-x^3+x^4
-      </me>.
+      </md>.
     </p>
 
     <p>
       This chapter deals with the idea of doing similar operations, but instead of an unknown number <m>x</m>,
       we will be using a matrix <m>A</m>. So what exactly does the expression
-      <me>
+      <md>
         A+3A-A\cdot A^2+A^5\cdot A^{-1}
-      </me>
+      </md>
       mean? Before we can do anything, we need to actually define what a matrix is!
       Once we've taken care of that, we are going to need to learn to define what matrix addition, scalar multiplication,
       matrix multiplication and matrix inversion are. We will learn just that, plus some more good stuff, in this chapter.

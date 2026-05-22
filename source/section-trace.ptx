@@ -18,9 +18,9 @@
 
         Let <m>A</m> be an <m>n\times n</m> matrix. The <term>trace</term> of <m>A</m>,
         denoted <m>\tr(A)</m>, is the sum of the diagonal elements of <m>A</m>. That is,
-        <me>
+        <md>
           \tr(A) = a_{11}+a_{22}+\cdots+a_{nn}
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -35,9 +35,9 @@
 
       <p>
         Find the trace of <m>A</m>, <m>B</m>, <m>C</m> and <m>I_4</m>, where
-        <me>
+        <md>
           A = \bbm 1 \amp 2\\3 \amp 4\ebm,\ B = \bbm 1\amp 2\amp 0\\3\amp 8\amp 1\\-2\amp 7\amp -5\ebm \ \text{and}\ C=\bbm 1\amp 2\amp 3\\4\amp 5\amp 6\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -72,9 +72,9 @@
   <p>
     We'll give a theorem that will formally tell us what is true in a moment,
     but first let's play with two sample matrices and see if we can see what will happen. Let
-    <me>
+    <md>
       A = \bbm 2 \amp 1 \amp 3\\2\amp 0\amp -1\\3\amp -1\amp 3\ebm \ \text{and} \ B = \bbm 2\amp 0\amp 1\\-1\amp 2\amp 0\\0\amp 2\amp -1\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -119,9 +119,9 @@
 
   <p>
     How are the traces of <m>A</m> and <m>A^{-1}</m> related? We compute <m>A^{-1}</m> and find that
-    <me>
+    <md>
       A^{-1} = \bbm 1/17  \amp  6/17  \amp  1/17\\9/17 \amp  3/17 \amp  -8/17\\ 2/17 \amp  -5/17 \amp  2/17 \ebm
-    </me>.
+    </md>.
     Therefore <m>\tr(A^{-1}) = 6/17</m>. Again, the relationship isn't clear.
   </p>
 
@@ -221,9 +221,9 @@
 
   <p>
     Consider the following <m>2 \times 2</m> matrices:
-    <me>
+    <md>
       A = \bbm 1 \amp -2\\1 \amp 1\ebm \ \text{and}\ B = \bbm 6\amp 7\\11\amp -4\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>

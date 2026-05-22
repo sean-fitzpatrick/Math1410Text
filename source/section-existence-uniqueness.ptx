@@ -10,9 +10,9 @@
   <p>
     We start with a very simple example.
     Consider the following linear system:
-    <me>
+    <md>
       x-y=0
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -130,9 +130,9 @@
     On the other hand, if we increase the number of variables to three, then we know from <xref ref="sec-planes"/>
     that the correct geometric visualization of the situation involves planes.
     A single equation such as
-    <me>
+    <md>
       2x-3y+4z=7
-    </me>
+    </md>
     describes a plane in <m>\mathbb{R}^3</m> with normal vector <m>\vec n = \bbm 2\\-3\\4\ebm</m>.
     (By inspection, we can also choose a point on the plane.
     Since <m>3(-1)+4(1)=7</m>, we know that the point <m>(0,-1,1)</m> lies on the plane.)
@@ -142,28 +142,28 @@
     If we have two equations in three unknowns, three possibilities arise.
     The second equation could be a multiple of the first, in which case we still have our original plane.
     The second equation could also describe a parallel plane; for example, we might have
-    <me>
+    <md>
       \begin{array}{ccccccc}
       2x\amp-\amp 3y\amp+\amp 4z\amp=\amp 7\\
       2x\amp-\amp 3y\amp+\amp 4z\amp=\amp 3
       \end{array}
-    </me>.
+    </md>.
   </p>
 
   <p>
     In this case we know that there is no possible solution to the system, since there can be no point in common to these two parallel planes.
     The last possibility is that the planes are non-parallel, in which case they intersect in a line.
     For example, the system
-    <me>
+    <md>
       \begin{array}{ccccccc}
       2x\amp-\amp 3y\amp+\amp 4z\amp=\amp 7\\
       -x\amp +\amp 3y\amp -\amp z\amp =\amp 1
       \end{array}
-    </me>
+    </md>
     describes a pair of planes that intersect in the line (exercise)
-    <me>
+    <md>
       \bbm x\\y\\z\ebm = \bbm 11\\3\\0\ebm + t\bbm -9\\-2\\1\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -258,28 +258,28 @@
 
       <p>
         Find the solution to the linear system
-        <me>
+        <md>
           \begin{array}{ccccc}
             x_1  \amp  + \amp  x_2 \amp  = \amp  1\\
             2x_1  \amp  + \amp  2x_2 \amp  = \amp 2
           \end{array}
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         Create the corresponding augmented matrix, and then put the matrix into reduced row echelon form.
-        <me>
+        <md>
           \left[\begin{array}{cc|c} 1 \amp 1 \amp 1\\2\amp 2\amp 2\end{array}\right] \qquad \overrightarrow{\text{rref}} \qquad \left[\begin{array}{cc|c} 1\amp 1\amp 1\\0\amp 0\amp 0\end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
         Now convert the reduced matrix back into equations.
         In this case, we only have one equation,
-        <me>
+        <md>
           x_1+x_2=1
-        </me>,
+        </md>,
         or, equivalently,
         <md>
           <mrow>x_1  \amp =1-x_2</mrow>
@@ -332,21 +332,21 @@
 
       <p>
         Find the solution to the linear system
-        <me>
+        <md>
           \begin{array}{ccccccc}
           \amp   \amp x_2\amp -\amp x_3\amp =\amp 3\\
            x_1\amp   \amp  \amp +\amp 2x_3\amp =\amp 2\\
           \amp \amp -3x_2\amp +\amp 3x_3\amp =\amp -9
          \end{array}
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         To find the solution, put the corresponding matrix into reduced row echelon form.
-        <me>
+        <md>
           \left[\begin{array}{ccc|c} 0 \amp 1 \amp -1\amp 3\\ 1\amp 0\amp 2\amp 2\\ 0\amp -3\amp 3\amp -9\end{array}\right] \qquad \overrightarrow{\text{rref}} \qquad \left[\begin{array}{ccc|c}1\amp 0\amp 2\amp 2\\ 0\amp 1\amp -1\amp 3\\ 0\amp 0\amp 0\amp 0 \end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -387,17 +387,17 @@
         Note that we're not restricted to verifying particular solutions:
         we can go whole hog and plug the general solution into our system to make sure it works.
         For example, in the first equation, we have
-        <me>
+        <md>
           x_2-x_3 = (3+t)-t = 3
-        </me>,
+        </md>,
         so the first equation is satisfied.
       </p>
 
       <p>
         In the second equation, we have
-        <me>
+        <md>
           x_1+2x_3 = (2-2t)+2t = 2
-        </me>,
+        </md>,
         so the second equation is satisfied.
         The reader can just as easily verify that our solution works in the third equation as well.
       </p>
@@ -516,21 +516,21 @@
 
       <p>
         Find the solution to the linear system
-        <me>
+        <md>
           \begin{array}{ccccccc}
             x_1\amp +\amp x_2\amp +\amp x_3\amp =\amp 1\\
             x_1\amp +\amp 2x_2\amp +\amp x_3\amp =\amp 2\\
             2x_1\amp +\amp 3x_2\amp +\amp 2x_3\amp =\amp 0
           \end{array}
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         We start by putting the corresponding matrix into reduced row echelon form.
-        <me>
+        <md>
           \left[\begin{array}{ccc|c} 1 \amp 1 \amp 1\amp 1\\1\amp 2\amp 1\amp 2\\ 2\amp 3\amp 2\amp 0\\ \end{array}\right] \qquad \overrightarrow{\text{rref}} \qquad \left[\begin{array}{ccc|c} 1\amp 0\amp 1\amp 0\\ 0\amp 1\amp 0\amp 0\\ 0\amp 0\amp 0\amp 1\\ \end{array}\right]
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -545,9 +545,9 @@
       <p>
         So far, so good.
         However the last row gives us the equation
-        <me>
+        <md>
           0x_1+0x_2+0x_3 = 1
-        </me>,
+        </md>,
         or, more concisely, <m>0=1</m>. Obviously, this is not true; we have reached a contradiction.
         Therefore, no solution exists; this system is inconsistent.
       </p>
@@ -582,12 +582,12 @@
     <statement>
       <p>
         Confirm that the linear system
-        <me>
+        <md>
           \begin{array}{ccccc}
             x\amp + \amp y\amp =\amp 0\\
             2x \amp +\amp 2y\amp =\amp 4
           \end{array}
-        </me>
+        </md>
         has no solution.
       </p>
     </statement>
@@ -604,9 +604,9 @@
       <p>
         Now let us confirm this using the prescribed technique from above.
         The reduced row echelon form  of the corresponding augmented matrix is
-        <me>
+        <md>
           \left[\begin{array}{cc|c} 1 \amp 1 \amp 0\\0\amp 0\amp 1\\ \end{array}\right]
-        </me>.
+        </md>.
         We have a leading 1 in the last column, so therefore the system is inconsistent.
       </p>
     </solution>
@@ -652,9 +652,9 @@
     <statement>
       <p>
         Give the general solution to a linear system whose augmented matrix in reduced row echelon form is
-        <me>
+        <md>
           \left[\begin{array}{cccc|c} 1 \amp -1 \amp 0\amp 2\amp 4\\ 0\amp 0\amp 1\amp -3\amp 7\\ 0\amp 0\amp 0\amp 0\amp 0\\ \end{array}\right]
-        </me>,
+        </md>,
         and give two particular solutions.
       </p>
     </statement>
@@ -753,9 +753,9 @@
     <statement>
       <p>
         Find the solution to a linear system whose augmented matrix in reduced row echelon form is
-        <me>
+        <md>
           \left[\begin{array}{cccc|c} 1 \amp 0 \amp 0\amp 2\amp 3\\0\amp 1\amp 0\amp 4\amp 5\\ \end{array}\right]
-        </me>
+        </md>
         and give two particular solutions.
       </p>
     </statement>
@@ -837,21 +837,21 @@
     <statement>
       <p>
         Find the solution to the linear system
-        <me>
+        <md>
           \begin{array}{ccccccc}
             x_1 \amp + \amp x_2\amp +\amp x_3\amp =\amp 5\\
             x_1 \amp -\amp x_2\amp +\amp x_3\amp =\amp 3
           \end{array}
-        </me>
+        </md>
         and give two particular solutions.
       </p>
     </statement>
     <solution>
       <p>
         The corresponding augmented matrix and its reduced row echelon form are given below.
-        <me>
+        <md>
           \left[\begin{array}{ccc|c}1 \amp 1 \amp 1\amp 5\\1\amp -1\amp 1\amp 3\\ \end{array}\right]\quad \quad \overrightarrow{\text{rref}}\quad\quad \left[\begin{array}{ccc|c}1\amp 0\amp 1\amp 4\\0\amp 1\amp 0\amp 1\\ \end{array}\right]
-        </me>
+        </md>
       </p>
 
       <p>
@@ -913,21 +913,21 @@
     <statement>
       <p>
         For what values of <m>k</m> will the given system have exactly one solution, infinitely many solutions, or no solution?
-        <me>
+        <md>
           \begin{array}{ccccc}
             x_1 \amp + \amp 2x_2\amp =\amp 3\\
             3x_1 \amp +\amp kx_2\amp =\amp 9
           \end{array}
-        </me>
+        </md>
       </p>
     </statement>
     <solution>
       <p>
         We answer this question by forming the augmented matrix and starting the process of putting it into reduced row echelon form.
         Below we see the augmented matrix and one elementary row operation that starts the Gaussian elimination process.
-        <me>
+        <md>
           \left[\begin{array}{cc|c} 1 \amp 2 \amp 3\\3\amp k\amp 9\end{array}\right] \qquad \overrightarrow{-3R_1+R_2\rightarrow R_2} \qquad \left[\begin{array}{cc|c} 1\amp 2\amp 3\\0\amp k-6\amp 0\end{array}\right]
-        </me>
+        </md>
       </p>
 
       <p>
@@ -948,9 +948,9 @@
   <p>
     As an extension of the previous example, consider the similar augmented matrix where the constant 9 is replaced with a 10.
     Performing the same elementary row operation gives
-    <me>
+    <md>
       \left[\begin{array}{cc|c} 1 \amp 2 \amp 3\\3\amp k\amp 10\end{array}\right] \qquad \overrightarrow{-3R_1+R_2\rightarrow R_2} \qquad \left[\begin{array}{cc|c} 1\amp 2\amp 3\\0\amp k-6\amp 1\end{array}\right]
-    </me>.
+    </md>.
   </p>
 
   <p>

@@ -223,14 +223,14 @@
   <p>
     It follows from the definition that the component form of the vector <m>\overrightarrow{PQ}</m>,
     where <m>P=(x_1,y_1)</m> and <m>Q=(x_2,y_2)</m> is
-    <me>
+    <md>
       \overrightarrow{PQ} = \bbm  x_2-x_1\\ y_2-y_1\ebm;
-    </me>
+    </md>
     in space, where <m>P=(x_1,y_1,z_1)</m> and <m>Q=(x_2,y_2,z_2)</m>,
     the component form of <m>\overrightarrow{PQ}</m> is
-    <me>
+    <md>
       \overrightarrow{PQ} = \bbm  x_2-x_1\\ y_2-y_1\\z_2-z_1\ebm
-    </me>.
+    </md>.
   </p>
 
   <aside vshift="0">
@@ -288,9 +288,9 @@
               as drawn in <xref ref="fig_vect1a"/>.
 
               The magnitude of <m>\vec v</m> is determined directly from the component form:
-              <me>
+              <md>
                 \norm{\vec v} =\sqrt{2^2+(-1)^2} = \sqrt{5}
-              </me>.
+              </md>.
             </p>
             <figure xml:id="fig_vect1">
               <caption>Graphing vectors in <xref ref="ex_vect1"/></caption>
@@ -410,9 +410,9 @@
           <li>
             <p>
               Using the note following <xref ref="def_vector_component"/>, we have
-              <me>
+              <md>
                 \overrightarrow{RS} = \bbm  -1-(-3)\\ 2-(-2)\ebm = \bbm 2\\4\ebm
-              </me>.
+              </md>.
               One can readily see from <xref ref="fig_vect1a"/> that the <m>x</m>- and <m>y</m>-displacement of <m>\overrightarrow{RS}</m> is 2 and 4, respectively,
               as the component form suggests.
             </p>
@@ -427,9 +427,9 @@
               illustrated in <xref ref="fig_vect1b_3D"/>.
 
               The magnitude of <m>\vec u</m> is:
-              <me>
+              <md>
                 \norm{\vec u} = \sqrt{2^2+(-1)^2+3^2} = \sqrt{14}
-              </me>.
+              </md>.
             </p>
           </li>
         </ol>
@@ -478,18 +478,18 @@
                   <p>
                     The addition, or sum,
                     of the vectors <m>\vec u</m> and <m>\vec v</m> is the vector
-                    <me>
+                    <md>
                       \vec u+\vec v = \bbm  u_1+v_1\\ u_2+v_2\ebm
-                    </me>.
+                    </md>.
                   </p>
                 </li>
 
                 <li>
                   <p>
                     The multiplication of a scalar <m>c</m> and a vector <m>\vec v</m> is the vector
-                    <me>
+                    <md>
                       c\vec v = c\bbm  v_1\\v_2\ebm = \bbm cv_1\\cv_2\ebm
-                    </me>.
+                    </md>.
                   </p>
                 </li>
               </ol>
@@ -509,18 +509,18 @@
                   <p>
                     The addition, or sum,
                     of the vectors <m>\vec u</m> and <m>\vec v</m> is the vector
-                    <me>
+                    <md>
                       \vec u+\vec v = \bbm  u_1+v_1\\ u_2+v_2\\ u_3+v_3\ebm
-                    </me>.
+                    </md>.
                   </p>
                 </li>
 
                 <li>
                   <p>
                     The multiplication of a scalar <m>c</m> and a vector <m>\vec v</m> is the vector
-                    <me>
+                    <md>
                       c\vec v = c\bbm  v_1\\v_2\\v_3\ebm = \bbm  cv_1\\cv_2\\cv_3\ebm
-                    </me>.
+                    </md>.
                   </p>
                 </li>
               </ol>
@@ -712,9 +712,9 @@
 
   <p>
     It follows from the properties of the real numbers and <xref ref="def_vector_algebra"/> that
-    <me>
+    <md>
       \vec u-\vec v = \vec u + (-1)\vec v
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -954,19 +954,19 @@
         <ol>
           <li>
             <p>
-              <m>\vec u+\vec v = \vec v+\vec u</m> Commutative Property
+              <m>\vec u+\vec v = \vec v+\vec u</m> (Commutative Property)
             </p>
           </li>
 
           <li>
             <p>
-              <m>(\vec u+\vec v)+\vec w = \vec u+(\vec v+\vec w)</m> Associative Property
+              <m>(\vec u+\vec v)+\vec w = \vec u+(\vec v+\vec w)</m> (Associative Property)
             </p>
           </li>
 
           <li>
             <p>
-              <m>\vec v+\vec 0 = \vec v</m> Additive Identity
+              <m>\vec v+\vec 0 = \vec v</m> (Additive Identity)
             </p>
           </li>
 
@@ -978,13 +978,13 @@
 
           <li>
             <p>
-              <m>c(\vec u+\vec v) = c\vec u+c\vec v</m> Distributive Property
+              <m>c(\vec u+\vec v) = c\vec u+c\vec v</m> (Distributive Property)
             </p>
           </li>
 
           <li>
             <p>
-              <m>(c+d)\vec v = c\vec v+d\vec v</m> Distributive Property
+              <m>(c+d)\vec v = c\vec v+d\vec v</m> (Distributive Property)
             </p>
           </li>
 
@@ -1033,9 +1033,9 @@
         that is,
             <idx><h>vectors</h><h>unit vector</h></idx>
             <idx><h>unit vector</h></idx>
-        <me>
+        <md>
           \norm{\vec v}=1
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -1075,7 +1075,7 @@
     <title>Using Unit Vectors</title>
     <statement>
       <p>
-        Let <m>\vec v= \bbm  3\\1\ebm</m> and let <m>\vec w = \bbm 1\\2,2\ebm</m>.
+        Let <m>\vec v= \bbm  3\\1\ebm</m> and let <m>\vec w = \bbm 1\\2\\2\ebm</m>.
       </p>
 
       <p>
@@ -1108,9 +1108,9 @@
             <p>
               We find <m>\norm{\vec v} = \sqrt{10}</m>.
               So the unit vector <m>\vec u</m> in the direction of <m>\vec v</m> is
-              <me>
+              <md>
                 \vec u = \frac{1}{\sqrt{10}}\vec v = \bbm  \frac{3}{\sqrt{10}}\\\frac{1}{\sqrt{10}}\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
@@ -1118,9 +1118,9 @@
             <p>
               We find <m>\norm{\vec w} = 3</m>,
               so the unit vector <m>\vec z</m> in the direction of <m>\vec w</m> is
-              <me>
+              <md>
                 \vec u = \frac13\vec w = \bbm  \frac13\\\frac23\\\frac23\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
@@ -1184,16 +1184,16 @@
   <p>
     The basic formation of the unit vector <m>\vec u</m> in the direction of a vector <m>\vec v</m> leads to a interesting equation.
     It is:
-    <me>
+    <md>
       \vec v = \norm{\vec v}\frac{1}{\norm{\vec v}}\vec v
-    </me>.
+    </md>.
   </p>
 
   <p>
     We rewrite the equation with parentheses to make a point:
-    <me>
+    <md>
       \vec v = \underbrace{\norm{\vec v}}_{\text{magnitude } }\cdot\underbrace{\left(\frac{1}{\norm{\vec v}}\vec v\right)}_{\text{direction } }
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -1261,9 +1261,9 @@
         <li>
           <p>
             The unit vector in the direction of a nonzero vector <m>\vec v</m> is
-            <me>
+            <md>
               \vec u = \frac1{\norm{\vec v}} \vec v
-            </me>.
+            </md>.
           </p>
         </li>
 
@@ -1348,9 +1348,9 @@
       <p>
         Knowing that gravity is pulling the 50lb weight straight down,
         we can create a vector <m>\vec F</m> to represent this force.
-        <me>
+        <md>
           \vec F = 50\bbm  0\\-1\ebm = \bbm 0\\-50\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -1365,12 +1365,12 @@
         As we do not yet know the magnitudes of these vectors,
         (that is the problem at hand),
         we use <m>m_1</m> and <m>m_2</m> to represent them.
-        <me>
+        <md>
           \vec F_1 = m_1\bbm  \cos(120^\circ) \\\sin(120^\circ) \ebm
-        </me>
-        <me>
+        </md>
+        <md>
           \vec F_2 = m_2\bbm  \cos(45^\circ) \\\sin(45^\circ) \ebm
-        </me>
+        </md>
       </p>
 
       <p>
@@ -1433,9 +1433,9 @@
       <p>
         This is a simple 2-equation, 2-unknown system of linear equations.
         We leave it to the reader to verify that the solution is
-        <me>
+        <md>
           m_1=50(\sqrt{3}-1) \approx 36.6;\qquad m_2=\frac{50\sqrt{2}}{1+\sqrt{3}} \approx 25.88
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -1474,18 +1474,18 @@
               In <m>\mathbb{R}^2</m>,
               the standard unit vectors are
               <idx><h>vectors</h><h>standard unit vector</h></idx><idx><h>unit vector</h><h>standard unit vector</h></idx>
-              <me>
+              <md>
                 \vec i = \bbm  1\\0\ebm  \text{ and }  \vec j = \bbm 0\\1\ebm
-              </me>.
+              </md>.
             </p>
           </li>
 
           <li>
             <p>
               In <m>\mathbb{R}^3</m>, the standard unit vectors are
-              <me>
+              <md>
                 \vec i = \bbm  1\\0\\0\ebm  \text{ and }  \vec j = \bbm  0\\1\\0\ebm  \text{ and }  \vec k = \bbm  0\\0\\1\ebm
-              </me>.
+              </md>.
             </p>
           </li>
         </ol>
@@ -2609,9 +2609,9 @@
             <p>
               Verify, from <xref ref="idea_unit_vectors"/>,
               that
-              <me>
+              <md>
                 \vec u=\bbm  \sin(\theta) \cos(\varphi) \\\sin(\theta) \sin(\varphi) \\\cos(\theta) \ebm
-              </me>
+              </md>
               is a unit vector for all angles <m>\theta</m> and <m>\varphi</m>.
             </p>
           </statement>

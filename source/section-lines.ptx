@@ -114,9 +114,9 @@
       The figure illustrates how every point on the line can be obtained by starting with <m>\vec p</m>
       and moving a certain distance in the direction of <m>\vec d</m>.
       That is, we can define the line as a function of <m>t</m>:
-      <men xml:id="eq_lines1">
+      <md number="yes" xml:id="eq_lines1">
         \vec\ell(t) = \vec p + t\ \vec d
-      </men>.
+      </md>.
     </p>
 
     <p>
@@ -212,9 +212,9 @@
       we can set these equal to each other,
       forming the <em>symmetric equations of the line</em>
       through <m>\vec p</m> in the direction of <m>\vec d</m>:
-      <me>
+      <md>
         \frac{x-x_0}{a} = \frac{y-y_0}{b}=\frac{z-z_0}{c}
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -237,27 +237,27 @@
             <li>
               <p>
                 The <em>vector equation</em> of the line is
-                <me>
+                <md>
                   \vec \ell(t) = \vec p+t\vec d
-                </me>.
+                </md>.
               </p>
             </li>
 
             <li>
               <p>
                 The <em>parametric equations</em> of the line are
-                <me>
+                <md>
                   x = x_0+at,  y=y_0+bt,  z = z_0+ct
-                </me>.
+                </md>.
               </p>
             </li>
 
             <li>
               <p>
                 The <em>symmetric equations</em> of the line are
-                <me>
+                <md>
                   \frac{x-x_0}{a} = \frac{y-y_0}{b}=\frac{z-z_0}{c}
-                </me>.
+                </md>.
               </p>
             </li>
           </ol>
@@ -293,18 +293,18 @@
             <li>
               <p>
                 the parametric equations of the line are
-                <me>
+                <md>
                   x = 2-t, y = 3+t, z = 1+2t; \text{ and }
-                </me>
+                </md>
               </p>
             </li>
 
             <li>
               <p>
                 the symmetric equations of the line are
-                <me>
+                <md>
                   \frac{x-2}{-1}=\frac{y-3}{1} = \frac{z-1}{2}
-                </me>.
+                </md>.
               </p>
             </li>
           </ul>
@@ -389,9 +389,9 @@
           the symmetric equations are probably best suited for this task.
           Simply plug in the values of <m>x</m>,
           <m>y</m> and <m>z</m> and see if equality is maintained:
-          <me>
+          <md>
             \frac{-1-2}{-1} \stackrel{?}{=} \frac{6-3}{1} \stackrel{?}{=} \frac{6-1}{2}  \Rightarrow  3=3\neq2.5
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -426,9 +426,9 @@
 
         <p>
           The parametric equations of the line <m>\ell</m> through <m>P</m> in the direction of <m>\overrightarrow{PQ}</m> are:
-          <me>
+          <md>
             \ell:  x= 2-t y=-1+4t  z=2-3t
-          </me>.
+          </md>.
         </p>
 
         <figure xml:id="fig_lines6" vshift="0">
@@ -559,7 +559,7 @@
         <p>
           Consider lines <m>\ell_1</m> and <m>\ell_2</m>,
           given in parametric equation form:
-          <me>
+          <md>
             \ell_1:\, \begin{matrix}
                       x\amp =\amp 1+3t \\
                       y\amp =\amp 2-t\\
@@ -570,7 +570,7 @@
                       y\amp =\amp 3+s\\
                       z\amp =\amp 5+2s
                     \end{matrix}
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -673,18 +673,18 @@
           we look for <m>t</m> and <m>s</m> values such that the respective <m>x</m>,
           <m>y</m> and <m>z</m> values are the same.
           That is, we want <m>s</m> and <m>t</m> such that:
-          <me>
+          <md>
             \begin{matrix} 1+3t \amp =\amp -2+4s\\ 2-t\amp =\amp 3+s\\ t\amp =\amp 5+2s \end{matrix}
-          </me>.
+          </md>.
         </p>
 
         <p>
           This is a relatively simple system of linear equations.
           Since the last equation is already solved for <m>t</m>,
           substitute that value of <m>t</m> into the equation above it:
-          <me>
+          <md>
             2-(5+2s) = 3+s  \Rightarrow  s=-2,\ t=1
-          </me>.
+          </md>.
         </p>
 
         <aside vshift="0">
@@ -701,9 +701,9 @@
           A key to remember is that we have
           <em>three</em> equations;
           we need to check if <m>s=-2,\ t=1</m> satisfies the first equation as well:
-          <me>
+          <md>
             1+3(1) \neq -2+4(-2)
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -723,9 +723,9 @@
         <p>
           Consider lines <m>\ell_1</m> and <m>\ell_2</m>,
           given in parametric equation form:
-          <me>
+          <md>
             \ell_1:\, \begin{matrix} x\amp =\amp -0.7+1.6t \\ y\amp =\amp 4.2+2.72t\\z\amp =\amp 2.3-3.36t \end{matrix} \qquad\qquad \ell_2:\,\begin{matrix} x\amp =\amp 2.8-2.9s\\y\amp =\amp 10.15-4.93s\\z\amp =\amp -5.05+6.09s. \end{matrix}
-          </me>
+          </md>
         </p>
 
         <p>
@@ -764,9 +764,9 @@
           One way to be sure is to rewrite <m>\vec d_1</m> and
           <m>\vec d_2</m> in terms of fractions, not decimals.
           We have
-          <me>
+          <md>
             \vec d_1 =\bbm  \frac{16}{10}\\\frac{272}{100}\\-\frac{336}{100}\ebm \qquad \vec d_2 = \bbm  -\frac{29}{10}\\-\frac{493}{100}\\\frac{609}{100}\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -775,9 +775,9 @@
           After a lot of manual arithmetic
           (or after briefly using a computer algebra system),
           one finds that
-          <me>
+          <md>
             \vec u_1 = \bbm  \sqrt{\frac{10}{83}}\\\frac{17}{\sqrt{830}}\\-\frac{21}{\sqrt{830}}\ebm \qquad \vec u_2 = \bbm  -\sqrt{\frac{10}{83}}\\-\frac{17}{\sqrt{830}}\\\frac{21}{\sqrt{830}}\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -945,7 +945,8 @@
         \draw [thick,-&gt;,secondcolor] (0,0) -- (1,.5) node [below,black] { $\vec d$};
 
         \filldraw [black] (0,3) circle (1.5pt) node [above] { $Q$}
-									        (0,0) circle (1.5pt) node [below] { $P$};
+									        (0,0) circle (1.5pt) node [below] { $P$}
+                          (1.2,.6) circle (1.5pt) node [below right] { $R$};
 
         \draw [thick,dashed] (0,3) -- (1.2,.6) node [right,pos=.5] { $h$};
         \draw [thick,-&gt;] (0,0) -- (0,3) node [pos=.5,left] { $\overrightarrow{PQ}$};
@@ -975,38 +976,30 @@
         From the equation of the line, we know that the point <m>P=(1,-1,1)</m> is on the line,
         and that the vector <m>\vec{d}=\bbm 2\\3\\1\ebm</m> is in the direciton of the line.
         Let
-        <me>
+        <md>
           \vec {v} = \overrightarrow{PQ} = \bbm 1-1\\1-(-1)\\3-1\ebm = \bbm 0\\2\\2\ebm
-        </me>.
+        </md>.
         We know that if <m>R</m> is the point on the line closest to <m>Q</m>,
         then the projection of <m>\vec{v}</m> onto <m>\vec d</m> will equal <m>\overrightarrow{PR}</m>.
       </p>
 
       <p>
         We compute
-        <me>
-          \proj vd = \frac{\dotp vd}{\dotp dd}\vec{d} = \frac{0+6+2}{4+9+1}\bbm 2\\3\\1\ebm = \frac47\bbm 2\\3\\1\ebm
-        </me>.
-        Now, if <m>R=(x_1,y_1,z_1)</m>, we know that <m>\overrightarrow{PR} = \bbm x_1-1\\x_2-(-1)\\x_3-1\ebm</m>,
-        since <m>P=(1,-1,1)</m>. This gives us <m>\bbm x_1-1\\x_2-(-1)\\x_3-1\ebm=\frac47\bbm 2\\3\\1\ebm</m>,
-        so <m>x_1 = 1+\frac87 = \frac{15}{7}</m>, <m>x_2 = -1+\frac{12}{7}=\frac57</m>,
-        and <m>x_3 = 1+\frac47 = \frac{11}{7}</m>. Therefore,
-        <me>
-          R = \left(\frac{15}{7},\frac{5}{7},\frac{11}{7}\right)
-        </me>
-        is the point on the line that is closest to <m>Q</m>.
-      </p>
-
-      <p>
-        The desired distance is therefore the distance from <m>Q</m> to <m>R</m>,
-        which can be found using the distance formula:
         <md>
-          <mrow>h \amp = \sqrt{\left(1-\frac{15}{7}\right)^2+\left(1-\frac{5}{7}\right)^2+\left(3-\frac{11}{7}^2\right)}</mrow>
-          <mrow> \amp = \sqrt{\left(-\frac87\right)^2+\left(\frac27\right)^2+\left(\frac{10}{7}\right)^2}</mrow>
-          <mrow> \amp =\frac17\sqrt{8^2+2^2+10^2}</mrow>
-          <mrow> \amp = \frac{\sqrt{168}}{7}=2\sqrt{\frac67}</mrow>
+          \overrightarrow{PR} = \proj vd = \frac{\dotp vd}{\dotp dd}\vec{d} = \frac{0+6+2}{4+9+1}\bbm 2\\3\\1\ebm = \frac47\bbm 2\\3\\1\ebm
         </md>.
-      </p>
+        Now, we know that the height <m>h</m> satisfies <m>h = \len{\overrightarrow{RQ}}</m>, 
+        and that <m>\overrightarrow{PQ} = \overrightarrow{PR}+\overrightarrow{RQ}</m>. Therefore,
+        <md>
+          \overrightarrow{RQ}=\overrightarrow{PQ}-\overrightarrow{PR}=\bbm 0\\2\\2\ebm-\frac47\bbm 2\\3\\1\ebm = \bbm -8/7\\2/7\\10/7\ebm
+        </md>,
+        and the distance is
+        <md>
+          <mrow>h \amp = \len{\overrightarrow{PR}} = \len \frac27 \bbm -4\\1\\5\ebm</mrow>
+          <mrow>  \amp = \frac27\sqrt{(-4)^2+1^2+5^2}</mrow>
+          <mrow>  \amp = \frac27\sqrt{42} = 2\sqrt{\frac67}</mrow>
+        </md>.
+      </p>  
      </solution>
     </example>
 
@@ -1106,37 +1099,37 @@
 
         <p>
           From the given points <m>P</m> and <m>Q</m> we can immediately construct the vector
-          <me>
+          <md>
             \overrightarrow{PQ}=\bbm  1-2\\ 3-0\\ -2-(-1)\ebm = \bbm  -1\\ 3\\ -1\ebm
-          </me>.
+          </md>.
           We begin by finding the point <m>R</m> on the line that is closest to <m>Q</m>.
           From our diagram, we can see that the vector <m>\overrightarrow{PR}</m> from <m>P</m> to <m>R</m>
           is equal to the projection of <m>\overrightarrow{PQ}</m> onto the distance vector <m>\vec{d}</m>:
-          <me>
+          <md>
             \overrightarrow{PR}=\operatorname{proj}_{\vec{d}}\overrightarrow{PQ}=
             \left(\frac{\bbm  -1\\3\\-1\ebm\boldsymbol{\cdot}\bbm  1\\-1\\0\ebm}{\bbm  1\\-1\\0\ebm\boldsymbol{\cdot}\bbm  1\\-1\\0\ebm}\right)\bbm  1\\-1\\0\ebm = \bbm  -2\\2\\0\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
           Now, we need to pause and take care that we don't make a very common mistake:
-          the vector <m>\overrightarrow{PR}</m> does \textbf{not} give the coordinates of the point <m>R</m>.
+          the vector <m>\overrightarrow{PR}</m> does <em>not</em> give the coordinates of the point <m>R</m>.
           Instead, <m>\overrightarrow{PR}</m> tells us how to get <em>from</em> the point <m>P</m> <em>to</em> the point <m>R</m>.
           Letting <m>O</m> denote the origin, we can write <m>\overrightarrow{OP}</m> and <m>\overrightarrow{OR}</m>
           for the position vectors of <m>P</m> and <m>R</m>, respectively.
           Since <m>\overrightarrow{PR} = \overrightarrow{OR}-\overrightarrow{OP}</m> using the <q>tip minus tail</q>
           rule for computing the vector between two points, we have
-          <me>
+          <md>
             \overrightarrow{OR} = \overrightarrow{OP}+\overrightarrow{PR} = \bbm  2\\ 0\\ -1\ebm + \bbm  -2\\ 2\\ 0\ebm = \bbm  0\\ 2\\ -1\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
           Thus, we have <m>R=(0,2,-1)</m> as the point on the line closest to the point <m>Q</m>.
           We can now find the distance from <m>Q</m> to the line using the distance formula:
-          <me>
+          <md>
             D= \sqrt{(1-0)^2+(3-2)^2+(-2-(-1))^2} = \sqrt{3}
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -1144,9 +1137,9 @@
           <xref ref="idea_orthog_proj"/>. By definition of the distance from a point to a line,
           we know that the vector <m>\overrightarrow{RQ}</m> must be orthogonal to the line,
           and thus to the direction vector <m>\vec{d}</m>. Using <xref ref="idea_orthog_proj"/>, we have that
-          <me>
+          <md>
             \overrightarrow{RQ}= \overrightarrow{PQ}-\overrightarrow{PR} = \bbm  -1\\ 3\\ -1\ebm - \bbm  -2\\ 2\\ 0\ebm = \bbm  -1\\ 1\\ 1\ebm
-          </me>,
+          </md>,
           and the shortest distance is given by <m>\norm{\overrightarrow{RQ}}=\sqrt{3}</m>, as before.
         </p>
       </solution>
@@ -1313,9 +1306,9 @@
                 <idx><h>distance</h><h>between point and line</h></idx>
                 <idx><h>distance</h><h>between lines</h></idx>
                 <idx><h>lines</h><h>distances between</h></idx>
-              <me>
+              <md>
                 h =\frac{\norm{\overrightarrow{PQ}\times \vec d}}{\vnorm{d}}
-              </me>.
+              </md>.
             </p>
           </li>
 
@@ -1326,9 +1319,9 @@
               and let <m>\vec c = \vec d_1\times \vec d_2</m>,
               where lines <m>\ell_1</m> and <m>\ell_2</m> are not parallel.
               The distance <m>h</m> between the two lines is:
-              <me>
+              <md>
                 h=\frac{\abs{\overrightarrow{P_1P_2}\cdot \vec c}}{\vnorm c}
-              </me>.
+              </md>.
             </p>
           </li>
         </ol>
@@ -1374,10 +1367,10 @@
       <statement>
         <p>
           Find the distance between the lines
-          <me>
+          <md>
             \ell_1: \begin{matrix} x\amp =\amp 1+3t \\ y\amp =\amp 2-t\\z\amp =\amp t \end{matrix} \qquad\qquad
             \ell_2:\begin{matrix} x\amp =\amp -2+4s\\y\amp =\amp 3+s\\z\amp =\amp 5+2s. \end{matrix}
-          </me>
+          </md>
         </p>
       </statement>
 
@@ -1386,12 +1379,12 @@
           These are the sames lines as given in <xref ref="ex_lines2"/>,
           where we showed them to be skew.
           The equations allow us to identify the following points and vectors:
-          <me>
+          <md>
             P_1 = (1,2,0) P_2 = (-2,3,5)  \Rightarrow  \overrightarrow{P_1P_2} = \bbm  -3\\1\\5\ebm
-          </me>.
-          <me>
+          </md>.
+          <md>
             \vec d_1 = \bbm  3\\-1\\1\ebm  \vec d_2 = \bbm  4\\1\\2\ebm  \Rightarrow  \vec c = \vec d_1\times \vec d_2 = \bbm  -3\\-2\\7\ebm
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -1439,20 +1432,20 @@
       <solution>
         <p>
           Since <m>R_1</m> is a point on <m>\vec\ell_1</m>, we know that
-          <men xml:id="eq-skewpoint1">
+          <md number="yes" xml:id="eq-skewpoint1">
             R_1 = (1+3t, 2-t, t), \quad \text{ for some real number } t
-          </men>,
+          </md>,
           and similarly,
-          <men xml:id="eq-skewpoint2">
+          <md number="yes" xml:id="eq-skewpoint2">
             R_2 = (-2+4s, 3+s, 5+2s), \quad \text{ for some real number } s
-          </men>.
+          </md>.
         </p>
 
         <p>
           The vector <m>\overrightarrow{R_1R_2}</m> is therefore given by
-          <me>
+          <md>
             \overrightarrow{R_1R_2}=\bbm  -3+4s-3t\\ 1+s+t\\ 5+2s-t\ebm
-          </me>,
+          </md>,
           for some pair of real numbers <m>s</m> and <m>t</m>.
         </p>
 
@@ -1470,12 +1463,12 @@
 
         <p>
           We end up having to solve a <em>system</em> of two linear equations in the two variables, <m>s</m> and <m>t</m>, given by
-          <me>
+          <md>
             \begin{array}{ccccc}
               13s \amp - \amp 11t \amp = \amp 5\\
               21s \amp - \amp 13t \amp = \amp 1
             \end{array}
-          </me>.
+          </md>.
           You probably had to solve such systems in high school. One option is to solve graphically,
           by plotting the lines given by each equation, and seeing where they intersect.
           However, this method has little hope of providing an accurate answer. Instead, we try a little algebra.
@@ -1487,20 +1480,20 @@
           Plugging this value back into any of the previous equations gives us <m>s=-\frac{351}{403}=-\frac{27}{31}</m>.
           (We didn't promise that the numbers would work out nicely!)
           Plugging these values back into equations <xref ref="eq-skewpoint1"/> and <xref ref="eq-skewpoint2"/>, we find
-          <me>
+          <md>
             R_1 = \left(-\frac{107}{31}, \frac{108}{31}, -\frac{46}{31}\right) \quad \text{ and } \quad R_2 = \left(-\frac{170}{31}, \frac{66}{31}, \frac{101}{31}\right)
-          </me>.
+          </md>.
         </p>
 
         <p>
           Our vector <m>\overrightarrow{R_1R_2}</m> is then given by
-          <me>
+          <md>
             \overrightarrow{R_1R_2} = \bbm  -\frac{63}{31}\\ -\frac{42}{31}\\ \frac{147}{31}\ebm = \frac{1}{31}\bbm  -63\\ -42\\ 147\ebm
-          </me>,
+          </md>,
           and the distance between the two lines is given by
-          <me>
+          <md>
             \norm{\overrightarrow{R_1R_2}} = \frac{1}{31}\sqrt{63^2+42^2+147^2} = \frac{42}{\sqrt{62}},
-          </me>
+          </md>
           as before.
         </p>
       </solution>

@@ -40,13 +40,13 @@
     <p>
       That is, given vectors <m>\vec{x} = \bbm x_1\\x_2\\\vdots\\x_n\ebm</m> and <m>\vec{y} = \bbm y_1\\y_2\\\vdots \\y_n\ebm</m>,
       and a scalar <m>c</m>, we define
-      <me>
+      <md>
         \vec{x}+\vec{y} = \bbm x_1\\x_2\\\vdots\\x_n\ebm + \bbm y_1\\y_2\\\vdots \\y_n\ebm = \bbm x_1+y_1\\x_2+y_2\\\vdots \\x_n+y_n\ebm
-      </me>
+      </md>
       and
-      <me>
+      <md>
         c\vec{x} = c\bbm x_1\\x_2\\\vdots\\x_n\ebm = \bbm cx_1\\cx_2\\\vdots\\cx_n\ebm
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -60,9 +60,9 @@
         <p>
           <idx><h>vector space </h><h> of column vectors</h></idx>
           The space of all <term>column vectors</term> of real numbers is denoted by
-          <me>
+          <md>
             \mathbb{R}^n = \left\{\left.\bbm x_1\\x_2 \\ \vdots \\x_n\ebm \,\,\right| \, x_1, x_2, \ldots, x_n\in \mathbb{R}\right\}
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
@@ -83,25 +83,25 @@
 
     <p>
       In particular, we can define the <term>length</term> of a vector
-      <me>
+      <md>
         \vec{x}=\bbm x_1\\x_2\\ \vdots\\ x_n\ebm\in\mathbb{R}^n
-      </me>
+      </md>
       by
-      <me>
+      <md>
         \norm{\vec{x}} = \sqrt{x_1^2+x_2^2+\cdots +x_n^2}
-      </me>,
+      </md>,
       and the dot product of vectors <m>\vec{x}, \vec{y}\in\mathbb{R}^n</m> by
-      <me>
+      <md>
         \dotp xy = x_1y_1+x_2y_2+\cdots + x_ny_n
-      </me>.
+      </md>.
     </p>
 
     <p>
       Having defined the dot product, we can still declare two vectors <m>\vec x</m> and <m>\vec y</m> to be orthogonal if <m>\dotp xy = 0</m>,
       and define the angle between two vectors by requiring that the identity
-      <me>
+      <md>
         \dotp xy = \norm{\vec{x}}\norm{\vec{y}}\cos\theta
-      </me>
+      </md>
       remain valid. Using these definitions, along with <xref ref="thm-addition_properties"/>,
       we can see that all of the properties of vector operations given in <xref ref="thm_vector_properties"/>
       remain valid in <m>\mathbb{R}^n</m>.
@@ -205,9 +205,9 @@
       <statement>
         <p>
           A <term>linear combination</term><idx><h>linear combination</h></idx> in <m>\mathbb{R}^n</m> is any expression of the form
-          <me>
+          <md>
             c_1\vec{v}_1+c_2\vec{v_2}+\cdots + c_k\vec{v}_k
-          </me>,
+          </md>,
           where <m>c_1,c_2\,\ldots, c_k\in \mathbb{R}</m> are scalars,
           and <m>\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k\in\mathbb{R}^n</m> are vectors.
         </p>
@@ -253,39 +253,39 @@
                 To simplify the linear combination, we first take care of the scalar multiplication,
                 and then perform the addition. (We choose to interpret this expression as <m>3\vec{u}+(-4)\vec{w}</m>,
                 and multiply by <m>-4</m> in the first step, and add in the second step, rather than multiplying by 4 and then subtracting.)
-                <me>
+                <md>
                   3\vec{u}-4\vec{w}  = 3\bbm 2\\-1\\3\ebm -4\bbm 2\\3\\12\ebm
                   = \bbm 6\\-3\\9\ebm + \bbm -8\\-12\\-48\ebm
                   = \bbm -2\\-15\\-39\ebm
-                </me>.
+                </md>.
               </p>
             </li>
 
             <li>
               <p>
                 We proceed as with the previous problem, this time performing the scalar multiplication of <m>\vec{w}</m> by <m>-2</m> in our heads:
-                <me>
+                <md>
                   \vec{u}+\vec{v}-2\vec{w}  = \bbm 2\\-1\\3\ebm + \bbm -4\\6\\3\ebm + \bbm -4\\-6\\-24\ebm = \bbm -6\\-1\\-18\ebm
-                </me>.
+                </md>.
               </p>
             </li>
 
             <li>
               <p>
                 We find
-                <me>
+                <md>
                   7\vec{u}+3\vec{v} = 7\bbm 2\\-1\\3\ebm+3\bbm -4\\6\\3\ebm =
                   \bbm 14\\-7\\21\ebm+\bbm -12\\18\\9\ebm = \bbm 2\\11\\30\ebm
-                </me>.
+                </md>.
               </p>
             </li>
 
             <li>
               <p>
                 For our last example, we compute
-                <me>
+                <md>
                   3\vec{u}+\vec{v}-\vec{w} = \bbm 6\\-3\\9\ebm + \bbm -4\\6\\3\ebm - \bbm 2\\3\\12\ebm = \bbm 0\\0\\0\ebm
-                </me>.
+                </md>.
               </p>
             </li>
 
@@ -320,15 +320,15 @@
 
     <p>
       Viewed another way, notice that we can solve the equation <m>3\vec{u}+\vec{v}-\vec{w}=\vec{0}</m> for <m>\vec{w}</m>: we have
-      <me>
+      <md>
         \vec{w} = 3\vec{u}+\vec{v}
-      </me>.
+      </md>.
       What this tells us is that when we're being asked to form linear combinations of the vectors
       <m>\vec{u}, \vec{v}</m>, and <m>\vec{w}</m> in <xref ref="ex_lincombRn"/>, then vector <m>\vec{w}</m> is redundant.
       Suppose the vector <m>\vec{x}</m> is an arbitrary linear combination of these vectors; that is,
-      <me>
+      <md>
         \vec{x} = a\vec{u}+b\vec{v}+c\vec{w}
-      </me>
+      </md>
       for some scalars <m>a,b,c</m>. If we plug in <m>\vec{w} = 3\vec{u}+\vec{v}</m>, then we get
       <md>
         <mrow>\vec{x} \amp = a\vec{u}+b\vec{v}+c(3\vec{u}+\vec{v})</mrow>
@@ -350,9 +350,9 @@
           Let <m>A = \{\vec{v}_1, \vec{v}_2, \ldots, \vec{v}_k\}</m> be a set of vectors in <m>\mathbb{R}^n</m>.
           The <term>span</term><idx><h>span</h></idx> of the vectors in <m>A</m>, denoted <m>\operatorname{span}(A)</m>,
           is the set <m>S</m> of all possible linear combinations of the vectors in <m>A</m>. That is,
-          <me>
+          <md>
             S = \operatorname{span}(A) = \{c_1\vec{v}_1+c_2\vec{v}_2+\cdots + c_k\vec{v}_k \,|\, c_1, c_2, \ldots, c_k \in \mathbb{R}\}
-          </me>.
+          </md>.
           <idx><h>span</h></idx>
         </p>
       </statement>
@@ -389,18 +389,18 @@
             <li>
               <p>
                 As a set, we have
-                <me>
+                <md>
                   \operatorname{span}\{\vec{u}\} = \left\{\left.t\bbm 2\\-1\\3\ebm \, \right|\, t\in \mathbb{R}\right\}
-                </me>,
+                </md>,
                 the set of all scalar multiplies of the vector <m>\vec{u}</m>.
               </p>
 
               <p>
                 If we think back to <xref ref="sec-lines"/>, we can do a bit better with our description.
                 The set <m>\operatorname{span}\{\vec{u}\}</m> consists of all vectors <m>\bbm x\\y\\z\ebm</m> such that
-                <me>
+                <md>
                   \bbm x\\y\\z\ebm = t\bbm 2\\-1\\3\ebm = \bbm 0\\0\\0\ebm + t\bbm 2\\-1\\3\ebm
-                </me>,
+                </md>,
                 which we recognize as the equation of a line through the origin in <m>\mathbb{R}^3</m>
                 in the direction of the vector <m>\vec{u}</m>.
               </p>
@@ -409,15 +409,15 @@
             <li>
               <p>
                 Again, as a set we can write
-                <me>
+                <md>
                   \operatorname{span}\{\vec{u},\vec{v}\} = \left\{\left.s\bbm 2\\-1\\3\ebm+t\bbm -4\\6\\3\ebm \, \right| \, s,t\in \mathbb{R}\right\}
-                </me>,
+                </md>,
                 so <m>\operatorname{span}\{\vec{u},\vec{v}\}</m> consists of all vectors of the form <m>\bbm 2s-4t\\-s+6t\\3s+3t\ebm</m>,
                 where <m>s</m> and <m>t</m> can be any real numbers.
                 Again, with a bit of thought, we can come up with a geometric description of this set. Consider an arbitrary vector
-                <me>
+                <md>
                   \vec{x} = s\vec{u}+t\vec{v} \in \operatorname{span}\{\vec{u},\vec{v}\}
-                </me>.
+                </md>.
                 Any such vector can be obtained by moving some distance (measured by the scalar <m>s</m>) in the direction of <m>\vec{u}</m>,
                 and then moving another distance (measured by the scalar <m>t</m>) in the direction of <m>\vec{v}</m>.
                 We now have two directions in which to move, and if we haven't forgotten what we learned in <xref ref="sec-planes"/>,
@@ -426,18 +426,18 @@
 
               <p>
                 To see that <m>\operatorname{span}\{\vec{u},\vec{v}\}</m> is indeed a plane, we compute
-                <me>
+                <md>
                   \vec{n} = \vec{u}\times\vec{v} = \bbm -21\\-18\\8\ebm
-                </me>,
+                </md>,
                 which we know is orthogonal to both <m>\vec{u}</m> and <m>\vec{v}</m>.
                 It follows from the properties of the dot product that for any other vector <m>\vec{x}=s\vec{u}+t\vec{v}</m> we have
-                <me>
+                <md>
                   \dotp nx = \vec{n}\boldsymbol{\cdot}(s\vec{u}+t\vec{v}) = s(\dotp ns) + t(\dotp nv) = s(0)+t(0)=0
-                </me>,
+                </md>,
                 so with <m>\vec{x} = \bbm x\\y\\z\ebm</m>, we have
-                <me>
+                <md>
                   -21x-18y+8z=0
-                </me>,
+                </md>,
                 which is the equation of a plane through the origin.
               </p>
             </li>
@@ -448,9 +448,9 @@
                 <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m> can be written as a linear combination of
                 <m>\vec{u}</m> and <m>\vec{v}</m> alone. Thus, the span of <m>\vec{u}, \vec{v}</m>,  and <m>\vec{w}</m>
                 doesn't contain anything we didn't already have in the span of <m>\vec{u}</m> and <m>\vec{v}</m>; that is,
-                <me>
+                <md>
                   \operatorname{span}\{\vec{u},\vec{v},\vec{w}\}=\operatorname{span}\{\vec{u},\vec{v}\}
-                </me>.
+                </md>.
               </p>
             </li>
 
@@ -495,21 +495,21 @@
           We do not yet have a general technique for solving problems of this type.
           Notice that the question <q>Does <m>\vec{x}</m> belong to the span of <m>\{\vec{u},\vec{v},\vec{w}\}</m>?</q>
           is equivalent to the question, <lq/>Do there exist scalars <m>a,b,c</m> such that
-          <me>
+          <md>
             a\vec{u}+b\vec{v}+c\vec{w}=\vec{x}
-          </me>?<rq/>
+          </md>?<rq/>
           Answering this question amounts to solving a system of linear equations: if we plug in our vectors, we have
-          <me>
+          <md>
             a\bbm 2\\-1\\1\ebm + b\bbm 3\\2\\5\ebm + c\bbm -2\\5\\3\ebm = \bbm 2a+3b-2c\\-a+2b+5c\\a+5b+3c\ebm = \bbm 3\\6\\9\ebm
-          </me>.
+          </md>.
           By definition of the equality of vectors, this amounts to the system of equations
-          <me>\arraycolsep=2pt
+          <md>
             \begin{array}{ccccccc}
             2a\amp +\amp 3b\amp -\amp 2c\amp =\amp 3\\
             -a\amp +\amp 2b\amp +\amp 5c\amp =\amp 6\\
             a\amp +\amp 5b\amp +\amp 3c\amp =\amp 9
             \end{array}
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -519,9 +519,10 @@
           their third component is the sum of the first two:
           <m>1=2+(-1)</m> for <m>\vec{u}</m>, <m>5=3+2</m> for <m>\vec{v}</m>, and <m>3=-2+5</m> for <m>\vec{w}</m>.
           Thus, all three vectors are of the form <m>\bbm x\\y\\x+y\ebm</m>. Now, notice what happens if we combine two such vectors:
-          <me>
-            s\bbm a\\b\\a+b\ebm+t\bbm c\\d\\c+d\ebm = \bbm sa+tc\\sb+td\\s(a+b)+t(c+d)\ebm = \bbm sa+tc\\sb+td\\(sa+tc)+(sb+td)\ebm,
-          </me>
+          <md>
+            <mrow>s\bbm a\\b\\a+b\ebm+t\bbm c\\d\\c+d\ebm \amp = \bbm sa+tc\\sb+td\\s(a+b)+t(c+d)\ebm </mrow>
+            <mrow> \amp = \bbm sa+tc\\sb+td\\(sa+tc)+(sb+td)\ebm</mrow>
+          </md>,
           which is another vector of the same form. The same will be true for combinations of three or more such vectors.
         </p>
 
@@ -529,9 +530,9 @@
           For the vector <m>\vec{x}</m>, we check that <m>3+6=9</m>, so <m>\vec{x}</m> has the correct form,
           and indeed (with a bit of <q>guess and check</q> work), we find that <m>a=b=c=1</m> works,
           since <m>\vec{u}+\vec{v}+\vec{w}=\vec{x}</m>. Thus, we can conclude that
-          <me>
+          <md>
             \vec{x}\in\operatorname{span}\{\vec{u},\vec{v},\vec{w}\}
-          </me>.
+          </md>.
           For the vector <m>\vec{y}</m>, we add the first two components, getting <m>4+1=5\neq -3</m>.
           Since the third component is not the sum of the first two, there is no way that <m>\vec{y}</m>
           could belong to the span of <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m>.
@@ -547,9 +548,9 @@
       Notice in <xref ref="ex_spanRn"/> that the span did not change when we added the vector <m>\vec{w}</m> to the set of spanning vectors.
       This was probably not too surprising, since we saw that <m>\vec{w} = 3\vec{u}+\vec{v}</m>,
       meaning that <m>\vec{w}</m> is a linear combination of <m>\vec{u}</m> and <m>\vec{v}</m>, and thus,
-      <me>
+      <md>
         \vec{w}\in\operatorname{span}\{\vec{u},\vec{v}\}
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -590,9 +591,9 @@
       <statement>
         <p>
           We say that a set of vectors
-          <me>
+          <md>
             A = \{\vec{v}_1,\vec{v}_2,\ldots, \vec{v}_k\}
-          </me>
+          </md>
           in <m>\mathbb{R}^n</m> is <term>linearly dependent</term> if <m>\vec{0}\in A</m>,
           or if one of the vectors <m>\vec{v}_i</m> in <m>A</m> can be written as a linear combination of the other vectors in <m>A</m>.
           If the set <m>A</m> is not linearly dependent, we say that it is <term>linearly independent</term>.
@@ -616,9 +617,9 @@
             <li>
               <p>
                 The vectors
-                <me>
+                <md>
                   \vec{x} = \bbm 2\\-1\\0\ebm, \vec{y} = \bbm -2\\3\\1\ebm, \quad \text{ and } \quad \vec{z} = \bbm 1\\1\\0\ebm
-                </me>.
+                </md>.
               </p>
             </li>
 
@@ -639,9 +640,9 @@
                 Intuition tells us that any plane can be written as the span of <em>two</em> vectors,
                 so we can expect that any one of the three vectors can be written in terms of the other two, and indeed,
                 this is the case. With a bit of guesswork (or by asking a computer), we can determine that
-                <me>
+                <md>
                   \vec{w} = -\frac{19}{7}\vec{u}+\frac{8}{7}\vec{v}
-                </me>,
+                </md>,
                 showing that <m>\vec{w}</m> can be written as a linear combination of <m>\vec{u}</m> and <m>\vec{v}</m>,
                 and thus, that our vectors are linearly dependent.
               </p>
@@ -655,9 +656,9 @@
                 since any such linear combination would still have a zero in the third component.
                 To see that <m>\vec{x}</m> cannot be written in terms of <m>\vec{y}</m> and <m>\vec{z}</m>,
                 notice that for any <m>a</m> and <m>b</m>,
-                <me>
+                <md>
                   a\vec{y}+b\vec{z} = \bbm -2a+b\\3a+b\\a\ebm
-                </me>.
+                </md>.
                 If this is to equal <m>\vec{x}</m>, then we must have <m>a=0</m>, giving us <m>\vec{x}=b\vec{z}</m>,
                 but it's clear that <m>\vec{x}</m> is not a scalar multiple of <m>\vec{z}</m>.
                 A similar argument shows that <m>\vec{z}</m> cannot be written in terms of <m>\vec{x}</m> and <m>\vec{y}</m>,
@@ -671,9 +672,9 @@
 
     <p>
       Another way to characterize linear independence is as follows: suppose we have a linear combination equal to the zero vector:
-      <men xml:id="eq-linearindep">
+      <md number="yes" xml:id="eq-linearindep">
         c_1\vec{v}_1+c_2\vec{v}_2+\cdots +c_k\vec{v}_k = \vec{0}
-      </men>.
+      </md>.
     </p>
 
     <p>
@@ -686,9 +687,9 @@
       To see why this rule works, suppose we can choose our scalars in <xref ref="eq-linearindep" text="local">Equation</xref>
       so that at least one of them is non-zero. For simplicity, let's say <m>c_1\neq 0</m>.
       Then we can rewrite <xref ref="eq-linearindep" text="local">Equation</xref> as
-      <me>
+      <md>
         c_1\vec{v}_1 = -c_2\vec{v}_2-\cdots - c_k\vec{v}_k
-      </me>,
+      </md>,
       and since <m>c_1\neq 0</m>, we can divide both sides by <m>c_1</m>,
       and we've written <m>\vec{v}_1</m> as a linear combination of the remaining vectors.
     </p>
@@ -696,9 +697,9 @@
     <p>
       For example, from <xref ref="ex_linindepRn"/> we can conclude (with a bit of rearranging)
       that the vectors <m>\vec{u}</m>, <m>\vec{v}</m>, and <m>\vec{w}</m> satisfy the relationship
-      <me>
+      <md>
         19\vec{u}-8\vec{v}+7\vec{w} = \vec{0}
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -776,36 +777,36 @@
       To see how such systems arise, suppose we want to know whether or not the vector
       <m>\vec w = \bbm 2\\-1\\3\\0\ebm \in\mathbb{R}^4</m> belongs to the set
       <m>V = \operatorname{span}\{\vec{v}_1, \vec{v}_2, \vec{v}_3\}</m>, where
-      <me>
+      <md>
         \vec{v}_1 = \bbm 0\\2\\-1\\4\ebm, \vec{v}_2 = \bbm 3\\1\\0\\-4\ebm, \vec{v}_3 = \bbm -3\\6\\7\\2\ebm
-      </me>.
+      </md>.
     </p>
 
     <p>
       By definition, <m>V</m> is the set of all possible linear combinations of the vectors <m>\vec{v}_1, \vec{v}_2, \vec{v}_3</m>,
       so saying that <m>\vec w \in V</m> is the same as saying that we can write <m>\vec w</m> as a linear combination of these vectors.
       Thus, what we want to know is whether or not there exist scalars <m>x_1, x_2, x_3</m> such that
-      <me>
+      <md>
         \vec w = x_1\vec{v}_1 + x_2\vec{v}_2 + x_3\vec{v}_3
-      </me>.
+      </md>.
       Substituting in the values for our vectors, this gives
-      <me>
+      <md>
         x_1\bbm 0\\2\\-1\\4\ebm + x_2\bbm 3\\1\\0\\-4\ebm + x_3\bbm -3\\6\\7\\2\ebm  =
         \bbm 3x_2-3x_3\\2x_1+x_2+6x_3\\-x_1+7x_3\\4x_1-4x_2+2x_3\ebm = \bbm 2\\-1\\3\\0\ebm
-      </me>.
+      </md>.
     </p>
 
     <p>
       Since two vectors are equal if and only if each component is equal,
       the above vector equation leads to the following system of four equations:
-      <me>\arraycolsep=2pt
+      <md>
         \begin{array}{ccccccc}
         \amp   \amp 3x_2 \amp-\amp3x_3 \amp= \amp2\\
         2x_1\amp +\amp x_2\amp +\amp 6x_3\amp =\amp -1\\
         -x_1\amp  \amp  \amp +\amp 7x_3\amp =\amp 3\\
         4x_1\amp -\amp 4x_2\amp +\amp 2x_3\amp =\amp 0
         \end{array}
-      </me>.
+      </md>.
       Thus, the question <q>Is the vector <m>\vec w</m> an element of <m>V</m>?</q>
       is equivalent to the question <q>Is there a solution to the above system of equations?</q>
     </p>
@@ -816,9 +817,9 @@
       With linear independence, it is not whether a solution exists that is in doubt, but whether or not that solution is <em>unique</em>.
       For example, suppose we wanted to know if the vectors in our span example above are linearly independent.
       We would start with the vector equation
-      <me>
+      <md>
         x_1\vec{v}_1+x_2\vec{v}_2+x_3\vec{v}_3 = \vec 0
-      </me>,
+      </md>,
       and ask whether or not there are any solutions other than <m>x_1=x_2=x_3=0</m>.
     </p>
 
@@ -835,9 +836,9 @@
       <introduction>
         <p>
           Simplify the given linear combinations, where
-          <me>
+          <md>
             \vec u = \bbm -1\\0\\2\\4\ebm, \vec v = \bbm 3\\4\\-5\\0\ebm, \text{ and } \vec w = \bbm -3\\2\\0\\7\ebm
-          </me>.
+          </md>.
         </p>
       </introduction>
 
@@ -900,9 +901,9 @@
       <introduction>
         <p>
           Calculate the given quantity, where
-          <me>
+          <md>
             \vu = \bbm 2\\0\\-1\\3\\7\ebm, \vvv = \bbm -3\\5\\0\\-6\\1\ebm, \text{ and } \vec w = \bbm 0\\-3\\5\\2\\-4\ebm
-          </me>.
+          </md>.
         </p>
       </introduction>
 

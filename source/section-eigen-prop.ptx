@@ -78,26 +78,26 @@
 
             <p>
               For <m>A</m>, we have eigenvalues <m>\lambda  = -6</m> and  <m>12</m>, with eigenvectors
-              <me>
+              <md>
                 \vx = x_2\bbm -5\\1\ebm \ \text{ and }\  x_2\bbm 1\\1\ebm\text{, respectively}
-              </me>.
+              </md>.
             </p>
 
             <p>
               For <m>B</m>, we have eigenvalues <m>\lambda  = -1,\ 2,</m> and <m>3</m> with eigenvectors
-              <me>
+              <md>
                 \vx = x_3 \bbm 3\\1\\2\ebm,\ x_3 \bbm 2\\1\\2\ebm\ \text{ and }\ x_3 \bbm 1\\0\\1\ebm \text{, respectively}
-              </me>.
+              </md>.
             </p>
           </li>
 
           <li>
             <p>
               We first compute the inverses of <m>A</m> and <m>B</m>. They are:
-              <me>
+              <md>
                 A^{-1} = \bbm -1/8 \amp  5/24 \\ 1/24 \amp  1/24 \ebm \quad \text{and} \quad
                 B^{-1} = \bbm -4 \amp  1/3 \amp  13/3 \\ -3/2 \amp  1/2 \amp  3/2 \\ -3 \amp  1/3 \amp  10/3 \ebm
-              </me>.
+              </md>.
             </p>
 
             <p>
@@ -107,16 +107,16 @@
 
             <p>
               For <m>A^{-1}</m>, we have eigenvalues <m>\lambda  = -1/6</m> and <m>1/12</m>, with eigenvectors
-              <me>
+              <md>
                 \vx = x_2 \bbm -5\\1\ebm\ \text{ and }\  x_2 \bbm 1\\1\ebm\text{, respectively}
-              </me>.
+              </md>.
             </p>
 
             <p>
               For <m>B^{-1}</m>, we have eigenvalues <m>\lambda  = -1</m>, <m>1/2</m> and <m>1/3</m> with eigenvectors
-              <me>
+              <md>
                 \vx = x_3\bbm 3\\1\\2\ebm,\ x_3\bbm 2\\1\\2\ebm \ \text{ and }\  x_3 \bbm 1\\0\\1\ebm\text{, respectively}
-              </me>.
+              </md>.
             </p>
           </li>
 
@@ -128,16 +128,16 @@
 
             <p>
               For <m>A^T</m>, we have eigenvalues <m>\lambda  = -6</m> and <m>12</m> with eigenvectors
-              <me>
+              <md>
                 \vx = x_2 \bbm -1\\1\ebm\ \text{ and }\  x_2 \bbm 5\\1\ebm \text{, respectively}
-              </me>.
+              </md>.
             </p>
 
             <p>
               For <m>B^T</m>, we have eigenvalues <m>\lambda  = -1,\ 2</m> and <m>3</m> with eigenvectors
-              <me>
+              <md>
                 \vx = x_3 \bbm -1\\0\\1\ebm,\ x_3 \bbm -1\\1\\1\ebm\ \text{ and }\ x_3\bbm 0\\-2\\1\ebm\text{, respectively}
-              </me>.
+              </md>.
             </p>
           </li>
 
@@ -353,30 +353,30 @@
 
       <p>
         For <m>\lambda  = 0</m>, we find the eigenvectors:
-        <me>
+        <md>
           \bbm 1 \amp 2 \amp 0\\1\amp 2\amp 0\ebm \quad \overrightarrow{\text{rref}}\quad \bbm 1\amp 2\amp 0\\0\amp 0\amp 0\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         This shows that <m>x_1 = -2x_2</m>, and so our eigenvectors <m>\vx</m> are
-        <me>
+        <md>
           \vx = x_2\bbm-2\\1\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         For <m>\lambda  = 3</m>, we find the eigenvectors:
-        <me>
+        <md>
           \bbm-2 \amp 2 \amp 0\\ 1\amp -1\amp 0 \ebm \quad \overrightarrow{\text{rref}}\quad \bbm 1\amp -1\amp 0\\0\amp 0\amp 0\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
         This shows that <m>x_1 = x_2</m>, and so our eigenvectors <m>\vx</m> are
-        <me>
+        <md>
           \vx = x_2\bbm 1\\1\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>

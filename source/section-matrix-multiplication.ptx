@@ -9,23 +9,23 @@
 
   <p>
     In the spirit of the last section, take another wild stab: what do you think
-    <me>
+    <md>
       \bbm 1 \amp 2\\3 \amp 4\ebm \times \bbm 1\amp -1\\2\amp 2\ebm
-    </me>
+    </md>
     means?
   </p>
 
   <p>
     You are likely to have guessed
-    <me>
+    <md>
       \bbm 1 \amp -2\\6 \amp 8\ebm
-    </me>
+    </md>
     but this is, in fact, <em>not</em> right.
     (You <em>could</em> define multiplication this way; you'll even find that it satisfies plenty of nice properties.
     Unfortunately, nice properties don't make up for the fact that this definition just isn't useful.) The actual answer is
-    <me>
+    <md>
       \bbm 5 \amp 3\\11 \amp 5\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -36,14 +36,14 @@
 
   <p>
     To further muddy the waters (before we clear them), consider
-    <me>
+    <md>
       \bbm 1 \amp 2\\3 \amp 4\ebm \times \bbm 1\amp -1\amp 0\\2\amp 2\amp -1\ebm
-    </me>.
+    </md>.
     Our experience from the last section would lend us to believe that this is not defined,
     but our confidence is probably a bit shaken by now. In fact, this multiplication <em>is</em> defined, and it is
-    <me>
+    <md>
       \bbm 5 \amp 3 \amp -2\\11\amp 5\amp -4\ebm
-    </me>.
+    </md>.
     You may see some similarity in this answer to what we got before, but again, probably not enough to really figure things out.
   </p>
 
@@ -75,10 +75,10 @@
       <p>
         Let <m>\vu</m> be an <m>1\times n</m> row vector with entries <m>u_1, u_2, \cdots, u_n</m>
         and let <m>\vvv</m> be an <m>n\times 1</m> column vector with entries <m>v_1, v_2, \cdots, v_n</m>.
-        The <term>product of <m>\vu</m> and \vvv</term>, denoted <m>\dotp uv</m> or <m>\vu\vvv</m>, is
-        <me>
+        The <term>product of <m>\vu</m> and <m>\vvv</m></term>, denoted <m>\dotp uv</m> or <m>\vu\vvv</m>, is
+        <md>
           \vu\vvv = \sum_{i=1}^n  u_iv_i = u_1v_1 + u_2v_2 + \cdots + u_nv_n
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -109,9 +109,9 @@
 
       <p>
         Let
-        <me>
+        <md>
           \vu = \bbm 1 \amp 2 \amp 3\ebm,\ \vvv = \bbm 2\amp 0\amp 1\amp -1\ebm,\ \vx = \bbm-2\\4\\3\ebm,\ \vy = \bbm 1\\2\\5\\0\ebm
-        </me>.
+        </md>.
         Find the following products.
         <ol cols="3">
           <li><m>\vu\vx</m></li>
@@ -179,18 +179,18 @@
     Let matrix <m>A</m> have rows <m>\vec{a}_{1}</m>, <m>\vec{a}_{2}</m>, <m>\cdots</m>, <m>\vec{a}_{m}</m>
     and let <m>B</m> have columns  <m>\vec{b}_{1}</m>, <m>\vec{b}_{2}</m>, <m>\cdots</m>, <m>\vec{b}_{n}</m>.
     Thus <m>A</m> looks like
-    <me>
+    <md>
       \bbm- \amp \vec{a}_{1} \amp -\\-\amp \vec{a}_{2}\amp -\\ \amp  \vdots \amp  \\ -\amp \vec{a}_{m}\amp -\ebm
-    </me>,
+    </md>,
     where the <q><m>-</m></q> symbols just serve as reminders that the <m>\vec{a}_{i}</m> represent rows,
     and <m>B</m> looks like
-    <me>
+    <md>
       \bbm|\amp |\amp  \amp |\\\vec{b}_{1}\amp \vec{b}_{2}\amp \cdots\amp \vec{b}_{n}\\|\amp |\amp  \amp |\ebm
-    </me>,
+    </md>,
     where again, the <q><m>|</m></q> symbols just remind us that the <m>\vec{b}_{i}</m> represent column vectors. Then
-    <me>
+    <md>
       AB = \bbm\vec{a}_{1}\vec{b}_{1}  \amp  \vec{a}_{1}\vec{b}_{2}  \amp  \cdots \amp  \vec{a}_{1}\vec{b}_{n}\\ \vec{a}_{2}\vec{b}_{1} \amp  \vec{a}_{2}\vec{b}_{2} \amp  \cdots \amp  \vec{a}_{2}\vec{b}_{n}\\ \vdots \amp  \vdots \amp  \ddots \amp  \vdots \\ \vec{a}_{m}\vec{b}_{1} \amp  \vec{a}_{m}\vec{b}_{2} \amp  \cdots \amp  \vec{a}_{m}\vec{b}_{n}\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -199,9 +199,9 @@
     (we refer to these as the <q>inner dimensions</q>).
     Secondly, the resulting matrix has the same number of <em>rows</em> as <m>A</m>
     and the same number of <em>columns</em> as <m>B</m> (we refer to these as the <q>outer dimensions</q>).
-    <me>
+    <md>
       \overbrace{(m\times\hspace{-32pt} \underbrace{r) \times (r}_\text{these inner dimensions must match}\hspace{-32pt}\times n)}^\text{final dimensions are the outer dimensions}
-    </me>
+    </md>
     Of course, this will make much more sense when we see an example.
   </p>
 
@@ -211,9 +211,9 @@
 
       <p>
         Revisit the matrix product we saw at the beginning of this section; multiply
-        <me>
+        <md>
           \bbm 1 \amp 2\\3 \amp 4\ebm\bbm 1\amp -1\amp 0\\2\amp 2\amp -1\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -223,34 +223,34 @@
         Matrix <m>A</m> is <m>2\times 2</m> and <m>B</m> is <m>2\times 3</m>.
         The <q>inner</q> dimensions match up, so we can compute the product; the <q>outer</q>
         dimensions tell us that the product will be <m>2\times 3</m>. Let
-        <me>
+        <md>
           AB = \bbm m_{11}  \amp  m_{12}  \amp  m_{13}\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
-        </me>.
+        </md>.
         Let's find the value of each of the entries.
       </p>
 
       <p>
         The entry <m>m_{11}</m> is in the first row and first column;
         therefore to find its value, we need to multiply the first row of <m>A</m> by the first column of <m>B</m>. Thus
-        <me>
+        <md>
           m_{11} = \bbm 1 \amp 2\ebm\bbm 1\\2\ebm = 1(1)+2(2) = 5
-        </me>.
+        </md>.
         So now we know that
-        <me>
+        <md>
           AB = \bbm 5  \amp  m_{12}  \amp  m_{13}\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
-        </me>.
+        </md>.
         Finishing out the first row, we have
-        <me>
+        <md>
           m_{12} = \bbm 1 \amp 2\ebm\bbm-1\\2\ebm = 1(-1)+2(2) = 3
-        </me>
+        </md>
         using the first row of <m>A</m> and the second column of <m>B</m>, and
-        <me>
+        <md>
           m_{13} = \bbm 1 \amp 2\ebm\bbm 0\\-1\ebm = 1(0)+2(-1) = -2
-        </me>
+        </md>
         using the first row of <m>A</m> and the third column of <m>B</m>. Thus we have
-        <me>
+        <md>
           AB = \bbm 5  \amp  3  \amp  -2\\m_{21} \amp  m_{22} \amp  m_{23}\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -261,9 +261,9 @@
           <mrow>m_{23} \amp = \bbm 3\amp 4\ebm\bbm 0\\-1\ebm = -4</mrow>
         </md>.
         Thus
-        <me>
+        <md>
           AB = \bbm 1 \amp 2\\3 \amp 4\ebm\bbm 1\amp -1\amp 0\\2\amp 2\amp -1\ebm = \bbm 5 \amp  3 \amp  -2\\11 \amp  5 \amp  -4\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
@@ -274,9 +274,9 @@
 
       <p>
         Multiply
-        <me>
+        <md>
           \bbm 1 \amp -1\\5 \amp 2\\-2\amp 3\ebm\bbm 1\amp 1\amp 1\amp 1\\2\amp 6\amp 7\amp 9\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -285,9 +285,9 @@
         Again calling the first matrix <m>A</m> and the second <m>B</m>,
         we see that <m>A</m> is a <m>3\times 2</m> matrix and <m>B</m> is a <m>2\times4</m> matrix;
         the inner dimensions match so the product is defined, and the product will be a <m>3\times 4</m> matrix,
-        <me>
+        <md>
           AB = \bbm m_{11} \amp m_{12} \amp m_{13}\amp m_{14}\\ m_{21}\amp m_{22}\amp m_{23}\amp m_{24}\\m_{31}\amp m_{32}\amp m_{33}\amp m_{34}\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -305,13 +305,13 @@
 
       <p>
         So far, we've computed this much of <m>AB</m>:
-        <me>
+        <md>
           AB = \bbm-1 \amp m_{12} \amp -6\amp m_{14}\\ m_{21}\amp m_{22}\amp 19\amp 23\\m_{31}\amp 16\amp m_{33}\amp 25\ebm
-        </me>.
+        </md>.
         The final product is
-        <me>
+        <md>
           AB = \bbm-1 \amp -5 \amp -6\amp -8\\ 9\amp 17\amp 19\amp 23\\4\amp 16\amp 19\amp 25\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
@@ -322,9 +322,9 @@
 
       <p>
         Multiply, if possible,
-        <me>
+        <md>
           \bbm 2 \amp 3 \amp 4\\9\amp 8\amp 7\ebm\bbm 3\amp 6\\5\amp -1\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
@@ -343,9 +343,9 @@
 
       <p>
         In <xref ref="ex_vector_multiplication"/>, we were told that the product <m>\vx\vu</m> was defined, where
-        <me>
+        <md>
           \vx =\bbm-2\\4\\3\ebm \quad \text{and} \quad \vu = \bbm 1 \amp 2\amp 3\ebm
-        </me>,
+        </md>,
         although we were not shown what that product was. Find <m>\vx\vu</m>.
       </p>
     </statement>
@@ -360,9 +360,9 @@
         whereas the row vector <m>\vu</m> has dimensions <m>1\times 3</m>.
         Since the inner dimensions match, the matrix product is defined;
         the outer dimensions tell us that the product will be a <m>3\times3</m> matrix, as shown below:
-        <me>
+        <md>
           \vx\vu = \bbm m_{11} \amp m_{12} \amp m_{13}\\ m_{21}\amp m_{22}\amp m_{23}\\m_{31}\amp m_{32}\amp m_{33}\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -389,13 +389,13 @@
 
       <p>
         So far we have computed
-        <me>
+        <md>
           \vx\vu = \bbm-2 \amp -4 \amp m_{13}\\ m_{21}\amp m_{22}\amp 12\\3\amp m_{32}\amp m_{33}\ebm
-        </me>.
+        </md>.
         After performing all 9 multiplications, we find
-        <me>
+        <md>
           \vx\vu = \bbm-2 \amp -4 \amp -6\\ 4\amp 8\amp 12\\3\amp 6\amp 9\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
@@ -458,9 +458,9 @@
               We haven't formally defined what <m>I^2</m> means,
               but we could probably make the reasonable guess that <m>I^2=I\cdot I </m>.
               Thus
-              <me>
+              <md>
                 I^2 = \eyethree\eyethree = \eyethree
-              </me>.
+              </md>.
             </p>
           </li>
           <li><m>BC = \bbm 1\amp 1\amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm \bbm 1\amp 0\amp 2\\2\amp 1\amp 0\\0\amp 2\amp 1\ebm = \bbm 3\amp 3\amp 3\\3\amp 3\amp 3\\3\amp 3\amp 3\ebm</m></li>
@@ -519,9 +519,9 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 1 \amp 2\\3 \amp 4\ebm,\quad B = \bbm 1\amp 1\\1\amp -1\ebm \quad \text{and} \quad C=\bbm 2\amp 1\\1\amp 2\ebm
-        </me>.
+        </md>.
         Find the following:
         <ol cols="2">
           <li><m>A(B+C)</m></li>
@@ -629,9 +629,9 @@
   <p>
     Note that while the zero matrix can come in all different shapes and sizes,
     the identity matrix is always a square matrix. We show a few identity matrices below.
-    <me>
+    <md>
       I_2= \eyetwo ,\quad I_3 = \eyethree , \quad I_4 = \eyefour
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -685,9 +685,9 @@
   <p>
     As we near the end of this section, we raise one more issue of notation.
     We define <m>A^0 = I</m>. If <m>n</m> is a positive integer, we define
-    <me>
+    <md>
       A^n = \underbrace{A\cdot A\cdot \ \cdots\ \cdot A}_{n \text{ times}}
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -730,13 +730,13 @@
 
   <p>
     The bad news is that these ideas pop up in many places where we don't expect them. For instance, we are used to
-    <me>
+    <md>
       (a+b)^2 = a^2+2ab+b^2
-    </me>.
+    </md>.
     What about <m>(A+B)^2</m>? All we'll say here is that
-    <me>
+    <md>
       (A+B)^2 \neq A^2+2AB+B^2;
-    </me>
+    </md>
     we leave it to the reader to figure out why.
   </p>
 
@@ -764,7 +764,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm 2 \amp 3\ebm \quad \vvv = \bbm 7\-4\ebm</m>
+            <m>\vu = \bbm 2 \amp 3\ebm \quad \vvv = \bbm 7\\-4\ebm</m>
           </p>
         </statement>
         <answer>
@@ -842,7 +842,7 @@
       <exercise>
         <statement>
           <p>
-            <m>\vu = \bbm -3 \amp 6 \amp 1\ebm</m> \ <m>\vvv = \bbm 1\-1\\1\ebm</m>
+            <m>\vu = \bbm -3 \amp 6 \amp 1\ebm</m> \ <m>\vvv = \bbm 1\\-1\\1\ebm</m>
           </p>
         </statement>
         <answer>
@@ -1417,9 +1417,9 @@
             <li>
               <p>
                 Carefully expand the expression
-                <me>
+                <md>
                   (A+B)^2 = (A+B)(A+B)
-                </me>
+                </md>
                 and show why this is not equal to <m>A^2+2AB+B^2</m>.
               </p>
             </li>

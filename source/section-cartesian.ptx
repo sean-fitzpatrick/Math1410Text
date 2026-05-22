@@ -328,9 +328,9 @@
       <p>
         <idx><h>distance </h><h> distance formula</h></idx>
         The distance <m>d</m> between the points <m>P\left(x_{0}, y_{0}\right)</m> and <m>Q\left(x_{1}, y_{1}\right)</m> is:
-        <men xml:id="eq-distanceformula">
+        <md number="yes" xml:id="eq-distanceformula">
           d = \sqrt{ \left(x_{1} - x_{0}\right)^2 + \left(y_{1} - y_{0}\right)^2}
-        </men>.
+        </md>.
       </p>
     </insight>
 
@@ -454,9 +454,9 @@
       <p>
         <idx><h>midpoint </h><h> midpoint formula</h></idx>
         The midpoint <m>M</m> of the line segment connecting <m>P\left(x_{0}, y_{0}\right)</m> and <m>Q\left(x_{1}, y_{1}\right)</m> is
-        <me>
+        <md>
           M = \left( \dfrac{x_{0} + x_{1}}{2} , \dfrac{y_{0} + y_{1}}{2} \right)
-        </me>.
+        </md>.
       </p>
     </insight>
 

@@ -17,9 +17,9 @@
 			Given an <m>m\times n</m> matrix <m>A</m> we can define a function <m>T</m>
 			that takes an <m>n\times 1</m> column vector <m>\vec x\in \mathbb{R}^n</m> as input,
 			and produces an <m>m\times 1</m> column vector <m>\vec y\in \mathbb{R}^m</m> as output, according to the relationship
-			<me>
+			<md>
 				\vec y = T(\vec x) = A\vec x
-			</me>.
+			</md>.
 			Such a function is known as a <term>matrix transformation</term>;
 			it is an example of a more general class of functions between vector spaces known as <term>linear transformations</term>.
 			<idx><h>matrix transformation</h></idx>
@@ -62,18 +62,18 @@
 			<statement>
 				<p>
 					Let <m>A</m> be a matrix, and <m>\vx</m>, <m>\vy</m>, and <m>\vz</m> be vectors as given below.
-					<me>
+					<md>
 						A = \bbm 1 \amp 4\\2 \amp 3\ebm,  \quad \vx = \bbm 1\\1\ebm, \quad \vy = \bbm-1\\1\ebm, \quad \vz = \bbm 3\\-1\ebm
-					</me>.
+					</md>.
 					Graph <m>\vx</m>, <m>\vy</m> and <m>\vz</m>, as well as <m>A\vx</m>, <m>A\vy</m> and <m>A\vz</m>.
 				</p>
 			</statement>
 			<solution>
 				<p>
 					It is straightforward to compute:
-					<me>
+					<md>
 						A\vx = \bbm 5\\5\ebm,\quad A\vy = \bbm 3\\1\ebm, \quad \text{ and } \quad A\vz = \bbm -1\\3\ebm
-					</me>.
+					</md>.
 					The vectors are sketched in <xref ref="fig-mv_1"/>.
 				</p>
 				<figure xml:id="fig-mv_1" vshift="0">
@@ -145,9 +145,9 @@
 			<statement>
 				<p>
 					Let <m>A</m> be a matrix and <m>\vx</m> and <m>\vy</m> be vectors as given below.
-					<me>
+					<md>
 							A = \bbm 1  \amp  1\\1 \amp 2\ebm, \quad \vx = \bbm 2\\1\ebm, \quad \vy = \bbm -1\\1\ebm
-					</me>.
+					</md>.
 				</p>
 
 				<p>
@@ -157,9 +157,9 @@
 			<solution>
 				<p>
 					It is pretty straightforward to compute:
-					<me>
+					<md>
 						\vx+\vy = \bbm 1\\2\ebm;\quad A\vx = \bbm 3\\4\ebm; \quad A\vy = \bbm 0\\1\ebm,\quad A(\vx+\vy) = \bbm 3\\5\ebm
-					</me>.
+					</md>.
 				</p>
 
 				<p>
@@ -222,9 +222,9 @@
 			<statement>
 				<p>
 					Let <m>A</m>,<m>\vx</m>,<m>\vy</m>, and <m>\vz</m> be as given below.
-					<me>
+					<md>
 							A = \bbm 1 \amp -1\\1 \amp -1\ebm,  \quad \vx = \bbm 1\\1\ebm, \quad \vy = \bbm-1\\1\ebm, \quad \vz = \bbm 4\\1\ebm
-					</me>
+					</md>
 				</p>
 
 				<p>
@@ -234,9 +234,9 @@
 			<solution>
 				<p>
 					It is straightforward to compute:
-					<me>
+					<md>
 							A\vx = \bbm 0\\0\ebm,\quad A\vy = \bbm -2\\-2\ebm, \quad \text{ and } \quad A\vz = \bbm 3\\3\ebm
-					</me>.
+					</md>.
 				</p>
 
 				<p>
@@ -324,36 +324,36 @@
 			<statement>
 				<p>
 					Plot the vectors of the unit square before and after they have been multiplied by <m>A</m>, where
-					<me>
+					<md>
 							A = \bbm 1 \amp 4\\2 \amp 3\ebm
-					</me>.
+					</md>.
 				</p>
 			</statement>
 			<solution>
 				<p>
 					The four corners of the unit square can be represented by the vectors
-					<me>
+					<md>
 						\bbm 0\\0\ebm, \quad \bbm 1\\0\ebm,\quad \bbm 1\\1\ebm,\quad \bbm 0\\1\ebm
-					</me>.
+					</md>.
 				</p>
 				<p>
 					Multiplying each by <m>A</m> gives the vectors
-					<me>
+					<md>
 							\bbm 0\\0\ebm,\quad \bbm 1\\2\ebm,\quad\bbm 5\\5\ebm,\quad \bbm 4\\3\ebm
-					</me>,
+					</md>,
 					respectively.
 				</p>
 
 				<p>
 					(Hint: one way of using your calculator to do this for you quickly is to make a <m>2\times 4</m>
 					matrix whose columns are each of these vectors. In this case, create a matrix
-					<me>
+					<md>
 						B = \bbm 0 \amp 1 \amp 1\amp 0\\0\amp 0\amp 1\amp 1\ebm
-					</me>.
+					</md>.
 					Then multiply <m>B</m> by <m>A</m> and read off the transformed vectors from the respective columns:
-					<me>
+					<md>
 							AB = \bbm 0 \amp 1 \amp 5\amp 4\\0\amp 2\amp 5\amp 3\ebm
-					</me>.
+					</md>.
 				</p>
 
 				<p>
@@ -457,9 +457,9 @@
 			<statement>
 				<p>
 					Plot the transformed unit square after it has been transformed by <m>A</m>, where
-					<me>
+					<md>
 							A = \bbm 0 \amp -1\\1 \amp 0\ebm
-					</me>.
+					</md>.
 				</p>
 			</statement>
 			<solution>
@@ -584,9 +584,9 @@
 
 		<p>
 			We can understand the second and third points simultaneously. Let
-			<me>
+			<md>
 					A = \bbm a \amp b\\c \amp d\ebm, \quad \veone = \bbm 1\\0\ebm \quad \text{ and } \quad \vetwo = \bbm 0\\1\ebm
-			</me>.
+			</md>.
 		</p>
 
 		<p>
@@ -643,9 +643,9 @@
 
 				<p>
 					Putting this together gives
-					<me>
+					<md>
 							A = \bbm 2 \amp 0\\0 \amp -1\ebm
-					</me>.
+					</md>.
 				</p>
 
 				<p>
@@ -720,16 +720,16 @@
 			the new position of <m>\veone</m> is the first column of <m>A</m>,
 			and the new position of <m>\vetwo</m> is the second column of <m>A</m>.
 			Therefore, by looking at the figure, we can deduce that
-			<me>
+			<md>
 				A = \bbm 1  \amp  -1\\ 1 \amp 2\ebm
-			</me>.
+			</md>.
 		</p>
 
 		<p>
 			To find where the point <m>(2,3)</m> is sent, simply multiply
-			<me>
+			<md>
 				\bbm 1  \amp  -1\\ 1 \amp 2\ebm\bbm 2\\3\ebm = \bbm-1\\8\ebm
-			</me>.
+			</md>.
 		</p>
 
 		<p>
@@ -799,9 +799,9 @@
 					Stretching the plane vertically changes it to <m>\bbm 0\\ 3/2\ebm</m>;
 					stretching horizontally does not affect it, and rotating <m>90^\circ</m> moves it to <m>\bbm 3/2\\0\ebm</m>.
 					This is then the second column of <m>A</m>. This gives
-					<me>
+					<md>
 						A = \bbm 0  \amp  3/2 \\ -1/2  \amp  0 \ebm
-					</me>.
+					</md>.
 				</p>
 
 				<p>
@@ -812,9 +812,9 @@
 					direction and <m>2</m> units in the new <m>\vetwo</m> direction.
 					This is sketched in <xref ref="fig-transf_2_1"/>, along with the transformed unit square.
 					 We can also check this multiplicatively:
-					<me>
+					<md>
 						\bbm 0  \amp  3/2 \\ -1/2  \amp  0 \ebm \bbm-1\\2\ebm = \bbm 3\\1/2\ebm
-					</me>.
+					</md>.
 				</p>
 
 				<p>
@@ -898,9 +898,9 @@
 			<sidebyside>
 				<p>
 					<term>Horizontal stretch</term> by a factor of <m>k</m>.
-					<me>
+					<md>
 						\bbm k \amp 0\\0 \amp 1\ebm
-					</me>
+					</md>
 				</p>
 
 				<image>
@@ -921,9 +921,9 @@
 			<sidebyside>
 				<p>
 					<term>Vertical stretch</term> by a factor of <m>k</m>.
-					<me>
+					<md>
 						\bbm 1 \amp 0\\0 \amp k\ebm
-					</me>
+					</md>
 				</p>
 
 				<image>
@@ -944,9 +944,9 @@
 			<sidebyside>
 				<p>
 					<term>Horizontal shear</term> by a factor of <m>k</m>.
-					<me>
+					<md>
 						\bbm 1 \amp k\\0 \amp 1\ebm
-					</me>
+					</md>
 				</p>
 
 				<image>
@@ -966,9 +966,9 @@
 			<sidebyside>
 				<p>
 					<term>Vertical shear</term> by a factor of <m>k</m>.
-					<me>
+					<md>
 						\bbm 1 \amp 0\\k \amp 1\ebm
-					</me>
+					</md>
 				</p>
 
 				<image>
@@ -989,9 +989,9 @@
 			<sidebyside>
 				<p>
 					<term>Horizontal reflection</term> across the <m>y</m> axis.
-					<me>
+					<md>
 						\bbm-1 \amp 0\\0 \amp 1\ebm
-					</me>
+					</md>
 				</p>
 
 				<image>
@@ -1010,9 +1010,9 @@
 			<sidebyside>
 				<p>
 					<term>Vertical reflection</term> across the <m>x</m> axis.
-					<me>
+					<md>
 						\bbm 1 \amp 0\\0 \amp -1\ebm
-					</me>
+					</md>
 				</p>
 
 				<image>
@@ -1032,9 +1032,9 @@
 			<sidebyside>
 				<p>
 					<term>Diagonal reflection</term> across the line <m>y=x</m>.
-					<me>
+					<md>
 						\bbm 0 \amp 1\\1 \amp 0\ebm
-					</me>
+					</md>
 				</p>
 
 				<image>
@@ -1054,9 +1054,9 @@
 			<sidebyside>
 				<p>
 					<term>Rotation</term> around the origin by an angle of <m>\theta</m>.
-					<me>
+					<md>
 						\bbm\cos \theta  \amp  -\sin \theta \\ \sin \theta  \amp  \cos \theta  \ebm
-					</me>
+					</md>
 				</p>
 
 				<image>
@@ -1078,9 +1078,9 @@
 				<p>
 					<term>Projection</term> onto the <m>x</m> axis.
 					(Note how the square is <q>squashed</q> down onto the <m>x</m>-axis.)
-					<me>
+					<md>
 						\bbm 1 \amp 0\\0 \amp 0  \ebm
-					</me>
+					</md>
 				</p>
 
 				<image>
@@ -1101,9 +1101,9 @@
 				<p>
 					<term>Projection</term> onto the <m>y</m> axis.
 					(Note how the square is <q>squashed</q> over onto the <m>y</m>-axis.)
-					<me>
+					<md>
 						\bbm 0 \amp 0\\0 \amp 1  \ebm
-					</me>
+					</md>
 				</p>
 
 				<image>
@@ -1164,16 +1164,16 @@
 
 				<p>
 					First, let's perform the vertical shear. The matrix that performs this is
-					<me>
+					<md>
 							A_1 = \bbm 1 \amp 0\\0.5 \amp 1\ebm
-					</me>.
+					</md>.
 				</p>
 
 				<p>
 					After that, we want to rotate everything clockwise by <m>30^\circ</m>. To do this, we use
-					<me>
+					<md>
 							A_2 = \bbm \cos 30^\circ  \amp  -\sin 30^\circ\\ \sin 30^\circ  \amp  \cos 30^\circ \ebm = \bbm \sqrt{3}/2 \amp  -1/2 \\ 1/2 \amp  \sqrt{3}/2\ebm
-					</me>.
+					</md>.
 				</p>
 
 				<p>
@@ -1195,9 +1195,9 @@
 
 					<p>
 						To perform the final two operations, we note that
-						<me>
+						<md>
 								A_3 = \bbm 2 \amp 0\\0 \amp 1\ebm \quad \text{ and } \quad A_4 = \bbm 0\amp 1 \\ 1\amp 0\ebm
-						</me>
+						</md>
 						perform the horizontal stretch and diagonal reflection, respectively.
 						Thus to perform all of the operations <q>at once,</q> we need to multiply by
 						<md>
@@ -1299,9 +1299,9 @@
 			<introduction>
 				<p>
 					A matrix <m>A</m> is given. Sketch<m>\vx</m>, <m>\vy</m>, <m>A\vx</m>, and <m>A\vy</m> on the same Cartesian axes, where
-					<me>
+					<md>
 						\vx = \bbm 1\\1\ebm \ \text{ and } \ \vy=\bbm-1\\2\ebm
-					</me>.
+					</md>.
 				</p>
 			</introduction>
 

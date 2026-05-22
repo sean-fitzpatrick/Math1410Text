@@ -29,9 +29,9 @@
           Let <m>A</m> and <m>B</m> be <m>n\times n</m> matrices.
           We say that <m>A</m> is <term>similar</term> to <m>B</m>, and write <m>A\sim B</m>,
           if there exists an invertible <m>n\times n</m> matrix <m>P</m> such that
-          <me>
+          <md>
               A = P^{-1}BP
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
@@ -81,9 +81,9 @@
           <p>
             Suppose <m>A\sim B</m>. Then we know that <m>A = P^{-1}BP</m> for some invertible matrix <m>P</m>.
             Setting <m>Q=P^{-1}</m>, (and noting <m>Q^{-1} = P</m>) we have
-            <me>
+            <md>
                 B = (PP^{-1})B(PP^{-1}) = P(P^{-1}BP)P^{-1} = Q^{-1}AQ,
-            </me>
+            </md>
             so <m>B\sim A</m>.
           </p>
         </li>
@@ -93,9 +93,9 @@
             Suppose that <m>A\sim B</m> and <m>B\sim C</m>.
             Then there exist <m>n\times n</m> matrices <m>P</m> and <m>Q</m> such that <m>A = P^{-1}BP</m> and <m>B=Q^{-1}CQ</m>.
             But then
-            <me>
+            <md>
                 A = P^{-1}BP = P^{-1}(Q^{-1}CQ)P = (P^{-1}Q^{-1})C(QP) = (QP)^{-1}C(QP),
-            </me>
+            </md>
             which shows that <m>A\sim C</m>.
           </p>
         </li>
@@ -149,9 +149,9 @@
           <p>
             Recall that the trace satisfies <m>\tr(AB) = \tr(BA)</m> for any <m>n\times n</m> matrices <m>A</m> and <m>B</m>.
             Thus, if <m>A = P^{-1}BP</m>, we have
-            <me>
+            <md>
               \tr(A) = \tr(P^{-1}BP) = \tr(B(P^{-1}P)) = \tr(BI)=\tr(B)
-            </me>.
+            </md>.
           </p>
         </li>
 
@@ -171,20 +171,20 @@
           <p>
             Suppose that <m>\lambda</m> is an eigenvalue of <m>A</m>, and that <m>A\sim B</m>.
             Since <m>\lambda</m> is an eigenvalue of <m>A</m>, we have
-            <me>
+            <md>
               A\vec{v} = \lambda\vec{v}
-            </me>
+            </md>
             for some nonzero vector <m>\vec{v}</m>. But if <m>A\sim B</m>, then <m>A = P^{-1}BP</m> for some invertible matrix <m>P</m>, so
-            <me>
+            <md>
               P^{-1}BP\vec{v} = \lambda\vec{v}
-            </me>.
+            </md>.
           </p>
 
           <p>
             Multiplying both sides on the left by <m>P</m>, we have
-            <me>
+            <md>
               B(P\vec{v}) = P(\lambda\vec{v}) = \lambda(P\vec{v})
-            </me>.
+            </md>.
             Since <m>P</m> is invertible and <m>\vec{v}\neq \vec{0}</m>,
             we know that <m>\vec{w} = P\vec{v}</m> is nonzero,
             and thus <m>\lambda</m> is an eigenvalue of <m>B</m> with corresponding eigenvector <m>P\vec{v}</m>.
@@ -202,9 +202,9 @@
 
       To clarify the presentation in this section, we will shift our notation somewhat from what we've been using so far in the textbook.
       Previously, we used the definition
-      <me>
+      <md>
         p_A(\lambda) = \det(A-\lambda I)
-      </me>
+      </md>
       for the characteristic polynomial of a matrix <m>A</m>.
       We will adjust this in two ways: first, we will use <m>x</m> as the variable in our polynomial;
       second, we will shift the sign of the characteristic polynomial and make the following definition:
@@ -218,9 +218,9 @@
 
           The <term>characteristic polynomial</term> of an <m>n\times n</m> matrix <m>A</m>
           is the degree-<m>n</m> polynomial <m>p_A(x)</m> defined by
-          <me>
+          <md>
             p_A(x) = \det(xI-A)
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
@@ -239,13 +239,13 @@
       In such cases, it is sometimes possible (but not guaranteed)
       that there is more than one independent eigenvector associated with the repeated eigenvalue.
       Indeed, consider the matrices
-      <me>
+      <md>
         A = \bbm 2 \amp 0 \amp 0\\0\amp 2\amp 0\\0\amp 0\amp 2\ebm, \quad B = \bbm 2\amp 0\amp 0\\0\amp 2\amp 1\\0\amp 0\amp 2\ebm, \quad C = \bbm 2\amp 1\amp 0\\0\amp 2\amp 1\\0\amp 0\amp 2\ebm
-      </me>.
+      </md>.
       All three matrices are upper-triangular, so they have the same characteristic polynomial, namely:
-      <me>
+      <md>
         p(x) = (x-2)^3
-      </me>.
+      </md>.
       Notice that the eigenvalue <m>\lambda = 2</m> is <q>repeated</q>,
       in the sense that it is a repeated root of the characteristic polynomial.
       This leads to the following definition:
@@ -274,21 +274,21 @@
     <p>
       For <m>A = \bbm 2\amp 0\amp 0\\0\amp 2\amp 0\\0\amp 0\amp 2\ebm</m>, we have <m>A-2I = 0</m>,
       so <em>every</em> non-zero vector <m>\vec{x}</m> is an eigenvector. Indeed, <m>A=2I</m>, so
-      <me>
+      <md>
         A\vec{x} = (2I)\vec{x} = I(2\vec{x}) = 2\vec{x}
-      </me>
+      </md>
       for every vector. In particular, we can choose the standard unit basis vectors
-      <me>
+      <md>
         \vec{e}_1 = \bbm 1\\0\\0\ebm, \vec{e}_2 = \bbm 0\\1\\0\ebm, \vec{e}_3 = \bbm 0\\0\\1\ebm
-      </me>
+      </md>
       as our basic eigenvectors, and we see that there are three independent eigenvectors corresponding to the eigenvalue <m>\lambda=2</m>.
     </p>
 
     <p>
       For <m>B = \bbm 2\amp 0\amp 0\\0\amp 2\amp 1\\0\amp 0\amp 2\ebm</m>, we have <m>B-2I = \bbm 0\amp 0\amp 0\\0\amp 0\amp 1\\0\amp 0\amp 0\ebm</m>, which is row-equivalent to <m>\bbm 0\amp 0\amp 1\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm</m>. The general solution to the equation <m>(B-2I)\vec{x}=\vec{0}</m> is thus given by
-      <me>
+      <md>
         \vec{x} = \bbm s\\t\\0\ebm = s\bbm 1\\0\\0\ebm + t\bbm 0\\1\\0\ebm,
-      </me>
+      </md>
       since the reduced row-echelon form of <m>B-2I</m> tells us that we must have <m>z=0</m>,
       while <m>x</m> and <m>y</m> are free. Thus, in this case we have two independent basic eigenvectors,
       given by the standard unit basis vectors <m>\vec{e}_1</m> and <m>\vec{e}_2</m>.
@@ -296,9 +296,9 @@
 
     <p>
       Finally, for <m>C= \bbm 2\amp 1\amp 0\\0\amp 2\amp 1\\0\amp 0\amp 2\ebm</m> have have <m>C-2I = \bbm 0\amp 1\amp 0\\0\amp 0\amp 1\\0\amp 0\amp 0\ebm</m>, which is already in reduced-row echelon form. From this, we can see that the system <m>(C-2I)\vec{x}=\vec{0}</m> has general solution
-      <me>
+      <md>
         \vec{x} = \bbm t\\0\\0\ebm = t\vec{e}_1,
-      </me>
+      </md>
       so we have only one independent eigenvector associated to <m>\lambda=2</m>; namely, <m>\vec{e}_1</m>.
     </p>
 
@@ -307,9 +307,9 @@
       we might have multiple independent eigenvectors associated to that eigenvalue, but this is not guaranteed.
       To quantify this situation, we introduce further terminology. First, we make a definition:
       the <term>null space</term> of an <m>n\times n</m> matrix <m>A</m> is the set defined by
-      <me>
+      <md>
         \operatorname{null}(A) = \{\vec{x}\in\R^n \,|\, A\vec{x}=\vec{0}\}
-      </me>.
+      </md>.
       In this language, we note that every eigenvector associated to an eigenvalue <m>\lambda</m>
       belongs to the null space of <m>A-\lambda I</m>. Indeed, <m>\operatorname{null}(A-\lambda I)</m>
       is equal to the set of all eigenvectors associated to the eigenvalue <m>\lambda</m>, along with the zero vector.
@@ -324,9 +324,9 @@
 
           Let <m>A</m> be an <m>n\times n</m> matrix, and let <m>\lambda</m> be any real number.
           The <m>\lambda</m>-<term>eigenspace</term> of <m>A</m>, denoted by <m>E(A,\lambda)</m>, is defined by
-          <me>
+          <md>
             E(A,\lambda) = \operatorname{null}(A-\lambda I)
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
@@ -335,9 +335,9 @@
       A couple of remarks on this definition are in order.
       First, notice that <m>\lambda</m> is not assumed to be an eigenvalue in the definition above.
       However, for any real number <m>\lambda</m> which is not an eigenvalue, we have
-      <me>
+      <md>
         E(A,\lambda) = \{\vec{0}\}
-      </me>.
+      </md>.
       The eigenvalues of <m>A</m> can thus be described as those real numbers for which <m>E(A,\lambda)\neq \{\vec{0}\}</m>.
       When <m>\lambda</m> is an eigenvalue, the <em>basic</em> eigenvectors associated to <m>\lambda</m>
       (that is, the basic solutions to the system <m>(A-\lambda I)\vec{x}=\vec{0}</m>) form a
@@ -385,30 +385,30 @@
 
         <p>
           To determine the geometric multiplicities, we compute the corresponding eigenvectors. For <m>\lambda = 2</m>, we have
-          <me>
+          <md>
             A-2I = \bbm -2 \amp 1 \amp 1\\1\amp -2\amp 1\\1\amp 1\amp -2\ebm \xrightarrow{\text{RREF}} \bbm 1\amp 0\amp -1\\0\amp 1\amp -1\\0\amp 0\amp 0\ebm
-          </me>.
+          </md>.
           Thus, <m>(A-2I)\vec{x} = \vec{0}</m> for <m>\vec{x} = \bbm t\\t\\t\ebm = t\bbm 1\\1\\1\ebm</m>,
           so <m>\vec{x}_1 = \bbm 1\\1\\1\ebm</m> is the (single) basic eigenvector associated to <m>\lambda = 2</m>. This gives us
-          <me>
+          <md>
             E(A,2) = \operatorname{span}\left\{\bbm 1\\1\\1\ebm\right\},
-          </me>
+          </md>
           so the geometric multiplicity of <m>\lambda = 2</m> is <m>\dim E(A,2) = 1</m>.
         </p>
 
         <p>
           For <m>\lambda = -1</m>, we find
-          <me>
+          <md>
             A-(-1)I = \bbm 1 \amp 1 \amp 1\\1\amp 1\amp 1\\1\amp 1\amp 1\ebm \xrightarrow{\text{RREF}} \bbm 1\amp 1\amp 1\\0\amp 0\amp 0\\0\amp 0\amp 0\ebm
-          </me>.
+          </md>.
           This tells us that the general solution to <m>(A+I)\vec{x}=\vec{0}</m> is
-          <me>
+          <md>
             \vec{x} = \bbm -s-t\\s\\t\ebm = s\bbm -1\\1\\0\ebm + t\bbm -1\\0\\1\ebm,
-          </me>
+          </md>
           so
-          <me>
+          <md>
             E(A,-1) = \operatorname{span}\left\{\bbm -1\\1\\0\ebm, \bbm -1\\0\\1\ebm\right\},
-          </me>
+          </md>
           and the geometric multiplicity of <m>\lambda = -1</m> is <m>\dim E(A,-1) = 2</m>.
         </p>
       </solution>
@@ -484,9 +484,9 @@
       What if the initial state is not an eigenvector?
       It turns out that the same trick works as long as <m>\vec{P}_0</m> can be written as a <em>linear combination</em> of eigenvectors:
       suppose that
-      <me>
+      <md>
         \vec{P}_0 = c_1\vec{x}_1 + c_2\vec{x}_2 + \cdots + c_k\vec{x}_k,
-      </me>
+      </md>
       where <m>\vec{x}_1, \vec{x}_2, \ldots, \vec{x}_k</m> are eigenvectors of <m>A</m> with eigenvalues
       <m>\lambda_1, \lambda_2, \ldots, \lambda_k</m>, respectively.
       (Note that at this point we've moved away from the original premise of a <m>2\times 2</m> matrix <m>A</m>
@@ -541,9 +541,9 @@
     <p>
       First, suppose that <m>A</m> can be diagonalized.
       Then there exists an invertible matrix <m>P</m> such that <m>P^{-1}AP = D</m>, where
-      <me>
+      <md>
         D = \bbm \lambda_1  \amp  0  \amp  \cdots \amp  0\\0\amp \lambda_2 \amp  \cdots \amp  0\\\vdots \amp  \vdots \amp  \ddots \amp \vdots\\0\amp 0\amp \cdots \amp  \lambda_n\ebm,
-      </me>
+      </md>
       and <m>\lambda_1, \lambda_2, \ldots, \lambda_n</m> are the (not necessarily distinct) eigenvalues of <m>A</m>.
       Letting <m>\vec{e}_1,\ldots, \vec{e}_n</m> denote the standard basis for <m>\R^n</m> we have, for each <m>j=1,2,\ldots, n</m>:
       <md>
@@ -575,13 +575,13 @@
       with corresponding eigenvalues <m>\lambda_1,\lambda_2, \ldots, \lambda_n</m>.
       Let <m>P</m> be the matrix whose columns are given by these vectors.
       Then <m>P</m> is invertible, since its columns are linearly independent. Let <m>D</m> be defined as above. Then
-      <me>
+      <md>
         PD = \bbm \vec{x}_1  \amp  \vec{x}_2  \amp \cdots \amp  \vec{x}_n\ebm \bbm \lambda_1 \amp  0 \amp  \cdots \amp  0\\0\amp \lambda_2 \amp  \cdots \amp  0\\\vdots \amp  \vdots \amp  \ddots \amp \vdots\\0\amp 0\amp \cdots \amp  \lambda_n\ebm = \bbm \lambda_1\vec{x}_1 \amp  \lambda_2\vec{x}_2 \amp  \cdots \amp  \lambda_n\vec{x}_n\ebm,
-      </me>
+      </md>
       while
-      <me>
+      <md>
         AP = A\bbm \vec{x}_1  \amp  \vec{x}_2 \amp  \cdots \amp \vec{x}_n\ebm = \bbm A\vec{x}_1 \amp  A\vec{x}_2 \amp  \cdots \amp  A\vec{x}_n\ebm = \bbm \lambda_1\vec{x}_1\amp \lambda_2\vec{x}_2\amp \cdots \amp  \lambda_n\vec{x}_n\ebm.
-      </me>
+      </md>
       Thus, <m>PD=AP</m>, and since <m>P</m> is invertible, this gives us <m>D=P^{-1}AP</m>, as required.
     </p>
 
@@ -593,9 +593,9 @@
         <mrow> \amp = PD(P^{-1}P)D\cdots (P^{-1}P)DP^{-1} = PD^nP^{-1}</mrow>
       </md>.
       This makes it easy to compute <m>A^n</m>, since it's easy to compute <m>D^n</m>:
-      <me>
+      <md>
         \text{If } D=\bbm \lambda_1  \amp  0  \amp  \cdots \amp  0\\0\amp \lambda_2 \amp  \cdots \amp  0\\\vdots \amp  \vdots \amp  \ddots \amp \vdots\\0\amp 0\amp \cdots \amp  \lambda_n\ebm, \text{ then } D^n = \bbm \lambda_1^n \amp  0 \amp  \cdots \amp  0\\0\amp \lambda_2^n \amp  \cdots \amp  0\\\vdots \amp  \vdots \amp  \ddots \amp \vdots\\0\amp 0\amp \cdots \amp  \lambda_n^n\ebm
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -640,33 +640,33 @@
 
     <p>
       As for the proof of the theorem, we use an argument by contradiction: suppose, to the contrary, that the eigenvectors <m>\vec{x}_1, \ldots, \vec{x}_k</m> are linearly <em>dependent</em>. Then there is some <m>m</m>, <m>2\leq m\leq k-1</m>, such that the vectors <m>\vec{x}_1, \ldots, \vec{x}_m</m> are linearly independent, but <m>\vec{x}_{m+1}</m> can be written as a linear combination of the vectors <m>\vec{x}_1, \ldots, \vec{x}_m</m>; that is,
-      <men xml:id="eq-indepeigen">
+      <md number="yes" xml:id="eq-indepeigen">
         \vec{x}_{m+1} = c_1\vec{x}_1+c_2\vec{x}_2+\cdots + c_m\vec{x}_m
-      </men>,
+      </md>,
       for some scalars <m>c_1,\ldots, c_m</m>. Then,
       multiplying both sides of <xref ref="eq-indepeigen"/> on the left by <m>A</m>, we must have
-      <me>
+      <md>
         A\vec{x}_{m+1} = A(c_1\vec{x}_1+c_2\vec{x}_2+\cdots + c_m\vec{x}_m) = c_1(A\vec{x}_1)+c_2(A\vec{x}_2)+\cdots + c_m(A\vec{x}_m)
-      </me>,
+      </md>,
       but each vector <m>\vec{x}_i</m> is an eigenvector of <m>A</m> with eigenvalue <m>\lambda_i</m>.
     </p>
 
     <p>
       Thus,
-      <me>
+      <md>
         \lambda_{m+1}\vec{x}_{m+1} = c_1\lambda_1\vec{x}_1+c_2\lambda_2\vec{x}_2+\cdots + c_m\lambda_m\vec{x}_m
-      </me>.
+      </md>.
       On the other hand, if we multiply both sides of \eqref{eq-indepeigen} by the scalar <m>\lambda_{m+1}</m>, we have
-      <me>
+      <md>
         \lambda_{m+1}\vec{x}_{m+1} = c_1\lambda_{m+1}\vec{x}_1 + c_2\lambda_{m+1}\vec{x}_2 + \cdots + c_m\lambda_{m+1}\vec{x}_{m+1}
-      </me>.
+      </md>.
     </p>
 
     <p>
       Subtracting these last two equations, we find:
-      <me>
+      <md>
         \vec{0} = c_1(\lambda_{m+1}-\lambda_1)\vec{x}_1 + c_2(\lambda_{m+1}-\lambda_2)\vec{x}_2+\cdots + c_m(\lambda_{m+1}-\lambda_m)\vec{x}_m
-      </me>.
+      </md>.
     </p>
 
     <p>
@@ -674,14 +674,14 @@
       Thus, <m>\lambda_{m+1}-\lambda_i\neq 0</m> for all <m>i=1,2,\ldots, m</m>.
       On the other hand, the vectors <m>\vec{x}_1,\vec{x}_2, \ldots, \vec{x}_m</m> are assumed to be linearly independent,
       so we must have
-      <me>
+      <md>
         c_1(\lambda_{m+1}-\lambda_1) = 0, c_2(\lambda_{m+1}-\lambda_2)=0, \ldots, c_m(\lambda_{m+1}-\lambda_m)=0
-      </me>.
+      </md>.
       Since none of the <m>\lambda_{m+1}-\lambda_i</m> terms vanish,
       it must be the case that <m>c_1=c_2=\cdots =c_m=0</m>. But if that is true, then
-      <me>
+      <md>
         \vec{x}_{m+1} = 0\vec{x}_1+0\vec{x}_2+\cdots + 0\vec{x}_m = \vec{0},
-      </me>
+      </md>
       which is impossible, since <m>\vec{x}_{m+1}</m> was assumed to be an eigenvector, and eigenvectors are nonzero.
       Thus, it must be the case that all of our eigenvectors are linearly independent.
     </p>
@@ -712,9 +712,9 @@
           let <m>m_\lambda(A)</m> denote the <em>algebraic</em> multiplicity of <m>\lambda</m>.
           (If <m>\lambda</m> is not an eigenvalue of <m>A</m>, we set <m>m_\lambda(A)=0</m>.)
           Then for all numbers <m>\lambda</m>, we have
-          <me>
+          <md>
             \dim\operatorname{null}(A-\lambda I)\leq m_\lambda(A)
-          </me>.
+          </md>.
         </p>
       </statement>
     </theorem>
@@ -768,20 +768,20 @@
       Recall that an <m>n\times n</m> matrix <m>A</m> is <em>symmetric</em> if <m>A^T=A</m>.
       An important result called the <em>Spectral Theorem</em> guarantees that every symmetric matrix <m>A</m> is diagonalizable.
       In fact, the spectral theorem goes one step further.
-      Recall that two vectors <m>\vec{u}</m> and <m>\vec{v}</m> are <em>orthogonal</em> if <m>\vec{u}\dotp\vec{v}=0</m>.
+      Recall that two vectors <m>\vec{u}</m> and <m>\vec{v}</m> are <em>orthogonal</em> if <m>\vec{u}\boldsymbol{\cdot}\vec{v}=0</m>.
       We say that a <em>set</em> of vectors <m>\{\vec{x}_1,\vec{x}_2,\ldots, \vec{x}_k\}</m> is
       <term>orthogonal</term> if <m>\vec{x}_i\neq \vec{0}</m> for each <m>i</m>,
-      and <m>\vec{x}_i\dotp \vec{x}_j = 0</m> for all <m>i\neq j</m>.
+      and <m>\vec{x}_i\boldsymbol{\cdot} \vec{x}_j = 0</m> for all <m>i\neq j</m>.
       Orthogonality is a <q>stronger</q> condition than linear independence.
       Indeed, if the vectors <m>\vec{x}_1,\ldots, \vec{x}_k</m> are orthogonal and
-      <me>
+      <md>
         c_1\vec{x}_1+c_2\vec{x}_2+\cdots + c_k\vec{x}_k = \vec{0}
-      </me>
+      </md>
       for some scalars <m>c_1,c_2,\ldots, c_k</m>, taking the dot product of both sides of the above equation with <m>\vec{x}_1</m> gives us
-      <me>
-        c_1(\vec{x}_1\dotp \vec{x}_1)+c_2(0)+\cdots + c_k(0)=0,
-      </me>
-      and since <m>\vec{x}_1\dotp \vec{x}_1 = \lVert \vec{x}_1\rVert^2 \neq 0</m>,
+      <md>
+        c_1(\vec{x}_1\boldsymbol{\cdot} \vec{x}_1)+c_2(0)+\cdots + c_k(0)=0,
+      </md>
+      and since <m>\vec{x}_1\boldsymbol{\cdot}\vec{x}_1 = \lVert \vec{x}_1\rVert^2 \neq 0</m>,
       it must be that <m>c_1=0</m>, and similarly, all the other scalars must be zero as well.
 
       <idx><h>diagonalization</h><h>orthogonal</h></idx>
@@ -789,13 +789,13 @@
 
     <p>
       For a symmetric matrix, eigenvectors corresponding to distinct eigenvalues are not just independent,
-      they're orthogonal. Indeed, since <m>\vec{x}_1\dotp \vec{x}_2</m> can be written as the matrix product
+      they're orthogonal. Indeed, since <m>\vec{x}_1\boldsymbol{\cdot} \vec{x}_2</m> can be written as the matrix product
       <m>\vec{x}_1^T\vec{x}_2</m>, we have (using the fact that <m>A^T=A</m>):
-      <me>
-        \lambda_1(\vec{x}_1\dotp \vec{x}_2) = (\lambda_1\vec{x}_1)^T\vec{x}_2 = (A\vec{x}_1)^T\vec{x}_2 = (\vec{x}_1^TA^T)\vec{x}_2 = \vec{x}_1^T(A\vec{x}_2) = \vec{x}_1^T(\lambda_2\vec{x}_2) = \lambda_2(\vec{x}_1\dotp \vec{x}_2),
-      </me>
-      Thus, <m>(\lambda_1-\lambda_2)(\vec{x}_1\dotp\vec{x}_2) = 0</m>, and since <m>\lambda_1\neq \lambda_2</m>,
-      we must have <m>\vec{x}_1\dotp \vec{x}_2 = 0</m>.
+      <md>
+        \lambda_1(\vec{x}_1\boldsymbol{\cdot} \vec{x}_2) = (\lambda_1\vec{x}_1)^T\vec{x}_2 = (A\vec{x}_1)^T\vec{x}_2 = (\vec{x}_1^TA^T)\vec{x}_2 = \vec{x}_1^T(A\vec{x}_2) = \vec{x}_1^T(\lambda_2\vec{x}_2) = \lambda_2(\vec{x}_1\boldsymbol{\cdot} \vec{x}_2),
+      </md>
+      Thus, <m>(\lambda_1-\lambda_2)(\vec{x}_1\boldsymbol{\cdot}\vec{x}_2) = 0</m>, and since <m>\lambda_1\neq \lambda_2</m>,
+      we must have <m>\vec{x}_1\boldsymbol{\cdot} \vec{x}_2 = 0</m>.
     </p>
 
     <p>
@@ -814,9 +814,9 @@
       If we think of matrices in terms of the matrix transformations they define,
       then two matrix transformations obtained from similar matrices should be viewed as two descriptions
       of the same linear transformation using different <q>coordinate systems</q>. Let us explain what we mean here. Suppose
-      <me>
+      <md>
         T:\R^n\to \R^n
-      </me>
+      </md>
       is a matrix transformation defined by <m>T(\vec{x}) = A\vec{x}</m> for some <m>n\times n</m> matrix <m>A</m>.
       Let us consider this to be a transformation defined in terms of the standard basis vectors
       <m>\vec{e}_1, \vec{e}_2, \ldots, \vec{e}_n</m> for <m>\R^n</m>.
@@ -824,16 +824,16 @@
 
     <p>
       We can then write
-      <me>
+      <md>
         \vec{x} = \bbm x_1  \amp  x_2 \amp  \cdots \amp  x_n\ebm^T = x_1\vec{e}_1+x_2\vec{e}_2+\cdots +x_n\vec{e}_n
-      </me>
+      </md>
       and think of <m>T</m> as a function of the variables <m>x_1,x_2,\ldots, x_n</m>.
       To put this another way, when we speak of a matrix transformation with standard matrix <m>A</m>,
       that matrix <m>A</m> is defined with respect to the standard basis.
       In general, let <m>\mathcal{A}=\{\vec{e}_1,\ldots, \vec{e}_n\}</m> denote our standard basis, and suppose
-      <me>
+      <md>
         \mathcal{B} = \{\vec{b}_1, \vec{b}_2, \ldots, \vec{b}_n\}
-      </me>
+      </md>
       is another basis for <m>\R^n</m>. Recall that when we say that the set <m>\mathcal{B}</m> is a <em>basis</em>,
       we mean that <m>\operatorname{span}\mathcal{B} = \R^n</m>,
       so that every vector in <m>\R^n</m> can be written as a linear combination of the vectors in <m>\mathcal{B}</m>,
@@ -844,9 +844,9 @@
     <p>
       Let <m>\vec{v} = y_1\vec{b}_1+y_2\vec{b}_2+\cdots +y_n\vec{b}_n</m> any vector in <m>\R^n</m>.
       Using the same linear transformation <m>T</m> as above, we have
-      <me>
+      <md>
         T(\vec{v}) = T(y_1\vec{b}_1+y_2\vec{b}_2+\cdots +y_n\vec{b}_n) = y_1T(\vec{b}_1)+y_2T(\vec{b}_2)+\cdots + y_nT(\vec{b}_n)
-      </me>.
+      </md>.
       Now, each of the vectors <m>T(\vec{b}_i)</m> can, in turn, be written in terms of the basis <m>\mathcal{B}</m>: we have
       <md>
       <mrow>T(\vec{b}_1)  \amp = b_{11}\vec{b}_1 + b_{21}\vec{b}_2 + \cdots + b_{n1}\vec{b}_n</mrow>
@@ -860,23 +860,23 @@
       The coefficients <m>b_{ij}</m> obtained above determine a new matrix <m>B</m>,
       which we define to be the \textbf{matrix of <m>T</m> with respect to the basis} <m>\mathcal{B}</m>.
       Notice that if we write <m>\vec{y} = \bbm y_1 \amp  y_2 \amp  \cdots \amp  y_n\ebm^T</m>, we have
-      <me>
+      <md>
         B\vec{y} = \bbm b_{11}  \amp  b_{12}  \amp  \cdots \amp  b_{1n}\\b_{21} \amp  b_{22} \amp  \cdots \amp  b_{2n}\\\vdots \amp  \vdots \amp  \ddots \amp  \vdots\\b_{n1}\amp b_{n2}\amp \cdots \amp n_{nn}\ebm
         \bbm y_1\\y_2\\\vdots \\y_n\ebm = \bbm b_{11}y_1+b_{12}y_2+\cdots b_{1n}y_n\\b_{21}y_1+b_{22}y_2 + \cdots + b_{2n}y_n\\ \vdots \\b_{n1}y_1+b_{n2}y_2+\cdots b_{nn}y_n\ebm
-      </me>.
+      </md>.
     </p>
 
     <p>
       Let's introduce some notation: for any vector <m>\vec{w}</m> in <m>\R^n</m>,
       we will let <m>[\vec{w}]_{\mathcal{B}}</m> denote the <m>n\times 1</m> column vector defined as follows:
-      <me>
+      <md>
         \text{If } \, \vec{w} = w_1\vec{b}_1 + w_2\vec{b}_2 + \cdots + w_n\vec{b}_n, \, \text{ then } \, [\vec{w}]_{\mathcal{B}} = \bbm w_1\\w_2\\\vdots \\w_n\ebm
-      </me>.
+      </md>.
       In this notation, we have <m>\vec{y}=[\vec{v}]_{\mathcal{B}}</m>,
       and
-      <me>
+      <md>
         [T(\vec{v})]_{\mathcal{B}} = \bbm b_{11}y_1+b_{12}y_2+\cdots b_{1n}y_n\\b_{21}y_1+b_{22}y_2 + \cdots + b_{2n}y_n\\ \vdots \\b_{n1}y_1+b_{n2}y_2+\cdots b_{nn}y_n\ebm
-      </me>,
+      </md>,
       since
       <md>
         <mrow>(b_{11}y_1+\cdots b_{1n}y_n)\vec{b}_1  \amp  +  \cdots + (b_{n1}y_1+\cdots + b_{nn}y_n)\vec{b}_n</mrow>
@@ -890,59 +890,59 @@
     <p>
       Let's tie everything together. First, let <m>P</m> be the <m>n\times n</m>
       matrix whose columns are the vectors in <m>\mathcal{B}</m>. Then we know that
-      <me>
+      <md>
         \vec{b}_1 = P\vec{e}_1, \vec{b}_2=P\vec{e}_2, \ldots, \vec{b}_n = P\vec{e}_n,
-      </me>
+      </md>
       and conversely,
-      <me>
+      <md>
         \vec{e}_1 = P^{-1}\vec{b}_1, \vec{e}_2 = P^{-1}\vec{b}_2, \ldots, \vec{e}_n = P^{-1}\vec{b}_n
-      </me>.
+      </md>.
       If <m>[\vec{v}]_{\mathcal{B}} = \bbm v_1\\v_2\\\vdots \\v_n\ebm</m>, then we have
-      <me>
+      <md>
         \vec{v} = v_1\vec{b}_1 +\cdots + v_n\vec{b}_n = v_1P\vec{e}_1 +\cdots +v_nP\vec{e}_n = P(v_1\vec{e}_1+\cdots + v_n\vec{e}_n) = P[\vec{v}]_{\mathcal{B}}
-      </me>.
+      </md>.
     </p>
 
     <p>
       Note that we can also write <m>\vec{v} = [\vec{v}]_{\mathcal{A}}</m>, where <m>\mathcal{A}</m> is the standard basis,
       since by default, all of our vectors are written in terms of the standard basis. Thus, we can conclude that
-      <men xml:id="eq-simbasis_a">
+      <md number="yes" xml:id="eq-simbasis_a">
         [\vec{v}]_{\mathcal{A}} = P[\vec{v}]_{\mathcal{B}}
-      </men>
+      </md>
       defines the relationship between the column vector representations of our vector with respect to the two bases.
       Similarly, we can write
-      <men xml:id="eq-simbasis_b">
+      <md number="yes" xml:id="eq-simbasis_b">
         [T(\vec{v})]_{\mathcal{A}} = P[T(\vec{v})]_{\mathcal{B}}
-      </men>
+      </md>
       for the column representations of the output of our linear transformation <m>T</m>.
     </p>
 
     <p>
       However, we also know that our transformation was originally defined using the matrix <m>A</m> according to
-      <men xml:id="eq-simbasis_c">
+      <md number="yes" xml:id="eq-simbasis_c">
         [T(\vec{v})]_{\mathcal{A}} = A[\vec{v}]_{\mathcal{A}}
-      </men>
+      </md>
       and that the matrix <m>B</m> above was defined such that
-      <men xml:id="eq-simbasis_d">
+      <md number="yes" xml:id="eq-simbasis_d">
         [T(\vec{v})]_{\mathcal{B}} = B[\vec{v}]_{\mathcal{B}}
-      </men>.
+      </md>.
       Equating the two expressions above for <m>[T(\vec{v})]_{\mathcal{A}}</m>,
       in Equations <xref ref="eq-simbasis_b" text="local"/> and <xref ref="eq-simbasis_c" text="local"/> we have
-      <me>
+      <md>
         P[T(\vec{v})]_{\mathcal{B}} = A[\vec{v}]_{\mathcal{A}}
-      </me>.
+      </md>.
     </p>
 
     <p>
       Plugging in Equations <xref ref="eq-simbasis_d" text="local"/> on the left and
       <xref ref="eq-simbasis_a" text="local"/> on the right, we have
-      <me>
+      <md>
         PB[\vec{v}]_{\mathcal{B}} = AP[\vec{v}]_{\mathcal{B}}
-      </me>.
+      </md>.
       Since this must be true for any vector, we conclude that <m>PB = AP</m>, and thus
-      <me>
+      <md>
         B = P^{-1}AP,
-      </me>
+      </md>
       so <m>B</m> is similar to <m>A</m>.
     </p>
   </paragraphs>

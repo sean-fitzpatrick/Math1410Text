@@ -127,17 +127,17 @@
         <mrow xml:id="eq-plane-standard-form">a(x-x_0)+b(y-y_0)+c(z-z_0) \amp =0</mrow>
       </mdn>.
       <xref ref="eq-plane-standard-form">Equation</xref> defines an <em>implicit</em> function describing the plane. More algebra produces:
-      <me>
+      <md>
         ax+by+cz = ax_0+by_0+cz_0
-      </me>.
+      </md>.
       The right hand side is just a number, so we replace it with <m>d</m>:
-      <men xml:id="eq-plane-general-form">
+      <md number="yes" xml:id="eq-plane-general-form">
         ax+by+cz = d
-      </men>.
+      </md>.
       As long as <m>c\neq 0</m>, we can solve for <m>z</m>:
-      <men xml:id="eq-plane-graph-form">
+      <md number="yes" xml:id="eq-plane-graph-form">
         z = \frac1c(d-ax-by)
-      </men>.
+      </md>.
     </p>
 
     <p>
@@ -153,14 +153,14 @@
           The plane passing through the point <m>P=(x_0,y_0,z_0)</m> with normal vector
           <m>\vec n=\bbm  a\\b\\c\ebm</m> can be described by an equation with
           <term>standard form</term>
-          <me>
+          <md>
             a(x-x_0)+b(y-y_0)+c(z-z_0) =0;
-          </me>
+          </md>
           the equation's <term>general form</term>
           is <idx><h>planes</h><h>equations of</h></idx>
-          <me>
+          <md>
             ax+by+cz = d
-          </me>.
+          </md>.
         </p>
       </statement>
     </definition>
@@ -199,9 +199,9 @@
           and we arbitrarily choose <m>P</m>.
           Following <xref ref="def_planes"/>,
           the equation of the plane in standard form is
-          <me>
+          <md>
             2(x-1) + (y-1)+z = 0
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -322,9 +322,9 @@
           Verify that lines <m>\ell_1</m> and <m>\ell_2</m>,
           whose parametric equations are given below, intersect,
           then give the equation of the plane that contains these two lines in general form.
-          <me>
+          <md>
             \ell_1: \begin{matrix} x\amp =\amp -5+2s \\ y\amp =\amp 1+s \\ z\amp =\amp -4+2s \end{matrix}  \qquad\qquad \ell_2: \begin{matrix} x \amp =\amp  2+3t\\ y\amp =\amp 1-2t \\ z\amp =\amp 1+t \end{matrix}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -338,9 +338,9 @@
         <p>
           To find their point of intersection, we set the <m>x</m>,
           <m>y</m> and <m>z</m> equations equal to each other and solve for <m>s</m> and <m>t</m>:
-          <me>
+          <md>
             \begin{matrix} -5+2s \amp =\amp 2+3t \\ 1+s \amp =\amp  1-2t \\ -4+2s \amp =\amp  1+t \end{matrix}   \Rightarrow   s=2, t=-1
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -353,7 +353,7 @@
           <m>\vec d_2=\bbm  3\\-2\\1\ebm</m> be the directions of lines <m>\ell_1</m> and <m>\ell_2</m>,
           respectively.
           A normal vector to the plane containing these the two lines will also be orthogonal to <m>\vec d_1</m> and <m>\vec d_2</m>.
-          Thus we find a normal vector <m>\vec n</m> by computing <m>\vec n = \vec d_1 \times \vec d_2= \bbm  5\\4-7\ebm</m>.
+          Thus we find a normal vector <m>\vec n</m> by computing <m>\vec n = \vec d_1 \times \vec d_2= \bbm  5\\4\\-7\ebm</m>.
         </p>
 
         <p>
@@ -505,9 +505,9 @@
           the plane must be orthogonal to the direction of the line given by <m>\vec d = \bbm  1\\2\\2\ebm</m>.
           We use this as our normal vector.
           Thus the plane's equation, in standard form, is
-          <me>
+          <md>
             (x+1) +2y+2(z-1)=0
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -646,9 +646,9 @@
         <p>
           The parametric equations of the line through
           <m>P=(1,1,-1)</m> in the direction of <m>d=\bbm  -2\\-3\\-1\ebm</m> is:
-          <me>
+          <md>
             \ell:  x= -2t+1 y = -3t+1 z=-t-1
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -778,9 +778,9 @@
           To find the point of intersection,
           we need to find a <m>t</m> value such that <m>\ell(t)</m> satisfies the equation of the plane.
           Rewriting the equation of the line with parametric equations will help:
-          <me>
+          <md>
             \ell(t) = \left\{\begin{aligned}x\amp = 3-t\\ y\amp =-3+2t\\ z\amp = -1+t \end{aligned} \right.
-          </me>.
+          </md>.
         </p>
 
         <p>
@@ -906,9 +906,9 @@
       not on the plane, is given.
       We measure the distance from <m>Q</m> to the plane by measuring the length of the projection of <m>\overrightarrow{PQ}</m> onto <m>\vec n</m>.
       That is, we want:
-      <men xml:id="eq_plane_dist">
+      <md number="yes" xml:id="eq_plane_dist">
         \norm{\text{ proj } _{\,\vec n}\,{\overrightarrow{PQ}}} = \norm{\frac{\vec n\cdot \overrightarrow{PQ}}{\vnorm n^2}\vec n} = \frac{\abs{\vec n\cdot \overrightarrow{PQ}}}{\vnorm n}
-      </men>
+      </md>
       <idx><h>planes</h><h>distance between point and plane</h></idx>
       <idx><h>distance</h><h>between point and plane</h></idx>
     </p>
@@ -1002,9 +1002,9 @@
         Let a plane with normal vector <m>\vec n</m> be given,
         and let <m>Q</m> be a point.
         The distance <m>h</m> from <m>Q</m> to the plane is
-        <me>
+        <md>
           h = \frac{\abs{\vec n\cdot \overrightarrow{PQ}}}{\vnorm n}
-        </me>,
+        </md>,
         where <m>P</m> is any point in the plane.
 
       </p>
@@ -1065,9 +1065,9 @@
     <p>
       The desired point <m>R</m> thus has coordinates <m>\left(\dfrac{102}{65}, \dfrac{135}{65}, \dfrac{176}{65}\right)</m>.
       To make sure that we haven't made any mistakes, let's make sure that this point is indeed on the plane. We have
-      <me>
+      <md>
         2\left(\frac{102}{65}\right)-5\left(\frac{135}{65}\right)+6\left(\frac{176}{65}\right) = \frac{1}{65}(204-675+1056) = \frac{585}{65}=9
-      </me>,
+      </md>,
       as expected.
     </p>
 
@@ -1076,9 +1076,9 @@
       <statement>
         <p>
           Let <m>\ell</m> be the line with vector equation
-          <me>
+          <md>
             \vec\ell(t) = \bbm  3\\ 2\\ -4\ebm + t\bbm  3\\ 1\\ -1\ebm
-          </me>,
+          </md>,
           and let <m>p</m> be the plane with equation <m>x-2y+z=4</m>.
           Verify that the line <m>\ell</m> is parallel to the plane <m>p</m>, and find the distance between them.
         </p>
@@ -1087,9 +1087,9 @@
         <p>
           From the vector equation for <m>\ell</m> we have the direction vector <m>\vec{d} = \bbm  3\\ 1\\ -1\ebm</m>,
           and from the equation for <m>p</m> we can read off the normal vector <m>\vec{n} = \bbm  1\\ -2\\ 1\ebm</m>. Since
-          <me>
+          <md>
             \dotp dn = 3(1)+1(-2)-1(1) = 0
-          </me>,
+          </md>,
           we know that <m>\vec{d}</m> is orthogonal to <m>\vec{n}</m>, and thus <m>\ell</m> is parallel to <m>p</m>.
           To find the distance from <m>\ell</m> to <m>p</m>, we first choose a point on each object.
           From the vector equation for <m>\ell</m> we have the point <m>P=(2,0,-4)</m>,
@@ -1098,14 +1098,14 @@
 
         <p>
           From these two points we can construct the vector
-          <me>
+          <md>
             \vec v = \overrightarrow{PQ} = \bbm  1\\ -2\\ 4\ebm
-          </me>
+          </md>
           which begins on <m>\ell</m> and ends on <m>p</m>.
           The distance from <m>\ell</m> to <m>p</m> is then given by the normal component of <m>\vec{v}</m>: we have
-          <me>
+          <md>
             h = \norm{\operatorname{proj}_{\vec{n}}\vec{v}} = \frac{\abs{\dotp nv}}{\norm{\vec{n}}} = \frac{9}{6} = \frac{3}{2}
-          </me>.
+          </md>.
         </p>
       </solution>
     </example>
@@ -1137,9 +1137,9 @@
           we also have a pair of parallel planes, each of which contains one of the lines.
           To see this, we first compute the cross product of the direction vectors
           <m>\vec{d}_1 = \bbm  3\\ -1\\ 1\ebm</m> and <m>\vec{d}_2 = \bbm  4\\ 1\\ 2\ebm</m> for the two lines. We find
-          <me>
+          <md>
             \vec{n} = \vec{d}_1\times\vec{d}_2 =  \bbm  -3\\ -2\\ 7\ebm
-          </me>,
+          </md>,
           which is the same as the cross product we computed in <xref ref="ex_lines5"/>.
           Since <m>\vec{n}</m> is orthogonal to <m>\vec{d}_1</m>,
           the plane through the point <m>(1,2,0)</m> with normal vector <m>\vec{n}</m> contains the line <m>\ell_1</m>.
@@ -1167,9 +1167,9 @@
 
         <p>
           The distance is then given by
-          <me>
+          <md>
             \norm{\operatorname{proj}_{\vec n}\overrightarrow{P_1P_2}} = \frac{42}{\sqrt{62}}
-          </me>,
+          </md>,
           as before.
         </p>
       </solution>

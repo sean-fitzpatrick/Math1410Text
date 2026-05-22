@@ -45,9 +45,9 @@
         so <m>A^T</m> will be a <m>3 \times 2</m> matrix. By the definition,
         the first column of <m>A^T</m> is the first row of <m>A</m>;
         the second column of <m>A^T</m> is the second row of <m>A</m>. Therefore,
-        <me>
+        <md>
           A^T = \bbm 1 \amp 4\\2 \amp 5\\3\amp 6\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
@@ -58,18 +58,18 @@
 
       <p>
         Find the transpose of the following matrices.
-        <me>
+        <md>
           A = \bbm 7 \amp 2 \amp 9\amp 1\\2\amp -1\amp 3\amp 0\\-5\amp 3\amp 0\amp 11\ebm \quad B = \bbm 1\amp 10\amp -2\\3\amp -5\amp 7\\4\amp 2\amp -3\ebm \quad C = \bbm 1\amp -1\amp 7\amp 8\amp 3\ebm
-        </me>.
+        </md>.
       </p>
     </statement>
     <solution>
       <p>
         We find each transpose using the definition without explanation.
         Make note of the dimensions of the original matrix and the dimensions of its transpose.
-        <me>
+        <md>
           A^T = \bbm 7 \amp 2 \amp -5\\2\amp -1\amp 3\\9\amp 3\amp 0\\1\amp 0\amp 11\ebm \quad B^T = \bbm 1\amp 3\amp 4\\10\amp -5\amp 2\\-2\amp 7\amp -3\ebm\quad C^T = \bbm 1\\-1\\7\\8\\3\ebm
-        </me>.
+        </md>.
       </p>
     </solution>
   </example>
@@ -80,10 +80,10 @@
     is below where we rewrite <m>B</m> and <m>B^T</m> with the diagonal in bold.
     We'll follow this by a definition of what we mean by <q>the diagonal of a matrix,</q>
     along with a few other related definitions.
-    <me>
+    <md>
       B = \bbm\mathbf{1} \amp 10 \amp -2\\3\amp \mathbf{-5}\amp 7\\4\amp 2\amp \mathbf{-3}\ebm \quad B^T =
             \bbm\mathbf{1}\amp 3\amp 4\\10\amp \mathbf{-5}\amp 2\\-2\amp 7\amp \mathbf{-3}\ebm
-    </me>.
+    </md>.
   </p>
 
   <p>
@@ -120,11 +120,11 @@
 
       <p>
         Consider the matrices <m>A</m>, <m>B</m>, <m>C</m> and <m>I_4</m>, as well as their transposes, where
-        <me>
+        <md>
           A = \bbm 1 \amp 2 \amp 3\\0\amp 4\amp 5\\0\amp 0\amp 6\ebm\quad
           B = \bbm 3\amp 0\amp 0\\0\amp 7\amp 0\\0\amp 0\amp -1\ebm\quad
           C = \bbm 1\amp 2\amp 3\\0\amp 4\amp 5\\0\amp 0\amp 6\\0\amp 0\amp 0\ebm
-        </me>.
+        </md>.
         Identify the diagonal of each matrix, and state whether each matrix is diagonal,
         upper triangular, lower triangular, or none of the above.
       </p>
@@ -132,11 +132,11 @@
     <solution>
       <p>
         We first compute the transpose of each matrix.
-        <me>
+        <md>
           A^T = \bbm 1\amp 0\amp 0\\2\amp 4\amp 0\\3\amp 5\amp 6\ebm\quad
           B^T = \bbm 3\amp 0\amp 0\\0\amp 7\amp 0\\0\amp 0\amp -1\ebm\quad
           C^T = \bbm 1\amp 0\amp 0\amp 0\\2\amp 4\amp 0\amp 0\\3\amp 5\amp 6\amp 0\ebm
-        </me>.
+        </md>.
         Note that <m>I^T_4 = I_4</m>.
       </p>
 
@@ -193,18 +193,18 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 1 \amp 2 \amp 3\\4\amp 5\amp 6\ebm \ \text{and}\ B = \bbm 1\amp 2\amp 1\\3\amp -1\amp 0\ebm
-        </me>.
+        </md>.
         Find <m>A^T+B^T</m> and <m>(A + B)^T</m>.
       </p>
     </statement>
     <solution>
       <p>
         We note that
-        <me>
+        <md>
           A^T = \bbm 1 \amp 4\\2 \amp 5\\3\amp 6\ebm\ \text{and}\ B^T = \bbm 1\amp 3\\2\amp -1\\1\amp 0\ebm
-        </me>.
+        </md>.
         Therefore
         <md>
           <mrow>A^T + B^T \amp = \bbm 1\amp 4\\2\amp 5\\3\amp 6\ebm+\bbm 1\amp 3\\2\amp -1\\1\amp 0\ebm</mrow>
@@ -234,18 +234,18 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 1 \amp 2\\3 \amp 4\ebm \ \text{and} \ B = \bbm 1\amp 2\amp -1\\1\amp 0\amp 1\ebm
-        </me>.
+        </md>.
         Find <m>(AB)^T</m>, <m>A^TB^T</m> and <m>B^TA^T</m>.
       </p>
     </statement>
     <solution>
       <p>
         We first note that
-        <me>
+        <md>
           A^T = \bbm 1 \amp 3\\2 \amp 4\ebm \ \text{and} \ B^T = \bbm 1\amp 1\\2\amp 0\\-1\amp 1\ebm
-        </me>.
+        </md>.
         Find <m>(AB)^T</m>:
         <md>
           <mrow>(AB)^T \amp = \left(\bbm 1\amp 2\\3\amp 4\ebm \bbm 1\amp 2\amp -1\\1\amp 0\amp 1\ebm\right)^T</mrow>
@@ -288,18 +288,18 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 2 \amp 7\\1 \amp 4\ebm
-        </me>.
+        </md>.
         Find <m>(A^{-1})^T</m> and <m>(A^T)^{-1}</m>.
       </p>
     </statement>
     <solution>
       <p>
         We first find <m>A^{-1}</m> and <m>A^T</m>:
-        <me>
+        <md>
           A^{-1} = \bbm 4 \amp -7\\-1 \amp 2\ebm\ \text{and}\ A^T = \bbm 2\amp 1\\7\amp 4\ebm
-        </me>.
+        </md>.
       </p>
 
       <p>
@@ -384,9 +384,9 @@
 
       <p>
         Let
-        <me>
+        <md>
           A = \bbm 2 \amp 1 \amp 3\\2\amp -1\amp 1\\1\amp 0\amp 1\ebm
-        </me>.
+        </md>.
         Find <m>AA^T</m>, <m>A+A^T</m> and <m>A - A^T</m>.
       </p>
     </statement>
@@ -423,9 +423,9 @@
     look at the location of the 6's, the 5's and the 3's. More precisely,
     let's look at the transpose of <m>AA^T</m>.
     We should notice that if we take the transpose of this matrix, we have the very same matrix. That is,
-    <me>
+    <md>
       \left(\bbm 14  \amp  6  \amp  5\\ 6\amp 4\amp 3\\ 5\amp  3\amp  2\ebm\right)^T = \bbm 14 \amp  6 \amp  5\\ 6\amp 4\amp 3\\ 5\amp  3\amp  2\ebm
-    </me>!
+    </md>!
   </p>
 
   <p>
@@ -529,14 +529,14 @@
     First, we are interested in the transpose of a matrix and symmetric matrices because they are interesting.
     One particularly interesting thing about symmetric and skew symmetric matrices is this:
     consider the sum of <m>(A+A^T)</m> and <m>(A-A^T)</m>:
-    <me>
+    <md>
       (A+A^T)+(A-A^T) = 2A
-    </me>.
+    </md>.
     This gives us an idea <mdash/> if we were to multiply both sides of this equation by <m>\frac12</m>,
     then the right hand side would just be <m>A</m>. This means that
-    <me>
+    <md>
       A = \underbrace{\frac12(A+A^T)}_{\text{symmetric}}\ +\ \underbrace{\frac12(A-A^T)}_{\text{skew symmetric}}
-    </me>.
+    </md>.
     That is, any matrix <m>A</m> can be written as the sum of a symmetric and skew symmetric matrix. That's interesting.
   </p>
 
